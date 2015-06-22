@@ -1,10 +1,7 @@
 /* Driver for SBV program generated from Copilot. */
 /* Edit as you see fit */
 
-#include <inttypes.h>
-#include <stdbool.h>
 #include <stdint.h>
-#include <stdio.h>
 #include "internal.h"
 #include "copilot.h"
 
@@ -13,13 +10,14 @@ SBool clk1;
 SBool clk;
 
 /* Variables */
-SWord8 tmp_0 = 0;
-SBool tmp_1 = true;
-SWord8 queue_0[1] = { 0 };
-SBool queue_1[5] = { true, false, false, false, false };
-SWord32 ptr_0 = 0;
-SWord32 ptr_1 = 0;
+static SWord8 tmp_0 = 0;
+static SBool tmp_1 = true;
+static SWord8 queue_0[1] = { 0 };
+static SBool queue_1[5] = { true, false, false, false, false };
+static SWord32 ptr_0 = 0;
+static SWord32 ptr_1 = 0;
 /*ACSL following*/
+
 /*@
  global invariant a_bound_ptr_0: ptr_0 < 1 ; 
  global invariant a_pos_ptr_0: ptr_0 >= 0 ; 
@@ -32,20 +30,20 @@ SWord32 ptr_1 = 0;
 /*@
  assigns \nothing;
 */
-void sampleExts(void) {
+void static sampleExts(void) {
 }
 
 /*@
  assigns \nothing; 
 */
-void fireTriggers(void) {
+void static fireTriggers(void) {
 }
 
 /*@
  assigns clk;
  assigns clk1;
  */
-void updateObservers(void) {
+void static updateObservers(void) {
   clk = observer_clk(queue_1, ptr_1);
   clk1 = observer_clk1(queue_0, ptr_0);
 }
@@ -54,7 +52,7 @@ void updateObservers(void) {
  assigns tmp_0;
  assigns tmp_1;
  */
-void updateStates(void) {
+void static updateStates(void) {
   tmp_0 = update_state_0(queue_0, ptr_0);
   tmp_1 = update_state_1(queue_1, ptr_1);
 }
@@ -65,7 +63,7 @@ void updateStates(void) {
  assigns queue_1[ptr_1];
  ensures queue_1[ptr_1] == tmp_1;
  */
-void updateBuffers(void) {
+void static updateBuffers(void) {
   queue_0[ptr_0] = tmp_0;
   queue_1[ptr_1] = tmp_1;
 }
@@ -76,7 +74,7 @@ void updateBuffers(void) {
  assigns ptr_1;
  ensures ptr_1 == (\old (ptr_1 ) + 1) % 5;
  */
-void updatePtrs(void) {
+void static updatePtrs(void) {
   ptr_0 = (ptr_0 + 1) % 1;
   ptr_1 = (ptr_1 + 1) % 5;
 }

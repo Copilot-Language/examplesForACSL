@@ -22,4 +22,4 @@ extern bool clk;
 
 /* Step function: */
 
-void step();
+void step(void);

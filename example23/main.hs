@@ -22,6 +22,10 @@ inputFData :: Stream Float
 inputFData = replicate 5 0 ++ inputFData + 5
 
 
+lol :: Stream Float
+lol = logBase 9.0  4.0
+
+
 minV :: Stream Word16
 minV = min 3 inputData
 
@@ -41,6 +45,7 @@ spec = do
   observer "maxV"  maxV
   observer "sumV"  sumV
   observer "meanV" meanV
+  observer "lol" lol
 
 main = do
    reify spec >>= C.compile C.defaultParams 

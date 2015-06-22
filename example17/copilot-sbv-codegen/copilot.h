@@ -23,4 +23,4 @@ extern bool e1;
 
 /* Step function: */
 
-void step();
+void step(void);

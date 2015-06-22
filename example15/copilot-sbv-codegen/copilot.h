@@ -24,4 +24,4 @@ extern int8_t e;
 
 /* Step function: */
 
-void step();
+void step(void);

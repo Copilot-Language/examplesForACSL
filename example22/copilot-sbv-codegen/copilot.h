@@ -21,4 +21,4 @@ extern uint16_t stack;
 
 /* Step function: */
 
-void step();
+void step(void);

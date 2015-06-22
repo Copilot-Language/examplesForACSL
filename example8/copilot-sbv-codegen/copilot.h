@@ -28,4 +28,4 @@ extern uint64_t e2;
 
 /* Step function: */
 
-void step();
+void step(void);

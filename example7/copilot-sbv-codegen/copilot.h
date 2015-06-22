@@ -25,4 +25,4 @@ extern bool cooler;
 
 /* Step function: */
 
-void step();
+void step(void);

@@ -24,4 +24,4 @@ uint16_t func0(uint8_t,uint16_t);
 
 /* Step function: */
 
-void step();
+void step(void);

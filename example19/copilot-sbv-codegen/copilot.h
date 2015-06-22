@@ -21,4 +21,4 @@ extern bool testAlwaysBeen;
 
 /* Step function: */
 
-void step();
+void step(void);

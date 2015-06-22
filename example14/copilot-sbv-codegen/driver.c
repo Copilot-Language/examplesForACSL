@@ -1,10 +1,7 @@
 /* Driver for SBV program generated from Copilot. */
 /* Edit as you see fit */
 
-#include <inttypes.h>
-#include <stdbool.h>
 #include <stdint.h>
-#include <stdio.h>
 #include "internal.h"
 #include "copilot.h"
 
@@ -12,22 +9,23 @@
 SBool sinceTest;
 
 /* Variables */
-SBool tmp_0 = false;
-SBool tmp_1 = false;
-SBool tmp_2 = false;
-SBool tmp_3 = false;
-SBool tmp_4 = true;
-SBool queue_0[1] = { false };
-SBool queue_1[7] = { false, false, true, false, false, false, false };
-SBool queue_2[1] = { false };
-SBool queue_3[3] = { false, false, false };
-SBool queue_4[1] = { true };
-SWord32 ptr_0 = 0;
-SWord32 ptr_1 = 0;
-SWord32 ptr_2 = 0;
-SWord32 ptr_3 = 0;
-SWord32 ptr_4 = 0;
+static SBool tmp_0 = false;
+static SBool tmp_1 = false;
+static SBool tmp_2 = false;
+static SBool tmp_3 = false;
+static SBool tmp_4 = true;
+static SBool queue_0[1] = { false };
+static SBool queue_1[7] = { false, false, true, false, false, false, false };
+static SBool queue_2[1] = { false };
+static SBool queue_3[3] = { false, false, false };
+static SBool queue_4[1] = { true };
+static SWord32 ptr_0 = 0;
+static SWord32 ptr_1 = 0;
+static SWord32 ptr_2 = 0;
+static SWord32 ptr_3 = 0;
+static SWord32 ptr_4 = 0;
 /*ACSL following*/
+
 /*@
  global invariant a_bound_ptr_0: ptr_0 < 1 ; 
  global invariant a_pos_ptr_0: ptr_0 >= 0 ; 
@@ -49,19 +47,19 @@ SWord32 ptr_4 = 0;
 /*@
  assigns \nothing;
 */
-void sampleExts(void) {
+void static sampleExts(void) {
 }
 
 /*@
  assigns \nothing; 
 */
-void fireTriggers(void) {
+void static fireTriggers(void) {
 }
 
 /*@
  assigns sinceTest;
  */
-void updateObservers(void) {
+void static updateObservers(void) {
   sinceTest = observer_sinceTest(queue_0, ptr_0, queue_2, ptr_2, queue_3, ptr_3, queue_4, ptr_4);
 }
 
@@ -72,7 +70,7 @@ void updateObservers(void) {
  assigns tmp_3;
  assigns tmp_4;
  */
-void updateStates(void) {
+void static updateStates(void) {
   tmp_1 = update_state_1(queue_1, ptr_1);
   tmp_0 = update_state_0(queue_1, ptr_1);
   tmp_2 = update_state_2(queue_0, ptr_0, queue_2, ptr_2);
@@ -92,7 +90,7 @@ void updateStates(void) {
  assigns queue_4[ptr_4];
  ensures queue_4[ptr_4] == tmp_4;
  */
-void updateBuffers(void) {
+void static updateBuffers(void) {
   queue_0[ptr_0] = tmp_0;
   queue_1[ptr_1] = tmp_1;
   queue_2[ptr_2] = tmp_2;
@@ -112,7 +110,7 @@ void updateBuffers(void) {
  assigns ptr_4;
  ensures ptr_4 == (\old (ptr_4 ) + 1) % 1;
  */
-void updatePtrs(void) {
+void static updatePtrs(void) {
   ptr_0 = (ptr_0 + 1) % 1;
   ptr_1 = (ptr_1 + 1) % 7;
   ptr_2 = (ptr_2 + 1) % 1;

@@ -21,4 +21,4 @@ void strm(int32_t);
 
 /* Step function: */
 
-void step();
+void step(void);

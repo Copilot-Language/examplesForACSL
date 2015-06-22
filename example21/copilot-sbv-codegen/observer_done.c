@@ -3,23 +3,25 @@
 #include <inttypes.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include <string.h>
 #include <math.h>
 #include "internal.h"
 
-/*ACSL following*/
+/* User given declarations: */
 /*test 005*/
 /*ACSL to write
  (s9 == 512)
 */
 /*@
  assigns \nothing;
- ensures \result == (queue_9[ptr_9] == 512);
+ ensures \result == (((queue_9[ptr_9]) == (512)));
 */
+
 SBool observer_done(const SWord64 *queue_9, const SWord32 ptr_9)
 {
   const SWord64 s0 = queue_9[0];
   const SWord32 s1 = ptr_9;
-  const SBool s3 = s0 == 0x0000000000000200ULL;
+  const SBool   s3 = s0 == 0x0000000000000200ULL;
 
   return s3;
 }

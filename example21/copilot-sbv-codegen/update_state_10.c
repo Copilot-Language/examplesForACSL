@@ -3,18 +3,20 @@
 #include <inttypes.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include <string.h>
 #include <math.h>
 #include "internal.h"
 
-/*ACSL following*/
+/* User given declarations: */
 /*test 001*/
 /*ACSL to write
  ((s11 && (s12 && (s13 && (s14 && (s15 && (s16 && (s17 && (s18 && (s19 && (s19 && not s19)))))))))) || s10)
 */
 /*@
  assigns \nothing;
- ensures \result == ((queue_11[ptr_11] && (queue_12[ptr_12] && (queue_13[ptr_13] && (queue_14[ptr_14] && (queue_15[ptr_15] && (queue_16[ptr_16] && (queue_17[ptr_17] && (queue_18[ptr_18] && (queue_19[ptr_19] && (queue_19[ptr_19] && ! queue_19[ptr_19])))))))))) || queue_10[ptr_10]);
+ ensures \result == (((((queue_11[ptr_11]) && (((queue_12[ptr_12]) && (((queue_13[ptr_13]) && (((queue_14[ptr_14]) && (((queue_15[ptr_15]) && (((queue_16[ptr_16]) && (((queue_17[ptr_17]) && (((queue_18[ptr_18]) && (((queue_19[ptr_19]) && (((queue_19[ptr_19]) && (! ((queue_19[ptr_19]))))))))))))))))))))))) || (queue_10[ptr_10])));
 */
+
 SBool update_state_10(const SBool *queue_11, const SWord32 ptr_11,
                       const SBool *queue_12, const SWord32 ptr_12, const SBool *queue_13,
                       const SWord32 ptr_13, const SBool *queue_14, const SWord32 ptr_14,
@@ -1190,17 +1192,17 @@ SBool update_state_10(const SBool *queue_11, const SWord32 ptr_11,
   const SWord32 s1058 = (0x00000002UL == 0) ? s1030 : (s1030 % 0x00000002UL);
   const SBool   s1059 = table8[s1058];
   const SBool   s1060 = !s1059;
-  const SBool   s1061 = s1059 && s1060;
-  const SBool   s1062 = s1059 && s1061;
-  const SBool   s1063 = s1056 && s1062;
-  const SBool   s1064 = s1053 && s1063;
-  const SBool   s1065 = s1050 && s1064;
-  const SBool   s1066 = s1047 && s1065;
-  const SBool   s1067 = s1044 && s1066;
-  const SBool   s1068 = s1041 && s1067;
-  const SBool   s1069 = s1038 && s1068;
-  const SBool   s1070 = s1035 && s1069;
-  const SBool   s1071 = s1070 || s1031;
+  const SBool   s1061 = s1059 & s1060;
+  const SBool   s1062 = s1059 & s1061;
+  const SBool   s1063 = s1056 & s1062;
+  const SBool   s1064 = s1053 & s1063;
+  const SBool   s1065 = s1050 & s1064;
+  const SBool   s1066 = s1047 & s1065;
+  const SBool   s1067 = s1044 & s1066;
+  const SBool   s1068 = s1041 & s1067;
+  const SBool   s1069 = s1038 & s1068;
+  const SBool   s1070 = s1035 & s1069;
+  const SBool   s1071 = s1031 | s1070;
 
   return s1071;
 }

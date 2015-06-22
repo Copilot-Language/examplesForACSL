@@ -25,4 +25,4 @@ extern uint32_t arr2[4];
 
 /* Step function: */
 
-void step();
+void step(void);

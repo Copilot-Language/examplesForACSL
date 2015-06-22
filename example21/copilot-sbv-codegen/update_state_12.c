@@ -3,18 +3,20 @@
 #include <inttypes.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include <string.h>
 #include <math.h>
 #include "internal.h"
 
-/*ACSL following*/
+/* User given declarations: */
 /*test 001*/
 /*ACSL to write
  s12
 */
 /*@
  assigns \nothing;
- ensures \result == queue_12[ptr_12];
+ ensures \result == (queue_12[ptr_12]);
 */
+
 SBool update_state_12(const SBool *queue_12, const SWord32 ptr_12)
 {
   const SBool   s0 = queue_12[0];

@@ -1,10 +1,7 @@
 /* Driver for SBV program generated from Copilot. */
 /* Edit as you see fit */
 
-#include <inttypes.h>
-#include <stdbool.h>
 #include <stdint.h>
-#include <stdio.h>
 #include "internal.h"
 #include "copilot.h"
 
@@ -12,31 +9,32 @@
 SBool i;
 
 /* Variables */
-SWord64 tmp_0 = 1;
-SBool tmp_1 = false;
-SBool tmp_2 = true;
-SWord64 tmp_3 = 0;
-SWord64 tmp_4 = 0;
-SWord8 tmp_5 = 1;
-SWord8 tmp_6 = 0;
-SWord64 queue_0[2] = { 1, 1 };
-SBool queue_1[1] = { false };
-SBool queue_2[3] = { true, true, false };
-SWord64 queue_3[1] = { 0 };
-SWord64 queue_4[1] = { 0 };
-SWord8 queue_5[3] = { 1, 1, 0 };
-SWord8 queue_6[3] = { 0, 1, 1 };
-SWord32 ptr_0 = 0;
-SWord32 ptr_1 = 0;
-SWord32 ptr_2 = 0;
-SWord32 ptr_3 = 0;
-SWord32 ptr_4 = 0;
-SWord32 ptr_5 = 0;
-SWord32 ptr_6 = 0;
-SWord64 ext_e1 = 0;
-SWord64 ext_e2 = 0;
-SWord64 ext_e3 = 0;
+static SWord64 tmp_0 = 1;
+static SBool tmp_1 = false;
+static SBool tmp_2 = true;
+static SWord64 tmp_3 = 0;
+static SWord64 tmp_4 = 0;
+static SWord8 tmp_5 = 1;
+static SWord8 tmp_6 = 0;
+static SWord64 queue_0[2] = { 1, 1 };
+static SBool queue_1[1] = { false };
+static SBool queue_2[3] = { true, true, false };
+static SWord64 queue_3[1] = { 0 };
+static SWord64 queue_4[1] = { 0 };
+static SWord8 queue_5[3] = { 1, 1, 0 };
+static SWord8 queue_6[3] = { 0, 1, 1 };
+static SWord32 ptr_0 = 0;
+static SWord32 ptr_1 = 0;
+static SWord32 ptr_2 = 0;
+static SWord32 ptr_3 = 0;
+static SWord32 ptr_4 = 0;
+static SWord32 ptr_5 = 0;
+static SWord32 ptr_6 = 0;
+static SWord64 ext_e1 = 0;
+static SWord64 ext_e2 = 0;
+static SWord64 ext_e3 = 0;
 /*ACSL following*/
+
 /*@
  global invariant a_bound_ptr_0: ptr_0 < 2 ; 
  global invariant a_pos_ptr_0: ptr_0 >= 0 ; 
@@ -69,7 +67,7 @@ SWord64 ext_e3 = 0;
  //ensures ext_e2 == e2;
  //ensures ext_e3 == e3;
 */
-void sampleExts(void) {
+void static sampleExts(void) {
   ext_e1 = e1;
   ext_e2 = e2;
   ext_e3 = e3;
@@ -78,7 +76,7 @@ void sampleExts(void) {
 /*@
  assigns \nothing; 
 */
-void fireTriggers(void) {
+void static fireTriggers(void) {
   if (trigger_guard_e())
     e(trigger_e_arg_0(queue_0, ptr_0),
       trigger_e_arg_1(queue_4, ptr_4),
@@ -96,7 +94,7 @@ void fireTriggers(void) {
 /*@
  assigns i;
  */
-void updateObservers(void) {
+void static updateObservers(void) {
   i = observer_i(queue_4, ptr_4);
 }
 
@@ -109,7 +107,7 @@ void updateObservers(void) {
  assigns tmp_5;
  assigns tmp_6;
  */
-void updateStates(void) {
+void static updateStates(void) {
   tmp_0 = update_state_0(queue_0, ptr_0);
   tmp_2 = update_state_2(queue_2, ptr_2);
   tmp_1 = update_state_1(queue_2, ptr_2, queue_1, ptr_1);
@@ -135,7 +133,7 @@ void updateStates(void) {
  assigns queue_6[ptr_6];
  ensures queue_6[ptr_6] == tmp_6;
  */
-void updateBuffers(void) {
+void static updateBuffers(void) {
   queue_0[ptr_0] = tmp_0;
   queue_1[ptr_1] = tmp_1;
   queue_2[ptr_2] = tmp_2;
@@ -161,7 +159,7 @@ void updateBuffers(void) {
  assigns ptr_6;
  ensures ptr_6 == (\old (ptr_6 ) + 1) % 3;
  */
-void updatePtrs(void) {
+void static updatePtrs(void) {
   ptr_0 = (ptr_0 + 1) % 2;
   ptr_1 = (ptr_1 + 1) % 1;
   ptr_2 = (ptr_2 + 1) % 3;

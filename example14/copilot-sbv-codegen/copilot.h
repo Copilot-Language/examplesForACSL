@@ -21,4 +21,4 @@ extern bool sinceTest;
 
 /* Step function: */
 
-void step();
+void step(void);

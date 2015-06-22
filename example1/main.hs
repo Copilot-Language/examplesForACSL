@@ -12,7 +12,7 @@ import Debug.Trace
 import qualified Data.List as L
 
 nats :: Stream Word8
-nats = [0,1] ++ nats + 1
+nats = [0,1] ++ (nats + 1)
 
 alt :: Stream Bool
 alt = [True] ++ not alt

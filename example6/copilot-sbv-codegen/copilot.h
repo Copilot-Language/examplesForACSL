@@ -22,4 +22,4 @@ uint16_t crc_sbv(uint16_t);
 
 /* Step function: */
 
-void step();
+void step(void);

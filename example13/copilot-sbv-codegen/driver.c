@@ -1,10 +1,7 @@
 /* Driver for SBV program generated from Copilot. */
 /* Edit as you see fit */
 
-#include <inttypes.h>
-#include <stdbool.h>
 #include <stdint.h>
-#include <stdio.h>
 #include "internal.h"
 #include "copilot.h"
 
@@ -12,31 +9,32 @@
 
 
 /* Variables */
-SBool tmp_0 = true;
-SBool tmp_1 = false;
-SBool tmp_2 = true;
-SBool tmp_3 = false;
-SBool tmp_4 = false;
-SBool tmp_5 = false;
-SBool tmp_6 = true;
-SBool tmp_7 = false;
-SBool queue_0[5] = { true, true, true, true, true };
-SBool queue_1[5] = { false, false, false, false, true };
-SBool queue_2[5] = { true, true, true, true, true };
-SBool queue_3[6] = { false, false, false, false, false, true };
-SBool queue_4[13] = { false, false, false, false, false, false, false, false, false, false, false, false, true };
-SBool queue_5[3] = { false, false, true };
-SBool queue_6[6] = { true, true, true, true, true, false };
-SBool queue_7[1] = { false };
-SWord32 ptr_0 = 0;
-SWord32 ptr_1 = 0;
-SWord32 ptr_2 = 0;
-SWord32 ptr_3 = 0;
-SWord32 ptr_4 = 0;
-SWord32 ptr_5 = 0;
-SWord32 ptr_6 = 0;
-SWord32 ptr_7 = 0;
+static SBool tmp_0 = true;
+static SBool tmp_1 = false;
+static SBool tmp_2 = true;
+static SBool tmp_3 = false;
+static SBool tmp_4 = false;
+static SBool tmp_5 = false;
+static SBool tmp_6 = true;
+static SBool tmp_7 = false;
+static SBool queue_0[5] = { true, true, true, true, true };
+static SBool queue_1[5] = { false, false, false, false, true };
+static SBool queue_2[5] = { true, true, true, true, true };
+static SBool queue_3[6] = { false, false, false, false, false, true };
+static SBool queue_4[13] = { false, false, false, false, false, false, false, false, false, false, false, false, true };
+static SBool queue_5[3] = { false, false, true };
+static SBool queue_6[6] = { true, true, true, true, true, false };
+static SBool queue_7[1] = { false };
+static SWord32 ptr_0 = 0;
+static SWord32 ptr_1 = 0;
+static SWord32 ptr_2 = 0;
+static SWord32 ptr_3 = 0;
+static SWord32 ptr_4 = 0;
+static SWord32 ptr_5 = 0;
+static SWord32 ptr_6 = 0;
+static SWord32 ptr_7 = 0;
 /*ACSL following*/
+
 /*@
  global invariant a_bound_ptr_0: ptr_0 < 5 ; 
  global invariant a_pos_ptr_0: ptr_0 >= 0 ; 
@@ -67,13 +65,13 @@ SWord32 ptr_7 = 0;
 /*@
  assigns \nothing;
 */
-void sampleExts(void) {
+void static sampleExts(void) {
 }
 
 /*@
  assigns \nothing; 
 */
-void fireTriggers(void) {
+void static fireTriggers(void) {
   if (trigger_guard_testAlways1())
     testAlways1(trigger_testAlways1_arg_0(queue_7, ptr_7));
   if (trigger_guard_testAlways2())
@@ -91,7 +89,7 @@ void fireTriggers(void) {
 /*@
  assigns \nothing;
  */
-void updateObservers(void) {
+void static updateObservers(void) {
 }
 
 /*@
@@ -104,7 +102,7 @@ void updateObservers(void) {
  assigns tmp_6;
  assigns tmp_7;
  */
-void updateStates(void) {
+void static updateStates(void) {
   tmp_0 = update_state_0();
   tmp_1 = update_state_1();
   tmp_2 = update_state_2();
@@ -133,7 +131,7 @@ void updateStates(void) {
  assigns queue_7[ptr_7];
  ensures queue_7[ptr_7] == tmp_7;
  */
-void updateBuffers(void) {
+void static updateBuffers(void) {
   queue_0[ptr_0] = tmp_0;
   queue_1[ptr_1] = tmp_1;
   queue_2[ptr_2] = tmp_2;
@@ -162,7 +160,7 @@ void updateBuffers(void) {
  assigns ptr_7;
  ensures ptr_7 == (\old (ptr_7 ) + 1) % 1;
  */
-void updatePtrs(void) {
+void static updatePtrs(void) {
   ptr_0 = (ptr_0 + 1) % 5;
   ptr_1 = (ptr_1 + 1) % 5;
   ptr_2 = (ptr_2 + 1) % 5;

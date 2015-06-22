@@ -1,10 +1,7 @@
 /* Driver for SBV program generated from Copilot. */
 /* Edit as you see fit */
 
-#include <inttypes.h>
-#include <stdbool.h>
 #include <stdint.h>
-#include <stdio.h>
 #include "internal.h"
 #include "copilot.h"
 
@@ -12,31 +9,32 @@
 SWord16 stack;
 
 /* Variables */
-SWord16 tmp_0 = 0;
-SBool tmp_1 = false;
-SWord16 tmp_2 = 0;
-SWord16 tmp_3 = 0;
-SWord16 tmp_4 = 0;
-SWord16 tmp_5 = 0;
-SBool tmp_6 = true;
-SWord16 tmp_7 = 1;
-SWord16 queue_0[1] = { 0 };
-SBool queue_1[12] = { false, false, false, false, false, false, true, true, true, true, true, true };
-SWord16 queue_2[1] = { 0 };
-SWord16 queue_3[1] = { 0 };
-SWord16 queue_4[1] = { 0 };
-SWord16 queue_5[1] = { 0 };
-SBool queue_6[5] = { true, true, true, true, true };
-SWord16 queue_7[1] = { 1 };
-SWord32 ptr_0 = 0;
-SWord32 ptr_1 = 0;
-SWord32 ptr_2 = 0;
-SWord32 ptr_3 = 0;
-SWord32 ptr_4 = 0;
-SWord32 ptr_5 = 0;
-SWord32 ptr_6 = 0;
-SWord32 ptr_7 = 0;
+static SWord16 tmp_0 = 0;
+static SBool tmp_1 = false;
+static SWord16 tmp_2 = 0;
+static SWord16 tmp_3 = 0;
+static SWord16 tmp_4 = 0;
+static SWord16 tmp_5 = 0;
+static SBool tmp_6 = true;
+static SWord16 tmp_7 = 1;
+static SWord16 queue_0[1] = { 0 };
+static SBool queue_1[12] = { false, false, false, false, false, false, true, true, true, true, true, true };
+static SWord16 queue_2[1] = { 0 };
+static SWord16 queue_3[1] = { 0 };
+static SWord16 queue_4[1] = { 0 };
+static SWord16 queue_5[1] = { 0 };
+static SBool queue_6[5] = { true, true, true, true, true };
+static SWord16 queue_7[1] = { 1 };
+static SWord32 ptr_0 = 0;
+static SWord32 ptr_1 = 0;
+static SWord32 ptr_2 = 0;
+static SWord32 ptr_3 = 0;
+static SWord32 ptr_4 = 0;
+static SWord32 ptr_5 = 0;
+static SWord32 ptr_6 = 0;
+static SWord32 ptr_7 = 0;
 /*ACSL following*/
+
 /*@
  global invariant a_bound_ptr_0: ptr_0 < 1 ; 
  global invariant a_pos_ptr_0: ptr_0 >= 0 ; 
@@ -67,19 +65,19 @@ SWord32 ptr_7 = 0;
 /*@
  assigns \nothing;
 */
-void sampleExts(void) {
+void static sampleExts(void) {
 }
 
 /*@
  assigns \nothing; 
 */
-void fireTriggers(void) {
+void static fireTriggers(void) {
 }
 
 /*@
  assigns stack;
  */
-void updateObservers(void) {
+void static updateObservers(void) {
   stack = observer_stack(queue_0, ptr_0);
 }
 
@@ -93,7 +91,7 @@ void updateObservers(void) {
  assigns tmp_7;
  assigns tmp_0;
  */
-void updateStates(void) {
+void static updateStates(void) {
   tmp_1 = update_state_1();
   tmp_6 = update_state_6();
   tmp_5 = update_state_5(queue_1, ptr_1, queue_6, ptr_6, queue_4, ptr_4, queue_5, ptr_5);
@@ -122,7 +120,7 @@ void updateStates(void) {
  assigns queue_7[ptr_7];
  ensures queue_7[ptr_7] == tmp_7;
  */
-void updateBuffers(void) {
+void static updateBuffers(void) {
   queue_0[ptr_0] = tmp_0;
   queue_1[ptr_1] = tmp_1;
   queue_2[ptr_2] = tmp_2;
@@ -151,7 +149,7 @@ void updateBuffers(void) {
  assigns ptr_7;
  ensures ptr_7 == (\old (ptr_7 ) + 1) % 1;
  */
-void updatePtrs(void) {
+void static updatePtrs(void) {
   ptr_0 = (ptr_0 + 1) % 1;
   ptr_1 = (ptr_1 + 1) % 12;
   ptr_2 = (ptr_2 + 1) % 1;

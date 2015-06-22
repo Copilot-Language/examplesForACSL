@@ -1,10 +1,7 @@
 /* Driver for SBV program generated from Copilot. */
 /* Edit as you see fit */
 
-#include <inttypes.h>
-#include <stdbool.h>
 #include <stdint.h>
-#include <stdio.h>
 #include "internal.h"
 #include "copilot.h"
 
@@ -16,31 +13,32 @@ SBool done;
 SBool sat;
 
 /* Variables */
-SBool tmp_0 = true;
-SBool tmp_1 = true;
-SBool tmp_2 = true;
-SWord64 tmp_3 = 1;
-SBool tmp_4 = false;
-SBool tmp_5 = true;
-SBool tmp_6 = true;
-SBool tmp_7 = true;
-SBool queue_0[2] = { true, false };
-SBool queue_1[4] = { true, false, false, false };
-SBool queue_2[8] = { true, false, false, false, false, false, false, false };
-SWord64 queue_3[1] = { 1 };
-SBool queue_4[1] = { false };
-SBool queue_5[8] = { true, false, false, false, false, false, false, false };
-SBool queue_6[4] = { true, false, false, false };
-SBool queue_7[2] = { true, false };
-SWord32 ptr_0 = 0;
-SWord32 ptr_1 = 0;
-SWord32 ptr_2 = 0;
-SWord32 ptr_3 = 0;
-SWord32 ptr_4 = 0;
-SWord32 ptr_5 = 0;
-SWord32 ptr_6 = 0;
-SWord32 ptr_7 = 0;
+static SBool tmp_0 = true;
+static SBool tmp_1 = true;
+static SBool tmp_2 = true;
+static SWord64 tmp_3 = 1;
+static SBool tmp_4 = false;
+static SBool tmp_5 = true;
+static SBool tmp_6 = true;
+static SBool tmp_7 = true;
+static SBool queue_0[2] = { true, false };
+static SBool queue_1[4] = { true, false, false, false };
+static SBool queue_2[8] = { true, false, false, false, false, false, false, false };
+static SWord64 queue_3[1] = { 1 };
+static SBool queue_4[1] = { false };
+static SBool queue_5[8] = { true, false, false, false, false, false, false, false };
+static SBool queue_6[4] = { true, false, false, false };
+static SBool queue_7[2] = { true, false };
+static SWord32 ptr_0 = 0;
+static SWord32 ptr_1 = 0;
+static SWord32 ptr_2 = 0;
+static SWord32 ptr_3 = 0;
+static SWord32 ptr_4 = 0;
+static SWord32 ptr_5 = 0;
+static SWord32 ptr_6 = 0;
+static SWord32 ptr_7 = 0;
 /*ACSL following*/
+
 /*@
  global invariant a_bound_ptr_0: ptr_0 < 2 ; 
  global invariant a_pos_ptr_0: ptr_0 >= 0 ; 
@@ -71,13 +69,13 @@ SWord32 ptr_7 = 0;
 /*@
  assigns \nothing;
 */
-void sampleExts(void) {
+void static sampleExts(void) {
 }
 
 /*@
  assigns \nothing; 
 */
-void fireTriggers(void) {
+void static fireTriggers(void) {
 }
 
 /*@
@@ -87,7 +85,7 @@ void fireTriggers(void) {
  assigns obs2;
  assigns sat;
  */
-void updateObservers(void) {
+void static updateObservers(void) {
   done = observer_done(queue_3, ptr_3);
   obs0 = observer_obs0(queue_2, ptr_2);
   obs1 = observer_obs1(queue_1, ptr_1);
@@ -105,7 +103,7 @@ void updateObservers(void) {
  assigns tmp_7;
  assigns tmp_4;
  */
-void updateStates(void) {
+void static updateStates(void) {
   tmp_0 = update_state_0(queue_0, ptr_0);
   tmp_1 = update_state_1(queue_1, ptr_1);
   tmp_2 = update_state_2(queue_2, ptr_2);
@@ -134,7 +132,7 @@ void updateStates(void) {
  assigns queue_7[ptr_7];
  ensures queue_7[ptr_7] == tmp_7;
  */
-void updateBuffers(void) {
+void static updateBuffers(void) {
   queue_0[ptr_0] = tmp_0;
   queue_1[ptr_1] = tmp_1;
   queue_2[ptr_2] = tmp_2;
@@ -163,7 +161,7 @@ void updateBuffers(void) {
  assigns ptr_7;
  ensures ptr_7 == (\old (ptr_7 ) + 1) % 2;
  */
-void updatePtrs(void) {
+void static updatePtrs(void) {
   ptr_0 = (ptr_0 + 1) % 2;
   ptr_1 = (ptr_1 + 1) % 4;
   ptr_2 = (ptr_2 + 1) % 8;

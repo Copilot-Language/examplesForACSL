@@ -21,4 +21,4 @@ void f(uint64_t);
 
 /* Step function: */
 
-void step();
+void step(void);

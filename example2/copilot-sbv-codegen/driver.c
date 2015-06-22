@@ -1,10 +1,7 @@
 /* Driver for SBV program generated from Copilot. */
 /* Edit as you see fit */
 
-#include <inttypes.h>
-#include <stdbool.h>
 #include <stdint.h>
-#include <stdio.h>
 #include "internal.h"
 #include "copilot.h"
 
@@ -14,19 +11,19 @@
 /* Variables */
 
 /*ACSL following*/
-/*@
-*/
+
+
 
 /*@
  assigns \nothing;
 */
-void sampleExts(void) {
+void static sampleExts(void) {
 }
 
 /*@
  assigns \nothing; 
 */
-void fireTriggers(void) {
+void static fireTriggers(void) {
   if (trigger_guard_f())
     f(trigger_f_arg_0());
 }
@@ -34,23 +31,25 @@ void fireTriggers(void) {
 /*@
  assigns \nothing;
  */
-void updateObservers(void) {
+void static updateObservers(void) {
 }
 
 /*@
  assigns \nothing;
  */
-void updateStates(void) {
+void static updateStates(void) {
 }
 
 /*@
+ assigns \nothing;
  */
-void updateBuffers(void) {
+void static updateBuffers(void) {
 }
 
 /*@
+ assigns \nothing;
  */
-void updatePtrs(void) {
+void static updatePtrs(void) {
 }
 
 void step(void) {

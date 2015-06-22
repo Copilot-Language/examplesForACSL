@@ -26,4 +26,4 @@ void testAlways1(bool);
 
 /* Step function: */
 
-void step();
+void step(void);

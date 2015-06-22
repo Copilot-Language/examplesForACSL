@@ -25,4 +25,4 @@ uint64_t ff(uint8_t);
 
 /* Step function: */
 
-void step();
+void step(void);

@@ -1,10 +1,7 @@
 /* Driver for SBV program generated from Copilot. */
 /* Edit as you see fit */
 
-#include <inttypes.h>
-#include <stdbool.h>
 #include <stdint.h>
-#include <stdio.h>
 #include "internal.h"
 #include "copilot.h"
 
@@ -12,14 +9,15 @@
 
 
 /* Variables */
-SBool tmp_27 = true;
-SBool queue_27[1] = { true };
-SWord32 ptr_27 = 0;
-SBool ext_cooler = 0;
-SWord8 ext_tmp_probe_0 = 0;
-SWord8 ext_tmp_probe_1 = 0;
-SWord8 ext_tmp_probe_2 = 0;
+static SBool tmp_27 = true;
+static SBool queue_27[1] = { true };
+static SWord32 ptr_27 = 0;
+static SBool ext_cooler = 0;
+static SWord8 ext_tmp_probe_0 = 0;
+static SWord8 ext_tmp_probe_1 = 0;
+static SWord8 ext_tmp_probe_2 = 0;
 /*ACSL following*/
+
 /*@
  global invariant a_bound_ptr_27: ptr_27 < 1 ; 
  global invariant a_pos_ptr_27: ptr_27 >= 0 ; 
@@ -36,7 +34,7 @@ SWord8 ext_tmp_probe_2 = 0;
  //ensures ext_tmp_probe_1 == tmp_probe_1;
  //ensures ext_tmp_probe_2 == tmp_probe_2;
 */
-void sampleExts(void) {
+void static sampleExts(void) {
   ext_cooler = cooler;
   ext_tmp_probe_0 = tmp_probe_0;
   ext_tmp_probe_1 = tmp_probe_1;
@@ -46,7 +44,7 @@ void sampleExts(void) {
 /*@
  assigns \nothing; 
 */
-void fireTriggers(void) {
+void static fireTriggers(void) {
   if (trigger_guard_shutoff(ext_tmp_probe_1, ext_tmp_probe_0, ext_tmp_probe_2, ext_cooler, queue_27, ptr_27))
     shutoff(trigger_shutoff_arg_0(ext_tmp_probe_1, ext_tmp_probe_0, ext_tmp_probe_2));
 }
@@ -54,13 +52,13 @@ void fireTriggers(void) {
 /*@
  assigns \nothing;
  */
-void updateObservers(void) {
+void static updateObservers(void) {
 }
 
 /*@
  assigns tmp_27;
  */
-void updateStates(void) {
+void static updateStates(void) {
   tmp_27 = update_state_27(ext_tmp_probe_1, ext_tmp_probe_0, ext_tmp_probe_2, ext_cooler, queue_27, ptr_27);
 }
 
@@ -68,7 +66,7 @@ void updateStates(void) {
  assigns queue_27[ptr_27];
  ensures queue_27[ptr_27] == tmp_27;
  */
-void updateBuffers(void) {
+void static updateBuffers(void) {
   queue_27[ptr_27] = tmp_27;
 }
 
@@ -76,7 +74,7 @@ void updateBuffers(void) {
  assigns ptr_27;
  ensures ptr_27 == (\old (ptr_27 ) + 1) % 1;
  */
-void updatePtrs(void) {
+void static updatePtrs(void) {
   ptr_27 = (ptr_27 + 1) % 1;
 }
 

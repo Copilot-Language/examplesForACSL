@@ -25,4 +25,4 @@ extern bool sat;
 
 /* Step function: */
 
-void step();
+void step(void);
