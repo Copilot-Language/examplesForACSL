@@ -22,7 +22,7 @@ Then for merging with me :
 -Then just do the following :
         cabal build
         cabal install
--You now have a good version of sbv, now you can compile my beautiful project ! Just switch to the right branch (or merge it if you are not affraid of death), and make test in the Copilot directory, it should compile, but the copilot-regression will fail miserably ! What will the world be without planned obscolescence.
+-You now have a good version of sbv, now you can compile my beautiful project ! Just switch to the right branch (or merge it if you are not afraid of death), and make test in the Copilot directory, it should compile, but the copilot-regression will fail miserably ! What will the world be without planned obscolescence.
 
 If you want to test it, you'll have to do the following :
 - Clone the examplesForACSL respoitory (if you're reading that, it means that you have probably done it already). 
