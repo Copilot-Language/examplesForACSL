@@ -1,10 +1,7 @@
 /* Driver for SBV program generated from Copilot. */
 /* Edit as you see fit */
 
-#include <inttypes.h>
-#include <stdbool.h>
 #include <stdint.h>
-#include <stdio.h>
 #include "internal.h"
 #include "copilot.h"
 
@@ -12,85 +9,86 @@
 
 
 /* Variables */
-SWord32 tmp_1 = 0;
-SWord32 tmp_4 = 0;
-SWord32 tmp_8 = 0;
-SWord32 tmp_12 = 0;
-SWord32 tmp_16 = 1;
-SWord32 tmp_20 = 1;
-SWord32 tmp_24 = 1;
-SWord32 tmp_28 = 1;
-SWord32 tmp_32 = 1;
-SWord32 tmp_36 = 1;
-SWord32 tmp_40 = 1;
-SWord32 tmp_44 = 1;
-SWord32 tmp_48 = 1;
-SWord32 tmp_52 = 1;
-SWord32 tmp_56 = 1;
-SWord32 tmp_60 = 1;
-SWord32 tmp_64 = 1;
-SWord32 tmp_68 = 1;
-SWord32 tmp_72 = 1;
-SWord32 tmp_76 = 1;
-SWord32 tmp_80 = 1;
-SWord32 tmp_84 = 1;
-SWord32 tmp_88 = 1;
-SWord32 tmp_92 = 1;
-SWord32 tmp_96 = 1;
-SWord32 tmp_100 = 1;
-SWord32 queue_1[1] = { 0 };
-SWord32 queue_4[1] = { 0 };
-SWord32 queue_8[1] = { 0 };
-SWord32 queue_12[1] = { 0 };
-SWord32 queue_16[1] = { 1 };
-SWord32 queue_20[1] = { 1 };
-SWord32 queue_24[1] = { 1 };
-SWord32 queue_28[1] = { 1 };
-SWord32 queue_32[1] = { 1 };
-SWord32 queue_36[1] = { 1 };
-SWord32 queue_40[1] = { 1 };
-SWord32 queue_44[1] = { 1 };
-SWord32 queue_48[1] = { 1 };
-SWord32 queue_52[1] = { 1 };
-SWord32 queue_56[1] = { 1 };
-SWord32 queue_60[1] = { 1 };
-SWord32 queue_64[1] = { 1 };
-SWord32 queue_68[1] = { 1 };
-SWord32 queue_72[1] = { 1 };
-SWord32 queue_76[1] = { 1 };
-SWord32 queue_80[1] = { 1 };
-SWord32 queue_84[1] = { 1 };
-SWord32 queue_88[1] = { 1 };
-SWord32 queue_92[1] = { 1 };
-SWord32 queue_96[1] = { 1 };
-SWord32 queue_100[1] = { 1 };
-SWord32 ptr_1 = 0;
-SWord32 ptr_4 = 0;
-SWord32 ptr_8 = 0;
-SWord32 ptr_12 = 0;
-SWord32 ptr_16 = 0;
-SWord32 ptr_20 = 0;
-SWord32 ptr_24 = 0;
-SWord32 ptr_28 = 0;
-SWord32 ptr_32 = 0;
-SWord32 ptr_36 = 0;
-SWord32 ptr_40 = 0;
-SWord32 ptr_44 = 0;
-SWord32 ptr_48 = 0;
-SWord32 ptr_52 = 0;
-SWord32 ptr_56 = 0;
-SWord32 ptr_60 = 0;
-SWord32 ptr_64 = 0;
-SWord32 ptr_68 = 0;
-SWord32 ptr_72 = 0;
-SWord32 ptr_76 = 0;
-SWord32 ptr_80 = 0;
-SWord32 ptr_84 = 0;
-SWord32 ptr_88 = 0;
-SWord32 ptr_92 = 0;
-SWord32 ptr_96 = 0;
-SWord32 ptr_100 = 0;
+static SWord32 tmp_1 = 0;
+static SWord32 tmp_4 = 0;
+static SWord32 tmp_8 = 0;
+static SWord32 tmp_12 = 0;
+static SWord32 tmp_16 = 1;
+static SWord32 tmp_20 = 1;
+static SWord32 tmp_24 = 1;
+static SWord32 tmp_28 = 1;
+static SWord32 tmp_32 = 1;
+static SWord32 tmp_36 = 1;
+static SWord32 tmp_40 = 1;
+static SWord32 tmp_44 = 1;
+static SWord32 tmp_48 = 1;
+static SWord32 tmp_52 = 1;
+static SWord32 tmp_56 = 1;
+static SWord32 tmp_60 = 1;
+static SWord32 tmp_64 = 1;
+static SWord32 tmp_68 = 1;
+static SWord32 tmp_72 = 1;
+static SWord32 tmp_76 = 1;
+static SWord32 tmp_80 = 1;
+static SWord32 tmp_84 = 1;
+static SWord32 tmp_88 = 1;
+static SWord32 tmp_92 = 1;
+static SWord32 tmp_96 = 1;
+static SWord32 tmp_100 = 1;
+static SWord32 queue_1[1] = { 0 };
+static SWord32 queue_4[1] = { 0 };
+static SWord32 queue_8[1] = { 0 };
+static SWord32 queue_12[1] = { 0 };
+static SWord32 queue_16[1] = { 1 };
+static SWord32 queue_20[1] = { 1 };
+static SWord32 queue_24[1] = { 1 };
+static SWord32 queue_28[1] = { 1 };
+static SWord32 queue_32[1] = { 1 };
+static SWord32 queue_36[1] = { 1 };
+static SWord32 queue_40[1] = { 1 };
+static SWord32 queue_44[1] = { 1 };
+static SWord32 queue_48[1] = { 1 };
+static SWord32 queue_52[1] = { 1 };
+static SWord32 queue_56[1] = { 1 };
+static SWord32 queue_60[1] = { 1 };
+static SWord32 queue_64[1] = { 1 };
+static SWord32 queue_68[1] = { 1 };
+static SWord32 queue_72[1] = { 1 };
+static SWord32 queue_76[1] = { 1 };
+static SWord32 queue_80[1] = { 1 };
+static SWord32 queue_84[1] = { 1 };
+static SWord32 queue_88[1] = { 1 };
+static SWord32 queue_92[1] = { 1 };
+static SWord32 queue_96[1] = { 1 };
+static SWord32 queue_100[1] = { 1 };
+static SWord32 ptr_1 = 0;
+static SWord32 ptr_4 = 0;
+static SWord32 ptr_8 = 0;
+static SWord32 ptr_12 = 0;
+static SWord32 ptr_16 = 0;
+static SWord32 ptr_20 = 0;
+static SWord32 ptr_24 = 0;
+static SWord32 ptr_28 = 0;
+static SWord32 ptr_32 = 0;
+static SWord32 ptr_36 = 0;
+static SWord32 ptr_40 = 0;
+static SWord32 ptr_44 = 0;
+static SWord32 ptr_48 = 0;
+static SWord32 ptr_52 = 0;
+static SWord32 ptr_56 = 0;
+static SWord32 ptr_60 = 0;
+static SWord32 ptr_64 = 0;
+static SWord32 ptr_68 = 0;
+static SWord32 ptr_72 = 0;
+static SWord32 ptr_76 = 0;
+static SWord32 ptr_80 = 0;
+static SWord32 ptr_84 = 0;
+static SWord32 ptr_88 = 0;
+static SWord32 ptr_92 = 0;
+static SWord32 ptr_96 = 0;
+static SWord32 ptr_100 = 0;
 /*ACSL following*/
+
 /*@
  global invariant a_bound_ptr_1: ptr_1 < 1 ; 
  global invariant a_pos_ptr_1: ptr_1 >= 0 ; 
@@ -175,13 +173,13 @@ SWord32 ptr_100 = 0;
 /*@
  assigns \nothing;
 */
-void sampleExts(void) {
+void static sampleExts(void) {
 }
 
 /*@
  assigns \nothing; 
 */
-void fireTriggers(void) {
+void static fireTriggers(void) {
   if (trigger_guard_aMaj())
     aMaj(trigger_aMaj_arg_0(queue_1, ptr_1, queue_4, ptr_4, queue_8, ptr_8, queue_12, ptr_12, queue_16, ptr_16, queue_20, ptr_20, queue_24, ptr_24, queue_28, ptr_28, queue_32, ptr_32, queue_36, ptr_36, queue_40, ptr_40, queue_44, ptr_44, queue_48, ptr_48, queue_52, ptr_52, queue_56, ptr_56, queue_60, ptr_60, queue_64, ptr_64, queue_68, ptr_68, queue_72, ptr_72, queue_76, ptr_76, queue_80, ptr_80, queue_84, ptr_84, queue_88, ptr_88, queue_92, ptr_92, queue_96, ptr_96, queue_100, ptr_100));
   if (trigger_guard_maj())
@@ -191,7 +189,7 @@ void fireTriggers(void) {
 /*@
  assigns \nothing;
  */
-void updateObservers(void) {
+void static updateObservers(void) {
 }
 
 /*@
@@ -222,7 +220,7 @@ void updateObservers(void) {
  assigns tmp_96;
  assigns tmp_100;
  */
-void updateStates(void) {
+void static updateStates(void) {
   tmp_1 = update_state_1(queue_1, ptr_1);
   tmp_4 = update_state_4(queue_4, ptr_4);
   tmp_8 = update_state_8(queue_8, ptr_8);
@@ -305,7 +303,7 @@ void updateStates(void) {
  assigns queue_100[ptr_100];
  ensures queue_100[ptr_100] == tmp_100;
  */
-void updateBuffers(void) {
+void static updateBuffers(void) {
   queue_1[ptr_1] = tmp_1;
   queue_4[ptr_4] = tmp_4;
   queue_8[ptr_8] = tmp_8;
@@ -388,7 +386,7 @@ void updateBuffers(void) {
  assigns ptr_100;
  ensures ptr_100 == (\old (ptr_100 ) + 1) % 1;
  */
-void updatePtrs(void) {
+void static updatePtrs(void) {
   ptr_1 = (ptr_1 + 1) % 1;
   ptr_4 = (ptr_4 + 1) % 1;
   ptr_8 = (ptr_8 + 1) % 1;

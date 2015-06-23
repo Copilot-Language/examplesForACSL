@@ -15,6 +15,7 @@ Make sure that it is effectively updated : check your path, everything ...
 
 
 Then for merging with me :
+==========
 - Give me $ 802,708 first*
 - Clone the (real) sbv repository git from the source.
 - Make him understand where your sandbox is :
@@ -29,6 +30,7 @@ Then for merging with me :
 - You now have a good version of sbv, now you can compile my beautiful project ! Just switch to the right branch (or merge it if you are not afraid of death), and make test in the Copilot directory, it should compile, but the copilot-regression will fail miserably ! What will the world be without planned obscolescence.
 
 If you want to test it, you'll have to do the following :
+========
 - Clone the examplesForACSL respoitory (if you're reading that, it means that you have probably done it already). 
 - Cd in an example directory (do not try zz, it will not work).
 - Setup the sandbox with
@@ -52,4 +54,36 @@ If you want to test it, you'll have to do the following :
         Estimated Average Number of Developers (Effort/Schedule)  = 5.64
         Total Estimated Cost to Develop                           = $ 802,708
         (average salary = $56,286/year, overhead = 2.40).
+
+
+
+
+What does not work
+=================
+
+- There are many features that are limited by either SBV or copilot, some are being fixed, other need just time until they get implemented.
+
+SBV :
+- No floating point functions implemented --> Use external functions !
+- Mo shiftL, shiftR ---> beeing implemented soon.
+- No Pow for integers --> Use an external function
+- No Pow for doubles --> Use an external function
+
+
+ACSL frama-c value analysis :
+- No lemma supported
+- No trigonometrical functions supported --> Use external sin, cos, tan as external functions ! They are already implemented, so you do not have to provide an implementation for them.
+- No pow in ACSL for contracting the pow function.
+- No global strong invariants implemented (as specified)
+- No external function support (or variables) implemented. Gives status unknown for something like 
+
+        SWord64 ff (Sword64 ext_a) return ext_a;
+
+- Casts are sometimes strange ...
+
+ACSL frama-c wp plugin :
+- No global invariant implement (neither normal nor strong) !
+- No bitwise handle.
+
+
 

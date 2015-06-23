@@ -22,4 +22,4 @@ void maj(uint32_t);
 
 /* Step function: */
 
-void step();
+void step(void);

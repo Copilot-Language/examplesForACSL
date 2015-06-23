@@ -3,17 +3,18 @@
 #include <inttypes.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include <string.h>
 #include <math.h>
 #include "internal.h"
 
-/*ACSL following*/
+/* User given declarations: */
 /*test 001*/
 /*ACSL to write
  (s48 + 1)
 */
 /*@
  assigns \nothing;
- ensures \result == (queue_48[ptr_48] + 1);
+ ensures \result == (((queue_48[ptr_48]) + (1)));
 */
 SWord32 update_state_48(const SWord32 *queue_48,
                         const SWord32 ptr_48)
