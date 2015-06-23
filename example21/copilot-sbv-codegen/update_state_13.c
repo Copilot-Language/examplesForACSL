@@ -16,7 +16,6 @@
  assigns \nothing;
  ensures \result == (queue_13[ptr_13]);
 */
-
 SBool update_state_13(const SBool *queue_13, const SWord32 ptr_13)
 {
   const SBool   s0 = queue_13[0];
@@ -162,7 +161,7 @@ SBool update_state_13(const SBool *queue_13, const SWord32 ptr_13)
       s110, s111, s112, s113, s114, s115, s116, s117, s118, s119, s120,
       s121, s122, s123, s124, s125, s126, s127
   };
-  const SWord32 s130 = (0x00000080UL == 0) ? s128 : (s128 % 0x00000080UL);
+  const SWord32 s130 = (0x00000080UL == 0) ? 0 : (s128 % 0x00000080UL);
   const SBool   s131 = table0[s130];
 
   return s131;

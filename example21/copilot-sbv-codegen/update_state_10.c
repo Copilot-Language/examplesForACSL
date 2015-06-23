@@ -16,7 +16,6 @@
  assigns \nothing;
  ensures \result == (((((queue_11[ptr_11]) && (((queue_12[ptr_12]) && (((queue_13[ptr_13]) && (((queue_14[ptr_14]) && (((queue_15[ptr_15]) && (((queue_16[ptr_16]) && (((queue_17[ptr_17]) && (((queue_18[ptr_18]) && (((queue_19[ptr_19]) && (((queue_19[ptr_19]) && (! ((queue_19[ptr_19]))))))))))))))))))))))) || (queue_10[ptr_10])));
 */
-
 SBool update_state_10(const SBool *queue_11, const SWord32 ptr_11,
                       const SBool *queue_12, const SWord32 ptr_12, const SBool *queue_13,
                       const SWord32 ptr_13, const SBool *queue_14, const SWord32 ptr_14,
@@ -1173,23 +1172,23 @@ SBool update_state_10(const SBool *queue_11, const SWord32 ptr_11,
   const SBool table8[] = {
       s1028, s1029
   };
-  const SWord32 s1034 = (0x00000200UL == 0) ? s512 : (s512 % 0x00000200UL);
+  const SWord32 s1034 = (0x00000200UL == 0) ? 0 : (s512 % 0x00000200UL);
   const SBool   s1035 = table0[s1034];
-  const SWord32 s1037 = (0x00000100UL == 0) ? s769 : (s769 % 0x00000100UL);
+  const SWord32 s1037 = (0x00000100UL == 0) ? 0 : (s769 % 0x00000100UL);
   const SBool   s1038 = table1[s1037];
-  const SWord32 s1040 = (0x00000080UL == 0) ? s898 : (s898 % 0x00000080UL);
+  const SWord32 s1040 = (0x00000080UL == 0) ? 0 : (s898 % 0x00000080UL);
   const SBool   s1041 = table2[s1040];
-  const SWord32 s1043 = (0x00000040UL == 0) ? s963 : (s963 % 0x00000040UL);
+  const SWord32 s1043 = (0x00000040UL == 0) ? 0 : (s963 % 0x00000040UL);
   const SBool   s1044 = table3[s1043];
-  const SWord32 s1046 = (0x00000020UL == 0) ? s996 : (s996 % 0x00000020UL);
+  const SWord32 s1046 = (0x00000020UL == 0) ? 0 : (s996 % 0x00000020UL);
   const SBool   s1047 = table4[s1046];
-  const SWord32 s1049 = (0x00000010UL == 0) ? s1013 : (s1013 % 0x00000010UL);
+  const SWord32 s1049 = (0x00000010UL == 0) ? 0 : (s1013 % 0x00000010UL);
   const SBool   s1050 = table5[s1049];
-  const SWord32 s1052 = (0x00000008UL == 0) ? s1022 : (s1022 % 0x00000008UL);
+  const SWord32 s1052 = (0x00000008UL == 0) ? 0 : (s1022 % 0x00000008UL);
   const SBool   s1053 = table6[s1052];
-  const SWord32 s1055 = (0x00000004UL == 0) ? s1027 : (s1027 % 0x00000004UL);
+  const SWord32 s1055 = (0x00000004UL == 0) ? 0 : (s1027 % 0x00000004UL);
   const SBool   s1056 = table7[s1055];
-  const SWord32 s1058 = (0x00000002UL == 0) ? s1030 : (s1030 % 0x00000002UL);
+  const SWord32 s1058 = (0x00000002UL == 0) ? 0 : (s1030 % 0x00000002UL);
   const SBool   s1059 = table8[s1058];
   const SBool   s1060 = !s1059;
   const SBool   s1061 = s1059 & s1060;

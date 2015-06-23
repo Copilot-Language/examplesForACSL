@@ -16,7 +16,6 @@
  assigns \nothing;
  ensures \result == (queue_10[ptr_10]);
 */
-
 SBool observer_sat(const SBool *queue_10, const SWord32 ptr_10)
 {
   const SBool   s0 = queue_10[0];

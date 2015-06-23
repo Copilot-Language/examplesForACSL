@@ -16,7 +16,6 @@
  assigns \nothing;
  ensures \result == (queue_4[ptr_4]);
 */
-
 SBool update_state_4(const SBool *queue_4, const SWord32 ptr_4)
 {
   const SBool   s0 = queue_4[0];
@@ -57,7 +56,7 @@ SBool update_state_4(const SBool *queue_4, const SWord32 ptr_4)
       s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s23, s24, s25,
       s26, s27, s28, s29, s30, s31
   };
-  const SWord32 s34 = (0x00000020UL == 0) ? s32 : (s32 % 0x00000020UL);
+  const SWord32 s34 = (0x00000020UL == 0) ? 0 : (s32 % 0x00000020UL);
   const SBool   s35 = table0[s34];
 
   return s35;
