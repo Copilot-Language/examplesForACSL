@@ -38,12 +38,12 @@ If you want to test it, you'll have to do the following :
 
 
 
-Total Physical Source Lines of Code (SLOC)                = 25,280
-Development Effort Estimate, Person-Years (Person-Months) = 5.94 (71.31)
- (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
-Schedule Estimate, Years (Months)                         = 1.05 (12.65)
- (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
-Estimated Average Number of Developers (Effort/Schedule)  = 5.64
-Total Estimated Cost to Develop                           = $ 802,708
- (average salary = $56,286/year, overhead = 2.40).
+        Total Physical Source Lines of Code (SLOC)                = 25,280
+        Development Effort Estimate, Person-Years (Person-Months) = 5.94 (71.31)
+        (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+        Schedule Estimate, Years (Months)                         = 1.05 (12.65)
+        (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+        Estimated Average Number of Developers (Effort/Schedule)  = 5.64
+        Total Estimated Cost to Develop                           = $ 802,708
+        (average salary = $56,286/year, overhead = 2.40).
 
