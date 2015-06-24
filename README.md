@@ -72,6 +72,7 @@ SBV :
 
 ACSL frama-c value analysis :
 - No lemma supported
+- No let bindings supported (DO NOT USE LOCAL KEYWORD !)
 - No trigonometrical functions supported --> Use external sin, cos, tan as external functions ! They are already implemented, so you do not have to provide an implementation for them.
 - No pow in ACSL for contracting the pow function.
 - No global strong invariants implemented (as specified)
