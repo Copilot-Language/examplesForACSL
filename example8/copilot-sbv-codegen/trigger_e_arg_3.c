@@ -33,9 +33,9 @@ SWord8 trigger_e_arg_3(const SWord8 *queue_5, const SWord32 ptr_5,
   const SWord8 table1[] = {
       s4, s5, s6
   };
-  const SWord32 s9 = (0x00000003UL == 0) ? 0 : (s3 % 0x00000003UL);
+  const SWord32 s9 = (0x00000003UL == 0) ? s3 : (s3 % 0x00000003UL);
   const SWord8  s10 = table0[s9];
-  const SWord32 s11 = (0x00000003UL == 0) ? 0 : (s7 % 0x00000003UL);
+  const SWord32 s11 = (0x00000003UL == 0) ? s7 : (s7 % 0x00000003UL);
   const SWord8  s12 = table1[s11];
   const SWord8  s13 = s10 ^ s12;
 

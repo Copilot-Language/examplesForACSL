@@ -24,7 +24,7 @@ SWord8 ext_arr_e3(const SWord8 *queue_1, const SWord32 ptr_1)
   const SWord8 table0[] = {
       s0, s1
   };
-  const SWord32 s4 = (0x00000002UL == 0) ? 0 : (s2 % 0x00000002UL);
+  const SWord32 s4 = (0x00000002UL == 0) ? s2 : (s2 % 0x00000002UL);
   const SWord8  s5 = table0[s4];
   const SWord8  s7 = s5 + 6;
 

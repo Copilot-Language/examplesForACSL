@@ -20,7 +20,7 @@ SBool observer_i(const SWord64 *queue_4, const SWord32 ptr_4)
 {
   const SWord64 s0 = queue_4[0];
   const SWord32 s1 = ptr_4;
-  const SWord64 s3 = (0x0000000000000002ULL == 0) ? 0 : (s0 % 0x0000000000000002ULL);
+  const SWord64 s3 = (0x0000000000000002ULL == 0) ? s0 : (s0 % 0x0000000000000002ULL);
   const SBool   s5 = s3 == 0x0000000000000000ULL;
   const SBool   s6 = !s5;
 

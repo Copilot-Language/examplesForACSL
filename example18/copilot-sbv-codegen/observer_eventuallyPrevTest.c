@@ -32,7 +32,7 @@ SBool observer_eventuallyPrevTest(const SBool *queue_0,
   const SBool table0[] = {
       s0, s1, s2, s3, s4, s5, s6
   };
-  const SWord32 s11 = (0x00000007UL == 0) ? 0 : (s7 % 0x00000007UL);
+  const SWord32 s11 = (0x00000007UL == 0) ? s7 : (s7 % 0x00000007UL);
   const SBool   s12 = table0[s11];
   const SBool   s13 = s8 | s12;
 

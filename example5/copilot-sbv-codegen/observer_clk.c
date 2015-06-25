@@ -27,7 +27,7 @@ SBool observer_clk(const SBool *queue_1, const SWord32 ptr_1)
   const SBool table0[] = {
       s0, s1, s2, s3, s4
   };
-  const SWord32 s7 = (0x00000005UL == 0) ? 0 : (s5 % 0x00000005UL);
+  const SWord32 s7 = (0x00000005UL == 0) ? s5 : (s5 % 0x00000005UL);
   const SBool   s8 = table0[s7];
 
   return s8;

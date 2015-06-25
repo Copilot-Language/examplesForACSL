@@ -26,7 +26,7 @@ SBool observer_obs7(const SBool *queue_1, const SWord32 ptr_1)
   const SBool table0[] = {
       s0, s1, s2, s3
   };
-  const SWord32 s6 = (0x00000004UL == 0) ? 0 : (s4 % 0x00000004UL);
+  const SWord32 s6 = (0x00000004UL == 0) ? s4 : (s4 % 0x00000004UL);
   const SBool   s7 = table0[s6];
 
   return s7;

@@ -8,7 +8,10 @@ driver: driver.c copilot.h internal.a
 	${CC} ${CCFLAGS} $< -o $@ internal.a
 
 fval: 
-	frama-c -val -main step *.h *.c
+	frama-c -val -main testing -slevel 10000000 *.h *.c | tee logval
+
+fwp: 
+	frama-c -wp -wp-out . -wp-prover Z3 -main testing *.h *.c | tee logwp
 
 splint: 
-	splint -comment-char % *.h *.c
+	splint -comment-char % *.h *.c | tee logsplint

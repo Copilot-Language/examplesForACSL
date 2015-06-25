@@ -42,6 +42,11 @@ If you want to test it, you'll have to do the following :
 - Run make fval for the frama-c analysis, make splint for splint and make all for compiling it into a library.
 
 
+- Or you can also paste this (warranty void if used).
+
+          for D in */; do cd $D; echo $D; cabal sandbox init --sandbox ../../Copilot/.cabal-sandbox/ ; make sandbox; cd copilot-sbv-codegen; make all; frama-c -val -main testing -slevel 1000 *.h *.c | tee logval; cd ..; cd ..; done
+
+
 
 
 
@@ -65,7 +70,6 @@ What does not work
 
 SBV :
 - No floating point functions implemented --> Use external functions !
-- Mo shiftL, shiftR ---> beeing implemented soon.
 - No Pow for integers --> Use an external function
 - No Pow for doubles --> Use an external function
 

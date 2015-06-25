@@ -24,10 +24,10 @@ SWord64 update_state_0(const SWord64 *queue_0, const SWord32 ptr_0)
   const SWord64 table0[] = {
       s0, s1
   };
-  const SWord32 s4 = (0x00000002UL == 0) ? 0 : (s2 % 0x00000002UL);
+  const SWord32 s4 = (0x00000002UL == 0) ? s2 : (s2 % 0x00000002UL);
   const SWord64 s5 = table0[s4];
   const SWord32 s7 = s2 + 0x00000001UL;
-  const SWord32 s8 = (0x00000002UL == 0) ? 0 : (s7 % 0x00000002UL);
+  const SWord32 s8 = (0x00000002UL == 0) ? s7 : (s7 % 0x00000002UL);
   const SWord64 s9 = table0[s8];
   const SWord64 s10 = s5 + s9;
 

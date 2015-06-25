@@ -29,10 +29,10 @@ SBool trigger_testAlways2_arg_0(const SBool *queue_6,
   const SBool table0[] = {
       s0, s1, s2, s3, s4, s5
   };
-  const SWord32 s8 = (0x00000006UL == 0) ? 0 : (s6 % 0x00000006UL);
+  const SWord32 s8 = (0x00000006UL == 0) ? s6 : (s6 % 0x00000006UL);
   const SBool   s9 = table0[s8];
   const SWord32 s11 = s6 + 0x00000001UL;
-  const SWord32 s12 = (0x00000006UL == 0) ? 0 : (s11 % 0x00000006UL);
+  const SWord32 s12 = (0x00000006UL == 0) ? s11 : (s11 % 0x00000006UL);
   const SBool   s13 = table0[s12];
   const SBool   s14 = s9 & s13;
 

@@ -48,11 +48,11 @@ SBool update_state_4(const SBool *queue_5, const SWord32 ptr_5,
   const SBool table2[] = {
       s14, s15
   };
-  const SWord32 s20 = (0x00000008UL == 0) ? 0 : (s8 % 0x00000008UL);
+  const SWord32 s20 = (0x00000008UL == 0) ? s8 : (s8 % 0x00000008UL);
   const SBool   s21 = table0[s20];
-  const SWord32 s23 = (0x00000004UL == 0) ? 0 : (s13 % 0x00000004UL);
+  const SWord32 s23 = (0x00000004UL == 0) ? s13 : (s13 % 0x00000004UL);
   const SBool   s24 = table1[s23];
-  const SWord32 s26 = (0x00000002UL == 0) ? 0 : (s16 % 0x00000002UL);
+  const SWord32 s26 = (0x00000002UL == 0) ? s16 : (s16 % 0x00000002UL);
   const SBool   s27 = table2[s26];
   const SBool   s28 = !s27;
   const SBool   s29 = s24 | s28;

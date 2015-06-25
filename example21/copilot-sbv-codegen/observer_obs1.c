@@ -301,7 +301,7 @@ SBool observer_obs1(const SBool *queue_7, const SWord32 ptr_7)
       s242, s243, s244, s245, s246, s247, s248, s249, s250, s251, s252,
       s253, s254, s255
   };
-  const SWord32 s258 = (0x00000100UL == 0) ? 0 : (s256 % 0x00000100UL);
+  const SWord32 s258 = (0x00000100UL == 0) ? s256 : (s256 % 0x00000100UL);
   const SBool   s259 = table0[s258];
 
   return s259;

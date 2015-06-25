@@ -20,7 +20,7 @@ in local "local_56" = (if var "local_55" then (extern "tmp_probe_1" > 250) else 
 */
 /*@
  assigns \nothing;
- ensures \result == ((\let local_55 = (false) ; ((\let local_56 = (( (local_55) ? (((ext_tmp_probe_1) > (250))) : (((ext_tmp_probe_0) > (250))))) ; ((\let local_57 = (( (((local_55) || (((((ext_tmp_probe_1) > (250))) == (((ext_tmp_probe_0) > (250))))))) ? (2) : (0))) ; ((\let local_58 = (((local_57) == (0))) ; ((\let local_59 = (( (local_58) ? (((ext_tmp_probe_2) > (250))) : (local_56))) ; ((\let local_60 = (( (((local_58) || (((((ext_tmp_probe_2) > (250))) == (local_56))))) ? (((local_57) + (1))) : (((local_57) - (1))))) ; (local_59) )) )) )) )) )) ));
+ ensures \result == (\let local_55 = (false) ; (\let local_56 = (( (local_55) ? (((ext_tmp_probe_1) > (250))) : (((ext_tmp_probe_0) > (250))))) ; (\let local_57 = (( (((local_55) || (((((ext_tmp_probe_1) > (250))) == (((ext_tmp_probe_0) > (250))))))) ? (2) : (0))) ; (\let local_58 = (((local_57) == (0))) ; (\let local_59 = (( (local_58) ? (((ext_tmp_probe_2) > (250))) : (local_56))) ; (\let local_60 = (( (((local_58) || (((((ext_tmp_probe_2) > (250))) == (local_56))))) ? (((local_57) + (1))) : (((local_57) - (1))))) ; (local_59)))))));
 */
 SBool trigger_shutoff_arg_0(const SWord8 ext_tmp_probe_1,
                             const SWord8 ext_tmp_probe_0, const SWord8 ext_tmp_probe_2)

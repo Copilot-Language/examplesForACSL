@@ -27,7 +27,7 @@ SBool trigger_testNext_arg_0(const SBool *queue_5,
       s0, s1, s2
   };
   const SWord32 s5 = s3 + 0x00000001UL;
-  const SWord32 s7 = (0x00000003UL == 0) ? 0 : (s5 % 0x00000003UL);
+  const SWord32 s7 = (0x00000003UL == 0) ? s5 : (s5 % 0x00000003UL);
   const SBool   s8 = table0[s7];
 
   return s8;

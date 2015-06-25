@@ -31,15 +31,15 @@ SBool update_state_2(const SBool *queue_2, const SWord32 ptr_2,
   const SWord8 table1[] = {
       s3, s4
   };
-  const SWord32 s7 = (0x00000002UL == 0) ? 0 : (s2 % 0x00000002UL);
+  const SWord32 s7 = (0x00000002UL == 0) ? s2 : (s2 % 0x00000002UL);
   const SBool   s8 = table0[s7];
   const SWord32 s10 = s2 + 0x00000001UL;
-  const SWord32 s11 = (0x00000002UL == 0) ? 0 : (s10 % 0x00000002UL);
+  const SWord32 s11 = (0x00000002UL == 0) ? s10 : (s10 % 0x00000002UL);
   const SBool   s12 = table0[s11];
   const SWord32 s13 = s5 + 0x00000001UL;
-  const SWord32 s14 = (0x00000002UL == 0) ? 0 : (s13 % 0x00000002UL);
+  const SWord32 s14 = (0x00000002UL == 0) ? s13 : (s13 % 0x00000002UL);
   const SWord8  s15 = table1[s14];
-  const SWord8  s17 = (2 == 0) ? 0 : (s15 % 2);
+  const SWord8  s17 = (2 == 0) ? s15 : (s15 % 2);
   const SBool   s19 = s17 == 0;
   const SBool   s20 = s12 & s19;
   const SBool   s21 = s8 | s20;

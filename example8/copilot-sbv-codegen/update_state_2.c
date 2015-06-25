@@ -25,7 +25,7 @@ SBool update_state_2(const SBool *queue_2, const SWord32 ptr_2)
   const SBool table0[] = {
       s0, s1, s2
   };
-  const SWord32 s5 = (0x00000003UL == 0) ? 0 : (s3 % 0x00000003UL);
+  const SWord32 s5 = (0x00000003UL == 0) ? s3 : (s3 % 0x00000003UL);
   const SBool   s6 = table0[s5];
 
   return s6;

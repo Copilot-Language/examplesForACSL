@@ -20,7 +20,7 @@ SWord16 update_state_0(const SWord16 *queue_0, const SWord32 ptr_0)
 {
   const SWord16 s0 = queue_0[0];
   const SWord32 s1 = ptr_0;
-  const SWord16 s3 = (0x07ffU == 0) ? 0 : (s0 % 0x07ffU);
+  const SWord16 s3 = (0x07ffU == 0) ? s0 : (s0 % 0x07ffU);
 
   return s3;
 }

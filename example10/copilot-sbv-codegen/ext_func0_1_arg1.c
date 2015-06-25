@@ -25,7 +25,7 @@ SWord16 ext_func0_1_arg1(const SWord16 *queue_0,
   const SWord16 table0[] = {
       s0, s1
   };
-  const SWord32 s4 = (0x00000002UL == 0) ? 0 : (s2 % 0x00000002UL);
+  const SWord32 s4 = (0x00000002UL == 0) ? s2 : (s2 % 0x00000002UL);
   const SWord16 s5 = table0[s4];
 
   return s5;

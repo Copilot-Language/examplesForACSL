@@ -25,7 +25,7 @@ SBool trigger_trig1_arg_0(const SWord8 *queue_1,
   const SWord8 table0[] = {
       s0, s1
   };
-  const SWord32 s4 = (0x00000002UL == 0) ? 0 : (s2 % 0x00000002UL);
+  const SWord32 s4 = (0x00000002UL == 0) ? s2 : (s2 % 0x00000002UL);
   const SWord8  s5 = table0[s4];
   const SBool   s7 = s5 < 3;
 

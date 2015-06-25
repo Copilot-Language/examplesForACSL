@@ -180,3 +180,7 @@ void step(void) {
   updateBuffers();
   updatePtrs();
 }
+
+void testing(void) {
+  for(;;) step();
+}

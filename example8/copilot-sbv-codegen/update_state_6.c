@@ -25,7 +25,7 @@ SWord8 update_state_6(const SWord8 *queue_6, const SWord32 ptr_6)
   const SWord8 table0[] = {
       s0, s1, s2
   };
-  const SWord32 s5 = (0x00000003UL == 0) ? 0 : (s3 % 0x00000003UL);
+  const SWord32 s5 = (0x00000003UL == 0) ? s3 : (s3 % 0x00000003UL);
   const SWord8  s6 = table0[s5];
 
   return s6;
