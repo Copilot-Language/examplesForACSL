@@ -1,0 +1,104 @@
+[kernel] Parsing FRAMAC_SHARE/libc/__fc_builtin_for_normalization.i (no preprocessing)
+[kernel] Parsing copilot.h (with preprocessing)
+[kernel] Parsing internal.h (with preprocessing)
+[kernel] Parsing driver.c (with preprocessing)
+[kernel] Parsing trigger_guard_alert_inconsistent_data_from_me.c (with preprocessing)
+[kernel] Parsing update_state_0.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Collecting axiomatic usage
+driver.c:25:[wp] warning: Global invariant not handled yet ('a_bound_ptr_0' ignored)
+driver.c:26:[wp] warning: Global invariant not handled yet ('a_pos_ptr_0' ignored)
+driver.c:27:[wp] warning: Global invariant not handled yet ('a_valid_ptr_0' ignored)
+update_state_0.c:14:[kernel] warning: No code nor implicit assigns clause for function acos, generating default assigns from the specification
+update_state_0.c:14:[kernel] warning: No code nor implicit assigns clause for function acosf, generating default assigns from the specification
+update_state_0.c:14:[kernel] warning: No code nor implicit assigns clause for function acosh, generating default assigns from the specification
+update_state_0.c:14:[kernel] warning: No code nor implicit assigns clause for function acoshf, generating default assigns from the specification
+update_state_0.c:14:[kernel] warning: No code nor implicit assigns clause for function acoshl, generating default assigns from the specification
+update_state_0.c:14:[kernel] warning: No code nor implicit assigns clause for function acosl, generating default assigns from the specification
+update_state_0.c:14:[kernel] warning: Neither code nor specification for function alert_inconsistent_data_from_me, generating default assigns from the prototype
+update_state_0.c:14:[kernel] warning: No code nor implicit assigns clause for function asin, generating default assigns from the specification
+update_state_0.c:14:[kernel] warning: No code nor implicit assigns clause for function asinf, generating default assigns from the specification
+update_state_0.c:14:[kernel] warning: No code nor implicit assigns clause for function asinl, generating default assigns from the specification
+[wp] warning: No definition for 'memchr' interpreted as reads nothing
+[wp] warning: No definition for 'strlen' interpreted as reads nothing
+[wp] warning: No definition for 'memset' interpreted as reads nothing
+[wp] warning: No definition for 'strchr' interpreted as reads nothing
+[wp] warning: No definition for 'strcmp' interpreted as reads nothing
+[wp] warning: No definition for 'strncmp' interpreted as reads nothing
+[wp] warning: No definition for 'wcscmp' interpreted as reads nothing
+[wp] warning: No definition for 'wcslen' interpreted as reads nothing
+[wp] warning: No definition for 'wcsncmp' interpreted as reads nothing
+[wp] warning: Missing RTE guards
+[wp] 69 goals scheduled
+[wp] [Qed] Goal typed_fireTriggers_assign_exit_part1 : Valid
+[wp] [Qed] Goal typed_fireTriggers_assign_exit_part2 : Valid
+[wp] [Qed] Goal typed_fireTriggers_assign_normal_part1 : Valid
+[wp] [Qed] Goal typed_fireTriggers_assign_normal_part2 : Valid
+[wp] [Qed] Goal typed_sampleExts_assign : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part01 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part02 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part03 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part04 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part05 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part06 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part07 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part08 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part09 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part10 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part11 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part12 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part13 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part14 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part15 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part16 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part17 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part18 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part19 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part20 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part21 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part22 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part23 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part24 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part25 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part26 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part27 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part28 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part29 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part30 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part31 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part32 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part33 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part34 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part35 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part36 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part37 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part38 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part39 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part40 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part41 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part42 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part43 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part44 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part45 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part46 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part47 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part48 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part49 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part50 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part51 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part52 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part53 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_inconsistent_data_from_me_assign_part54 : Valid
+[wp] [Qed] Goal typed_updateBuffers_post : Valid
+[wp] [Qed] Goal typed_updateBuffers_assign : Valid
+[wp] [Qed] Goal typed_updateObservers_assign : Valid
+[wp] [Qed] Goal typed_updatePtrs_post : Valid
+[wp] [Qed] Goal typed_updatePtrs_assign : Valid
+[wp] [Qed] Goal typed_updateStates_assign_exit : Valid
+[wp] [Qed] Goal typed_updateStates_assign_normal : Valid
+[wp] [Qed] Goal typed_update_state_0_post : Valid (4ms)
+[wp] [Qed] Goal typed_update_state_0_assign : Valid
+[wp] [Z3] Goal typed_trigger_guard_alert_inconsistent_data_from_me_post : Timeout (Qed:20ms)
+[wp] Proved goals:   68 / 69
+     Qed:            68  (4ms-4ms)
+     Z3:              0  (interrupted: 1)

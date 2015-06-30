@@ -1,7 +1,6 @@
 /* Driver for SBV program generated from Copilot. */
 /* Edit as you see fit */
 
-#include <stdint.h>
 #include "internal.h"
 #include "copilot.h"
 
@@ -50,6 +49,7 @@ void static sampleExts(void) {
   SWord64 tmp_ext_e3_0 = e3[ext_arr_e3(queue_1, ptr_1)];
   SWord64 tmp_ext_ff_1 = ff(ext_ff_1_arg0(queue_1, ptr_1));
   ext_e1 = e1;
+ //@assert ext_e1 == e1;
   ext_e2 = e2;
   ext_e3_0 = tmp_ext_e3_0;
   ext_ff_1 = tmp_ext_ff_1;

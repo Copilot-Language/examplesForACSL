@@ -1,0 +1,197 @@
+[kernel] Parsing FRAMAC_SHARE/libc/__fc_builtin_for_normalization.i (no preprocessing)
+[kernel] Parsing copilot.h (with preprocessing)
+[kernel] Parsing internal.h (with preprocessing)
+[kernel] Parsing driver.c (with preprocessing)
+[kernel] Parsing trigger_guard_alert_inconsistent_data_from_me.c (with preprocessing)
+[kernel] Parsing update_state_0.c (with preprocessing)
+[value] Analyzing a complete application starting at testing
+[value] Computing initial state
+[value] Initial state computed
+[value] Values of globals at initialization
+  __FC_errno ∈ [--..--]
+  my_timestamp ∈ [--..--]
+  my_latitude ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  my_longitude ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  my_ICAO24 ∈ [--..--]
+  my_altitude ∈ [--..--]
+  my_groundspeed ∈ [--..--]
+  my_heading ∈ [--..--]
+  my_AGflag ∈ [--..--]
+  tmp_0 ∈ {0}
+  queue_0[0] ∈ {0}
+  ptr_0 ∈ {0}
+  ext_my_AGflag ∈ {0}
+  ext_my_ICAO24 ∈ {0}
+  ext_my_altitude ∈ {0}
+  ext_my_groundspeed ∈ {0}
+  ext_my_heading ∈ {0}
+  ext_my_latitude ∈ {0}
+  ext_my_longitude ∈ {0}
+  ext_my_timestamp ∈ {0}
+[value] computing for function step <- testing.
+        Called from driver.c:106.
+[value] computing for function sampleExts <- step <- testing.
+        Called from driver.c:97.
+[value] Recording results for sampleExts
+[value] Done for function sampleExts
+[value] computing for function fireTriggers <- step <- testing.
+        Called from driver.c:98.
+[value] computing for function trigger_guard_alert_inconsistent_data_from_me <- 
+                                fireTriggers <- step <- testing.
+        Called from driver.c:63.
+trigger_guard_alert_inconsistent_data_from_me.c:12:[value] Function trigger_guard_alert_inconsistent_data_from_me: postcondition got status unknown.
+[value] Recording results for trigger_guard_alert_inconsistent_data_from_me
+[value] Done for function trigger_guard_alert_inconsistent_data_from_me
+[value] computing for function alert_inconsistent_data_from_me <- fireTriggers <- 
+                                step <- testing.
+        Called from driver.c:64.
+driver.c:64:[kernel] warning: Neither code nor specification for function alert_inconsistent_data_from_me, generating default assigns from the prototype
+[value] using specification for function alert_inconsistent_data_from_me
+[value] Done for function alert_inconsistent_data_from_me
+[value] Recording results for fireTriggers
+[value] Done for function fireTriggers
+[value] computing for function updateObservers <- step <- testing.
+        Called from driver.c:99.
+[value] Recording results for updateObservers
+[value] Done for function updateObservers
+[value] computing for function updateStates <- step <- testing.
+        Called from driver.c:100.
+[value] computing for function update_state_0 <- updateStates <- step <- testing.
+        Called from driver.c:77.
+update_state_0.c:12:[value] Function update_state_0: postcondition got status unknown.
+[value] Recording results for update_state_0
+[value] Done for function update_state_0
+[value] Recording results for updateStates
+[value] Done for function updateStates
+[value] computing for function updateBuffers <- step <- testing.
+        Called from driver.c:101.
+driver.c:82:[value] Function updateBuffers: postcondition got status unknown.
+[value] Recording results for updateBuffers
+[value] Done for function updateBuffers
+[value] computing for function updatePtrs <- step <- testing.
+        Called from driver.c:102.
+driver.c:90:[value] Function updatePtrs: postcondition got status valid.
+[value] Recording results for updatePtrs
+[value] Done for function updatePtrs
+[value] Recording results for step
+[value] Done for function step
+[value] computing for function step <- testing.
+        Called from driver.c:106.
+[value] computing for function sampleExts <- step <- testing.
+        Called from driver.c:97.
+[value] Recording results for sampleExts
+[value] Done for function sampleExts
+[value] computing for function fireTriggers <- step <- testing.
+        Called from driver.c:98.
+[value] computing for function trigger_guard_alert_inconsistent_data_from_me <- 
+                                fireTriggers <- step <- testing.
+        Called from driver.c:63.
+[value] Recording results for trigger_guard_alert_inconsistent_data_from_me
+[value] Done for function trigger_guard_alert_inconsistent_data_from_me
+[value] computing for function alert_inconsistent_data_from_me <- fireTriggers <- 
+                                step <- testing.
+        Called from driver.c:64.
+[value] Done for function alert_inconsistent_data_from_me
+[value] Recording results for fireTriggers
+[value] Done for function fireTriggers
+[value] computing for function updateObservers <- step <- testing.
+        Called from driver.c:99.
+[value] Recording results for updateObservers
+[value] Done for function updateObservers
+[value] computing for function updateStates <- step <- testing.
+        Called from driver.c:100.
+[value] computing for function update_state_0 <- updateStates <- step <- testing.
+        Called from driver.c:77.
+[value] Recording results for update_state_0
+[value] Done for function update_state_0
+[value] Recording results for updateStates
+[value] Done for function updateStates
+[value] computing for function updateBuffers <- step <- testing.
+        Called from driver.c:101.
+[value] Recording results for updateBuffers
+[value] Done for function updateBuffers
+[value] computing for function updatePtrs <- step <- testing.
+        Called from driver.c:102.
+[value] Recording results for updatePtrs
+[value] Done for function updatePtrs
+[value] Recording results for step
+[value] Done for function step
+[value] Recording results for testing
+[value] done for function testing
+[value] ====== VALUES COMPUTED ======
+[value] Values at end of function sampleExts:
+  ext_my_AGflag ∈ [--..--]
+  ext_my_ICAO24 ∈ [--..--]
+  ext_my_altitude ∈ [--..--]
+  ext_my_groundspeed ∈ [--..--]
+  ext_my_heading ∈ [--..--]
+  ext_my_latitude ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  ext_my_longitude ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  ext_my_timestamp ∈ [--..--]
+[value] Values at end of function trigger_guard_alert_inconsistent_data_from_me:
+  s0 ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  s1 ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  s2 ∈ [--..--]
+  s3 ∈ [--..--]
+  s4 ∈ {0}
+  s5 ∈ [--..--]
+  s6 ∈ [--..--]
+  s7 ∈ [--..--]
+  s8 ∈ [--..--]
+  s9 ∈ [--..--]
+  s11 ∈ {0; 1}
+  s13 ∈ {0; 1}
+  s14 ∈ {0; 1}
+  s15 ∈ {0; 1}
+  s17 ∈ {0; 1}
+  s19 ∈ {0; 1}
+  s20 ∈ {0; 1}
+  s21 ∈ {0; 1}
+  s22 ∈ {0; 1}
+  s23 ∈ {0; 1}
+  s25 ∈ {0; 1}
+  s26 ∈ {0; 1}
+  s28 ∈ {0; 1}
+  s29 ∈ {0; 1}
+  s31 ∈ {0; 1}
+  s32 ∈ {0; 1}
+  s34 ∈ {0; 1}
+  s35 ∈ {0; 1}
+  s36 ∈ {0; 1}
+  s37 ∈ {0; 1}
+  s39 ∈ {0; 1}
+  s40 ∈ {0; 1}
+  s41 ∈ {0; 1}
+  s42 ∈ {0; 1}
+  s43 ∈ {0; 1}
+  s44 ∈ {0; 1}
+  s45 ∈ {0; 1}
+  s46 ∈ {0; 1}
+  s47 ∈ {0; 1}
+  s48 ∈ {0; 1}
+[value] Values at end of function fireTriggers:
+  
+[value] Values at end of function updateBuffers:
+  queue_0[0] ∈ [--..--]
+[value] Values at end of function updateObservers:
+  
+[value] Values at end of function updatePtrs:
+  ptr_0 ∈ {0}
+[value] Values at end of function update_state_0:
+  s0 ∈ [--..--]
+[value] Values at end of function updateStates:
+  tmp_0 ∈ [--..--]
+[value] Values at end of function step:
+  tmp_0 ∈ [--..--]
+  queue_0[0] ∈ [--..--]
+  ptr_0 ∈ {0}
+  ext_my_AGflag ∈ [--..--]
+  ext_my_ICAO24 ∈ [--..--]
+  ext_my_altitude ∈ [--..--]
+  ext_my_groundspeed ∈ [--..--]
+  ext_my_heading ∈ [--..--]
+  ext_my_latitude ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  ext_my_longitude ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  ext_my_timestamp ∈ [--..--]
+[value] Values at end of function testing:
+  NON TERMINATING FUNCTION

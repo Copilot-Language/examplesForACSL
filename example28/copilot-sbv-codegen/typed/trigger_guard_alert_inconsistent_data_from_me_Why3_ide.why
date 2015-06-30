@@ -1,0 +1,94 @@
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file trigger_guard_alert_inconsistent_data_from_me.c, line 12) in 'trigger_guard_alert_inconsistent_data_from_me' --- *)
+(* ---------------------------------------------------------- *)
+theory VCtrigger_guard_alert_inconsistent_data_from_me_post
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Cint.Cint
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+use import Memory.Memory
+use import Compound.Compound
+use import Cbits.Cbits
+
+goal WP "expl:Post-condition (file trigger_guard_alert_inconsistent_data_from_me.c, line 12) in 'trigger_guard_alert_inconsistent_data_from_me'":
+  forall i_13 i_12 i_11 i_10 i_9 i_8 i_7 i_6 i_5 i_4 i_3 i_2 i_1 i : int.
+  forall r_1 r : real.
+  forall t : map addr int.
+  forall a : addr.
+  let x = t[(shift_uint64 a 0)] in
+  let x_1 = t[(shift_uint64 a i_11)] in
+  ((is_sint32 i)) ->
+  ((is_sint32 i_1)) ->
+  ((is_sint32 i_2)) ->
+  ((is_sint32 i_3)) ->
+  ((is_sint32 i_4)) ->
+  ((is_sint32 i_5)) ->
+  ((is_sint32 i_13)) ->
+  ((is_uint32 i_6)) ->
+  ((is_uint32 i_11)) ->
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_uint64 i_7)) ->
+  ((is_uint64 i_8)) ->
+  ((is_uint64 i_9)) ->
+  ((is_uint64 i_10)) ->
+  ((is_uint64 i_12)) ->
+  (((region (a.base))) <= 0) ->
+  ((is_uint64 x)) ->
+  ((is_uint64 x_1)) ->
+  (if (0 = (if (0 = (if (i_8 <= 1000) then 1 else 0)) then 1 else 0))
+   then (i = (if (0 = i_13) then 0 else 1)) else (1 = i)) ->
+  (if (0 = (if (0 = (if (i_9 <= 100000) then 1 else 0)) then 1 else 0))
+   then (i_1 = (if (0 = i) then 0 else 1)) else (1 = i_1)) ->
+  (if (0 = (if (0 = (if (i_10 <= 16777215) then 1 else 0)) then 1 else 0))
+   then (i_2 = (if (0 = i_1) then 0 else 1)) else (1 = i_2)) ->
+  (if (0 = (if (0 = (if (x <= i_12) then 1 else 0)) then 1 else 0))
+   then (i_3 = (if (0 = i_2) then 0 else 1)) else (1 = i_3)) ->
+  (if (0
+         = (if (0
+                  = (if (0
+                           = ((land (if ((-.180.0e0) <=. r) then 1 else 0)
+                              (if (r <=. 180.0e0) then 1 else 0)))) then 0
+                     else 1)) then 1 else 0))
+   then (i_4 = (if (0 = i_3) then 0 else 1)) else (1 = i_4)) ->
+  (if (0
+         = (if (0
+                  = (if (0
+                           = ((land (if ((-.90.0e0) <=. r_1) then 1 else 0)
+                              (if (r_1 <=. 90.0e0) then 1 else 0)))) then 0
+                     else 1)) then 1 else 0))
+   then (i_5 = (if (0 = i_4) then 0 else 1)) else (1 = i_5)) ->
+  (if (0 = (if (0 = (if (i_7 <= 359) then 1 else 0)) then 1 else 0))
+   then (i_13
+           = (if (0
+                    = (if ((0 = (if (i_8 <= 199) then 1 else 0)) /\
+                           (0
+                              = (if (0
+                                       = (if (0 = ((to_sint32 i_6))) then 1
+                                          else 0)) then 1 else 0))) then 0
+                       else 1)) then 1 else 0)) else (1 = i_13)) ->
+  ((if (0 = i_5) then 0 else 1)
+     = (if ((90.0e0 <. r_1) \/ (r_1 <. (-.90.0e0))) then 1
+        else (if ((180.0e0 <. r) \/ (r <. (-.180.0e0))) then 1
+              else (if (i_12 < x_1) then 1
+                    else (if ((i_10 < 0) \/ (16777216 <= i_10)) then 1
+                          else (if ((i_9 < 0) \/ (100001 <= i_9)) then 1
+                                else (if ((i_8 < 0) \/ (1001 <= i_8)) then 1
+                                      else (if ((i_7 < 0) \/ (360 <= i_7))
+                                            then 1
+                                            else (if ((0 = i_6) /\
+                                                      (200 <= i_8)) then 1
+                                                  else 0)))))))))
+
+end
+

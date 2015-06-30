@@ -1,0 +1,23 @@
+trigger_guard_alert_inconsistent_data_from_me.c: (in function trigger_guard_alert_inconsistent_data_from_me)
+trigger_guard_alert_inconsistent_data_from_me.c:44:23:
+    Operands of <= have incompatible types (SWord64, unsigned long long):
+    s5 <= 0x0000000000ffffffULL
+  To allow arbitrary integral types to match any integral type, use
+  +matchanyintegral.
+trigger_guard_alert_inconsistent_data_from_me.c:46:23:
+    Operands of <= have incompatible types (SWord64, unsigned long long):
+    s6 <= 0x00000000000186a0ULL
+trigger_guard_alert_inconsistent_data_from_me.c:48:23:
+    Operands of <= have incompatible types (SWord64, unsigned long long):
+    s7 <= 0x00000000000003e8ULL
+trigger_guard_alert_inconsistent_data_from_me.c:50:23:
+    Operands of <= have incompatible types (SWord64, unsigned long long):
+    s8 <= 0x0000000000000167ULL
+trigger_guard_alert_inconsistent_data_from_me.c:54:23:
+    Operands of < have incompatible types (SWord64, unsigned long long):
+    s7 < 0x00000000000000c8ULL
+trigger_guard_alert_inconsistent_data_from_me.c:28:17:
+    Variable s4 declared but not used
+  A variable is declared but never used. Use /*@unused@*/ in front of
+  declaration to suppress message. (Use -varuse to inhibit warning)
+
