@@ -1,0 +1,171 @@
+[kernel] Parsing FRAMAC_SHARE/libc/__fc_builtin_for_normalization.i (no preprocessing)
+[kernel] Parsing copilot.h (with preprocessing)
+[kernel] Parsing internal.h (with preprocessing)
+[kernel] Parsing driver.c (with preprocessing)
+[kernel] Parsing ext_sqrt_0_arg0.c (with preprocessing)
+[kernel] Parsing ext_sqrt_1_arg0.c (with preprocessing)
+[kernel] Parsing ext_sqrt_2_arg0.c (with preprocessing)
+[kernel] Parsing trigger_guard_alert_horizontal_criterion_conflict_resolution_violation.c (with preprocessing)
+[kernel] Parsing trigger_guard_alert_horizontal_criterion_loss_of_separation_violation.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Collecting axiomatic usage
+trigger_guard_alert_horizontal_criterion_loss_of_separation_violation.c:14:[kernel] warning: No code nor implicit assigns clause for function acos, generating default assigns from the specification
+trigger_guard_alert_horizontal_criterion_loss_of_separation_violation.c:14:[kernel] warning: No code nor implicit assigns clause for function acosf, generating default assigns from the specification
+trigger_guard_alert_horizontal_criterion_loss_of_separation_violation.c:14:[kernel] warning: No code nor implicit assigns clause for function acosh, generating default assigns from the specification
+trigger_guard_alert_horizontal_criterion_loss_of_separation_violation.c:14:[kernel] warning: No code nor implicit assigns clause for function acoshf, generating default assigns from the specification
+trigger_guard_alert_horizontal_criterion_loss_of_separation_violation.c:14:[kernel] warning: No code nor implicit assigns clause for function acoshl, generating default assigns from the specification
+trigger_guard_alert_horizontal_criterion_loss_of_separation_violation.c:14:[kernel] warning: No code nor implicit assigns clause for function acosl, generating default assigns from the specification
+trigger_guard_alert_horizontal_criterion_loss_of_separation_violation.c:14:[kernel] warning: Neither code nor specification for function alert_horizontal_criterion_conflict_resolution_violation, generating default assigns from the prototype
+trigger_guard_alert_horizontal_criterion_loss_of_separation_violation.c:14:[kernel] warning: Neither code nor specification for function alert_horizontal_criterion_loss_of_separation_violation, generating default assigns from the prototype
+trigger_guard_alert_horizontal_criterion_loss_of_separation_violation.c:14:[kernel] warning: No code nor implicit assigns clause for function asin, generating default assigns from the specification
+trigger_guard_alert_horizontal_criterion_loss_of_separation_violation.c:14:[kernel] warning: No code nor implicit assigns clause for function asinf, generating default assigns from the specification
+trigger_guard_alert_horizontal_criterion_loss_of_separation_violation.c:14:[kernel] warning: No code nor implicit assigns clause for function asinl, generating default assigns from the specification
+trigger_guard_alert_horizontal_criterion_loss_of_separation_violation.c:14:[kernel] warning: Neither code nor specification for function sqrt, generating default assigns from the prototype
+[wp] warning: No definition for 'memchr' interpreted as reads nothing
+[wp] warning: No definition for 'strlen' interpreted as reads nothing
+[wp] warning: No definition for 'memset' interpreted as reads nothing
+[wp] warning: No definition for 'strchr' interpreted as reads nothing
+[wp] warning: No definition for 'strcmp' interpreted as reads nothing
+[wp] warning: No definition for 'strncmp' interpreted as reads nothing
+[wp] warning: No definition for 'wcscmp' interpreted as reads nothing
+[wp] warning: No definition for 'wcslen' interpreted as reads nothing
+[wp] warning: No definition for 'wcsncmp' interpreted as reads nothing
+[wp] warning: Missing RTE guards
+[wp] Computing [100 goals...]
+[wp] 133 goals scheduled
+[wp] [Qed] Goal typed_ext_sqrt_0_arg0_post : Valid
+[wp] [Qed] Goal typed_ext_sqrt_0_arg0_assign_part1 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_0_arg0_assign_part2 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_0_arg0_assign_part3 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_0_arg0_assign_part4 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_0_arg0_assign_part5 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_0_arg0_assign_part6 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_0_arg0_assign_part7 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_0_arg0_assign_part8 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_0_arg0_assign_part9 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_1_arg0_post : Valid
+[wp] [Qed] Goal typed_ext_sqrt_1_arg0_assign_part1 : Valid (4ms)
+[wp] [Qed] Goal typed_ext_sqrt_1_arg0_assign_part2 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_1_arg0_assign_part3 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_1_arg0_assign_part4 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_1_arg0_assign_part5 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_1_arg0_assign_part6 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_1_arg0_assign_part7 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_1_arg0_assign_part8 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_1_arg0_assign_part9 : Valid (4ms)
+[wp] [Qed] Goal typed_ext_sqrt_2_arg0_post : Valid
+[wp] [Qed] Goal typed_ext_sqrt_2_arg0_assign_part01 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_2_arg0_assign_part02 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_2_arg0_assign_part03 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_2_arg0_assign_part04 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_2_arg0_assign_part05 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_2_arg0_assign_part06 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_2_arg0_assign_part07 : Valid (4ms)
+[wp] [Qed] Goal typed_ext_sqrt_2_arg0_assign_part08 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_2_arg0_assign_part09 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_2_arg0_assign_part10 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_2_arg0_assign_part11 : Valid
+[wp] [Qed] Goal typed_ext_sqrt_2_arg0_assign_part12 : Valid
+[wp] [Qed] Goal typed_fireTriggers_assign_exit_part1 : Valid
+[wp] [Qed] Goal typed_fireTriggers_assign_exit_part2 : Valid
+[wp] [Qed] Goal typed_fireTriggers_assign_exit_part3 : Valid
+[wp] [Qed] Goal typed_fireTriggers_assign_exit_part4 : Valid (4ms)
+[wp] [Qed] Goal typed_fireTriggers_assign_normal_part1 : Valid
+[wp] [Qed] Goal typed_fireTriggers_assign_normal_part2 : Valid
+[wp] [Qed] Goal typed_fireTriggers_assign_normal_part3 : Valid
+[wp] [Qed] Goal typed_fireTriggers_assign_normal_part4 : Valid
+[wp] [Qed] Goal typed_sampleExts_assign_exit_part1 : Valid
+[wp] [Qed] Goal typed_sampleExts_assign_exit_part2 : Valid
+[wp] [Qed] Goal typed_sampleExts_assign_exit_part3 : Valid
+[wp] [Qed] Goal typed_sampleExts_assign_exit_part4 : Valid
+[wp] [Qed] Goal typed_sampleExts_assign_exit_part5 : Valid
+[wp] [Qed] Goal typed_sampleExts_assign_exit_part6 : Valid
+[wp] [Qed] Goal typed_sampleExts_assign_exit_part7 : Valid
+[wp] [Qed] Goal typed_sampleExts_assign_exit_part8 : Valid
+[wp] [Qed] Goal typed_sampleExts_assign_normal_part01 : Valid
+[wp] [Qed] Goal typed_sampleExts_assign_normal_part02 : Valid
+[wp] [Qed] Goal typed_sampleExts_assign_normal_part03 : Valid (8ms)
+[wp] [Qed] Goal typed_sampleExts_assign_normal_part04 : Valid
+[wp] [Qed] Goal typed_sampleExts_assign_normal_part05 : Valid
+[wp] [Qed] Goal typed_sampleExts_assign_normal_part06 : Valid
+[wp] [Qed] Goal typed_sampleExts_assign_normal_part07 : Valid
+[wp] [Qed] Goal typed_sampleExts_assign_normal_part08 : Valid
+[wp] [Qed] Goal typed_sampleExts_assign_normal_part09 : Valid
+[wp] [Qed] Goal typed_sampleExts_assign_normal_part10 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____2 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____3 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____4 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____5 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____6 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____7 : Valid (4ms)
+[wp] [Z3] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut___ : Valid (Qed:16ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____8 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____9 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____10 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____11 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____12 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____13 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____14 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____15 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____16 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____17 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____18 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____19 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____20 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____21 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____22 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____23 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____24 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____25 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____26 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_conflict_resolut____27 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____4 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____5 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____6 : Valid
+[wp] [Z3] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____3 : Valid (Qed:12ms) (20ms)
+[wp] [Z3] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____2 : Valid (Qed:12ms)
+[wp] [Z3] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati___ : Valid (Qed:24ms) (20ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____7 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____8 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____9 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____10 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____11 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____12 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____13 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____14 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____15 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____16 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____17 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____18 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____19 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____20 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____21 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____22 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____23 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____24 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____25 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____26 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____27 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____28 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____29 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____30 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____31 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____32 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____33 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____34 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____35 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____36 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____37 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____38 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____39 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____40 : Valid
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____41 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____42 : Valid (4ms)
+[wp] [Qed] Goal typed_trigger_guard_alert_horizontal_criterion_loss_of_separati____43 : Valid (4ms)
+[wp] [Qed] Goal typed_updateBuffers_assign : Valid
+[wp] [Qed] Goal typed_updateObservers_assign : Valid
+[wp] [Qed] Goal typed_updatePtrs_assign : Valid
+[wp] [Qed] Goal typed_updateStates_assign : Valid
+[wp] Proved goals:  133 / 133
+     Qed:           129  (4ms-24ms)
+     Z3:              4  (20ms-20ms)

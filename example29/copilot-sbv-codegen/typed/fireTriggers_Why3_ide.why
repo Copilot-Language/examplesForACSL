@@ -1,0 +1,48 @@
+(* ---------------------------------------------------------- *)
+(* --- Instance of 'Pre-condition (file trigger_guard_alert_horizontal_criterion_loss_of_separation_violation.c, line 11) in 'trigger_guard_alert_horizontal_criterion_loss_of_separation_violation'' in 'fireTriggers' at call 'trigger_guard_alert_horizontal_criterion_loss_of_separation_violation' (file driver.c, line 93)
+ --- *)
+(* ---------------------------------------------------------- *)
+theory VCfireTriggers_call_trigger_guard_alert_horizontal_criterio___
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+use import Cint.Cint
+
+goal WP "expl:Instance of 'Pre-condition (file trigger_guard_alert_horizontal_criterion_loss_of_separation_violation.c, line 11) in 'trigger_guard_alert_horizontal_criterion_loss_of_separation_violation'' in 'fireTriggers' at call 'trigger_guard_alert_horizontal_criterion_loss_of_separation_violation' (file driver.c, line 93)
+":
+  forall i : int.
+  forall r_11 r_10 r_9 r_8 r_7 r_6 r_5 r_4 r_3 r_2 r_1 r : real.
+  let r_12 = r_4 -. r_3 in
+  let r_13 = r_10 -. r_11 in
+  let r_14 = r_6 -. r_5 in
+  let r_15 = r_8 -. r_9 in
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_2)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_4)) ->
+  ((is_float64 r_5)) ->
+  ((is_float64 r_6)) ->
+  ((is_float64 r_7)) ->
+  ((is_float64 r_8)) ->
+  ((is_float64 r_9)) ->
+  ((is_float64 r_10)) ->
+  ((is_float64 r_11)) ->
+  ((is_uint32 i)) ->
+  ((0 <> i) <->
+   (((r_12 *. r_13) +. (r_14 *. r_15))
+      <. (r_1 *. (r /. r_7) *. ((r_12 *. r_15) -. (r_14 *. r_13))))) ->
+  (0.0 <> r_2)
+
+end
+

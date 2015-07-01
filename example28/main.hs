@@ -9,7 +9,8 @@ import Debug.Trace
 import Control.Monad (foldM_)
 
 --------------------------------------------------------------------------------
-
+-- NEVER USE THIS PIECE OF CODE FOR WRITING A REAL MONITOR (cf ARIANE 5 fail)
+--------------------------------------------------------------------------------
 
 import qualified Data.List as L
 
@@ -29,6 +30,7 @@ myAltitude = externW64 "my_altitude" Nothing
 --in feet : must be lower than 100000 ft
 myGroundspeed = externW64 "my_groundspeed" Nothing
 -- in knots (nm per hour) : must be lower than 1000 knots -- TODO : is this the GPS calculated speed ?
+-- FIXME : the groundspeed cannot be faster than 200 knots when G flag activated.
 myHeading = externW64 "my_heading" Nothing
 -- ranging from 0 to 359
 myAGflag = externB "my_AGflag" Nothing
