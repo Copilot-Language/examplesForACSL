@@ -9,7 +9,7 @@
 */
 /*@
  assigns \nothing;
- ensures \result == (! ((((((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_planned_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_planned_velocity_y) - (ext_intruder_velocity_y))))))) >= (((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))) && (((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_planned_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_planned_velocity_y) - (ext_intruder_velocity_y))))))) > (((((ext_sqrt_1) / (ext_maximum_time_for_horizontal_violation))) * (((ext_minimal_horizontal_separation) - (ext_sqrt_1)))))))))));
+ ensures \result == (! ((((((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_planned_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_planned_velocity_y) - (ext_intruder_velocity_y))))))) >= (((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))) && (((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_planned_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_planned_velocity_y) - (ext_intruder_velocity_y))))))) > (((((ext_sqrt_0) / (ext_maximum_time_for_horizontal_violation))) * (((ext_minimal_horizontal_separation) - (ext_sqrt_1)))))))))));
 */
 SBool trigger_guard_alert_horizontal_criterion_loss_of_separation_violation(const SDouble ext_ownship_position_x,
                                                                             const SDouble ext_intruder_position_x,
@@ -53,7 +53,7 @@ SBool trigger_guard_alert_horizontal_criterion_loss_of_separation_violation(cons
   const SDouble s24 = s17 * s23;
   const SDouble s25 = s22 + s24;
   const SBool   s26 = s20 >= s25;
-  const SDouble s27 = s13 / s11;
+  const SDouble s27 = s10 / s11;
   const SDouble s28 = s12 - s13;
   const SDouble s29 = s27 * s28;
   const SBool   s30 = s20 > s29;

@@ -17,25 +17,24 @@ use import Cfloat.Cfloat
 use import real.Abs as RAbs
 
 goal WP "expl:Post-condition (file trigger_guard_alert_horizontal_criterion_loss_of_separation_violation.c, line 12) in 'trigger_guard_alert_horizontal_criterion_loss_of_separation_violation' (1/3)":
-  forall r_12 r_11 r_10 r_9 r_8 r_7 r_6 r_5 r_4 r_3 r_2 r_1 r : real.
-  let r_13 = r_2 /. r_3 in
-  let r_14 = -. r_6 in
-  let r_15 = r_4 -. r_6 in
-  let r_16 = -. r_8 in
-  let r_17 = r_5 -. r_8 in
-  let r_18 = r_7 -. r_6 in
-  let r_19 = r_9 -. r_8 in
-  let r_20 = r_11 -. r_10 in
-  let r_21 = r *. r_13 in
-  let r_22 = r_1 *. r_17 in
-  let r_23 = r_1 *. r_19 in
-  let r_24 = r_15 *. r_20 in
-  let r_25 = r_18 *. r_20 in
-  let r_26 = r_22 +. r_24 in
+  forall r_13 r_12 r_11 r_10 r_9 r_8 r_7 r_6 r_5 r_4 r_3 r_2 r_1 r : real.
+  let r_14 = r_4 /. r_3 in
+  let r_15 = -. r_7 in
+  let r_16 = r_5 -. r_7 in
+  let r_17 = -. r_9 in
+  let r_18 = r_6 -. r_9 in
+  let r_19 = r_8 -. r_7 in
+  let r_20 = r_10 -. r_9 in
+  let r_21 = r_12 -. r_11 in
+  let r_22 = r *. r_14 in
+  let r_23 = r_1 *. r_18 in
+  let r_24 = r_1 *. r_20 in
+  let r_25 = r_16 *. r_21 in
+  let r_26 = r_19 *. r_21 in
   let r_27 = r_23 +. r_25 in
+  let r_28 = r_24 +. r_26 in
   ((is_float64 r)) ->
   ((is_float64 r_1)) ->
-  ((is_float64 r_2)) ->
   ((is_float64 r_3)) ->
   ((is_float64 r_4)) ->
   ((is_float64 r_5)) ->
@@ -45,11 +44,11 @@ goal WP "expl:Post-condition (file trigger_guard_alert_horizontal_criterion_loss
   ((is_float64 r_9)) ->
   ((is_float64 r_10)) ->
   ((is_float64 r_11)) ->
-  ((is_float64 r_13)) ->
+  ((is_float64 r_12)) ->
+  ((is_float64 r_14)) ->
   ((is_float64 (r +. r_2))) ->
-  ((is_float64 (r_1 +. r_12))) ->
-  ((is_float64 r_15)) ->
-  ((is_float64 r_17)) ->
+  ((is_float64 (r_1 +. r_13))) ->
+  ((is_float64 r_16)) ->
   ((is_float64 r_18)) ->
   ((is_float64 r_19)) ->
   ((is_float64 r_20)) ->
@@ -60,9 +59,10 @@ goal WP "expl:Post-condition (file trigger_guard_alert_horizontal_criterion_loss
   ((is_float64 r_25)) ->
   ((is_float64 r_26)) ->
   ((is_float64 r_27)) ->
-  (0 <> (if (r_21 <. r_27) then 1 else 0)) ->
-  (0 <> (if (r_26 <=. r_27) then 1 else 0)) ->
-  ((r_21 <. r_27) /\ (r_26 <=. r_27))
+  ((is_float64 r_28)) ->
+  (0 <> (if (r_22 <. r_28) then 1 else 0)) ->
+  (0 <> (if (r_27 <=. r_28) then 1 else 0)) ->
+  ((r_22 <. r_28) /\ (r_27 <=. r_28))
 
 end
 
@@ -85,25 +85,24 @@ use import Cfloat.Cfloat
 use import real.Abs as RAbs
 
 goal WP "expl:Post-condition (file trigger_guard_alert_horizontal_criterion_loss_of_separation_violation.c, line 12) in 'trigger_guard_alert_horizontal_criterion_loss_of_separation_violation' (2/3)":
-  forall r_12 r_11 r_10 r_9 r_8 r_7 r_6 r_5 r_4 r_3 r_2 r_1 r : real.
-  let r_13 = r_2 /. r_3 in
-  let r_14 = -. r_6 in
-  let r_15 = r_4 -. r_6 in
-  let r_16 = -. r_8 in
-  let r_17 = r_5 -. r_8 in
-  let r_18 = r_7 -. r_6 in
-  let r_19 = r_9 -. r_8 in
-  let r_20 = r_11 -. r_10 in
-  let r_21 = r *. r_13 in
-  let r_22 = r_1 *. r_17 in
-  let r_23 = r_1 *. r_19 in
-  let r_24 = r_15 *. r_20 in
-  let r_25 = r_18 *. r_20 in
-  let r_26 = r_22 +. r_24 in
+  forall r_13 r_12 r_11 r_10 r_9 r_8 r_7 r_6 r_5 r_4 r_3 r_2 r_1 r : real.
+  let r_14 = r_4 /. r_3 in
+  let r_15 = -. r_7 in
+  let r_16 = r_5 -. r_7 in
+  let r_17 = -. r_9 in
+  let r_18 = r_6 -. r_9 in
+  let r_19 = r_8 -. r_7 in
+  let r_20 = r_10 -. r_9 in
+  let r_21 = r_12 -. r_11 in
+  let r_22 = r *. r_14 in
+  let r_23 = r_1 *. r_18 in
+  let r_24 = r_1 *. r_20 in
+  let r_25 = r_16 *. r_21 in
+  let r_26 = r_19 *. r_21 in
   let r_27 = r_23 +. r_25 in
+  let r_28 = r_24 +. r_26 in
   ((is_float64 r)) ->
   ((is_float64 r_1)) ->
-  ((is_float64 r_2)) ->
   ((is_float64 r_3)) ->
   ((is_float64 r_4)) ->
   ((is_float64 r_5)) ->
@@ -113,11 +112,11 @@ goal WP "expl:Post-condition (file trigger_guard_alert_horizontal_criterion_loss
   ((is_float64 r_9)) ->
   ((is_float64 r_10)) ->
   ((is_float64 r_11)) ->
-  ((is_float64 r_13)) ->
+  ((is_float64 r_12)) ->
+  ((is_float64 r_14)) ->
   ((is_float64 (r +. r_2))) ->
-  ((is_float64 (r_1 +. r_12))) ->
-  ((is_float64 r_15)) ->
-  ((is_float64 r_17)) ->
+  ((is_float64 (r_1 +. r_13))) ->
+  ((is_float64 r_16)) ->
   ((is_float64 r_18)) ->
   ((is_float64 r_19)) ->
   ((is_float64 r_20)) ->
@@ -128,9 +127,10 @@ goal WP "expl:Post-condition (file trigger_guard_alert_horizontal_criterion_loss
   ((is_float64 r_25)) ->
   ((is_float64 r_26)) ->
   ((is_float64 r_27)) ->
-  (0 = (if (r_21 <. r_27) then 1 else 0)) ->
-  (0 <> (if (r_26 <=. r_27) then 1 else 0)) ->
-  ((r_27 <. r_26) \/ (r_27 <=. r_21))
+  ((is_float64 r_28)) ->
+  (0 = (if (r_22 <. r_28) then 1 else 0)) ->
+  (0 <> (if (r_27 <=. r_28) then 1 else 0)) ->
+  ((r_28 <. r_27) \/ (r_28 <=. r_22))
 
 end
 
@@ -153,20 +153,20 @@ use import Cfloat.Cfloat
 use import real.Abs as RAbs
 
 goal WP "expl:Post-condition (file trigger_guard_alert_horizontal_criterion_loss_of_separation_violation.c, line 12) in 'trigger_guard_alert_horizontal_criterion_loss_of_separation_violation' (3/3)":
-  forall r_12 r_11 r_10 r_9 r_8 r_7 r_6 r_5 r_4 r_3 r_2 r_1 r : real.
-  let r_13 = -. r_5 in
-  let r_14 = r_3 -. r_5 in
-  let r_15 = -. r_7 in
-  let r_16 = r_4 -. r_7 in
-  let r_17 = r_6 -. r_5 in
-  let r_18 = r_8 -. r_7 in
-  let r_19 = r_11 -. r_10 in
-  let r_20 = r *. r_16 in
-  let r_21 = r *. r_18 in
-  let r_22 = r_14 *. r_19 in
-  let r_23 = r_17 *. r_19 in
-  let r_24 = r_20 +. r_22 in
+  forall r_13 r_12 r_11 r_10 r_9 r_8 r_7 r_6 r_5 r_4 r_3 r_2 r_1 r : real.
+  let r_14 = -. r_6 in
+  let r_15 = r_4 -. r_6 in
+  let r_16 = -. r_8 in
+  let r_17 = r_5 -. r_8 in
+  let r_18 = r_7 -. r_6 in
+  let r_19 = r_9 -. r_8 in
+  let r_20 = r_12 -. r_11 in
+  let r_21 = r *. r_17 in
+  let r_22 = r *. r_19 in
+  let r_23 = r_15 *. r_20 in
+  let r_24 = r_18 *. r_20 in
   let r_25 = r_21 +. r_23 in
+  let r_26 = r_22 +. r_24 in
   ((is_float64 r)) ->
   ((is_float64 r_1)) ->
   ((is_float64 r_2)) ->
@@ -179,9 +179,9 @@ goal WP "expl:Post-condition (file trigger_guard_alert_horizontal_criterion_loss
   ((is_float64 r_9)) ->
   ((is_float64 r_10)) ->
   ((is_float64 r_11)) ->
-  ((is_float64 (r +. r_12))) ->
-  ((is_float64 r_14)) ->
-  ((is_float64 r_16)) ->
+  ((is_float64 r_12)) ->
+  ((is_float64 (r +. r_13))) ->
+  ((is_float64 r_15)) ->
   ((is_float64 r_17)) ->
   ((is_float64 r_18)) ->
   ((is_float64 r_19)) ->
@@ -191,8 +191,9 @@ goal WP "expl:Post-condition (file trigger_guard_alert_horizontal_criterion_loss
   ((is_float64 r_23)) ->
   ((is_float64 r_24)) ->
   ((is_float64 r_25)) ->
-  (0 = (if (r_24 <=. r_25) then 1 else 0)) ->
-  ((r_25 <. r_24) \/ (r_25 <=. ((r_1 /. r_2) *. (r_9 -. r_1))))
+  ((is_float64 r_26)) ->
+  (0 = (if (r_25 <=. r_26) then 1 else 0)) ->
+  ((r_26 <. r_25) \/ (r_26 <=. ((r_3 /. r_2) *. (r_10 -. r_1))))
 
 end
 

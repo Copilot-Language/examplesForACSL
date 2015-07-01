@@ -32,14 +32,14 @@ warning: axiom Abs_prod does not contain any local abstract symbol
 File "/home/jaloyan/.opam/4.02.1/share/frama-c/wp/why3/Cfloat.why", line 41, characters 6-27:
 warning: axiom triangular_inequality does not contain any local abstract symbol
 File "./typed/trigger_guard_alert_horizontal_criterion_loss_of_separation_violation_Why3_ide.why", line 24, characters 6-10:
-warning: unused variable r_16
+warning: unused variable r_17
 File "./typed/trigger_guard_alert_horizontal_criterion_loss_of_separation_violation_Why3_ide.why", line 22, characters 6-10:
-warning: unused variable r_14
-File "./typed/trigger_guard_alert_horizontal_criterion_loss_of_separation_violation_Why3_ide.why", line 92, characters 6-10:
-warning: unused variable r_16
-File "./typed/trigger_guard_alert_horizontal_criterion_loss_of_separation_violation_Why3_ide.why", line 90, characters 6-10:
-warning: unused variable r_14
-File "./typed/trigger_guard_alert_horizontal_criterion_loss_of_separation_violation_Why3_ide.why", line 159, characters 6-10:
 warning: unused variable r_15
+File "./typed/trigger_guard_alert_horizontal_criterion_loss_of_separation_violation_Why3_ide.why", line 92, characters 6-10:
+warning: unused variable r_17
+File "./typed/trigger_guard_alert_horizontal_criterion_loss_of_separation_violation_Why3_ide.why", line 90, characters 6-10:
+warning: unused variable r_15
+File "./typed/trigger_guard_alert_horizontal_criterion_loss_of_separation_violation_Why3_ide.why", line 159, characters 6-10:
+warning: unused variable r_16
 File "./typed/trigger_guard_alert_horizontal_criterion_loss_of_separation_violation_Why3_ide.why", line 157, characters 6-10:
-warning: unused variable r_13
+warning: unused variable r_14

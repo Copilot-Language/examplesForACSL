@@ -113,10 +113,12 @@ horizontalCriterionForLossOfSeparationViolation sx sy vx vy th v'x v'y = not $ h
 
 ----------------------------------------
 
+
 spec :: Spec
 spec = do
   trigger "alert_horizontal_criterion_conflict_resolution_violation" (horizontalCriterionForConflictResolutionViolation relPositionX relPositionY directionParameter relPlannedVelocityX relPlannedVelocityY) []
   trigger "alert_horizontal_criterion_loss_of_separation_violation" (horizontalCriterionForLossOfSeparationViolation relPositionX relPositionY relVelocityX relVelocityY maxTimeForHorizontalViolation relPlannedVelocityX relPlannedVelocityY) []
+--  observer "debug001" (exitDotMin relPositionX relPositionY maxTimeForHorizontalViolation)
 main = do
    reify spec >>= S.compile S.defaultParams
 
