@@ -10,8 +10,11 @@ ARFLAGS=cr
 
 all: internal.a
 
-internal.a: trigger_guard_alert_horizontal_criterion_loss_of_separation_violation.o trigger_guard_alert_horizontal_criterion_conflict_resolution_violation.o ext_sqrt_0_arg0.o ext_sqrt_1_arg0.o ext_sqrt_2_arg0.o
+internal.a: trigger_guard_alert_vertical_criterion_conflict_resolution_violation.o trigger_guard_alert_horizontal_criterion_loss_of_separation_violation.o trigger_guard_alert_horizontal_criterion_conflict_resolution_violation.o ext_sqrt_0_arg0.o ext_sqrt_1_arg0.o ext_sqrt_2_arg0.o ext_sqrt_3_arg0.o ext_sqrt_4_arg0.o ext_sqrt_5_arg0.o ext_sqrt_6_arg0.o ext_sqrt_7_arg0.o ext_sqrt_8_arg0.o ext_sqrt_9_arg0.o ext_sqrt_10_arg0.o ext_sqrt_11_arg0.o ext_sqrt_12_arg0.o ext_sqrt_13_arg0.o
 	${AR} ${ARFLAGS} $@ $^
+
+trigger_guard_alert_vertical_criterion_conflict_resolution_violation.o: trigger_guard_alert_vertical_criterion_conflict_resolution_violation.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
 
 trigger_guard_alert_horizontal_criterion_loss_of_separation_violation.o: trigger_guard_alert_horizontal_criterion_loss_of_separation_violation.c internal.h
 	${CC} ${CCFLAGS} -c $< -o $@
@@ -26,6 +29,39 @@ ext_sqrt_1_arg0.o: ext_sqrt_1_arg0.c internal.h
 	${CC} ${CCFLAGS} -c $< -o $@
 
 ext_sqrt_2_arg0.o: ext_sqrt_2_arg0.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
+
+ext_sqrt_3_arg0.o: ext_sqrt_3_arg0.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
+
+ext_sqrt_4_arg0.o: ext_sqrt_4_arg0.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
+
+ext_sqrt_5_arg0.o: ext_sqrt_5_arg0.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
+
+ext_sqrt_6_arg0.o: ext_sqrt_6_arg0.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
+
+ext_sqrt_7_arg0.o: ext_sqrt_7_arg0.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
+
+ext_sqrt_8_arg0.o: ext_sqrt_8_arg0.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
+
+ext_sqrt_9_arg0.o: ext_sqrt_9_arg0.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
+
+ext_sqrt_10_arg0.o: ext_sqrt_10_arg0.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
+
+ext_sqrt_11_arg0.o: ext_sqrt_11_arg0.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
+
+ext_sqrt_12_arg0.o: ext_sqrt_12_arg0.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
+
+ext_sqrt_13_arg0.o: ext_sqrt_13_arg0.c internal.h
 	${CC} ${CCFLAGS} -c $< -o $@
 
 clean:
