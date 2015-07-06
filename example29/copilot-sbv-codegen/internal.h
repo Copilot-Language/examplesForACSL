@@ -50,8 +50,7 @@ SBool trigger_guard_alert_3D_loss_separation_violation(const SDouble ext_ownship
                                                        const SDouble ext_minimal_vertical_separation,
                                                        const SDouble ext_ownship_planned_velocity_z,
                                                        const SDouble ext_intruder_velocity_z,
-                                                       const SDouble ext_ownship_velocity_z,
-                                                       const SDouble ext_direction_parameter_vertical);
+                                                       const SDouble ext_ownship_velocity_z);
 SBool trigger_guard_alert_3D_conflict_resolution_violation(const SDouble ext_ownship_position_x,
                                                            const SDouble ext_intruder_position_x,
                                                            const SDouble ext_ownship_position_y,

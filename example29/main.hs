@@ -152,8 +152,8 @@ verticalCriterionForConflictResolutionViolation sx sy sz vx vy vz e v'x v'y v'z 
 -- Vertical Criterion for Loss of Separation Recovery
 ----------------------------------------
 
-ttez :: Stream Double -> Stream Double -> Stream Double -> Stream Double
-ttez sz vz e = (e*minVerSep*(signum vz) - sz)/(vz)
+ttez :: Stream Double -> Stream Double -> Stream Double
+ttez sz vz = (minVerSep*(signum vz) - sz)/(vz)
 
 zCriterion :: Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Bool
 zCriterion sx sy sz vz v'z = 
@@ -170,20 +170,20 @@ break_symetry sx sy sz =
 
 verticalCriterionForLossOfSeparation :: Stream Double -> Stream Double -> Stream Double -> 
                                         Stream Double -> Stream Double -> Stream Double -> 
-                                        Stream Double -> Stream Double -> 
+                                        Stream Double -> 
                                         Stream Double -> Stream Double -> Stream Double -> 
                                         Stream Bool
-verticalCriterionForLossOfSeparation sx sy sz vx vy vz tv e v'x v'y v'z = 
+verticalCriterionForLossOfSeparation sx sy sz vx vy vz tv v'x v'y v'z = 
   ((abs sz) < minVerSep) &&
   (zCriterion sx sy sz vz v'z) &&
-  (tv >= (ttez sz vz e))
+  (tv >= (ttez sz vz))
 
 verticalCriterionForLossOfSeparationViolation :: Stream Double -> Stream Double -> Stream Double -> 
                                                  Stream Double -> Stream Double -> Stream Double -> 
-                                                 Stream Double -> Stream Double -> 
+                                                 Stream Double -> 
                                                  Stream Double -> Stream Double -> Stream Double -> 
                                                  Stream Bool
-verticalCriterionForLossOfSeparationViolation sx sy sz vx vy vz tv e v'x v'y v'z = not $ verticalCriterionForLossOfSeparation sx sy sz vx vy vz tv e v'x v'y v'z
+verticalCriterionForLossOfSeparationViolation sx sy sz vx vy vz tv v'x v'y v'z = not $ verticalCriterionForLossOfSeparation sx sy sz vx vy vz tv v'x v'y v'z
 
 ----------------------------------------
 -- 3D Criterions
@@ -208,19 +208,19 @@ criterion3DConflictResolutionViolation sx sy sz vx vy vz eh ev v'x v'y v'z = not
 
 criterion3DLossSeparation :: Stream Double -> Stream Double -> Stream Double -> 
                              Stream Double -> Stream Double -> Stream Double -> 
-                             Stream Double -> Stream Double -> 
+                             Stream Double -> 
                              Stream Double -> Stream Double -> Stream Double -> 
                              Stream Bool
-criterion3DLossSeparation sx sy sz vx vy vz t ev v'x v'y v'z = 
+criterion3DLossSeparation sx sy sz vx vy vz t v'x v'y v'z = 
   (horizontalCriterionForLossOfSeparation sx sy vx vy t v'x v'y) ||
-  (verticalCriterionForLossOfSeparation sx sy sz vx vy vz t ev v'x v'y v'z)
+  (verticalCriterionForLossOfSeparation sx sy sz vx vy vz t v'x v'y v'z)
 
 criterion3DLossSeparationViolation :: Stream Double -> Stream Double -> Stream Double -> 
                                       Stream Double -> Stream Double -> Stream Double -> 
-                                      Stream Double -> Stream Double -> 
+                                      Stream Double -> 
                                       Stream Double -> Stream Double -> Stream Double -> 
                                       Stream Bool
-criterion3DLossSeparationViolation sx sy sz vx vy vz t ev v'x v'y v'z = not $ criterion3DLossSeparation sx sy sz vx vy vz t ev v'x v'y v'z
+criterion3DLossSeparationViolation sx sy sz vx vy vz t v'x v'y v'z = not $ criterion3DLossSeparation sx sy sz vx vy vz t v'x v'y v'z
 ----------------------------------------
 
 
@@ -233,7 +233,7 @@ spec = do
   
 --MAIN CRITERIONS : CAREFUL the conflict resolution requires a HUUUUUUUUUUUUGE RAM memory.
   trigger "alert_3D_conflict_resolution_violation" (criterion3DConflictResolutionViolation relPositionX relPositionY relPositionZ relVelocityX relVelocityY relVelocityZ directionParameterHorizontal directionParameterVertical relPlannedVelocityX relPlannedVelocityY relPlannedVelocityZ) []
-  trigger "alert_3D_loss_separation_violation" (criterion3DLossSeparationViolation relPositionX relPositionY relPositionZ relVelocityX relVelocityY relVelocityZ maxTimeForViolation directionParameterVertical relPlannedVelocityX relPlannedVelocityY relPlannedVelocityZ) []
+  trigger "alert_3D_loss_separation_violation" (criterion3DLossSeparationViolation relPositionX relPositionY relPositionZ relVelocityX relVelocityY relVelocityZ maxTimeForViolation relPlannedVelocityX relPlannedVelocityY relPlannedVelocityZ) []
 --  observer "debug001" (exitDotMin relPositionX relPositionY maxTimeForViolation)
 main = do
    reify spec >>= S.compile S.defaultParams
