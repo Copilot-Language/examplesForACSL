@@ -32,7 +32,8 @@ ownPlannedVelocityX = externD "ownship_planned_velocity_x" Nothing
 ownPlannedVelocityY = externD "ownship_planned_velocity_y" Nothing
 ownPlannedVelocityZ = externD "ownship_planned_velocity_z" Nothing
 
-directionParameter = externD "direction_parameter" Nothing
+directionParameterHorizontal = externD "direction_parameter_horizontal" Nothing
+directionParameterVertical = externD "direction_parameter_vertical" Nothing
 --Must be the same for both planes that manoeuver 
 -- (has to be checked in the flight controler)
 
@@ -68,7 +69,7 @@ relPositionZ = ownPositionZ - intPositionZ
 
 minHorSep = externD "minimal_horizontal_separation" Nothing
 minVerSep = externD "minimal_vertical_separation" Nothing
-maxTimeForHorizontalViolation = externD "maximum_time_for_horizontal_violation" Nothing
+maxTimeForViolation = externD "maximum_time_for_violation" Nothing
 
 -----------------------------------------
 -- MATHEMATICAL TOOLS on vectors
@@ -141,20 +142,99 @@ verticalCriterionForConflictResolution :: Stream Double -> Stream Double -> Stre
                                           Stream Double -> 
                                           Stream Double -> Stream Double -> Stream Double -> Stream Bool
 verticalCriterionForConflictResolution sx sy sz vx vy vz e v'x v'y v'z = 
-  ((normsq2dim sx sy == 0) && (v'z >= 0) && ((e * sz) >= minVerSep)) || 
+  (((normsq2dim sx sy == 0) && (v'z >= 0) && ((e * sz) >= minVerSep))) || 
   ((deltaVertical sx sy sz vx vy vz > 0) && ((label "theta_dir_1" (thetaVert sx sy vx vy (dirVert e sz))) > 0) && (intersectsHalfPlane sx sy sz v'x v'y v'z (sx + (label "theta_dir_2" (thetaVert sx sy vx vy (dirVert e sz)))*vx) (sy + (label "theta_dir_3" (thetaVert sx sy vx vy (dirVert e sz)))*vy) (e*minVerSep) e))
 
 verticalCriterionForConflictResolutionViolation sx sy sz vx vy vz e v'x v'y v'z = not $ verticalCriterionForConflictResolution sx sy sz vx vy vz e v'x v'y v'z
 
+
+----------------------------------------
+-- Vertical Criterion for Loss of Separation Recovery
+----------------------------------------
+
+ttez :: Stream Double -> Stream Double -> Stream Double -> Stream Double
+ttez sz vz e = (e*minVerSep*(signum vz) - sz)/(vz)
+
+zCriterion :: Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Bool
+zCriterion sx sy sz vz v'z = 
+  (v'z /= 0) && (label "z_prop?(sz;v'z)" ((sz*v'z) >= 0)) &&
+  ((label "z_prop?(sz;v'z)" ((sz*v'z) >= 0)) ==> (mux (vz /= 0) (((signum vz) * v'z) >= 0) (((break_symetry sx sy sz) * v'z) > 0)))
+
+-- A function that verifies (s/= 0 ==> break_symetry(-s) == -break_symetry(s)) && (sz /= 0 ==> break_symetry(s) == sign(sz))
+-- The second condition is trivialy true in this function
+-- The first one is because of : assume s /= 0. Then it has a non nul coordinate. Take the coordinate with the highest priority (sz >> sx >> sy) that is non nul. The function returns its sign. That means if we send -x to this function, that same coordinate will be the opposite, so the function will return the opposite value. QED.
+break_symetry :: Stream Double -> Stream Double -> Stream Double -> Stream Double
+break_symetry sx sy sz = 
+  mux (sz /= 0) (signum sz) (mux (sx /= 0) (signum sx) (mux (sy == 0) (1) (signum sy)))
+
+
+verticalCriterionForLossOfSeparation :: Stream Double -> Stream Double -> Stream Double -> 
+                                        Stream Double -> Stream Double -> Stream Double -> 
+                                        Stream Double -> Stream Double -> 
+                                        Stream Double -> Stream Double -> Stream Double -> 
+                                        Stream Bool
+verticalCriterionForLossOfSeparation sx sy sz vx vy vz tv e v'x v'y v'z = 
+  ((abs sz) < minVerSep) &&
+  (zCriterion sx sy sz vz v'z) &&
+  (tv >= (ttez sz vz e))
+
+verticalCriterionForLossOfSeparationViolation :: Stream Double -> Stream Double -> Stream Double -> 
+                                                 Stream Double -> Stream Double -> Stream Double -> 
+                                                 Stream Double -> Stream Double -> 
+                                                 Stream Double -> Stream Double -> Stream Double -> 
+                                                 Stream Bool
+verticalCriterionForLossOfSeparationViolation sx sy sz vx vy vz tv e v'x v'y v'z = not $ verticalCriterionForLossOfSeparation sx sy sz vx vy vz tv e v'x v'y v'z
+
+----------------------------------------
+-- 3D Criterions
+----------------------------------------
+
+criterion3DConflictResolution :: Stream Double -> Stream Double -> Stream Double -> 
+                                 Stream Double -> Stream Double -> Stream Double -> 
+                                 Stream Double -> Stream Double -> 
+                                 Stream Double -> Stream Double -> Stream Double -> 
+                                 Stream Bool
+criterion3DConflictResolution sx sy sz vx vy vz eh ev v'x v'y v'z = 
+  (((normsq2dim sx sy) >= (minHorSep * minHorSep)) && (horizontalCriterionForConflictResolution sx sy eh v'x v'y)) || 
+  ((verticalCriterionForConflictResolution sx sy sz vx vy vz ev v'x v'y v'z) && (((normsq2dim sx sy) < (minHorSep * minHorSep)) || (horizontalCriterionForConflictResolution sx sy eh (v'x - vx) (v'y - vy))))
+
+criterion3DConflictResolutionViolation :: Stream Double -> Stream Double -> Stream Double -> 
+                                          Stream Double -> Stream Double -> Stream Double -> 
+                                          Stream Double -> Stream Double -> 
+                                          Stream Double -> Stream Double -> Stream Double -> 
+                                          Stream Bool
+criterion3DConflictResolutionViolation sx sy sz vx vy vz eh ev v'x v'y v'z = not $ criterion3DConflictResolution sx sy sz vx vy vz eh ev v'x v'y v'z 
+
+
+criterion3DLossSeparation :: Stream Double -> Stream Double -> Stream Double -> 
+                             Stream Double -> Stream Double -> Stream Double -> 
+                             Stream Double -> Stream Double -> 
+                             Stream Double -> Stream Double -> Stream Double -> 
+                             Stream Bool
+criterion3DLossSeparation sx sy sz vx vy vz t ev v'x v'y v'z = 
+  (horizontalCriterionForLossOfSeparation sx sy vx vy t v'x v'y) ||
+  (verticalCriterionForLossOfSeparation sx sy sz vx vy vz t ev v'x v'y v'z)
+
+criterion3DLossSeparationViolation :: Stream Double -> Stream Double -> Stream Double -> 
+                                      Stream Double -> Stream Double -> Stream Double -> 
+                                      Stream Double -> Stream Double -> 
+                                      Stream Double -> Stream Double -> Stream Double -> 
+                                      Stream Bool
+criterion3DLossSeparationViolation sx sy sz vx vy vz t ev v'x v'y v'z = not $ criterion3DLossSeparation sx sy sz vx vy vz t ev v'x v'y v'z
 ----------------------------------------
 
 
 spec :: Spec
 spec = do
-  trigger "alert_horizontal_criterion_conflict_resolution_violation" (horizontalCriterionForConflictResolutionViolation relPositionX relPositionY directionParameter relPlannedVelocityX relPlannedVelocityY) []
-  trigger "alert_horizontal_criterion_loss_of_separation_violation" (horizontalCriterionForLossOfSeparationViolation relPositionX relPositionY relVelocityX relVelocityY maxTimeForHorizontalViolation relPlannedVelocityX relPlannedVelocityY) []
-  trigger "alert_vertical_criterion_conflict_resolution_violation" (verticalCriterionForConflictResolutionViolation relPositionX relPositionY relPositionZ relVelocityX relVelocityY relVelocityZ directionParameter relPlannedVelocityX relPlannedVelocityY relPlannedVelocityZ) []
---  observer "debug001" (exitDotMin relPositionX relPositionY maxTimeForHorizontalViolation)
+  --trigger "alert_horizontal_criterion_conflict_resolution_violation" (horizontalCriterionForConflictResolutionViolation relPositionX relPositionY directionParameterHorizontal relPlannedVelocityX relPlannedVelocityY) []
+  --trigger "alert_horizontal_criterion_loss_of_separation_violation" (horizontalCriterionForLossOfSeparationViolation relPositionX relPositionY relVelocityX relVelocityY maxTimeForViolation relPlannedVelocityX relPlannedVelocityY) []
+  --trigger "alert_vertical_criterion_conflict_resolution_violation" (verticalCriterionForConflictResolutionViolation relPositionX relPositionY relPositionZ relVelocityX relVelocityY relVelocityZ directionParameterVertical relPlannedVelocityX relPlannedVelocityY relPlannedVelocityZ) []
+  --trigger "alert_vertical_criterion_loss_of_separation_violation" (verticalCriterionForLossOfSeparationViolation relPositionX relPositionY relPositionZ relVelocityX relVelocityY relVelocityZ maxTimeForViolation directionParameterVertical relPlannedVelocityX relPlannedVelocityY relPlannedVelocityZ) []
+  
+--MAIN CRITERIONS : CAREFUL the conflict resolution requires a HUUUUUUUUUUUUGE RAM memory.
+  trigger "alert_3D_conflict_resolution_violation" (criterion3DConflictResolutionViolation relPositionX relPositionY relPositionZ relVelocityX relVelocityY relVelocityZ directionParameterHorizontal directionParameterVertical relPlannedVelocityX relPlannedVelocityY relPlannedVelocityZ) []
+  trigger "alert_3D_loss_separation_violation" (criterion3DLossSeparationViolation relPositionX relPositionY relPositionZ relVelocityX relVelocityY relVelocityZ maxTimeForViolation directionParameterVertical relPlannedVelocityX relPlannedVelocityY relPlannedVelocityZ) []
+--  observer "debug001" (exitDotMin relPositionX relPositionY maxTimeForViolation)
 main = do
    reify spec >>= S.compile S.defaultParams
 

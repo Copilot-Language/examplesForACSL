@@ -8,30 +8,31 @@
 
 /* Triggers (must be defined by user): */
 
-void alert_vertical_criterion_conflict_resolution_violation();
-void alert_horizontal_criterion_loss_of_separation_violation();
-void alert_horizontal_criterion_conflict_resolution_violation();
+void alert_3D_loss_separation_violation();
+void alert_3D_conflict_resolution_violation();
 
 /* External variables (must be defined by user): */
 
 extern double ownship_position_x;
 extern double intruder_position_x;
+extern double ownship_planned_velocity_x;
+extern double intruder_velocity_x;
 extern double ownship_position_y;
 extern double intruder_position_y;
-extern double ownship_planned_velocity_z;
-extern double intruder_velocity_z;
-extern double direction_parameter;
+extern double ownship_planned_velocity_y;
+extern double intruder_velocity_y;
+extern double ownship_velocity_x;
+extern double ownship_velocity_y;
+extern double maximum_time_for_violation;
+extern double minimal_horizontal_separation;
 extern double ownship_position_z;
 extern double intruder_position_z;
 extern double minimal_vertical_separation;
-extern double minimal_horizontal_separation;
-extern double ownship_velocity_x;
-extern double intruder_velocity_x;
-extern double ownship_velocity_y;
-extern double intruder_velocity_y;
-extern double ownship_planned_velocity_x;
-extern double ownship_planned_velocity_y;
-extern double maximum_time_for_horizontal_violation;
+extern double ownship_planned_velocity_z;
+extern double intruder_velocity_z;
+extern double ownship_velocity_z;
+extern double direction_parameter_vertical;
+extern double direction_parameter_horizontal;
 
 /* External arrays (must be defined by user): */
 
