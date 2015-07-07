@@ -1,0 +1,35 @@
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_42_arg0.c, line 12) in 'ext_ident_bool_42_arg0' --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_42_arg0_post
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Cint.Cint
+
+goal WP "expl:Post-condition (file ext_ident_bool_42_arg0.c, line 12) in 'ext_ident_bool_42_arg0'":
+  forall i_6 i_5 i_4 i_3 i_2 i_1 i : int.
+  ((is_sint32 i)) ->
+  ((is_sint32 i_5)) ->
+  ((is_sint32 i_6)) ->
+  ((is_uint32 i_1)) ->
+  ((is_uint32 i_2)) ->
+  ((is_uint32 i_3)) ->
+  ((is_uint32 i_4)) ->
+  (if (0 = i_1) then (0 = i_6)
+   else (if (0 = i_2) then (0 = i_6) else (1 = i_6))) ->
+  (if (0 = i_3) then (0 = i_5)
+   else (if (0 = (if (0 = i_4) then 1 else 0)) then (0 = i_5) else (1 = i_5))) ->
+  (if (0 = (if (0 = i_6) then 0 else 1))
+   then (if (0 = (if (0 = i_5) then 0 else 1)) then (0 = i) else (1 = i))
+   else (1 = i)) ->
+  ((0 <> (if (0 = i) then 0 else 1)) <->
+   (((0 = i_4) /\ (0 <> i_3)) \/ ((0 <> i_1) /\ (0 <> i_2))))
+
+end
+

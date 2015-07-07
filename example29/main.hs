@@ -162,15 +162,15 @@ ttez sz vz = label "?ttez" $ (label "?ttez_dividend" $ minVerSep*(label "?ttez_p
 
 zCriterion :: Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Bool
 zCriterion sx sy sz vz v'z = 
-  (v'z /= 0) && (label "?z_prop?(sz;v'z)" ((sz*v'z) >= 0)) &&
-  ((label "?z_prop?(sz;v'z)" ((sz*v'z) >= 0)) ==> (mux (vz /= 0) (((signum vz) * v'z) >= 0) (((break_symetry sx sy sz) * v'z) > 0)))
+  (label "?zCriterion_part1" $ (label "?zCriterion_part1.1" $ v'z < 0) || (label "?zCriterion_part1.2" $ v'z > 0)) && (label "?z_prop?(sz;v'z)" ((sz*v'z) >= 0)) &&
+  (label "?zCriterion_part2" $ (label "?z_prop?(sz;v'z)" ((sz*v'z) >= 0)) ==> (label "?zCriterion_part2.0" $ mux (label "?zCriterion_part2.1" $  (label "?zCriterion_part2.1" $ vz < 0) || (label "?zCriterion_part2.2" $ vz > 0)) (label "?zCriterion_part2.2" $ ((label "?zCriterion_part2.2.1" $ signum vz) * v'z) >= 0) (label "?zCriterion_part2.3" $ ((label "?zCriterion_part2.3.1" $ break_symetry sx sy sz) * v'z) > 0)))
 
 -- A function that verifies (s/= 0 ==> break_symetry(-s) == -break_symetry(s)) && (sz /= 0 ==> break_symetry(s) == sign(sz))
 -- The second condition is trivialy true in this function
 -- The first one is because of : assume s /= 0. Then it has a non nul coordinate. Take the coordinate with the highest priority (sz >> sx >> sy) that is non nul. The function returns its sign. That means if we send -x to this function, that same coordinate will be the opposite, so the function will return the opposite value. QED.
 break_symetry :: Stream Double -> Stream Double -> Stream Double -> Stream Double
 break_symetry sx sy sz = 
-  mux (sz /= 0) (signum sz) (mux (sx /= 0) (signum sx) (mux (sy == 0) (1) (signum sy)))
+  label "?break_symetry" $ mux (label "?break_symetry_part1" $ (label "?break_symetry_part1.1" $ sz < 0) || (label "?break_symetry_part1.2" $ sz > 0)) (label "?break_symetry_part2" $ signum sz) (label "?break_symetry_part3" $ mux (label "?break_symetry_part3.1" $ (label "?break_symetry_part3.1.1" $ sx < 0) || (label "?break_symetry_part3.1.2" $ sx > 0)) (label "?break_symetry_part3.2" $ signum sx) (label "?break_symetry_part3.3" $ mux (label "?break_symetry_part3.3.1" $ (label "?break_symetry_part3.3.1.1" $ sy <= 0) && (label "?break_symetry_part3.3.1.2" $ sy >= 0)) (1) (label "?break_symetry_part3.3.2" $ signum sy)))
 
 
 verticalCriterionForLossOfSeparation :: Stream Double -> Stream Double -> Stream Double -> 
@@ -179,9 +179,9 @@ verticalCriterionForLossOfSeparation :: Stream Double -> Stream Double -> Stream
                                         Stream Double -> Stream Double -> Stream Double -> 
                                         Stream Bool
 verticalCriterionForLossOfSeparation sx sy sz vx vy vz tv v'x v'y v'z = 
---  (label "abs" $ (abs sz) < minVerSep) &&
---  (label "zCriterion" $ zCriterion sx sy sz vz v'z) &&
-  (tv >= (ttez sz vz))
+  (label "?verticalCriterionLoss_part1" $ (label "?verticalCriterionLoss_part1.1" $ abs sz) < minVerSep) &&
+  (label "?verticalCriterionLoss_part2" $ zCriterion sx sy sz vz v'z) &&
+  (label "?verticalCriterionLoss_part3" $ tv >= (label "?verticalCriterionLoss_part3.1" $ ttez sz vz))
 
 verticalCriterionForLossOfSeparationViolation :: Stream Double -> Stream Double -> Stream Double -> 
                                                  Stream Double -> Stream Double -> Stream Double -> 
@@ -201,7 +201,7 @@ criterion3DConflictResolution :: Stream Double -> Stream Double -> Stream Double
                                  Stream Bool
 criterion3DConflictResolution sx sy sz vx vy vz eh ev v'x v'y v'z = 
   (label "?criterion3D_part1" $ (label "?criterion3D_part1.1" $ (label "?criterion3D_part1.2" $ normsq2dim sx sy) >= (label "?criterion3D_part1.3" $ minHorSep * minHorSep)) && (label "?criterion3D_part2" $  horizontalCriterionForConflictResolution sx sy eh v'x v'y)) || 
-  ((label "?criterion3D_part3" $ verticalCriterionForConflictResolution sx sy sz vx vy vz ev v'x v'y v'z) && (label "?criterion3D_part4" $ ((normsq2dim sx sy) < (minHorSep * minHorSep)) || (label "?criterion3D_part5" $ horizontalCriterionForConflictResolution sx sy eh (v'x - vx) (v'y - vy))))
+  ((label "?criterion3D_part3" $ verticalCriterionForConflictResolution sx sy sz vx vy vz ev v'x v'y v'z) && (label "?criterion3D_part4" $ (label "?criterion3D_part4.1" $ (label "?criterion3D_part4.1.1" $ normsq2dim sx sy) < (label "?criterion3D_part4.1.2" $ minHorSep * minHorSep)) || (label "?criterion3D_part5" $ horizontalCriterionForConflictResolution sx sy eh (v'x - vx) (v'y - vy))))
 
 criterion3DConflictResolutionViolation :: Stream Double -> Stream Double -> Stream Double -> 
                                           Stream Double -> Stream Double -> Stream Double -> 

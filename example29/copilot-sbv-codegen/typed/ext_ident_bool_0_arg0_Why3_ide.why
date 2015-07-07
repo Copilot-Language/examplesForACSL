@@ -1,0 +1,58 @@
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_0_arg0.c, line 12) in 'ext_ident_bool_0_arg0' --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_0_arg0_post
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_bool_0_arg0.c, line 12) in 'ext_ident_bool_0_arg0'":
+  forall r_9 r_8 r_7 r_6 r_5 r_4 r_3 r_2 r_1 r : real.
+  let r_10 = -. r_3 in
+  let r_11 = r_1 -. r_3 in
+  let r_12 = -. r_7 in
+  let r_13 = r_2 -. r_7 in
+  let r_14 = r_4 -. r_3 in
+  let r_15 = r_6 -. r_5 in
+  let r_16 = r_8 -. r_7 in
+  let r_17 = r *. r_13 in
+  let r_18 = r *. r_16 in
+  let r_19 = r_11 *. r_15 in
+  let r_20 = r_14 *. r_15 in
+  let r_21 = r_17 +. r_19 in
+  let r_22 = r_18 +. r_20 in
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_2)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_4)) ->
+  ((is_float64 r_5)) ->
+  ((is_float64 r_6)) ->
+  ((is_float64 r_7)) ->
+  ((is_float64 r_8)) ->
+  ((is_float64 (r +. r_9))) ->
+  ((is_float64 r_11)) ->
+  ((is_float64 r_13)) ->
+  ((is_float64 r_14)) ->
+  ((is_float64 r_15)) ->
+  ((is_float64 r_16)) ->
+  ((is_float64 r_17)) ->
+  ((is_float64 r_18)) ->
+  ((is_float64 r_19)) ->
+  ((is_float64 r_20)) ->
+  ((is_float64 r_21)) ->
+  ((is_float64 r_22)) ->
+  ((r_21 <=. r_22) <-> (0 <> (if (r_21 <=. r_22) then 1 else 0)))
+
+end
+
