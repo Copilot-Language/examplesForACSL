@@ -25,13 +25,13 @@ extern double ownship_velocity_x;
 extern double ownship_velocity_y;
 extern double maximum_time_for_violation;
 extern double minimal_horizontal_separation;
+extern double minimal_vertical_separation;
+extern double ownship_velocity_z;
+extern double intruder_velocity_z;
 extern double ownship_position_z;
 extern double intruder_position_z;
-extern double minimal_vertical_separation;
-extern double ownship_planned_velocity_z;
-extern double intruder_velocity_z;
-extern double ownship_velocity_z;
 extern double direction_parameter_horizontal;
+extern double ownship_planned_velocity_z;
 extern double direction_parameter_vertical;
 
 /* External arrays (must be defined by user): */
@@ -39,6 +39,8 @@ extern double direction_parameter_vertical;
 
 /* External functions (must be defined by user): */
 
+bool ident_bool(bool);
+double ident_double(double);
 double sqrt(double);
 
 /* Step function: */

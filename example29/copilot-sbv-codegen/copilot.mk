@@ -11,7 +11,7 @@ fval:
 	frama-c -val -main testing -slevel 10000000 *.h *.c | tee logval
 
 fwp: 
-	frama-c -wp -wp-out . -wp-prover Z3 -wp-split -main testing *.h *.c | tee logwp
+	frama-c -wp -wp-out . -wp-prover Z3 -main testing *.h *.c | tee logwp
 
 splint: 
 	splint -comment-char % *.h *.c | tee logsplint

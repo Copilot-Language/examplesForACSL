@@ -82,7 +82,7 @@ scalar3dim :: Stream Double -> Stream Double -> Stream Double -> Stream Double -
 scalar3dim x1 y1 z1 x2 y2 z2 = (x1 * x2) + (y1 * y2) + (z1 * z2)
 
 normsq2dim :: Stream Double -> Stream Double -> Stream Double
-normsq2dim x y = scalar2dim x y x y
+normsq2dim x y = label "?normsq2dim" $ scalar2dim x y x y
 
 norm2dim :: Stream Double -> Stream Double -> Stream Double
 norm2dim x y = sqrt (normsq2dim x y)
@@ -95,7 +95,7 @@ det2dim x1 y1 x2 y2 = (x1 * y2) - (x2 * y1)
 ----------------------------------------
 
 hor_rr :: Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Double
-hor_rr sx sy e v'x v'y = (sqrt $ (normsq2dim sx sy) - (minHorSep * minHorSep)) / (minHorSep)
+hor_rr sx sy e v'x v'y = (label "?hor_rr_dividend" $ sqrt $ (normsq2dim sx sy) - (minHorSep * minHorSep)) / (label "?hor_rr_divisor" $ minHorSep)
 
 horizontalCriterionForConflictResolution :: Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Bool
 horizontalCriterionForConflictResolution sx sy e v'x v'y = (scalar2dim sx sy v'x v'y) >= (e * (hor_rr sx sy e v'x v'y) * (det2dim sx sy v'x v'y))
@@ -107,10 +107,10 @@ horizontalCriterionForConflictResolutionViolation sx sy e v'x v'y = not $ horizo
 -- Horizontal Criterion for Loss of Separation Recovery
 ----------------------------------------
 
-exitDotMin sx sy th = ((norm2dim sx sy)/th)*(minHorSep - (norm2dim sx sy))
+exitDotMin sx sy th = ((label "?exitDotMin_dividend" $  norm2dim sx sy)/ (label "?exitDotMin_divsor" $ th))*(minHorSep - (norm2dim sx sy))
 
 horizontalCriterionForLossOfSeparation :: Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Bool
-horizontalCriterionForLossOfSeparation sx sy vx vy th v'x v'y = ((scalar2dim sx sy v'x v'y) >= (scalar2dim sx sy vx vy)) && ((scalar2dim sx sy v'x v'y) > (exitDotMin sx sy th))
+horizontalCriterionForLossOfSeparation sx sy vx vy th v'x v'y = (label "?horizontalCriterionLoss_part1" $ (scalar2dim sx sy v'x v'y) >= (scalar2dim sx sy vx vy)) && (label "?horizontalCriterionLoss_part2" $(scalar2dim sx sy v'x v'y) > (exitDotMin sx sy th))
 
 horizontalCriterionForLossOfSeparationViolation :: Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Bool
 horizontalCriterionForLossOfSeparationViolation sx sy vx vy th v'x v'y = not $ horizontalCriterionForLossOfSeparation sx sy vx vy th v'x v'y
@@ -125,25 +125,30 @@ deltaVertical sx sy sz vx vy vz = minHorSep * minHorSep * (normsq2dim vx vy) - (
 
 
 dirVert :: Stream Double -> Stream Double -> Stream Double
-dirVert e sz = mux ((abs sz) >= minVerSep) (e* (signum sz)) (-1.0)
+dirVert e sz = label "?dirVert" $ mux (label "?dirVert_part1" $ (label "?dirVert_part1.1" $ abs (label "?dirVert_part1.1.1" $ sz)) >= minVerSep) (label "?dirVert_part2" $ e* (label "?dirVert_part2.1" $ signum sz)) (-1.0)
 
 thetaVert ::Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Double
-thetaVert sx sy vx vy iota = (0.0 - (scalar2dim sx sy vx vy) + iota * (sqrt $ (scalar2dim sx sy vx vy)*(scalar2dim sx sy vx vy) - (normsq2dim vx vy)*(normsq2dim sx sy - (minHorSep * minHorSep))))/(normsq2dim vx vy)
+thetaVert sx sy vx vy iota = label "?thetaVert" $ 
+  (label "?thetaVert_dividend" $  
+  (label "?thetaVert_part1" $ 0.0 - (label "?thetaVert_part1.1" $ scalar2dim sx sy vx vy)) 
+  + (label "?thetaVert_part1.2" $ iota * (label "?thetaVert_part2" $ sqrt $ ((label "?thetaVert_part2.1" $ scalar2dim sx sy vx vy)*(label "?thetaVert_part2.2" $ scalar2dim sx sy vx vy)) - (label "?thetaVert_part2.3" $(label "?thetaVert_part2.3.1" $ normsq2dim vx vy)*(label "?thetaVert_part2.3.2" $ normsq2dim sx sy - (minHorSep * minHorSep))))
+  ))
+  /(label "?thetaVert_divisor" $ normsq2dim vx vy)
 
 intersectsHalfPlane :: Stream Double -> Stream Double -> Stream Double -> 
                        Stream Double -> Stream Double -> Stream Double -> 
                        Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Bool
-intersectsHalfPlane sx sy sz vx vy vz px py pz e = (scalar2dim vx vy px py /= 0) && 
-  (label "t_1" (((minHorSep * minHorSep) - (scalar2dim sx sy px py)) / (scalar2dim vx vy px py)) >= 0) && 
-  ( (e*(sz + (label "t_2" (((minHorSep * minHorSep) - (scalar2dim sx sy px py)) / (scalar2dim vx vy px py))) * vz)) >= (e * pz) ) 
+intersectsHalfPlane sx sy sz vx vy vz px py pz e = label "?intersectsHalfPlane" $ (label "?intersectsHalfPlane_part1" $ (label "?intersectsHalfPlane_part1.1" $ scalar2dim vx vy px py < 0) || (label "?intersectsHalfPlane_part1.2" $ scalar2dim vx vy px py > 0)) && 
+  (label "?intersectsHalfPlane_part2" $ label "?t_1" (((minHorSep * minHorSep) - (scalar2dim sx sy px py)) / (scalar2dim vx vy px py)) >= 0) && 
+  (label "?intersectsHalfPlane_part3" $  (e*(sz + (label "?t_2" (((minHorSep * minHorSep) - (scalar2dim sx sy px py)) / (scalar2dim vx vy px py))) * vz)) >= (e * pz) ) 
 
 verticalCriterionForConflictResolution :: Stream Double -> Stream Double -> Stream Double -> 
                                           Stream Double -> Stream Double -> Stream Double -> 
                                           Stream Double -> 
                                           Stream Double -> Stream Double -> Stream Double -> Stream Bool
 verticalCriterionForConflictResolution sx sy sz vx vy vz e v'x v'y v'z = 
-  (((normsq2dim sx sy == 0) && (v'z >= 0) && ((e * sz) >= minVerSep))) || 
-  ((deltaVertical sx sy sz vx vy vz > 0) && ((label "theta_dir_1" (thetaVert sx sy vx vy (dirVert e sz))) > 0) && (intersectsHalfPlane sx sy sz v'x v'y v'z (sx + (label "theta_dir_2" (thetaVert sx sy vx vy (dirVert e sz)))*vx) (sy + (label "theta_dir_3" (thetaVert sx sy vx vy (dirVert e sz)))*vy) (e*minVerSep) e))
+  (label "?verticalCriterionConflict_part1" $ ((label "?verticalCriterionConflict_part1.1" $ (label "?verticalCriterionConflict_part1.1.1" $ normsq2dim sx sy <= 0) && (label "?verticalCriterionConflict_part1.1.2" $normsq2dim sx sy >= 0) ) && (label "?verticalCriterionConflict_part1.2" $ v'z >= 0) && (label "?verticalCriterionConflict_part1.3" $ (e * sz) >= minVerSep))) || 
+  (label "?verticalCriterionConflict_part2" $ (label "?verticalCriterionConflict_part2.1" $deltaVertical sx sy sz vx vy vz > 0) && (label "?verticalCriterionConflict_part2.2" $ (label "?theta_dir_1" (thetaVert sx sy vx vy (dirVert e sz))) > 0) && (label "?verticalCriterionConflict_part2.3" $ intersectsHalfPlane sx sy sz v'x v'y v'z (label "?verticalCriterionConflict_part2.3.1" $ sx + (label "?theta_dir_2" (thetaVert sx sy vx vy (dirVert e sz)))*vx) (label "?verticalCriterionConflict_part2.3.2" $ sy + (label "?theta_dir_3" (thetaVert sx sy vx vy (dirVert e sz)))*vy) (e*minVerSep) e))
 
 verticalCriterionForConflictResolutionViolation sx sy sz vx vy vz e v'x v'y v'z = not $ verticalCriterionForConflictResolution sx sy sz vx vy vz e v'x v'y v'z
 
@@ -153,12 +158,12 @@ verticalCriterionForConflictResolutionViolation sx sy sz vx vy vz e v'x v'y v'z 
 ----------------------------------------
 
 ttez :: Stream Double -> Stream Double -> Stream Double
-ttez sz vz = (minVerSep*(signum vz) - sz)/(vz)
+ttez sz vz = label "?ttez" $ (label "?ttez_dividend" $ minVerSep*(label "?ttez_part01" $ signum vz) - (label "?ttez_part02" $ sz))/(label "?ttez_divisor" vz)
 
 zCriterion :: Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Bool
 zCriterion sx sy sz vz v'z = 
-  (v'z /= 0) && (label "z_prop?(sz;v'z)" ((sz*v'z) >= 0)) &&
-  ((label "z_prop?(sz;v'z)" ((sz*v'z) >= 0)) ==> (mux (vz /= 0) (((signum vz) * v'z) >= 0) (((break_symetry sx sy sz) * v'z) > 0)))
+  (v'z /= 0) && (label "?z_prop?(sz;v'z)" ((sz*v'z) >= 0)) &&
+  ((label "?z_prop?(sz;v'z)" ((sz*v'z) >= 0)) ==> (mux (vz /= 0) (((signum vz) * v'z) >= 0) (((break_symetry sx sy sz) * v'z) > 0)))
 
 -- A function that verifies (s/= 0 ==> break_symetry(-s) == -break_symetry(s)) && (sz /= 0 ==> break_symetry(s) == sign(sz))
 -- The second condition is trivialy true in this function
@@ -174,8 +179,8 @@ verticalCriterionForLossOfSeparation :: Stream Double -> Stream Double -> Stream
                                         Stream Double -> Stream Double -> Stream Double -> 
                                         Stream Bool
 verticalCriterionForLossOfSeparation sx sy sz vx vy vz tv v'x v'y v'z = 
-  ((abs sz) < minVerSep) &&
-  (zCriterion sx sy sz vz v'z) &&
+--  (label "abs" $ (abs sz) < minVerSep) &&
+--  (label "zCriterion" $ zCriterion sx sy sz vz v'z) &&
   (tv >= (ttez sz vz))
 
 verticalCriterionForLossOfSeparationViolation :: Stream Double -> Stream Double -> Stream Double -> 
@@ -195,8 +200,8 @@ criterion3DConflictResolution :: Stream Double -> Stream Double -> Stream Double
                                  Stream Double -> Stream Double -> Stream Double -> 
                                  Stream Bool
 criterion3DConflictResolution sx sy sz vx vy vz eh ev v'x v'y v'z = 
-  (((normsq2dim sx sy) >= (minHorSep * minHorSep)) && (horizontalCriterionForConflictResolution sx sy eh v'x v'y)) || 
-  ((verticalCriterionForConflictResolution sx sy sz vx vy vz ev v'x v'y v'z) && (((normsq2dim sx sy) < (minHorSep * minHorSep)) || (horizontalCriterionForConflictResolution sx sy eh (v'x - vx) (v'y - vy))))
+  (label "?criterion3D_part1" $ (label "?criterion3D_part1.1" $ (label "?criterion3D_part1.2" $ normsq2dim sx sy) >= (label "?criterion3D_part1.3" $ minHorSep * minHorSep)) && (label "?criterion3D_part2" $  horizontalCriterionForConflictResolution sx sy eh v'x v'y)) || 
+  ((label "?criterion3D_part3" $ verticalCriterionForConflictResolution sx sy sz vx vy vz ev v'x v'y v'z) && (label "?criterion3D_part4" $ ((normsq2dim sx sy) < (minHorSep * minHorSep)) || (label "?criterion3D_part5" $ horizontalCriterionForConflictResolution sx sy eh (v'x - vx) (v'y - vy))))
 
 criterion3DConflictResolutionViolation :: Stream Double -> Stream Double -> Stream Double -> 
                                           Stream Double -> Stream Double -> Stream Double -> 
@@ -212,8 +217,8 @@ criterion3DLossSeparation :: Stream Double -> Stream Double -> Stream Double ->
                              Stream Double -> Stream Double -> Stream Double -> 
                              Stream Bool
 criterion3DLossSeparation sx sy sz vx vy vz t v'x v'y v'z = 
-  (horizontalCriterionForLossOfSeparation sx sy vx vy t v'x v'y) ||
-  (verticalCriterionForLossOfSeparation sx sy sz vx vy vz t v'x v'y v'z)
+  (label "?horizontal_los_criterion" $ horizontalCriterionForLossOfSeparation sx sy vx vy t v'x v'y) ||
+  (label "?vertical_los_criterion" $ verticalCriterionForLossOfSeparation sx sy sz vx vy vz t v'x v'y v'z)
 
 criterion3DLossSeparationViolation :: Stream Double -> Stream Double -> Stream Double -> 
                                       Stream Double -> Stream Double -> Stream Double -> 
