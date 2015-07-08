@@ -1,3 +1,21 @@
+divert(-1)
+
+changequote({,})
+define({LQ},{changequote(`,'){dnl}
+changequote({,})})
+define({RQ},{changequote(`,')dnl{
+}changequote({,})})
+changecom({;})
+
+define({concat},{$1$2})dnl
+define({repeat}, {ifelse($1, 0, {},
+        $1, 1, {$2}, {$2
+        repeat(eval($1-1), {$2})})})
+
+define({?}, {})
+
+divert(0)dnl
+changeword({[\?]+})
 import Copilot.Language.Reify
 import Copilot.Language
 import Copilot.Library.Clocks
@@ -11,6 +29,7 @@ import Control.Monad (foldM_)
 --------------------------------------------------------------------------------
 -- NEVER USE THIS PIECE OF CODE FOR WRITING A REAL MONITOR (cf ARIANE 5 fail)
 -- Implementation of http://shemesh.larc.nasa.gov/people/cam/publications/NASA-TM-2010-216862.pdf
+-- This file needs to be preprocessed by m4 with changeword ENABLED : http://www.gnu.org/software/m4/manual/m4.html
 --------------------------------------------------------------------------------
 
 import qualified Data.List as L
@@ -162,8 +181,8 @@ ttez sz vz = label "?ttez" $ (label "?ttez_dividend" $ minVerSep*(label "?ttez_p
 
 zCriterion :: Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Bool
 zCriterion sx sy sz vz v'z = 
-  (label "?zCriterion_part1" $ (label "?zCriterion_part1.1" $ v'z < 0) || (label "?zCriterion_part1.2" $ v'z > 0)) && (label "?z_prop?(sz;v'z)" ((sz*v'z) >= 0)) &&
-  (label "?zCriterion_part2" $ (label "?z_prop?(sz;v'z)" ((sz*v'z) >= 0)) ==> (label "?zCriterion_part2.0" $ mux (label "?zCriterion_part2.1" $  (label "?zCriterion_part2.1" $ vz < 0) || (label "?zCriterion_part2.2" $ vz > 0)) (label "?zCriterion_part2.2" $ ((label "?zCriterion_part2.2.1" $ signum vz) * v'z) >= 0) (label "?zCriterion_part2.3" $ ((label "?zCriterion_part2.3.1" $ break_symetry sx sy sz) * v'z) > 0)))
+  (label "?zCriterion_part1" $ (label "?zCriterion_part1.1" $ v'z < 0) || (label "?zCriterion_part1.2" $ v'z > 0)) && (label "?z_prop(sz,v'z)" ((sz*v'z) >= 0)) &&
+  (label "?zCriterion_part2" $ (label "?z_prop(sz,v'z)" ((sz*v'z) >= 0)) ==> (label "?zCriterion_part2.0" $ mux (label "?zCriterion_part2.1" $  (label "?zCriterion_part2.1" $ vz < 0) || (label "?zCriterion_part2.2" $ vz > 0)) (label "?zCriterion_part2.2" $ ((label "?zCriterion_part2.2.1" $ signum vz) * v'z) >= 0) (label "?zCriterion_part2.3" $ ((label "?zCriterion_part2.3.1" $ break_symetry sx sy sz) * v'z) > 0)))
 
 -- A function that verifies (s/= 0 ==> break_symetry(-s) == -break_symetry(s)) && (sz /= 0 ==> break_symetry(s) == sign(sz))
 -- The second condition is trivialy true in this function

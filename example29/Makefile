@@ -1,9 +1,11 @@
 default:
-	ghc main.hs
+	m4 main.hs > tmp.hs
+	ghc tmp.hs -o main
 	./main
 
 sandbox:
-	cabal exec -- ghc main.hs
+	m4 main.hs > tmp.hs
+	cabal exec -- ghc tmp.hs -o main
 	./main
 
 val:
@@ -11,7 +13,7 @@ val:
 
 clean:
 	rm *~
-	rm main.hi
-	rm main.o
+	rm tmp.hi
+	rm tmp.o
 	rm -rf copilot-c99-codegen
 	rm main
