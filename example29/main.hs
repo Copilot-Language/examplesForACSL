@@ -1,21 +1,3 @@
-divert(-1)
-
-changequote({,})
-define({LQ},{changequote(`,'){dnl}
-changequote({,})})
-define({RQ},{changequote(`,')dnl{
-}changequote({,})})
-changecom({;})
-
-define({concat},{$1$2})dnl
-define({repeat}, {ifelse($1, 0, {},
-        $1, 1, {$2}, {$2
-        repeat(eval($1-1), {$2})})})
-
-define({?}, {})
-
-divert(0)dnl
-changeword({[\?]+})
 import Copilot.Language.Reify
 import Copilot.Language
 import Copilot.Library.Clocks
@@ -260,7 +242,7 @@ spec = do
   trigger "alert_3D_loss_separation_violation" (criterion3DLossSeparationViolation relPositionX relPositionY relPositionZ relVelocityX relVelocityY relVelocityZ maxTimeForViolation relPlannedVelocityX relPlannedVelocityY relPlannedVelocityZ) []
 --  observer "debug001" (exitDotMin relPositionX relPositionY maxTimeForViolation)
 main = do
-   reify spec >>= S.compile S.defaultParams
+   reify spec >>= S.proofACSL S.defaultParams
 
 
 --------------------------------------------------------------------------------
