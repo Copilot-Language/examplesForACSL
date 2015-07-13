@@ -5,7 +5,7 @@
 /* User given declarations: */
 /*test 003*/
 /*ACSL to write
- (((extern "e1" + extern "e2") + extern "e3[(s1 + 6)]") + extern "ff(s1)")
+ (((Ext_e1 + Ext_e2) + Exta_e3[(s1 + 6)]) + Extf_ff(s1))
 */
 /*@
  assigns \nothing;

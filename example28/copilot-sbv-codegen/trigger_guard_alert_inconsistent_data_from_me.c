@@ -33,11 +33,11 @@ SBool trigger_guard_alert_inconsistent_data_from_me(const SDouble ext_my_latitud
   const SBool   s9 = ext_my_AGflag;
   const SBool   s11 = -90.0 <= s0;
   const SBool   s13 = s0 <= 90.0;
-  const SBool   s14 = s11 & s13;
+  const SBool   s14 = s11 && s13;
   const SBool   s15 = !s14;
   const SBool   s17 = -180.0 <= s1;
   const SBool   s19 = s1 <= 180.0;
-  const SBool   s20 = s17 & s19;
+  const SBool   s20 = s17 && s19;
   const SBool   s21 = !s20;
   const SBool   s22 = s2 >= s3;
   const SBool   s23 = !s22;
@@ -52,7 +52,7 @@ SBool trigger_guard_alert_inconsistent_data_from_me(const SDouble ext_my_latitud
   const SBool   s36 = false == s9;
   const SBool   s37 = !s36;
   const SBool   s39 = s7 < 0x00000000000000c8ULL;
-  const SBool   s40 = s37 | s39;
+  const SBool   s40 = s37 || s39;
   const SBool   s41 = !s40;
   const SBool   s42 = s35 ? true : s41;
   const SBool   s43 = s32 ? true : s42;

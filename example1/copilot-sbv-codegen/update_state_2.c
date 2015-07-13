@@ -36,8 +36,8 @@ SBool update_state_2(const SBool *queue_2, const SWord32 ptr_2,
   const SWord8  s15 = table1[s14];
   const SWord8  s17 = (2 == 0) ? s15 : (s15 % 2);
   const SBool   s19 = s17 == 0;
-  const SBool   s20 = s12 & s19;
-  const SBool   s21 = s8 | s20;
+  const SBool   s20 = s12 && s19;
+  const SBool   s21 = s8 || s20;
 
   return s21;
 }
