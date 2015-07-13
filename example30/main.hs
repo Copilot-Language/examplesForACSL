@@ -172,7 +172,7 @@ break_symetry :: Stream Double -> Stream Double -> Stream Double -> Stream Doubl
 break_symetry sx sy sz = 
   mux ((sz < 0) || (sz > 0)) (signum sz) $ 
   mux ((sx < 0) || (sx > 0)) (signum sx) $
-  mux ((sy <= 0) && (sy >= 0)) (1) (signum sy))
+  mux ((sy <= 0) && (sy >= 0)) (1) (signum sy)
 
 
 verticalCriterionForLossOfSeparation :: Stream Double -> Stream Double -> Stream Double -> 

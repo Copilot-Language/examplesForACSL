@@ -8,6 +8,10 @@ sandbox:
 	cabal exec -- ghc tmp.hs -o main
 	./main
 
+sindent:
+	m4 main.hs > tmp.hs
+	cabal exec -- ghc -fno-code -ddump-parsed tmp.hs
+
 val:
 	frama-c -val -main step copilot-sbv-codegen/internal.h copilot-sbv-codegen/copilot.h copilot-sbv-codegen/*.c -unspecified-access
 

@@ -5,15 +5,13 @@
 /* User given declarations: */
 /*test 006*/
 /*ACSL to write
- not (Extf_ident_bool(label "horizontal_los_criterion" (Extf_ident_bool(label "horizontalCriterionLoss_part1" ((((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_planned_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_planned_velocity_y - Ext_intruder_velocity_y))) >= (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) && Extf_ident_bool(label "horizontalCriterionLoss_part2" ((((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_planned_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_planned_velocity_y - Ext_intruder_velocity_y))) > ((Extf_ident_double(label "exitDotMin_dividend" Extf_sqrt(Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))))) / Extf_ident_double(label "exitDotMin_divsor" Ext_maximum_time_for_violation)) * (Ext_minimal_horizontal_separation - Extf_sqrt(Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y))))))))))) || Extf_ident_bool(label "vertical_los_criterion" (Extf_ident_bool(label "verticalCriterionLoss_part1" (Extf_ident_double(label "verticalCriterionLoss_part1.1" ((Ext_ownship_position_z - Ext_intruder_position_z) * Extf_ident_double(label "absolute_value_splitting" signum (Ext_ownship_position_z - Ext_intruder_position_z)))) < Ext_minimal_vertical_separation)) && (Extf_ident_bool(label "verticalCriterionLoss_part2" (Extf_ident_bool(label "zCriterion_part1" (Extf_ident_bool(label "zCriterion_part1.1" ((Ext_ownship_planned_velocity_z - Ext_intruder_velocity_z) < 0.0)) || Extf_ident_bool(label "zCriterion_part1.2" ((Ext_ownship_planned_velocity_z - Ext_intruder_velocity_z) > 0.0)))) && (Extf_ident_bool(label "z_prop(sz,v'z)" (((Ext_ownship_position_z - Ext_intruder_position_z) * (Ext_ownship_planned_velocity_z - Ext_intruder_velocity_z)) >= 0.0)) && Extf_ident_bool(label "zCriterion_part2" (not Extf_ident_bool(label "z_prop(sz,v'z)" (((Ext_ownship_position_z - Ext_intruder_position_z) * (Ext_ownship_planned_velocity_z - Ext_intruder_velocity_z)) >= 0.0)) || Extf_ident_bool(label "zCriterion_part2.0" ((Extf_ident_bool(label "zCriterion_part2.2" ((Extf_ident_double(label "zCriterion_part2.2.1" signum (Ext_ownship_velocity_z - Ext_intruder_velocity_z)) * (Ext_ownship_planned_velocity_z - Ext_intruder_velocity_z)) >= 0.0)) && Extf_ident_bool(label "zCriterion_part2.1" (Extf_ident_bool(label "zCriterion_part2.1" ((Ext_ownship_velocity_z - Ext_intruder_velocity_z) < 0.0)) || Extf_ident_bool(label "zCriterion_part2.2" ((Ext_ownship_velocity_z - Ext_intruder_velocity_z) > 0.0))))) || (Extf_ident_bool(label "zCriterion_part2.3" ((Extf_ident_double(label "zCriterion_part2.3.1" Extf_ident_double(label "break_symetry" (if Extf_ident_bool(label "break_symetry_part1" (Extf_ident_bool(label "break_symetry_part1.1" ((Ext_ownship_position_z - Ext_intruder_position_z) < 0.0)) || Extf_ident_bool(label "break_symetry_part1.2" ((Ext_ownship_position_z - Ext_intruder_position_z) > 0.0)))) then Extf_ident_double(label "break_symetry_part2" signum (Ext_ownship_position_z - Ext_intruder_position_z)) else Extf_ident_double(label "break_symetry_part3" (if Extf_ident_bool(label "break_symetry_part3.1" (Extf_ident_bool(label "break_symetry_part3.1.1" ((Ext_ownship_position_x - Ext_intruder_position_x) < 0.0)) || Extf_ident_bool(label "break_symetry_part3.1.2" ((Ext_ownship_position_x - Ext_intruder_position_x) > 0.0)))) then Extf_ident_double(label "break_symetry_part3.2" signum (Ext_ownship_position_x - Ext_intruder_position_x)) else Extf_ident_double(label "break_symetry_part3.3" (if Extf_ident_bool(label "break_symetry_part3.3.1" (Extf_ident_bool(label "break_symetry_part3.3.1.1" ((Ext_ownship_position_y - Ext_intruder_position_y) <= 0.0)) && Extf_ident_bool(label "break_symetry_part3.3.1.2" ((Ext_ownship_position_y - Ext_intruder_position_y) >= 0.0)))) then 1.0 else Extf_ident_double(label "break_symetry_part3.3.2" signum (Ext_ownship_position_y - Ext_intruder_position_y))))))))) * (Ext_ownship_planned_velocity_z - Ext_intruder_velocity_z)) > 0.0)) && not Extf_ident_bool(label "zCriterion_part2.1" (Extf_ident_bool(label "zCriterion_part2.1" ((Ext_ownship_velocity_z - Ext_intruder_velocity_z) < 0.0)) || Extf_ident_bool(label "zCriterion_part2.2" ((Ext_ownship_velocity_z - Ext_intruder_velocity_z) > 0.0)))))))))))) && Extf_ident_bool(label "verticalCriterionLoss_part3" (Ext_maximum_time_for_violation >= Extf_ident_double(label "verticalCriterionLoss_part3.1" Extf_ident_double(label "ttez" (Extf_ident_double(label "ttez_dividend" ((Ext_minimal_vertical_separation * Extf_ident_double(label "ttez_part01" signum (Ext_ownship_velocity_z - Ext_intruder_velocity_z))) - Extf_ident_double(label "ttez_part02" (Ext_ownship_position_z - Ext_intruder_position_z)))) / Extf_ident_double(label "ttez_divisor" (Ext_ownship_velocity_z - Ext_intruder_velocity_z)))))))))))
+ not ((((((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_planned_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_planned_velocity_y - Ext_intruder_velocity_y))) >= (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))) && ((((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_planned_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_planned_velocity_y - Ext_intruder_velocity_y))) > ((Extf_sqrt((((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) / Ext_maximum_time_for_violation) * (Ext_minimal_horizontal_separation - Extf_sqrt((((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))))))) || ((((Ext_ownship_position_z - Ext_intruder_position_z) * Extf_ident_double(label "absolute_value_splitting" signum (Ext_ownship_position_z - Ext_intruder_position_z))) < Ext_minimal_vertical_separation) && (((((Ext_ownship_planned_velocity_z - Ext_intruder_velocity_z) < 0.0) || ((Ext_ownship_planned_velocity_z - Ext_intruder_velocity_z) > 0.0)) && ((((Ext_ownship_position_z - Ext_intruder_position_z) * (Ext_ownship_planned_velocity_z - Ext_intruder_velocity_z)) >= 0.0) && (not (((Ext_ownship_position_z - Ext_intruder_position_z) * (Ext_ownship_planned_velocity_z - Ext_intruder_velocity_z)) >= 0.0) || ((((signum (Ext_ownship_velocity_z - Ext_intruder_velocity_z) * (Ext_ownship_planned_velocity_z - Ext_intruder_velocity_z)) >= 0.0) && (((Ext_ownship_velocity_z - Ext_intruder_velocity_z) < 0.0) || ((Ext_ownship_velocity_z - Ext_intruder_velocity_z) > 0.0))) || ((((if (((Ext_ownship_position_z - Ext_intruder_position_z) < 0.0) || ((Ext_ownship_position_z - Ext_intruder_position_z) > 0.0)) then signum (Ext_ownship_position_z - Ext_intruder_position_z) else (if (((Ext_ownship_position_x - Ext_intruder_position_x) < 0.0) || ((Ext_ownship_position_x - Ext_intruder_position_x) > 0.0)) then signum (Ext_ownship_position_x - Ext_intruder_position_x) else (if (((Ext_ownship_position_y - Ext_intruder_position_y) <= 0.0) && ((Ext_ownship_position_y - Ext_intruder_position_y) >= 0.0)) then 1.0 else signum (Ext_ownship_position_y - Ext_intruder_position_y)))) * (Ext_ownship_planned_velocity_z - Ext_intruder_velocity_z)) > 0.0) && not (((Ext_ownship_velocity_z - Ext_intruder_velocity_z) < 0.0) || ((Ext_ownship_velocity_z - Ext_intruder_velocity_z) > 0.0))))))) && (Ext_maximum_time_for_violation >= (((Ext_minimal_vertical_separation * signum (Ext_ownship_velocity_z - Ext_intruder_velocity_z)) - (Ext_ownship_position_z - Ext_intruder_position_z)) / (Ext_ownship_velocity_z - Ext_intruder_velocity_z))))))
 */
 /*@
  assigns \nothing;
- ensures \result == (! ((((ext_ident_bool_8) || (ext_ident_bool_52)))));
+ ensures \result == (! ((((((((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_planned_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_planned_velocity_y) - (ext_intruder_velocity_y))))))) >= (((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))) && (((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_planned_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_planned_velocity_y) - (ext_intruder_velocity_y))))))) > (((((ext_sqrt_0) / (ext_maximum_time_for_violation))) * (((ext_minimal_horizontal_separation) - (ext_sqrt_1))))))))) || (((((((((ext_ownship_position_z) - (ext_intruder_position_z))) * (ext_ident_double_2))) < (ext_minimal_vertical_separation))) && (((((((((((ext_ownship_planned_velocity_z) - (ext_intruder_velocity_z))) < (0.0))) || (((((ext_ownship_planned_velocity_z) - (ext_intruder_velocity_z))) > (0.0))))) && (((((((((ext_ownship_position_z) - (ext_intruder_position_z))) * (((ext_ownship_planned_velocity_z) - (ext_intruder_velocity_z))))) >= (0.0))) && (((! ((((((((ext_ownship_position_z) - (ext_intruder_position_z))) * (((ext_ownship_planned_velocity_z) - (ext_intruder_velocity_z))))) >= (0.0))))) || (((((((((((((ext_ownship_velocity_z) - (ext_intruder_velocity_z))) > 0)? 1 : ((((ext_ownship_velocity_z) - (ext_intruder_velocity_z))) < 0 ? -1 : 0)) * (((ext_ownship_planned_velocity_z) - (ext_intruder_velocity_z))))) >= (0.0))) && (((((((ext_ownship_velocity_z) - (ext_intruder_velocity_z))) < (0.0))) || (((((ext_ownship_velocity_z) - (ext_intruder_velocity_z))) > (0.0))))))) || (((((((( (((((((ext_ownship_position_z) - (ext_intruder_position_z))) < (0.0))) || (((((ext_ownship_position_z) - (ext_intruder_position_z))) > (0.0))))) ? (((((ext_ownship_position_z) - (ext_intruder_position_z))) > 0)? 1 : ((((ext_ownship_position_z) - (ext_intruder_position_z))) < 0 ? -1 : 0)) : (( (((((((ext_ownship_position_x) - (ext_intruder_position_x))) < (0.0))) || (((((ext_ownship_position_x) - (ext_intruder_position_x))) > (0.0))))) ? (((((ext_ownship_position_x) - (ext_intruder_position_x))) > 0)? 1 : ((((ext_ownship_position_x) - (ext_intruder_position_x))) < 0 ? -1 : 0)) : (( (((((((ext_ownship_position_y) - (ext_intruder_position_y))) <= (0.0))) && (((((ext_ownship_position_y) - (ext_intruder_position_y))) >= (0.0))))) ? (1.0) : (((((ext_ownship_position_y) - (ext_intruder_position_y))) > 0)? 1 : ((((ext_ownship_position_y) - (ext_intruder_position_y))) < 0 ? -1 : 0)))))))) * (((ext_ownship_planned_velocity_z) - (ext_intruder_velocity_z))))) > (0.0))) && (! ((((((((ext_ownship_velocity_z) - (ext_intruder_velocity_z))) < (0.0))) || (((((ext_ownship_velocity_z) - (ext_intruder_velocity_z))) > (0.0))))))))))))))))) && (((ext_maximum_time_for_violation) >= (((((((ext_minimal_vertical_separation) * (((((ext_ownship_velocity_z) - (ext_intruder_velocity_z))) > 0)? 1 : ((((ext_ownship_velocity_z) - (ext_intruder_velocity_z))) < 0 ? -1 : 0)))) - (((ext_ownship_position_z) - (ext_intruder_position_z))))) / (((ext_ownship_velocity_z) - (ext_intruder_velocity_z)))))))))))))));
 */
-SBool trigger_guard_alert_3D_loss_separation_violation(const SBool ext_ident_bool_8,
-                                                       const SBool ext_ident_bool_0,
-                                                       const SDouble ext_ownship_position_x,
+SBool trigger_guard_alert_3D_loss_separation_violation(const SDouble ext_ownship_position_x,
                                                        const SDouble ext_intruder_position_x,
                                                        const SDouble ext_ownship_planned_velocity_x,
                                                        const SDouble ext_intruder_velocity_x,
@@ -23,139 +21,112 @@ SBool trigger_guard_alert_3D_loss_separation_violation(const SBool ext_ident_boo
                                                        const SDouble ext_intruder_velocity_y,
                                                        const SDouble ext_ownship_velocity_x,
                                                        const SDouble ext_ownship_velocity_y,
-                                                       const SBool ext_ident_bool_7,
-                                                       const SDouble ext_ident_double_3,
-                                                       const SDouble ext_sqrt_2,
-                                                       const SDouble ext_ident_double_1,
-                                                       const SDouble ext_ident_double_4,
+                                                       const SDouble ext_sqrt_0,
                                                        const SDouble ext_maximum_time_for_violation,
                                                        const SDouble ext_minimal_horizontal_separation,
-                                                       const SDouble ext_sqrt_6,
-                                                       const SDouble ext_ident_double_5,
-                                                       const SBool ext_ident_bool_52,
-                                                       const SBool ext_ident_bool_11,
-                                                       const SDouble ext_ident_double_10,
+                                                       const SDouble ext_sqrt_1,
                                                        const SDouble ext_ownship_position_z,
                                                        const SDouble ext_intruder_position_z,
-                                                       const SDouble ext_ident_double_9,
+                                                       const SDouble ext_ident_double_2,
                                                        const SDouble ext_minimal_vertical_separation,
-                                                       const SBool ext_ident_bool_44,
-                                                       const SBool ext_ident_bool_14,
-                                                       const SBool ext_ident_bool_12,
                                                        const SDouble ext_ownship_planned_velocity_z,
                                                        const SDouble ext_intruder_velocity_z,
-                                                       const SBool ext_ident_bool_13,
-                                                       const SBool ext_ident_bool_15,
-                                                       const SBool ext_ident_bool_43,
-                                                       const SBool ext_ident_bool_16,
-                                                       const SBool ext_ident_bool_42,
-                                                       const SBool ext_ident_bool_18,
-                                                       const SDouble ext_ident_double_17,
-                                                       const SDouble ext_ownship_velocity_z,
-                                                       const SBool ext_ident_bool_21,
-                                                       const SBool ext_ident_bool_19,
-                                                       const SBool ext_ident_bool_20,
-                                                       const SBool ext_ident_bool_38,
-                                                       const SDouble ext_ident_double_37,
-                                                       const SDouble ext_ident_double_36,
-                                                       const SBool ext_ident_bool_24,
-                                                       const SBool ext_ident_bool_22,
-                                                       const SBool ext_ident_bool_23,
-                                                       const SDouble ext_ident_double_25,
-                                                       const SDouble ext_ident_double_35,
-                                                       const SBool ext_ident_bool_28,
-                                                       const SBool ext_ident_bool_26,
-                                                       const SBool ext_ident_bool_27,
-                                                       const SDouble ext_ident_double_29,
-                                                       const SDouble ext_ident_double_34,
-                                                       const SBool ext_ident_bool_32,
-                                                       const SBool ext_ident_bool_30,
-                                                       const SBool ext_ident_bool_31,
-                                                       const SDouble ext_ident_double_33,
-                                                       const SBool ext_ident_bool_41,
-                                                       const SBool ext_ident_bool_39,
-                                                       const SBool ext_ident_bool_40,
-                                                       const SBool ext_ident_bool_51,
-                                                       const SDouble ext_ident_double_50,
-                                                       const SDouble ext_ident_double_49,
-                                                       const SDouble ext_ident_double_47,
-                                                       const SDouble ext_ident_double_45,
-                                                       const SDouble ext_ident_double_46,
-                                                       const SDouble ext_ident_double_48)
+                                                       const SDouble ext_ownship_velocity_z)
 {
-  const SBool   s0 = ext_ident_bool_8;
-  const SBool   s1 = ext_ident_bool_0;
-  const SDouble s2 = ext_ownship_position_x;
-  const SDouble s3 = ext_intruder_position_x;
-  const SDouble s4 = ext_ownship_planned_velocity_x;
-  const SDouble s5 = ext_intruder_velocity_x;
-  const SDouble s6 = ext_ownship_position_y;
-  const SDouble s7 = ext_intruder_position_y;
-  const SDouble s8 = ext_ownship_planned_velocity_y;
-  const SDouble s9 = ext_intruder_velocity_y;
-  const SDouble s10 = ext_ownship_velocity_x;
-  const SDouble s11 = ext_ownship_velocity_y;
-  const SBool   s12 = ext_ident_bool_7;
-  const SDouble s13 = ext_ident_double_3;
-  const SDouble s14 = ext_sqrt_2;
-  const SDouble s15 = ext_ident_double_1;
-  const SDouble s16 = ext_ident_double_4;
-  const SDouble s17 = ext_maximum_time_for_violation;
-  const SDouble s18 = ext_minimal_horizontal_separation;
-  const SDouble s19 = ext_sqrt_6;
-  const SDouble s20 = ext_ident_double_5;
-  const SBool   s21 = ext_ident_bool_52;
-  const SBool   s22 = ext_ident_bool_11;
-  const SDouble s23 = ext_ident_double_10;
-  const SDouble s24 = ext_ownship_position_z;
-  const SDouble s25 = ext_intruder_position_z;
-  const SDouble s26 = ext_ident_double_9;
-  const SDouble s27 = ext_minimal_vertical_separation;
-  const SBool   s28 = ext_ident_bool_44;
-  const SBool   s29 = ext_ident_bool_14;
-  const SBool   s30 = ext_ident_bool_12;
-  const SDouble s31 = ext_ownship_planned_velocity_z;
-  const SDouble s32 = ext_intruder_velocity_z;
-  const SBool   s33 = ext_ident_bool_13;
-  const SBool   s34 = ext_ident_bool_15;
-  const SBool   s35 = ext_ident_bool_43;
-  const SBool   s36 = ext_ident_bool_16;
-  const SBool   s37 = ext_ident_bool_42;
-  const SBool   s38 = ext_ident_bool_18;
-  const SDouble s39 = ext_ident_double_17;
-  const SDouble s40 = ext_ownship_velocity_z;
-  const SBool   s41 = ext_ident_bool_21;
-  const SBool   s42 = ext_ident_bool_19;
-  const SBool   s43 = ext_ident_bool_20;
-  const SBool   s44 = ext_ident_bool_38;
-  const SDouble s45 = ext_ident_double_37;
-  const SDouble s46 = ext_ident_double_36;
-  const SBool   s47 = ext_ident_bool_24;
-  const SBool   s48 = ext_ident_bool_22;
-  const SBool   s49 = ext_ident_bool_23;
-  const SDouble s50 = ext_ident_double_25;
-  const SDouble s51 = ext_ident_double_35;
-  const SBool   s52 = ext_ident_bool_28;
-  const SBool   s53 = ext_ident_bool_26;
-  const SBool   s54 = ext_ident_bool_27;
-  const SDouble s55 = ext_ident_double_29;
-  const SDouble s56 = ext_ident_double_34;
-  const SBool   s57 = ext_ident_bool_32;
-  const SBool   s58 = ext_ident_bool_30;
-  const SBool   s59 = ext_ident_bool_31;
-  const SDouble s60 = ext_ident_double_33;
-  const SBool   s61 = ext_ident_bool_41;
-  const SBool   s62 = ext_ident_bool_39;
-  const SBool   s63 = ext_ident_bool_40;
-  const SBool   s64 = ext_ident_bool_51;
-  const SDouble s65 = ext_ident_double_50;
-  const SDouble s66 = ext_ident_double_49;
-  const SDouble s67 = ext_ident_double_47;
-  const SDouble s68 = ext_ident_double_45;
-  const SDouble s69 = ext_ident_double_46;
-  const SDouble s70 = ext_ident_double_48;
-  const SBool   s71 = s0 || s21;
-  const SBool   s72 = !s71;
+  const SDouble s0 = ext_ownship_position_x;
+  const SDouble s1 = ext_intruder_position_x;
+  const SDouble s2 = ext_ownship_planned_velocity_x;
+  const SDouble s3 = ext_intruder_velocity_x;
+  const SDouble s4 = ext_ownship_position_y;
+  const SDouble s5 = ext_intruder_position_y;
+  const SDouble s6 = ext_ownship_planned_velocity_y;
+  const SDouble s7 = ext_intruder_velocity_y;
+  const SDouble s8 = ext_ownship_velocity_x;
+  const SDouble s9 = ext_ownship_velocity_y;
+  const SDouble s10 = ext_sqrt_0;
+  const SDouble s11 = ext_maximum_time_for_violation;
+  const SDouble s12 = ext_minimal_horizontal_separation;
+  const SDouble s13 = ext_sqrt_1;
+  const SDouble s14 = ext_ownship_position_z;
+  const SDouble s15 = ext_intruder_position_z;
+  const SDouble s16 = ext_ident_double_2;
+  const SDouble s17 = ext_minimal_vertical_separation;
+  const SDouble s18 = ext_ownship_planned_velocity_z;
+  const SDouble s19 = ext_intruder_velocity_z;
+  const SDouble s20 = ext_ownship_velocity_z;
+  const SDouble s21 = s0 - s1;
+  const SDouble s22 = s2 - s3;
+  const SDouble s23 = s21 * s22;
+  const SDouble s24 = s4 - s5;
+  const SDouble s25 = s6 - s7;
+  const SDouble s26 = s24 * s25;
+  const SDouble s27 = s23 + s26;
+  const SDouble s28 = s8 - s3;
+  const SDouble s29 = s21 * s28;
+  const SDouble s30 = s9 - s7;
+  const SDouble s31 = s24 * s30;
+  const SDouble s32 = s29 + s31;
+  const SBool   s33 = s27 >= s32;
+  const SDouble s34 = s10 / s11;
+  const SDouble s35 = s12 - s13;
+  const SDouble s36 = s34 * s35;
+  const SBool   s37 = s27 > s36;
+  const SBool   s38 = s33 && s37;
+  const SDouble s39 = s14 - s15;
+  const SDouble s40 = s16 * s39;
+  const SBool   s41 = s40 < s17;
+  const SDouble s42 = s18 - s19;
+  const SBool   s44 = s42 < 0.0;
+  const SBool   s45 = s42 > 0.0;
+  const SBool   s46 = s44 || s45;
+  const SDouble s47 = s39 * s42;
+  const SBool   s48 = s47 >= 0.0;
+  const SBool   s49 = !s48;
+  const SDouble s50 = s20 - s19;
+  const SBool   s51 = s50 > 0.0;
+  const SBool   s53 = s50 < 0.0;
+  const SDouble s55 = s53 ? -1.0 : s50;
+  const SDouble s56 = s51 ? 1.0 : s55;
+  const SDouble s57 = s42 * s56;
+  const SBool   s58 = s57 >= 0.0;
+  const SBool   s59 = s51 || s53;
+  const SBool   s60 = s58 && s59;
+  const SBool   s61 = s39 < 0.0;
+  const SBool   s62 = s39 > 0.0;
+  const SBool   s63 = s61 || s62;
+  const SDouble s64 = s61 ? -1.0 : s39;
+  const SDouble s65 = s62 ? 1.0 : s64;
+  const SBool   s66 = s21 < 0.0;
+  const SBool   s67 = s21 > 0.0;
+  const SBool   s68 = s66 || s67;
+  const SDouble s69 = s66 ? -1.0 : s21;
+  const SDouble s70 = s67 ? 1.0 : s69;
+  const SBool   s71 = s24 <= 0.0;
+  const SBool   s72 = s24 >= 0.0;
+  const SBool   s73 = s71 && s72;
+  const SBool   s74 = s24 > 0.0;
+  const SBool   s75 = s24 < 0.0;
+  const SDouble s76 = s75 ? -1.0 : s24;
+  const SDouble s77 = s74 ? 1.0 : s76;
+  const SDouble s78 = s73 ? 1.0 : s77;
+  const SDouble s79 = s68 ? s70 : s78;
+  const SDouble s80 = s63 ? s65 : s79;
+  const SDouble s81 = s42 * s80;
+  const SBool   s82 = s81 > 0.0;
+  const SBool   s83 = !s59;
+  const SBool   s84 = s82 && s83;
+  const SBool   s85 = s60 || s84;
+  const SBool   s86 = s49 || s85;
+  const SBool   s87 = s48 && s86;
+  const SBool   s88 = s46 && s87;
+  const SDouble s89 = s17 * s56;
+  const SDouble s90 = s89 - s39;
+  const SDouble s91 = s90 / s50;
+  const SBool   s92 = s11 >= s91;
+  const SBool   s93 = s88 && s92;
+  const SBool   s94 = s41 && s93;
+  const SBool   s95 = s38 || s94;
+  const SBool   s96 = !s95;
 
-  return s72;
+  return s96;
 }
