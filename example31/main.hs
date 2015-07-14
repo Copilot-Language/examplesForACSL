@@ -14,24 +14,27 @@ import Control.Monad (foldM_)
 -- This file needs to be preprocessed by m4 with changeword ENABLED : http://www.gnu.org/software/m4/manual/m4.html
 --------------------------------------------------------------------------------
 
+
+-- FIXME : what happens in case of failure recovery (reboot) ?
+
 import qualified Data.List as L
 
 ----------------------------------------
 -- OWNSHIP DEFINITIONS 
 ----------------------------------------
 
-ownVelocityX = externD "ownship_velocity_x" Nothing
-ownVelocityY = externD "ownship_velocity_y" Nothing
-ownVelocityZ = externD "ownship_velocity_z" Nothing
+ownVelocityX = [0]++ externD "ownship_velocity_x" Nothing
+ownVelocityY = [0]++ externD "ownship_velocity_y" Nothing
+ownVelocityZ = [0]++ externD "ownship_velocity_z" Nothing
 
-ownPositionX = externD "ownship_position_x" Nothing
-ownPositionY = externD "ownship_position_y" Nothing
-ownPositionZ = externD "ownship_position_z" Nothing
+ownPositionX = [0]++ externD "ownship_position_x" Nothing
+ownPositionY = [0]++ externD "ownship_position_y" Nothing
+ownPositionZ = [0]++ externD "ownship_position_z" Nothing
 
 
-ownPlannedVelocityX = externD "ownship_planned_velocity_x" Nothing
-ownPlannedVelocityY = externD "ownship_planned_velocity_y" Nothing
-ownPlannedVelocityZ = externD "ownship_planned_velocity_z" Nothing
+ownPlannedVelocityX = externD "ownship_velocity_x" Nothing
+ownPlannedVelocityY = externD "ownship_velocity_y" Nothing
+ownPlannedVelocityZ = externD "ownship_velocity_z" Nothing
 
 directionParameterHorizontal = externD "direction_parameter_horizontal" Nothing
 directionParameterVertical = externD "direction_parameter_vertical" Nothing
@@ -43,13 +46,13 @@ directionParameterVertical = externD "direction_parameter_vertical" Nothing
 ----------------------------------------
 
 
-intVelocityX = externD "intruder_velocity_x" Nothing
-intVelocityY = externD "intruder_velocity_y" Nothing
-intVelocityZ = externD "intruder_velocity_z" Nothing
+intVelocityX = [0]++ externD "intruder_velocity_x" Nothing
+intVelocityY = [0]++ externD "intruder_velocity_y" Nothing
+intVelocityZ = [0]++ externD "intruder_velocity_z" Nothing
 
-intPositionX = externD "intruder_position_x" Nothing
-intPositionY = externD "intruder_position_y" Nothing
-intPositionZ = externD "intruder_position_z" Nothing
+intPositionX = [0]++ externD "intruder_position_x" Nothing
+intPositionY = [0]++ externD "intruder_position_y" Nothing
+intPositionZ = [0]++ externD "intruder_position_z" Nothing
 
 ----------------------------------------
 -- RELATIVE DEFINITIONS
