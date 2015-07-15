@@ -14,24 +14,39 @@ import Control.Monad (foldM_)
 -- This file needs to be preprocessed by m4 with changeword ENABLED : http://www.gnu.org/software/m4/manual/m4.html
 --------------------------------------------------------------------------------
 
+
+-- FIXME : what happens in case of failure recovery (reboot) ?
+-- Convention chosen : the plane lags for one sampling in the same position. (that means that the former and actual position and speed are equal to the present speed).
+
 import qualified Data.List as L
 
 ----------------------------------------
 -- OWNSHIP DEFINITIONS 
 ----------------------------------------
 
-ownVelocityX = externD "ownship_velocity_x" Nothing
-ownVelocityY = externD "ownship_velocity_y" Nothing
-ownVelocityZ = externD "ownship_velocity_z" Nothing
-
-ownPositionX = externD "ownship_position_x" Nothing
-ownPositionY = externD "ownship_position_y" Nothing
-ownPositionZ = externD "ownship_position_z" Nothing
+extownVelocityX = externD "ownship_velocity_x" Nothing
+extownVelocityY = externD "ownship_velocity_y" Nothing
+extownVelocityZ = externD "ownship_velocity_z" Nothing
 
 
-ownPlannedVelocityX = externD "ownship_planned_velocity_x" Nothing
-ownPlannedVelocityY = externD "ownship_planned_velocity_y" Nothing
-ownPlannedVelocityZ = externD "ownship_planned_velocity_z" Nothing
+extownPositionX = externD "ownship_position_x" Nothing
+extownPositionY = externD "ownship_position_y" Nothing
+extownPositionZ = externD "ownship_position_z" Nothing
+
+boot :: Stream Bool
+boot = [True]++(false)
+
+ownVelocityX = mux (boot) (extownVelocityX) $ [0]++extownVelocityX
+ownVelocityY = mux (boot) (extownVelocityY) $ [0]++extownVelocityY
+ownVelocityZ = mux (boot) (extownVelocityZ) $ [0]++extownVelocityZ
+
+ownPositionX = mux (boot) (extownPositionX) $ [0]++extownPositionX
+ownPositionY = mux (boot) (extownPositionY) $ [0]++extownPositionY
+ownPositionZ = mux (boot) (extownPositionZ) $ [0]++extownPositionZ
+
+ownPlannedVelocityX = externD "ownship_velocity_x" Nothing
+ownPlannedVelocityY = externD "ownship_velocity_y" Nothing
+ownPlannedVelocityZ = externD "ownship_velocity_z" Nothing
 
 directionParameterHorizontal = externD "direction_parameter_horizontal" Nothing
 directionParameterVertical = externD "direction_parameter_vertical" Nothing
@@ -43,13 +58,23 @@ directionParameterVertical = externD "direction_parameter_vertical" Nothing
 ----------------------------------------
 
 
-intVelocityX = externD "intruder_velocity_x" Nothing
-intVelocityY = externD "intruder_velocity_y" Nothing
-intVelocityZ = externD "intruder_velocity_z" Nothing
+extintVelocityX = externD "intruder_velocity_x" Nothing
+extintVelocityY = externD "intruder_velocity_y" Nothing
+extintVelocityZ = externD "intruder_velocity_z" Nothing
 
-intPositionX = externD "intruder_position_x" Nothing
-intPositionY = externD "intruder_position_y" Nothing
-intPositionZ = externD "intruder_position_z" Nothing
+extintPositionX = externD "intruder_position_x" Nothing
+extintPositionY = externD "intruder_position_y" Nothing
+extintPositionZ = externD "intruder_position_z" Nothing
+
+
+intVelocityX = mux (boot) (extintVelocityX) $ [0]++extintVelocityX
+intVelocityY = mux (boot) (extintVelocityY) $ [0]++extintVelocityY
+intVelocityZ = mux (boot) (extintVelocityZ) $ [0]++extintVelocityZ
+
+intPositionX = mux (boot) (extintPositionX) $ [0]++extintPositionX
+intPositionY = mux (boot) (extintPositionY) $ [0]++extintPositionY
+intPositionZ = mux (boot) (extintPositionZ) $ [0]++extintPositionZ
+
 
 ----------------------------------------
 -- RELATIVE DEFINITIONS

@@ -10,8 +10,47 @@ ARFLAGS=cr
 
 all: internal.a
 
-internal.a: trigger_guard_alert_3D_loss_separation_violation.o trigger_guard_alert_3D_conflict_resolution_violation.o ext_sqrt_0_arg0.o ext_sqrt_1_arg0.o ext_ident_double_2_arg0.o ext_sqrt_3_arg0.o ext_ident_double_4_arg0.o ext_sqrt_5_arg0.o ext_ident_double_6_arg0.o ext_sqrt_7_arg0.o ext_ident_double_8_arg0.o ext_sqrt_9_arg0.o ext_ident_double_10_arg0.o ext_sqrt_11_arg0.o ext_ident_double_12_arg0.o ext_sqrt_13_arg0.o ext_ident_double_14_arg0.o ext_sqrt_15_arg0.o ext_ident_double_16_arg0.o ext_sqrt_17_arg0.o ext_ident_double_18_arg0.o ext_sqrt_19_arg0.o ext_ident_double_20_arg0.o ext_sqrt_21_arg0.o ext_ident_double_22_arg0.o ext_sqrt_23_arg0.o ext_ident_double_24_arg0.o ext_sqrt_25_arg0.o ext_ident_double_26_arg0.o ext_sqrt_27_arg0.o ext_ident_double_28_arg0.o ext_sqrt_29_arg0.o ext_sqrt_30_arg0.o
+internal.a: update_state_0.o update_state_1.o update_state_2.o update_state_3.o update_state_4.o update_state_5.o update_state_6.o update_state_7.o update_state_8.o update_state_9.o update_state_10.o update_state_11.o update_state_12.o trigger_guard_alert_3D_loss_separation_violation.o trigger_guard_alert_3D_conflict_resolution_violation.o ext_sqrt_0_arg0.o ext_sqrt_1_arg0.o ext_ident_double_2_arg0.o ext_sqrt_3_arg0.o ext_ident_double_4_arg0.o ext_sqrt_5_arg0.o ext_ident_double_6_arg0.o ext_sqrt_7_arg0.o ext_ident_double_8_arg0.o ext_sqrt_9_arg0.o ext_ident_double_10_arg0.o ext_sqrt_11_arg0.o ext_ident_double_12_arg0.o ext_sqrt_13_arg0.o ext_ident_double_14_arg0.o ext_sqrt_15_arg0.o ext_ident_double_16_arg0.o ext_sqrt_17_arg0.o ext_ident_double_18_arg0.o ext_sqrt_19_arg0.o ext_ident_double_20_arg0.o ext_sqrt_21_arg0.o ext_ident_double_22_arg0.o ext_sqrt_23_arg0.o ext_ident_double_24_arg0.o ext_sqrt_25_arg0.o ext_ident_double_26_arg0.o ext_sqrt_27_arg0.o ext_ident_double_28_arg0.o ext_sqrt_29_arg0.o ext_sqrt_30_arg0.o
 	${AR} ${ARFLAGS} $@ $^
+
+update_state_0.o: update_state_0.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
+
+update_state_1.o: update_state_1.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
+
+update_state_2.o: update_state_2.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
+
+update_state_3.o: update_state_3.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
+
+update_state_4.o: update_state_4.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
+
+update_state_5.o: update_state_5.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
+
+update_state_6.o: update_state_6.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
+
+update_state_7.o: update_state_7.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
+
+update_state_8.o: update_state_8.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
+
+update_state_9.o: update_state_9.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
+
+update_state_10.o: update_state_10.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
+
+update_state_11.o: update_state_11.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
+
+update_state_12.o: update_state_12.c internal.h
+	${CC} ${CCFLAGS} -c $< -o $@
 
 trigger_guard_alert_3D_loss_separation_violation.o: trigger_guard_alert_3D_loss_separation_violation.c internal.h
 	${CC} ${CCFLAGS} -c $< -o $@

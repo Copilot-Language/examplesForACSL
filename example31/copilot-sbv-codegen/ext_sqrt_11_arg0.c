@@ -5,49 +5,80 @@
 /* User given declarations: */
 /*test 003*/
 /*ACSL to write
- (((((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))) * (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))) - ((((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))) * ((((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation))))
+ ((((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) - (((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * (((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation))))
 */
 /*@
  assigns \nothing;
- ensures \result == (((((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))) * (((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))) - (((((((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_velocity_y) - (ext_intruder_velocity_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))) * (((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_position_x) - (ext_intruder_position_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_position_y) - (ext_intruder_position_y))))))) - (((ext_minimal_horizontal_separation) * (ext_minimal_horizontal_separation)))))))));
+ ensures \result == (((((((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))) * (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) - (((((((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))) * (((((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))))))) - (((ext_minimal_horizontal_separation) * (ext_minimal_horizontal_separation)))))))));
 */
-SDouble ext_sqrt_11_arg0(const SDouble ext_ownship_position_x,
-                         const SDouble ext_intruder_position_x,
-                         const SDouble ext_ownship_velocity_x,
-                         const SDouble ext_intruder_velocity_x,
-                         const SDouble ext_ownship_position_y,
-                         const SDouble ext_intruder_position_y,
-                         const SDouble ext_ownship_velocity_y,
-                         const SDouble ext_intruder_velocity_y,
+SDouble ext_sqrt_11_arg0(const SBool *queue_0, const SWord32 ptr_0,
+                         const SDouble ext_ownship_position_x, const SDouble *queue_1,
+                         const SWord32 ptr_1, const SDouble ext_intruder_position_x,
+                         const SDouble *queue_2, const SWord32 ptr_2,
+                         const SDouble ext_ownship_velocity_x, const SDouble *queue_7,
+                         const SWord32 ptr_7, const SDouble ext_intruder_velocity_x,
+                         const SDouble *queue_3, const SWord32 ptr_3,
+                         const SDouble ext_ownship_position_y, const SDouble *queue_4,
+                         const SWord32 ptr_4, const SDouble ext_intruder_position_y,
+                         const SDouble *queue_5, const SWord32 ptr_5,
+                         const SDouble ext_ownship_velocity_y, const SDouble *queue_8,
+                         const SWord32 ptr_8, const SDouble ext_intruder_velocity_y,
+                         const SDouble *queue_6, const SWord32 ptr_6,
                          const SDouble ext_minimal_horizontal_separation)
 {
-  const SDouble s0 = ext_ownship_position_x;
-  const SDouble s1 = ext_intruder_position_x;
-  const SDouble s2 = ext_ownship_velocity_x;
-  const SDouble s3 = ext_intruder_velocity_x;
-  const SDouble s4 = ext_ownship_position_y;
-  const SDouble s5 = ext_intruder_position_y;
-  const SDouble s6 = ext_ownship_velocity_y;
-  const SDouble s7 = ext_intruder_velocity_y;
-  const SDouble s8 = ext_minimal_horizontal_separation;
-  const SDouble s9 = s0 - s1;
-  const SDouble s10 = s2 - s3;
-  const SDouble s11 = s9 * s10;
-  const SDouble s12 = s4 - s5;
-  const SDouble s13 = s6 - s7;
-  const SDouble s14 = s12 * s13;
-  const SDouble s15 = s11 + s14;
-  const SDouble s16 = s15 * s15;
-  const SDouble s17 = s10 * s10;
-  const SDouble s18 = s13 * s13;
-  const SDouble s19 = s17 + s18;
-  const SDouble s20 = s9 * s9;
-  const SDouble s21 = s12 * s12;
-  const SDouble s22 = s20 + s21;
-  const SDouble s23 = s8 * s8;
-  const SDouble s24 = s22 - s23;
-  const SDouble s25 = s19 * s24;
-  const SDouble s26 = s16 - s25;
+  const SBool   s0 = queue_0[0];
+  const SWord32 s1 = ptr_0;
+  const SDouble s2 = ext_ownship_position_x;
+  const SDouble s3 = queue_1[0];
+  const SWord32 s4 = ptr_1;
+  const SDouble s5 = ext_intruder_position_x;
+  const SDouble s6 = queue_2[0];
+  const SWord32 s7 = ptr_2;
+  const SDouble s8 = ext_ownship_velocity_x;
+  const SDouble s9 = queue_7[0];
+  const SWord32 s10 = ptr_7;
+  const SDouble s11 = ext_intruder_velocity_x;
+  const SDouble s12 = queue_3[0];
+  const SWord32 s13 = ptr_3;
+  const SDouble s14 = ext_ownship_position_y;
+  const SDouble s15 = queue_4[0];
+  const SWord32 s16 = ptr_4;
+  const SDouble s17 = ext_intruder_position_y;
+  const SDouble s18 = queue_5[0];
+  const SWord32 s19 = ptr_5;
+  const SDouble s20 = ext_ownship_velocity_y;
+  const SDouble s21 = queue_8[0];
+  const SWord32 s22 = ptr_8;
+  const SDouble s23 = ext_intruder_velocity_y;
+  const SDouble s24 = queue_6[0];
+  const SWord32 s25 = ptr_6;
+  const SDouble s26 = ext_minimal_horizontal_separation;
+  const SDouble s27 = s0 ? s2 : s3;
+  const SDouble s28 = s0 ? s5 : s6;
+  const SDouble s29 = s27 - s28;
+  const SDouble s30 = s0 ? s8 : s9;
+  const SDouble s31 = s0 ? s11 : s12;
+  const SDouble s32 = s30 - s31;
+  const SDouble s33 = s29 * s32;
+  const SDouble s34 = s0 ? s14 : s15;
+  const SDouble s35 = s0 ? s17 : s18;
+  const SDouble s36 = s34 - s35;
+  const SDouble s37 = s0 ? s20 : s21;
+  const SDouble s38 = s0 ? s23 : s24;
+  const SDouble s39 = s37 - s38;
+  const SDouble s40 = s36 * s39;
+  const SDouble s41 = s33 + s40;
+  const SDouble s42 = s41 * s41;
+  const SDouble s43 = s32 * s32;
+  const SDouble s44 = s39 * s39;
+  const SDouble s45 = s43 + s44;
+  const SDouble s46 = s29 * s29;
+  const SDouble s47 = s36 * s36;
+  const SDouble s48 = s46 + s47;
+  const SDouble s49 = s26 * s26;
+  const SDouble s50 = s48 - s49;
+  const SDouble s51 = s45 * s50;
+  const SDouble s52 = s42 - s51;
 
-  return s26;
+  return s52;
 }

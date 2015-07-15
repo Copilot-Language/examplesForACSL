@@ -15,22 +15,19 @@ void alert_3D_conflict_resolution_violation();
 
 extern double ownship_position_x;
 extern double intruder_position_x;
-extern double ownship_planned_velocity_x;
 extern double intruder_velocity_x;
 extern double ownship_position_y;
 extern double intruder_position_y;
-extern double ownship_planned_velocity_y;
 extern double intruder_velocity_y;
 extern double ownship_velocity_x;
 extern double ownship_velocity_y;
-extern double maximum_time_for_violation;
-extern double minimal_horizontal_separation;
 extern double ownship_position_z;
 extern double intruder_position_z;
-extern double minimal_vertical_separation;
-extern double ownship_planned_velocity_z;
 extern double intruder_velocity_z;
 extern double ownship_velocity_z;
+extern double maximum_time_for_violation;
+extern double minimal_horizontal_separation;
+extern double minimal_vertical_separation;
 extern double direction_parameter_horizontal;
 extern double direction_parameter_vertical;
 

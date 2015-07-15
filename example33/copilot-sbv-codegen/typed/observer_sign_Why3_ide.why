@@ -1,0 +1,80 @@
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file observer_sign.c, line 12) in 'observer_sign' (1/2) --- *)
+(* ---------------------------------------------------------- *)
+theory VCobserver_sign_post_part1
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Cint.Cint
+use import Compound.Compound
+use import Memory.Memory
+
+goal WP "expl:Post-condition (file observer_sign.c, line 12) in 'observer_sign' (1/2)":
+  forall i_2 i_1 i : int.
+  forall t : map addr int.
+  forall a_2 a_1 a : addr.
+  let x = t[(shift_uint32 a_1 0)] in
+  let x_1 = t[(shift_uint32 a i)] in
+  let x_2 = t[(shift_uint32 a_1 i_1)] in
+  let x_3 = t[(shift_uint32 a_2 0)] in
+  let x_4 = t[(shift_uint32 a_2 i_2)] in
+  ((is_uint32 i)) ->
+  ((is_uint32 i_1)) ->
+  ((is_uint32 i_2)) ->
+  (0 <> x) ->
+  (((region (a.base))) <= 0) ->
+  (((region (a_1.base))) <= 0) ->
+  (((region (a_2.base))) <= 0) ->
+  ((is_uint32 x_1)) ->
+  ((is_uint32 x)) ->
+  ((is_uint32 x_2)) ->
+  ((is_uint32 x_3)) ->
+  ((is_uint32 x_4)) ->
+  (x_3 = (if (0 = x_2) then x_1 else x_4))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file observer_sign.c, line 12) in 'observer_sign' (2/2) --- *)
+(* ---------------------------------------------------------- *)
+theory VCobserver_sign_post_part2
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Cint.Cint
+use import Compound.Compound
+use import Memory.Memory
+
+goal WP "expl:Post-condition (file observer_sign.c, line 12) in 'observer_sign' (2/2)":
+  forall i_2 i_1 i : int.
+  forall t : map addr int.
+  forall a_2 a_1 a : addr.
+  let x = t[(shift_uint32 a 0)] in
+  let x_1 = t[(shift_uint32 a i)] in
+  let x_2 = t[(shift_uint32 a_1 i_1)] in
+  let x_3 = t[(shift_uint32 a_2 i_2)] in
+  ((is_uint32 i)) ->
+  ((is_uint32 i_1)) ->
+  ((is_uint32 i_2)) ->
+  (0 = t[(shift_uint32 a_1 0)]) ->
+  (((region (a.base))) <= 0) ->
+  (((region (a_1.base))) <= 0) ->
+  (((region (a_2.base))) <= 0) ->
+  ((is_uint32 x)) ->
+  ((is_uint32 x_1)) ->
+  ((is_uint32 x_2)) ->
+  ((is_uint32 x_3)) ->
+  (x = (if (0 = x_2) then x_1 else x_3))
+
+end
+

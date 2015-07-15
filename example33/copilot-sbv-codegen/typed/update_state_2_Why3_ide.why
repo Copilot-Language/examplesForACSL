@@ -1,0 +1,30 @@
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file update_state_2.c, line 12) in 'update_state_2' --- *)
+(* ---------------------------------------------------------- *)
+theory VCupdate_state_2_post
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Cint.Cint
+use import Memory.Memory
+use import Compound.Compound
+
+goal WP "expl:Post-condition (file update_state_2.c, line 12) in 'update_state_2'":
+  forall i : int.
+  forall t : map addr int.
+  forall a : addr.
+  let x = t[(shift_uint32 a 0)] in
+  let x_1 = t[(shift_uint32 a i)] in
+  ((is_uint32 i)) ->
+  (((region (a.base))) <= 0) ->
+  ((is_uint32 x)) ->
+  ((is_uint32 x_1)) ->
+  (x = x_1)
+
+end
+

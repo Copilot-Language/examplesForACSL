@@ -1,0 +1,136 @@
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_double_1273_arg0.c, line 12) in 'ext_ident_double_1273_arg0' (1/4) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_double_1273_arg0_post_part1
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+use import Memory.Memory
+
+goal WP "expl:Post-condition (file ext_ident_double_1273_arg0.c, line 12) in 'ext_ident_double_1273_arg0' (1/4)":
+  forall r : real.
+  forall a_2 a_1 a : addr.
+  ((is_float64 r)) ->
+  (0 <> (if (0.0 <. r) then 1 else 0)) ->
+  (0 <> (if (r <. 0.0) then 1 else 0)) ->
+  (((region (a.base))) <= 0) ->
+  (((region (a_1.base))) <= 0) ->
+  (((region (a_2.base))) <= 0) ->
+  (1.0e0
+     = (real_of_int (if (0.0 <. r) then 1
+                     else (if (r <. 0.0) then (-1) else 0))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_double_1273_arg0.c, line 12) in 'ext_ident_double_1273_arg0' (2/4) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_double_1273_arg0_post_part2
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+use import Memory.Memory
+
+goal WP "expl:Post-condition (file ext_ident_double_1273_arg0.c, line 12) in 'ext_ident_double_1273_arg0' (2/4)":
+  forall r : real.
+  forall a_2 a_1 a : addr.
+  ((is_float64 r)) ->
+  (0 = (if (0.0 <. r) then 1 else 0)) ->
+  (0 <> (if (r <. 0.0) then 1 else 0)) ->
+  (((region (a.base))) <= 0) ->
+  (((region (a_1.base))) <= 0) ->
+  (((region (a_2.base))) <= 0) ->
+  ((-.1.0e0)
+     = (real_of_int (if (0.0 <. r) then 1
+                     else (if (r <. 0.0) then (-1) else 0))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_double_1273_arg0.c, line 12) in 'ext_ident_double_1273_arg0' (3/4) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_double_1273_arg0_post_part3
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+use import Memory.Memory
+
+goal WP "expl:Post-condition (file ext_ident_double_1273_arg0.c, line 12) in 'ext_ident_double_1273_arg0' (3/4)":
+  forall r : real.
+  forall a_2 a_1 a : addr.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 0.0) then 1 else 0)) ->
+  (0 <> (if (0.0 <. r) then 1 else 0)) ->
+  (((region (a.base))) <= 0) ->
+  (((region (a_1.base))) <= 0) ->
+  (((region (a_2.base))) <= 0) ->
+  (1.0e0
+     = (real_of_int (if (0.0 <. r) then 1
+                     else (if (r <. 0.0) then (-1) else 0))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_double_1273_arg0.c, line 12) in 'ext_ident_double_1273_arg0' (4/4) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_double_1273_arg0_post_part4
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+use import Memory.Memory
+
+goal WP "expl:Post-condition (file ext_ident_double_1273_arg0.c, line 12) in 'ext_ident_double_1273_arg0' (4/4)":
+  forall r : real.
+  forall a_2 a_1 a : addr.
+  ((is_float64 r)) ->
+  (0 = (if (0.0 <. r) then 1 else 0)) ->
+  (0 = (if (r <. 0.0) then 1 else 0)) ->
+  (((region (a.base))) <= 0) ->
+  (((region (a_1.base))) <= 0) ->
+  (((region (a_2.base))) <= 0) ->
+  (r
+     = (real_of_int (if (0.0 <. r) then 1
+                     else (if (r <. 0.0) then (-1) else 0))))
+
+end
+
