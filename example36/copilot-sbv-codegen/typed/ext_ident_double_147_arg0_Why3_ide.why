@@ -1,0 +1,149 @@
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_double_147_arg0.c, line 12) in 'ext_ident_double_147_arg0' (1/4) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_double_147_arg0_post_part1
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_double_147_arg0.c, line 12) in 'ext_ident_double_147_arg0' (1/4)":
+  forall r_5 r_4 r_3 r_2 r_1 r : real.
+  let r_6 = r *. r_3 in
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_5)) ->
+  (0 <> (if (0.0 = r_1) then 1 else 0)) ->
+  ((is_float64 (r +. r_4))) ->
+  ((is_float64 (r_1 +. r_2))) ->
+  ((is_float64 r_6)) ->
+  (0 <> (if (r_6 <=. r_5) then 1 else 0)) ->
+  (0.0
+     = (if (r_6 <=. r_5) then 0.0
+        else (if (0.0 = r_1) then (-.1.0e0) else ((-. r) /. r_1))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_double_147_arg0.c, line 12) in 'ext_ident_double_147_arg0' (2/4) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_double_147_arg0_post_part2
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_double_147_arg0.c, line 12) in 'ext_ident_double_147_arg0' (2/4)":
+  forall r_5 r_4 r_3 r_2 r_1 r : real.
+  let r_6 = r *. r_3 in
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_5)) ->
+  (0 <> (if (0.0 = r_1) then 1 else 0)) ->
+  ((is_float64 (r +. r_4))) ->
+  ((is_float64 (r_1 +. r_2))) ->
+  ((is_float64 r_6)) ->
+  (0 = (if (r_6 <=. r_5) then 1 else 0)) ->
+  ((-.1.0e0)
+     = (if (r_6 <=. r_5) then 0.0
+        else (if (0.0 = r_1) then (-.1.0e0) else ((-. r) /. r_1))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_double_147_arg0.c, line 12) in 'ext_ident_double_147_arg0' (3/4) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_double_147_arg0_post_part3
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_double_147_arg0.c, line 12) in 'ext_ident_double_147_arg0' (3/4)":
+  forall r_5 r_4 r_3 r_2 r_1 r : real.
+  let r_6 = r *. r_3 in
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_5)) ->
+  (0 = (if (0.0 = r_1) then 1 else 0)) ->
+  ((is_float64 (r +. r_4))) ->
+  ((is_float64 (r_1 +. r_2))) ->
+  ((is_float64 r_6)) ->
+  (0 <> (if (r_6 <=. r_5) then 1 else 0)) ->
+  (0.0
+     = (if (r_6 <=. r_5) then 0.0
+        else (if (0.0 = r_1) then (-.1.0e0) else ((-. r) /. r_1))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_double_147_arg0.c, line 12) in 'ext_ident_double_147_arg0' (4/4) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_double_147_arg0_post_part4
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_double_147_arg0.c, line 12) in 'ext_ident_double_147_arg0' (4/4)":
+  forall r_5 r_4 r_3 r_2 r_1 r : real.
+  let r_6 = -. r in
+  let r_7 = r /. r_1 in
+  let r_8 = r *. r_3 in
+  let r_9 = r_5 +. r_8 in
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_5)) ->
+  ((is_float64 r_6)) ->
+  (0 = (if (0.0 = r_1) then 1 else 0)) ->
+  ((is_float64 r_7)) ->
+  ((is_float64 (r_1 +. r_2))) ->
+  ((is_float64 (-.r_8))) ->
+  ((is_float64 (r_4 -. r))) ->
+  (0 = (if (0.0 <=. r_9) then 1 else 0)) ->
+  (r_7
+     = (if (0.0 <=. r_9) then 0.0
+        else (if (0.0 = r_1) then (-.1.0e0) else r_7)))
+
+end
+

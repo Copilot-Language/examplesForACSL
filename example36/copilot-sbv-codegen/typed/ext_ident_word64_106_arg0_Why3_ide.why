@@ -1,0 +1,3616 @@
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (1/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part001
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (1/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (3/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part003
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (3/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (5/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part005
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (5/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (7/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part007
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (7/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (9/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part009
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (9/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (11/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part011
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (11/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (13/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part013
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (13/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (15/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part015
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (15/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (17/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part017
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (17/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (19/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part019
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (19/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (21/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part021
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (21/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (23/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part023
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (23/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (25/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part025
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (25/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (27/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part027
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (27/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (29/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part029
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (29/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (31/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part031
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (31/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (33/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part033
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (33/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (35/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part035
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (35/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (37/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part037
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (37/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (39/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part039
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (39/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (41/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part041
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (41/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (43/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part043
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (43/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (45/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part045
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (45/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (47/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part047
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (47/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (49/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part049
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (49/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (51/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part051
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (51/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (53/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part053
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (53/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (55/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part055
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (55/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (57/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part057
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (57/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (59/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part059
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (59/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (61/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part061
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (61/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (63/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part063
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (63/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (2
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (66/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part066
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (66/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (68/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part068
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (68/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (4
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (70/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part070
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (70/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (72/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part072
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (72/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (5
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (74/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part074
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (74/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (76/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part076
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (76/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (4
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (78/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part078
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (78/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (80/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part080
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (80/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (6
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (82/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part082
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (82/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (84/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part084
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (84/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (4
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (86/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part086
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (86/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (88/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part088
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (88/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (5
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (90/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part090
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (90/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (92/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part092
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (92/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (4
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (94/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part094
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (94/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (96/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part096
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (96/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (7
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (98/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part098
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (98/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (100/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part100
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (100/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (4
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (102/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part102
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (102/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (104/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part104
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (104/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (5
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (106/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part106
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (106/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (108/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part108
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (108/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (4
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (110/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part110
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (110/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (112/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part112
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (112/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (6
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (114/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part114
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (114/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (116/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part116
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (116/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (4
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (118/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part118
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (118/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (120/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part120
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (120/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (5
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (122/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part122
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (122/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (124/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part124
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (124/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (4
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (126/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part126
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (126/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (128/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part128
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (128/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 1000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r) then 1 else 0)) ->
+  (8
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (130/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part130
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (130/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (132/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part132
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (132/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (4
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (134/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part134
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (134/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (136/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part136
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (136/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (5
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (138/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part138
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (138/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (140/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part140
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (140/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (4
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (142/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part142
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (142/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (144/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part144
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (144/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (6
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (146/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part146
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (146/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (148/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part148
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (148/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (4
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (150/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part150
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (150/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (152/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part152
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (152/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (5
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (154/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part154
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (154/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (156/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part156
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (156/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (4
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (158/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part158
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (158/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (160/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part160
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (160/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 42000.0e0) then 1 else 0)) ->
+  (7
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (162/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part162
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (162/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (164/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part164
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (164/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (4
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (166/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part166
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (166/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (168/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part168
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (168/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (5
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (170/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part170
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (170/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (172/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part172
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (172/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (4
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (174/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part174
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (174/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (176/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part176
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (176/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 20000.0e0) then 1 else 0)) ->
+  (6
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (178/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part178
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (178/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (180/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part180
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (180/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (4
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (182/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part182
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (182/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (184/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part184
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (184/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 10000.0e0) then 1 else 0)) ->
+  (5
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (186/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part186
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (186/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (188/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part188
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (188/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 5000.0e0) then 1 else 0)) ->
+  (4
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (190/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part190
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (190/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (0 <> (if (r <. 2350.0e0) then 1 else 0)) ->
+  (3
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (192/192) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_word64_106_arg0_post_part192
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_word64_106_arg0.c, line 12) in 'ext_ident_word64_106_arg0' (192/192)":
+  forall r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 10000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 20000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 2350.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 42000.0e0) then 1 else 0)) ->
+  (0 = (if (r <. 5000.0e0) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r) then 1 else 0)) ->
+  (8
+     = (if ((r <. 1000.0e0) /\ (0.0 <=. r)) then 2
+        else (if (r <. 2350.0e0) then 3
+              else (if (r <. 5000.0e0) then 4
+                    else (if (r <. 10000.0e0) then 5
+                          else (if (r <. 20000.0e0) then 6
+                                else (if (r <. 42000.0e0) then 7 else 8)))))))
+
+end
+

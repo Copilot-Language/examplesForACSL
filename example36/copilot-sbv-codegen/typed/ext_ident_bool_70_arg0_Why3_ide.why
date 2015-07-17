@@ -1,0 +1,636 @@
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (1/81) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_70_arg0_post_part01
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (1/81)":
+  forall r_5 r_4 r_3 r_2 r_1 r : real.
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_2)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_4)) ->
+  ((is_float64 r_5)) ->
+  (0 <> (if (0.0 = r) then 1 else 0)) ->
+  (0 <> (if (0.0 <. r_3) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r_4) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r_5) then 1 else 0)) ->
+  (0 <> (if (r_1 <=. r_2) then 1 else 0)) ->
+  (((0.0 = r) /\ (r_1 <=. r_2)) \/
+   ((0.0 <. r_3) /\ (0.0 <=. r_4) /\ (0.0 <=. r_5)))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (7/81) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_70_arg0_post_part07
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (7/81)":
+  forall r_5 r_4 r_3 r_2 r_1 r : real.
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_2)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_4)) ->
+  ((is_float64 r_5)) ->
+  (0 = (if (0.0 <. r_3) then 1 else 0)) ->
+  (0 <> (if (0.0 = r) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r_4) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r_5) then 1 else 0)) ->
+  (0 <> (if (r_1 <=. r_2) then 1 else 0)) ->
+  (((0.0 = r) /\ (r_1 <=. r_2)) \/
+   ((0.0 <. r_3) /\ (0.0 <=. r_4) /\ (0.0 <=. r_5)))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (13/81) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_70_arg0_post_part13
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (13/81)":
+  forall r_5 r_4 r_3 r_2 r_1 r : real.
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_2)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_4)) ->
+  ((is_float64 r_5)) ->
+  (0 = (if (0.0 <=. r_5) then 1 else 0)) ->
+  (0 <> (if (0.0 = r) then 1 else 0)) ->
+  (0 <> (if (0.0 <. r_3) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r_4) then 1 else 0)) ->
+  (0 <> (if (r_1 <=. r_2) then 1 else 0)) ->
+  (((0.0 = r) /\ (r_1 <=. r_2)) \/
+   ((0.0 <. r_3) /\ (0.0 <=. r_4) /\ (0.0 <=. r_5)))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (16/81) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_70_arg0_post_part16
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (16/81)":
+  forall r_5 r_4 r_3 r_2 r_1 r : real.
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_2)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_4)) ->
+  ((is_float64 r_5)) ->
+  (0 = (if (0.0 <. r_3) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r_5) then 1 else 0)) ->
+  (0 <> (if (0.0 = r) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r_4) then 1 else 0)) ->
+  (0 <> (if (r_1 <=. r_2) then 1 else 0)) ->
+  (((0.0 = r) /\ (r_1 <=. r_2)) \/
+   ((0.0 <. r_3) /\ (0.0 <=. r_4) /\ (0.0 <=. r_5)))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (22/81) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_70_arg0_post_part22
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (22/81)":
+  forall r_5 r_4 r_3 r_2 r_1 r : real.
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_2)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_4)) ->
+  ((is_float64 r_5)) ->
+  (0 = (if (0.0 <=. r_4) then 1 else 0)) ->
+  (0 <> (if (0.0 = r) then 1 else 0)) ->
+  (0 <> (if (0.0 <. r_3) then 1 else 0)) ->
+  (0 <> (if (r_1 <=. r_2) then 1 else 0)) ->
+  (((0.0 = r) /\ (r_1 <=. r_2)) \/
+   ((0.0 <. r_3) /\ (0.0 <=. r_4) /\ (0.0 <=. r_5)))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (25/81) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_70_arg0_post_part25
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (25/81)":
+  forall r_5 r_4 r_3 r_2 r_1 r : real.
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_2)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_4)) ->
+  ((is_float64 r_5)) ->
+  (0 = (if (0.0 <. r_3) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r_4) then 1 else 0)) ->
+  (0 <> (if (0.0 = r) then 1 else 0)) ->
+  (0 <> (if (r_1 <=. r_2) then 1 else 0)) ->
+  (((0.0 = r) /\ (r_1 <=. r_2)) \/
+   ((0.0 <. r_3) /\ (0.0 <=. r_4) /\ (0.0 <=. r_5)))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (29/81) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_70_arg0_post_part29
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (29/81)":
+  forall r_5 r_4 r_3 r_2 r_1 r : real.
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_2)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_4)) ->
+  ((is_float64 r_5)) ->
+  (0 = (if (r_1 <=. r_2) then 1 else 0)) ->
+  (0 <> (if (0.0 = r) then 1 else 0)) ->
+  (0 <> (if (0.0 <. r_3) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r_4) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r_5) then 1 else 0)) ->
+  (((0.0 = r) /\ (r_1 <=. r_2)) \/
+   ((0.0 <. r_3) /\ (0.0 <=. r_4) /\ (0.0 <=. r_5)))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (36/81) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_70_arg0_post_part36
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (36/81)":
+  forall r_5 r_4 r_3 r_2 r_1 r : real.
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_2)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_4)) ->
+  ((is_float64 r_5)) ->
+  (0 = (if (0.0 <. r_3) then 1 else 0)) ->
+  (0 = (if (r_1 <=. r_2) then 1 else 0)) ->
+  (0 <> (if (0.0 = r) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r_4) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r_5) then 1 else 0)) ->
+  (((0.0 <> r) \/ (r_2 <. r_1)) /\
+   ((r_4 <. 0.0) \/ (r_5 <. 0.0) \/ (r_3 <=. 0.0)))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (42/81) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_70_arg0_post_part42
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (42/81)":
+  forall r_5 r_4 r_3 r_2 r_1 r : real.
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_2)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_4)) ->
+  ((is_float64 r_5)) ->
+  (0 = (if (0.0 <=. r_5) then 1 else 0)) ->
+  (0 = (if (r_1 <=. r_2) then 1 else 0)) ->
+  (0 <> (if (0.0 = r) then 1 else 0)) ->
+  (0 <> (if (0.0 <. r_3) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r_4) then 1 else 0)) ->
+  (((0.0 <> r) \/ (r_2 <. r_1)) /\
+   ((r_4 <. 0.0) \/ (r_5 <. 0.0) \/ (r_3 <=. 0.0)))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (45/81) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_70_arg0_post_part45
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (45/81)":
+  forall r_5 r_4 r_3 r_2 r_1 r : real.
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_2)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_4)) ->
+  ((is_float64 r_5)) ->
+  (0 = (if (0.0 <. r_3) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r_5) then 1 else 0)) ->
+  (0 = (if (r_1 <=. r_2) then 1 else 0)) ->
+  (0 <> (if (0.0 = r) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r_4) then 1 else 0)) ->
+  (((0.0 <> r) \/ (r_2 <. r_1)) /\
+   ((r_4 <. 0.0) \/ (r_5 <. 0.0) \/ (r_3 <=. 0.0)))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (51/81) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_70_arg0_post_part51
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (51/81)":
+  forall r_5 r_4 r_3 r_2 r_1 r : real.
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_2)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_4)) ->
+  ((is_float64 r_5)) ->
+  (0 = (if (0.0 <=. r_4) then 1 else 0)) ->
+  (0 = (if (r_1 <=. r_2) then 1 else 0)) ->
+  (0 <> (if (0.0 = r) then 1 else 0)) ->
+  (0 <> (if (0.0 <. r_3) then 1 else 0)) ->
+  (((0.0 <> r) \/ (r_2 <. r_1)) /\
+   ((r_4 <. 0.0) \/ (r_5 <. 0.0) \/ (r_3 <=. 0.0)))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (54/81) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_70_arg0_post_part54
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (54/81)":
+  forall r_5 r_4 r_3 r_2 r_1 r : real.
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_2)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_4)) ->
+  ((is_float64 r_5)) ->
+  (0 = (if (0.0 <. r_3) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r_4) then 1 else 0)) ->
+  (0 = (if (r_1 <=. r_2) then 1 else 0)) ->
+  (0 <> (if (0.0 = r) then 1 else 0)) ->
+  (((0.0 <> r) \/ (r_2 <. r_1)) /\
+   ((r_4 <. 0.0) \/ (r_5 <. 0.0) \/ (r_3 <=. 0.0)))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (56/81) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_70_arg0_post_part56
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (56/81)":
+  forall r_5 r_4 r_3 r_2 r_1 r : real.
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_2)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_4)) ->
+  ((is_float64 r_5)) ->
+  (0 = (if (0.0 = r) then 1 else 0)) ->
+  (0 <> (if (0.0 <. r_3) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r_4) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r_5) then 1 else 0)) ->
+  (((0.0 = r) /\ (r_1 <=. r_2)) \/
+   ((0.0 <. r_3) /\ (0.0 <=. r_4) /\ (0.0 <=. r_5)))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (63/81) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_70_arg0_post_part63
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (63/81)":
+  forall r_5 r_4 r_3 r_2 r_1 r : real.
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_2)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_4)) ->
+  ((is_float64 r_5)) ->
+  (0 = (if (0.0 = r) then 1 else 0)) ->
+  (0 = (if (0.0 <. r_3) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r_4) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r_5) then 1 else 0)) ->
+  (((0.0 <> r) \/ (r_2 <. r_1)) /\
+   ((r_4 <. 0.0) \/ (r_5 <. 0.0) \/ (r_3 <=. 0.0)))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (69/81) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_70_arg0_post_part69
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (69/81)":
+  forall r_5 r_4 r_3 r_2 r_1 r : real.
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_2)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_4)) ->
+  ((is_float64 r_5)) ->
+  (0 = (if (0.0 = r) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r_5) then 1 else 0)) ->
+  (0 <> (if (0.0 <. r_3) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r_4) then 1 else 0)) ->
+  (((0.0 <> r) \/ (r_2 <. r_1)) /\
+   ((r_4 <. 0.0) \/ (r_5 <. 0.0) \/ (r_3 <=. 0.0)))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (72/81) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_70_arg0_post_part72
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (72/81)":
+  forall r_5 r_4 r_3 r_2 r_1 r : real.
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_2)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_4)) ->
+  ((is_float64 r_5)) ->
+  (0 = (if (0.0 = r) then 1 else 0)) ->
+  (0 = (if (0.0 <. r_3) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r_5) then 1 else 0)) ->
+  (0 <> (if (0.0 <=. r_4) then 1 else 0)) ->
+  (((0.0 <> r) \/ (r_2 <. r_1)) /\
+   ((r_4 <. 0.0) \/ (r_5 <. 0.0) \/ (r_3 <=. 0.0)))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (78/81) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_70_arg0_post_part78
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (78/81)":
+  forall r_5 r_4 r_3 r_2 r_1 r : real.
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_2)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_4)) ->
+  ((is_float64 r_5)) ->
+  (0 = (if (0.0 = r) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r_4) then 1 else 0)) ->
+  (0 <> (if (0.0 <. r_3) then 1 else 0)) ->
+  (((0.0 <> r) \/ (r_2 <. r_1)) /\
+   ((r_4 <. 0.0) \/ (r_5 <. 0.0) \/ (r_3 <=. 0.0)))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (81/81) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_70_arg0_post_part81
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_bool_70_arg0.c, line 12) in 'ext_ident_bool_70_arg0' (81/81)":
+  forall r_5 r_4 r_3 r_2 r_1 r : real.
+  ((is_float64 r)) ->
+  ((is_float64 r_1)) ->
+  ((is_float64 r_2)) ->
+  ((is_float64 r_3)) ->
+  ((is_float64 r_4)) ->
+  ((is_float64 r_5)) ->
+  (0 = (if (0.0 = r) then 1 else 0)) ->
+  (0 = (if (0.0 <. r_3) then 1 else 0)) ->
+  (0 = (if (0.0 <=. r_4) then 1 else 0)) ->
+  (((0.0 <> r) \/ (r_2 <. r_1)) /\
+   ((r_4 <. 0.0) \/ (r_5 <. 0.0) \/ (r_3 <=. 0.0)))
+
+end
+
