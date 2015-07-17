@@ -11,10 +11,27 @@ define({repeat}, {ifelse($1, 0, {},
 	repeat(eval($1-1), {$2})})})
 
 
-define({ZTHR}, {(0.0781749)}) -- altitude threshold
-define({DTHR}, {(1.0)}) -- horizontal distance threshold
-define({TTHR}, {(30.0)}) -- time threshold
-define({TCOA}, {(30.0)}) -- vertical time threshold
+--some basic stuff
+define({PI}, {3.1415926535897932384626433})
+
+define({RAD},{1})
+define({DEG}, {(PI/180)})
+define({NM}, {1852})
+define({FT},{0.3048})
+
+define({SEC},{1})
+define({MIN},{60})
+define({HOUR},{3600})
+
+define({KTS},{(NMI/HOUR)})
+define({FPM},{(FT/MIN)})
+
+
+
+define({ZTHR}, {(475*FT)}) -- altitude threshold
+define({DTHR}, {(1*NM)}) -- horizontal distance threshold
+define({TTHR}, {(30.0*SEC)}) -- time threshold
+define({TCOA}, {(30.0*SEC)}) -- vertical time threshold
 
 
 divert(0)dnl
