@@ -44,10 +44,13 @@ int main(int argc, char ** argv)
                 FILE *f2 = fopen(argv[1],"r");
                 while(fgets(s2,taille, f2) != NULL)
                 {
-                    char * mm = strstr(s2, tok3);
+                    char * mm = s2;
+here:
+                    mm = strstr(mm, tok3);
                     if(mm != NULL) 
                     {
-                        if(isalnum(*(mm + strlen(tok3)))) continue;
+			//printf("%s %s\n", mm, tok3);
+                        if(isalnum(*(mm + strlen(tok3)))) {mm++; goto here;}
                         
                         cnt ++;
                     }
