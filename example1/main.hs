@@ -1,9 +1,23 @@
+divert(-1)
+changequote({,})
+define({LQ},{changequote(`,'){dnl}
+changequote({,})})
+define({RQ},{changequote(`,')dnl{
+}changequote({,})})
+changecom({--})
+
+--insert you macros here
+
+divert(0)dnl
 import Copilot.Language.Reify
 import Copilot.Language
+import Copilot.Core.PrettyDot
+
 
 import qualified Copilot.Compile.SBV as S
 import qualified Copilot.Compile.C99 as C
 import qualified Prelude as P
+import qualified Debug.Trace as DB
 import Debug.Trace
 
 --------------------------------------------------------------------------------
@@ -39,8 +53,10 @@ spec = do
 
 
 main = do
-   reify spec >>= C.compile C.defaultParams 
-   reify spec >>=  S.compile S.defaultParams
-
+--   reify spec >>= C.compile C.defaultParams 
+   reify spec >>=  S.proofACSL S.defaultParams
 
 --------------------------------------------------------------------------------
+
+
+

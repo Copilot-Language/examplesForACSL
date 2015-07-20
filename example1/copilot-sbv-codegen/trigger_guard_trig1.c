@@ -4,12 +4,22 @@
 
 /* User given declarations: */
 /*test 006*/
-/*ACSL to write
- s0
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="stream: 0",color=crimson, style=filled]
+0 -> 1
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
- ensures \result == (queue_0[ptr_0]);
+ ensures \result == (queue_0[0]);
 */
 SBool trigger_guard_trig1(const SBool *queue_0,
                           const SWord32 ptr_0)

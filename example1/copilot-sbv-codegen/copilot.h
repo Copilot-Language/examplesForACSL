@@ -10,6 +10,9 @@
 
 void trig1(bool, uint64_t, bool);
 
+/* External structs (must be defined by user): */
+
+
 /* External variables (must be defined by user): */
 
 extern uint64_t e1;

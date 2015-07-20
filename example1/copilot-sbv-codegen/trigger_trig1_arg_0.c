@@ -4,9 +4,23 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- (s1 < 3)
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="op2: <",color=green4, style=filled]
+0 -> 1
+2 [label="stream: 1",color=crimson, style=filled]
+1 -> 2
+3 [label="const: 3",color=red1, style=filled]
+1 -> 3
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == (((queue_1[ptr_1]) < (3)));

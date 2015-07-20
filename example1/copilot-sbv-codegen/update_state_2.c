@@ -4,9 +4,37 @@
 
 /* User given declarations: */
 /*test 001*/
-/*ACSL to write
- (s2 || (drop 1 s2 && ((drop 1 s1 mod 2) == 0)))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="op2: ||",color=green4, style=filled]
+0 -> 1
+2 [label="stream: 2",color=crimson, style=filled]
+1 -> 2
+3 [label="op2: &&",color=green4, style=filled]
+1 -> 3
+4 [label="drop 1: 
+stream: 2",color=crimson, style=filled]
+3 -> 4
+5 [label="op2: ==",color=green4, style=filled]
+3 -> 5
+6 [label="op2: mod",color=green4, style=filled]
+5 -> 6
+7 [label="drop 1: 
+stream: 1",color=crimson, style=filled]
+6 -> 7
+8 [label="const: 2",color=red1, style=filled]
+6 -> 8
+9 [label="const: 0",color=red1, style=filled]
+5 -> 9
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == (((queue_2[ptr_2]) || (((queue_2[(ptr_2 + 1) % 2]) && (((((queue_1[(ptr_1 + 1) % 2]) % (2))) == (0)))))));

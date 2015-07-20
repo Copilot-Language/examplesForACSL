@@ -4,9 +4,19 @@
 
 /* User given declarations: */
 /*test 006*/
-/*ACSL to write
- ext_ident_bool_1790
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="ext_ident_bool_1790",color=cyan4, style=filled]
+0 -> 1
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == (ext_ident_bool_1790);

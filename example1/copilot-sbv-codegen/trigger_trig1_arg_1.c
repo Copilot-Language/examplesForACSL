@@ -4,9 +4,31 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- (((Ext_e1 + Ext_e2) + Exta_e3[(s1 + 6)]) + Extf_ff(s1))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="op2: +",color=green4, style=filled]
+0 -> 1
+2 [label="op2: +",color=green4, style=filled]
+1 -> 2
+3 [label="op2: +",color=green4, style=filled]
+2 -> 3
+4 [label="ext_e1",color=cyan1, style=filled]
+3 -> 4
+5 [label="ext_e2",color=cyan1, style=filled]
+3 -> 5
+6 [label="ext_e3_0",color=cyan3, style=filled]
+2 -> 6
+10 [label="ext_ff_1",color=cyan4, style=filled]
+1 -> 10
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == (((((((ext_e1) + (ext_e2))) + (ext_e3_0))) + (ext_ff_1)));

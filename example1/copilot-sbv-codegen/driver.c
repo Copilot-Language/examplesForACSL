@@ -21,30 +21,7 @@ static SWord64 ext_e1 = 0;
 static SWord64 ext_e2 = 0;
 static SWord64 ext_e3_0 = 0;
 static SWord64 ext_ff_1 = 0;
-/*ACSL following*/
 
-/*@
- global invariant a_bound_ptr_0: ptr_0 < 1 ; 
- global invariant a_pos_ptr_0: ptr_0 >= 0 ; 
- global invariant a_valid_ptr_0: \valid (queue_0 + (0.. 0 ));
- global invariant a_bound_ptr_1: ptr_1 < 2 ; 
- global invariant a_pos_ptr_1: ptr_1 >= 0 ; 
- global invariant a_valid_ptr_1: \valid (queue_1 + (0.. 1 ));
- global invariant a_bound_ptr_2: ptr_2 < 2 ; 
- global invariant a_pos_ptr_2: ptr_2 >= 0 ; 
- global invariant a_valid_ptr_2: \valid (queue_2 + (0.. 1 ));
-*/
-
-/*@
- assigns ext_e1;
- assigns ext_e2;
- //ensures ext_e1 == e1;
- //ensures ext_e2 == e2;
- assigns ext_e3_0 ;
- //ensures ext_e3_0 == tmp_ext_e3_0;
- assigns ext_ff_1;
- //ensures ext_ff_1 == tmp_ext_ff_1;
-*/
 void static sampleExts(void) {
   SWord64 tmp_ext_e3_0 = e3[ext_arr_e3(queue_1, ptr_1)];
   SWord64 tmp_ext_ff_1 = ff(ext_ff_1_arg0(queue_1, ptr_1));
@@ -54,9 +31,6 @@ void static sampleExts(void) {
   ext_ff_1 = tmp_ext_ff_1;
 }
 
-/*@
- assigns \nothing; 
-*/
 void static fireTriggers(void) {
   if (trigger_guard_trig1(queue_0, ptr_0))
     trig1(trigger_trig1_arg_0(queue_1, ptr_1),

@@ -4,9 +4,25 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "sq" (ext_ident_double_73 * ext_ident_double_81)
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: sq",color=plum, style=filled]
+0 -> 1
+2 [label="op2: *",color=green4, style=filled]
+1 -> 2
+3 [label="ext_ident_double_73",color=cyan4, style=filled]
+2 -> 3
+293 [label="ext_ident_double_81",color=cyan4, style=filled]
+2 -> 293
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((((ext_ident_double_73) * (ext_ident_double_81))));

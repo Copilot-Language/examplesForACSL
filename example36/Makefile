@@ -27,3 +27,17 @@ dead:
 	gcc script.cpp -o a
 	for i in copilot-sbv-codegen/*; do if [ "$${i}" != "$${i%.c}" ];then ./a $$i > $$i.tmp; rm $$i; mv $$i.tmp $$i; fi; done
 
+dot:
+	gcc scriptdot.cpp -o a
+	for i in copilot-sbv-codegen/*; do if [ "$${i}" != "$${i%.c}" ];then ./a $$i > $$i.gv; dot -Tps $$i.gv -o $$i.ps; fi; done
+	
+acsl:
+	make sandbox
+	make dead
+	make dot
+	make fwp -C copilot-sbv-codegen
+
+compile:
+	make sandbox
+	make dead
+	make all -C copilot-sbv-codegen

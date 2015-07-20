@@ -4,9 +4,47 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "mvsstart" (if ((ext_ident_double_63 <= 0.0) || (ext_ownship_velocity_z >= 700.0)) then 0.0 else ((700.0 - ext_ownship_velocity_z) / 2.0))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: mvsstart",color=plum, style=filled]
+0 -> 1
+2 [label="op3: mux",color=green4, style=filled]
+1 -> 2
+3 [label="op2: ||",color=green4, style=filled]
+2 -> 3
+4 [label="op2: <=",color=green4, style=filled]
+3 -> 4
+5 [label="ext_ident_double_63",color=cyan4, style=filled]
+4 -> 5
+649 [label="const: 0.0",color=red1, style=filled]
+4 -> 649
+650 [label="op2: >=",color=green4, style=filled]
+3 -> 650
+651 [label="ext_ownship_velocity_z",color=cyan1, style=filled]
+650 -> 651
+652 [label="const: 700.0",color=red1, style=filled]
+650 -> 652
+653 [label="const: 0.0",color=red1, style=filled]
+2 -> 653
+654 [label="op2: /",color=green4, style=filled]
+2 -> 654
+655 [label="op2: -",color=green4, style=filled]
+654 -> 655
+656 [label="const: 700.0",color=red1, style=filled]
+655 -> 656
+657 [label="ext_ownship_velocity_z",color=cyan1, style=filled]
+655 -> 657
+658 [label="const: 2.0",color=red1, style=filled]
+654 -> 658
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((( (((((ext_ident_double_63) <= (0.0))) || (((ext_ownship_velocity_z) >= (700.0))))) ? (0.0) : (((((700.0) - (ext_ownship_velocity_z))) / (2.0))))));

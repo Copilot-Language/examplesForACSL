@@ -4,9 +4,39 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "taumod" (if (ext_ident_double_42 < 0.0) then ((ext_ident_double_59 - ext_ident_double_61) / ext_ident_double_62) else -1.0)
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: taumod",color=plum, style=filled]
+0 -> 1
+2 [label="op3: mux",color=green4, style=filled]
+1 -> 2
+3 [label="op2: <",color=green4, style=filled]
+2 -> 3
+4 [label="ext_ident_double_42",color=cyan4, style=filled]
+3 -> 4
+21 [label="const: 0.0",color=red1, style=filled]
+3 -> 21
+22 [label="op2: /",color=green4, style=filled]
+2 -> 22
+23 [label="op2: -",color=green4, style=filled]
+22 -> 23
+24 [label="ext_ident_double_59",color=cyan4, style=filled]
+23 -> 24
+607 [label="ext_ident_double_61",color=cyan4, style=filled]
+23 -> 607
+626 [label="ext_ident_double_62",color=cyan4, style=filled]
+22 -> 626
+643 [label="const: -1.0",color=red1, style=filled]
+2 -> 643
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((( (((ext_ident_double_42) < (0.0))) ? (((((ext_ident_double_59) - (ext_ident_double_61))) / (ext_ident_double_62))) : (-1.0))));

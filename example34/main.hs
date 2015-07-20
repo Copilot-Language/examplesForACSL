@@ -5,10 +5,6 @@ changequote({,})})
 define({RQ},{changequote(`,')dnl{
 }changequote({,})})
 changecom({--})
-define({concat},{$1$2})dnl
-define({repeat}, {ifelse($1, 0, {},
-	$1, 1, {$2}, {$2
-	repeat(eval($1-1), {$2})})})
 
 
 --some basic stuff

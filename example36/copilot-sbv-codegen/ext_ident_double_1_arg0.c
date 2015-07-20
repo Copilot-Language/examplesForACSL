@@ -4,9 +4,21 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "normsq2dim" ext_ident_double_0
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: normsq2dim",color=plum, style=filled]
+0 -> 1
+2 [label="ext_ident_double_0",color=cyan4, style=filled]
+1 -> 2
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((ext_ident_double_0));
