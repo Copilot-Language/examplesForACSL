@@ -5,23 +5,43 @@
 /* User given declarations: */
 /*test 003*/
 /*ACSL to write
- label "absolute_value_splitting" signum (Ext_ownship_position_z - Ext_intruder_position_z)
+ label "dmodRA" (if (ext_ident_word64_121 == 2) then 0.0 else (if (ext_ident_word64_122 == 3) then 370.40000000000003 else (if (ext_ident_word64_123 == 4) then 648.1999999999999 else (if (ext_ident_word64_124 == 5) then 1018.6000000000001 else (if (ext_ident_word64_125 == 6) then 1481.6000000000001 else (if (ext_ident_word64_126 == 7) then 2037.2000000000003 else (if (ext_ident_word64_127 == 8) then 2037.2000000000003 else 0.0)))))))
 */
 /*@
  assigns \nothing;
- ensures \result == ((((((ext_ownship_position_z) - (ext_intruder_position_z))) > 0)? 1 : ((((ext_ownship_position_z) - (ext_intruder_position_z))) < 0 ? -1 : (((ext_ownship_position_z) - (ext_intruder_position_z))))));
+ ensures \result == ((( (((ext_ident_word64_121) == (2))) ? (0.0) : (( (((ext_ident_word64_122) == (3))) ? (370.40000000000003) : (( (((ext_ident_word64_123) == (4))) ? (648.1999999999999) : (( (((ext_ident_word64_124) == (5))) ? (1018.6000000000001) : (( (((ext_ident_word64_125) == (6))) ? (1481.6000000000001) : (( (((ext_ident_word64_126) == (7))) ? (2037.2000000000003) : (( (((ext_ident_word64_127) == (8))) ? (2037.2000000000003) : (0.0))))))))))))))));
 */
-SDouble ext_ident_double_128_arg0(const SDouble ext_ownship_position_z,
-                                  const SDouble ext_intruder_position_z)
+SDouble ext_ident_double_128_arg0(const SWord64 ext_ident_word64_121,
+                                  const SDouble ext_ownship_position_z,
+                                  const SWord64 ext_ident_word64_122,
+                                  const SWord64 ext_ident_word64_123,
+                                  const SWord64 ext_ident_word64_124,
+                                  const SWord64 ext_ident_word64_125,
+                                  const SWord64 ext_ident_word64_126,
+                                  const SWord64 ext_ident_word64_127)
 {
-  const SDouble s0 = ext_ownship_position_z;
-  const SDouble s1 = ext_intruder_position_z;
-  const SDouble s2 = s0 - s1;
-  const SBool   s4 = s2 > 0.0;
-  const SBool   s6 = s2 < 0.0;
-  const SDouble s8 = s6 ? -1.0 : s2;
-  const SDouble s9 = s4 ? 1.0 : s8;
-  const SDouble s10 = s9 /* absolute_value_splitting */;
+  const SWord64 s0 = ext_ident_word64_121;
+  const SWord64 s2 = ext_ident_word64_122;
+  const SWord64 s3 = ext_ident_word64_123;
+  const SWord64 s4 = ext_ident_word64_124;
+  const SWord64 s5 = ext_ident_word64_125;
+  const SWord64 s6 = ext_ident_word64_126;
+  const SWord64 s7 = ext_ident_word64_127;
+  const SBool   s9 = s0 == 0x0000000000000002ULL;
+  const SBool   s12 = s2 == 0x0000000000000003ULL;
+  const SBool   s15 = s3 == 0x0000000000000004ULL;
+  const SBool   s18 = s4 == 0x0000000000000005ULL;
+  const SBool   s21 = s5 == 0x0000000000000006ULL;
+  const SBool   s24 = s6 == 0x0000000000000007ULL;
+  const SBool   s27 = s7 == 0x0000000000000008ULL;
+  const SDouble s28 = s27 ? 2037.2000000000003 : 0.0;
+  const SDouble s29 = s24 ? 2037.2000000000003 : s28;
+  const SDouble s30 = s21 ? 1481.6000000000001 : s29;
+  const SDouble s31 = s18 ? 1018.6000000000001 : s30;
+  const SDouble s32 = s15 ? 648.1999999999999 : s31;
+  const SDouble s33 = s12 ? 370.40000000000003 : s32;
+  const SDouble s34 = s9 ? 0.0 : s33;
+  const SDouble s35 = s34 /* dmodRA */;
 
-  return s10;
+  return s35;
 }

@@ -5,7 +5,7 @@
 /* User given declarations: */
 /*test 003*/
 /*ACSL to write
- label "sensitivityLevel" (if ((0.0 <= Ext_ownship_position_z) && (Ext_ownship_position_z < 1000.0)) then 2 else (if (Ext_ownship_position_z < 2350.0) then 3 else (if (Ext_ownship_position_z < 5000.0) then 4 else (if (Ext_ownship_position_z < 10000.0) then 5 else (if (Ext_ownship_position_z < 20000.0) then 6 else (if (Ext_ownship_position_z < 42000.0) then 7 else 8))))))
+ label "sensitivityLevel" (if ((0.0 <= ext_ownship_position_z) && (ext_ownship_position_z < 1000.0)) then 2 else (if (ext_ownship_position_z < 2350.0) then 3 else (if (ext_ownship_position_z < 5000.0) then 4 else (if (ext_ownship_position_z < 10000.0) then 5 else (if (ext_ownship_position_z < 20000.0) then 6 else (if (ext_ownship_position_z < 42000.0) then 7 else 8))))))
 */
 /*@
  assigns \nothing;

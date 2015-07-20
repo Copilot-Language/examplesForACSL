@@ -5,76 +5,37 @@
 /* User given declarations: */
 /*test 003*/
 /*ACSL to write
- label "delta" (((Extf_ident_double(label "hmdRA" (if (Extf_ident_word64(label "sensitivityLevel" (if ((0.0 <= Ext_ownship_position_z) && (Ext_ownship_position_z < 1000.0)) then 2 else (if (Ext_ownship_position_z < 2350.0) then 3 else (if (Ext_ownship_position_z < 5000.0) then 4 else (if (Ext_ownship_position_z < 10000.0) then 5 else (if (Ext_ownship_position_z < 20000.0) then 6 else (if (Ext_ownship_position_z < 42000.0) then 7 else 8))))))) == 2) then 0.0 else (if (Extf_ident_word64(label "sensitivityLevel" (if ((0.0 <= Ext_ownship_position_z) && (Ext_ownship_position_z < 1000.0)) then 2 else (if (Ext_ownship_position_z < 2350.0) then 3 else (if (Ext_ownship_position_z < 5000.0) then 4 else (if (Ext_ownship_position_z < 10000.0) then 5 else (if (Ext_ownship_position_z < 20000.0) then 6 else (if (Ext_ownship_position_z < 42000.0) then 7 else 8))))))) == 3) then 370.332 else (if (Extf_ident_word64(label "sensitivityLevel" (if ((0.0 <= Ext_ownship_position_z) && (Ext_ownship_position_z < 1000.0)) then 2 else (if (Ext_ownship_position_z < 2350.0) then 3 else (if (Ext_ownship_position_z < 5000.0) then 4 else (if (Ext_ownship_position_z < 10000.0) then 5 else (if (Ext_ownship_position_z < 20000.0) then 6 else (if (Ext_ownship_position_z < 42000.0) then 7 else 8))))))) == 4) then 648.0048 else (if (Extf_ident_word64(label "sensitivityLevel" (if ((0.0 <= Ext_ownship_position_z) && (Ext_ownship_position_z < 1000.0)) then 2 else (if (Ext_ownship_position_z < 2350.0) then 3 else (if (Ext_ownship_position_z < 5000.0) then 4 else (if (Ext_ownship_position_z < 10000.0) then 5 else (if (Ext_ownship_position_z < 20000.0) then 6 else (if (Ext_ownship_position_z < 42000.0) then 7 else 8))))))) == 5) then 1018.6416 else (if (Extf_ident_word64(label "sensitivityLevel" (if ((0.0 <= Ext_ownship_position_z) && (Ext_ownship_position_z < 1000.0)) then 2 else (if (Ext_ownship_position_z < 2350.0) then 3 else (if (Ext_ownship_position_z < 5000.0) then 4 else (if (Ext_ownship_position_z < 10000.0) then 5 else (if (Ext_ownship_position_z < 20000.0) then 6 else (if (Ext_ownship_position_z < 42000.0) then 7 else 8))))))) == 6) then 1481.6328 else (if (Extf_ident_word64(label "sensitivityLevel" (if ((0.0 <= Ext_ownship_position_z) && (Ext_ownship_position_z < 1000.0)) then 2 else (if (Ext_ownship_position_z < 2350.0) then 3 else (if (Ext_ownship_position_z < 5000.0) then 4 else (if (Ext_ownship_position_z < 10000.0) then 5 else (if (Ext_ownship_position_z < 20000.0) then 6 else (if (Ext_ownship_position_z < 42000.0) then 7 else 8))))))) == 7) then 2036.9784000000002 else (if (Extf_ident_word64(label "sensitivityLevel" (if ((0.0 <= Ext_ownship_position_z) && (Ext_ownship_position_z < 1000.0)) then 2 else (if (Ext_ownship_position_z < 2350.0) then 3 else (if (Ext_ownship_position_z < 5000.0) then 4 else (if (Ext_ownship_position_z < 10000.0) then 5 else (if (Ext_ownship_position_z < 20000.0) then 6 else (if (Ext_ownship_position_z < 42000.0) then 7 else 8))))))) == 8) then 2036.9784000000002 else 0.0)))))))) * Extf_ident_double(label "hmdRA" (if (Extf_ident_word64(label "sensitivityLevel" (if ((0.0 <= Ext_ownship_position_z) && (Ext_ownship_position_z < 1000.0)) then 2 else (if (Ext_ownship_position_z < 2350.0) then 3 else (if (Ext_ownship_position_z < 5000.0) then 4 else (if (Ext_ownship_position_z < 10000.0) then 5 else (if (Ext_ownship_position_z < 20000.0) then 6 else (if (Ext_ownship_position_z < 42000.0) then 7 else 8))))))) == 2) then 0.0 else (if (Extf_ident_word64(label "sensitivityLevel" (if ((0.0 <= Ext_ownship_position_z) && (Ext_ownship_position_z < 1000.0)) then 2 else (if (Ext_ownship_position_z < 2350.0) then 3 else (if (Ext_ownship_position_z < 5000.0) then 4 else (if (Ext_ownship_position_z < 10000.0) then 5 else (if (Ext_ownship_position_z < 20000.0) then 6 else (if (Ext_ownship_position_z < 42000.0) then 7 else 8))))))) == 3) then 370.332 else (if (Extf_ident_word64(label "sensitivityLevel" (if ((0.0 <= Ext_ownship_position_z) && (Ext_ownship_position_z < 1000.0)) then 2 else (if (Ext_ownship_position_z < 2350.0) then 3 else (if (Ext_ownship_position_z < 5000.0) then 4 else (if (Ext_ownship_position_z < 10000.0) then 5 else (if (Ext_ownship_position_z < 20000.0) then 6 else (if (Ext_ownship_position_z < 42000.0) then 7 else 8))))))) == 4) then 648.0048 else (if (Extf_ident_word64(label "sensitivityLevel" (if ((0.0 <= Ext_ownship_position_z) && (Ext_ownship_position_z < 1000.0)) then 2 else (if (Ext_ownship_position_z < 2350.0) then 3 else (if (Ext_ownship_position_z < 5000.0) then 4 else (if (Ext_ownship_position_z < 10000.0) then 5 else (if (Ext_ownship_position_z < 20000.0) then 6 else (if (Ext_ownship_position_z < 42000.0) then 7 else 8))))))) == 5) then 1018.6416 else (if (Extf_ident_word64(label "sensitivityLevel" (if ((0.0 <= Ext_ownship_position_z) && (Ext_ownship_position_z < 1000.0)) then 2 else (if (Ext_ownship_position_z < 2350.0) then 3 else (if (Ext_ownship_position_z < 5000.0) then 4 else (if (Ext_ownship_position_z < 10000.0) then 5 else (if (Ext_ownship_position_z < 20000.0) then 6 else (if (Ext_ownship_position_z < 42000.0) then 7 else 8))))))) == 6) then 1481.6328 else (if (Extf_ident_word64(label "sensitivityLevel" (if ((0.0 <= Ext_ownship_position_z) && (Ext_ownship_position_z < 1000.0)) then 2 else (if (Ext_ownship_position_z < 2350.0) then 3 else (if (Ext_ownship_position_z < 5000.0) then 4 else (if (Ext_ownship_position_z < 10000.0) then 5 else (if (Ext_ownship_position_z < 20000.0) then 6 else (if (Ext_ownship_position_z < 42000.0) then 7 else 8))))))) == 7) then 2036.9784000000002 else (if (Extf_ident_word64(label "sensitivityLevel" (if ((0.0 <= Ext_ownship_position_z) && (Ext_ownship_position_z < 1000.0)) then 2 else (if (Ext_ownship_position_z < 2350.0) then 3 else (if (Ext_ownship_position_z < 5000.0) then 4 else (if (Ext_ownship_position_z < 10000.0) then 5 else (if (Ext_ownship_position_z < 20000.0) then 6 else (if (Ext_ownship_position_z < 42000.0) then 7 else 8))))))) == 8) then 2036.9784000000002 else 0.0))))))))) * Extf_ident_double(label "normsq2dim" Extf_ident_double(label "scalar2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))) - (Extf_ident_double(label "det2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)) - ((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_position_y - Ext_intruder_position_y)))) * Extf_ident_double(label "det2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)) - ((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_position_y - Ext_intruder_position_y))))))
+ label "scalar2dim" (((ext_ownship_position_x - ext_intruder_position_x) * (ext_ownship_velocity_x - ext_intruder_velocity_x)) + ((ext_ownship_position_y - ext_intruder_position_y) * (ext_ownship_velocity_y - ext_intruder_velocity_y)))
 */
 /*@
  assigns \nothing;
- ensures \result == ((((((((ext_ident_double_52) * (ext_ident_double_60))) * (ext_ident_double_62))) - (((ext_ident_double_63) * (ext_ident_double_64))))));
+ ensures \result == ((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))));
 */
-SDouble ext_ident_double_65_arg0(const SDouble ext_ident_double_52,
-                                 const SWord64 ext_ident_word64_45,
-                                 const SDouble ext_ownship_position_z,
-                                 const SWord64 ext_ident_word64_46,
-                                 const SWord64 ext_ident_word64_47,
-                                 const SWord64 ext_ident_word64_48,
-                                 const SWord64 ext_ident_word64_49,
-                                 const SWord64 ext_ident_word64_50,
-                                 const SWord64 ext_ident_word64_51,
-                                 const SDouble ext_ident_double_60,
-                                 const SWord64 ext_ident_word64_53,
-                                 const SWord64 ext_ident_word64_54,
-                                 const SWord64 ext_ident_word64_55,
-                                 const SWord64 ext_ident_word64_56,
-                                 const SWord64 ext_ident_word64_57,
-                                 const SWord64 ext_ident_word64_58,
-                                 const SWord64 ext_ident_word64_59,
-                                 const SDouble ext_ident_double_62,
-                                 const SDouble ext_ident_double_61,
+SDouble ext_ident_double_65_arg0(const SDouble ext_ownship_position_x,
+                                 const SDouble ext_intruder_position_x,
                                  const SDouble ext_ownship_velocity_x,
                                  const SDouble ext_intruder_velocity_x,
-                                 const SDouble ext_ownship_velocity_y,
-                                 const SDouble ext_intruder_velocity_y,
-                                 const SDouble ext_ident_double_63,
-                                 const SDouble ext_ownship_position_x,
-                                 const SDouble ext_intruder_position_x,
                                  const SDouble ext_ownship_position_y,
                                  const SDouble ext_intruder_position_y,
-                                 const SDouble ext_ident_double_64)
+                                 const SDouble ext_ownship_velocity_y,
+                                 const SDouble ext_intruder_velocity_y)
 {
-  const SDouble s0 = ext_ident_double_52;
-  const SWord64 s1 = ext_ident_word64_45;
-  const SDouble s2 = ext_ownship_position_z;
-  const SWord64 s3 = ext_ident_word64_46;
-  const SWord64 s4 = ext_ident_word64_47;
-  const SWord64 s5 = ext_ident_word64_48;
-  const SWord64 s6 = ext_ident_word64_49;
-  const SWord64 s7 = ext_ident_word64_50;
-  const SWord64 s8 = ext_ident_word64_51;
-  const SDouble s9 = ext_ident_double_60;
-  const SWord64 s10 = ext_ident_word64_53;
-  const SWord64 s11 = ext_ident_word64_54;
-  const SWord64 s12 = ext_ident_word64_55;
-  const SWord64 s13 = ext_ident_word64_56;
-  const SWord64 s14 = ext_ident_word64_57;
-  const SWord64 s15 = ext_ident_word64_58;
-  const SWord64 s16 = ext_ident_word64_59;
-  const SDouble s17 = ext_ident_double_62;
-  const SDouble s18 = ext_ident_double_61;
-  const SDouble s19 = ext_ownship_velocity_x;
-  const SDouble s20 = ext_intruder_velocity_x;
-  const SDouble s21 = ext_ownship_velocity_y;
-  const SDouble s22 = ext_intruder_velocity_y;
-  const SDouble s23 = ext_ident_double_63;
-  const SDouble s24 = ext_ownship_position_x;
-  const SDouble s25 = ext_intruder_position_x;
-  const SDouble s26 = ext_ownship_position_y;
-  const SDouble s27 = ext_intruder_position_y;
-  const SDouble s28 = ext_ident_double_64;
-  const SDouble s29 = s0 * s9;
-  const SDouble s30 = s17 * s29;
-  const SDouble s31 = s23 * s28;
-  const SDouble s32 = s30 - s31;
-  const SDouble s33 = s32 /* delta */;
+  const SDouble s0 = ext_ownship_position_x;
+  const SDouble s1 = ext_intruder_position_x;
+  const SDouble s2 = ext_ownship_velocity_x;
+  const SDouble s3 = ext_intruder_velocity_x;
+  const SDouble s4 = ext_ownship_position_y;
+  const SDouble s5 = ext_intruder_position_y;
+  const SDouble s6 = ext_ownship_velocity_y;
+  const SDouble s7 = ext_intruder_velocity_y;
+  const SDouble s8 = s0 - s1;
+  const SDouble s9 = s2 - s3;
+  const SDouble s10 = s8 * s9;
+  const SDouble s11 = s4 - s5;
+  const SDouble s12 = s6 - s7;
+  const SDouble s13 = s11 * s12;
+  const SDouble s14 = s10 + s13;
+  const SDouble s15 = s14 /* scalar2dim */;
 
-  return s33;
+  return s15;
 }

@@ -21,3 +21,9 @@ clean:
 	rm tmp.o
 	rm -rf copilot-c99-codegen
 	rm main
+
+
+dead:
+	gcc script.cpp -o a
+	for i in copilot-sbv-codegen/*; do if [ "$${i}" != "$${i%.c}" ];then ./a $$i > $$i.tmp; rm $$i; mv $$i.tmp $$i; fi; done
+

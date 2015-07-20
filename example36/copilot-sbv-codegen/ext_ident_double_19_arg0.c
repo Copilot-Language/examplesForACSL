@@ -5,44 +5,37 @@
 /* User given declarations: */
 /*test 003*/
 /*ACSL to write
- label "hmdRA" (if (Extf_ident_word64(label "sensitivityLevel" (if ((0.0 <= Ext_ownship_position_z) && (Ext_ownship_position_z < 1000.0)) then 2 else (if (Ext_ownship_position_z < 2350.0) then 3 else (if (Ext_ownship_position_z < 5000.0) then 4 else (if (Ext_ownship_position_z < 10000.0) then 5 else (if (Ext_ownship_position_z < 20000.0) then 6 else (if (Ext_ownship_position_z < 42000.0) then 7 else 8))))))) == 2) then 0.0 else (if (Extf_ident_word64(label "sensitivityLevel" (if ((0.0 <= Ext_ownship_position_z) && (Ext_ownship_position_z < 1000.0)) then 2 else (if (Ext_ownship_position_z < 2350.0) then 3 else (if (Ext_ownship_position_z < 5000.0) then 4 else (if (Ext_ownship_position_z < 10000.0) then 5 else (if (Ext_ownship_position_z < 20000.0) then 6 else (if (Ext_ownship_position_z < 42000.0) then 7 else 8))))))) == 3) then 370.332 else (if (Extf_ident_word64(label "sensitivityLevel" (if ((0.0 <= Ext_ownship_position_z) && (Ext_ownship_position_z < 1000.0)) then 2 else (if (Ext_ownship_position_z < 2350.0) then 3 else (if (Ext_ownship_position_z < 5000.0) then 4 else (if (Ext_ownship_position_z < 10000.0) then 5 else (if (Ext_ownship_position_z < 20000.0) then 6 else (if (Ext_ownship_position_z < 42000.0) then 7 else 8))))))) == 4) then 648.0048 else (if (Extf_ident_word64(label "sensitivityLevel" (if ((0.0 <= Ext_ownship_position_z) && (Ext_ownship_position_z < 1000.0)) then 2 else (if (Ext_ownship_position_z < 2350.0) then 3 else (if (Ext_ownship_position_z < 5000.0) then 4 else (if (Ext_ownship_position_z < 10000.0) then 5 else (if (Ext_ownship_position_z < 20000.0) then 6 else (if (Ext_ownship_position_z < 42000.0) then 7 else 8))))))) == 5) then 1018.6416 else (if (Extf_ident_word64(label "sensitivityLevel" (if ((0.0 <= Ext_ownship_position_z) && (Ext_ownship_position_z < 1000.0)) then 2 else (if (Ext_ownship_position_z < 2350.0) then 3 else (if (Ext_ownship_position_z < 5000.0) then 4 else (if (Ext_ownship_position_z < 10000.0) then 5 else (if (Ext_ownship_position_z < 20000.0) then 6 else (if (Ext_ownship_position_z < 42000.0) then 7 else 8))))))) == 6) then 1481.6328 else (if (Extf_ident_word64(label "sensitivityLevel" (if ((0.0 <= Ext_ownship_position_z) && (Ext_ownship_position_z < 1000.0)) then 2 else (if (Ext_ownship_position_z < 2350.0) then 3 else (if (Ext_ownship_position_z < 5000.0) then 4 else (if (Ext_ownship_position_z < 10000.0) then 5 else (if (Ext_ownship_position_z < 20000.0) then 6 else (if (Ext_ownship_position_z < 42000.0) then 7 else 8))))))) == 7) then 2036.9784000000002 else (if (Extf_ident_word64(label "sensitivityLevel" (if ((0.0 <= Ext_ownship_position_z) && (Ext_ownship_position_z < 1000.0)) then 2 else (if (Ext_ownship_position_z < 2350.0) then 3 else (if (Ext_ownship_position_z < 5000.0) then 4 else (if (Ext_ownship_position_z < 10000.0) then 5 else (if (Ext_ownship_position_z < 20000.0) then 6 else (if (Ext_ownship_position_z < 42000.0) then 7 else 8))))))) == 8) then 2036.9784000000002 else 0.0)))))))
+ label "scalar2dim" (((ext_ownship_position_x - ext_intruder_position_x) * (ext_ownship_velocity_x - ext_intruder_velocity_x)) + ((ext_ownship_position_y - ext_intruder_position_y) * (ext_ownship_velocity_y - ext_intruder_velocity_y)))
 */
 /*@
  assigns \nothing;
- ensures \result == ((( (((ext_ident_word64_12) == (2))) ? (0.0) : (( (((ext_ident_word64_13) == (3))) ? (370.332) : (( (((ext_ident_word64_14) == (4))) ? (648.0048) : (( (((ext_ident_word64_15) == (5))) ? (1018.6416) : (( (((ext_ident_word64_16) == (6))) ? (1481.6328) : (( (((ext_ident_word64_17) == (7))) ? (2036.9784000000002) : (( (((ext_ident_word64_18) == (8))) ? (2036.9784000000002) : (0.0))))))))))))))));
+ ensures \result == ((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))));
 */
-SDouble ext_ident_double_19_arg0(const SWord64 ext_ident_word64_12,
-                                 const SDouble ext_ownship_position_z,
-                                 const SWord64 ext_ident_word64_13,
-                                 const SWord64 ext_ident_word64_14,
-                                 const SWord64 ext_ident_word64_15,
-                                 const SWord64 ext_ident_word64_16,
-                                 const SWord64 ext_ident_word64_17,
-                                 const SWord64 ext_ident_word64_18)
+SDouble ext_ident_double_19_arg0(const SDouble ext_ownship_position_x,
+                                 const SDouble ext_intruder_position_x,
+                                 const SDouble ext_ownship_velocity_x,
+                                 const SDouble ext_intruder_velocity_x,
+                                 const SDouble ext_ownship_position_y,
+                                 const SDouble ext_intruder_position_y,
+                                 const SDouble ext_ownship_velocity_y,
+                                 const SDouble ext_intruder_velocity_y)
 {
-  const SWord64 s0 = ext_ident_word64_12;
-  const SDouble s1 = ext_ownship_position_z;
-  const SWord64 s2 = ext_ident_word64_13;
-  const SWord64 s3 = ext_ident_word64_14;
-  const SWord64 s4 = ext_ident_word64_15;
-  const SWord64 s5 = ext_ident_word64_16;
-  const SWord64 s6 = ext_ident_word64_17;
-  const SWord64 s7 = ext_ident_word64_18;
-  const SBool   s9 = s0 == 0x0000000000000002ULL;
-  const SBool   s12 = s2 == 0x0000000000000003ULL;
-  const SBool   s15 = s3 == 0x0000000000000004ULL;
-  const SBool   s18 = s4 == 0x0000000000000005ULL;
-  const SBool   s21 = s5 == 0x0000000000000006ULL;
-  const SBool   s24 = s6 == 0x0000000000000007ULL;
-  const SBool   s27 = s7 == 0x0000000000000008ULL;
-  const SDouble s28 = s27 ? 2036.9784000000002 : 0.0;
-  const SDouble s29 = s24 ? 2036.9784000000002 : s28;
-  const SDouble s30 = s21 ? 1481.6328 : s29;
-  const SDouble s31 = s18 ? 1018.6416 : s30;
-  const SDouble s32 = s15 ? 648.0048 : s31;
-  const SDouble s33 = s12 ? 370.332 : s32;
-  const SDouble s34 = s9 ? 0.0 : s33;
-  const SDouble s35 = s34 /* hmdRA */;
+  const SDouble s0 = ext_ownship_position_x;
+  const SDouble s1 = ext_intruder_position_x;
+  const SDouble s2 = ext_ownship_velocity_x;
+  const SDouble s3 = ext_intruder_velocity_x;
+  const SDouble s4 = ext_ownship_position_y;
+  const SDouble s5 = ext_intruder_position_y;
+  const SDouble s6 = ext_ownship_velocity_y;
+  const SDouble s7 = ext_intruder_velocity_y;
+  const SDouble s8 = s0 - s1;
+  const SDouble s9 = s2 - s3;
+  const SDouble s10 = s8 * s9;
+  const SDouble s11 = s4 - s5;
+  const SDouble s12 = s6 - s7;
+  const SDouble s13 = s11 * s12;
+  const SDouble s14 = s10 + s13;
+  const SDouble s15 = s14 /* scalar2dim */;
 
-  return s35;
+  return s15;
 }

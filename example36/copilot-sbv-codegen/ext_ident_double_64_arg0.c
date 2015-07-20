@@ -5,37 +5,54 @@
 /* User given declarations: */
 /*test 003*/
 /*ACSL to write
- label "det2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)) - ((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_position_y - Ext_intruder_position_y)))
+ label "mvsstart" (if ((ext_ident_double_63 <= 0.0) || (ext_ownship_velocity_z >= 700.0)) then 0.0 else ((700.0 - ext_ownship_velocity_z) / 2.0))
 */
 /*@
  assigns \nothing;
- ensures \result == ((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))) - (((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_position_y) - (ext_intruder_position_y))))))));
+ ensures \result == ((( (((((ext_ident_double_63) <= (0.0))) || (((ext_ownship_velocity_z) >= (700.0))))) ? (0.0) : (((((700.0) - (ext_ownship_velocity_z))) / (2.0))))));
 */
-SDouble ext_ident_double_64_arg0(const SDouble ext_ownship_position_x,
+SDouble ext_ident_double_64_arg0(const SDouble ext_ident_double_63,
+                                 const SDouble ext_ident_double_42,
+                                 const SDouble ext_ownship_position_x,
                                  const SDouble ext_intruder_position_x,
-                                 const SDouble ext_ownship_velocity_y,
-                                 const SDouble ext_intruder_velocity_y,
                                  const SDouble ext_ownship_velocity_x,
                                  const SDouble ext_intruder_velocity_x,
                                  const SDouble ext_ownship_position_y,
-                                 const SDouble ext_intruder_position_y)
+                                 const SDouble ext_intruder_position_y,
+                                 const SDouble ext_ownship_velocity_y,
+                                 const SDouble ext_intruder_velocity_y,
+                                 const SDouble ext_ident_double_59,
+                                 const SDouble ext_ident_double_50,
+                                 const SWord64 ext_ident_word64_43,
+                                 const SDouble ext_ownship_position_z,
+                                 const SWord64 ext_ident_word64_44,
+                                 const SWord64 ext_ident_word64_45,
+                                 const SWord64 ext_ident_word64_46,
+                                 const SWord64 ext_ident_word64_47,
+                                 const SWord64 ext_ident_word64_48,
+                                 const SWord64 ext_ident_word64_49,
+                                 const SDouble ext_ident_double_58,
+                                 const SWord64 ext_ident_word64_51,
+                                 const SWord64 ext_ident_word64_52,
+                                 const SWord64 ext_ident_word64_53,
+                                 const SWord64 ext_ident_word64_54,
+                                 const SWord64 ext_ident_word64_55,
+                                 const SWord64 ext_ident_word64_56,
+                                 const SWord64 ext_ident_word64_57,
+                                 const SDouble ext_ident_double_61,
+                                 const SDouble ext_ident_double_60,
+                                 const SDouble ext_ident_double_62,
+                                 const SDouble ext_ownship_velocity_z)
 {
-  const SDouble s0 = ext_ownship_position_x;
-  const SDouble s1 = ext_intruder_position_x;
-  const SDouble s2 = ext_ownship_velocity_y;
-  const SDouble s3 = ext_intruder_velocity_y;
-  const SDouble s4 = ext_ownship_velocity_x;
-  const SDouble s5 = ext_intruder_velocity_x;
-  const SDouble s6 = ext_ownship_position_y;
-  const SDouble s7 = ext_intruder_position_y;
-  const SDouble s8 = s0 - s1;
-  const SDouble s9 = s2 - s3;
-  const SDouble s10 = s8 * s9;
-  const SDouble s11 = s4 - s5;
-  const SDouble s12 = s6 - s7;
-  const SDouble s13 = s11 * s12;
-  const SDouble s14 = s10 - s13;
-  const SDouble s15 = s14 /* det2dim */;
+  const SDouble s0 = ext_ident_double_63;
+  const SDouble s31 = ext_ownship_velocity_z;
+  const SBool   s33 = s0 <= 0.0;
+  const SBool   s35 = s31 >= 700.0;
+  const SBool   s36 = s33 || s35;
+  const SDouble s37 = 700.0 - s31;
+  const SDouble s39 = s37 / 2.0;
+  const SDouble s40 = s36 ? 0.0 : s39;
+  const SDouble s41 = s40 /* mvsstart */;
 
-  return s15;
+  return s41;
 }
