@@ -4,9 +4,25 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "thetaVert_part1" (0.0 - Extf_ident_double(label "thetaVert_part1.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: thetaVert_part1",color=plum, style=filled]
+0 -> 1
+2 [label="op2: -",color=green4, style=filled]
+1 -> 2
+3 [label="const: 0.0",color=red1, style=filled]
+2 -> 3
+4 [label="ext_ident_double_178",color=cyan4, style=filled]
+2 -> 4
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((((0.0) - (ext_ident_double_178))));
@@ -22,14 +38,6 @@ SDouble ext_ident_double_179_arg0(const SDouble ext_ident_double_178,
                                   const SDouble ext_intruder_velocity_y)
 {
   const SDouble s0 = ext_ident_double_178;
-  const SDouble s1 = ext_ownship_position_x;
-  const SDouble s2 = ext_intruder_position_x;
-  const SDouble s3 = ext_ownship_velocity_x;
-  const SDouble s4 = ext_intruder_velocity_x;
-  const SDouble s5 = ext_ownship_position_y;
-  const SDouble s6 = ext_intruder_position_y;
-  const SDouble s7 = ext_ownship_velocity_y;
-  const SDouble s8 = ext_intruder_velocity_y;
   const SDouble s10 = 0.0 - s0;
   const SDouble s11 = s10 /* thetaVert_part1 */;
 

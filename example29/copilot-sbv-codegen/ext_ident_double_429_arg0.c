@@ -4,9 +4,21 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "hor_rr_divisor" Ext_minimal_horizontal_separation
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: hor_rr_divisor",color=plum, style=filled]
+0 -> 1
+2 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+1 -> 2
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((ext_minimal_horizontal_separation));

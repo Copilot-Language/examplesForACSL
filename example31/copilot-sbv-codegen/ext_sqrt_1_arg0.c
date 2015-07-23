@@ -4,12 +4,98 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5))))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="op2: +",color=green4, style=filled]
+0 -> 1
+2 [label="op2: *",color=green4, style=filled]
+1 -> 2
+3 [label="op2: -",color=green4, style=filled]
+2 -> 3
+4 [label="op3: mux",color=green4, style=filled]
+3 -> 4
+5 [label="stream: 0",color=crimson, style=filled]
+4 -> 5
+6 [label="ext_ownship_position_x",color=cyan1, style=filled]
+4 -> 6
+7 [label="stream: 1",color=crimson, style=filled]
+4 -> 7
+8 [label="op3: mux",color=green4, style=filled]
+3 -> 8
+9 [label="stream: 0",color=crimson, style=filled]
+8 -> 9
+10 [label="ext_intruder_position_x",color=cyan1, style=filled]
+8 -> 10
+11 [label="stream: 2",color=crimson, style=filled]
+8 -> 11
+12 [label="op2: -",color=green4, style=filled]
+2 -> 12
+13 [label="op3: mux",color=green4, style=filled]
+12 -> 13
+14 [label="stream: 0",color=crimson, style=filled]
+13 -> 14
+15 [label="ext_ownship_position_x",color=cyan1, style=filled]
+13 -> 15
+16 [label="stream: 1",color=crimson, style=filled]
+13 -> 16
+17 [label="op3: mux",color=green4, style=filled]
+12 -> 17
+18 [label="stream: 0",color=crimson, style=filled]
+17 -> 18
+19 [label="ext_intruder_position_x",color=cyan1, style=filled]
+17 -> 19
+20 [label="stream: 2",color=crimson, style=filled]
+17 -> 20
+21 [label="op2: *",color=green4, style=filled]
+1 -> 21
+22 [label="op2: -",color=green4, style=filled]
+21 -> 22
+23 [label="op3: mux",color=green4, style=filled]
+22 -> 23
+24 [label="stream: 0",color=crimson, style=filled]
+23 -> 24
+25 [label="ext_ownship_position_y",color=cyan1, style=filled]
+23 -> 25
+26 [label="stream: 4",color=crimson, style=filled]
+23 -> 26
+27 [label="op3: mux",color=green4, style=filled]
+22 -> 27
+28 [label="stream: 0",color=crimson, style=filled]
+27 -> 28
+29 [label="ext_intruder_position_y",color=cyan1, style=filled]
+27 -> 29
+30 [label="stream: 5",color=crimson, style=filled]
+27 -> 30
+31 [label="op2: -",color=green4, style=filled]
+21 -> 31
+32 [label="op3: mux",color=green4, style=filled]
+31 -> 32
+33 [label="stream: 0",color=crimson, style=filled]
+32 -> 33
+34 [label="ext_ownship_position_y",color=cyan1, style=filled]
+32 -> 34
+35 [label="stream: 4",color=crimson, style=filled]
+32 -> 35
+36 [label="op3: mux",color=green4, style=filled]
+31 -> 36
+37 [label="stream: 0",color=crimson, style=filled]
+36 -> 37
+38 [label="ext_intruder_position_y",color=cyan1, style=filled]
+36 -> 38
+39 [label="stream: 5",color=crimson, style=filled]
+36 -> 39
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
- ensures \result == (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5])))))))));
+ ensures \result == (((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) * (((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0])))))))));
 */
 SDouble ext_sqrt_1_arg0(const SBool *queue_0, const SWord32 ptr_0,
                         const SDouble ext_ownship_position_x, const SDouble *queue_1,
@@ -20,19 +106,14 @@ SDouble ext_sqrt_1_arg0(const SBool *queue_0, const SWord32 ptr_0,
                         const SDouble *queue_5, const SWord32 ptr_5)
 {
   const SBool   s0 = queue_0[0];
-  const SWord32 s1 = ptr_0;
   const SDouble s2 = ext_ownship_position_x;
   const SDouble s3 = queue_1[0];
-  const SWord32 s4 = ptr_1;
   const SDouble s5 = ext_intruder_position_x;
   const SDouble s6 = queue_2[0];
-  const SWord32 s7 = ptr_2;
   const SDouble s8 = ext_ownship_position_y;
   const SDouble s9 = queue_4[0];
-  const SWord32 s10 = ptr_4;
   const SDouble s11 = ext_intruder_position_y;
   const SDouble s12 = queue_5[0];
-  const SWord32 s13 = ptr_5;
   const SDouble s14 = s0 ? s2 : s3;
   const SDouble s15 = s0 ? s5 : s6;
   const SDouble s16 = s14 - s15;

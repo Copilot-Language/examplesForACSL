@@ -4,9 +4,21 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "hor_rr_dividend" Extf_sqrt((Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: hor_rr_dividend",color=plum, style=filled]
+0 -> 1
+2 [label="ext_sqrt_427",color=cyan4, style=filled]
+1 -> 2
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((ext_sqrt_427));
@@ -20,12 +32,6 @@ SDouble ext_ident_double_428_arg0(const SDouble ext_sqrt_427,
                                   const SDouble ext_minimal_horizontal_separation)
 {
   const SDouble s0 = ext_sqrt_427;
-  const SDouble s1 = ext_ident_double_426;
-  const SDouble s2 = ext_ownship_position_x;
-  const SDouble s3 = ext_intruder_position_x;
-  const SDouble s4 = ext_ownship_position_y;
-  const SDouble s5 = ext_intruder_position_y;
-  const SDouble s6 = ext_minimal_horizontal_separation;
   const SDouble s7 = s0 /* hor_rr_dividend */;
 
   return s7;

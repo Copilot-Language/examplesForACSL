@@ -4,9 +4,97 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "verticalCriterionConflict_part2.1" ((((Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation) * Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) - ((((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)) - ((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_position_y - Ext_intruder_position_y))) * (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)) - ((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_position_y - Ext_intruder_position_y))))) > 0.0)
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: verticalCriterionConflict_part2.1",color=plum, style=filled]
+0 -> 1
+2 [label="op2: >",color=green4, style=filled]
+1 -> 2
+3 [label="op2: -",color=green4, style=filled]
+2 -> 3
+4 [label="op2: *",color=green4, style=filled]
+3 -> 4
+5 [label="op2: *",color=green4, style=filled]
+4 -> 5
+6 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+5 -> 6
+7 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+5 -> 7
+8 [label="ext_ident_double_71",color=cyan4, style=filled]
+4 -> 8
+25 [label="op2: *",color=green4, style=filled]
+3 -> 25
+26 [label="op2: -",color=green4, style=filled]
+25 -> 26
+27 [label="op2: *",color=green4, style=filled]
+26 -> 27
+28 [label="op2: -",color=green4, style=filled]
+27 -> 28
+29 [label="ext_ownship_position_x",color=cyan1, style=filled]
+28 -> 29
+30 [label="ext_intruder_position_x",color=cyan1, style=filled]
+28 -> 30
+31 [label="op2: -",color=green4, style=filled]
+27 -> 31
+32 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+31 -> 32
+33 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+31 -> 33
+34 [label="op2: *",color=green4, style=filled]
+26 -> 34
+35 [label="op2: -",color=green4, style=filled]
+34 -> 35
+36 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+35 -> 36
+37 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+35 -> 37
+38 [label="op2: -",color=green4, style=filled]
+34 -> 38
+39 [label="ext_ownship_position_y",color=cyan1, style=filled]
+38 -> 39
+40 [label="ext_intruder_position_y",color=cyan1, style=filled]
+38 -> 40
+41 [label="op2: -",color=green4, style=filled]
+25 -> 41
+42 [label="op2: *",color=green4, style=filled]
+41 -> 42
+43 [label="op2: -",color=green4, style=filled]
+42 -> 43
+44 [label="ext_ownship_position_x",color=cyan1, style=filled]
+43 -> 44
+45 [label="ext_intruder_position_x",color=cyan1, style=filled]
+43 -> 45
+46 [label="op2: -",color=green4, style=filled]
+42 -> 46
+47 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+46 -> 47
+48 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+46 -> 48
+49 [label="op2: *",color=green4, style=filled]
+41 -> 49
+50 [label="op2: -",color=green4, style=filled]
+49 -> 50
+51 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+50 -> 51
+52 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+50 -> 52
+53 [label="op2: -",color=green4, style=filled]
+49 -> 53
+54 [label="ext_ownship_position_y",color=cyan1, style=filled]
+53 -> 54
+55 [label="ext_intruder_position_y",color=cyan1, style=filled]
+53 -> 55
+56 [label="const: 0.0",color=red1, style=filled]
+2 -> 56
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((((((((((ext_minimal_horizontal_separation) * (ext_minimal_horizontal_separation))) * (ext_ident_double_71))) - (((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))) - (((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_position_y) - (ext_intruder_position_y))))))) * (((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))) - (((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_position_y) - (ext_intruder_position_y))))))))))) > (0.0))));

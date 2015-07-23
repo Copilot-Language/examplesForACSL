@@ -5,9 +5,9 @@ changequote({,})})
 define({RQ},{changequote(`,')dnl{
 }changequote({,})})
 changecom({;})
-define({?}, {{?}})
+
+
 divert(0)dnl
-changeword({[\?]+})
 import Copilot.Language.Reify
 import Copilot.Language
 import Copilot.Library.Clocks

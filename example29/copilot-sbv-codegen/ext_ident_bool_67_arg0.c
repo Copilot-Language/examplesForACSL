@@ -4,9 +4,25 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "verticalCriterionConflict_part1.1" (Extf_ident_bool(label "verticalCriterionConflict_part1.1.1" (Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) <= 0.0)) && Extf_ident_bool(label "verticalCriterionConflict_part1.1.2" (Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) >= 0.0)))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: verticalCriterionConflict_part1.1",color=plum, style=filled]
+0 -> 1
+2 [label="op2: &&",color=green4, style=filled]
+1 -> 2
+3 [label="ext_ident_bool_64",color=cyan4, style=filled]
+2 -> 3
+24 [label="ext_ident_bool_66",color=cyan4, style=filled]
+2 -> 24
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((((ext_ident_bool_64) && (ext_ident_bool_66))));
@@ -20,13 +36,7 @@ SBool ext_ident_bool_67_arg0(const SBool ext_ident_bool_64,
                              const SBool ext_ident_bool_66, const SDouble ext_ident_double_65)
 {
   const SBool   s0 = ext_ident_bool_64;
-  const SDouble s1 = ext_ident_double_63;
-  const SDouble s2 = ext_ownship_position_x;
-  const SDouble s3 = ext_intruder_position_x;
-  const SDouble s4 = ext_ownship_position_y;
-  const SDouble s5 = ext_intruder_position_y;
   const SBool   s6 = ext_ident_bool_66;
-  const SDouble s7 = ext_ident_double_65;
   const SBool   s8 = s0 && s6;
   const SBool   s9 = s8 /* verticalCriterionConflict_part1.1 */;
 

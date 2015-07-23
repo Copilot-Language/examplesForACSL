@@ -4,9 +4,25 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "verticalCriterionConflict_part1.1.1" (Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) <= 0.0)
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: verticalCriterionConflict_part1.1.1",color=plum, style=filled]
+0 -> 1
+2 [label="op2: <=",color=green4, style=filled]
+1 -> 2
+3 [label="ext_ident_double_63",color=cyan4, style=filled]
+2 -> 3
+20 [label="const: 0.0",color=red1, style=filled]
+2 -> 20
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((((ext_ident_double_63) <= (0.0))));
@@ -18,10 +34,6 @@ SBool ext_ident_bool_64_arg0(const SDouble ext_ident_double_63,
                              const SDouble ext_intruder_position_y)
 {
   const SDouble s0 = ext_ident_double_63;
-  const SDouble s1 = ext_ownship_position_x;
-  const SDouble s2 = ext_intruder_position_x;
-  const SDouble s3 = ext_ownship_position_y;
-  const SDouble s4 = ext_intruder_position_y;
   const SBool   s6 = s0 <= 0.0;
   const SBool   s7 = s6 /* verticalCriterionConflict_part1.1.1 */;
 

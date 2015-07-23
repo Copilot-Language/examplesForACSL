@@ -1,4 +1,3 @@
-
 import Copilot.Language.Reify
 import Copilot.Language
 import Copilot.Library.Clocks
@@ -243,7 +242,7 @@ spec = do
   trigger "alert_3D_loss_separation_violation" (criterion3DLossSeparationViolation relPositionX relPositionY relPositionZ relVelocityX relVelocityY relVelocityZ maxTimeForViolation relPlannedVelocityX relPlannedVelocityY relPlannedVelocityZ) []
 --  observer "debug001" (exitDotMin relPositionX relPositionY maxTimeForViolation)
 main = do
-   reify spec >>= S.proofACSL S.defaultParams
+   reify spec >>= S.compile S.defaultParams
 
 
 --------------------------------------------------------------------------------

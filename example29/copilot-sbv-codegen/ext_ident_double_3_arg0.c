@@ -4,9 +4,21 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "exitDotMin_dividend" Extf_sqrt(Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: exitDotMin_dividend",color=plum, style=filled]
+0 -> 1
+2 [label="ext_sqrt_2",color=cyan4, style=filled]
+1 -> 2
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((ext_sqrt_2));
@@ -19,11 +31,6 @@ SDouble ext_ident_double_3_arg0(const SDouble ext_sqrt_2,
                                 const SDouble ext_intruder_position_y)
 {
   const SDouble s0 = ext_sqrt_2;
-  const SDouble s1 = ext_ident_double_1;
-  const SDouble s2 = ext_ownship_position_x;
-  const SDouble s3 = ext_intruder_position_x;
-  const SDouble s4 = ext_ownship_position_y;
-  const SDouble s5 = ext_intruder_position_y;
   const SDouble s6 = s0 /* exitDotMin_dividend */;
 
   return s6;

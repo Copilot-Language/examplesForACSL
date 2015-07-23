@@ -4,9 +4,25 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "thetaVert_part2.3" (Extf_ident_double(label "thetaVert_part2.3.1" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) * Extf_ident_double(label "thetaVert_part2.3.2" (Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation))))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: thetaVert_part2.3",color=plum, style=filled]
+0 -> 1
+2 [label="op2: *",color=green4, style=filled]
+1 -> 2
+3 [label="ext_ident_double_245",color=cyan4, style=filled]
+2 -> 3
+22 [label="ext_ident_double_247",color=cyan4, style=filled]
+2 -> 22
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((((ext_ident_double_245) * (ext_ident_double_247))));
@@ -26,18 +42,7 @@ SDouble ext_ident_double_248_arg0(const SDouble ext_ident_double_245,
                                   const SDouble ext_minimal_horizontal_separation)
 {
   const SDouble s0 = ext_ident_double_245;
-  const SDouble s1 = ext_ident_double_244;
-  const SDouble s2 = ext_ownship_velocity_x;
-  const SDouble s3 = ext_intruder_velocity_x;
-  const SDouble s4 = ext_ownship_velocity_y;
-  const SDouble s5 = ext_intruder_velocity_y;
   const SDouble s6 = ext_ident_double_247;
-  const SDouble s7 = ext_ident_double_246;
-  const SDouble s8 = ext_ownship_position_x;
-  const SDouble s9 = ext_intruder_position_x;
-  const SDouble s10 = ext_ownship_position_y;
-  const SDouble s11 = ext_intruder_position_y;
-  const SDouble s12 = ext_minimal_horizontal_separation;
   const SDouble s13 = s0 * s6;
   const SDouble s14 = s13 /* thetaVert_part2.3 */;
 

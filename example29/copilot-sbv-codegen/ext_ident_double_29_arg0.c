@@ -4,12 +4,30 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "break_symetry_part3.2" signum (Ext_ownship_position_x - Ext_intruder_position_x)
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: break_symetry_part3.2",color=plum, style=filled]
+0 -> 1
+2 [label="op1: signum",color=green4, style=filled]
+1 -> 2
+3 [label="op2: -",color=green4, style=filled]
+2 -> 3
+4 [label="ext_ownship_position_x",color=cyan1, style=filled]
+3 -> 4
+5 [label="ext_intruder_position_x",color=cyan1, style=filled]
+3 -> 5
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
- ensures \result == ((((((ext_ownship_position_x) - (ext_intruder_position_x))) > 0)? 1 : ((((ext_ownship_position_x) - (ext_intruder_position_x))) < 0 ? -1 : 0)));
+ ensures \result == ((((((ext_ownship_position_x) - (ext_intruder_position_x))) > 0)? 1 : ((((ext_ownship_position_x) - (ext_intruder_position_x))) < 0 ? -1 : (((ext_ownship_position_x) - (ext_intruder_position_x))))));
 */
 SDouble ext_ident_double_29_arg0(const SDouble ext_ownship_position_x,
                                  const SDouble ext_intruder_position_x)

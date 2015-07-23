@@ -4,12 +4,42 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "absolute_value_splitting" signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: absolute_value_splitting",color=plum, style=filled]
+0 -> 1
+2 [label="op1: signum",color=green4, style=filled]
+1 -> 2
+3 [label="op2: -",color=green4, style=filled]
+2 -> 3
+4 [label="op3: mux",color=green4, style=filled]
+3 -> 4
+5 [label="stream: 0",color=crimson, style=filled]
+4 -> 5
+6 [label="ext_ownship_position_z",color=cyan1, style=filled]
+4 -> 6
+7 [label="stream: 9",color=crimson, style=filled]
+4 -> 7
+8 [label="op3: mux",color=green4, style=filled]
+3 -> 8
+9 [label="stream: 0",color=crimson, style=filled]
+8 -> 9
+10 [label="ext_intruder_position_z",color=cyan1, style=filled]
+8 -> 10
+11 [label="stream: 10",color=crimson, style=filled]
+8 -> 11
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
- ensures \result == ((((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) > 0)? 1 : ((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) < 0 ? -1 : 0)));
+ ensures \result == ((((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) > 0)? 1 : ((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) < 0 ? -1 : (((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))))));
 */
 SDouble ext_ident_double_26_arg0(const SBool *queue_0,
                                  const SWord32 ptr_0, const SDouble ext_ownship_position_z,
@@ -18,13 +48,10 @@ SDouble ext_ident_double_26_arg0(const SBool *queue_0,
                                  const SWord32 ptr_10)
 {
   const SBool   s0 = queue_0[0];
-  const SWord32 s1 = ptr_0;
   const SDouble s2 = ext_ownship_position_z;
   const SDouble s3 = queue_9[0];
-  const SWord32 s4 = ptr_9;
   const SDouble s5 = ext_intruder_position_z;
   const SDouble s6 = queue_10[0];
-  const SWord32 s7 = ptr_10;
   const SDouble s8 = s0 ? s2 : s3;
   const SDouble s9 = s0 ? s5 : s6;
   const SDouble s10 = s8 - s9;

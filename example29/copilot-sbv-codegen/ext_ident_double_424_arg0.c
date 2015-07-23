@@ -4,9 +4,25 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "criterion3D_part4.1.2" (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: criterion3D_part4.1.2",color=plum, style=filled]
+0 -> 1
+2 [label="op2: *",color=green4, style=filled]
+1 -> 2
+3 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+2 -> 3
+4 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+2 -> 4
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((((ext_minimal_horizontal_separation) * (ext_minimal_horizontal_separation))));

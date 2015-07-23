@@ -4,9 +4,21 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "criterion3D_part4.1.1" Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y))))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: criterion3D_part4.1.1",color=plum, style=filled]
+0 -> 1
+2 [label="ext_ident_double_422",color=cyan4, style=filled]
+1 -> 2
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((ext_ident_double_422));
@@ -18,10 +30,6 @@ SDouble ext_ident_double_423_arg0(const SDouble ext_ident_double_422,
                                   const SDouble ext_intruder_position_y)
 {
   const SDouble s0 = ext_ident_double_422;
-  const SDouble s1 = ext_ownship_position_x;
-  const SDouble s2 = ext_intruder_position_x;
-  const SDouble s3 = ext_ownship_position_y;
-  const SDouble s4 = ext_intruder_position_y;
   const SDouble s5 = s0 /* criterion3D_part4.1.1 */;
 
   return s5;

@@ -4,9 +4,33 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "verticalCriterionConflict_part1.3" ((Ext_direction_parameter_vertical * (Ext_ownship_position_z - Ext_intruder_position_z)) >= Ext_minimal_vertical_separation)
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: verticalCriterionConflict_part1.3",color=plum, style=filled]
+0 -> 1
+2 [label="op2: >=",color=green4, style=filled]
+1 -> 2
+3 [label="op2: *",color=green4, style=filled]
+2 -> 3
+4 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+3 -> 4
+5 [label="op2: -",color=green4, style=filled]
+3 -> 5
+6 [label="ext_ownship_position_z",color=cyan1, style=filled]
+5 -> 6
+7 [label="ext_intruder_position_z",color=cyan1, style=filled]
+5 -> 7
+8 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+2 -> 8
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((((((ext_direction_parameter_vertical) * (((ext_ownship_position_z) - (ext_intruder_position_z))))) >= (ext_minimal_vertical_separation))));

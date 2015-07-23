@@ -4,9 +4,25 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "dirVert_part1" (Extf_ident_double(label "dirVert_part1.1" (Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z)) * Extf_ident_double(label "absolute_value_splitting" signum Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z))))) >= Ext_minimal_vertical_separation)
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: dirVert_part1",color=plum, style=filled]
+0 -> 1
+2 [label="op2: >=",color=green4, style=filled]
+1 -> 2
+3 [label="ext_ident_double_78",color=cyan4, style=filled]
+2 -> 3
+19 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+2 -> 19
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((((ext_ident_double_78) >= (ext_minimal_vertical_separation))));
@@ -20,11 +36,6 @@ SBool ext_ident_bool_79_arg0(const SDouble ext_ident_double_78,
                              const SDouble ext_minimal_vertical_separation)
 {
   const SDouble s0 = ext_ident_double_78;
-  const SDouble s1 = ext_ident_double_75;
-  const SDouble s2 = ext_ownship_position_z;
-  const SDouble s3 = ext_intruder_position_z;
-  const SDouble s4 = ext_ident_double_77;
-  const SDouble s5 = ext_ident_double_76;
   const SDouble s6 = ext_minimal_vertical_separation;
   const SBool   s7 = s0 >= s6;
   const SBool   s8 = s7 /* dirVert_part1 */;

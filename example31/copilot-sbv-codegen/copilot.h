@@ -11,6 +11,9 @@
 void alert_3D_loss_separation_violation();
 void alert_3D_conflict_resolution_violation();
 
+/* External structs (must be defined by user): */
+
+
 /* External variables (must be defined by user): */
 
 extern double ownship_position_x;

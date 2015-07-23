@@ -4,9 +4,21 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "verticalCriterionLoss_part3.1" Extf_ident_double(label "ttez" (Extf_ident_double(label "ttez_dividend" ((Ext_minimal_vertical_separation * Extf_ident_double(label "ttez_part01" signum (Ext_ownship_velocity_z - Ext_intruder_velocity_z))) - Extf_ident_double(label "ttez_part02" (Ext_ownship_position_z - Ext_intruder_position_z)))) / Extf_ident_double(label "ttez_divisor" (Ext_ownship_velocity_z - Ext_intruder_velocity_z))))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: verticalCriterionLoss_part3.1",color=plum, style=filled]
+0 -> 1
+2 [label="ext_ident_double_49",color=cyan4, style=filled]
+1 -> 2
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((ext_ident_double_49));
@@ -23,15 +35,6 @@ SDouble ext_ident_double_50_arg0(const SDouble ext_ident_double_49,
                                  const SDouble ext_ident_double_48)
 {
   const SDouble s0 = ext_ident_double_49;
-  const SDouble s1 = ext_ident_double_47;
-  const SDouble s2 = ext_minimal_vertical_separation;
-  const SDouble s3 = ext_ident_double_45;
-  const SDouble s4 = ext_ownship_velocity_z;
-  const SDouble s5 = ext_intruder_velocity_z;
-  const SDouble s6 = ext_ident_double_46;
-  const SDouble s7 = ext_ownship_position_z;
-  const SDouble s8 = ext_intruder_position_z;
-  const SDouble s9 = ext_ident_double_48;
   const SDouble s10 = s0 /* verticalCriterionLoss_part3.1 */;
 
   return s10;

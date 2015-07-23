@@ -4,9 +4,25 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "break_symetry_part3.3.1" (Extf_ident_bool(label "break_symetry_part3.3.1.1" ((Ext_ownship_position_y - Ext_intruder_position_y) <= 0.0)) && Extf_ident_bool(label "break_symetry_part3.3.1.2" ((Ext_ownship_position_y - Ext_intruder_position_y) >= 0.0)))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: break_symetry_part3.3.1",color=plum, style=filled]
+0 -> 1
+2 [label="op2: &&",color=green4, style=filled]
+1 -> 2
+3 [label="ext_ident_bool_30",color=cyan4, style=filled]
+2 -> 3
+10 [label="ext_ident_bool_31",color=cyan4, style=filled]
+2 -> 10
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((((ext_ident_bool_30) && (ext_ident_bool_31))));
@@ -17,8 +33,6 @@ SBool ext_ident_bool_32_arg0(const SBool ext_ident_bool_30,
                              const SBool ext_ident_bool_31)
 {
   const SBool   s0 = ext_ident_bool_30;
-  const SDouble s1 = ext_ownship_position_y;
-  const SDouble s2 = ext_intruder_position_y;
   const SBool   s3 = ext_ident_bool_31;
   const SBool   s4 = s0 && s3;
   const SBool   s5 = s4 /* break_symetry_part3.3.1 */;

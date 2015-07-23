@@ -4,9 +4,25 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "criterion3D_part1" (Extf_ident_bool(label "criterion3D_part1.1" (Extf_ident_double(label "criterion3D_part1.2" Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y))))) >= Extf_ident_double(label "criterion3D_part1.3" (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)))) && Extf_ident_bool(label "criterion3D_part2" ((((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_planned_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_planned_velocity_y - Ext_intruder_velocity_y))) >= ((Ext_direction_parameter_horizontal * (Extf_ident_double(label "hor_rr_dividend" Extf_sqrt((Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)))) / Extf_ident_double(label "hor_rr_divisor" Ext_minimal_horizontal_separation))) * (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_planned_velocity_y - Ext_intruder_velocity_y)) - ((Ext_ownship_planned_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_position_y - Ext_intruder_position_y)))))))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: criterion3D_part1",color=plum, style=filled]
+0 -> 1
+2 [label="op2: &&",color=green4, style=filled]
+1 -> 2
+3 [label="ext_ident_bool_56",color=cyan4, style=filled]
+2 -> 3
+30 [label="ext_ident_bool_61",color=cyan4, style=filled]
+2 -> 30
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((((ext_ident_bool_56) && (ext_ident_bool_61))));
@@ -31,24 +47,7 @@ SBool ext_ident_bool_62_arg0(const SBool ext_ident_bool_56,
                              const SDouble ext_ident_double_60)
 {
   const SBool   s0 = ext_ident_bool_56;
-  const SDouble s1 = ext_ident_double_54;
-  const SDouble s2 = ext_ident_double_53;
-  const SDouble s3 = ext_ownship_position_x;
-  const SDouble s4 = ext_intruder_position_x;
-  const SDouble s5 = ext_ownship_position_y;
-  const SDouble s6 = ext_intruder_position_y;
-  const SDouble s7 = ext_ident_double_55;
-  const SDouble s8 = ext_minimal_horizontal_separation;
   const SBool   s9 = ext_ident_bool_61;
-  const SDouble s10 = ext_ownship_planned_velocity_x;
-  const SDouble s11 = ext_intruder_velocity_x;
-  const SDouble s12 = ext_ownship_planned_velocity_y;
-  const SDouble s13 = ext_intruder_velocity_y;
-  const SDouble s14 = ext_direction_parameter_horizontal;
-  const SDouble s15 = ext_ident_double_59;
-  const SDouble s16 = ext_sqrt_58;
-  const SDouble s17 = ext_ident_double_57;
-  const SDouble s18 = ext_ident_double_60;
   const SBool   s19 = s0 && s9;
   const SBool   s20 = s19 /* criterion3D_part1 */;
 

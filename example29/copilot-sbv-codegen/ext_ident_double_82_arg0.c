@@ -4,9 +4,27 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "dirVert" (if Extf_ident_bool(label "dirVert_part1" (Extf_ident_double(label "dirVert_part1.1" (Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z)) * Extf_ident_double(label "absolute_value_splitting" signum Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z))))) >= Ext_minimal_vertical_separation)) then Extf_ident_double(label "dirVert_part2" (Ext_direction_parameter_vertical * Extf_ident_double(label "dirVert_part2.1" signum (Ext_ownship_position_z - Ext_intruder_position_z)))) else -1.0)
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: dirVert",color=plum, style=filled]
+0 -> 1
+2 [label="op3: mux",color=green4, style=filled]
+1 -> 2
+3 [label="ext_ident_bool_79",color=cyan4, style=filled]
+2 -> 3
+23 [label="ext_ident_double_81",color=cyan4, style=filled]
+2 -> 23
+33 [label="const: -1.0",color=red1, style=filled]
+2 -> 33
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((( (ext_ident_bool_79) ? (ext_ident_double_81) : (-1.0))));
@@ -24,16 +42,7 @@ SDouble ext_ident_double_82_arg0(const SBool ext_ident_bool_79,
                                  const SDouble ext_ident_double_80)
 {
   const SBool   s0 = ext_ident_bool_79;
-  const SDouble s1 = ext_ident_double_78;
-  const SDouble s2 = ext_ident_double_75;
-  const SDouble s3 = ext_ownship_position_z;
-  const SDouble s4 = ext_intruder_position_z;
-  const SDouble s5 = ext_ident_double_77;
-  const SDouble s6 = ext_ident_double_76;
-  const SDouble s7 = ext_minimal_vertical_separation;
   const SDouble s8 = ext_ident_double_81;
-  const SDouble s9 = ext_direction_parameter_vertical;
-  const SDouble s10 = ext_ident_double_80;
   const SDouble s12 = s0 ? s8 : -1.0;
   const SDouble s13 = s12 /* dirVert */;
 

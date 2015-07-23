@@ -4,9 +4,29 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "thetaVert_part2.3.2" (Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: thetaVert_part2.3.2",color=plum, style=filled]
+0 -> 1
+2 [label="op2: -",color=green4, style=filled]
+1 -> 2
+3 [label="ext_ident_double_378",color=cyan4, style=filled]
+2 -> 3
+20 [label="op2: *",color=green4, style=filled]
+2 -> 20
+21 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+20 -> 21
+22 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+20 -> 22
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((((ext_ident_double_378) - (((ext_minimal_horizontal_separation) * (ext_minimal_horizontal_separation))))));
@@ -19,10 +39,6 @@ SDouble ext_ident_double_379_arg0(const SDouble ext_ident_double_378,
                                   const SDouble ext_minimal_horizontal_separation)
 {
   const SDouble s0 = ext_ident_double_378;
-  const SDouble s1 = ext_ownship_position_x;
-  const SDouble s2 = ext_intruder_position_x;
-  const SDouble s3 = ext_ownship_position_y;
-  const SDouble s4 = ext_intruder_position_y;
   const SDouble s5 = ext_minimal_horizontal_separation;
   const SDouble s6 = s5 * s5;
   const SDouble s7 = s0 - s6;

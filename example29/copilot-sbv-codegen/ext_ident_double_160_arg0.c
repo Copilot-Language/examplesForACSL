@@ -4,9 +4,25 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "dirVert_part2" (Ext_direction_parameter_vertical * Extf_ident_double(label "dirVert_part2.1" signum (Ext_ownship_position_z - Ext_intruder_position_z)))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: dirVert_part2",color=plum, style=filled]
+0 -> 1
+2 [label="op2: *",color=green4, style=filled]
+1 -> 2
+3 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+2 -> 3
+4 [label="ext_ident_double_159",color=cyan4, style=filled]
+2 -> 4
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((((ext_direction_parameter_vertical) * (ext_ident_double_159))));
@@ -18,8 +34,6 @@ SDouble ext_ident_double_160_arg0(const SDouble ext_direction_parameter_vertical
 {
   const SDouble s0 = ext_direction_parameter_vertical;
   const SDouble s1 = ext_ident_double_159;
-  const SDouble s2 = ext_ownship_position_z;
-  const SDouble s3 = ext_intruder_position_z;
   const SDouble s4 = s0 * s1;
   const SDouble s5 = s4 /* dirVert_part2 */;
 

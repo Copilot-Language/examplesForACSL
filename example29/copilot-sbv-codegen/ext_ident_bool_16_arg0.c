@@ -4,9 +4,37 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "z_prop(sz,v'z)" (((Ext_ownship_position_z - Ext_intruder_position_z) * (Ext_ownship_planned_velocity_z - Ext_intruder_velocity_z)) >= 0.0)
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: z_prop(sz,v'z)",color=plum, style=filled]
+0 -> 1
+2 [label="op2: >=",color=green4, style=filled]
+1 -> 2
+3 [label="op2: *",color=green4, style=filled]
+2 -> 3
+4 [label="op2: -",color=green4, style=filled]
+3 -> 4
+5 [label="ext_ownship_position_z",color=cyan1, style=filled]
+4 -> 5
+6 [label="ext_intruder_position_z",color=cyan1, style=filled]
+4 -> 6
+7 [label="op2: -",color=green4, style=filled]
+3 -> 7
+8 [label="ext_ownship_planned_velocity_z",color=cyan1, style=filled]
+7 -> 8
+9 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+7 -> 9
+10 [label="const: 0.0",color=red1, style=filled]
+2 -> 10
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((((((((ext_ownship_position_z) - (ext_intruder_position_z))) * (((ext_ownship_planned_velocity_z) - (ext_intruder_velocity_z))))) >= (0.0))));

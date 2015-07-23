@@ -4,9 +4,29 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "break_symetry_part3.3.1.2" ((Ext_ownship_position_y - Ext_intruder_position_y) >= 0.0)
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: break_symetry_part3.3.1.2",color=plum, style=filled]
+0 -> 1
+2 [label="op2: >=",color=green4, style=filled]
+1 -> 2
+3 [label="op2: -",color=green4, style=filled]
+2 -> 3
+4 [label="ext_ownship_position_y",color=cyan1, style=filled]
+3 -> 4
+5 [label="ext_intruder_position_y",color=cyan1, style=filled]
+3 -> 5
+6 [label="const: 0.0",color=red1, style=filled]
+2 -> 6
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((((((ext_ownship_position_y) - (ext_intruder_position_y))) >= (0.0))));

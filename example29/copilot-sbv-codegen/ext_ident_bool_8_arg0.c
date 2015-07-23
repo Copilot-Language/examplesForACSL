@@ -4,9 +4,25 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "horizontal_los_criterion" (Extf_ident_bool(label "horizontalCriterionLoss_part1" ((((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_planned_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_planned_velocity_y - Ext_intruder_velocity_y))) >= (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) && Extf_ident_bool(label "horizontalCriterionLoss_part2" ((((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_planned_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_planned_velocity_y - Ext_intruder_velocity_y))) > ((Extf_ident_double(label "exitDotMin_dividend" Extf_sqrt(Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))))) / Extf_ident_double(label "exitDotMin_divsor" Ext_maximum_time_for_violation)) * (Ext_minimal_horizontal_separation - Extf_sqrt(Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y))))))))))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: horizontal_los_criterion",color=plum, style=filled]
+0 -> 1
+2 [label="op2: &&",color=green4, style=filled]
+1 -> 2
+3 [label="ext_ident_bool_0",color=cyan4, style=filled]
+2 -> 3
+36 [label="ext_ident_bool_7",color=cyan4, style=filled]
+2 -> 36
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((((ext_ident_bool_0) && (ext_ident_bool_7))));
@@ -29,25 +45,7 @@ SBool ext_ident_bool_8_arg0(const SBool ext_ident_bool_0,
                             const SDouble ext_sqrt_6, const SDouble ext_ident_double_5)
 {
   const SBool   s0 = ext_ident_bool_0;
-  const SDouble s1 = ext_ownship_position_x;
-  const SDouble s2 = ext_intruder_position_x;
-  const SDouble s3 = ext_ownship_planned_velocity_x;
-  const SDouble s4 = ext_intruder_velocity_x;
-  const SDouble s5 = ext_ownship_position_y;
-  const SDouble s6 = ext_intruder_position_y;
-  const SDouble s7 = ext_ownship_planned_velocity_y;
-  const SDouble s8 = ext_intruder_velocity_y;
-  const SDouble s9 = ext_ownship_velocity_x;
-  const SDouble s10 = ext_ownship_velocity_y;
   const SBool   s11 = ext_ident_bool_7;
-  const SDouble s12 = ext_ident_double_3;
-  const SDouble s13 = ext_sqrt_2;
-  const SDouble s14 = ext_ident_double_1;
-  const SDouble s15 = ext_ident_double_4;
-  const SDouble s16 = ext_maximum_time_for_violation;
-  const SDouble s17 = ext_minimal_horizontal_separation;
-  const SDouble s18 = ext_sqrt_6;
-  const SDouble s19 = ext_ident_double_5;
   const SBool   s20 = s0 && s11;
   const SBool   s21 = s20 /* horizontal_los_criterion */;
 

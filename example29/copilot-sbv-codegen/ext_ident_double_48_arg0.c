@@ -4,9 +4,25 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "ttez_divisor" (Ext_ownship_velocity_z - Ext_intruder_velocity_z)
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: ttez_divisor",color=plum, style=filled]
+0 -> 1
+2 [label="op2: -",color=green4, style=filled]
+1 -> 2
+3 [label="ext_ownship_velocity_z",color=cyan1, style=filled]
+2 -> 3
+4 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+2 -> 4
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((((ext_ownship_velocity_z) - (ext_intruder_velocity_z))));

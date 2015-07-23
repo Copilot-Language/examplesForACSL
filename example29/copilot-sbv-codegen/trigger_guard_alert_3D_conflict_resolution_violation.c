@@ -4,811 +4,3020 @@
 
 /* User given declarations: */
 /*test 006*/
-/*ACSL to write
- not (Extf_ident_bool(label "criterion3D_part1" (Extf_ident_bool(label "criterion3D_part1.1" (Extf_ident_double(label "criterion3D_part1.2" Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y))))) >= Extf_ident_double(label "criterion3D_part1.3" (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)))) && Extf_ident_bool(label "criterion3D_part2" ((((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_planned_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_planned_velocity_y - Ext_intruder_velocity_y))) >= ((Ext_direction_parameter_horizontal * (Extf_ident_double(label "hor_rr_dividend" Extf_sqrt((Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)))) / Extf_ident_double(label "hor_rr_divisor" Ext_minimal_horizontal_separation))) * (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_planned_velocity_y - Ext_intruder_velocity_y)) - ((Ext_ownship_planned_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_position_y - Ext_intruder_position_y)))))))) || (Extf_ident_bool(label "criterion3D_part3" (Extf_ident_bool(label "verticalCriterionConflict_part1" (Extf_ident_bool(label "verticalCriterionConflict_part1.1" (Extf_ident_bool(label "verticalCriterionConflict_part1.1.1" (Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) <= 0.0)) && Extf_ident_bool(label "verticalCriterionConflict_part1.1.2" (Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) >= 0.0)))) && (Extf_ident_bool(label "verticalCriterionConflict_part1.2" ((Ext_ownship_planned_velocity_z - Ext_intruder_velocity_z) >= 0.0)) && Extf_ident_bool(label "verticalCriterionConflict_part1.3" ((Ext_direction_parameter_vertical * (Ext_ownship_position_z - Ext_intruder_position_z)) >= Ext_minimal_vertical_separation))))) || Extf_ident_bool(label "verticalCriterionConflict_part2" (Extf_ident_bool(label "verticalCriterionConflict_part2.1" ((((Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation) * Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) - ((((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)) - ((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_position_y - Ext_intruder_position_y))) * (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)) - ((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_position_y - Ext_intruder_position_y))))) > 0.0)) && (Extf_ident_bool(label "verticalCriterionConflict_part2.2" (Extf_ident_double(label "theta_dir_1" Extf_ident_double(label "thetaVert" (Extf_ident_double(label "thetaVert_dividend" (Extf_ident_double(label "thetaVert_part1" (0.0 - Extf_ident_double(label "thetaVert_part1.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))) + Extf_ident_double(label "thetaVert_part1.2" (Extf_ident_double(label "dirVert" (if Extf_ident_bool(label "dirVert_part1" (Extf_ident_double(label "dirVert_part1.1" (Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z)) * Extf_ident_double(label "absolute_value_splitting" signum Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z))))) >= Ext_minimal_vertical_separation)) then Extf_ident_double(label "dirVert_part2" (Ext_direction_parameter_vertical * Extf_ident_double(label "dirVert_part2.1" signum (Ext_ownship_position_z - Ext_intruder_position_z)))) else -1.0)) * Extf_ident_double(label "thetaVert_part2" Extf_sqrt(((Extf_ident_double(label "thetaVert_part2.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))) * Extf_ident_double(label "thetaVert_part2.2" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) - Extf_ident_double(label "thetaVert_part2.3" (Extf_ident_double(label "thetaVert_part2.3.1" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) * Extf_ident_double(label "thetaVert_part2.3.2" (Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)))))))))))) / Extf_ident_double(label "thetaVert_divisor" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))))) > 0.0)) && Extf_ident_bool(label "verticalCriterionConflict_part2.3" Extf_ident_bool(label "intersectsHalfPlane" (Extf_ident_bool(label "intersectsHalfPlane_part1" (Extf_ident_bool(label "intersectsHalfPlane_part1.1" ((((Ext_ownship_planned_velocity_x - Ext_intruder_velocity_x) * Extf_ident_double(label "verticalCriterionConflict_part2.3.1" ((Ext_ownship_position_x - Ext_intruder_position_x) + (Extf_ident_double(label "theta_dir_2" Extf_ident_double(label "thetaVert" (Extf_ident_double(label "thetaVert_dividend" (Extf_ident_double(label "thetaVert_part1" (0.0 - Extf_ident_double(label "thetaVert_part1.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))) + Extf_ident_double(label "thetaVert_part1.2" (Extf_ident_double(label "dirVert" (if Extf_ident_bool(label "dirVert_part1" (Extf_ident_double(label "dirVert_part1.1" (Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z)) * Extf_ident_double(label "absolute_value_splitting" signum Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z))))) >= Ext_minimal_vertical_separation)) then Extf_ident_double(label "dirVert_part2" (Ext_direction_parameter_vertical * Extf_ident_double(label "dirVert_part2.1" signum (Ext_ownship_position_z - Ext_intruder_position_z)))) else -1.0)) * Extf_ident_double(label "thetaVert_part2" Extf_sqrt(((Extf_ident_double(label "thetaVert_part2.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))) * Extf_ident_double(label "thetaVert_part2.2" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) - Extf_ident_double(label "thetaVert_part2.3" (Extf_ident_double(label "thetaVert_part2.3.1" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) * Extf_ident_double(label "thetaVert_part2.3.2" (Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)))))))))))) / Extf_ident_double(label "thetaVert_divisor" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))))) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x))))) + ((Ext_ownship_planned_velocity_y - Ext_intruder_velocity_y) * Extf_ident_double(label "verticalCriterionConflict_part2.3.2" ((Ext_ownship_position_y - Ext_intruder_position_y) + (Extf_ident_double(label "theta_dir_3" Extf_ident_double(label "thetaVert" (Extf_ident_double(label "thetaVert_dividend" (Extf_ident_double(label "thetaVert_part1" (0.0 - Extf_ident_double(label "thetaVert_part1.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))) + Extf_ident_double(label "thetaVert_part1.2" (Extf_ident_double(label "dirVert" (if Extf_ident_bool(label "dirVert_part1" (Extf_ident_double(label "dirVert_part1.1" (Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z)) * Extf_ident_double(label "absolute_value_splitting" signum Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z))))) >= Ext_minimal_vertical_separation)) then Extf_ident_double(label "dirVert_part2" (Ext_direction_parameter_vertical * Extf_ident_double(label "dirVert_part2.1" signum (Ext_ownship_position_z - Ext_intruder_position_z)))) else -1.0)) * Extf_ident_double(label "thetaVert_part2" Extf_sqrt(((Extf_ident_double(label "thetaVert_part2.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))) * Extf_ident_double(label "thetaVert_part2.2" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) - Extf_ident_double(label "thetaVert_part2.3" (Extf_ident_double(label "thetaVert_part2.3.1" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) * Extf_ident_double(label "thetaVert_part2.3.2" (Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)))))))))))) / Extf_ident_double(label "thetaVert_divisor" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))))) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))) < 0.0)) || Extf_ident_bool(label "intersectsHalfPlane_part1.2" ((((Ext_ownship_planned_velocity_x - Ext_intruder_velocity_x) * Extf_ident_double(label "verticalCriterionConflict_part2.3.1" ((Ext_ownship_position_x - Ext_intruder_position_x) + (Extf_ident_double(label "theta_dir_2" Extf_ident_double(label "thetaVert" (Extf_ident_double(label "thetaVert_dividend" (Extf_ident_double(label "thetaVert_part1" (0.0 - Extf_ident_double(label "thetaVert_part1.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))) + Extf_ident_double(label "thetaVert_part1.2" (Extf_ident_double(label "dirVert" (if Extf_ident_bool(label "dirVert_part1" (Extf_ident_double(label "dirVert_part1.1" (Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z)) * Extf_ident_double(label "absolute_value_splitting" signum Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z))))) >= Ext_minimal_vertical_separation)) then Extf_ident_double(label "dirVert_part2" (Ext_direction_parameter_vertical * Extf_ident_double(label "dirVert_part2.1" signum (Ext_ownship_position_z - Ext_intruder_position_z)))) else -1.0)) * Extf_ident_double(label "thetaVert_part2" Extf_sqrt(((Extf_ident_double(label "thetaVert_part2.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))) * Extf_ident_double(label "thetaVert_part2.2" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) - Extf_ident_double(label "thetaVert_part2.3" (Extf_ident_double(label "thetaVert_part2.3.1" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) * Extf_ident_double(label "thetaVert_part2.3.2" (Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)))))))))))) / Extf_ident_double(label "thetaVert_divisor" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))))) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x))))) + ((Ext_ownship_planned_velocity_y - Ext_intruder_velocity_y) * Extf_ident_double(label "verticalCriterionConflict_part2.3.2" ((Ext_ownship_position_y - Ext_intruder_position_y) + (Extf_ident_double(label "theta_dir_3" Extf_ident_double(label "thetaVert" (Extf_ident_double(label "thetaVert_dividend" (Extf_ident_double(label "thetaVert_part1" (0.0 - Extf_ident_double(label "thetaVert_part1.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))) + Extf_ident_double(label "thetaVert_part1.2" (Extf_ident_double(label "dirVert" (if Extf_ident_bool(label "dirVert_part1" (Extf_ident_double(label "dirVert_part1.1" (Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z)) * Extf_ident_double(label "absolute_value_splitting" signum Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z))))) >= Ext_minimal_vertical_separation)) then Extf_ident_double(label "dirVert_part2" (Ext_direction_parameter_vertical * Extf_ident_double(label "dirVert_part2.1" signum (Ext_ownship_position_z - Ext_intruder_position_z)))) else -1.0)) * Extf_ident_double(label "thetaVert_part2" Extf_sqrt(((Extf_ident_double(label "thetaVert_part2.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))) * Extf_ident_double(label "thetaVert_part2.2" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) - Extf_ident_double(label "thetaVert_part2.3" (Extf_ident_double(label "thetaVert_part2.3.1" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) * Extf_ident_double(label "thetaVert_part2.3.2" (Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)))))))))))) / Extf_ident_double(label "thetaVert_divisor" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))))) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))) > 0.0)))) && (Extf_ident_bool(label "intersectsHalfPlane_part2" (Extf_ident_double(label "t_1" (((Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation) - (((Ext_ownship_position_x - Ext_intruder_position_x) * Extf_ident_double(label "verticalCriterionConflict_part2.3.1" ((Ext_ownship_position_x - Ext_intruder_position_x) + (Extf_ident_double(label "theta_dir_2" Extf_ident_double(label "thetaVert" (Extf_ident_double(label "thetaVert_dividend" (Extf_ident_double(label "thetaVert_part1" (0.0 - Extf_ident_double(label "thetaVert_part1.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))) + Extf_ident_double(label "thetaVert_part1.2" (Extf_ident_double(label "dirVert" (if Extf_ident_bool(label "dirVert_part1" (Extf_ident_double(label "dirVert_part1.1" (Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z)) * Extf_ident_double(label "absolute_value_splitting" signum Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z))))) >= Ext_minimal_vertical_separation)) then Extf_ident_double(label "dirVert_part2" (Ext_direction_parameter_vertical * Extf_ident_double(label "dirVert_part2.1" signum (Ext_ownship_position_z - Ext_intruder_position_z)))) else -1.0)) * Extf_ident_double(label "thetaVert_part2" Extf_sqrt(((Extf_ident_double(label "thetaVert_part2.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))) * Extf_ident_double(label "thetaVert_part2.2" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) - Extf_ident_double(label "thetaVert_part2.3" (Extf_ident_double(label "thetaVert_part2.3.1" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) * Extf_ident_double(label "thetaVert_part2.3.2" (Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)))))))))))) / Extf_ident_double(label "thetaVert_divisor" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))))) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x))))) + ((Ext_ownship_position_y - Ext_intruder_position_y) * Extf_ident_double(label "verticalCriterionConflict_part2.3.2" ((Ext_ownship_position_y - Ext_intruder_position_y) + (Extf_ident_double(label "theta_dir_3" Extf_ident_double(label "thetaVert" (Extf_ident_double(label "thetaVert_dividend" (Extf_ident_double(label "thetaVert_part1" (0.0 - Extf_ident_double(label "thetaVert_part1.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))) + Extf_ident_double(label "thetaVert_part1.2" (Extf_ident_double(label "dirVert" (if Extf_ident_bool(label "dirVert_part1" (Extf_ident_double(label "dirVert_part1.1" (Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z)) * Extf_ident_double(label "absolute_value_splitting" signum Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z))))) >= Ext_minimal_vertical_separation)) then Extf_ident_double(label "dirVert_part2" (Ext_direction_parameter_vertical * Extf_ident_double(label "dirVert_part2.1" signum (Ext_ownship_position_z - Ext_intruder_position_z)))) else -1.0)) * Extf_ident_double(label "thetaVert_part2" Extf_sqrt(((Extf_ident_double(label "thetaVert_part2.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))) * Extf_ident_double(label "thetaVert_part2.2" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) - Extf_ident_double(label "thetaVert_part2.3" (Extf_ident_double(label "thetaVert_part2.3.1" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) * Extf_ident_double(label "thetaVert_part2.3.2" (Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)))))))))))) / Extf_ident_double(label "thetaVert_divisor" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))))) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))))) / (((Ext_ownship_planned_velocity_x - Ext_intruder_velocity_x) * Extf_ident_double(label "verticalCriterionConflict_part2.3.1" ((Ext_ownship_position_x - Ext_intruder_position_x) + (Extf_ident_double(label "theta_dir_2" Extf_ident_double(label "thetaVert" (Extf_ident_double(label "thetaVert_dividend" (Extf_ident_double(label "thetaVert_part1" (0.0 - Extf_ident_double(label "thetaVert_part1.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))) + Extf_ident_double(label "thetaVert_part1.2" (Extf_ident_double(label "dirVert" (if Extf_ident_bool(label "dirVert_part1" (Extf_ident_double(label "dirVert_part1.1" (Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z)) * Extf_ident_double(label "absolute_value_splitting" signum Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z))))) >= Ext_minimal_vertical_separation)) then Extf_ident_double(label "dirVert_part2" (Ext_direction_parameter_vertical * Extf_ident_double(label "dirVert_part2.1" signum (Ext_ownship_position_z - Ext_intruder_position_z)))) else -1.0)) * Extf_ident_double(label "thetaVert_part2" Extf_sqrt(((Extf_ident_double(label "thetaVert_part2.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))) * Extf_ident_double(label "thetaVert_part2.2" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) - Extf_ident_double(label "thetaVert_part2.3" (Extf_ident_double(label "thetaVert_part2.3.1" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) * Extf_ident_double(label "thetaVert_part2.3.2" (Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)))))))))))) / Extf_ident_double(label "thetaVert_divisor" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))))) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x))))) + ((Ext_ownship_planned_velocity_y - Ext_intruder_velocity_y) * Extf_ident_double(label "verticalCriterionConflict_part2.3.2" ((Ext_ownship_position_y - Ext_intruder_position_y) + (Extf_ident_double(label "theta_dir_3" Extf_ident_double(label "thetaVert" (Extf_ident_double(label "thetaVert_dividend" (Extf_ident_double(label "thetaVert_part1" (0.0 - Extf_ident_double(label "thetaVert_part1.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))) + Extf_ident_double(label "thetaVert_part1.2" (Extf_ident_double(label "dirVert" (if Extf_ident_bool(label "dirVert_part1" (Extf_ident_double(label "dirVert_part1.1" (Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z)) * Extf_ident_double(label "absolute_value_splitting" signum Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z))))) >= Ext_minimal_vertical_separation)) then Extf_ident_double(label "dirVert_part2" (Ext_direction_parameter_vertical * Extf_ident_double(label "dirVert_part2.1" signum (Ext_ownship_position_z - Ext_intruder_position_z)))) else -1.0)) * Extf_ident_double(label "thetaVert_part2" Extf_sqrt(((Extf_ident_double(label "thetaVert_part2.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))) * Extf_ident_double(label "thetaVert_part2.2" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) - Extf_ident_double(label "thetaVert_part2.3" (Extf_ident_double(label "thetaVert_part2.3.1" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) * Extf_ident_double(label "thetaVert_part2.3.2" (Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)))))))))))) / Extf_ident_double(label "thetaVert_divisor" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))))) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))))) >= 0.0)) && Extf_ident_bool(label "intersectsHalfPlane_part3" ((Ext_direction_parameter_vertical * ((Ext_ownship_position_z - Ext_intruder_position_z) + (Extf_ident_double(label "t_2" (((Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation) - (((Ext_ownship_position_x - Ext_intruder_position_x) * Extf_ident_double(label "verticalCriterionConflict_part2.3.1" ((Ext_ownship_position_x - Ext_intruder_position_x) + (Extf_ident_double(label "theta_dir_2" Extf_ident_double(label "thetaVert" (Extf_ident_double(label "thetaVert_dividend" (Extf_ident_double(label "thetaVert_part1" (0.0 - Extf_ident_double(label "thetaVert_part1.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))) + Extf_ident_double(label "thetaVert_part1.2" (Extf_ident_double(label "dirVert" (if Extf_ident_bool(label "dirVert_part1" (Extf_ident_double(label "dirVert_part1.1" (Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z)) * Extf_ident_double(label "absolute_value_splitting" signum Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z))))) >= Ext_minimal_vertical_separation)) then Extf_ident_double(label "dirVert_part2" (Ext_direction_parameter_vertical * Extf_ident_double(label "dirVert_part2.1" signum (Ext_ownship_position_z - Ext_intruder_position_z)))) else -1.0)) * Extf_ident_double(label "thetaVert_part2" Extf_sqrt(((Extf_ident_double(label "thetaVert_part2.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))) * Extf_ident_double(label "thetaVert_part2.2" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) - Extf_ident_double(label "thetaVert_part2.3" (Extf_ident_double(label "thetaVert_part2.3.1" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) * Extf_ident_double(label "thetaVert_part2.3.2" (Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)))))))))))) / Extf_ident_double(label "thetaVert_divisor" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))))) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x))))) + ((Ext_ownship_position_y - Ext_intruder_position_y) * Extf_ident_double(label "verticalCriterionConflict_part2.3.2" ((Ext_ownship_position_y - Ext_intruder_position_y) + (Extf_ident_double(label "theta_dir_3" Extf_ident_double(label "thetaVert" (Extf_ident_double(label "thetaVert_dividend" (Extf_ident_double(label "thetaVert_part1" (0.0 - Extf_ident_double(label "thetaVert_part1.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))) + Extf_ident_double(label "thetaVert_part1.2" (Extf_ident_double(label "dirVert" (if Extf_ident_bool(label "dirVert_part1" (Extf_ident_double(label "dirVert_part1.1" (Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z)) * Extf_ident_double(label "absolute_value_splitting" signum Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z))))) >= Ext_minimal_vertical_separation)) then Extf_ident_double(label "dirVert_part2" (Ext_direction_parameter_vertical * Extf_ident_double(label "dirVert_part2.1" signum (Ext_ownship_position_z - Ext_intruder_position_z)))) else -1.0)) * Extf_ident_double(label "thetaVert_part2" Extf_sqrt(((Extf_ident_double(label "thetaVert_part2.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))) * Extf_ident_double(label "thetaVert_part2.2" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) - Extf_ident_double(label "thetaVert_part2.3" (Extf_ident_double(label "thetaVert_part2.3.1" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) * Extf_ident_double(label "thetaVert_part2.3.2" (Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)))))))))))) / Extf_ident_double(label "thetaVert_divisor" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))))) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))))) / (((Ext_ownship_planned_velocity_x - Ext_intruder_velocity_x) * Extf_ident_double(label "verticalCriterionConflict_part2.3.1" ((Ext_ownship_position_x - Ext_intruder_position_x) + (Extf_ident_double(label "theta_dir_2" Extf_ident_double(label "thetaVert" (Extf_ident_double(label "thetaVert_dividend" (Extf_ident_double(label "thetaVert_part1" (0.0 - Extf_ident_double(label "thetaVert_part1.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))) + Extf_ident_double(label "thetaVert_part1.2" (Extf_ident_double(label "dirVert" (if Extf_ident_bool(label "dirVert_part1" (Extf_ident_double(label "dirVert_part1.1" (Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z)) * Extf_ident_double(label "absolute_value_splitting" signum Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z))))) >= Ext_minimal_vertical_separation)) then Extf_ident_double(label "dirVert_part2" (Ext_direction_parameter_vertical * Extf_ident_double(label "dirVert_part2.1" signum (Ext_ownship_position_z - Ext_intruder_position_z)))) else -1.0)) * Extf_ident_double(label "thetaVert_part2" Extf_sqrt(((Extf_ident_double(label "thetaVert_part2.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))) * Extf_ident_double(label "thetaVert_part2.2" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) - Extf_ident_double(label "thetaVert_part2.3" (Extf_ident_double(label "thetaVert_part2.3.1" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) * Extf_ident_double(label "thetaVert_part2.3.2" (Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)))))))))))) / Extf_ident_double(label "thetaVert_divisor" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))))) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x))))) + ((Ext_ownship_planned_velocity_y - Ext_intruder_velocity_y) * Extf_ident_double(label "verticalCriterionConflict_part2.3.2" ((Ext_ownship_position_y - Ext_intruder_position_y) + (Extf_ident_double(label "theta_dir_3" Extf_ident_double(label "thetaVert" (Extf_ident_double(label "thetaVert_dividend" (Extf_ident_double(label "thetaVert_part1" (0.0 - Extf_ident_double(label "thetaVert_part1.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))) + Extf_ident_double(label "thetaVert_part1.2" (Extf_ident_double(label "dirVert" (if Extf_ident_bool(label "dirVert_part1" (Extf_ident_double(label "dirVert_part1.1" (Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z)) * Extf_ident_double(label "absolute_value_splitting" signum Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z))))) >= Ext_minimal_vertical_separation)) then Extf_ident_double(label "dirVert_part2" (Ext_direction_parameter_vertical * Extf_ident_double(label "dirVert_part2.1" signum (Ext_ownship_position_z - Ext_intruder_position_z)))) else -1.0)) * Extf_ident_double(label "thetaVert_part2" Extf_sqrt(((Extf_ident_double(label "thetaVert_part2.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))) * Extf_ident_double(label "thetaVert_part2.2" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) - Extf_ident_double(label "thetaVert_part2.3" (Extf_ident_double(label "thetaVert_part2.3.1" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) * Extf_ident_double(label "thetaVert_part2.3.2" (Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)))))))))))) / Extf_ident_double(label "thetaVert_divisor" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))))) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))))) * (Ext_ownship_planned_velocity_z - Ext_intruder_velocity_z)))) >= (Ext_direction_parameter_vertical * (Ext_direction_parameter_vertical * Ext_minimal_vertical_separation))))))))))))) && Extf_ident_bool(label "criterion3D_part4" (Extf_ident_bool(label "criterion3D_part4.1" (Extf_ident_double(label "criterion3D_part4.1.1" Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y))))) < Extf_ident_double(label "criterion3D_part4.1.2" (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)))) || Extf_ident_bool(label "criterion3D_part5" ((((Ext_ownship_position_x - Ext_intruder_position_x) * ((Ext_ownship_planned_velocity_x - Ext_intruder_velocity_x) - (Ext_ownship_velocity_x - Ext_intruder_velocity_x))) + ((Ext_ownship_position_y - Ext_intruder_position_y) * ((Ext_ownship_planned_velocity_y - Ext_intruder_velocity_y) - (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))) >= ((Ext_direction_parameter_horizontal * (Extf_ident_double(label "hor_rr_dividend" Extf_sqrt((Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)))) / Extf_ident_double(label "hor_rr_divisor" Ext_minimal_horizontal_separation))) * (((Ext_ownship_position_x - Ext_intruder_position_x) * ((Ext_ownship_planned_velocity_y - Ext_intruder_velocity_y) - (Ext_ownship_velocity_y - Ext_intruder_velocity_y))) - (((Ext_ownship_planned_velocity_x - Ext_intruder_velocity_x) - (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) * (Ext_ownship_position_y - Ext_intruder_position_y))))))))))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="op1: not",color=green4, style=filled]
+0 -> 1
+2 [label="op2: ||",color=green4, style=filled]
+1 -> 2
+3 [label="label: ?criterion3D_part1",color=plum, style=filled]
+2 -> 3
+4 [label="op2: &&",color=green4, style=filled]
+3 -> 4
+5 [label="label: ?criterion3D_part1.1",color=plum, style=filled]
+4 -> 5
+6 [label="op2: >=",color=green4, style=filled]
+5 -> 6
+7 [label="label: ?criterion3D_part1.2",color=plum, style=filled]
+6 -> 7
+8 [label="label: ?normsq2dim",color=plum, style=filled]
+7 -> 8
+9 [label="op2: +",color=green4, style=filled]
+8 -> 9
+10 [label="op2: *",color=green4, style=filled]
+9 -> 10
+11 [label="op2: -",color=green4, style=filled]
+10 -> 11
+12 [label="ext_ownship_position_x",color=cyan1, style=filled]
+11 -> 12
+13 [label="ext_intruder_position_x",color=cyan1, style=filled]
+11 -> 13
+14 [label="op2: -",color=green4, style=filled]
+10 -> 14
+15 [label="ext_ownship_position_x",color=cyan1, style=filled]
+14 -> 15
+16 [label="ext_intruder_position_x",color=cyan1, style=filled]
+14 -> 16
+17 [label="op2: *",color=green4, style=filled]
+9 -> 17
+18 [label="op2: -",color=green4, style=filled]
+17 -> 18
+19 [label="ext_ownship_position_y",color=cyan1, style=filled]
+18 -> 19
+20 [label="ext_intruder_position_y",color=cyan1, style=filled]
+18 -> 20
+21 [label="op2: -",color=green4, style=filled]
+17 -> 21
+22 [label="ext_ownship_position_y",color=cyan1, style=filled]
+21 -> 22
+23 [label="ext_intruder_position_y",color=cyan1, style=filled]
+21 -> 23
+24 [label="label: ?criterion3D_part1.3",color=plum, style=filled]
+6 -> 24
+25 [label="op2: *",color=green4, style=filled]
+24 -> 25
+26 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+25 -> 26
+27 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+25 -> 27
+28 [label="label: ?criterion3D_part2",color=plum, style=filled]
+4 -> 28
+29 [label="op2: >=",color=green4, style=filled]
+28 -> 29
+30 [label="op2: +",color=green4, style=filled]
+29 -> 30
+31 [label="op2: *",color=green4, style=filled]
+30 -> 31
+32 [label="op2: -",color=green4, style=filled]
+31 -> 32
+33 [label="ext_ownship_position_x",color=cyan1, style=filled]
+32 -> 33
+34 [label="ext_intruder_position_x",color=cyan1, style=filled]
+32 -> 34
+35 [label="op2: -",color=green4, style=filled]
+31 -> 35
+36 [label="ext_ownship_planned_velocity_x",color=cyan1, style=filled]
+35 -> 36
+37 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+35 -> 37
+38 [label="op2: *",color=green4, style=filled]
+30 -> 38
+39 [label="op2: -",color=green4, style=filled]
+38 -> 39
+40 [label="ext_ownship_position_y",color=cyan1, style=filled]
+39 -> 40
+41 [label="ext_intruder_position_y",color=cyan1, style=filled]
+39 -> 41
+42 [label="op2: -",color=green4, style=filled]
+38 -> 42
+43 [label="ext_ownship_planned_velocity_y",color=cyan1, style=filled]
+42 -> 43
+44 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+42 -> 44
+45 [label="op2: *",color=green4, style=filled]
+29 -> 45
+46 [label="op2: *",color=green4, style=filled]
+45 -> 46
+47 [label="ext_direction_parameter_horizontal",color=cyan1, style=filled]
+46 -> 47
+48 [label="op2: /",color=green4, style=filled]
+46 -> 48
+49 [label="label: ?hor_rr_dividend",color=plum, style=filled]
+48 -> 49
+50 [label="ext_sqrt_2",color=cyan4, style=filled]
+49 -> 50
+71 [label="label: ?hor_rr_divisor",color=plum, style=filled]
+48 -> 71
+72 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+71 -> 72
+73 [label="op2: -",color=green4, style=filled]
+45 -> 73
+74 [label="op2: *",color=green4, style=filled]
+73 -> 74
+75 [label="op2: -",color=green4, style=filled]
+74 -> 75
+76 [label="ext_ownship_position_x",color=cyan1, style=filled]
+75 -> 76
+77 [label="ext_intruder_position_x",color=cyan1, style=filled]
+75 -> 77
+78 [label="op2: -",color=green4, style=filled]
+74 -> 78
+79 [label="ext_ownship_planned_velocity_y",color=cyan1, style=filled]
+78 -> 79
+80 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+78 -> 80
+81 [label="op2: *",color=green4, style=filled]
+73 -> 81
+82 [label="op2: -",color=green4, style=filled]
+81 -> 82
+83 [label="ext_ownship_planned_velocity_x",color=cyan1, style=filled]
+82 -> 83
+84 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+82 -> 84
+85 [label="op2: -",color=green4, style=filled]
+81 -> 85
+86 [label="ext_ownship_position_y",color=cyan1, style=filled]
+85 -> 86
+87 [label="ext_intruder_position_y",color=cyan1, style=filled]
+85 -> 87
+88 [label="op2: &&",color=green4, style=filled]
+2 -> 88
+89 [label="label: ?criterion3D_part3",color=plum, style=filled]
+88 -> 89
+90 [label="op2: ||",color=green4, style=filled]
+89 -> 90
+91 [label="label: ?verticalCriterionConflict_part1",color=plum, style=filled]
+90 -> 91
+92 [label="op2: &&",color=green4, style=filled]
+91 -> 92
+93 [label="label: ?verticalCriterionConflict_part1.1",color=plum, style=filled]
+92 -> 93
+94 [label="op2: &&",color=green4, style=filled]
+93 -> 94
+95 [label="label: ?verticalCriterionConflict_part1.1.1",color=plum, style=filled]
+94 -> 95
+96 [label="op2: <=",color=green4, style=filled]
+95 -> 96
+97 [label="label: ?normsq2dim",color=plum, style=filled]
+96 -> 97
+98 [label="op2: +",color=green4, style=filled]
+97 -> 98
+99 [label="op2: *",color=green4, style=filled]
+98 -> 99
+100 [label="op2: -",color=green4, style=filled]
+99 -> 100
+101 [label="ext_ownship_position_x",color=cyan1, style=filled]
+100 -> 101
+102 [label="ext_intruder_position_x",color=cyan1, style=filled]
+100 -> 102
+103 [label="op2: -",color=green4, style=filled]
+99 -> 103
+104 [label="ext_ownship_position_x",color=cyan1, style=filled]
+103 -> 104
+105 [label="ext_intruder_position_x",color=cyan1, style=filled]
+103 -> 105
+106 [label="op2: *",color=green4, style=filled]
+98 -> 106
+107 [label="op2: -",color=green4, style=filled]
+106 -> 107
+108 [label="ext_ownship_position_y",color=cyan1, style=filled]
+107 -> 108
+109 [label="ext_intruder_position_y",color=cyan1, style=filled]
+107 -> 109
+110 [label="op2: -",color=green4, style=filled]
+106 -> 110
+111 [label="ext_ownship_position_y",color=cyan1, style=filled]
+110 -> 111
+112 [label="ext_intruder_position_y",color=cyan1, style=filled]
+110 -> 112
+113 [label="const: 0.0",color=red1, style=filled]
+96 -> 113
+114 [label="label: ?verticalCriterionConflict_part1.1.2",color=plum, style=filled]
+94 -> 114
+115 [label="op2: >=",color=green4, style=filled]
+114 -> 115
+116 [label="label: ?normsq2dim",color=plum, style=filled]
+115 -> 116
+117 [label="op2: +",color=green4, style=filled]
+116 -> 117
+118 [label="op2: *",color=green4, style=filled]
+117 -> 118
+119 [label="op2: -",color=green4, style=filled]
+118 -> 119
+120 [label="ext_ownship_position_x",color=cyan1, style=filled]
+119 -> 120
+121 [label="ext_intruder_position_x",color=cyan1, style=filled]
+119 -> 121
+122 [label="op2: -",color=green4, style=filled]
+118 -> 122
+123 [label="ext_ownship_position_x",color=cyan1, style=filled]
+122 -> 123
+124 [label="ext_intruder_position_x",color=cyan1, style=filled]
+122 -> 124
+125 [label="op2: *",color=green4, style=filled]
+117 -> 125
+126 [label="op2: -",color=green4, style=filled]
+125 -> 126
+127 [label="ext_ownship_position_y",color=cyan1, style=filled]
+126 -> 127
+128 [label="ext_intruder_position_y",color=cyan1, style=filled]
+126 -> 128
+129 [label="op2: -",color=green4, style=filled]
+125 -> 129
+130 [label="ext_ownship_position_y",color=cyan1, style=filled]
+129 -> 130
+131 [label="ext_intruder_position_y",color=cyan1, style=filled]
+129 -> 131
+132 [label="const: 0.0",color=red1, style=filled]
+115 -> 132
+133 [label="op2: &&",color=green4, style=filled]
+92 -> 133
+134 [label="label: ?verticalCriterionConflict_part1.2",color=plum, style=filled]
+133 -> 134
+135 [label="op2: >=",color=green4, style=filled]
+134 -> 135
+136 [label="op2: -",color=green4, style=filled]
+135 -> 136
+137 [label="ext_ownship_planned_velocity_z",color=cyan1, style=filled]
+136 -> 137
+138 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+136 -> 138
+139 [label="const: 0.0",color=red1, style=filled]
+135 -> 139
+140 [label="label: ?verticalCriterionConflict_part1.3",color=plum, style=filled]
+133 -> 140
+141 [label="op2: >=",color=green4, style=filled]
+140 -> 141
+142 [label="op2: *",color=green4, style=filled]
+141 -> 142
+143 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+142 -> 143
+144 [label="op2: -",color=green4, style=filled]
+142 -> 144
+145 [label="ext_ownship_position_z",color=cyan1, style=filled]
+144 -> 145
+146 [label="ext_intruder_position_z",color=cyan1, style=filled]
+144 -> 146
+147 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+141 -> 147
+148 [label="label: ?verticalCriterionConflict_part2",color=plum, style=filled]
+90 -> 148
+149 [label="op2: &&",color=green4, style=filled]
+148 -> 149
+150 [label="label: ?verticalCriterionConflict_part2.1",color=plum, style=filled]
+149 -> 150
+151 [label="op2: >",color=green4, style=filled]
+150 -> 151
+152 [label="op2: -",color=green4, style=filled]
+151 -> 152
+153 [label="op2: *",color=green4, style=filled]
+152 -> 153
+154 [label="op2: *",color=green4, style=filled]
+153 -> 154
+155 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+154 -> 155
+156 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+154 -> 156
+157 [label="label: ?normsq2dim",color=plum, style=filled]
+153 -> 157
+158 [label="op2: +",color=green4, style=filled]
+157 -> 158
+159 [label="op2: *",color=green4, style=filled]
+158 -> 159
+160 [label="op2: -",color=green4, style=filled]
+159 -> 160
+161 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+160 -> 161
+162 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+160 -> 162
+163 [label="op2: -",color=green4, style=filled]
+159 -> 163
+164 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+163 -> 164
+165 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+163 -> 165
+166 [label="op2: *",color=green4, style=filled]
+158 -> 166
+167 [label="op2: -",color=green4, style=filled]
+166 -> 167
+168 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+167 -> 168
+169 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+167 -> 169
+170 [label="op2: -",color=green4, style=filled]
+166 -> 170
+171 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+170 -> 171
+172 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+170 -> 172
+173 [label="op2: *",color=green4, style=filled]
+152 -> 173
+174 [label="op2: -",color=green4, style=filled]
+173 -> 174
+175 [label="op2: *",color=green4, style=filled]
+174 -> 175
+176 [label="op2: -",color=green4, style=filled]
+175 -> 176
+177 [label="ext_ownship_position_x",color=cyan1, style=filled]
+176 -> 177
+178 [label="ext_intruder_position_x",color=cyan1, style=filled]
+176 -> 178
+179 [label="op2: -",color=green4, style=filled]
+175 -> 179
+180 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+179 -> 180
+181 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+179 -> 181
+182 [label="op2: *",color=green4, style=filled]
+174 -> 182
+183 [label="op2: -",color=green4, style=filled]
+182 -> 183
+184 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+183 -> 184
+185 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+183 -> 185
+186 [label="op2: -",color=green4, style=filled]
+182 -> 186
+187 [label="ext_ownship_position_y",color=cyan1, style=filled]
+186 -> 187
+188 [label="ext_intruder_position_y",color=cyan1, style=filled]
+186 -> 188
+189 [label="op2: -",color=green4, style=filled]
+173 -> 189
+190 [label="op2: *",color=green4, style=filled]
+189 -> 190
+191 [label="op2: -",color=green4, style=filled]
+190 -> 191
+192 [label="ext_ownship_position_x",color=cyan1, style=filled]
+191 -> 192
+193 [label="ext_intruder_position_x",color=cyan1, style=filled]
+191 -> 193
+194 [label="op2: -",color=green4, style=filled]
+190 -> 194
+195 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+194 -> 195
+196 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+194 -> 196
+197 [label="op2: *",color=green4, style=filled]
+189 -> 197
+198 [label="op2: -",color=green4, style=filled]
+197 -> 198
+199 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+198 -> 199
+200 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+198 -> 200
+201 [label="op2: -",color=green4, style=filled]
+197 -> 201
+202 [label="ext_ownship_position_y",color=cyan1, style=filled]
+201 -> 202
+203 [label="ext_intruder_position_y",color=cyan1, style=filled]
+201 -> 203
+204 [label="const: 0.0",color=red1, style=filled]
+151 -> 204
+205 [label="op2: &&",color=green4, style=filled]
+149 -> 205
+206 [label="label: ?verticalCriterionConflict_part2.2",color=plum, style=filled]
+205 -> 206
+207 [label="op2: >",color=green4, style=filled]
+206 -> 207
+208 [label="label: ?theta_dir_1",color=plum, style=filled]
+207 -> 208
+209 [label="label: ?thetaVert",color=plum, style=filled]
+208 -> 209
+210 [label="op2: /",color=green4, style=filled]
+209 -> 210
+211 [label="label: ?thetaVert_dividend",color=plum, style=filled]
+210 -> 211
+212 [label="op2: +",color=green4, style=filled]
+211 -> 212
+213 [label="label: ?thetaVert_part1",color=plum, style=filled]
+212 -> 213
+214 [label="op2: -",color=green4, style=filled]
+213 -> 214
+215 [label="const: 0.0",color=red1, style=filled]
+214 -> 215
+216 [label="label: ?thetaVert_part1.1",color=plum, style=filled]
+214 -> 216
+217 [label="op2: +",color=green4, style=filled]
+216 -> 217
+218 [label="op2: *",color=green4, style=filled]
+217 -> 218
+219 [label="op2: -",color=green4, style=filled]
+218 -> 219
+220 [label="ext_ownship_position_x",color=cyan1, style=filled]
+219 -> 220
+221 [label="ext_intruder_position_x",color=cyan1, style=filled]
+219 -> 221
+222 [label="op2: -",color=green4, style=filled]
+218 -> 222
+223 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+222 -> 223
+224 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+222 -> 224
+225 [label="op2: *",color=green4, style=filled]
+217 -> 225
+226 [label="op2: -",color=green4, style=filled]
+225 -> 226
+227 [label="ext_ownship_position_y",color=cyan1, style=filled]
+226 -> 227
+228 [label="ext_intruder_position_y",color=cyan1, style=filled]
+226 -> 228
+229 [label="op2: -",color=green4, style=filled]
+225 -> 229
+230 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+229 -> 230
+231 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+229 -> 231
+232 [label="label: ?thetaVert_part1.2",color=plum, style=filled]
+212 -> 232
+233 [label="op2: *",color=green4, style=filled]
+232 -> 233
+234 [label="label: ?dirVert",color=plum, style=filled]
+233 -> 234
+235 [label="op3: mux",color=green4, style=filled]
+234 -> 235
+236 [label="label: ?dirVert_part1",color=plum, style=filled]
+235 -> 236
+237 [label="op2: >=",color=green4, style=filled]
+236 -> 237
+238 [label="label: ?dirVert_part1.1",color=plum, style=filled]
+237 -> 238
+239 [label="op1: abs",color=green4, style=filled]
+238 -> 239
+240 [label="label: ?dirVert_part1.1.1",color=plum, style=filled]
+239 -> 240
+241 [label="op2: -",color=green4, style=filled]
+240 -> 241
+242 [label="ext_ownship_position_z",color=cyan1, style=filled]
+241 -> 242
+243 [label="ext_intruder_position_z",color=cyan1, style=filled]
+241 -> 243
+244 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+237 -> 244
+245 [label="label: ?dirVert_part2",color=plum, style=filled]
+235 -> 245
+246 [label="op2: *",color=green4, style=filled]
+245 -> 246
+247 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+246 -> 247
+248 [label="label: ?dirVert_part2.1",color=plum, style=filled]
+246 -> 248
+249 [label="op1: signum",color=green4, style=filled]
+248 -> 249
+250 [label="op2: -",color=green4, style=filled]
+249 -> 250
+251 [label="ext_ownship_position_z",color=cyan1, style=filled]
+250 -> 251
+252 [label="ext_intruder_position_z",color=cyan1, style=filled]
+250 -> 252
+253 [label="const: -1.0",color=red1, style=filled]
+235 -> 253
+254 [label="label: ?thetaVert_part2",color=plum, style=filled]
+233 -> 254
+255 [label="ext_sqrt_3",color=cyan4, style=filled]
+254 -> 255
+330 [label="label: ?thetaVert_divisor",color=plum, style=filled]
+210 -> 330
+331 [label="label: ?normsq2dim",color=plum, style=filled]
+330 -> 331
+332 [label="op2: +",color=green4, style=filled]
+331 -> 332
+333 [label="op2: *",color=green4, style=filled]
+332 -> 333
+334 [label="op2: -",color=green4, style=filled]
+333 -> 334
+335 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+334 -> 335
+336 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+334 -> 336
+337 [label="op2: -",color=green4, style=filled]
+333 -> 337
+338 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+337 -> 338
+339 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+337 -> 339
+340 [label="op2: *",color=green4, style=filled]
+332 -> 340
+341 [label="op2: -",color=green4, style=filled]
+340 -> 341
+342 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+341 -> 342
+343 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+341 -> 343
+344 [label="op2: -",color=green4, style=filled]
+340 -> 344
+345 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+344 -> 345
+346 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+344 -> 346
+347 [label="const: 0.0",color=red1, style=filled]
+207 -> 347
+348 [label="label: ?verticalCriterionConflict_part2.3",color=plum, style=filled]
+205 -> 348
+349 [label="label: ?intersectsHalfPlane",color=plum, style=filled]
+348 -> 349
+350 [label="op2: &&",color=green4, style=filled]
+349 -> 350
+351 [label="label: ?intersectsHalfPlane_part1",color=plum, style=filled]
+350 -> 351
+352 [label="op2: ||",color=green4, style=filled]
+351 -> 352
+353 [label="label: ?intersectsHalfPlane_part1.1",color=plum, style=filled]
+352 -> 353
+354 [label="op2: <",color=green4, style=filled]
+353 -> 354
+355 [label="op2: +",color=green4, style=filled]
+354 -> 355
+356 [label="op2: *",color=green4, style=filled]
+355 -> 356
+357 [label="op2: -",color=green4, style=filled]
+356 -> 357
+358 [label="ext_ownship_planned_velocity_x",color=cyan1, style=filled]
+357 -> 358
+359 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+357 -> 359
+360 [label="label: ?verticalCriterionConflict_part2.3.1",color=plum, style=filled]
+356 -> 360
+361 [label="op2: +",color=green4, style=filled]
+360 -> 361
+362 [label="op2: -",color=green4, style=filled]
+361 -> 362
+363 [label="ext_ownship_position_x",color=cyan1, style=filled]
+362 -> 363
+364 [label="ext_intruder_position_x",color=cyan1, style=filled]
+362 -> 364
+365 [label="op2: *",color=green4, style=filled]
+361 -> 365
+366 [label="label: ?theta_dir_2",color=plum, style=filled]
+365 -> 366
+367 [label="label: ?thetaVert",color=plum, style=filled]
+366 -> 367
+368 [label="op2: /",color=green4, style=filled]
+367 -> 368
+369 [label="label: ?thetaVert_dividend",color=plum, style=filled]
+368 -> 369
+370 [label="op2: +",color=green4, style=filled]
+369 -> 370
+371 [label="label: ?thetaVert_part1",color=plum, style=filled]
+370 -> 371
+372 [label="op2: -",color=green4, style=filled]
+371 -> 372
+373 [label="const: 0.0",color=red1, style=filled]
+372 -> 373
+374 [label="label: ?thetaVert_part1.1",color=plum, style=filled]
+372 -> 374
+375 [label="op2: +",color=green4, style=filled]
+374 -> 375
+376 [label="op2: *",color=green4, style=filled]
+375 -> 376
+377 [label="op2: -",color=green4, style=filled]
+376 -> 377
+378 [label="ext_ownship_position_x",color=cyan1, style=filled]
+377 -> 378
+379 [label="ext_intruder_position_x",color=cyan1, style=filled]
+377 -> 379
+380 [label="op2: -",color=green4, style=filled]
+376 -> 380
+381 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+380 -> 381
+382 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+380 -> 382
+383 [label="op2: *",color=green4, style=filled]
+375 -> 383
+384 [label="op2: -",color=green4, style=filled]
+383 -> 384
+385 [label="ext_ownship_position_y",color=cyan1, style=filled]
+384 -> 385
+386 [label="ext_intruder_position_y",color=cyan1, style=filled]
+384 -> 386
+387 [label="op2: -",color=green4, style=filled]
+383 -> 387
+388 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+387 -> 388
+389 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+387 -> 389
+390 [label="label: ?thetaVert_part1.2",color=plum, style=filled]
+370 -> 390
+391 [label="op2: *",color=green4, style=filled]
+390 -> 391
+392 [label="label: ?dirVert",color=plum, style=filled]
+391 -> 392
+393 [label="op3: mux",color=green4, style=filled]
+392 -> 393
+394 [label="label: ?dirVert_part1",color=plum, style=filled]
+393 -> 394
+395 [label="op2: >=",color=green4, style=filled]
+394 -> 395
+396 [label="label: ?dirVert_part1.1",color=plum, style=filled]
+395 -> 396
+397 [label="op1: abs",color=green4, style=filled]
+396 -> 397
+398 [label="label: ?dirVert_part1.1.1",color=plum, style=filled]
+397 -> 398
+399 [label="op2: -",color=green4, style=filled]
+398 -> 399
+400 [label="ext_ownship_position_z",color=cyan1, style=filled]
+399 -> 400
+401 [label="ext_intruder_position_z",color=cyan1, style=filled]
+399 -> 401
+402 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+395 -> 402
+403 [label="label: ?dirVert_part2",color=plum, style=filled]
+393 -> 403
+404 [label="op2: *",color=green4, style=filled]
+403 -> 404
+405 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+404 -> 405
+406 [label="label: ?dirVert_part2.1",color=plum, style=filled]
+404 -> 406
+407 [label="op1: signum",color=green4, style=filled]
+406 -> 407
+408 [label="op2: -",color=green4, style=filled]
+407 -> 408
+409 [label="ext_ownship_position_z",color=cyan1, style=filled]
+408 -> 409
+410 [label="ext_intruder_position_z",color=cyan1, style=filled]
+408 -> 410
+411 [label="const: -1.0",color=red1, style=filled]
+393 -> 411
+412 [label="label: ?thetaVert_part2",color=plum, style=filled]
+391 -> 412
+413 [label="ext_sqrt_4",color=cyan4, style=filled]
+412 -> 413
+488 [label="label: ?thetaVert_divisor",color=plum, style=filled]
+368 -> 488
+489 [label="label: ?normsq2dim",color=plum, style=filled]
+488 -> 489
+490 [label="op2: +",color=green4, style=filled]
+489 -> 490
+491 [label="op2: *",color=green4, style=filled]
+490 -> 491
+492 [label="op2: -",color=green4, style=filled]
+491 -> 492
+493 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+492 -> 493
+494 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+492 -> 494
+495 [label="op2: -",color=green4, style=filled]
+491 -> 495
+496 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+495 -> 496
+497 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+495 -> 497
+498 [label="op2: *",color=green4, style=filled]
+490 -> 498
+499 [label="op2: -",color=green4, style=filled]
+498 -> 499
+500 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+499 -> 500
+501 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+499 -> 501
+502 [label="op2: -",color=green4, style=filled]
+498 -> 502
+503 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+502 -> 503
+504 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+502 -> 504
+505 [label="op2: -",color=green4, style=filled]
+365 -> 505
+506 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+505 -> 506
+507 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+505 -> 507
+508 [label="op2: *",color=green4, style=filled]
+355 -> 508
+509 [label="op2: -",color=green4, style=filled]
+508 -> 509
+510 [label="ext_ownship_planned_velocity_y",color=cyan1, style=filled]
+509 -> 510
+511 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+509 -> 511
+512 [label="label: ?verticalCriterionConflict_part2.3.2",color=plum, style=filled]
+508 -> 512
+513 [label="op2: +",color=green4, style=filled]
+512 -> 513
+514 [label="op2: -",color=green4, style=filled]
+513 -> 514
+515 [label="ext_ownship_position_y",color=cyan1, style=filled]
+514 -> 515
+516 [label="ext_intruder_position_y",color=cyan1, style=filled]
+514 -> 516
+517 [label="op2: *",color=green4, style=filled]
+513 -> 517
+518 [label="label: ?theta_dir_3",color=plum, style=filled]
+517 -> 518
+519 [label="label: ?thetaVert",color=plum, style=filled]
+518 -> 519
+520 [label="op2: /",color=green4, style=filled]
+519 -> 520
+521 [label="label: ?thetaVert_dividend",color=plum, style=filled]
+520 -> 521
+522 [label="op2: +",color=green4, style=filled]
+521 -> 522
+523 [label="label: ?thetaVert_part1",color=plum, style=filled]
+522 -> 523
+524 [label="op2: -",color=green4, style=filled]
+523 -> 524
+525 [label="const: 0.0",color=red1, style=filled]
+524 -> 525
+526 [label="label: ?thetaVert_part1.1",color=plum, style=filled]
+524 -> 526
+527 [label="op2: +",color=green4, style=filled]
+526 -> 527
+528 [label="op2: *",color=green4, style=filled]
+527 -> 528
+529 [label="op2: -",color=green4, style=filled]
+528 -> 529
+530 [label="ext_ownship_position_x",color=cyan1, style=filled]
+529 -> 530
+531 [label="ext_intruder_position_x",color=cyan1, style=filled]
+529 -> 531
+532 [label="op2: -",color=green4, style=filled]
+528 -> 532
+533 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+532 -> 533
+534 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+532 -> 534
+535 [label="op2: *",color=green4, style=filled]
+527 -> 535
+536 [label="op2: -",color=green4, style=filled]
+535 -> 536
+537 [label="ext_ownship_position_y",color=cyan1, style=filled]
+536 -> 537
+538 [label="ext_intruder_position_y",color=cyan1, style=filled]
+536 -> 538
+539 [label="op2: -",color=green4, style=filled]
+535 -> 539
+540 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+539 -> 540
+541 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+539 -> 541
+542 [label="label: ?thetaVert_part1.2",color=plum, style=filled]
+522 -> 542
+543 [label="op2: *",color=green4, style=filled]
+542 -> 543
+544 [label="label: ?dirVert",color=plum, style=filled]
+543 -> 544
+545 [label="op3: mux",color=green4, style=filled]
+544 -> 545
+546 [label="label: ?dirVert_part1",color=plum, style=filled]
+545 -> 546
+547 [label="op2: >=",color=green4, style=filled]
+546 -> 547
+548 [label="label: ?dirVert_part1.1",color=plum, style=filled]
+547 -> 548
+549 [label="op1: abs",color=green4, style=filled]
+548 -> 549
+550 [label="label: ?dirVert_part1.1.1",color=plum, style=filled]
+549 -> 550
+551 [label="op2: -",color=green4, style=filled]
+550 -> 551
+552 [label="ext_ownship_position_z",color=cyan1, style=filled]
+551 -> 552
+553 [label="ext_intruder_position_z",color=cyan1, style=filled]
+551 -> 553
+554 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+547 -> 554
+555 [label="label: ?dirVert_part2",color=plum, style=filled]
+545 -> 555
+556 [label="op2: *",color=green4, style=filled]
+555 -> 556
+557 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+556 -> 557
+558 [label="label: ?dirVert_part2.1",color=plum, style=filled]
+556 -> 558
+559 [label="op1: signum",color=green4, style=filled]
+558 -> 559
+560 [label="op2: -",color=green4, style=filled]
+559 -> 560
+561 [label="ext_ownship_position_z",color=cyan1, style=filled]
+560 -> 561
+562 [label="ext_intruder_position_z",color=cyan1, style=filled]
+560 -> 562
+563 [label="const: -1.0",color=red1, style=filled]
+545 -> 563
+564 [label="label: ?thetaVert_part2",color=plum, style=filled]
+543 -> 564
+565 [label="ext_sqrt_5",color=cyan4, style=filled]
+564 -> 565
+640 [label="label: ?thetaVert_divisor",color=plum, style=filled]
+520 -> 640
+641 [label="label: ?normsq2dim",color=plum, style=filled]
+640 -> 641
+642 [label="op2: +",color=green4, style=filled]
+641 -> 642
+643 [label="op2: *",color=green4, style=filled]
+642 -> 643
+644 [label="op2: -",color=green4, style=filled]
+643 -> 644
+645 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+644 -> 645
+646 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+644 -> 646
+647 [label="op2: -",color=green4, style=filled]
+643 -> 647
+648 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+647 -> 648
+649 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+647 -> 649
+650 [label="op2: *",color=green4, style=filled]
+642 -> 650
+651 [label="op2: -",color=green4, style=filled]
+650 -> 651
+652 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+651 -> 652
+653 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+651 -> 653
+654 [label="op2: -",color=green4, style=filled]
+650 -> 654
+655 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+654 -> 655
+656 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+654 -> 656
+657 [label="op2: -",color=green4, style=filled]
+517 -> 657
+658 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+657 -> 658
+659 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+657 -> 659
+660 [label="const: 0.0",color=red1, style=filled]
+354 -> 660
+661 [label="label: ?intersectsHalfPlane_part1.2",color=plum, style=filled]
+352 -> 661
+662 [label="op2: >",color=green4, style=filled]
+661 -> 662
+663 [label="op2: +",color=green4, style=filled]
+662 -> 663
+664 [label="op2: *",color=green4, style=filled]
+663 -> 664
+665 [label="op2: -",color=green4, style=filled]
+664 -> 665
+666 [label="ext_ownship_planned_velocity_x",color=cyan1, style=filled]
+665 -> 666
+667 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+665 -> 667
+668 [label="label: ?verticalCriterionConflict_part2.3.1",color=plum, style=filled]
+664 -> 668
+669 [label="op2: +",color=green4, style=filled]
+668 -> 669
+670 [label="op2: -",color=green4, style=filled]
+669 -> 670
+671 [label="ext_ownship_position_x",color=cyan1, style=filled]
+670 -> 671
+672 [label="ext_intruder_position_x",color=cyan1, style=filled]
+670 -> 672
+673 [label="op2: *",color=green4, style=filled]
+669 -> 673
+674 [label="label: ?theta_dir_2",color=plum, style=filled]
+673 -> 674
+675 [label="label: ?thetaVert",color=plum, style=filled]
+674 -> 675
+676 [label="op2: /",color=green4, style=filled]
+675 -> 676
+677 [label="label: ?thetaVert_dividend",color=plum, style=filled]
+676 -> 677
+678 [label="op2: +",color=green4, style=filled]
+677 -> 678
+679 [label="label: ?thetaVert_part1",color=plum, style=filled]
+678 -> 679
+680 [label="op2: -",color=green4, style=filled]
+679 -> 680
+681 [label="const: 0.0",color=red1, style=filled]
+680 -> 681
+682 [label="label: ?thetaVert_part1.1",color=plum, style=filled]
+680 -> 682
+683 [label="op2: +",color=green4, style=filled]
+682 -> 683
+684 [label="op2: *",color=green4, style=filled]
+683 -> 684
+685 [label="op2: -",color=green4, style=filled]
+684 -> 685
+686 [label="ext_ownship_position_x",color=cyan1, style=filled]
+685 -> 686
+687 [label="ext_intruder_position_x",color=cyan1, style=filled]
+685 -> 687
+688 [label="op2: -",color=green4, style=filled]
+684 -> 688
+689 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+688 -> 689
+690 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+688 -> 690
+691 [label="op2: *",color=green4, style=filled]
+683 -> 691
+692 [label="op2: -",color=green4, style=filled]
+691 -> 692
+693 [label="ext_ownship_position_y",color=cyan1, style=filled]
+692 -> 693
+694 [label="ext_intruder_position_y",color=cyan1, style=filled]
+692 -> 694
+695 [label="op2: -",color=green4, style=filled]
+691 -> 695
+696 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+695 -> 696
+697 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+695 -> 697
+698 [label="label: ?thetaVert_part1.2",color=plum, style=filled]
+678 -> 698
+699 [label="op2: *",color=green4, style=filled]
+698 -> 699
+700 [label="label: ?dirVert",color=plum, style=filled]
+699 -> 700
+701 [label="op3: mux",color=green4, style=filled]
+700 -> 701
+702 [label="label: ?dirVert_part1",color=plum, style=filled]
+701 -> 702
+703 [label="op2: >=",color=green4, style=filled]
+702 -> 703
+704 [label="label: ?dirVert_part1.1",color=plum, style=filled]
+703 -> 704
+705 [label="op1: abs",color=green4, style=filled]
+704 -> 705
+706 [label="label: ?dirVert_part1.1.1",color=plum, style=filled]
+705 -> 706
+707 [label="op2: -",color=green4, style=filled]
+706 -> 707
+708 [label="ext_ownship_position_z",color=cyan1, style=filled]
+707 -> 708
+709 [label="ext_intruder_position_z",color=cyan1, style=filled]
+707 -> 709
+710 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+703 -> 710
+711 [label="label: ?dirVert_part2",color=plum, style=filled]
+701 -> 711
+712 [label="op2: *",color=green4, style=filled]
+711 -> 712
+713 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+712 -> 713
+714 [label="label: ?dirVert_part2.1",color=plum, style=filled]
+712 -> 714
+715 [label="op1: signum",color=green4, style=filled]
+714 -> 715
+716 [label="op2: -",color=green4, style=filled]
+715 -> 716
+717 [label="ext_ownship_position_z",color=cyan1, style=filled]
+716 -> 717
+718 [label="ext_intruder_position_z",color=cyan1, style=filled]
+716 -> 718
+719 [label="const: -1.0",color=red1, style=filled]
+701 -> 719
+720 [label="label: ?thetaVert_part2",color=plum, style=filled]
+699 -> 720
+721 [label="ext_sqrt_6",color=cyan4, style=filled]
+720 -> 721
+796 [label="label: ?thetaVert_divisor",color=plum, style=filled]
+676 -> 796
+797 [label="label: ?normsq2dim",color=plum, style=filled]
+796 -> 797
+798 [label="op2: +",color=green4, style=filled]
+797 -> 798
+799 [label="op2: *",color=green4, style=filled]
+798 -> 799
+800 [label="op2: -",color=green4, style=filled]
+799 -> 800
+801 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+800 -> 801
+802 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+800 -> 802
+803 [label="op2: -",color=green4, style=filled]
+799 -> 803
+804 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+803 -> 804
+805 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+803 -> 805
+806 [label="op2: *",color=green4, style=filled]
+798 -> 806
+807 [label="op2: -",color=green4, style=filled]
+806 -> 807
+808 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+807 -> 808
+809 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+807 -> 809
+810 [label="op2: -",color=green4, style=filled]
+806 -> 810
+811 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+810 -> 811
+812 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+810 -> 812
+813 [label="op2: -",color=green4, style=filled]
+673 -> 813
+814 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+813 -> 814
+815 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+813 -> 815
+816 [label="op2: *",color=green4, style=filled]
+663 -> 816
+817 [label="op2: -",color=green4, style=filled]
+816 -> 817
+818 [label="ext_ownship_planned_velocity_y",color=cyan1, style=filled]
+817 -> 818
+819 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+817 -> 819
+820 [label="label: ?verticalCriterionConflict_part2.3.2",color=plum, style=filled]
+816 -> 820
+821 [label="op2: +",color=green4, style=filled]
+820 -> 821
+822 [label="op2: -",color=green4, style=filled]
+821 -> 822
+823 [label="ext_ownship_position_y",color=cyan1, style=filled]
+822 -> 823
+824 [label="ext_intruder_position_y",color=cyan1, style=filled]
+822 -> 824
+825 [label="op2: *",color=green4, style=filled]
+821 -> 825
+826 [label="label: ?theta_dir_3",color=plum, style=filled]
+825 -> 826
+827 [label="label: ?thetaVert",color=plum, style=filled]
+826 -> 827
+828 [label="op2: /",color=green4, style=filled]
+827 -> 828
+829 [label="label: ?thetaVert_dividend",color=plum, style=filled]
+828 -> 829
+830 [label="op2: +",color=green4, style=filled]
+829 -> 830
+831 [label="label: ?thetaVert_part1",color=plum, style=filled]
+830 -> 831
+832 [label="op2: -",color=green4, style=filled]
+831 -> 832
+833 [label="const: 0.0",color=red1, style=filled]
+832 -> 833
+834 [label="label: ?thetaVert_part1.1",color=plum, style=filled]
+832 -> 834
+835 [label="op2: +",color=green4, style=filled]
+834 -> 835
+836 [label="op2: *",color=green4, style=filled]
+835 -> 836
+837 [label="op2: -",color=green4, style=filled]
+836 -> 837
+838 [label="ext_ownship_position_x",color=cyan1, style=filled]
+837 -> 838
+839 [label="ext_intruder_position_x",color=cyan1, style=filled]
+837 -> 839
+840 [label="op2: -",color=green4, style=filled]
+836 -> 840
+841 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+840 -> 841
+842 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+840 -> 842
+843 [label="op2: *",color=green4, style=filled]
+835 -> 843
+844 [label="op2: -",color=green4, style=filled]
+843 -> 844
+845 [label="ext_ownship_position_y",color=cyan1, style=filled]
+844 -> 845
+846 [label="ext_intruder_position_y",color=cyan1, style=filled]
+844 -> 846
+847 [label="op2: -",color=green4, style=filled]
+843 -> 847
+848 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+847 -> 848
+849 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+847 -> 849
+850 [label="label: ?thetaVert_part1.2",color=plum, style=filled]
+830 -> 850
+851 [label="op2: *",color=green4, style=filled]
+850 -> 851
+852 [label="label: ?dirVert",color=plum, style=filled]
+851 -> 852
+853 [label="op3: mux",color=green4, style=filled]
+852 -> 853
+854 [label="label: ?dirVert_part1",color=plum, style=filled]
+853 -> 854
+855 [label="op2: >=",color=green4, style=filled]
+854 -> 855
+856 [label="label: ?dirVert_part1.1",color=plum, style=filled]
+855 -> 856
+857 [label="op1: abs",color=green4, style=filled]
+856 -> 857
+858 [label="label: ?dirVert_part1.1.1",color=plum, style=filled]
+857 -> 858
+859 [label="op2: -",color=green4, style=filled]
+858 -> 859
+860 [label="ext_ownship_position_z",color=cyan1, style=filled]
+859 -> 860
+861 [label="ext_intruder_position_z",color=cyan1, style=filled]
+859 -> 861
+862 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+855 -> 862
+863 [label="label: ?dirVert_part2",color=plum, style=filled]
+853 -> 863
+864 [label="op2: *",color=green4, style=filled]
+863 -> 864
+865 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+864 -> 865
+866 [label="label: ?dirVert_part2.1",color=plum, style=filled]
+864 -> 866
+867 [label="op1: signum",color=green4, style=filled]
+866 -> 867
+868 [label="op2: -",color=green4, style=filled]
+867 -> 868
+869 [label="ext_ownship_position_z",color=cyan1, style=filled]
+868 -> 869
+870 [label="ext_intruder_position_z",color=cyan1, style=filled]
+868 -> 870
+871 [label="const: -1.0",color=red1, style=filled]
+853 -> 871
+872 [label="label: ?thetaVert_part2",color=plum, style=filled]
+851 -> 872
+873 [label="ext_sqrt_7",color=cyan4, style=filled]
+872 -> 873
+948 [label="label: ?thetaVert_divisor",color=plum, style=filled]
+828 -> 948
+949 [label="label: ?normsq2dim",color=plum, style=filled]
+948 -> 949
+950 [label="op2: +",color=green4, style=filled]
+949 -> 950
+951 [label="op2: *",color=green4, style=filled]
+950 -> 951
+952 [label="op2: -",color=green4, style=filled]
+951 -> 952
+953 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+952 -> 953
+954 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+952 -> 954
+955 [label="op2: -",color=green4, style=filled]
+951 -> 955
+956 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+955 -> 956
+957 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+955 -> 957
+958 [label="op2: *",color=green4, style=filled]
+950 -> 958
+959 [label="op2: -",color=green4, style=filled]
+958 -> 959
+960 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+959 -> 960
+961 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+959 -> 961
+962 [label="op2: -",color=green4, style=filled]
+958 -> 962
+963 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+962 -> 963
+964 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+962 -> 964
+965 [label="op2: -",color=green4, style=filled]
+825 -> 965
+966 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+965 -> 966
+967 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+965 -> 967
+968 [label="const: 0.0",color=red1, style=filled]
+662 -> 968
+969 [label="op2: &&",color=green4, style=filled]
+350 -> 969
+970 [label="label: ?intersectsHalfPlane_part2",color=plum, style=filled]
+969 -> 970
+971 [label="op2: >=",color=green4, style=filled]
+970 -> 971
+972 [label="label: ?t_1",color=plum, style=filled]
+971 -> 972
+973 [label="op2: /",color=green4, style=filled]
+972 -> 973
+974 [label="op2: -",color=green4, style=filled]
+973 -> 974
+975 [label="op2: *",color=green4, style=filled]
+974 -> 975
+976 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+975 -> 976
+977 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+975 -> 977
+978 [label="op2: +",color=green4, style=filled]
+974 -> 978
+979 [label="op2: *",color=green4, style=filled]
+978 -> 979
+980 [label="op2: -",color=green4, style=filled]
+979 -> 980
+981 [label="ext_ownship_position_x",color=cyan1, style=filled]
+980 -> 981
+982 [label="ext_intruder_position_x",color=cyan1, style=filled]
+980 -> 982
+983 [label="label: ?verticalCriterionConflict_part2.3.1",color=plum, style=filled]
+979 -> 983
+984 [label="op2: +",color=green4, style=filled]
+983 -> 984
+985 [label="op2: -",color=green4, style=filled]
+984 -> 985
+986 [label="ext_ownship_position_x",color=cyan1, style=filled]
+985 -> 986
+987 [label="ext_intruder_position_x",color=cyan1, style=filled]
+985 -> 987
+988 [label="op2: *",color=green4, style=filled]
+984 -> 988
+989 [label="label: ?theta_dir_2",color=plum, style=filled]
+988 -> 989
+990 [label="label: ?thetaVert",color=plum, style=filled]
+989 -> 990
+991 [label="op2: /",color=green4, style=filled]
+990 -> 991
+992 [label="label: ?thetaVert_dividend",color=plum, style=filled]
+991 -> 992
+993 [label="op2: +",color=green4, style=filled]
+992 -> 993
+994 [label="label: ?thetaVert_part1",color=plum, style=filled]
+993 -> 994
+995 [label="op2: -",color=green4, style=filled]
+994 -> 995
+996 [label="const: 0.0",color=red1, style=filled]
+995 -> 996
+997 [label="label: ?thetaVert_part1.1",color=plum, style=filled]
+995 -> 997
+998 [label="op2: +",color=green4, style=filled]
+997 -> 998
+999 [label="op2: *",color=green4, style=filled]
+998 -> 999
+1000 [label="op2: -",color=green4, style=filled]
+999 -> 1000
+1001 [label="ext_ownship_position_x",color=cyan1, style=filled]
+1000 -> 1001
+1002 [label="ext_intruder_position_x",color=cyan1, style=filled]
+1000 -> 1002
+1003 [label="op2: -",color=green4, style=filled]
+999 -> 1003
+1004 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1003 -> 1004
+1005 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1003 -> 1005
+1006 [label="op2: *",color=green4, style=filled]
+998 -> 1006
+1007 [label="op2: -",color=green4, style=filled]
+1006 -> 1007
+1008 [label="ext_ownship_position_y",color=cyan1, style=filled]
+1007 -> 1008
+1009 [label="ext_intruder_position_y",color=cyan1, style=filled]
+1007 -> 1009
+1010 [label="op2: -",color=green4, style=filled]
+1006 -> 1010
+1011 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1010 -> 1011
+1012 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1010 -> 1012
+1013 [label="label: ?thetaVert_part1.2",color=plum, style=filled]
+993 -> 1013
+1014 [label="op2: *",color=green4, style=filled]
+1013 -> 1014
+1015 [label="label: ?dirVert",color=plum, style=filled]
+1014 -> 1015
+1016 [label="op3: mux",color=green4, style=filled]
+1015 -> 1016
+1017 [label="label: ?dirVert_part1",color=plum, style=filled]
+1016 -> 1017
+1018 [label="op2: >=",color=green4, style=filled]
+1017 -> 1018
+1019 [label="label: ?dirVert_part1.1",color=plum, style=filled]
+1018 -> 1019
+1020 [label="op1: abs",color=green4, style=filled]
+1019 -> 1020
+1021 [label="label: ?dirVert_part1.1.1",color=plum, style=filled]
+1020 -> 1021
+1022 [label="op2: -",color=green4, style=filled]
+1021 -> 1022
+1023 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1022 -> 1023
+1024 [label="ext_intruder_position_z",color=cyan1, style=filled]
+1022 -> 1024
+1025 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+1018 -> 1025
+1026 [label="label: ?dirVert_part2",color=plum, style=filled]
+1016 -> 1026
+1027 [label="op2: *",color=green4, style=filled]
+1026 -> 1027
+1028 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+1027 -> 1028
+1029 [label="label: ?dirVert_part2.1",color=plum, style=filled]
+1027 -> 1029
+1030 [label="op1: signum",color=green4, style=filled]
+1029 -> 1030
+1031 [label="op2: -",color=green4, style=filled]
+1030 -> 1031
+1032 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1031 -> 1032
+1033 [label="ext_intruder_position_z",color=cyan1, style=filled]
+1031 -> 1033
+1034 [label="const: -1.0",color=red1, style=filled]
+1016 -> 1034
+1035 [label="label: ?thetaVert_part2",color=plum, style=filled]
+1014 -> 1035
+1036 [label="ext_sqrt_8",color=cyan4, style=filled]
+1035 -> 1036
+1111 [label="label: ?thetaVert_divisor",color=plum, style=filled]
+991 -> 1111
+1112 [label="label: ?normsq2dim",color=plum, style=filled]
+1111 -> 1112
+1113 [label="op2: +",color=green4, style=filled]
+1112 -> 1113
+1114 [label="op2: *",color=green4, style=filled]
+1113 -> 1114
+1115 [label="op2: -",color=green4, style=filled]
+1114 -> 1115
+1116 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1115 -> 1116
+1117 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1115 -> 1117
+1118 [label="op2: -",color=green4, style=filled]
+1114 -> 1118
+1119 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1118 -> 1119
+1120 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1118 -> 1120
+1121 [label="op2: *",color=green4, style=filled]
+1113 -> 1121
+1122 [label="op2: -",color=green4, style=filled]
+1121 -> 1122
+1123 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1122 -> 1123
+1124 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1122 -> 1124
+1125 [label="op2: -",color=green4, style=filled]
+1121 -> 1125
+1126 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1125 -> 1126
+1127 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1125 -> 1127
+1128 [label="op2: -",color=green4, style=filled]
+988 -> 1128
+1129 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1128 -> 1129
+1130 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1128 -> 1130
+1131 [label="op2: *",color=green4, style=filled]
+978 -> 1131
+1132 [label="op2: -",color=green4, style=filled]
+1131 -> 1132
+1133 [label="ext_ownship_position_y",color=cyan1, style=filled]
+1132 -> 1133
+1134 [label="ext_intruder_position_y",color=cyan1, style=filled]
+1132 -> 1134
+1135 [label="label: ?verticalCriterionConflict_part2.3.2",color=plum, style=filled]
+1131 -> 1135
+1136 [label="op2: +",color=green4, style=filled]
+1135 -> 1136
+1137 [label="op2: -",color=green4, style=filled]
+1136 -> 1137
+1138 [label="ext_ownship_position_y",color=cyan1, style=filled]
+1137 -> 1138
+1139 [label="ext_intruder_position_y",color=cyan1, style=filled]
+1137 -> 1139
+1140 [label="op2: *",color=green4, style=filled]
+1136 -> 1140
+1141 [label="label: ?theta_dir_3",color=plum, style=filled]
+1140 -> 1141
+1142 [label="label: ?thetaVert",color=plum, style=filled]
+1141 -> 1142
+1143 [label="op2: /",color=green4, style=filled]
+1142 -> 1143
+1144 [label="label: ?thetaVert_dividend",color=plum, style=filled]
+1143 -> 1144
+1145 [label="op2: +",color=green4, style=filled]
+1144 -> 1145
+1146 [label="label: ?thetaVert_part1",color=plum, style=filled]
+1145 -> 1146
+1147 [label="op2: -",color=green4, style=filled]
+1146 -> 1147
+1148 [label="const: 0.0",color=red1, style=filled]
+1147 -> 1148
+1149 [label="label: ?thetaVert_part1.1",color=plum, style=filled]
+1147 -> 1149
+1150 [label="op2: +",color=green4, style=filled]
+1149 -> 1150
+1151 [label="op2: *",color=green4, style=filled]
+1150 -> 1151
+1152 [label="op2: -",color=green4, style=filled]
+1151 -> 1152
+1153 [label="ext_ownship_position_x",color=cyan1, style=filled]
+1152 -> 1153
+1154 [label="ext_intruder_position_x",color=cyan1, style=filled]
+1152 -> 1154
+1155 [label="op2: -",color=green4, style=filled]
+1151 -> 1155
+1156 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1155 -> 1156
+1157 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1155 -> 1157
+1158 [label="op2: *",color=green4, style=filled]
+1150 -> 1158
+1159 [label="op2: -",color=green4, style=filled]
+1158 -> 1159
+1160 [label="ext_ownship_position_y",color=cyan1, style=filled]
+1159 -> 1160
+1161 [label="ext_intruder_position_y",color=cyan1, style=filled]
+1159 -> 1161
+1162 [label="op2: -",color=green4, style=filled]
+1158 -> 1162
+1163 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1162 -> 1163
+1164 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1162 -> 1164
+1165 [label="label: ?thetaVert_part1.2",color=plum, style=filled]
+1145 -> 1165
+1166 [label="op2: *",color=green4, style=filled]
+1165 -> 1166
+1167 [label="label: ?dirVert",color=plum, style=filled]
+1166 -> 1167
+1168 [label="op3: mux",color=green4, style=filled]
+1167 -> 1168
+1169 [label="label: ?dirVert_part1",color=plum, style=filled]
+1168 -> 1169
+1170 [label="op2: >=",color=green4, style=filled]
+1169 -> 1170
+1171 [label="label: ?dirVert_part1.1",color=plum, style=filled]
+1170 -> 1171
+1172 [label="op1: abs",color=green4, style=filled]
+1171 -> 1172
+1173 [label="label: ?dirVert_part1.1.1",color=plum, style=filled]
+1172 -> 1173
+1174 [label="op2: -",color=green4, style=filled]
+1173 -> 1174
+1175 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1174 -> 1175
+1176 [label="ext_intruder_position_z",color=cyan1, style=filled]
+1174 -> 1176
+1177 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+1170 -> 1177
+1178 [label="label: ?dirVert_part2",color=plum, style=filled]
+1168 -> 1178
+1179 [label="op2: *",color=green4, style=filled]
+1178 -> 1179
+1180 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+1179 -> 1180
+1181 [label="label: ?dirVert_part2.1",color=plum, style=filled]
+1179 -> 1181
+1182 [label="op1: signum",color=green4, style=filled]
+1181 -> 1182
+1183 [label="op2: -",color=green4, style=filled]
+1182 -> 1183
+1184 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1183 -> 1184
+1185 [label="ext_intruder_position_z",color=cyan1, style=filled]
+1183 -> 1185
+1186 [label="const: -1.0",color=red1, style=filled]
+1168 -> 1186
+1187 [label="label: ?thetaVert_part2",color=plum, style=filled]
+1166 -> 1187
+1188 [label="ext_sqrt_9",color=cyan4, style=filled]
+1187 -> 1188
+1263 [label="label: ?thetaVert_divisor",color=plum, style=filled]
+1143 -> 1263
+1264 [label="label: ?normsq2dim",color=plum, style=filled]
+1263 -> 1264
+1265 [label="op2: +",color=green4, style=filled]
+1264 -> 1265
+1266 [label="op2: *",color=green4, style=filled]
+1265 -> 1266
+1267 [label="op2: -",color=green4, style=filled]
+1266 -> 1267
+1268 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1267 -> 1268
+1269 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1267 -> 1269
+1270 [label="op2: -",color=green4, style=filled]
+1266 -> 1270
+1271 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1270 -> 1271
+1272 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1270 -> 1272
+1273 [label="op2: *",color=green4, style=filled]
+1265 -> 1273
+1274 [label="op2: -",color=green4, style=filled]
+1273 -> 1274
+1275 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1274 -> 1275
+1276 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1274 -> 1276
+1277 [label="op2: -",color=green4, style=filled]
+1273 -> 1277
+1278 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1277 -> 1278
+1279 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1277 -> 1279
+1280 [label="op2: -",color=green4, style=filled]
+1140 -> 1280
+1281 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1280 -> 1281
+1282 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1280 -> 1282
+1283 [label="op2: +",color=green4, style=filled]
+973 -> 1283
+1284 [label="op2: *",color=green4, style=filled]
+1283 -> 1284
+1285 [label="op2: -",color=green4, style=filled]
+1284 -> 1285
+1286 [label="ext_ownship_planned_velocity_x",color=cyan1, style=filled]
+1285 -> 1286
+1287 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1285 -> 1287
+1288 [label="label: ?verticalCriterionConflict_part2.3.1",color=plum, style=filled]
+1284 -> 1288
+1289 [label="op2: +",color=green4, style=filled]
+1288 -> 1289
+1290 [label="op2: -",color=green4, style=filled]
+1289 -> 1290
+1291 [label="ext_ownship_position_x",color=cyan1, style=filled]
+1290 -> 1291
+1292 [label="ext_intruder_position_x",color=cyan1, style=filled]
+1290 -> 1292
+1293 [label="op2: *",color=green4, style=filled]
+1289 -> 1293
+1294 [label="label: ?theta_dir_2",color=plum, style=filled]
+1293 -> 1294
+1295 [label="label: ?thetaVert",color=plum, style=filled]
+1294 -> 1295
+1296 [label="op2: /",color=green4, style=filled]
+1295 -> 1296
+1297 [label="label: ?thetaVert_dividend",color=plum, style=filled]
+1296 -> 1297
+1298 [label="op2: +",color=green4, style=filled]
+1297 -> 1298
+1299 [label="label: ?thetaVert_part1",color=plum, style=filled]
+1298 -> 1299
+1300 [label="op2: -",color=green4, style=filled]
+1299 -> 1300
+1301 [label="const: 0.0",color=red1, style=filled]
+1300 -> 1301
+1302 [label="label: ?thetaVert_part1.1",color=plum, style=filled]
+1300 -> 1302
+1303 [label="op2: +",color=green4, style=filled]
+1302 -> 1303
+1304 [label="op2: *",color=green4, style=filled]
+1303 -> 1304
+1305 [label="op2: -",color=green4, style=filled]
+1304 -> 1305
+1306 [label="ext_ownship_position_x",color=cyan1, style=filled]
+1305 -> 1306
+1307 [label="ext_intruder_position_x",color=cyan1, style=filled]
+1305 -> 1307
+1308 [label="op2: -",color=green4, style=filled]
+1304 -> 1308
+1309 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1308 -> 1309
+1310 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1308 -> 1310
+1311 [label="op2: *",color=green4, style=filled]
+1303 -> 1311
+1312 [label="op2: -",color=green4, style=filled]
+1311 -> 1312
+1313 [label="ext_ownship_position_y",color=cyan1, style=filled]
+1312 -> 1313
+1314 [label="ext_intruder_position_y",color=cyan1, style=filled]
+1312 -> 1314
+1315 [label="op2: -",color=green4, style=filled]
+1311 -> 1315
+1316 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1315 -> 1316
+1317 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1315 -> 1317
+1318 [label="label: ?thetaVert_part1.2",color=plum, style=filled]
+1298 -> 1318
+1319 [label="op2: *",color=green4, style=filled]
+1318 -> 1319
+1320 [label="label: ?dirVert",color=plum, style=filled]
+1319 -> 1320
+1321 [label="op3: mux",color=green4, style=filled]
+1320 -> 1321
+1322 [label="label: ?dirVert_part1",color=plum, style=filled]
+1321 -> 1322
+1323 [label="op2: >=",color=green4, style=filled]
+1322 -> 1323
+1324 [label="label: ?dirVert_part1.1",color=plum, style=filled]
+1323 -> 1324
+1325 [label="op1: abs",color=green4, style=filled]
+1324 -> 1325
+1326 [label="label: ?dirVert_part1.1.1",color=plum, style=filled]
+1325 -> 1326
+1327 [label="op2: -",color=green4, style=filled]
+1326 -> 1327
+1328 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1327 -> 1328
+1329 [label="ext_intruder_position_z",color=cyan1, style=filled]
+1327 -> 1329
+1330 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+1323 -> 1330
+1331 [label="label: ?dirVert_part2",color=plum, style=filled]
+1321 -> 1331
+1332 [label="op2: *",color=green4, style=filled]
+1331 -> 1332
+1333 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+1332 -> 1333
+1334 [label="label: ?dirVert_part2.1",color=plum, style=filled]
+1332 -> 1334
+1335 [label="op1: signum",color=green4, style=filled]
+1334 -> 1335
+1336 [label="op2: -",color=green4, style=filled]
+1335 -> 1336
+1337 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1336 -> 1337
+1338 [label="ext_intruder_position_z",color=cyan1, style=filled]
+1336 -> 1338
+1339 [label="const: -1.0",color=red1, style=filled]
+1321 -> 1339
+1340 [label="label: ?thetaVert_part2",color=plum, style=filled]
+1319 -> 1340
+1341 [label="ext_sqrt_10",color=cyan4, style=filled]
+1340 -> 1341
+1416 [label="label: ?thetaVert_divisor",color=plum, style=filled]
+1296 -> 1416
+1417 [label="label: ?normsq2dim",color=plum, style=filled]
+1416 -> 1417
+1418 [label="op2: +",color=green4, style=filled]
+1417 -> 1418
+1419 [label="op2: *",color=green4, style=filled]
+1418 -> 1419
+1420 [label="op2: -",color=green4, style=filled]
+1419 -> 1420
+1421 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1420 -> 1421
+1422 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1420 -> 1422
+1423 [label="op2: -",color=green4, style=filled]
+1419 -> 1423
+1424 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1423 -> 1424
+1425 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1423 -> 1425
+1426 [label="op2: *",color=green4, style=filled]
+1418 -> 1426
+1427 [label="op2: -",color=green4, style=filled]
+1426 -> 1427
+1428 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1427 -> 1428
+1429 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1427 -> 1429
+1430 [label="op2: -",color=green4, style=filled]
+1426 -> 1430
+1431 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1430 -> 1431
+1432 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1430 -> 1432
+1433 [label="op2: -",color=green4, style=filled]
+1293 -> 1433
+1434 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1433 -> 1434
+1435 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1433 -> 1435
+1436 [label="op2: *",color=green4, style=filled]
+1283 -> 1436
+1437 [label="op2: -",color=green4, style=filled]
+1436 -> 1437
+1438 [label="ext_ownship_planned_velocity_y",color=cyan1, style=filled]
+1437 -> 1438
+1439 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1437 -> 1439
+1440 [label="label: ?verticalCriterionConflict_part2.3.2",color=plum, style=filled]
+1436 -> 1440
+1441 [label="op2: +",color=green4, style=filled]
+1440 -> 1441
+1442 [label="op2: -",color=green4, style=filled]
+1441 -> 1442
+1443 [label="ext_ownship_position_y",color=cyan1, style=filled]
+1442 -> 1443
+1444 [label="ext_intruder_position_y",color=cyan1, style=filled]
+1442 -> 1444
+1445 [label="op2: *",color=green4, style=filled]
+1441 -> 1445
+1446 [label="label: ?theta_dir_3",color=plum, style=filled]
+1445 -> 1446
+1447 [label="label: ?thetaVert",color=plum, style=filled]
+1446 -> 1447
+1448 [label="op2: /",color=green4, style=filled]
+1447 -> 1448
+1449 [label="label: ?thetaVert_dividend",color=plum, style=filled]
+1448 -> 1449
+1450 [label="op2: +",color=green4, style=filled]
+1449 -> 1450
+1451 [label="label: ?thetaVert_part1",color=plum, style=filled]
+1450 -> 1451
+1452 [label="op2: -",color=green4, style=filled]
+1451 -> 1452
+1453 [label="const: 0.0",color=red1, style=filled]
+1452 -> 1453
+1454 [label="label: ?thetaVert_part1.1",color=plum, style=filled]
+1452 -> 1454
+1455 [label="op2: +",color=green4, style=filled]
+1454 -> 1455
+1456 [label="op2: *",color=green4, style=filled]
+1455 -> 1456
+1457 [label="op2: -",color=green4, style=filled]
+1456 -> 1457
+1458 [label="ext_ownship_position_x",color=cyan1, style=filled]
+1457 -> 1458
+1459 [label="ext_intruder_position_x",color=cyan1, style=filled]
+1457 -> 1459
+1460 [label="op2: -",color=green4, style=filled]
+1456 -> 1460
+1461 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1460 -> 1461
+1462 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1460 -> 1462
+1463 [label="op2: *",color=green4, style=filled]
+1455 -> 1463
+1464 [label="op2: -",color=green4, style=filled]
+1463 -> 1464
+1465 [label="ext_ownship_position_y",color=cyan1, style=filled]
+1464 -> 1465
+1466 [label="ext_intruder_position_y",color=cyan1, style=filled]
+1464 -> 1466
+1467 [label="op2: -",color=green4, style=filled]
+1463 -> 1467
+1468 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1467 -> 1468
+1469 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1467 -> 1469
+1470 [label="label: ?thetaVert_part1.2",color=plum, style=filled]
+1450 -> 1470
+1471 [label="op2: *",color=green4, style=filled]
+1470 -> 1471
+1472 [label="label: ?dirVert",color=plum, style=filled]
+1471 -> 1472
+1473 [label="op3: mux",color=green4, style=filled]
+1472 -> 1473
+1474 [label="label: ?dirVert_part1",color=plum, style=filled]
+1473 -> 1474
+1475 [label="op2: >=",color=green4, style=filled]
+1474 -> 1475
+1476 [label="label: ?dirVert_part1.1",color=plum, style=filled]
+1475 -> 1476
+1477 [label="op1: abs",color=green4, style=filled]
+1476 -> 1477
+1478 [label="label: ?dirVert_part1.1.1",color=plum, style=filled]
+1477 -> 1478
+1479 [label="op2: -",color=green4, style=filled]
+1478 -> 1479
+1480 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1479 -> 1480
+1481 [label="ext_intruder_position_z",color=cyan1, style=filled]
+1479 -> 1481
+1482 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+1475 -> 1482
+1483 [label="label: ?dirVert_part2",color=plum, style=filled]
+1473 -> 1483
+1484 [label="op2: *",color=green4, style=filled]
+1483 -> 1484
+1485 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+1484 -> 1485
+1486 [label="label: ?dirVert_part2.1",color=plum, style=filled]
+1484 -> 1486
+1487 [label="op1: signum",color=green4, style=filled]
+1486 -> 1487
+1488 [label="op2: -",color=green4, style=filled]
+1487 -> 1488
+1489 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1488 -> 1489
+1490 [label="ext_intruder_position_z",color=cyan1, style=filled]
+1488 -> 1490
+1491 [label="const: -1.0",color=red1, style=filled]
+1473 -> 1491
+1492 [label="label: ?thetaVert_part2",color=plum, style=filled]
+1471 -> 1492
+1493 [label="ext_sqrt_11",color=cyan4, style=filled]
+1492 -> 1493
+1568 [label="label: ?thetaVert_divisor",color=plum, style=filled]
+1448 -> 1568
+1569 [label="label: ?normsq2dim",color=plum, style=filled]
+1568 -> 1569
+1570 [label="op2: +",color=green4, style=filled]
+1569 -> 1570
+1571 [label="op2: *",color=green4, style=filled]
+1570 -> 1571
+1572 [label="op2: -",color=green4, style=filled]
+1571 -> 1572
+1573 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1572 -> 1573
+1574 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1572 -> 1574
+1575 [label="op2: -",color=green4, style=filled]
+1571 -> 1575
+1576 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1575 -> 1576
+1577 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1575 -> 1577
+1578 [label="op2: *",color=green4, style=filled]
+1570 -> 1578
+1579 [label="op2: -",color=green4, style=filled]
+1578 -> 1579
+1580 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1579 -> 1580
+1581 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1579 -> 1581
+1582 [label="op2: -",color=green4, style=filled]
+1578 -> 1582
+1583 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1582 -> 1583
+1584 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1582 -> 1584
+1585 [label="op2: -",color=green4, style=filled]
+1445 -> 1585
+1586 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1585 -> 1586
+1587 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1585 -> 1587
+1588 [label="const: 0.0",color=red1, style=filled]
+971 -> 1588
+1589 [label="label: ?intersectsHalfPlane_part3",color=plum, style=filled]
+969 -> 1589
+1590 [label="op2: >=",color=green4, style=filled]
+1589 -> 1590
+1591 [label="op2: *",color=green4, style=filled]
+1590 -> 1591
+1592 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+1591 -> 1592
+1593 [label="op2: +",color=green4, style=filled]
+1591 -> 1593
+1594 [label="op2: -",color=green4, style=filled]
+1593 -> 1594
+1595 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1594 -> 1595
+1596 [label="ext_intruder_position_z",color=cyan1, style=filled]
+1594 -> 1596
+1597 [label="op2: *",color=green4, style=filled]
+1593 -> 1597
+1598 [label="label: ?t_2",color=plum, style=filled]
+1597 -> 1598
+1599 [label="op2: /",color=green4, style=filled]
+1598 -> 1599
+1600 [label="op2: -",color=green4, style=filled]
+1599 -> 1600
+1601 [label="op2: *",color=green4, style=filled]
+1600 -> 1601
+1602 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+1601 -> 1602
+1603 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+1601 -> 1603
+1604 [label="op2: +",color=green4, style=filled]
+1600 -> 1604
+1605 [label="op2: *",color=green4, style=filled]
+1604 -> 1605
+1606 [label="op2: -",color=green4, style=filled]
+1605 -> 1606
+1607 [label="ext_ownship_position_x",color=cyan1, style=filled]
+1606 -> 1607
+1608 [label="ext_intruder_position_x",color=cyan1, style=filled]
+1606 -> 1608
+1609 [label="label: ?verticalCriterionConflict_part2.3.1",color=plum, style=filled]
+1605 -> 1609
+1610 [label="op2: +",color=green4, style=filled]
+1609 -> 1610
+1611 [label="op2: -",color=green4, style=filled]
+1610 -> 1611
+1612 [label="ext_ownship_position_x",color=cyan1, style=filled]
+1611 -> 1612
+1613 [label="ext_intruder_position_x",color=cyan1, style=filled]
+1611 -> 1613
+1614 [label="op2: *",color=green4, style=filled]
+1610 -> 1614
+1615 [label="label: ?theta_dir_2",color=plum, style=filled]
+1614 -> 1615
+1616 [label="label: ?thetaVert",color=plum, style=filled]
+1615 -> 1616
+1617 [label="op2: /",color=green4, style=filled]
+1616 -> 1617
+1618 [label="label: ?thetaVert_dividend",color=plum, style=filled]
+1617 -> 1618
+1619 [label="op2: +",color=green4, style=filled]
+1618 -> 1619
+1620 [label="label: ?thetaVert_part1",color=plum, style=filled]
+1619 -> 1620
+1621 [label="op2: -",color=green4, style=filled]
+1620 -> 1621
+1622 [label="const: 0.0",color=red1, style=filled]
+1621 -> 1622
+1623 [label="label: ?thetaVert_part1.1",color=plum, style=filled]
+1621 -> 1623
+1624 [label="op2: +",color=green4, style=filled]
+1623 -> 1624
+1625 [label="op2: *",color=green4, style=filled]
+1624 -> 1625
+1626 [label="op2: -",color=green4, style=filled]
+1625 -> 1626
+1627 [label="ext_ownship_position_x",color=cyan1, style=filled]
+1626 -> 1627
+1628 [label="ext_intruder_position_x",color=cyan1, style=filled]
+1626 -> 1628
+1629 [label="op2: -",color=green4, style=filled]
+1625 -> 1629
+1630 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1629 -> 1630
+1631 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1629 -> 1631
+1632 [label="op2: *",color=green4, style=filled]
+1624 -> 1632
+1633 [label="op2: -",color=green4, style=filled]
+1632 -> 1633
+1634 [label="ext_ownship_position_y",color=cyan1, style=filled]
+1633 -> 1634
+1635 [label="ext_intruder_position_y",color=cyan1, style=filled]
+1633 -> 1635
+1636 [label="op2: -",color=green4, style=filled]
+1632 -> 1636
+1637 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1636 -> 1637
+1638 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1636 -> 1638
+1639 [label="label: ?thetaVert_part1.2",color=plum, style=filled]
+1619 -> 1639
+1640 [label="op2: *",color=green4, style=filled]
+1639 -> 1640
+1641 [label="label: ?dirVert",color=plum, style=filled]
+1640 -> 1641
+1642 [label="op3: mux",color=green4, style=filled]
+1641 -> 1642
+1643 [label="label: ?dirVert_part1",color=plum, style=filled]
+1642 -> 1643
+1644 [label="op2: >=",color=green4, style=filled]
+1643 -> 1644
+1645 [label="label: ?dirVert_part1.1",color=plum, style=filled]
+1644 -> 1645
+1646 [label="op1: abs",color=green4, style=filled]
+1645 -> 1646
+1647 [label="label: ?dirVert_part1.1.1",color=plum, style=filled]
+1646 -> 1647
+1648 [label="op2: -",color=green4, style=filled]
+1647 -> 1648
+1649 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1648 -> 1649
+1650 [label="ext_intruder_position_z",color=cyan1, style=filled]
+1648 -> 1650
+1651 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+1644 -> 1651
+1652 [label="label: ?dirVert_part2",color=plum, style=filled]
+1642 -> 1652
+1653 [label="op2: *",color=green4, style=filled]
+1652 -> 1653
+1654 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+1653 -> 1654
+1655 [label="label: ?dirVert_part2.1",color=plum, style=filled]
+1653 -> 1655
+1656 [label="op1: signum",color=green4, style=filled]
+1655 -> 1656
+1657 [label="op2: -",color=green4, style=filled]
+1656 -> 1657
+1658 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1657 -> 1658
+1659 [label="ext_intruder_position_z",color=cyan1, style=filled]
+1657 -> 1659
+1660 [label="const: -1.0",color=red1, style=filled]
+1642 -> 1660
+1661 [label="label: ?thetaVert_part2",color=plum, style=filled]
+1640 -> 1661
+1662 [label="ext_sqrt_12",color=cyan4, style=filled]
+1661 -> 1662
+1737 [label="label: ?thetaVert_divisor",color=plum, style=filled]
+1617 -> 1737
+1738 [label="label: ?normsq2dim",color=plum, style=filled]
+1737 -> 1738
+1739 [label="op2: +",color=green4, style=filled]
+1738 -> 1739
+1740 [label="op2: *",color=green4, style=filled]
+1739 -> 1740
+1741 [label="op2: -",color=green4, style=filled]
+1740 -> 1741
+1742 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1741 -> 1742
+1743 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1741 -> 1743
+1744 [label="op2: -",color=green4, style=filled]
+1740 -> 1744
+1745 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1744 -> 1745
+1746 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1744 -> 1746
+1747 [label="op2: *",color=green4, style=filled]
+1739 -> 1747
+1748 [label="op2: -",color=green4, style=filled]
+1747 -> 1748
+1749 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1748 -> 1749
+1750 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1748 -> 1750
+1751 [label="op2: -",color=green4, style=filled]
+1747 -> 1751
+1752 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1751 -> 1752
+1753 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1751 -> 1753
+1754 [label="op2: -",color=green4, style=filled]
+1614 -> 1754
+1755 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1754 -> 1755
+1756 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1754 -> 1756
+1757 [label="op2: *",color=green4, style=filled]
+1604 -> 1757
+1758 [label="op2: -",color=green4, style=filled]
+1757 -> 1758
+1759 [label="ext_ownship_position_y",color=cyan1, style=filled]
+1758 -> 1759
+1760 [label="ext_intruder_position_y",color=cyan1, style=filled]
+1758 -> 1760
+1761 [label="label: ?verticalCriterionConflict_part2.3.2",color=plum, style=filled]
+1757 -> 1761
+1762 [label="op2: +",color=green4, style=filled]
+1761 -> 1762
+1763 [label="op2: -",color=green4, style=filled]
+1762 -> 1763
+1764 [label="ext_ownship_position_y",color=cyan1, style=filled]
+1763 -> 1764
+1765 [label="ext_intruder_position_y",color=cyan1, style=filled]
+1763 -> 1765
+1766 [label="op2: *",color=green4, style=filled]
+1762 -> 1766
+1767 [label="label: ?theta_dir_3",color=plum, style=filled]
+1766 -> 1767
+1768 [label="label: ?thetaVert",color=plum, style=filled]
+1767 -> 1768
+1769 [label="op2: /",color=green4, style=filled]
+1768 -> 1769
+1770 [label="label: ?thetaVert_dividend",color=plum, style=filled]
+1769 -> 1770
+1771 [label="op2: +",color=green4, style=filled]
+1770 -> 1771
+1772 [label="label: ?thetaVert_part1",color=plum, style=filled]
+1771 -> 1772
+1773 [label="op2: -",color=green4, style=filled]
+1772 -> 1773
+1774 [label="const: 0.0",color=red1, style=filled]
+1773 -> 1774
+1775 [label="label: ?thetaVert_part1.1",color=plum, style=filled]
+1773 -> 1775
+1776 [label="op2: +",color=green4, style=filled]
+1775 -> 1776
+1777 [label="op2: *",color=green4, style=filled]
+1776 -> 1777
+1778 [label="op2: -",color=green4, style=filled]
+1777 -> 1778
+1779 [label="ext_ownship_position_x",color=cyan1, style=filled]
+1778 -> 1779
+1780 [label="ext_intruder_position_x",color=cyan1, style=filled]
+1778 -> 1780
+1781 [label="op2: -",color=green4, style=filled]
+1777 -> 1781
+1782 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1781 -> 1782
+1783 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1781 -> 1783
+1784 [label="op2: *",color=green4, style=filled]
+1776 -> 1784
+1785 [label="op2: -",color=green4, style=filled]
+1784 -> 1785
+1786 [label="ext_ownship_position_y",color=cyan1, style=filled]
+1785 -> 1786
+1787 [label="ext_intruder_position_y",color=cyan1, style=filled]
+1785 -> 1787
+1788 [label="op2: -",color=green4, style=filled]
+1784 -> 1788
+1789 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1788 -> 1789
+1790 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1788 -> 1790
+1791 [label="label: ?thetaVert_part1.2",color=plum, style=filled]
+1771 -> 1791
+1792 [label="op2: *",color=green4, style=filled]
+1791 -> 1792
+1793 [label="label: ?dirVert",color=plum, style=filled]
+1792 -> 1793
+1794 [label="op3: mux",color=green4, style=filled]
+1793 -> 1794
+1795 [label="label: ?dirVert_part1",color=plum, style=filled]
+1794 -> 1795
+1796 [label="op2: >=",color=green4, style=filled]
+1795 -> 1796
+1797 [label="label: ?dirVert_part1.1",color=plum, style=filled]
+1796 -> 1797
+1798 [label="op1: abs",color=green4, style=filled]
+1797 -> 1798
+1799 [label="label: ?dirVert_part1.1.1",color=plum, style=filled]
+1798 -> 1799
+1800 [label="op2: -",color=green4, style=filled]
+1799 -> 1800
+1801 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1800 -> 1801
+1802 [label="ext_intruder_position_z",color=cyan1, style=filled]
+1800 -> 1802
+1803 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+1796 -> 1803
+1804 [label="label: ?dirVert_part2",color=plum, style=filled]
+1794 -> 1804
+1805 [label="op2: *",color=green4, style=filled]
+1804 -> 1805
+1806 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+1805 -> 1806
+1807 [label="label: ?dirVert_part2.1",color=plum, style=filled]
+1805 -> 1807
+1808 [label="op1: signum",color=green4, style=filled]
+1807 -> 1808
+1809 [label="op2: -",color=green4, style=filled]
+1808 -> 1809
+1810 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1809 -> 1810
+1811 [label="ext_intruder_position_z",color=cyan1, style=filled]
+1809 -> 1811
+1812 [label="const: -1.0",color=red1, style=filled]
+1794 -> 1812
+1813 [label="label: ?thetaVert_part2",color=plum, style=filled]
+1792 -> 1813
+1814 [label="ext_sqrt_13",color=cyan4, style=filled]
+1813 -> 1814
+1889 [label="label: ?thetaVert_divisor",color=plum, style=filled]
+1769 -> 1889
+1890 [label="label: ?normsq2dim",color=plum, style=filled]
+1889 -> 1890
+1891 [label="op2: +",color=green4, style=filled]
+1890 -> 1891
+1892 [label="op2: *",color=green4, style=filled]
+1891 -> 1892
+1893 [label="op2: -",color=green4, style=filled]
+1892 -> 1893
+1894 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1893 -> 1894
+1895 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1893 -> 1895
+1896 [label="op2: -",color=green4, style=filled]
+1892 -> 1896
+1897 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1896 -> 1897
+1898 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1896 -> 1898
+1899 [label="op2: *",color=green4, style=filled]
+1891 -> 1899
+1900 [label="op2: -",color=green4, style=filled]
+1899 -> 1900
+1901 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1900 -> 1901
+1902 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1900 -> 1902
+1903 [label="op2: -",color=green4, style=filled]
+1899 -> 1903
+1904 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1903 -> 1904
+1905 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1903 -> 1905
+1906 [label="op2: -",color=green4, style=filled]
+1766 -> 1906
+1907 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1906 -> 1907
+1908 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1906 -> 1908
+1909 [label="op2: +",color=green4, style=filled]
+1599 -> 1909
+1910 [label="op2: *",color=green4, style=filled]
+1909 -> 1910
+1911 [label="op2: -",color=green4, style=filled]
+1910 -> 1911
+1912 [label="ext_ownship_planned_velocity_x",color=cyan1, style=filled]
+1911 -> 1912
+1913 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1911 -> 1913
+1914 [label="label: ?verticalCriterionConflict_part2.3.1",color=plum, style=filled]
+1910 -> 1914
+1915 [label="op2: +",color=green4, style=filled]
+1914 -> 1915
+1916 [label="op2: -",color=green4, style=filled]
+1915 -> 1916
+1917 [label="ext_ownship_position_x",color=cyan1, style=filled]
+1916 -> 1917
+1918 [label="ext_intruder_position_x",color=cyan1, style=filled]
+1916 -> 1918
+1919 [label="op2: *",color=green4, style=filled]
+1915 -> 1919
+1920 [label="label: ?theta_dir_2",color=plum, style=filled]
+1919 -> 1920
+1921 [label="label: ?thetaVert",color=plum, style=filled]
+1920 -> 1921
+1922 [label="op2: /",color=green4, style=filled]
+1921 -> 1922
+1923 [label="label: ?thetaVert_dividend",color=plum, style=filled]
+1922 -> 1923
+1924 [label="op2: +",color=green4, style=filled]
+1923 -> 1924
+1925 [label="label: ?thetaVert_part1",color=plum, style=filled]
+1924 -> 1925
+1926 [label="op2: -",color=green4, style=filled]
+1925 -> 1926
+1927 [label="const: 0.0",color=red1, style=filled]
+1926 -> 1927
+1928 [label="label: ?thetaVert_part1.1",color=plum, style=filled]
+1926 -> 1928
+1929 [label="op2: +",color=green4, style=filled]
+1928 -> 1929
+1930 [label="op2: *",color=green4, style=filled]
+1929 -> 1930
+1931 [label="op2: -",color=green4, style=filled]
+1930 -> 1931
+1932 [label="ext_ownship_position_x",color=cyan1, style=filled]
+1931 -> 1932
+1933 [label="ext_intruder_position_x",color=cyan1, style=filled]
+1931 -> 1933
+1934 [label="op2: -",color=green4, style=filled]
+1930 -> 1934
+1935 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1934 -> 1935
+1936 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1934 -> 1936
+1937 [label="op2: *",color=green4, style=filled]
+1929 -> 1937
+1938 [label="op2: -",color=green4, style=filled]
+1937 -> 1938
+1939 [label="ext_ownship_position_y",color=cyan1, style=filled]
+1938 -> 1939
+1940 [label="ext_intruder_position_y",color=cyan1, style=filled]
+1938 -> 1940
+1941 [label="op2: -",color=green4, style=filled]
+1937 -> 1941
+1942 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1941 -> 1942
+1943 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1941 -> 1943
+1944 [label="label: ?thetaVert_part1.2",color=plum, style=filled]
+1924 -> 1944
+1945 [label="op2: *",color=green4, style=filled]
+1944 -> 1945
+1946 [label="label: ?dirVert",color=plum, style=filled]
+1945 -> 1946
+1947 [label="op3: mux",color=green4, style=filled]
+1946 -> 1947
+1948 [label="label: ?dirVert_part1",color=plum, style=filled]
+1947 -> 1948
+1949 [label="op2: >=",color=green4, style=filled]
+1948 -> 1949
+1950 [label="label: ?dirVert_part1.1",color=plum, style=filled]
+1949 -> 1950
+1951 [label="op1: abs",color=green4, style=filled]
+1950 -> 1951
+1952 [label="label: ?dirVert_part1.1.1",color=plum, style=filled]
+1951 -> 1952
+1953 [label="op2: -",color=green4, style=filled]
+1952 -> 1953
+1954 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1953 -> 1954
+1955 [label="ext_intruder_position_z",color=cyan1, style=filled]
+1953 -> 1955
+1956 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+1949 -> 1956
+1957 [label="label: ?dirVert_part2",color=plum, style=filled]
+1947 -> 1957
+1958 [label="op2: *",color=green4, style=filled]
+1957 -> 1958
+1959 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+1958 -> 1959
+1960 [label="label: ?dirVert_part2.1",color=plum, style=filled]
+1958 -> 1960
+1961 [label="op1: signum",color=green4, style=filled]
+1960 -> 1961
+1962 [label="op2: -",color=green4, style=filled]
+1961 -> 1962
+1963 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1962 -> 1963
+1964 [label="ext_intruder_position_z",color=cyan1, style=filled]
+1962 -> 1964
+1965 [label="const: -1.0",color=red1, style=filled]
+1947 -> 1965
+1966 [label="label: ?thetaVert_part2",color=plum, style=filled]
+1945 -> 1966
+1967 [label="ext_sqrt_14",color=cyan4, style=filled]
+1966 -> 1967
+2042 [label="label: ?thetaVert_divisor",color=plum, style=filled]
+1922 -> 2042
+2043 [label="label: ?normsq2dim",color=plum, style=filled]
+2042 -> 2043
+2044 [label="op2: +",color=green4, style=filled]
+2043 -> 2044
+2045 [label="op2: *",color=green4, style=filled]
+2044 -> 2045
+2046 [label="op2: -",color=green4, style=filled]
+2045 -> 2046
+2047 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+2046 -> 2047
+2048 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+2046 -> 2048
+2049 [label="op2: -",color=green4, style=filled]
+2045 -> 2049
+2050 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+2049 -> 2050
+2051 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+2049 -> 2051
+2052 [label="op2: *",color=green4, style=filled]
+2044 -> 2052
+2053 [label="op2: -",color=green4, style=filled]
+2052 -> 2053
+2054 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+2053 -> 2054
+2055 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2053 -> 2055
+2056 [label="op2: -",color=green4, style=filled]
+2052 -> 2056
+2057 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+2056 -> 2057
+2058 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2056 -> 2058
+2059 [label="op2: -",color=green4, style=filled]
+1919 -> 2059
+2060 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+2059 -> 2060
+2061 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+2059 -> 2061
+2062 [label="op2: *",color=green4, style=filled]
+1909 -> 2062
+2063 [label="op2: -",color=green4, style=filled]
+2062 -> 2063
+2064 [label="ext_ownship_planned_velocity_y",color=cyan1, style=filled]
+2063 -> 2064
+2065 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2063 -> 2065
+2066 [label="label: ?verticalCriterionConflict_part2.3.2",color=plum, style=filled]
+2062 -> 2066
+2067 [label="op2: +",color=green4, style=filled]
+2066 -> 2067
+2068 [label="op2: -",color=green4, style=filled]
+2067 -> 2068
+2069 [label="ext_ownship_position_y",color=cyan1, style=filled]
+2068 -> 2069
+2070 [label="ext_intruder_position_y",color=cyan1, style=filled]
+2068 -> 2070
+2071 [label="op2: *",color=green4, style=filled]
+2067 -> 2071
+2072 [label="label: ?theta_dir_3",color=plum, style=filled]
+2071 -> 2072
+2073 [label="label: ?thetaVert",color=plum, style=filled]
+2072 -> 2073
+2074 [label="op2: /",color=green4, style=filled]
+2073 -> 2074
+2075 [label="label: ?thetaVert_dividend",color=plum, style=filled]
+2074 -> 2075
+2076 [label="op2: +",color=green4, style=filled]
+2075 -> 2076
+2077 [label="label: ?thetaVert_part1",color=plum, style=filled]
+2076 -> 2077
+2078 [label="op2: -",color=green4, style=filled]
+2077 -> 2078
+2079 [label="const: 0.0",color=red1, style=filled]
+2078 -> 2079
+2080 [label="label: ?thetaVert_part1.1",color=plum, style=filled]
+2078 -> 2080
+2081 [label="op2: +",color=green4, style=filled]
+2080 -> 2081
+2082 [label="op2: *",color=green4, style=filled]
+2081 -> 2082
+2083 [label="op2: -",color=green4, style=filled]
+2082 -> 2083
+2084 [label="ext_ownship_position_x",color=cyan1, style=filled]
+2083 -> 2084
+2085 [label="ext_intruder_position_x",color=cyan1, style=filled]
+2083 -> 2085
+2086 [label="op2: -",color=green4, style=filled]
+2082 -> 2086
+2087 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+2086 -> 2087
+2088 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+2086 -> 2088
+2089 [label="op2: *",color=green4, style=filled]
+2081 -> 2089
+2090 [label="op2: -",color=green4, style=filled]
+2089 -> 2090
+2091 [label="ext_ownship_position_y",color=cyan1, style=filled]
+2090 -> 2091
+2092 [label="ext_intruder_position_y",color=cyan1, style=filled]
+2090 -> 2092
+2093 [label="op2: -",color=green4, style=filled]
+2089 -> 2093
+2094 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+2093 -> 2094
+2095 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2093 -> 2095
+2096 [label="label: ?thetaVert_part1.2",color=plum, style=filled]
+2076 -> 2096
+2097 [label="op2: *",color=green4, style=filled]
+2096 -> 2097
+2098 [label="label: ?dirVert",color=plum, style=filled]
+2097 -> 2098
+2099 [label="op3: mux",color=green4, style=filled]
+2098 -> 2099
+2100 [label="label: ?dirVert_part1",color=plum, style=filled]
+2099 -> 2100
+2101 [label="op2: >=",color=green4, style=filled]
+2100 -> 2101
+2102 [label="label: ?dirVert_part1.1",color=plum, style=filled]
+2101 -> 2102
+2103 [label="op1: abs",color=green4, style=filled]
+2102 -> 2103
+2104 [label="label: ?dirVert_part1.1.1",color=plum, style=filled]
+2103 -> 2104
+2105 [label="op2: -",color=green4, style=filled]
+2104 -> 2105
+2106 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2105 -> 2106
+2107 [label="ext_intruder_position_z",color=cyan1, style=filled]
+2105 -> 2107
+2108 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+2101 -> 2108
+2109 [label="label: ?dirVert_part2",color=plum, style=filled]
+2099 -> 2109
+2110 [label="op2: *",color=green4, style=filled]
+2109 -> 2110
+2111 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+2110 -> 2111
+2112 [label="label: ?dirVert_part2.1",color=plum, style=filled]
+2110 -> 2112
+2113 [label="op1: signum",color=green4, style=filled]
+2112 -> 2113
+2114 [label="op2: -",color=green4, style=filled]
+2113 -> 2114
+2115 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2114 -> 2115
+2116 [label="ext_intruder_position_z",color=cyan1, style=filled]
+2114 -> 2116
+2117 [label="const: -1.0",color=red1, style=filled]
+2099 -> 2117
+2118 [label="label: ?thetaVert_part2",color=plum, style=filled]
+2097 -> 2118
+2119 [label="ext_sqrt_15",color=cyan4, style=filled]
+2118 -> 2119
+2194 [label="label: ?thetaVert_divisor",color=plum, style=filled]
+2074 -> 2194
+2195 [label="label: ?normsq2dim",color=plum, style=filled]
+2194 -> 2195
+2196 [label="op2: +",color=green4, style=filled]
+2195 -> 2196
+2197 [label="op2: *",color=green4, style=filled]
+2196 -> 2197
+2198 [label="op2: -",color=green4, style=filled]
+2197 -> 2198
+2199 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+2198 -> 2199
+2200 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+2198 -> 2200
+2201 [label="op2: -",color=green4, style=filled]
+2197 -> 2201
+2202 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+2201 -> 2202
+2203 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+2201 -> 2203
+2204 [label="op2: *",color=green4, style=filled]
+2196 -> 2204
+2205 [label="op2: -",color=green4, style=filled]
+2204 -> 2205
+2206 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+2205 -> 2206
+2207 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2205 -> 2207
+2208 [label="op2: -",color=green4, style=filled]
+2204 -> 2208
+2209 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+2208 -> 2209
+2210 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2208 -> 2210
+2211 [label="op2: -",color=green4, style=filled]
+2071 -> 2211
+2212 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+2211 -> 2212
+2213 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2211 -> 2213
+2214 [label="op2: -",color=green4, style=filled]
+1597 -> 2214
+2215 [label="ext_ownship_planned_velocity_z",color=cyan1, style=filled]
+2214 -> 2215
+2216 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+2214 -> 2216
+2217 [label="op2: *",color=green4, style=filled]
+1590 -> 2217
+2218 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+2217 -> 2218
+2219 [label="op2: *",color=green4, style=filled]
+2217 -> 2219
+2220 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+2219 -> 2220
+2221 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+2219 -> 2221
+2222 [label="label: ?criterion3D_part4",color=plum, style=filled]
+88 -> 2222
+2223 [label="op2: ||",color=green4, style=filled]
+2222 -> 2223
+2224 [label="label: ?criterion3D_part4.1",color=plum, style=filled]
+2223 -> 2224
+2225 [label="op2: <",color=green4, style=filled]
+2224 -> 2225
+2226 [label="label: ?criterion3D_part4.1.1",color=plum, style=filled]
+2225 -> 2226
+2227 [label="label: ?normsq2dim",color=plum, style=filled]
+2226 -> 2227
+2228 [label="op2: +",color=green4, style=filled]
+2227 -> 2228
+2229 [label="op2: *",color=green4, style=filled]
+2228 -> 2229
+2230 [label="op2: -",color=green4, style=filled]
+2229 -> 2230
+2231 [label="ext_ownship_position_x",color=cyan1, style=filled]
+2230 -> 2231
+2232 [label="ext_intruder_position_x",color=cyan1, style=filled]
+2230 -> 2232
+2233 [label="op2: -",color=green4, style=filled]
+2229 -> 2233
+2234 [label="ext_ownship_position_x",color=cyan1, style=filled]
+2233 -> 2234
+2235 [label="ext_intruder_position_x",color=cyan1, style=filled]
+2233 -> 2235
+2236 [label="op2: *",color=green4, style=filled]
+2228 -> 2236
+2237 [label="op2: -",color=green4, style=filled]
+2236 -> 2237
+2238 [label="ext_ownship_position_y",color=cyan1, style=filled]
+2237 -> 2238
+2239 [label="ext_intruder_position_y",color=cyan1, style=filled]
+2237 -> 2239
+2240 [label="op2: -",color=green4, style=filled]
+2236 -> 2240
+2241 [label="ext_ownship_position_y",color=cyan1, style=filled]
+2240 -> 2241
+2242 [label="ext_intruder_position_y",color=cyan1, style=filled]
+2240 -> 2242
+2243 [label="label: ?criterion3D_part4.1.2",color=plum, style=filled]
+2225 -> 2243
+2244 [label="op2: *",color=green4, style=filled]
+2243 -> 2244
+2245 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+2244 -> 2245
+2246 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+2244 -> 2246
+2247 [label="label: ?criterion3D_part5",color=plum, style=filled]
+2223 -> 2247
+2248 [label="op2: >=",color=green4, style=filled]
+2247 -> 2248
+2249 [label="op2: +",color=green4, style=filled]
+2248 -> 2249
+2250 [label="op2: *",color=green4, style=filled]
+2249 -> 2250
+2251 [label="op2: -",color=green4, style=filled]
+2250 -> 2251
+2252 [label="ext_ownship_position_x",color=cyan1, style=filled]
+2251 -> 2252
+2253 [label="ext_intruder_position_x",color=cyan1, style=filled]
+2251 -> 2253
+2254 [label="op2: -",color=green4, style=filled]
+2250 -> 2254
+2255 [label="op2: -",color=green4, style=filled]
+2254 -> 2255
+2256 [label="ext_ownship_planned_velocity_x",color=cyan1, style=filled]
+2255 -> 2256
+2257 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+2255 -> 2257
+2258 [label="op2: -",color=green4, style=filled]
+2254 -> 2258
+2259 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+2258 -> 2259
+2260 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+2258 -> 2260
+2261 [label="op2: *",color=green4, style=filled]
+2249 -> 2261
+2262 [label="op2: -",color=green4, style=filled]
+2261 -> 2262
+2263 [label="ext_ownship_position_y",color=cyan1, style=filled]
+2262 -> 2263
+2264 [label="ext_intruder_position_y",color=cyan1, style=filled]
+2262 -> 2264
+2265 [label="op2: -",color=green4, style=filled]
+2261 -> 2265
+2266 [label="op2: -",color=green4, style=filled]
+2265 -> 2266
+2267 [label="ext_ownship_planned_velocity_y",color=cyan1, style=filled]
+2266 -> 2267
+2268 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2266 -> 2268
+2269 [label="op2: -",color=green4, style=filled]
+2265 -> 2269
+2270 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+2269 -> 2270
+2271 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2269 -> 2271
+2272 [label="op2: *",color=green4, style=filled]
+2248 -> 2272
+2273 [label="op2: *",color=green4, style=filled]
+2272 -> 2273
+2274 [label="ext_direction_parameter_horizontal",color=cyan1, style=filled]
+2273 -> 2274
+2275 [label="op2: /",color=green4, style=filled]
+2273 -> 2275
+2276 [label="label: ?hor_rr_dividend",color=plum, style=filled]
+2275 -> 2276
+2277 [label="ext_sqrt_16",color=cyan4, style=filled]
+2276 -> 2277
+2298 [label="label: ?hor_rr_divisor",color=plum, style=filled]
+2275 -> 2298
+2299 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+2298 -> 2299
+2300 [label="op2: -",color=green4, style=filled]
+2272 -> 2300
+2301 [label="op2: *",color=green4, style=filled]
+2300 -> 2301
+2302 [label="op2: -",color=green4, style=filled]
+2301 -> 2302
+2303 [label="ext_ownship_position_x",color=cyan1, style=filled]
+2302 -> 2303
+2304 [label="ext_intruder_position_x",color=cyan1, style=filled]
+2302 -> 2304
+2305 [label="op2: -",color=green4, style=filled]
+2301 -> 2305
+2306 [label="op2: -",color=green4, style=filled]
+2305 -> 2306
+2307 [label="ext_ownship_planned_velocity_y",color=cyan1, style=filled]
+2306 -> 2307
+2308 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2306 -> 2308
+2309 [label="op2: -",color=green4, style=filled]
+2305 -> 2309
+2310 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+2309 -> 2310
+2311 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2309 -> 2311
+2312 [label="op2: *",color=green4, style=filled]
+2300 -> 2312
+2313 [label="op2: -",color=green4, style=filled]
+2312 -> 2313
+2314 [label="op2: -",color=green4, style=filled]
+2313 -> 2314
+2315 [label="ext_ownship_planned_velocity_x",color=cyan1, style=filled]
+2314 -> 2315
+2316 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+2314 -> 2316
+2317 [label="op2: -",color=green4, style=filled]
+2313 -> 2317
+2318 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+2317 -> 2318
+2319 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+2317 -> 2319
+2320 [label="op2: -",color=green4, style=filled]
+2312 -> 2320
+2321 [label="ext_ownship_position_y",color=cyan1, style=filled]
+2320 -> 2321
+2322 [label="ext_intruder_position_y",color=cyan1, style=filled]
+2320 -> 2322
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
- ensures \result == (! ((((ext_ident_bool_62) || (((ext_ident_bool_421) && (ext_ident_bool_431)))))));
+ ensures \result == (! ((((((((((((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_position_x) - (ext_intruder_position_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_position_y) - (ext_intruder_position_y))))))))) >= ((((ext_minimal_horizontal_separation) * (ext_minimal_horizontal_separation))))))) && ((((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_planned_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_planned_velocity_y) - (ext_intruder_velocity_y))))))) >= (((((ext_direction_parameter_horizontal) * ((((ext_sqrt_2)) / ((ext_minimal_horizontal_separation)))))) * (((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_planned_velocity_y) - (ext_intruder_velocity_y))))) - (((((ext_ownship_planned_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_position_y) - (ext_intruder_position_y))))))))))))))) || ((((((((((((((((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_position_x) - (ext_intruder_position_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_position_y) - (ext_intruder_position_y)))))))) <= (0.0)))) && (((((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_position_x) - (ext_intruder_position_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_position_y) - (ext_intruder_position_y)))))))) >= (0.0))))))) && ((((((((ext_ownship_planned_velocity_z) - (ext_intruder_velocity_z))) >= (0.0)))) && ((((((ext_direction_parameter_vertical) * (((ext_ownship_position_z) - (ext_intruder_position_z))))) >= (ext_minimal_vertical_separation))))))))) || (((((((((((((ext_minimal_horizontal_separation) * (ext_minimal_horizontal_separation))) * ((((((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_velocity_y) - (ext_intruder_velocity_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y)))))))))) - (((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))) - (((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_position_y) - (ext_intruder_position_y))))))) * (((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))) - (((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_position_y) - (ext_intruder_position_y))))))))))) > (0.0)))) && ((((((((((((((((0.0) - ((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))) + (((((( ((((((((((ext_ownship_position_z) - (ext_intruder_position_z)))) > 0)? ((((ext_ownship_position_z) - (ext_intruder_position_z)))) : -((((ext_ownship_position_z) - (ext_intruder_position_z)))))) >= (ext_minimal_vertical_separation)))) ? ((((ext_direction_parameter_vertical) * ((((((ext_ownship_position_z) - (ext_intruder_position_z))) > 0)? 1 : ((((ext_ownship_position_z) - (ext_intruder_position_z))) < 0 ? -1 : (((ext_ownship_position_z) - (ext_intruder_position_z))))))))) : (-1.0)))) * ((ext_sqrt_3)))))))) / (((((((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_velocity_y) - (ext_intruder_velocity_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))))) > (0.0)))) && (((((((((((((((((ext_ownship_planned_velocity_x) - (ext_intruder_velocity_x))) * ((((((ext_ownship_position_x) - (ext_intruder_position_x))) + (((((((((((((0.0) - ((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))) + (((((( ((((((((((ext_ownship_position_z) - (ext_intruder_position_z)))) > 0)? ((((ext_ownship_position_z) - (ext_intruder_position_z)))) : -((((ext_ownship_position_z) - (ext_intruder_position_z)))))) >= (ext_minimal_vertical_separation)))) ? ((((ext_direction_parameter_vertical) * ((((((ext_ownship_position_z) - (ext_intruder_position_z))) > 0)? 1 : ((((ext_ownship_position_z) - (ext_intruder_position_z))) < 0 ? -1 : (((ext_ownship_position_z) - (ext_intruder_position_z))))))))) : (-1.0)))) * ((ext_sqrt_4)))))))) / (((((((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_velocity_y) - (ext_intruder_velocity_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x)))))))))) + (((((ext_ownship_planned_velocity_y) - (ext_intruder_velocity_y))) * ((((((ext_ownship_position_y) - (ext_intruder_position_y))) + (((((((((((((0.0) - ((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))) + (((((( ((((((((((ext_ownship_position_z) - (ext_intruder_position_z)))) > 0)? ((((ext_ownship_position_z) - (ext_intruder_position_z)))) : -((((ext_ownship_position_z) - (ext_intruder_position_z)))))) >= (ext_minimal_vertical_separation)))) ? ((((ext_direction_parameter_vertical) * ((((((ext_ownship_position_z) - (ext_intruder_position_z))) > 0)? 1 : ((((ext_ownship_position_z) - (ext_intruder_position_z))) < 0 ? -1 : (((ext_ownship_position_z) - (ext_intruder_position_z))))))))) : (-1.0)))) * ((ext_sqrt_5)))))))) / (((((((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_velocity_y) - (ext_intruder_velocity_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y)))))))))))) < (0.0)))) || ((((((((((ext_ownship_planned_velocity_x) - (ext_intruder_velocity_x))) * ((((((ext_ownship_position_x) - (ext_intruder_position_x))) + (((((((((((((0.0) - ((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))) + (((((( ((((((((((ext_ownship_position_z) - (ext_intruder_position_z)))) > 0)? ((((ext_ownship_position_z) - (ext_intruder_position_z)))) : -((((ext_ownship_position_z) - (ext_intruder_position_z)))))) >= (ext_minimal_vertical_separation)))) ? ((((ext_direction_parameter_vertical) * ((((((ext_ownship_position_z) - (ext_intruder_position_z))) > 0)? 1 : ((((ext_ownship_position_z) - (ext_intruder_position_z))) < 0 ? -1 : (((ext_ownship_position_z) - (ext_intruder_position_z))))))))) : (-1.0)))) * ((ext_sqrt_6)))))))) / (((((((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_velocity_y) - (ext_intruder_velocity_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x)))))))))) + (((((ext_ownship_planned_velocity_y) - (ext_intruder_velocity_y))) * ((((((ext_ownship_position_y) - (ext_intruder_position_y))) + (((((((((((((0.0) - ((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))) + (((((( ((((((((((ext_ownship_position_z) - (ext_intruder_position_z)))) > 0)? ((((ext_ownship_position_z) - (ext_intruder_position_z)))) : -((((ext_ownship_position_z) - (ext_intruder_position_z)))))) >= (ext_minimal_vertical_separation)))) ? ((((ext_direction_parameter_vertical) * ((((((ext_ownship_position_z) - (ext_intruder_position_z))) > 0)? 1 : ((((ext_ownship_position_z) - (ext_intruder_position_z))) < 0 ? -1 : (((ext_ownship_position_z) - (ext_intruder_position_z))))))))) : (-1.0)))) * ((ext_sqrt_7)))))))) / (((((((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_velocity_y) - (ext_intruder_velocity_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y)))))))))))) > (0.0))))))) && (((((((((((((ext_minimal_horizontal_separation) * (ext_minimal_horizontal_separation))) - (((((((ext_ownship_position_x) - (ext_intruder_position_x))) * ((((((ext_ownship_position_x) - (ext_intruder_position_x))) + (((((((((((((0.0) - ((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))) + (((((( ((((((((((ext_ownship_position_z) - (ext_intruder_position_z)))) > 0)? ((((ext_ownship_position_z) - (ext_intruder_position_z)))) : -((((ext_ownship_position_z) - (ext_intruder_position_z)))))) >= (ext_minimal_vertical_separation)))) ? ((((ext_direction_parameter_vertical) * ((((((ext_ownship_position_z) - (ext_intruder_position_z))) > 0)? 1 : ((((ext_ownship_position_z) - (ext_intruder_position_z))) < 0 ? -1 : (((ext_ownship_position_z) - (ext_intruder_position_z))))))))) : (-1.0)))) * ((ext_sqrt_8)))))))) / (((((((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_velocity_y) - (ext_intruder_velocity_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x)))))))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * ((((((ext_ownship_position_y) - (ext_intruder_position_y))) + (((((((((((((0.0) - ((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))) + (((((( ((((((((((ext_ownship_position_z) - (ext_intruder_position_z)))) > 0)? ((((ext_ownship_position_z) - (ext_intruder_position_z)))) : -((((ext_ownship_position_z) - (ext_intruder_position_z)))))) >= (ext_minimal_vertical_separation)))) ? ((((ext_direction_parameter_vertical) * ((((((ext_ownship_position_z) - (ext_intruder_position_z))) > 0)? 1 : ((((ext_ownship_position_z) - (ext_intruder_position_z))) < 0 ? -1 : (((ext_ownship_position_z) - (ext_intruder_position_z))))))))) : (-1.0)))) * ((ext_sqrt_9)))))))) / (((((((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_velocity_y) - (ext_intruder_velocity_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y)))))))))))))) / (((((((ext_ownship_planned_velocity_x) - (ext_intruder_velocity_x))) * ((((((ext_ownship_position_x) - (ext_intruder_position_x))) + (((((((((((((0.0) - ((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))) + (((((( ((((((((((ext_ownship_position_z) - (ext_intruder_position_z)))) > 0)? ((((ext_ownship_position_z) - (ext_intruder_position_z)))) : -((((ext_ownship_position_z) - (ext_intruder_position_z)))))) >= (ext_minimal_vertical_separation)))) ? ((((ext_direction_parameter_vertical) * ((((((ext_ownship_position_z) - (ext_intruder_position_z))) > 0)? 1 : ((((ext_ownship_position_z) - (ext_intruder_position_z))) < 0 ? -1 : (((ext_ownship_position_z) - (ext_intruder_position_z))))))))) : (-1.0)))) * ((ext_sqrt_10)))))))) / (((((((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_velocity_y) - (ext_intruder_velocity_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x)))))))))) + (((((ext_ownship_planned_velocity_y) - (ext_intruder_velocity_y))) * ((((((ext_ownship_position_y) - (ext_intruder_position_y))) + (((((((((((((0.0) - ((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))) + (((((( ((((((((((ext_ownship_position_z) - (ext_intruder_position_z)))) > 0)? ((((ext_ownship_position_z) - (ext_intruder_position_z)))) : -((((ext_ownship_position_z) - (ext_intruder_position_z)))))) >= (ext_minimal_vertical_separation)))) ? ((((ext_direction_parameter_vertical) * ((((((ext_ownship_position_z) - (ext_intruder_position_z))) > 0)? 1 : ((((ext_ownship_position_z) - (ext_intruder_position_z))) < 0 ? -1 : (((ext_ownship_position_z) - (ext_intruder_position_z))))))))) : (-1.0)))) * ((ext_sqrt_11)))))))) / (((((((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_velocity_y) - (ext_intruder_velocity_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))))))) >= (0.0)))) && ((((((ext_direction_parameter_vertical) * (((((ext_ownship_position_z) - (ext_intruder_position_z))) + ((((((((((ext_minimal_horizontal_separation) * (ext_minimal_horizontal_separation))) - (((((((ext_ownship_position_x) - (ext_intruder_position_x))) * ((((((ext_ownship_position_x) - (ext_intruder_position_x))) + (((((((((((((0.0) - ((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))) + (((((( ((((((((((ext_ownship_position_z) - (ext_intruder_position_z)))) > 0)? ((((ext_ownship_position_z) - (ext_intruder_position_z)))) : -((((ext_ownship_position_z) - (ext_intruder_position_z)))))) >= (ext_minimal_vertical_separation)))) ? ((((ext_direction_parameter_vertical) * ((((((ext_ownship_position_z) - (ext_intruder_position_z))) > 0)? 1 : ((((ext_ownship_position_z) - (ext_intruder_position_z))) < 0 ? -1 : (((ext_ownship_position_z) - (ext_intruder_position_z))))))))) : (-1.0)))) * ((ext_sqrt_12)))))))) / (((((((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_velocity_y) - (ext_intruder_velocity_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x)))))))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * ((((((ext_ownship_position_y) - (ext_intruder_position_y))) + (((((((((((((0.0) - ((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))) + (((((( ((((((((((ext_ownship_position_z) - (ext_intruder_position_z)))) > 0)? ((((ext_ownship_position_z) - (ext_intruder_position_z)))) : -((((ext_ownship_position_z) - (ext_intruder_position_z)))))) >= (ext_minimal_vertical_separation)))) ? ((((ext_direction_parameter_vertical) * ((((((ext_ownship_position_z) - (ext_intruder_position_z))) > 0)? 1 : ((((ext_ownship_position_z) - (ext_intruder_position_z))) < 0 ? -1 : (((ext_ownship_position_z) - (ext_intruder_position_z))))))))) : (-1.0)))) * ((ext_sqrt_13)))))))) / (((((((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_velocity_y) - (ext_intruder_velocity_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y)))))))))))))) / (((((((ext_ownship_planned_velocity_x) - (ext_intruder_velocity_x))) * ((((((ext_ownship_position_x) - (ext_intruder_position_x))) + (((((((((((((0.0) - ((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))) + (((((( ((((((((((ext_ownship_position_z) - (ext_intruder_position_z)))) > 0)? ((((ext_ownship_position_z) - (ext_intruder_position_z)))) : -((((ext_ownship_position_z) - (ext_intruder_position_z)))))) >= (ext_minimal_vertical_separation)))) ? ((((ext_direction_parameter_vertical) * ((((((ext_ownship_position_z) - (ext_intruder_position_z))) > 0)? 1 : ((((ext_ownship_position_z) - (ext_intruder_position_z))) < 0 ? -1 : (((ext_ownship_position_z) - (ext_intruder_position_z))))))))) : (-1.0)))) * ((ext_sqrt_14)))))))) / (((((((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_velocity_y) - (ext_intruder_velocity_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x)))))))))) + (((((ext_ownship_planned_velocity_y) - (ext_intruder_velocity_y))) * ((((((ext_ownship_position_y) - (ext_intruder_position_y))) + (((((((((((((0.0) - ((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))) + (((((( ((((((((((ext_ownship_position_z) - (ext_intruder_position_z)))) > 0)? ((((ext_ownship_position_z) - (ext_intruder_position_z)))) : -((((ext_ownship_position_z) - (ext_intruder_position_z)))))) >= (ext_minimal_vertical_separation)))) ? ((((ext_direction_parameter_vertical) * ((((((ext_ownship_position_z) - (ext_intruder_position_z))) > 0)? 1 : ((((ext_ownship_position_z) - (ext_intruder_position_z))) < 0 ? -1 : (((ext_ownship_position_z) - (ext_intruder_position_z))))))))) : (-1.0)))) * ((ext_sqrt_15)))))))) / (((((((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_velocity_y) - (ext_intruder_velocity_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))))))) * (((ext_ownship_planned_velocity_z) - (ext_intruder_velocity_z))))))))) >= (((ext_direction_parameter_vertical) * (((ext_direction_parameter_vertical) * (ext_minimal_vertical_separation)))))))))))))))))))))) && (((((((((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_position_x) - (ext_intruder_position_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_position_y) - (ext_intruder_position_y))))))))) < ((((ext_minimal_horizontal_separation) * (ext_minimal_horizontal_separation))))))) || ((((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((((ext_ownship_planned_velocity_x) - (ext_intruder_velocity_x))) - (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((((ext_ownship_planned_velocity_y) - (ext_intruder_velocity_y))) - (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))) >= (((((ext_direction_parameter_horizontal) * ((((ext_sqrt_16)) / ((ext_minimal_horizontal_separation)))))) * (((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((((ext_ownship_planned_velocity_y) - (ext_intruder_velocity_y))) - (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))) - (((((((ext_ownship_planned_velocity_x) - (ext_intruder_velocity_x))) - (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) * (((ext_ownship_position_y) - (ext_intruder_position_y)))))))))))))))))))));
 */
-SBool trigger_guard_alert_3D_conflict_resolution_violation(const SBool ext_ident_bool_62,
-                                                           const SBool ext_ident_bool_56,
-                                                           const SDouble ext_ident_double_54,
-                                                           const SDouble ext_ident_double_53,
-                                                           const SDouble ext_ownship_position_x,
+SBool trigger_guard_alert_3D_conflict_resolution_violation(const SDouble ext_ownship_position_x,
                                                            const SDouble ext_intruder_position_x,
                                                            const SDouble ext_ownship_position_y,
                                                            const SDouble ext_intruder_position_y,
-                                                           const SDouble ext_ident_double_55,
                                                            const SDouble ext_minimal_horizontal_separation,
-                                                           const SBool ext_ident_bool_61,
                                                            const SDouble ext_ownship_planned_velocity_x,
                                                            const SDouble ext_intruder_velocity_x,
                                                            const SDouble ext_ownship_planned_velocity_y,
                                                            const SDouble ext_intruder_velocity_y,
                                                            const SDouble ext_direction_parameter_horizontal,
-                                                           const SDouble ext_ident_double_59,
-                                                           const SDouble ext_sqrt_58,
-                                                           const SDouble ext_ident_double_57,
-                                                           const SDouble ext_ident_double_60,
-                                                           const SBool ext_ident_bool_421,
-                                                           const SBool ext_ident_bool_70,
-                                                           const SBool ext_ident_bool_67,
-                                                           const SBool ext_ident_bool_64,
-                                                           const SDouble ext_ident_double_63,
-                                                           const SBool ext_ident_bool_66,
-                                                           const SDouble ext_ident_double_65,
-                                                           const SBool ext_ident_bool_68,
+                                                           const SDouble ext_sqrt_2,
                                                            const SDouble ext_ownship_planned_velocity_z,
                                                            const SDouble ext_intruder_velocity_z,
-                                                           const SBool ext_ident_bool_69,
                                                            const SDouble ext_direction_parameter_vertical,
                                                            const SDouble ext_ownship_position_z,
                                                            const SDouble ext_intruder_position_z,
                                                            const SDouble ext_minimal_vertical_separation,
-                                                           const SBool ext_ident_bool_420,
-                                                           const SBool ext_ident_bool_72,
-                                                           const SDouble ext_ident_double_71,
                                                            const SDouble ext_ownship_velocity_x,
                                                            const SDouble ext_ownship_velocity_y,
-                                                           const SBool ext_ident_bool_98,
-                                                           const SDouble ext_ident_double_97,
-                                                           const SDouble ext_ident_double_96,
-                                                           const SDouble ext_ident_double_93,
-                                                           const SDouble ext_ident_double_74,
-                                                           const SDouble ext_ident_double_73,
-                                                           const SDouble ext_ident_double_92,
-                                                           const SDouble ext_ident_double_82,
-                                                           const SBool ext_ident_bool_79,
-                                                           const SDouble ext_ident_double_78,
-                                                           const SDouble ext_ident_double_75,
-                                                           const SDouble ext_ident_double_77,
-                                                           const SDouble ext_ident_double_76,
-                                                           const SDouble ext_ident_double_81,
-                                                           const SDouble ext_ident_double_80,
-                                                           const SDouble ext_ident_double_91,
-                                                           const SDouble ext_sqrt_90,
-                                                           const SDouble ext_ident_double_83,
-                                                           const SDouble ext_ident_double_84,
-                                                           const SDouble ext_ident_double_89,
-                                                           const SDouble ext_ident_double_86,
-                                                           const SDouble ext_ident_double_85,
-                                                           const SDouble ext_ident_double_88,
-                                                           const SDouble ext_ident_double_87,
-                                                           const SDouble ext_ident_double_95,
-                                                           const SDouble ext_ident_double_94,
-                                                           const SBool ext_ident_bool_419,
-                                                           const SBool ext_ident_bool_418,
-                                                           const SBool ext_ident_bool_205,
-                                                           const SBool ext_ident_bool_151,
-                                                           const SDouble ext_ident_double_124,
-                                                           const SDouble ext_ident_double_123,
-                                                           const SDouble ext_ident_double_122,
-                                                           const SDouble ext_ident_double_119,
-                                                           const SDouble ext_ident_double_100,
-                                                           const SDouble ext_ident_double_99,
-                                                           const SDouble ext_ident_double_118,
-                                                           const SDouble ext_ident_double_108,
-                                                           const SBool ext_ident_bool_105,
-                                                           const SDouble ext_ident_double_104,
-                                                           const SDouble ext_ident_double_101,
-                                                           const SDouble ext_ident_double_103,
-                                                           const SDouble ext_ident_double_102,
-                                                           const SDouble ext_ident_double_107,
-                                                           const SDouble ext_ident_double_106,
-                                                           const SDouble ext_ident_double_117,
-                                                           const SDouble ext_sqrt_116,
-                                                           const SDouble ext_ident_double_109,
-                                                           const SDouble ext_ident_double_110,
-                                                           const SDouble ext_ident_double_115,
-                                                           const SDouble ext_ident_double_112,
-                                                           const SDouble ext_ident_double_111,
-                                                           const SDouble ext_ident_double_114,
-                                                           const SDouble ext_ident_double_113,
-                                                           const SDouble ext_ident_double_121,
-                                                           const SDouble ext_ident_double_120,
-                                                           const SDouble ext_ident_double_150,
-                                                           const SDouble ext_ident_double_149,
-                                                           const SDouble ext_ident_double_148,
-                                                           const SDouble ext_ident_double_145,
-                                                           const SDouble ext_ident_double_126,
-                                                           const SDouble ext_ident_double_125,
-                                                           const SDouble ext_ident_double_144,
-                                                           const SDouble ext_ident_double_134,
-                                                           const SBool ext_ident_bool_131,
-                                                           const SDouble ext_ident_double_130,
-                                                           const SDouble ext_ident_double_127,
-                                                           const SDouble ext_ident_double_129,
-                                                           const SDouble ext_ident_double_128,
-                                                           const SDouble ext_ident_double_133,
-                                                           const SDouble ext_ident_double_132,
-                                                           const SDouble ext_ident_double_143,
-                                                           const SDouble ext_sqrt_142,
-                                                           const SDouble ext_ident_double_135,
-                                                           const SDouble ext_ident_double_136,
-                                                           const SDouble ext_ident_double_141,
-                                                           const SDouble ext_ident_double_138,
-                                                           const SDouble ext_ident_double_137,
-                                                           const SDouble ext_ident_double_140,
-                                                           const SDouble ext_ident_double_139,
-                                                           const SDouble ext_ident_double_147,
-                                                           const SDouble ext_ident_double_146,
-                                                           const SBool ext_ident_bool_204,
-                                                           const SDouble ext_ident_double_177,
-                                                           const SDouble ext_ident_double_176,
-                                                           const SDouble ext_ident_double_175,
-                                                           const SDouble ext_ident_double_172,
-                                                           const SDouble ext_ident_double_153,
-                                                           const SDouble ext_ident_double_152,
-                                                           const SDouble ext_ident_double_171,
-                                                           const SDouble ext_ident_double_161,
-                                                           const SBool ext_ident_bool_158,
-                                                           const SDouble ext_ident_double_157,
-                                                           const SDouble ext_ident_double_154,
-                                                           const SDouble ext_ident_double_156,
-                                                           const SDouble ext_ident_double_155,
-                                                           const SDouble ext_ident_double_160,
-                                                           const SDouble ext_ident_double_159,
-                                                           const SDouble ext_ident_double_170,
-                                                           const SDouble ext_sqrt_169,
-                                                           const SDouble ext_ident_double_162,
-                                                           const SDouble ext_ident_double_163,
-                                                           const SDouble ext_ident_double_168,
-                                                           const SDouble ext_ident_double_165,
-                                                           const SDouble ext_ident_double_164,
-                                                           const SDouble ext_ident_double_167,
-                                                           const SDouble ext_ident_double_166,
-                                                           const SDouble ext_ident_double_174,
-                                                           const SDouble ext_ident_double_173,
-                                                           const SDouble ext_ident_double_203,
-                                                           const SDouble ext_ident_double_202,
-                                                           const SDouble ext_ident_double_201,
-                                                           const SDouble ext_ident_double_198,
-                                                           const SDouble ext_ident_double_179,
-                                                           const SDouble ext_ident_double_178,
-                                                           const SDouble ext_ident_double_197,
-                                                           const SDouble ext_ident_double_187,
-                                                           const SBool ext_ident_bool_184,
-                                                           const SDouble ext_ident_double_183,
-                                                           const SDouble ext_ident_double_180,
-                                                           const SDouble ext_ident_double_182,
-                                                           const SDouble ext_ident_double_181,
-                                                           const SDouble ext_ident_double_186,
-                                                           const SDouble ext_ident_double_185,
-                                                           const SDouble ext_ident_double_196,
-                                                           const SDouble ext_sqrt_195,
-                                                           const SDouble ext_ident_double_188,
-                                                           const SDouble ext_ident_double_189,
-                                                           const SDouble ext_ident_double_194,
-                                                           const SDouble ext_ident_double_191,
-                                                           const SDouble ext_ident_double_190,
-                                                           const SDouble ext_ident_double_193,
-                                                           const SDouble ext_ident_double_192,
-                                                           const SDouble ext_ident_double_200,
-                                                           const SDouble ext_ident_double_199,
-                                                           const SBool ext_ident_bool_311,
-                                                           const SDouble ext_ident_double_310,
-                                                           const SDouble ext_ident_double_231,
-                                                           const SDouble ext_ident_double_230,
-                                                           const SDouble ext_ident_double_229,
-                                                           const SDouble ext_ident_double_226,
-                                                           const SDouble ext_ident_double_207,
-                                                           const SDouble ext_ident_double_206,
-                                                           const SDouble ext_ident_double_225,
-                                                           const SDouble ext_ident_double_215,
-                                                           const SBool ext_ident_bool_212,
-                                                           const SDouble ext_ident_double_211,
-                                                           const SDouble ext_ident_double_208,
-                                                           const SDouble ext_ident_double_210,
-                                                           const SDouble ext_ident_double_209,
-                                                           const SDouble ext_ident_double_214,
-                                                           const SDouble ext_ident_double_213,
-                                                           const SDouble ext_ident_double_224,
-                                                           const SDouble ext_sqrt_223,
-                                                           const SDouble ext_ident_double_216,
-                                                           const SDouble ext_ident_double_217,
-                                                           const SDouble ext_ident_double_222,
-                                                           const SDouble ext_ident_double_219,
-                                                           const SDouble ext_ident_double_218,
-                                                           const SDouble ext_ident_double_221,
-                                                           const SDouble ext_ident_double_220,
-                                                           const SDouble ext_ident_double_228,
-                                                           const SDouble ext_ident_double_227,
-                                                           const SDouble ext_ident_double_257,
-                                                           const SDouble ext_ident_double_256,
-                                                           const SDouble ext_ident_double_255,
-                                                           const SDouble ext_ident_double_252,
-                                                           const SDouble ext_ident_double_233,
-                                                           const SDouble ext_ident_double_232,
-                                                           const SDouble ext_ident_double_251,
-                                                           const SDouble ext_ident_double_241,
-                                                           const SBool ext_ident_bool_238,
-                                                           const SDouble ext_ident_double_237,
-                                                           const SDouble ext_ident_double_234,
-                                                           const SDouble ext_ident_double_236,
-                                                           const SDouble ext_ident_double_235,
-                                                           const SDouble ext_ident_double_240,
-                                                           const SDouble ext_ident_double_239,
-                                                           const SDouble ext_ident_double_250,
-                                                           const SDouble ext_sqrt_249,
-                                                           const SDouble ext_ident_double_242,
-                                                           const SDouble ext_ident_double_243,
-                                                           const SDouble ext_ident_double_248,
-                                                           const SDouble ext_ident_double_245,
-                                                           const SDouble ext_ident_double_244,
-                                                           const SDouble ext_ident_double_247,
-                                                           const SDouble ext_ident_double_246,
-                                                           const SDouble ext_ident_double_254,
-                                                           const SDouble ext_ident_double_253,
-                                                           const SDouble ext_ident_double_283,
-                                                           const SDouble ext_ident_double_282,
-                                                           const SDouble ext_ident_double_281,
-                                                           const SDouble ext_ident_double_278,
-                                                           const SDouble ext_ident_double_259,
-                                                           const SDouble ext_ident_double_258,
-                                                           const SDouble ext_ident_double_277,
-                                                           const SDouble ext_ident_double_267,
-                                                           const SBool ext_ident_bool_264,
-                                                           const SDouble ext_ident_double_263,
-                                                           const SDouble ext_ident_double_260,
-                                                           const SDouble ext_ident_double_262,
-                                                           const SDouble ext_ident_double_261,
-                                                           const SDouble ext_ident_double_266,
-                                                           const SDouble ext_ident_double_265,
-                                                           const SDouble ext_ident_double_276,
-                                                           const SDouble ext_sqrt_275,
-                                                           const SDouble ext_ident_double_268,
-                                                           const SDouble ext_ident_double_269,
-                                                           const SDouble ext_ident_double_274,
-                                                           const SDouble ext_ident_double_271,
-                                                           const SDouble ext_ident_double_270,
-                                                           const SDouble ext_ident_double_273,
-                                                           const SDouble ext_ident_double_272,
-                                                           const SDouble ext_ident_double_280,
-                                                           const SDouble ext_ident_double_279,
-                                                           const SDouble ext_ident_double_309,
-                                                           const SDouble ext_ident_double_308,
-                                                           const SDouble ext_ident_double_307,
-                                                           const SDouble ext_ident_double_304,
-                                                           const SDouble ext_ident_double_285,
-                                                           const SDouble ext_ident_double_284,
-                                                           const SDouble ext_ident_double_303,
-                                                           const SDouble ext_ident_double_293,
-                                                           const SBool ext_ident_bool_290,
-                                                           const SDouble ext_ident_double_289,
-                                                           const SDouble ext_ident_double_286,
-                                                           const SDouble ext_ident_double_288,
-                                                           const SDouble ext_ident_double_287,
-                                                           const SDouble ext_ident_double_292,
-                                                           const SDouble ext_ident_double_291,
-                                                           const SDouble ext_ident_double_302,
-                                                           const SDouble ext_sqrt_301,
-                                                           const SDouble ext_ident_double_294,
-                                                           const SDouble ext_ident_double_295,
-                                                           const SDouble ext_ident_double_300,
-                                                           const SDouble ext_ident_double_297,
-                                                           const SDouble ext_ident_double_296,
-                                                           const SDouble ext_ident_double_299,
-                                                           const SDouble ext_ident_double_298,
-                                                           const SDouble ext_ident_double_306,
-                                                           const SDouble ext_ident_double_305,
-                                                           const SBool ext_ident_bool_417,
-                                                           const SDouble ext_ident_double_416,
-                                                           const SDouble ext_ident_double_337,
-                                                           const SDouble ext_ident_double_336,
-                                                           const SDouble ext_ident_double_335,
-                                                           const SDouble ext_ident_double_332,
-                                                           const SDouble ext_ident_double_313,
-                                                           const SDouble ext_ident_double_312,
-                                                           const SDouble ext_ident_double_331,
-                                                           const SDouble ext_ident_double_321,
-                                                           const SBool ext_ident_bool_318,
-                                                           const SDouble ext_ident_double_317,
-                                                           const SDouble ext_ident_double_314,
-                                                           const SDouble ext_ident_double_316,
-                                                           const SDouble ext_ident_double_315,
-                                                           const SDouble ext_ident_double_320,
-                                                           const SDouble ext_ident_double_319,
-                                                           const SDouble ext_ident_double_330,
-                                                           const SDouble ext_sqrt_329,
-                                                           const SDouble ext_ident_double_322,
-                                                           const SDouble ext_ident_double_323,
-                                                           const SDouble ext_ident_double_328,
-                                                           const SDouble ext_ident_double_325,
-                                                           const SDouble ext_ident_double_324,
-                                                           const SDouble ext_ident_double_327,
-                                                           const SDouble ext_ident_double_326,
-                                                           const SDouble ext_ident_double_334,
-                                                           const SDouble ext_ident_double_333,
-                                                           const SDouble ext_ident_double_363,
-                                                           const SDouble ext_ident_double_362,
-                                                           const SDouble ext_ident_double_361,
-                                                           const SDouble ext_ident_double_358,
-                                                           const SDouble ext_ident_double_339,
-                                                           const SDouble ext_ident_double_338,
-                                                           const SDouble ext_ident_double_357,
-                                                           const SDouble ext_ident_double_347,
-                                                           const SBool ext_ident_bool_344,
-                                                           const SDouble ext_ident_double_343,
-                                                           const SDouble ext_ident_double_340,
-                                                           const SDouble ext_ident_double_342,
-                                                           const SDouble ext_ident_double_341,
-                                                           const SDouble ext_ident_double_346,
-                                                           const SDouble ext_ident_double_345,
-                                                           const SDouble ext_ident_double_356,
-                                                           const SDouble ext_sqrt_355,
-                                                           const SDouble ext_ident_double_348,
-                                                           const SDouble ext_ident_double_349,
-                                                           const SDouble ext_ident_double_354,
-                                                           const SDouble ext_ident_double_351,
-                                                           const SDouble ext_ident_double_350,
-                                                           const SDouble ext_ident_double_353,
-                                                           const SDouble ext_ident_double_352,
-                                                           const SDouble ext_ident_double_360,
-                                                           const SDouble ext_ident_double_359,
-                                                           const SDouble ext_ident_double_389,
-                                                           const SDouble ext_ident_double_388,
-                                                           const SDouble ext_ident_double_387,
-                                                           const SDouble ext_ident_double_384,
-                                                           const SDouble ext_ident_double_365,
-                                                           const SDouble ext_ident_double_364,
-                                                           const SDouble ext_ident_double_383,
-                                                           const SDouble ext_ident_double_373,
-                                                           const SBool ext_ident_bool_370,
-                                                           const SDouble ext_ident_double_369,
-                                                           const SDouble ext_ident_double_366,
-                                                           const SDouble ext_ident_double_368,
-                                                           const SDouble ext_ident_double_367,
-                                                           const SDouble ext_ident_double_372,
-                                                           const SDouble ext_ident_double_371,
-                                                           const SDouble ext_ident_double_382,
-                                                           const SDouble ext_sqrt_381,
-                                                           const SDouble ext_ident_double_374,
-                                                           const SDouble ext_ident_double_375,
-                                                           const SDouble ext_ident_double_380,
-                                                           const SDouble ext_ident_double_377,
-                                                           const SDouble ext_ident_double_376,
-                                                           const SDouble ext_ident_double_379,
-                                                           const SDouble ext_ident_double_378,
-                                                           const SDouble ext_ident_double_386,
-                                                           const SDouble ext_ident_double_385,
-                                                           const SDouble ext_ident_double_415,
-                                                           const SDouble ext_ident_double_414,
-                                                           const SDouble ext_ident_double_413,
-                                                           const SDouble ext_ident_double_410,
-                                                           const SDouble ext_ident_double_391,
-                                                           const SDouble ext_ident_double_390,
-                                                           const SDouble ext_ident_double_409,
-                                                           const SDouble ext_ident_double_399,
-                                                           const SBool ext_ident_bool_396,
-                                                           const SDouble ext_ident_double_395,
-                                                           const SDouble ext_ident_double_392,
-                                                           const SDouble ext_ident_double_394,
-                                                           const SDouble ext_ident_double_393,
-                                                           const SDouble ext_ident_double_398,
-                                                           const SDouble ext_ident_double_397,
-                                                           const SDouble ext_ident_double_408,
-                                                           const SDouble ext_sqrt_407,
-                                                           const SDouble ext_ident_double_400,
-                                                           const SDouble ext_ident_double_401,
-                                                           const SDouble ext_ident_double_406,
-                                                           const SDouble ext_ident_double_403,
-                                                           const SDouble ext_ident_double_402,
-                                                           const SDouble ext_ident_double_405,
-                                                           const SDouble ext_ident_double_404,
-                                                           const SDouble ext_ident_double_412,
-                                                           const SDouble ext_ident_double_411,
-                                                           const SBool ext_ident_bool_431,
-                                                           const SBool ext_ident_bool_425,
-                                                           const SDouble ext_ident_double_423,
-                                                           const SDouble ext_ident_double_422,
-                                                           const SDouble ext_ident_double_424,
-                                                           const SBool ext_ident_bool_430,
-                                                           const SDouble ext_ident_double_428,
-                                                           const SDouble ext_sqrt_427,
-                                                           const SDouble ext_ident_double_426,
-                                                           const SDouble ext_ident_double_429)
+                                                           const SDouble ext_sqrt_3,
+                                                           const SDouble ext_sqrt_4,
+                                                           const SDouble ext_sqrt_5,
+                                                           const SDouble ext_sqrt_6,
+                                                           const SDouble ext_sqrt_7,
+                                                           const SDouble ext_sqrt_8,
+                                                           const SDouble ext_sqrt_9,
+                                                           const SDouble ext_sqrt_10,
+                                                           const SDouble ext_sqrt_11,
+                                                           const SDouble ext_sqrt_12,
+                                                           const SDouble ext_sqrt_13,
+                                                           const SDouble ext_sqrt_14,
+                                                           const SDouble ext_sqrt_15,
+                                                           const SDouble ext_sqrt_16)
 {
-  const SBool   s0 = ext_ident_bool_62;
-  const SBool   s1 = ext_ident_bool_56;
-  const SDouble s2 = ext_ident_double_54;
-  const SDouble s3 = ext_ident_double_53;
-  const SDouble s4 = ext_ownship_position_x;
-  const SDouble s5 = ext_intruder_position_x;
-  const SDouble s6 = ext_ownship_position_y;
-  const SDouble s7 = ext_intruder_position_y;
-  const SDouble s8 = ext_ident_double_55;
-  const SDouble s9 = ext_minimal_horizontal_separation;
-  const SBool   s10 = ext_ident_bool_61;
-  const SDouble s11 = ext_ownship_planned_velocity_x;
-  const SDouble s12 = ext_intruder_velocity_x;
-  const SDouble s13 = ext_ownship_planned_velocity_y;
-  const SDouble s14 = ext_intruder_velocity_y;
-  const SDouble s15 = ext_direction_parameter_horizontal;
-  const SDouble s16 = ext_ident_double_59;
-  const SDouble s17 = ext_sqrt_58;
-  const SDouble s18 = ext_ident_double_57;
-  const SDouble s19 = ext_ident_double_60;
-  const SBool   s20 = ext_ident_bool_421;
-  const SBool   s21 = ext_ident_bool_70;
-  const SBool   s22 = ext_ident_bool_67;
-  const SBool   s23 = ext_ident_bool_64;
-  const SDouble s24 = ext_ident_double_63;
-  const SBool   s25 = ext_ident_bool_66;
-  const SDouble s26 = ext_ident_double_65;
-  const SBool   s27 = ext_ident_bool_68;
-  const SDouble s28 = ext_ownship_planned_velocity_z;
-  const SDouble s29 = ext_intruder_velocity_z;
-  const SBool   s30 = ext_ident_bool_69;
-  const SDouble s31 = ext_direction_parameter_vertical;
-  const SDouble s32 = ext_ownship_position_z;
-  const SDouble s33 = ext_intruder_position_z;
-  const SDouble s34 = ext_minimal_vertical_separation;
-  const SBool   s35 = ext_ident_bool_420;
-  const SBool   s36 = ext_ident_bool_72;
-  const SDouble s37 = ext_ident_double_71;
-  const SDouble s38 = ext_ownship_velocity_x;
-  const SDouble s39 = ext_ownship_velocity_y;
-  const SBool   s40 = ext_ident_bool_98;
-  const SDouble s41 = ext_ident_double_97;
-  const SDouble s42 = ext_ident_double_96;
-  const SDouble s43 = ext_ident_double_93;
-  const SDouble s44 = ext_ident_double_74;
-  const SDouble s45 = ext_ident_double_73;
-  const SDouble s46 = ext_ident_double_92;
-  const SDouble s47 = ext_ident_double_82;
-  const SBool   s48 = ext_ident_bool_79;
-  const SDouble s49 = ext_ident_double_78;
-  const SDouble s50 = ext_ident_double_75;
-  const SDouble s51 = ext_ident_double_77;
-  const SDouble s52 = ext_ident_double_76;
-  const SDouble s53 = ext_ident_double_81;
-  const SDouble s54 = ext_ident_double_80;
-  const SDouble s55 = ext_ident_double_91;
-  const SDouble s56 = ext_sqrt_90;
-  const SDouble s57 = ext_ident_double_83;
-  const SDouble s58 = ext_ident_double_84;
-  const SDouble s59 = ext_ident_double_89;
-  const SDouble s60 = ext_ident_double_86;
-  const SDouble s61 = ext_ident_double_85;
-  const SDouble s62 = ext_ident_double_88;
-  const SDouble s63 = ext_ident_double_87;
-  const SDouble s64 = ext_ident_double_95;
-  const SDouble s65 = ext_ident_double_94;
-  const SBool   s66 = ext_ident_bool_419;
-  const SBool   s67 = ext_ident_bool_418;
-  const SBool   s68 = ext_ident_bool_205;
-  const SBool   s69 = ext_ident_bool_151;
-  const SDouble s70 = ext_ident_double_124;
-  const SDouble s71 = ext_ident_double_123;
-  const SDouble s72 = ext_ident_double_122;
-  const SDouble s73 = ext_ident_double_119;
-  const SDouble s74 = ext_ident_double_100;
-  const SDouble s75 = ext_ident_double_99;
-  const SDouble s76 = ext_ident_double_118;
-  const SDouble s77 = ext_ident_double_108;
-  const SBool   s78 = ext_ident_bool_105;
-  const SDouble s79 = ext_ident_double_104;
-  const SDouble s80 = ext_ident_double_101;
-  const SDouble s81 = ext_ident_double_103;
-  const SDouble s82 = ext_ident_double_102;
-  const SDouble s83 = ext_ident_double_107;
-  const SDouble s84 = ext_ident_double_106;
-  const SDouble s85 = ext_ident_double_117;
-  const SDouble s86 = ext_sqrt_116;
-  const SDouble s87 = ext_ident_double_109;
-  const SDouble s88 = ext_ident_double_110;
-  const SDouble s89 = ext_ident_double_115;
-  const SDouble s90 = ext_ident_double_112;
-  const SDouble s91 = ext_ident_double_111;
-  const SDouble s92 = ext_ident_double_114;
-  const SDouble s93 = ext_ident_double_113;
-  const SDouble s94 = ext_ident_double_121;
-  const SDouble s95 = ext_ident_double_120;
-  const SDouble s96 = ext_ident_double_150;
-  const SDouble s97 = ext_ident_double_149;
-  const SDouble s98 = ext_ident_double_148;
-  const SDouble s99 = ext_ident_double_145;
-  const SDouble s100 = ext_ident_double_126;
-  const SDouble s101 = ext_ident_double_125;
-  const SDouble s102 = ext_ident_double_144;
-  const SDouble s103 = ext_ident_double_134;
-  const SBool   s104 = ext_ident_bool_131;
-  const SDouble s105 = ext_ident_double_130;
-  const SDouble s106 = ext_ident_double_127;
-  const SDouble s107 = ext_ident_double_129;
-  const SDouble s108 = ext_ident_double_128;
-  const SDouble s109 = ext_ident_double_133;
-  const SDouble s110 = ext_ident_double_132;
-  const SDouble s111 = ext_ident_double_143;
-  const SDouble s112 = ext_sqrt_142;
-  const SDouble s113 = ext_ident_double_135;
-  const SDouble s114 = ext_ident_double_136;
-  const SDouble s115 = ext_ident_double_141;
-  const SDouble s116 = ext_ident_double_138;
-  const SDouble s117 = ext_ident_double_137;
-  const SDouble s118 = ext_ident_double_140;
-  const SDouble s119 = ext_ident_double_139;
-  const SDouble s120 = ext_ident_double_147;
-  const SDouble s121 = ext_ident_double_146;
-  const SBool   s122 = ext_ident_bool_204;
-  const SDouble s123 = ext_ident_double_177;
-  const SDouble s124 = ext_ident_double_176;
-  const SDouble s125 = ext_ident_double_175;
-  const SDouble s126 = ext_ident_double_172;
-  const SDouble s127 = ext_ident_double_153;
-  const SDouble s128 = ext_ident_double_152;
-  const SDouble s129 = ext_ident_double_171;
-  const SDouble s130 = ext_ident_double_161;
-  const SBool   s131 = ext_ident_bool_158;
-  const SDouble s132 = ext_ident_double_157;
-  const SDouble s133 = ext_ident_double_154;
-  const SDouble s134 = ext_ident_double_156;
-  const SDouble s135 = ext_ident_double_155;
-  const SDouble s136 = ext_ident_double_160;
-  const SDouble s137 = ext_ident_double_159;
-  const SDouble s138 = ext_ident_double_170;
-  const SDouble s139 = ext_sqrt_169;
-  const SDouble s140 = ext_ident_double_162;
-  const SDouble s141 = ext_ident_double_163;
-  const SDouble s142 = ext_ident_double_168;
-  const SDouble s143 = ext_ident_double_165;
-  const SDouble s144 = ext_ident_double_164;
-  const SDouble s145 = ext_ident_double_167;
-  const SDouble s146 = ext_ident_double_166;
-  const SDouble s147 = ext_ident_double_174;
-  const SDouble s148 = ext_ident_double_173;
-  const SDouble s149 = ext_ident_double_203;
-  const SDouble s150 = ext_ident_double_202;
-  const SDouble s151 = ext_ident_double_201;
-  const SDouble s152 = ext_ident_double_198;
-  const SDouble s153 = ext_ident_double_179;
-  const SDouble s154 = ext_ident_double_178;
-  const SDouble s155 = ext_ident_double_197;
-  const SDouble s156 = ext_ident_double_187;
-  const SBool   s157 = ext_ident_bool_184;
-  const SDouble s158 = ext_ident_double_183;
-  const SDouble s159 = ext_ident_double_180;
-  const SDouble s160 = ext_ident_double_182;
-  const SDouble s161 = ext_ident_double_181;
-  const SDouble s162 = ext_ident_double_186;
-  const SDouble s163 = ext_ident_double_185;
-  const SDouble s164 = ext_ident_double_196;
-  const SDouble s165 = ext_sqrt_195;
-  const SDouble s166 = ext_ident_double_188;
-  const SDouble s167 = ext_ident_double_189;
-  const SDouble s168 = ext_ident_double_194;
-  const SDouble s169 = ext_ident_double_191;
-  const SDouble s170 = ext_ident_double_190;
-  const SDouble s171 = ext_ident_double_193;
-  const SDouble s172 = ext_ident_double_192;
-  const SDouble s173 = ext_ident_double_200;
-  const SDouble s174 = ext_ident_double_199;
-  const SBool   s175 = ext_ident_bool_311;
-  const SDouble s176 = ext_ident_double_310;
-  const SDouble s177 = ext_ident_double_231;
-  const SDouble s178 = ext_ident_double_230;
-  const SDouble s179 = ext_ident_double_229;
-  const SDouble s180 = ext_ident_double_226;
-  const SDouble s181 = ext_ident_double_207;
-  const SDouble s182 = ext_ident_double_206;
-  const SDouble s183 = ext_ident_double_225;
-  const SDouble s184 = ext_ident_double_215;
-  const SBool   s185 = ext_ident_bool_212;
-  const SDouble s186 = ext_ident_double_211;
-  const SDouble s187 = ext_ident_double_208;
-  const SDouble s188 = ext_ident_double_210;
-  const SDouble s189 = ext_ident_double_209;
-  const SDouble s190 = ext_ident_double_214;
-  const SDouble s191 = ext_ident_double_213;
-  const SDouble s192 = ext_ident_double_224;
-  const SDouble s193 = ext_sqrt_223;
-  const SDouble s194 = ext_ident_double_216;
-  const SDouble s195 = ext_ident_double_217;
-  const SDouble s196 = ext_ident_double_222;
-  const SDouble s197 = ext_ident_double_219;
-  const SDouble s198 = ext_ident_double_218;
-  const SDouble s199 = ext_ident_double_221;
-  const SDouble s200 = ext_ident_double_220;
-  const SDouble s201 = ext_ident_double_228;
-  const SDouble s202 = ext_ident_double_227;
-  const SDouble s203 = ext_ident_double_257;
-  const SDouble s204 = ext_ident_double_256;
-  const SDouble s205 = ext_ident_double_255;
-  const SDouble s206 = ext_ident_double_252;
-  const SDouble s207 = ext_ident_double_233;
-  const SDouble s208 = ext_ident_double_232;
-  const SDouble s209 = ext_ident_double_251;
-  const SDouble s210 = ext_ident_double_241;
-  const SBool   s211 = ext_ident_bool_238;
-  const SDouble s212 = ext_ident_double_237;
-  const SDouble s213 = ext_ident_double_234;
-  const SDouble s214 = ext_ident_double_236;
-  const SDouble s215 = ext_ident_double_235;
-  const SDouble s216 = ext_ident_double_240;
-  const SDouble s217 = ext_ident_double_239;
-  const SDouble s218 = ext_ident_double_250;
-  const SDouble s219 = ext_sqrt_249;
-  const SDouble s220 = ext_ident_double_242;
-  const SDouble s221 = ext_ident_double_243;
-  const SDouble s222 = ext_ident_double_248;
-  const SDouble s223 = ext_ident_double_245;
-  const SDouble s224 = ext_ident_double_244;
-  const SDouble s225 = ext_ident_double_247;
-  const SDouble s226 = ext_ident_double_246;
-  const SDouble s227 = ext_ident_double_254;
-  const SDouble s228 = ext_ident_double_253;
-  const SDouble s229 = ext_ident_double_283;
-  const SDouble s230 = ext_ident_double_282;
-  const SDouble s231 = ext_ident_double_281;
-  const SDouble s232 = ext_ident_double_278;
-  const SDouble s233 = ext_ident_double_259;
-  const SDouble s234 = ext_ident_double_258;
-  const SDouble s235 = ext_ident_double_277;
-  const SDouble s236 = ext_ident_double_267;
-  const SBool   s237 = ext_ident_bool_264;
-  const SDouble s238 = ext_ident_double_263;
-  const SDouble s239 = ext_ident_double_260;
-  const SDouble s240 = ext_ident_double_262;
-  const SDouble s241 = ext_ident_double_261;
-  const SDouble s242 = ext_ident_double_266;
-  const SDouble s243 = ext_ident_double_265;
-  const SDouble s244 = ext_ident_double_276;
-  const SDouble s245 = ext_sqrt_275;
-  const SDouble s246 = ext_ident_double_268;
-  const SDouble s247 = ext_ident_double_269;
-  const SDouble s248 = ext_ident_double_274;
-  const SDouble s249 = ext_ident_double_271;
-  const SDouble s250 = ext_ident_double_270;
-  const SDouble s251 = ext_ident_double_273;
-  const SDouble s252 = ext_ident_double_272;
-  const SDouble s253 = ext_ident_double_280;
-  const SDouble s254 = ext_ident_double_279;
-  const SDouble s255 = ext_ident_double_309;
-  const SDouble s256 = ext_ident_double_308;
-  const SDouble s257 = ext_ident_double_307;
-  const SDouble s258 = ext_ident_double_304;
-  const SDouble s259 = ext_ident_double_285;
-  const SDouble s260 = ext_ident_double_284;
-  const SDouble s261 = ext_ident_double_303;
-  const SDouble s262 = ext_ident_double_293;
-  const SBool   s263 = ext_ident_bool_290;
-  const SDouble s264 = ext_ident_double_289;
-  const SDouble s265 = ext_ident_double_286;
-  const SDouble s266 = ext_ident_double_288;
-  const SDouble s267 = ext_ident_double_287;
-  const SDouble s268 = ext_ident_double_292;
-  const SDouble s269 = ext_ident_double_291;
-  const SDouble s270 = ext_ident_double_302;
-  const SDouble s271 = ext_sqrt_301;
-  const SDouble s272 = ext_ident_double_294;
-  const SDouble s273 = ext_ident_double_295;
-  const SDouble s274 = ext_ident_double_300;
-  const SDouble s275 = ext_ident_double_297;
-  const SDouble s276 = ext_ident_double_296;
-  const SDouble s277 = ext_ident_double_299;
-  const SDouble s278 = ext_ident_double_298;
-  const SDouble s279 = ext_ident_double_306;
-  const SDouble s280 = ext_ident_double_305;
-  const SBool   s281 = ext_ident_bool_417;
-  const SDouble s282 = ext_ident_double_416;
-  const SDouble s283 = ext_ident_double_337;
-  const SDouble s284 = ext_ident_double_336;
-  const SDouble s285 = ext_ident_double_335;
-  const SDouble s286 = ext_ident_double_332;
-  const SDouble s287 = ext_ident_double_313;
-  const SDouble s288 = ext_ident_double_312;
-  const SDouble s289 = ext_ident_double_331;
-  const SDouble s290 = ext_ident_double_321;
-  const SBool   s291 = ext_ident_bool_318;
-  const SDouble s292 = ext_ident_double_317;
-  const SDouble s293 = ext_ident_double_314;
-  const SDouble s294 = ext_ident_double_316;
-  const SDouble s295 = ext_ident_double_315;
-  const SDouble s296 = ext_ident_double_320;
-  const SDouble s297 = ext_ident_double_319;
-  const SDouble s298 = ext_ident_double_330;
-  const SDouble s299 = ext_sqrt_329;
-  const SDouble s300 = ext_ident_double_322;
-  const SDouble s301 = ext_ident_double_323;
-  const SDouble s302 = ext_ident_double_328;
-  const SDouble s303 = ext_ident_double_325;
-  const SDouble s304 = ext_ident_double_324;
-  const SDouble s305 = ext_ident_double_327;
-  const SDouble s306 = ext_ident_double_326;
-  const SDouble s307 = ext_ident_double_334;
-  const SDouble s308 = ext_ident_double_333;
-  const SDouble s309 = ext_ident_double_363;
-  const SDouble s310 = ext_ident_double_362;
-  const SDouble s311 = ext_ident_double_361;
-  const SDouble s312 = ext_ident_double_358;
-  const SDouble s313 = ext_ident_double_339;
-  const SDouble s314 = ext_ident_double_338;
-  const SDouble s315 = ext_ident_double_357;
-  const SDouble s316 = ext_ident_double_347;
-  const SBool   s317 = ext_ident_bool_344;
-  const SDouble s318 = ext_ident_double_343;
-  const SDouble s319 = ext_ident_double_340;
-  const SDouble s320 = ext_ident_double_342;
-  const SDouble s321 = ext_ident_double_341;
-  const SDouble s322 = ext_ident_double_346;
-  const SDouble s323 = ext_ident_double_345;
-  const SDouble s324 = ext_ident_double_356;
-  const SDouble s325 = ext_sqrt_355;
-  const SDouble s326 = ext_ident_double_348;
-  const SDouble s327 = ext_ident_double_349;
-  const SDouble s328 = ext_ident_double_354;
-  const SDouble s329 = ext_ident_double_351;
-  const SDouble s330 = ext_ident_double_350;
-  const SDouble s331 = ext_ident_double_353;
-  const SDouble s332 = ext_ident_double_352;
-  const SDouble s333 = ext_ident_double_360;
-  const SDouble s334 = ext_ident_double_359;
-  const SDouble s335 = ext_ident_double_389;
-  const SDouble s336 = ext_ident_double_388;
-  const SDouble s337 = ext_ident_double_387;
-  const SDouble s338 = ext_ident_double_384;
-  const SDouble s339 = ext_ident_double_365;
-  const SDouble s340 = ext_ident_double_364;
-  const SDouble s341 = ext_ident_double_383;
-  const SDouble s342 = ext_ident_double_373;
-  const SBool   s343 = ext_ident_bool_370;
-  const SDouble s344 = ext_ident_double_369;
-  const SDouble s345 = ext_ident_double_366;
-  const SDouble s346 = ext_ident_double_368;
-  const SDouble s347 = ext_ident_double_367;
-  const SDouble s348 = ext_ident_double_372;
-  const SDouble s349 = ext_ident_double_371;
-  const SDouble s350 = ext_ident_double_382;
-  const SDouble s351 = ext_sqrt_381;
-  const SDouble s352 = ext_ident_double_374;
-  const SDouble s353 = ext_ident_double_375;
-  const SDouble s354 = ext_ident_double_380;
-  const SDouble s355 = ext_ident_double_377;
-  const SDouble s356 = ext_ident_double_376;
-  const SDouble s357 = ext_ident_double_379;
-  const SDouble s358 = ext_ident_double_378;
-  const SDouble s359 = ext_ident_double_386;
-  const SDouble s360 = ext_ident_double_385;
-  const SDouble s361 = ext_ident_double_415;
-  const SDouble s362 = ext_ident_double_414;
-  const SDouble s363 = ext_ident_double_413;
-  const SDouble s364 = ext_ident_double_410;
-  const SDouble s365 = ext_ident_double_391;
-  const SDouble s366 = ext_ident_double_390;
-  const SDouble s367 = ext_ident_double_409;
-  const SDouble s368 = ext_ident_double_399;
-  const SBool   s369 = ext_ident_bool_396;
-  const SDouble s370 = ext_ident_double_395;
-  const SDouble s371 = ext_ident_double_392;
-  const SDouble s372 = ext_ident_double_394;
-  const SDouble s373 = ext_ident_double_393;
-  const SDouble s374 = ext_ident_double_398;
-  const SDouble s375 = ext_ident_double_397;
-  const SDouble s376 = ext_ident_double_408;
-  const SDouble s377 = ext_sqrt_407;
-  const SDouble s378 = ext_ident_double_400;
-  const SDouble s379 = ext_ident_double_401;
-  const SDouble s380 = ext_ident_double_406;
-  const SDouble s381 = ext_ident_double_403;
-  const SDouble s382 = ext_ident_double_402;
-  const SDouble s383 = ext_ident_double_405;
-  const SDouble s384 = ext_ident_double_404;
-  const SDouble s385 = ext_ident_double_412;
-  const SDouble s386 = ext_ident_double_411;
-  const SBool   s387 = ext_ident_bool_431;
-  const SBool   s388 = ext_ident_bool_425;
-  const SDouble s389 = ext_ident_double_423;
-  const SDouble s390 = ext_ident_double_422;
-  const SDouble s391 = ext_ident_double_424;
-  const SBool   s392 = ext_ident_bool_430;
-  const SDouble s393 = ext_ident_double_428;
-  const SDouble s394 = ext_sqrt_427;
-  const SDouble s395 = ext_ident_double_426;
-  const SDouble s396 = ext_ident_double_429;
-  const SBool   s397 = s20 && s387;
-  const SBool   s398 = s0 || s397;
-  const SBool   s399 = !s398;
+  const SDouble s0 = ext_ownship_position_x;
+  const SDouble s1 = ext_intruder_position_x;
+  const SDouble s2 = ext_ownship_position_y;
+  const SDouble s3 = ext_intruder_position_y;
+  const SDouble s4 = ext_minimal_horizontal_separation;
+  const SDouble s5 = ext_ownship_planned_velocity_x;
+  const SDouble s6 = ext_intruder_velocity_x;
+  const SDouble s7 = ext_ownship_planned_velocity_y;
+  const SDouble s8 = ext_intruder_velocity_y;
+  const SDouble s9 = ext_direction_parameter_horizontal;
+  const SDouble s10 = ext_sqrt_2;
+  const SDouble s11 = ext_ownship_planned_velocity_z;
+  const SDouble s12 = ext_intruder_velocity_z;
+  const SDouble s13 = ext_direction_parameter_vertical;
+  const SDouble s14 = ext_ownship_position_z;
+  const SDouble s15 = ext_intruder_position_z;
+  const SDouble s16 = ext_minimal_vertical_separation;
+  const SDouble s17 = ext_ownship_velocity_x;
+  const SDouble s18 = ext_ownship_velocity_y;
+  const SDouble s19 = ext_sqrt_3;
+  const SDouble s20 = ext_sqrt_4;
+  const SDouble s21 = ext_sqrt_5;
+  const SDouble s22 = ext_sqrt_6;
+  const SDouble s23 = ext_sqrt_7;
+  const SDouble s24 = ext_sqrt_8;
+  const SDouble s25 = ext_sqrt_9;
+  const SDouble s26 = ext_sqrt_10;
+  const SDouble s27 = ext_sqrt_11;
+  const SDouble s28 = ext_sqrt_12;
+  const SDouble s29 = ext_sqrt_13;
+  const SDouble s30 = ext_sqrt_14;
+  const SDouble s31 = ext_sqrt_15;
+  const SDouble s32 = ext_sqrt_16;
+  const SDouble s33 = s0 - s1;
+  const SDouble s34 = s33 * s33;
+  const SDouble s35 = s2 - s3;
+  const SDouble s36 = s35 * s35;
+  const SDouble s37 = s34 + s36;
+  const SDouble s38 = s37 /* ?normsq2dim */;
+  const SDouble s39 = s38 /* ?criterion3D_part1.2 */;
+  const SDouble s40 = s4 * s4;
+  const SDouble s41 = s40 /* ?criterion3D_part1.3 */;
+  const SBool   s42 = s39 >= s41;
+  const SBool   s43 = s42 /* ?criterion3D_part1.1 */;
+  const SDouble s44 = s5 - s6;
+  const SDouble s45 = s33 * s44;
+  const SDouble s46 = s7 - s8;
+  const SDouble s47 = s35 * s46;
+  const SDouble s48 = s45 + s47;
+  const SDouble s49 = s10 /* ?hor_rr_dividend */;
+  const SDouble s50 = s4 /* ?hor_rr_divisor */;
+  const SDouble s51 = s49 / s50;
+  const SDouble s52 = s9 * s51;
+  const SDouble s53 = s33 * s46;
+  const SDouble s54 = s35 * s44;
+  const SDouble s55 = s53 - s54;
+  const SDouble s56 = s52 * s55;
+  const SBool   s57 = s48 >= s56;
+  const SBool   s58 = s57 /* ?criterion3D_part2 */;
+  const SBool   s59 = s43 && s58;
+  const SBool   s60 = s59 /* ?criterion3D_part1 */;
+  const SBool   s62 = s38 <= 0.0;
+  const SBool   s63 = s62 /* ?verticalCriterionConflict_part1.1.1 */;
+  const SBool   s64 = s38 >= 0.0;
+  const SBool   s65 = s64 /* ?verticalCriterionConflict_part1.1.2 */;
+  const SBool   s66 = s63 && s65;
+  const SBool   s67 = s66 /* ?verticalCriterionConflict_part1.1 */;
+  const SDouble s68 = s11 - s12;
+  const SBool   s69 = s68 >= 0.0;
+  const SBool   s70 = s69 /* ?verticalCriterionConflict_part1.2 */;
+  const SDouble s71 = s14 - s15;
+  const SDouble s72 = s13 * s71;
+  const SBool   s73 = s72 >= s16;
+  const SBool   s74 = s73 /* ?verticalCriterionConflict_part1.3 */;
+  const SBool   s75 = s70 && s74;
+  const SBool   s76 = s67 && s75;
+  const SBool   s77 = s76 /* ?verticalCriterionConflict_part1 */;
+  const SDouble s78 = s17 - s6;
+  const SDouble s79 = s78 * s78;
+  const SDouble s80 = s18 - s8;
+  const SDouble s81 = s80 * s80;
+  const SDouble s82 = s79 + s81;
+  const SDouble s83 = s82 /* ?normsq2dim */;
+  const SDouble s84 = s40 * s83;
+  const SDouble s85 = s33 * s80;
+  const SDouble s86 = s35 * s78;
+  const SDouble s87 = s85 - s86;
+  const SDouble s88 = s87 * s87;
+  const SDouble s89 = s84 - s88;
+  const SBool   s90 = s89 > 0.0;
+  const SBool   s91 = s90 /* ?verticalCriterionConflict_part2.1 */;
+  const SDouble s92 = s33 * s78;
+  const SDouble s93 = s35 * s80;
+  const SDouble s94 = s92 + s93;
+  const SDouble s95 = s94 /* ?thetaVert_part1.1 */;
+  const SDouble s96 = 0.0 - s95;
+  const SDouble s97 = s96 /* ?thetaVert_part1 */;
+  const SDouble s98 = s71 /* ?dirVert_part1.1.1 */;
+  const SDouble s99 = fabs(s98);
+  const SDouble s100 = s99 /* ?dirVert_part1.1 */;
+  const SBool   s101 = s100 >= s16;
+  const SBool   s102 = s101 /* ?dirVert_part1 */;
+  const SBool   s103 = s71 > 0.0;
+  const SBool   s105 = s71 < 0.0;
+  const SDouble s107 = s105 ? -1.0 : s71;
+  const SDouble s108 = s103 ? 1.0 : s107;
+  const SDouble s109 = s108 /* ?dirVert_part2.1 */;
+  const SDouble s110 = s13 * s109;
+  const SDouble s111 = s110 /* ?dirVert_part2 */;
+  const SDouble s112 = s102 ? s111 : -1.0;
+  const SDouble s113 = s112 /* ?dirVert */;
+  const SDouble s114 = s19 /* ?thetaVert_part2 */;
+  const SDouble s115 = s113 * s114;
+  const SDouble s116 = s115 /* ?thetaVert_part1.2 */;
+  const SDouble s117 = s97 + s116;
+  const SDouble s118 = s117 /* ?thetaVert_dividend */;
+  const SDouble s119 = s83 /* ?thetaVert_divisor */;
+  const SDouble s120 = s118 / s119;
+  const SDouble s121 = s120 /* ?thetaVert */;
+  const SDouble s122 = s121 /* ?theta_dir_1 */;
+  const SBool   s123 = s122 > 0.0;
+  const SBool   s124 = s123 /* ?verticalCriterionConflict_part2.2 */;
+  const SDouble s125 = s20 /* ?thetaVert_part2 */;
+  const SDouble s126 = s113 * s125;
+  const SDouble s127 = s126 /* ?thetaVert_part1.2 */;
+  const SDouble s128 = s97 + s127;
+  const SDouble s129 = s128 /* ?thetaVert_dividend */;
+  const SDouble s130 = s129 / s119;
+  const SDouble s131 = s130 /* ?thetaVert */;
+  const SDouble s132 = s131 /* ?theta_dir_2 */;
+  const SDouble s133 = s78 * s132;
+  const SDouble s134 = s33 + s133;
+  const SDouble s135 = s134 /* ?verticalCriterionConflict_part2.3.1 */;
+  const SDouble s136 = s44 * s135;
+  const SDouble s137 = s21 /* ?thetaVert_part2 */;
+  const SDouble s138 = s113 * s137;
+  const SDouble s139 = s138 /* ?thetaVert_part1.2 */;
+  const SDouble s140 = s97 + s139;
+  const SDouble s141 = s140 /* ?thetaVert_dividend */;
+  const SDouble s142 = s141 / s119;
+  const SDouble s143 = s142 /* ?thetaVert */;
+  const SDouble s144 = s143 /* ?theta_dir_3 */;
+  const SDouble s145 = s80 * s144;
+  const SDouble s146 = s35 + s145;
+  const SDouble s147 = s146 /* ?verticalCriterionConflict_part2.3.2 */;
+  const SDouble s148 = s46 * s147;
+  const SDouble s149 = s136 + s148;
+  const SBool   s150 = s149 < 0.0;
+  const SBool   s151 = s150 /* ?intersectsHalfPlane_part1.1 */;
+  const SDouble s152 = s22 /* ?thetaVert_part2 */;
+  const SDouble s153 = s113 * s152;
+  const SDouble s154 = s153 /* ?thetaVert_part1.2 */;
+  const SDouble s155 = s97 + s154;
+  const SDouble s156 = s155 /* ?thetaVert_dividend */;
+  const SDouble s157 = s156 / s119;
+  const SDouble s158 = s157 /* ?thetaVert */;
+  const SDouble s159 = s158 /* ?theta_dir_2 */;
+  const SDouble s160 = s78 * s159;
+  const SDouble s161 = s33 + s160;
+  const SDouble s162 = s161 /* ?verticalCriterionConflict_part2.3.1 */;
+  const SDouble s163 = s44 * s162;
+  const SDouble s164 = s23 /* ?thetaVert_part2 */;
+  const SDouble s165 = s113 * s164;
+  const SDouble s166 = s165 /* ?thetaVert_part1.2 */;
+  const SDouble s167 = s97 + s166;
+  const SDouble s168 = s167 /* ?thetaVert_dividend */;
+  const SDouble s169 = s168 / s119;
+  const SDouble s170 = s169 /* ?thetaVert */;
+  const SDouble s171 = s170 /* ?theta_dir_3 */;
+  const SDouble s172 = s80 * s171;
+  const SDouble s173 = s35 + s172;
+  const SDouble s174 = s173 /* ?verticalCriterionConflict_part2.3.2 */;
+  const SDouble s175 = s46 * s174;
+  const SDouble s176 = s163 + s175;
+  const SBool   s177 = s176 > 0.0;
+  const SBool   s178 = s177 /* ?intersectsHalfPlane_part1.2 */;
+  const SBool   s179 = s151 || s178;
+  const SBool   s180 = s179 /* ?intersectsHalfPlane_part1 */;
+  const SDouble s181 = s24 /* ?thetaVert_part2 */;
+  const SDouble s182 = s113 * s181;
+  const SDouble s183 = s182 /* ?thetaVert_part1.2 */;
+  const SDouble s184 = s97 + s183;
+  const SDouble s185 = s184 /* ?thetaVert_dividend */;
+  const SDouble s186 = s185 / s119;
+  const SDouble s187 = s186 /* ?thetaVert */;
+  const SDouble s188 = s187 /* ?theta_dir_2 */;
+  const SDouble s189 = s78 * s188;
+  const SDouble s190 = s33 + s189;
+  const SDouble s191 = s190 /* ?verticalCriterionConflict_part2.3.1 */;
+  const SDouble s192 = s33 * s191;
+  const SDouble s193 = s25 /* ?thetaVert_part2 */;
+  const SDouble s194 = s113 * s193;
+  const SDouble s195 = s194 /* ?thetaVert_part1.2 */;
+  const SDouble s196 = s97 + s195;
+  const SDouble s197 = s196 /* ?thetaVert_dividend */;
+  const SDouble s198 = s197 / s119;
+  const SDouble s199 = s198 /* ?thetaVert */;
+  const SDouble s200 = s199 /* ?theta_dir_3 */;
+  const SDouble s201 = s80 * s200;
+  const SDouble s202 = s35 + s201;
+  const SDouble s203 = s202 /* ?verticalCriterionConflict_part2.3.2 */;
+  const SDouble s204 = s35 * s203;
+  const SDouble s205 = s192 + s204;
+  const SDouble s206 = s40 - s205;
+  const SDouble s207 = s26 /* ?thetaVert_part2 */;
+  const SDouble s208 = s113 * s207;
+  const SDouble s209 = s208 /* ?thetaVert_part1.2 */;
+  const SDouble s210 = s97 + s209;
+  const SDouble s211 = s210 /* ?thetaVert_dividend */;
+  const SDouble s212 = s211 / s119;
+  const SDouble s213 = s212 /* ?thetaVert */;
+  const SDouble s214 = s213 /* ?theta_dir_2 */;
+  const SDouble s215 = s78 * s214;
+  const SDouble s216 = s33 + s215;
+  const SDouble s217 = s216 /* ?verticalCriterionConflict_part2.3.1 */;
+  const SDouble s218 = s44 * s217;
+  const SDouble s219 = s27 /* ?thetaVert_part2 */;
+  const SDouble s220 = s113 * s219;
+  const SDouble s221 = s220 /* ?thetaVert_part1.2 */;
+  const SDouble s222 = s97 + s221;
+  const SDouble s223 = s222 /* ?thetaVert_dividend */;
+  const SDouble s224 = s223 / s119;
+  const SDouble s225 = s224 /* ?thetaVert */;
+  const SDouble s226 = s225 /* ?theta_dir_3 */;
+  const SDouble s227 = s80 * s226;
+  const SDouble s228 = s35 + s227;
+  const SDouble s229 = s228 /* ?verticalCriterionConflict_part2.3.2 */;
+  const SDouble s230 = s46 * s229;
+  const SDouble s231 = s218 + s230;
+  const SDouble s232 = s206 / s231;
+  const SDouble s233 = s232 /* ?t_1 */;
+  const SBool   s234 = s233 >= 0.0;
+  const SBool   s235 = s234 /* ?intersectsHalfPlane_part2 */;
+  const SDouble s236 = s28 /* ?thetaVert_part2 */;
+  const SDouble s237 = s113 * s236;
+  const SDouble s238 = s237 /* ?thetaVert_part1.2 */;
+  const SDouble s239 = s97 + s238;
+  const SDouble s240 = s239 /* ?thetaVert_dividend */;
+  const SDouble s241 = s240 / s119;
+  const SDouble s242 = s241 /* ?thetaVert */;
+  const SDouble s243 = s242 /* ?theta_dir_2 */;
+  const SDouble s244 = s78 * s243;
+  const SDouble s245 = s33 + s244;
+  const SDouble s246 = s245 /* ?verticalCriterionConflict_part2.3.1 */;
+  const SDouble s247 = s33 * s246;
+  const SDouble s248 = s29 /* ?thetaVert_part2 */;
+  const SDouble s249 = s113 * s248;
+  const SDouble s250 = s249 /* ?thetaVert_part1.2 */;
+  const SDouble s251 = s97 + s250;
+  const SDouble s252 = s251 /* ?thetaVert_dividend */;
+  const SDouble s253 = s252 / s119;
+  const SDouble s254 = s253 /* ?thetaVert */;
+  const SDouble s255 = s254 /* ?theta_dir_3 */;
+  const SDouble s256 = s80 * s255;
+  const SDouble s257 = s35 + s256;
+  const SDouble s258 = s257 /* ?verticalCriterionConflict_part2.3.2 */;
+  const SDouble s259 = s35 * s258;
+  const SDouble s260 = s247 + s259;
+  const SDouble s261 = s40 - s260;
+  const SDouble s262 = s30 /* ?thetaVert_part2 */;
+  const SDouble s263 = s113 * s262;
+  const SDouble s264 = s263 /* ?thetaVert_part1.2 */;
+  const SDouble s265 = s97 + s264;
+  const SDouble s266 = s265 /* ?thetaVert_dividend */;
+  const SDouble s267 = s266 / s119;
+  const SDouble s268 = s267 /* ?thetaVert */;
+  const SDouble s269 = s268 /* ?theta_dir_2 */;
+  const SDouble s270 = s78 * s269;
+  const SDouble s271 = s33 + s270;
+  const SDouble s272 = s271 /* ?verticalCriterionConflict_part2.3.1 */;
+  const SDouble s273 = s44 * s272;
+  const SDouble s274 = s31 /* ?thetaVert_part2 */;
+  const SDouble s275 = s113 * s274;
+  const SDouble s276 = s275 /* ?thetaVert_part1.2 */;
+  const SDouble s277 = s97 + s276;
+  const SDouble s278 = s277 /* ?thetaVert_dividend */;
+  const SDouble s279 = s278 / s119;
+  const SDouble s280 = s279 /* ?thetaVert */;
+  const SDouble s281 = s280 /* ?theta_dir_3 */;
+  const SDouble s282 = s80 * s281;
+  const SDouble s283 = s35 + s282;
+  const SDouble s284 = s283 /* ?verticalCriterionConflict_part2.3.2 */;
+  const SDouble s285 = s46 * s284;
+  const SDouble s286 = s273 + s285;
+  const SDouble s287 = s261 / s286;
+  const SDouble s288 = s287 /* ?t_2 */;
+  const SDouble s289 = s68 * s288;
+  const SDouble s290 = s71 + s289;
+  const SDouble s291 = s13 * s290;
+  const SDouble s292 = s13 * s16;
+  const SDouble s293 = s13 * s292;
+  const SBool   s294 = s291 >= s293;
+  const SBool   s295 = s294 /* ?intersectsHalfPlane_part3 */;
+  const SBool   s296 = s235 && s295;
+  const SBool   s297 = s180 && s296;
+  const SBool   s298 = s297 /* ?intersectsHalfPlane */;
+  const SBool   s299 = s298 /* ?verticalCriterionConflict_part2.3 */;
+  const SBool   s300 = s124 && s299;
+  const SBool   s301 = s91 && s300;
+  const SBool   s302 = s301 /* ?verticalCriterionConflict_part2 */;
+  const SBool   s303 = s77 || s302;
+  const SBool   s304 = s303 /* ?criterion3D_part3 */;
+  const SDouble s305 = s38 /* ?criterion3D_part4.1.1 */;
+  const SDouble s306 = s40 /* ?criterion3D_part4.1.2 */;
+  const SBool   s307 = s305 < s306;
+  const SBool   s308 = s307 /* ?criterion3D_part4.1 */;
+  const SDouble s309 = s44 - s78;
+  const SDouble s310 = s33 * s309;
+  const SDouble s311 = s46 - s80;
+  const SDouble s312 = s35 * s311;
+  const SDouble s313 = s310 + s312;
+  const SDouble s314 = s32 /* ?hor_rr_dividend */;
+  const SDouble s315 = s314 / s50;
+  const SDouble s316 = s9 * s315;
+  const SDouble s317 = s33 * s311;
+  const SDouble s318 = s35 * s309;
+  const SDouble s319 = s317 - s318;
+  const SDouble s320 = s316 * s319;
+  const SBool   s321 = s313 >= s320;
+  const SBool   s322 = s321 /* ?criterion3D_part5 */;
+  const SBool   s323 = s308 || s322;
+  const SBool   s324 = s323 /* ?criterion3D_part4 */;
+  const SBool   s325 = s304 && s324;
+  const SBool   s326 = s60 || s325;
+  const SBool   s327 = !s326;
 
-  return s399;
+  return s327;
 }

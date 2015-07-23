@@ -4,7 +4,6 @@ default:
 	./main
 
 sandbox:
-	m4 main.hs > tmp.hs
 	cabal exec -- ghc tmp.hs -o main
 	./main
 
@@ -21,3 +20,25 @@ clean:
 	rm tmp.o
 	rm -rf copilot-c99-codegen
 	rm main
+
+
+dead:
+	gcc script.cpp -o a
+	for i in copilot-sbv-codegen/*; do if [ "$${i}" != "$${i%.c}" ];then ./a $$i > $$i.tmp; rm $$i; mv $$i.tmp $$i; fi; done
+
+dot:
+	gcc scriptdot.cpp -o a
+	for i in copilot-sbv-codegen/*; do if [ "$${i}" != "$${i%.c}" ];then ./a $$i > $$i.gv; dot -Tps $$i.gv -o $$i.ps; fi; done
+	
+acsl:
+	m4 main.hs > tmp.hs
+	make sandbox
+	make dead
+	make dot
+	make fwp -C copilot-sbv-codegen
+
+compile:
+	m4 -DproofACSL=compile main.hs > tmp.hs
+	make sandbox
+	make dead
+	make all -C copilot-sbv-codegen

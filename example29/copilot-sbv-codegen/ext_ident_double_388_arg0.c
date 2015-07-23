@@ -4,9 +4,21 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "theta_dir_2" Extf_ident_double(label "thetaVert" (Extf_ident_double(label "thetaVert_dividend" (Extf_ident_double(label "thetaVert_part1" (0.0 - Extf_ident_double(label "thetaVert_part1.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))) + Extf_ident_double(label "thetaVert_part1.2" (Extf_ident_double(label "dirVert" (if Extf_ident_bool(label "dirVert_part1" (Extf_ident_double(label "dirVert_part1.1" (Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z)) * Extf_ident_double(label "absolute_value_splitting" signum Extf_ident_double(label "dirVert_part1.1.1" (Ext_ownship_position_z - Ext_intruder_position_z))))) >= Ext_minimal_vertical_separation)) then Extf_ident_double(label "dirVert_part2" (Ext_direction_parameter_vertical * Extf_ident_double(label "dirVert_part2.1" signum (Ext_ownship_position_z - Ext_intruder_position_z)))) else -1.0)) * Extf_ident_double(label "thetaVert_part2" Extf_sqrt(((Extf_ident_double(label "thetaVert_part2.1" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))) * Extf_ident_double(label "thetaVert_part2.2" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) - Extf_ident_double(label "thetaVert_part2.3" (Extf_ident_double(label "thetaVert_part2.3.1" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y))))) * Extf_ident_double(label "thetaVert_part2.3.2" (Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)))))))))))) / Extf_ident_double(label "thetaVert_divisor" Extf_ident_double(label "normsq2dim" (((Ext_ownship_velocity_x - Ext_intruder_velocity_x) * (Ext_ownship_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_velocity_y - Ext_intruder_velocity_y) * (Ext_ownship_velocity_y - Ext_intruder_velocity_y)))))))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: theta_dir_2",color=plum, style=filled]
+0 -> 1
+2 [label="ext_ident_double_387",color=cyan4, style=filled]
+1 -> 2
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((ext_ident_double_387));
@@ -49,42 +61,6 @@ SDouble ext_ident_double_388_arg0(const SDouble ext_ident_double_387,
                                   const SDouble ext_ident_double_385)
 {
   const SDouble s0 = ext_ident_double_387;
-  const SDouble s1 = ext_ident_double_384;
-  const SDouble s2 = ext_ident_double_365;
-  const SDouble s3 = ext_ident_double_364;
-  const SDouble s4 = ext_ownship_position_x;
-  const SDouble s5 = ext_intruder_position_x;
-  const SDouble s6 = ext_ownship_velocity_x;
-  const SDouble s7 = ext_intruder_velocity_x;
-  const SDouble s8 = ext_ownship_position_y;
-  const SDouble s9 = ext_intruder_position_y;
-  const SDouble s10 = ext_ownship_velocity_y;
-  const SDouble s11 = ext_intruder_velocity_y;
-  const SDouble s12 = ext_ident_double_383;
-  const SDouble s13 = ext_ident_double_373;
-  const SBool   s14 = ext_ident_bool_370;
-  const SDouble s15 = ext_ident_double_369;
-  const SDouble s16 = ext_ident_double_366;
-  const SDouble s17 = ext_ownship_position_z;
-  const SDouble s18 = ext_intruder_position_z;
-  const SDouble s19 = ext_ident_double_368;
-  const SDouble s20 = ext_ident_double_367;
-  const SDouble s21 = ext_minimal_vertical_separation;
-  const SDouble s22 = ext_ident_double_372;
-  const SDouble s23 = ext_direction_parameter_vertical;
-  const SDouble s24 = ext_ident_double_371;
-  const SDouble s25 = ext_ident_double_382;
-  const SDouble s26 = ext_sqrt_381;
-  const SDouble s27 = ext_ident_double_374;
-  const SDouble s28 = ext_ident_double_375;
-  const SDouble s29 = ext_ident_double_380;
-  const SDouble s30 = ext_ident_double_377;
-  const SDouble s31 = ext_ident_double_376;
-  const SDouble s32 = ext_ident_double_379;
-  const SDouble s33 = ext_ident_double_378;
-  const SDouble s34 = ext_minimal_horizontal_separation;
-  const SDouble s35 = ext_ident_double_386;
-  const SDouble s36 = ext_ident_double_385;
   const SDouble s37 = s0 /* theta_dir_2 */;
 
   return s37;

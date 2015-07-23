@@ -4,9 +4,25 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "criterion3D_part1.1" (Extf_ident_double(label "criterion3D_part1.2" Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y))))) >= Extf_ident_double(label "criterion3D_part1.3" (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: criterion3D_part1.1",color=plum, style=filled]
+0 -> 1
+2 [label="op2: >=",color=green4, style=filled]
+1 -> 2
+3 [label="ext_ident_double_54",color=cyan4, style=filled]
+2 -> 3
+22 [label="ext_ident_double_55",color=cyan4, style=filled]
+2 -> 22
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((((ext_ident_double_54) >= (ext_ident_double_55))));
@@ -21,13 +37,7 @@ SBool ext_ident_bool_56_arg0(const SDouble ext_ident_double_54,
                              const SDouble ext_minimal_horizontal_separation)
 {
   const SDouble s0 = ext_ident_double_54;
-  const SDouble s1 = ext_ident_double_53;
-  const SDouble s2 = ext_ownship_position_x;
-  const SDouble s3 = ext_intruder_position_x;
-  const SDouble s4 = ext_ownship_position_y;
-  const SDouble s5 = ext_intruder_position_y;
   const SDouble s6 = ext_ident_double_55;
-  const SDouble s7 = ext_minimal_horizontal_separation;
   const SBool   s8 = s0 >= s6;
   const SBool   s9 = s8 /* criterion3D_part1.1 */;
 

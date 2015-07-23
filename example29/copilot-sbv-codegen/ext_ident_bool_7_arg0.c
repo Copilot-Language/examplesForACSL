@@ -4,9 +4,65 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "horizontalCriterionLoss_part2" ((((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_planned_velocity_x - Ext_intruder_velocity_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_planned_velocity_y - Ext_intruder_velocity_y))) > ((Extf_ident_double(label "exitDotMin_dividend" Extf_sqrt(Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))))) / Extf_ident_double(label "exitDotMin_divsor" Ext_maximum_time_for_violation)) * (Ext_minimal_horizontal_separation - Extf_sqrt(Extf_ident_double(label "normsq2dim" (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y))))))))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: horizontalCriterionLoss_part2",color=plum, style=filled]
+0 -> 1
+2 [label="op2: >",color=green4, style=filled]
+1 -> 2
+3 [label="op2: +",color=green4, style=filled]
+2 -> 3
+4 [label="op2: *",color=green4, style=filled]
+3 -> 4
+5 [label="op2: -",color=green4, style=filled]
+4 -> 5
+6 [label="ext_ownship_position_x",color=cyan1, style=filled]
+5 -> 6
+7 [label="ext_intruder_position_x",color=cyan1, style=filled]
+5 -> 7
+8 [label="op2: -",color=green4, style=filled]
+4 -> 8
+9 [label="ext_ownship_planned_velocity_x",color=cyan1, style=filled]
+8 -> 9
+10 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+8 -> 10
+11 [label="op2: *",color=green4, style=filled]
+3 -> 11
+12 [label="op2: -",color=green4, style=filled]
+11 -> 12
+13 [label="ext_ownship_position_y",color=cyan1, style=filled]
+12 -> 13
+14 [label="ext_intruder_position_y",color=cyan1, style=filled]
+12 -> 14
+15 [label="op2: -",color=green4, style=filled]
+11 -> 15
+16 [label="ext_ownship_planned_velocity_y",color=cyan1, style=filled]
+15 -> 16
+17 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+15 -> 17
+18 [label="op2: *",color=green4, style=filled]
+2 -> 18
+19 [label="op2: /",color=green4, style=filled]
+18 -> 19
+20 [label="ext_ident_double_3",color=cyan4, style=filled]
+19 -> 20
+40 [label="ext_ident_double_4",color=cyan4, style=filled]
+19 -> 40
+43 [label="op2: -",color=green4, style=filled]
+18 -> 43
+44 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+43 -> 44
+45 [label="ext_sqrt_6",color=cyan4, style=filled]
+43 -> 45
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_planned_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_planned_velocity_y) - (ext_intruder_velocity_y))))))) > (((((ext_ident_double_3) / (ext_ident_double_4))) * (((ext_minimal_horizontal_separation) - (ext_sqrt_6))))))));
@@ -34,13 +90,9 @@ SBool ext_ident_bool_7_arg0(const SDouble ext_ownship_position_x,
   const SDouble s6 = ext_ownship_planned_velocity_y;
   const SDouble s7 = ext_intruder_velocity_y;
   const SDouble s8 = ext_ident_double_3;
-  const SDouble s9 = ext_sqrt_2;
-  const SDouble s10 = ext_ident_double_1;
   const SDouble s11 = ext_ident_double_4;
-  const SDouble s12 = ext_maximum_time_for_violation;
   const SDouble s13 = ext_minimal_horizontal_separation;
   const SDouble s14 = ext_sqrt_6;
-  const SDouble s15 = ext_ident_double_5;
   const SDouble s16 = s0 - s1;
   const SDouble s17 = s2 - s3;
   const SDouble s18 = s16 * s17;

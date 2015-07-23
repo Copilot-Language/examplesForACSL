@@ -93,15 +93,15 @@ tcpa sx sy vx vy = label "?tcpa" $
 taumod :: Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Double
 taumod sx sy vx vy = label "?taumod" $ 
   mux (scalar2dim sx sy vx vy < 0) 
-  (((1.0) * (1.0) - (normsq2dim sx sy))/(scalar2dim sx sy vx vy)) 
+  (((1*1852) * (1*1852) - (normsq2dim sx sy))/(scalar2dim sx sy vx vy)) 
   (0-1)
 
 
 
 tep :: Stream Double -> Stream Double -> Stream Double -> Stream Double -> Stream Double
 tep sx sy vx vy = label "?tep" $ 
-  mux ((scalar2dim sx sy vx vy < 0) && ((delta sx sy vx vy (1.0)) >= 0))
-  (theta sx sy vx vy (1.0) (0-1))
+  mux ((scalar2dim sx sy vx vy < 0) && ((delta sx sy vx vy (1*1852)) >= 0))
+  (theta sx sy vx vy (1*1852) (0-1))
   (0-1)
 
 
@@ -140,8 +140,8 @@ wellClearViolation tvar sx sy sz vx vy vz = label "?wellClearViolation" $
 
 verticalWCV :: Stream Double -> Stream Double -> Stream Bool
 verticalWCV sz vz = label "?verticalWCV" $ 
-  ((abs $ sz) <= (0.0781749)) ||
-  (0 <= (tcoa sz vz) && (tcoa sz vz) <= (30.0))
+  ((abs $ sz) <= (475*0.3048)) ||
+  (0 <= (tcoa sz vz) && (tcoa sz vz) <= (30.0*1))
 
 horizontalWCV :: (Stream Double -> Stream Double -> 
                  Stream Double -> Stream Double -> 
@@ -150,8 +150,8 @@ horizontalWCV :: (Stream Double -> Stream Double ->
                  Stream Double -> Stream Double -> 
                  Stream Bool
 horizontalWCV tvar sx sy vx vy = label "?horizontalWCV" $ 
-  (norm2dim sx sy <= (1.0)) ||
-  ((dcpa sx sy vx vy <= (1.0)) && (0 <= (tvar sx sy vx vy)) && ((tvar sx sy vx vy) <= (30.0)))
+  (norm2dim sx sy <= (1*1852)) ||
+  ((dcpa sx sy vx vy <= (1*1852)) && (0 <= (tvar sx sy vx vy)) && ((tvar sx sy vx vy) <= (30.0*1)))
 
 -----------------------------------------
 -- Spec
@@ -169,7 +169,7 @@ spec = do
   trigger "alert_WCVtep" (wellClearViolation tep relPositionX relPositionY relPositionZ relVelocityX relVelocityY relVelocityZ) []
 
 main = do
-   reify spec >>= S.proofACSL S.defaultParams
+   reify spec >>= S.compile S.defaultParams
 
 
 --------------------------------------------------------------------------------

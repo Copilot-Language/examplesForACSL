@@ -4,12 +4,4704 @@
 
 /* User given declarations: */
 /*test 006*/
-/*ACSL to write
- not (((((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)))) >= (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)) && (((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * (Ext_ownship_velocity_x - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * (Ext_ownship_velocity_y - (if s0 then Ext_intruder_velocity_y else s6)))) >= ((Ext_direction_parameter_horizontal * (Extf_sqrt((((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation))) / Ext_minimal_horizontal_separation)) * ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * (Ext_ownship_velocity_y - (if s0 then Ext_intruder_velocity_y else s6))) - ((Ext_ownship_velocity_x - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5))))))) || (((((((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)))) <= 0.0) && (((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)))) >= 0.0)) && (((Ext_ownship_velocity_z - (if s0 then Ext_intruder_velocity_z else s11)) >= 0.0) && ((Ext_direction_parameter_vertical * ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10))) >= Ext_minimal_vertical_separation))) || (((((Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation) * ((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) - (((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))) - (((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)))) * ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))) - (((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)))))) > 0.0) && (((((0.0 - ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) + ((if ((((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)) * Extf_ident_double(label "absolute_value_splitting" signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)))) >= Ext_minimal_vertical_separation) then (Ext_direction_parameter_vertical * signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10))) else -1.0) * Extf_sqrt(((((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) - (((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * (((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation))))))) / ((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) > 0.0) && ((((((Ext_ownship_velocity_x - (if s0 then Ext_intruder_velocity_x else s3)) * (((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) + ((((0.0 - ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) + ((if ((((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)) * Extf_ident_double(label "absolute_value_splitting" signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)))) >= Ext_minimal_vertical_separation) then (Ext_direction_parameter_vertical * signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10))) else -1.0) * Extf_sqrt(((((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) - (((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * (((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation))))))) / ((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))))) + ((Ext_ownship_velocity_y - (if s0 then Ext_intruder_velocity_y else s6)) * (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) + ((((0.0 - ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) + ((if ((((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)) * Extf_ident_double(label "absolute_value_splitting" signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)))) >= Ext_minimal_vertical_separation) then (Ext_direction_parameter_vertical * signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10))) else -1.0) * Extf_sqrt(((((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) - (((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * (((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation))))))) / ((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))))) < 0.0) || ((((Ext_ownship_velocity_x - (if s0 then Ext_intruder_velocity_x else s3)) * (((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) + ((((0.0 - ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) + ((if ((((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)) * Extf_ident_double(label "absolute_value_splitting" signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)))) >= Ext_minimal_vertical_separation) then (Ext_direction_parameter_vertical * signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10))) else -1.0) * Extf_sqrt(((((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) - (((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * (((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation))))))) / ((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))))) + ((Ext_ownship_velocity_y - (if s0 then Ext_intruder_velocity_y else s6)) * (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) + ((((0.0 - ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) + ((if ((((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)) * Extf_ident_double(label "absolute_value_splitting" signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)))) >= Ext_minimal_vertical_separation) then (Ext_direction_parameter_vertical * signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10))) else -1.0) * Extf_sqrt(((((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) - (((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * (((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation))))))) / ((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))))) > 0.0)) && (((((Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation) - ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * (((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) + ((((0.0 - ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) + ((if ((((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)) * Extf_ident_double(label "absolute_value_splitting" signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)))) >= Ext_minimal_vertical_separation) then (Ext_direction_parameter_vertical * signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10))) else -1.0) * Extf_sqrt(((((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) - (((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * (((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation))))))) / ((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) + ((((0.0 - ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) + ((if ((((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)) * Extf_ident_double(label "absolute_value_splitting" signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)))) >= Ext_minimal_vertical_separation) then (Ext_direction_parameter_vertical * signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10))) else -1.0) * Extf_sqrt(((((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) - (((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * (((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation))))))) / ((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))))) / (((Ext_ownship_velocity_x - (if s0 then Ext_intruder_velocity_x else s3)) * (((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) + ((((0.0 - ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) + ((if ((((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)) * Extf_ident_double(label "absolute_value_splitting" signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)))) >= Ext_minimal_vertical_separation) then (Ext_direction_parameter_vertical * signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10))) else -1.0) * Extf_sqrt(((((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) - (((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * (((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation))))))) / ((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))))) + ((Ext_ownship_velocity_y - (if s0 then Ext_intruder_velocity_y else s6)) * (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) + ((((0.0 - ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) + ((if ((((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)) * Extf_ident_double(label "absolute_value_splitting" signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)))) >= Ext_minimal_vertical_separation) then (Ext_direction_parameter_vertical * signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10))) else -1.0) * Extf_sqrt(((((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) - (((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * (((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation))))))) / ((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))))) >= 0.0) && ((Ext_direction_parameter_vertical * (((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)) + ((((Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation) - ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * (((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) + ((((0.0 - ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) + ((if ((((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)) * Extf_ident_double(label "absolute_value_splitting" signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)))) >= Ext_minimal_vertical_separation) then (Ext_direction_parameter_vertical * signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10))) else -1.0) * Extf_sqrt(((((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) - (((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * (((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation))))))) / ((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) + ((((0.0 - ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) + ((if ((((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)) * Extf_ident_double(label "absolute_value_splitting" signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)))) >= Ext_minimal_vertical_separation) then (Ext_direction_parameter_vertical * signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10))) else -1.0) * Extf_sqrt(((((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) - (((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * (((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation))))))) / ((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))))) / (((Ext_ownship_velocity_x - (if s0 then Ext_intruder_velocity_x else s3)) * (((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) + ((((0.0 - ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) + ((if ((((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)) * Extf_ident_double(label "absolute_value_splitting" signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)))) >= Ext_minimal_vertical_separation) then (Ext_direction_parameter_vertical * signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10))) else -1.0) * Extf_sqrt(((((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) - (((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * (((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation))))))) / ((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))))) + ((Ext_ownship_velocity_y - (if s0 then Ext_intruder_velocity_y else s6)) * (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) + ((((0.0 - ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) + ((if ((((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)) * Extf_ident_double(label "absolute_value_splitting" signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10)))) >= Ext_minimal_vertical_separation) then (Ext_direction_parameter_vertical * signum ((if s0 then Ext_ownship_position_z else s9) - (if s0 then Ext_intruder_position_z else s10))) else -1.0) * Extf_sqrt(((((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) - (((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) * (((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation))))))) / ((((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)) * ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) + (((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) * ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))))) * (Ext_ownship_velocity_z - (if s0 then Ext_intruder_velocity_z else s11))))) >= (Ext_direction_parameter_vertical * (Ext_direction_parameter_vertical * Ext_minimal_vertical_separation)))))))) && ((((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)))) < (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation)) || (((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((Ext_ownship_velocity_x - (if s0 then Ext_intruder_velocity_x else s3)) - ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3)))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((Ext_ownship_velocity_y - (if s0 then Ext_intruder_velocity_y else s6)) - ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6))))) >= ((Ext_direction_parameter_horizontal * (Extf_sqrt((((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2))) + (((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)))) - (Ext_minimal_horizontal_separation * Ext_minimal_horizontal_separation))) / Ext_minimal_horizontal_separation)) * ((((if s0 then Ext_ownship_position_x else s1) - (if s0 then Ext_intruder_position_x else s2)) * ((Ext_ownship_velocity_y - (if s0 then Ext_intruder_velocity_y else s6)) - ((if s0 then Ext_ownship_velocity_y else s8) - (if s0 then Ext_intruder_velocity_y else s6)))) - (((Ext_ownship_velocity_x - (if s0 then Ext_intruder_velocity_x else s3)) - ((if s0 then Ext_ownship_velocity_x else s7) - (if s0 then Ext_intruder_velocity_x else s3))) * ((if s0 then Ext_ownship_position_y else s4) - (if s0 then Ext_intruder_position_y else s5)))))))))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="op1: not",color=green4, style=filled]
+0 -> 1
+2 [label="op2: ||",color=green4, style=filled]
+1 -> 2
+3 [label="op2: &&",color=green4, style=filled]
+2 -> 3
+4 [label="op2: >=",color=green4, style=filled]
+3 -> 4
+5 [label="op2: +",color=green4, style=filled]
+4 -> 5
+6 [label="op2: *",color=green4, style=filled]
+5 -> 6
+7 [label="op2: -",color=green4, style=filled]
+6 -> 7
+8 [label="op3: mux",color=green4, style=filled]
+7 -> 8
+9 [label="stream: 0",color=crimson, style=filled]
+8 -> 9
+10 [label="ext_ownship_position_x",color=cyan1, style=filled]
+8 -> 10
+11 [label="stream: 1",color=crimson, style=filled]
+8 -> 11
+12 [label="op3: mux",color=green4, style=filled]
+7 -> 12
+13 [label="stream: 0",color=crimson, style=filled]
+12 -> 13
+14 [label="ext_intruder_position_x",color=cyan1, style=filled]
+12 -> 14
+15 [label="stream: 2",color=crimson, style=filled]
+12 -> 15
+16 [label="op2: -",color=green4, style=filled]
+6 -> 16
+17 [label="op3: mux",color=green4, style=filled]
+16 -> 17
+18 [label="stream: 0",color=crimson, style=filled]
+17 -> 18
+19 [label="ext_ownship_position_x",color=cyan1, style=filled]
+17 -> 19
+20 [label="stream: 1",color=crimson, style=filled]
+17 -> 20
+21 [label="op3: mux",color=green4, style=filled]
+16 -> 21
+22 [label="stream: 0",color=crimson, style=filled]
+21 -> 22
+23 [label="ext_intruder_position_x",color=cyan1, style=filled]
+21 -> 23
+24 [label="stream: 2",color=crimson, style=filled]
+21 -> 24
+25 [label="op2: *",color=green4, style=filled]
+5 -> 25
+26 [label="op2: -",color=green4, style=filled]
+25 -> 26
+27 [label="op3: mux",color=green4, style=filled]
+26 -> 27
+28 [label="stream: 0",color=crimson, style=filled]
+27 -> 28
+29 [label="ext_ownship_position_y",color=cyan1, style=filled]
+27 -> 29
+30 [label="stream: 4",color=crimson, style=filled]
+27 -> 30
+31 [label="op3: mux",color=green4, style=filled]
+26 -> 31
+32 [label="stream: 0",color=crimson, style=filled]
+31 -> 32
+33 [label="ext_intruder_position_y",color=cyan1, style=filled]
+31 -> 33
+34 [label="stream: 5",color=crimson, style=filled]
+31 -> 34
+35 [label="op2: -",color=green4, style=filled]
+25 -> 35
+36 [label="op3: mux",color=green4, style=filled]
+35 -> 36
+37 [label="stream: 0",color=crimson, style=filled]
+36 -> 37
+38 [label="ext_ownship_position_y",color=cyan1, style=filled]
+36 -> 38
+39 [label="stream: 4",color=crimson, style=filled]
+36 -> 39
+40 [label="op3: mux",color=green4, style=filled]
+35 -> 40
+41 [label="stream: 0",color=crimson, style=filled]
+40 -> 41
+42 [label="ext_intruder_position_y",color=cyan1, style=filled]
+40 -> 42
+43 [label="stream: 5",color=crimson, style=filled]
+40 -> 43
+44 [label="op2: *",color=green4, style=filled]
+4 -> 44
+45 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+44 -> 45
+46 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+44 -> 46
+47 [label="op2: >=",color=green4, style=filled]
+3 -> 47
+48 [label="op2: +",color=green4, style=filled]
+47 -> 48
+49 [label="op2: *",color=green4, style=filled]
+48 -> 49
+50 [label="op2: -",color=green4, style=filled]
+49 -> 50
+51 [label="op3: mux",color=green4, style=filled]
+50 -> 51
+52 [label="stream: 0",color=crimson, style=filled]
+51 -> 52
+53 [label="ext_ownship_position_x",color=cyan1, style=filled]
+51 -> 53
+54 [label="stream: 1",color=crimson, style=filled]
+51 -> 54
+55 [label="op3: mux",color=green4, style=filled]
+50 -> 55
+56 [label="stream: 0",color=crimson, style=filled]
+55 -> 56
+57 [label="ext_intruder_position_x",color=cyan1, style=filled]
+55 -> 57
+58 [label="stream: 2",color=crimson, style=filled]
+55 -> 58
+59 [label="op2: -",color=green4, style=filled]
+49 -> 59
+60 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+59 -> 60
+61 [label="op3: mux",color=green4, style=filled]
+59 -> 61
+62 [label="stream: 0",color=crimson, style=filled]
+61 -> 62
+63 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+61 -> 63
+64 [label="stream: 3",color=crimson, style=filled]
+61 -> 64
+65 [label="op2: *",color=green4, style=filled]
+48 -> 65
+66 [label="op2: -",color=green4, style=filled]
+65 -> 66
+67 [label="op3: mux",color=green4, style=filled]
+66 -> 67
+68 [label="stream: 0",color=crimson, style=filled]
+67 -> 68
+69 [label="ext_ownship_position_y",color=cyan1, style=filled]
+67 -> 69
+70 [label="stream: 4",color=crimson, style=filled]
+67 -> 70
+71 [label="op3: mux",color=green4, style=filled]
+66 -> 71
+72 [label="stream: 0",color=crimson, style=filled]
+71 -> 72
+73 [label="ext_intruder_position_y",color=cyan1, style=filled]
+71 -> 73
+74 [label="stream: 5",color=crimson, style=filled]
+71 -> 74
+75 [label="op2: -",color=green4, style=filled]
+65 -> 75
+76 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+75 -> 76
+77 [label="op3: mux",color=green4, style=filled]
+75 -> 77
+78 [label="stream: 0",color=crimson, style=filled]
+77 -> 78
+79 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+77 -> 79
+80 [label="stream: 6",color=crimson, style=filled]
+77 -> 80
+81 [label="op2: *",color=green4, style=filled]
+47 -> 81
+82 [label="op2: *",color=green4, style=filled]
+81 -> 82
+83 [label="ext_direction_parameter_horizontal",color=cyan1, style=filled]
+82 -> 83
+84 [label="op2: /",color=green4, style=filled]
+82 -> 84
+85 [label="ext_sqrt_3",color=cyan4, style=filled]
+84 -> 85
+129 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+84 -> 129
+130 [label="op2: -",color=green4, style=filled]
+81 -> 130
+131 [label="op2: *",color=green4, style=filled]
+130 -> 131
+132 [label="op2: -",color=green4, style=filled]
+131 -> 132
+133 [label="op3: mux",color=green4, style=filled]
+132 -> 133
+134 [label="stream: 0",color=crimson, style=filled]
+133 -> 134
+135 [label="ext_ownship_position_x",color=cyan1, style=filled]
+133 -> 135
+136 [label="stream: 1",color=crimson, style=filled]
+133 -> 136
+137 [label="op3: mux",color=green4, style=filled]
+132 -> 137
+138 [label="stream: 0",color=crimson, style=filled]
+137 -> 138
+139 [label="ext_intruder_position_x",color=cyan1, style=filled]
+137 -> 139
+140 [label="stream: 2",color=crimson, style=filled]
+137 -> 140
+141 [label="op2: -",color=green4, style=filled]
+131 -> 141
+142 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+141 -> 142
+143 [label="op3: mux",color=green4, style=filled]
+141 -> 143
+144 [label="stream: 0",color=crimson, style=filled]
+143 -> 144
+145 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+143 -> 145
+146 [label="stream: 6",color=crimson, style=filled]
+143 -> 146
+147 [label="op2: *",color=green4, style=filled]
+130 -> 147
+148 [label="op2: -",color=green4, style=filled]
+147 -> 148
+149 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+148 -> 149
+150 [label="op3: mux",color=green4, style=filled]
+148 -> 150
+151 [label="stream: 0",color=crimson, style=filled]
+150 -> 151
+152 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+150 -> 152
+153 [label="stream: 3",color=crimson, style=filled]
+150 -> 153
+154 [label="op2: -",color=green4, style=filled]
+147 -> 154
+155 [label="op3: mux",color=green4, style=filled]
+154 -> 155
+156 [label="stream: 0",color=crimson, style=filled]
+155 -> 156
+157 [label="ext_ownship_position_y",color=cyan1, style=filled]
+155 -> 157
+158 [label="stream: 4",color=crimson, style=filled]
+155 -> 158
+159 [label="op3: mux",color=green4, style=filled]
+154 -> 159
+160 [label="stream: 0",color=crimson, style=filled]
+159 -> 160
+161 [label="ext_intruder_position_y",color=cyan1, style=filled]
+159 -> 161
+162 [label="stream: 5",color=crimson, style=filled]
+159 -> 162
+163 [label="op2: &&",color=green4, style=filled]
+2 -> 163
+164 [label="op2: ||",color=green4, style=filled]
+163 -> 164
+165 [label="op2: &&",color=green4, style=filled]
+164 -> 165
+166 [label="op2: &&",color=green4, style=filled]
+165 -> 166
+167 [label="op2: <=",color=green4, style=filled]
+166 -> 167
+168 [label="op2: +",color=green4, style=filled]
+167 -> 168
+169 [label="op2: *",color=green4, style=filled]
+168 -> 169
+170 [label="op2: -",color=green4, style=filled]
+169 -> 170
+171 [label="op3: mux",color=green4, style=filled]
+170 -> 171
+172 [label="stream: 0",color=crimson, style=filled]
+171 -> 172
+173 [label="ext_ownship_position_x",color=cyan1, style=filled]
+171 -> 173
+174 [label="stream: 1",color=crimson, style=filled]
+171 -> 174
+175 [label="op3: mux",color=green4, style=filled]
+170 -> 175
+176 [label="stream: 0",color=crimson, style=filled]
+175 -> 176
+177 [label="ext_intruder_position_x",color=cyan1, style=filled]
+175 -> 177
+178 [label="stream: 2",color=crimson, style=filled]
+175 -> 178
+179 [label="op2: -",color=green4, style=filled]
+169 -> 179
+180 [label="op3: mux",color=green4, style=filled]
+179 -> 180
+181 [label="stream: 0",color=crimson, style=filled]
+180 -> 181
+182 [label="ext_ownship_position_x",color=cyan1, style=filled]
+180 -> 182
+183 [label="stream: 1",color=crimson, style=filled]
+180 -> 183
+184 [label="op3: mux",color=green4, style=filled]
+179 -> 184
+185 [label="stream: 0",color=crimson, style=filled]
+184 -> 185
+186 [label="ext_intruder_position_x",color=cyan1, style=filled]
+184 -> 186
+187 [label="stream: 2",color=crimson, style=filled]
+184 -> 187
+188 [label="op2: *",color=green4, style=filled]
+168 -> 188
+189 [label="op2: -",color=green4, style=filled]
+188 -> 189
+190 [label="op3: mux",color=green4, style=filled]
+189 -> 190
+191 [label="stream: 0",color=crimson, style=filled]
+190 -> 191
+192 [label="ext_ownship_position_y",color=cyan1, style=filled]
+190 -> 192
+193 [label="stream: 4",color=crimson, style=filled]
+190 -> 193
+194 [label="op3: mux",color=green4, style=filled]
+189 -> 194
+195 [label="stream: 0",color=crimson, style=filled]
+194 -> 195
+196 [label="ext_intruder_position_y",color=cyan1, style=filled]
+194 -> 196
+197 [label="stream: 5",color=crimson, style=filled]
+194 -> 197
+198 [label="op2: -",color=green4, style=filled]
+188 -> 198
+199 [label="op3: mux",color=green4, style=filled]
+198 -> 199
+200 [label="stream: 0",color=crimson, style=filled]
+199 -> 200
+201 [label="ext_ownship_position_y",color=cyan1, style=filled]
+199 -> 201
+202 [label="stream: 4",color=crimson, style=filled]
+199 -> 202
+203 [label="op3: mux",color=green4, style=filled]
+198 -> 203
+204 [label="stream: 0",color=crimson, style=filled]
+203 -> 204
+205 [label="ext_intruder_position_y",color=cyan1, style=filled]
+203 -> 205
+206 [label="stream: 5",color=crimson, style=filled]
+203 -> 206
+207 [label="const: 0.0",color=red1, style=filled]
+167 -> 207
+208 [label="op2: >=",color=green4, style=filled]
+166 -> 208
+209 [label="op2: +",color=green4, style=filled]
+208 -> 209
+210 [label="op2: *",color=green4, style=filled]
+209 -> 210
+211 [label="op2: -",color=green4, style=filled]
+210 -> 211
+212 [label="op3: mux",color=green4, style=filled]
+211 -> 212
+213 [label="stream: 0",color=crimson, style=filled]
+212 -> 213
+214 [label="ext_ownship_position_x",color=cyan1, style=filled]
+212 -> 214
+215 [label="stream: 1",color=crimson, style=filled]
+212 -> 215
+216 [label="op3: mux",color=green4, style=filled]
+211 -> 216
+217 [label="stream: 0",color=crimson, style=filled]
+216 -> 217
+218 [label="ext_intruder_position_x",color=cyan1, style=filled]
+216 -> 218
+219 [label="stream: 2",color=crimson, style=filled]
+216 -> 219
+220 [label="op2: -",color=green4, style=filled]
+210 -> 220
+221 [label="op3: mux",color=green4, style=filled]
+220 -> 221
+222 [label="stream: 0",color=crimson, style=filled]
+221 -> 222
+223 [label="ext_ownship_position_x",color=cyan1, style=filled]
+221 -> 223
+224 [label="stream: 1",color=crimson, style=filled]
+221 -> 224
+225 [label="op3: mux",color=green4, style=filled]
+220 -> 225
+226 [label="stream: 0",color=crimson, style=filled]
+225 -> 226
+227 [label="ext_intruder_position_x",color=cyan1, style=filled]
+225 -> 227
+228 [label="stream: 2",color=crimson, style=filled]
+225 -> 228
+229 [label="op2: *",color=green4, style=filled]
+209 -> 229
+230 [label="op2: -",color=green4, style=filled]
+229 -> 230
+231 [label="op3: mux",color=green4, style=filled]
+230 -> 231
+232 [label="stream: 0",color=crimson, style=filled]
+231 -> 232
+233 [label="ext_ownship_position_y",color=cyan1, style=filled]
+231 -> 233
+234 [label="stream: 4",color=crimson, style=filled]
+231 -> 234
+235 [label="op3: mux",color=green4, style=filled]
+230 -> 235
+236 [label="stream: 0",color=crimson, style=filled]
+235 -> 236
+237 [label="ext_intruder_position_y",color=cyan1, style=filled]
+235 -> 237
+238 [label="stream: 5",color=crimson, style=filled]
+235 -> 238
+239 [label="op2: -",color=green4, style=filled]
+229 -> 239
+240 [label="op3: mux",color=green4, style=filled]
+239 -> 240
+241 [label="stream: 0",color=crimson, style=filled]
+240 -> 241
+242 [label="ext_ownship_position_y",color=cyan1, style=filled]
+240 -> 242
+243 [label="stream: 4",color=crimson, style=filled]
+240 -> 243
+244 [label="op3: mux",color=green4, style=filled]
+239 -> 244
+245 [label="stream: 0",color=crimson, style=filled]
+244 -> 245
+246 [label="ext_intruder_position_y",color=cyan1, style=filled]
+244 -> 246
+247 [label="stream: 5",color=crimson, style=filled]
+244 -> 247
+248 [label="const: 0.0",color=red1, style=filled]
+208 -> 248
+249 [label="op2: &&",color=green4, style=filled]
+165 -> 249
+250 [label="op2: >=",color=green4, style=filled]
+249 -> 250
+251 [label="op2: -",color=green4, style=filled]
+250 -> 251
+252 [label="ext_ownship_velocity_z",color=cyan1, style=filled]
+251 -> 252
+253 [label="op3: mux",color=green4, style=filled]
+251 -> 253
+254 [label="stream: 0",color=crimson, style=filled]
+253 -> 254
+255 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+253 -> 255
+256 [label="stream: 11",color=crimson, style=filled]
+253 -> 256
+257 [label="const: 0.0",color=red1, style=filled]
+250 -> 257
+258 [label="op2: >=",color=green4, style=filled]
+249 -> 258
+259 [label="op2: *",color=green4, style=filled]
+258 -> 259
+260 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+259 -> 260
+261 [label="op2: -",color=green4, style=filled]
+259 -> 261
+262 [label="op3: mux",color=green4, style=filled]
+261 -> 262
+263 [label="stream: 0",color=crimson, style=filled]
+262 -> 263
+264 [label="ext_ownship_position_z",color=cyan1, style=filled]
+262 -> 264
+265 [label="stream: 9",color=crimson, style=filled]
+262 -> 265
+266 [label="op3: mux",color=green4, style=filled]
+261 -> 266
+267 [label="stream: 0",color=crimson, style=filled]
+266 -> 267
+268 [label="ext_intruder_position_z",color=cyan1, style=filled]
+266 -> 268
+269 [label="stream: 10",color=crimson, style=filled]
+266 -> 269
+270 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+258 -> 270
+271 [label="op2: &&",color=green4, style=filled]
+164 -> 271
+272 [label="op2: >",color=green4, style=filled]
+271 -> 272
+273 [label="op2: -",color=green4, style=filled]
+272 -> 273
+274 [label="op2: *",color=green4, style=filled]
+273 -> 274
+275 [label="op2: *",color=green4, style=filled]
+274 -> 275
+276 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+275 -> 276
+277 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+275 -> 277
+278 [label="op2: +",color=green4, style=filled]
+274 -> 278
+279 [label="op2: *",color=green4, style=filled]
+278 -> 279
+280 [label="op2: -",color=green4, style=filled]
+279 -> 280
+281 [label="op3: mux",color=green4, style=filled]
+280 -> 281
+282 [label="stream: 0",color=crimson, style=filled]
+281 -> 282
+283 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+281 -> 283
+284 [label="stream: 7",color=crimson, style=filled]
+281 -> 284
+285 [label="op3: mux",color=green4, style=filled]
+280 -> 285
+286 [label="stream: 0",color=crimson, style=filled]
+285 -> 286
+287 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+285 -> 287
+288 [label="stream: 3",color=crimson, style=filled]
+285 -> 288
+289 [label="op2: -",color=green4, style=filled]
+279 -> 289
+290 [label="op3: mux",color=green4, style=filled]
+289 -> 290
+291 [label="stream: 0",color=crimson, style=filled]
+290 -> 291
+292 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+290 -> 292
+293 [label="stream: 7",color=crimson, style=filled]
+290 -> 293
+294 [label="op3: mux",color=green4, style=filled]
+289 -> 294
+295 [label="stream: 0",color=crimson, style=filled]
+294 -> 295
+296 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+294 -> 296
+297 [label="stream: 3",color=crimson, style=filled]
+294 -> 297
+298 [label="op2: *",color=green4, style=filled]
+278 -> 298
+299 [label="op2: -",color=green4, style=filled]
+298 -> 299
+300 [label="op3: mux",color=green4, style=filled]
+299 -> 300
+301 [label="stream: 0",color=crimson, style=filled]
+300 -> 301
+302 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+300 -> 302
+303 [label="stream: 8",color=crimson, style=filled]
+300 -> 303
+304 [label="op3: mux",color=green4, style=filled]
+299 -> 304
+305 [label="stream: 0",color=crimson, style=filled]
+304 -> 305
+306 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+304 -> 306
+307 [label="stream: 6",color=crimson, style=filled]
+304 -> 307
+308 [label="op2: -",color=green4, style=filled]
+298 -> 308
+309 [label="op3: mux",color=green4, style=filled]
+308 -> 309
+310 [label="stream: 0",color=crimson, style=filled]
+309 -> 310
+311 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+309 -> 311
+312 [label="stream: 8",color=crimson, style=filled]
+309 -> 312
+313 [label="op3: mux",color=green4, style=filled]
+308 -> 313
+314 [label="stream: 0",color=crimson, style=filled]
+313 -> 314
+315 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+313 -> 315
+316 [label="stream: 6",color=crimson, style=filled]
+313 -> 316
+317 [label="op2: *",color=green4, style=filled]
+273 -> 317
+318 [label="op2: -",color=green4, style=filled]
+317 -> 318
+319 [label="op2: *",color=green4, style=filled]
+318 -> 319
+320 [label="op2: -",color=green4, style=filled]
+319 -> 320
+321 [label="op3: mux",color=green4, style=filled]
+320 -> 321
+322 [label="stream: 0",color=crimson, style=filled]
+321 -> 322
+323 [label="ext_ownship_position_x",color=cyan1, style=filled]
+321 -> 323
+324 [label="stream: 1",color=crimson, style=filled]
+321 -> 324
+325 [label="op3: mux",color=green4, style=filled]
+320 -> 325
+326 [label="stream: 0",color=crimson, style=filled]
+325 -> 326
+327 [label="ext_intruder_position_x",color=cyan1, style=filled]
+325 -> 327
+328 [label="stream: 2",color=crimson, style=filled]
+325 -> 328
+329 [label="op2: -",color=green4, style=filled]
+319 -> 329
+330 [label="op3: mux",color=green4, style=filled]
+329 -> 330
+331 [label="stream: 0",color=crimson, style=filled]
+330 -> 331
+332 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+330 -> 332
+333 [label="stream: 8",color=crimson, style=filled]
+330 -> 333
+334 [label="op3: mux",color=green4, style=filled]
+329 -> 334
+335 [label="stream: 0",color=crimson, style=filled]
+334 -> 335
+336 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+334 -> 336
+337 [label="stream: 6",color=crimson, style=filled]
+334 -> 337
+338 [label="op2: *",color=green4, style=filled]
+318 -> 338
+339 [label="op2: -",color=green4, style=filled]
+338 -> 339
+340 [label="op3: mux",color=green4, style=filled]
+339 -> 340
+341 [label="stream: 0",color=crimson, style=filled]
+340 -> 341
+342 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+340 -> 342
+343 [label="stream: 7",color=crimson, style=filled]
+340 -> 343
+344 [label="op3: mux",color=green4, style=filled]
+339 -> 344
+345 [label="stream: 0",color=crimson, style=filled]
+344 -> 345
+346 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+344 -> 346
+347 [label="stream: 3",color=crimson, style=filled]
+344 -> 347
+348 [label="op2: -",color=green4, style=filled]
+338 -> 348
+349 [label="op3: mux",color=green4, style=filled]
+348 -> 349
+350 [label="stream: 0",color=crimson, style=filled]
+349 -> 350
+351 [label="ext_ownship_position_y",color=cyan1, style=filled]
+349 -> 351
+352 [label="stream: 4",color=crimson, style=filled]
+349 -> 352
+353 [label="op3: mux",color=green4, style=filled]
+348 -> 353
+354 [label="stream: 0",color=crimson, style=filled]
+353 -> 354
+355 [label="ext_intruder_position_y",color=cyan1, style=filled]
+353 -> 355
+356 [label="stream: 5",color=crimson, style=filled]
+353 -> 356
+357 [label="op2: -",color=green4, style=filled]
+317 -> 357
+358 [label="op2: *",color=green4, style=filled]
+357 -> 358
+359 [label="op2: -",color=green4, style=filled]
+358 -> 359
+360 [label="op3: mux",color=green4, style=filled]
+359 -> 360
+361 [label="stream: 0",color=crimson, style=filled]
+360 -> 361
+362 [label="ext_ownship_position_x",color=cyan1, style=filled]
+360 -> 362
+363 [label="stream: 1",color=crimson, style=filled]
+360 -> 363
+364 [label="op3: mux",color=green4, style=filled]
+359 -> 364
+365 [label="stream: 0",color=crimson, style=filled]
+364 -> 365
+366 [label="ext_intruder_position_x",color=cyan1, style=filled]
+364 -> 366
+367 [label="stream: 2",color=crimson, style=filled]
+364 -> 367
+368 [label="op2: -",color=green4, style=filled]
+358 -> 368
+369 [label="op3: mux",color=green4, style=filled]
+368 -> 369
+370 [label="stream: 0",color=crimson, style=filled]
+369 -> 370
+371 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+369 -> 371
+372 [label="stream: 8",color=crimson, style=filled]
+369 -> 372
+373 [label="op3: mux",color=green4, style=filled]
+368 -> 373
+374 [label="stream: 0",color=crimson, style=filled]
+373 -> 374
+375 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+373 -> 375
+376 [label="stream: 6",color=crimson, style=filled]
+373 -> 376
+377 [label="op2: *",color=green4, style=filled]
+357 -> 377
+378 [label="op2: -",color=green4, style=filled]
+377 -> 378
+379 [label="op3: mux",color=green4, style=filled]
+378 -> 379
+380 [label="stream: 0",color=crimson, style=filled]
+379 -> 380
+381 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+379 -> 381
+382 [label="stream: 7",color=crimson, style=filled]
+379 -> 382
+383 [label="op3: mux",color=green4, style=filled]
+378 -> 383
+384 [label="stream: 0",color=crimson, style=filled]
+383 -> 384
+385 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+383 -> 385
+386 [label="stream: 3",color=crimson, style=filled]
+383 -> 386
+387 [label="op2: -",color=green4, style=filled]
+377 -> 387
+388 [label="op3: mux",color=green4, style=filled]
+387 -> 388
+389 [label="stream: 0",color=crimson, style=filled]
+388 -> 389
+390 [label="ext_ownship_position_y",color=cyan1, style=filled]
+388 -> 390
+391 [label="stream: 4",color=crimson, style=filled]
+388 -> 391
+392 [label="op3: mux",color=green4, style=filled]
+387 -> 392
+393 [label="stream: 0",color=crimson, style=filled]
+392 -> 393
+394 [label="ext_intruder_position_y",color=cyan1, style=filled]
+392 -> 394
+395 [label="stream: 5",color=crimson, style=filled]
+392 -> 395
+396 [label="const: 0.0",color=red1, style=filled]
+272 -> 396
+397 [label="op2: &&",color=green4, style=filled]
+271 -> 397
+398 [label="op2: >",color=green4, style=filled]
+397 -> 398
+399 [label="op2: /",color=green4, style=filled]
+398 -> 399
+400 [label="op2: +",color=green4, style=filled]
+399 -> 400
+401 [label="op2: -",color=green4, style=filled]
+400 -> 401
+402 [label="const: 0.0",color=red1, style=filled]
+401 -> 402
+403 [label="op2: +",color=green4, style=filled]
+401 -> 403
+404 [label="op2: *",color=green4, style=filled]
+403 -> 404
+405 [label="op2: -",color=green4, style=filled]
+404 -> 405
+406 [label="op3: mux",color=green4, style=filled]
+405 -> 406
+407 [label="stream: 0",color=crimson, style=filled]
+406 -> 407
+408 [label="ext_ownship_position_x",color=cyan1, style=filled]
+406 -> 408
+409 [label="stream: 1",color=crimson, style=filled]
+406 -> 409
+410 [label="op3: mux",color=green4, style=filled]
+405 -> 410
+411 [label="stream: 0",color=crimson, style=filled]
+410 -> 411
+412 [label="ext_intruder_position_x",color=cyan1, style=filled]
+410 -> 412
+413 [label="stream: 2",color=crimson, style=filled]
+410 -> 413
+414 [label="op2: -",color=green4, style=filled]
+404 -> 414
+415 [label="op3: mux",color=green4, style=filled]
+414 -> 415
+416 [label="stream: 0",color=crimson, style=filled]
+415 -> 416
+417 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+415 -> 417
+418 [label="stream: 7",color=crimson, style=filled]
+415 -> 418
+419 [label="op3: mux",color=green4, style=filled]
+414 -> 419
+420 [label="stream: 0",color=crimson, style=filled]
+419 -> 420
+421 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+419 -> 421
+422 [label="stream: 3",color=crimson, style=filled]
+419 -> 422
+423 [label="op2: *",color=green4, style=filled]
+403 -> 423
+424 [label="op2: -",color=green4, style=filled]
+423 -> 424
+425 [label="op3: mux",color=green4, style=filled]
+424 -> 425
+426 [label="stream: 0",color=crimson, style=filled]
+425 -> 426
+427 [label="ext_ownship_position_y",color=cyan1, style=filled]
+425 -> 427
+428 [label="stream: 4",color=crimson, style=filled]
+425 -> 428
+429 [label="op3: mux",color=green4, style=filled]
+424 -> 429
+430 [label="stream: 0",color=crimson, style=filled]
+429 -> 430
+431 [label="ext_intruder_position_y",color=cyan1, style=filled]
+429 -> 431
+432 [label="stream: 5",color=crimson, style=filled]
+429 -> 432
+433 [label="op2: -",color=green4, style=filled]
+423 -> 433
+434 [label="op3: mux",color=green4, style=filled]
+433 -> 434
+435 [label="stream: 0",color=crimson, style=filled]
+434 -> 435
+436 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+434 -> 436
+437 [label="stream: 8",color=crimson, style=filled]
+434 -> 437
+438 [label="op3: mux",color=green4, style=filled]
+433 -> 438
+439 [label="stream: 0",color=crimson, style=filled]
+438 -> 439
+440 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+438 -> 440
+441 [label="stream: 6",color=crimson, style=filled]
+438 -> 441
+442 [label="op2: *",color=green4, style=filled]
+400 -> 442
+443 [label="op3: mux",color=green4, style=filled]
+442 -> 443
+444 [label="op2: >=",color=green4, style=filled]
+443 -> 444
+445 [label="op2: *",color=green4, style=filled]
+444 -> 445
+446 [label="op2: -",color=green4, style=filled]
+445 -> 446
+447 [label="op3: mux",color=green4, style=filled]
+446 -> 447
+448 [label="stream: 0",color=crimson, style=filled]
+447 -> 448
+449 [label="ext_ownship_position_z",color=cyan1, style=filled]
+447 -> 449
+450 [label="stream: 9",color=crimson, style=filled]
+447 -> 450
+451 [label="op3: mux",color=green4, style=filled]
+446 -> 451
+452 [label="stream: 0",color=crimson, style=filled]
+451 -> 452
+453 [label="ext_intruder_position_z",color=cyan1, style=filled]
+451 -> 453
+454 [label="stream: 10",color=crimson, style=filled]
+451 -> 454
+455 [label="ext_ident_double_4",color=cyan4, style=filled]
+445 -> 455
+467 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+444 -> 467
+468 [label="op2: *",color=green4, style=filled]
+443 -> 468
+469 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+468 -> 469
+470 [label="op1: signum",color=green4, style=filled]
+468 -> 470
+471 [label="op2: -",color=green4, style=filled]
+470 -> 471
+472 [label="op3: mux",color=green4, style=filled]
+471 -> 472
+473 [label="stream: 0",color=crimson, style=filled]
+472 -> 473
+474 [label="ext_ownship_position_z",color=cyan1, style=filled]
+472 -> 474
+475 [label="stream: 9",color=crimson, style=filled]
+472 -> 475
+476 [label="op3: mux",color=green4, style=filled]
+471 -> 476
+477 [label="stream: 0",color=crimson, style=filled]
+476 -> 477
+478 [label="ext_intruder_position_z",color=cyan1, style=filled]
+476 -> 478
+479 [label="stream: 10",color=crimson, style=filled]
+476 -> 479
+480 [label="const: -1.0",color=red1, style=filled]
+443 -> 480
+481 [label="ext_sqrt_5",color=cyan4, style=filled]
+442 -> 481
+645 [label="op2: +",color=green4, style=filled]
+399 -> 645
+646 [label="op2: *",color=green4, style=filled]
+645 -> 646
+647 [label="op2: -",color=green4, style=filled]
+646 -> 647
+648 [label="op3: mux",color=green4, style=filled]
+647 -> 648
+649 [label="stream: 0",color=crimson, style=filled]
+648 -> 649
+650 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+648 -> 650
+651 [label="stream: 7",color=crimson, style=filled]
+648 -> 651
+652 [label="op3: mux",color=green4, style=filled]
+647 -> 652
+653 [label="stream: 0",color=crimson, style=filled]
+652 -> 653
+654 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+652 -> 654
+655 [label="stream: 3",color=crimson, style=filled]
+652 -> 655
+656 [label="op2: -",color=green4, style=filled]
+646 -> 656
+657 [label="op3: mux",color=green4, style=filled]
+656 -> 657
+658 [label="stream: 0",color=crimson, style=filled]
+657 -> 658
+659 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+657 -> 659
+660 [label="stream: 7",color=crimson, style=filled]
+657 -> 660
+661 [label="op3: mux",color=green4, style=filled]
+656 -> 661
+662 [label="stream: 0",color=crimson, style=filled]
+661 -> 662
+663 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+661 -> 663
+664 [label="stream: 3",color=crimson, style=filled]
+661 -> 664
+665 [label="op2: *",color=green4, style=filled]
+645 -> 665
+666 [label="op2: -",color=green4, style=filled]
+665 -> 666
+667 [label="op3: mux",color=green4, style=filled]
+666 -> 667
+668 [label="stream: 0",color=crimson, style=filled]
+667 -> 668
+669 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+667 -> 669
+670 [label="stream: 8",color=crimson, style=filled]
+667 -> 670
+671 [label="op3: mux",color=green4, style=filled]
+666 -> 671
+672 [label="stream: 0",color=crimson, style=filled]
+671 -> 672
+673 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+671 -> 673
+674 [label="stream: 6",color=crimson, style=filled]
+671 -> 674
+675 [label="op2: -",color=green4, style=filled]
+665 -> 675
+676 [label="op3: mux",color=green4, style=filled]
+675 -> 676
+677 [label="stream: 0",color=crimson, style=filled]
+676 -> 677
+678 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+676 -> 678
+679 [label="stream: 8",color=crimson, style=filled]
+676 -> 679
+680 [label="op3: mux",color=green4, style=filled]
+675 -> 680
+681 [label="stream: 0",color=crimson, style=filled]
+680 -> 681
+682 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+680 -> 682
+683 [label="stream: 6",color=crimson, style=filled]
+680 -> 683
+684 [label="const: 0.0",color=red1, style=filled]
+398 -> 684
+685 [label="op2: &&",color=green4, style=filled]
+397 -> 685
+686 [label="op2: ||",color=green4, style=filled]
+685 -> 686
+687 [label="op2: <",color=green4, style=filled]
+686 -> 687
+688 [label="op2: +",color=green4, style=filled]
+687 -> 688
+689 [label="op2: *",color=green4, style=filled]
+688 -> 689
+690 [label="op2: -",color=green4, style=filled]
+689 -> 690
+691 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+690 -> 691
+692 [label="op3: mux",color=green4, style=filled]
+690 -> 692
+693 [label="stream: 0",color=crimson, style=filled]
+692 -> 693
+694 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+692 -> 694
+695 [label="stream: 3",color=crimson, style=filled]
+692 -> 695
+696 [label="op2: +",color=green4, style=filled]
+689 -> 696
+697 [label="op2: -",color=green4, style=filled]
+696 -> 697
+698 [label="op3: mux",color=green4, style=filled]
+697 -> 698
+699 [label="stream: 0",color=crimson, style=filled]
+698 -> 699
+700 [label="ext_ownship_position_x",color=cyan1, style=filled]
+698 -> 700
+701 [label="stream: 1",color=crimson, style=filled]
+698 -> 701
+702 [label="op3: mux",color=green4, style=filled]
+697 -> 702
+703 [label="stream: 0",color=crimson, style=filled]
+702 -> 703
+704 [label="ext_intruder_position_x",color=cyan1, style=filled]
+702 -> 704
+705 [label="stream: 2",color=crimson, style=filled]
+702 -> 705
+706 [label="op2: *",color=green4, style=filled]
+696 -> 706
+707 [label="op2: /",color=green4, style=filled]
+706 -> 707
+708 [label="op2: +",color=green4, style=filled]
+707 -> 708
+709 [label="op2: -",color=green4, style=filled]
+708 -> 709
+710 [label="const: 0.0",color=red1, style=filled]
+709 -> 710
+711 [label="op2: +",color=green4, style=filled]
+709 -> 711
+712 [label="op2: *",color=green4, style=filled]
+711 -> 712
+713 [label="op2: -",color=green4, style=filled]
+712 -> 713
+714 [label="op3: mux",color=green4, style=filled]
+713 -> 714
+715 [label="stream: 0",color=crimson, style=filled]
+714 -> 715
+716 [label="ext_ownship_position_x",color=cyan1, style=filled]
+714 -> 716
+717 [label="stream: 1",color=crimson, style=filled]
+714 -> 717
+718 [label="op3: mux",color=green4, style=filled]
+713 -> 718
+719 [label="stream: 0",color=crimson, style=filled]
+718 -> 719
+720 [label="ext_intruder_position_x",color=cyan1, style=filled]
+718 -> 720
+721 [label="stream: 2",color=crimson, style=filled]
+718 -> 721
+722 [label="op2: -",color=green4, style=filled]
+712 -> 722
+723 [label="op3: mux",color=green4, style=filled]
+722 -> 723
+724 [label="stream: 0",color=crimson, style=filled]
+723 -> 724
+725 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+723 -> 725
+726 [label="stream: 7",color=crimson, style=filled]
+723 -> 726
+727 [label="op3: mux",color=green4, style=filled]
+722 -> 727
+728 [label="stream: 0",color=crimson, style=filled]
+727 -> 728
+729 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+727 -> 729
+730 [label="stream: 3",color=crimson, style=filled]
+727 -> 730
+731 [label="op2: *",color=green4, style=filled]
+711 -> 731
+732 [label="op2: -",color=green4, style=filled]
+731 -> 732
+733 [label="op3: mux",color=green4, style=filled]
+732 -> 733
+734 [label="stream: 0",color=crimson, style=filled]
+733 -> 734
+735 [label="ext_ownship_position_y",color=cyan1, style=filled]
+733 -> 735
+736 [label="stream: 4",color=crimson, style=filled]
+733 -> 736
+737 [label="op3: mux",color=green4, style=filled]
+732 -> 737
+738 [label="stream: 0",color=crimson, style=filled]
+737 -> 738
+739 [label="ext_intruder_position_y",color=cyan1, style=filled]
+737 -> 739
+740 [label="stream: 5",color=crimson, style=filled]
+737 -> 740
+741 [label="op2: -",color=green4, style=filled]
+731 -> 741
+742 [label="op3: mux",color=green4, style=filled]
+741 -> 742
+743 [label="stream: 0",color=crimson, style=filled]
+742 -> 743
+744 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+742 -> 744
+745 [label="stream: 8",color=crimson, style=filled]
+742 -> 745
+746 [label="op3: mux",color=green4, style=filled]
+741 -> 746
+747 [label="stream: 0",color=crimson, style=filled]
+746 -> 747
+748 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+746 -> 748
+749 [label="stream: 6",color=crimson, style=filled]
+746 -> 749
+750 [label="op2: *",color=green4, style=filled]
+708 -> 750
+751 [label="op3: mux",color=green4, style=filled]
+750 -> 751
+752 [label="op2: >=",color=green4, style=filled]
+751 -> 752
+753 [label="op2: *",color=green4, style=filled]
+752 -> 753
+754 [label="op2: -",color=green4, style=filled]
+753 -> 754
+755 [label="op3: mux",color=green4, style=filled]
+754 -> 755
+756 [label="stream: 0",color=crimson, style=filled]
+755 -> 756
+757 [label="ext_ownship_position_z",color=cyan1, style=filled]
+755 -> 757
+758 [label="stream: 9",color=crimson, style=filled]
+755 -> 758
+759 [label="op3: mux",color=green4, style=filled]
+754 -> 759
+760 [label="stream: 0",color=crimson, style=filled]
+759 -> 760
+761 [label="ext_intruder_position_z",color=cyan1, style=filled]
+759 -> 761
+762 [label="stream: 10",color=crimson, style=filled]
+759 -> 762
+763 [label="ext_ident_double_6",color=cyan4, style=filled]
+753 -> 763
+775 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+752 -> 775
+776 [label="op2: *",color=green4, style=filled]
+751 -> 776
+777 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+776 -> 777
+778 [label="op1: signum",color=green4, style=filled]
+776 -> 778
+779 [label="op2: -",color=green4, style=filled]
+778 -> 779
+780 [label="op3: mux",color=green4, style=filled]
+779 -> 780
+781 [label="stream: 0",color=crimson, style=filled]
+780 -> 781
+782 [label="ext_ownship_position_z",color=cyan1, style=filled]
+780 -> 782
+783 [label="stream: 9",color=crimson, style=filled]
+780 -> 783
+784 [label="op3: mux",color=green4, style=filled]
+779 -> 784
+785 [label="stream: 0",color=crimson, style=filled]
+784 -> 785
+786 [label="ext_intruder_position_z",color=cyan1, style=filled]
+784 -> 786
+787 [label="stream: 10",color=crimson, style=filled]
+784 -> 787
+788 [label="const: -1.0",color=red1, style=filled]
+751 -> 788
+789 [label="ext_sqrt_7",color=cyan4, style=filled]
+750 -> 789
+953 [label="op2: +",color=green4, style=filled]
+707 -> 953
+954 [label="op2: *",color=green4, style=filled]
+953 -> 954
+955 [label="op2: -",color=green4, style=filled]
+954 -> 955
+956 [label="op3: mux",color=green4, style=filled]
+955 -> 956
+957 [label="stream: 0",color=crimson, style=filled]
+956 -> 957
+958 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+956 -> 958
+959 [label="stream: 7",color=crimson, style=filled]
+956 -> 959
+960 [label="op3: mux",color=green4, style=filled]
+955 -> 960
+961 [label="stream: 0",color=crimson, style=filled]
+960 -> 961
+962 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+960 -> 962
+963 [label="stream: 3",color=crimson, style=filled]
+960 -> 963
+964 [label="op2: -",color=green4, style=filled]
+954 -> 964
+965 [label="op3: mux",color=green4, style=filled]
+964 -> 965
+966 [label="stream: 0",color=crimson, style=filled]
+965 -> 966
+967 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+965 -> 967
+968 [label="stream: 7",color=crimson, style=filled]
+965 -> 968
+969 [label="op3: mux",color=green4, style=filled]
+964 -> 969
+970 [label="stream: 0",color=crimson, style=filled]
+969 -> 970
+971 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+969 -> 971
+972 [label="stream: 3",color=crimson, style=filled]
+969 -> 972
+973 [label="op2: *",color=green4, style=filled]
+953 -> 973
+974 [label="op2: -",color=green4, style=filled]
+973 -> 974
+975 [label="op3: mux",color=green4, style=filled]
+974 -> 975
+976 [label="stream: 0",color=crimson, style=filled]
+975 -> 976
+977 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+975 -> 977
+978 [label="stream: 8",color=crimson, style=filled]
+975 -> 978
+979 [label="op3: mux",color=green4, style=filled]
+974 -> 979
+980 [label="stream: 0",color=crimson, style=filled]
+979 -> 980
+981 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+979 -> 981
+982 [label="stream: 6",color=crimson, style=filled]
+979 -> 982
+983 [label="op2: -",color=green4, style=filled]
+973 -> 983
+984 [label="op3: mux",color=green4, style=filled]
+983 -> 984
+985 [label="stream: 0",color=crimson, style=filled]
+984 -> 985
+986 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+984 -> 986
+987 [label="stream: 8",color=crimson, style=filled]
+984 -> 987
+988 [label="op3: mux",color=green4, style=filled]
+983 -> 988
+989 [label="stream: 0",color=crimson, style=filled]
+988 -> 989
+990 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+988 -> 990
+991 [label="stream: 6",color=crimson, style=filled]
+988 -> 991
+992 [label="op2: -",color=green4, style=filled]
+706 -> 992
+993 [label="op3: mux",color=green4, style=filled]
+992 -> 993
+994 [label="stream: 0",color=crimson, style=filled]
+993 -> 994
+995 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+993 -> 995
+996 [label="stream: 7",color=crimson, style=filled]
+993 -> 996
+997 [label="op3: mux",color=green4, style=filled]
+992 -> 997
+998 [label="stream: 0",color=crimson, style=filled]
+997 -> 998
+999 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+997 -> 999
+1000 [label="stream: 3",color=crimson, style=filled]
+997 -> 1000
+1001 [label="op2: *",color=green4, style=filled]
+688 -> 1001
+1002 [label="op2: -",color=green4, style=filled]
+1001 -> 1002
+1003 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1002 -> 1003
+1004 [label="op3: mux",color=green4, style=filled]
+1002 -> 1004
+1005 [label="stream: 0",color=crimson, style=filled]
+1004 -> 1005
+1006 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1004 -> 1006
+1007 [label="stream: 6",color=crimson, style=filled]
+1004 -> 1007
+1008 [label="op2: +",color=green4, style=filled]
+1001 -> 1008
+1009 [label="op2: -",color=green4, style=filled]
+1008 -> 1009
+1010 [label="op3: mux",color=green4, style=filled]
+1009 -> 1010
+1011 [label="stream: 0",color=crimson, style=filled]
+1010 -> 1011
+1012 [label="ext_ownship_position_y",color=cyan1, style=filled]
+1010 -> 1012
+1013 [label="stream: 4",color=crimson, style=filled]
+1010 -> 1013
+1014 [label="op3: mux",color=green4, style=filled]
+1009 -> 1014
+1015 [label="stream: 0",color=crimson, style=filled]
+1014 -> 1015
+1016 [label="ext_intruder_position_y",color=cyan1, style=filled]
+1014 -> 1016
+1017 [label="stream: 5",color=crimson, style=filled]
+1014 -> 1017
+1018 [label="op2: *",color=green4, style=filled]
+1008 -> 1018
+1019 [label="op2: /",color=green4, style=filled]
+1018 -> 1019
+1020 [label="op2: +",color=green4, style=filled]
+1019 -> 1020
+1021 [label="op2: -",color=green4, style=filled]
+1020 -> 1021
+1022 [label="const: 0.0",color=red1, style=filled]
+1021 -> 1022
+1023 [label="op2: +",color=green4, style=filled]
+1021 -> 1023
+1024 [label="op2: *",color=green4, style=filled]
+1023 -> 1024
+1025 [label="op2: -",color=green4, style=filled]
+1024 -> 1025
+1026 [label="op3: mux",color=green4, style=filled]
+1025 -> 1026
+1027 [label="stream: 0",color=crimson, style=filled]
+1026 -> 1027
+1028 [label="ext_ownship_position_x",color=cyan1, style=filled]
+1026 -> 1028
+1029 [label="stream: 1",color=crimson, style=filled]
+1026 -> 1029
+1030 [label="op3: mux",color=green4, style=filled]
+1025 -> 1030
+1031 [label="stream: 0",color=crimson, style=filled]
+1030 -> 1031
+1032 [label="ext_intruder_position_x",color=cyan1, style=filled]
+1030 -> 1032
+1033 [label="stream: 2",color=crimson, style=filled]
+1030 -> 1033
+1034 [label="op2: -",color=green4, style=filled]
+1024 -> 1034
+1035 [label="op3: mux",color=green4, style=filled]
+1034 -> 1035
+1036 [label="stream: 0",color=crimson, style=filled]
+1035 -> 1036
+1037 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1035 -> 1037
+1038 [label="stream: 7",color=crimson, style=filled]
+1035 -> 1038
+1039 [label="op3: mux",color=green4, style=filled]
+1034 -> 1039
+1040 [label="stream: 0",color=crimson, style=filled]
+1039 -> 1040
+1041 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1039 -> 1041
+1042 [label="stream: 3",color=crimson, style=filled]
+1039 -> 1042
+1043 [label="op2: *",color=green4, style=filled]
+1023 -> 1043
+1044 [label="op2: -",color=green4, style=filled]
+1043 -> 1044
+1045 [label="op3: mux",color=green4, style=filled]
+1044 -> 1045
+1046 [label="stream: 0",color=crimson, style=filled]
+1045 -> 1046
+1047 [label="ext_ownship_position_y",color=cyan1, style=filled]
+1045 -> 1047
+1048 [label="stream: 4",color=crimson, style=filled]
+1045 -> 1048
+1049 [label="op3: mux",color=green4, style=filled]
+1044 -> 1049
+1050 [label="stream: 0",color=crimson, style=filled]
+1049 -> 1050
+1051 [label="ext_intruder_position_y",color=cyan1, style=filled]
+1049 -> 1051
+1052 [label="stream: 5",color=crimson, style=filled]
+1049 -> 1052
+1053 [label="op2: -",color=green4, style=filled]
+1043 -> 1053
+1054 [label="op3: mux",color=green4, style=filled]
+1053 -> 1054
+1055 [label="stream: 0",color=crimson, style=filled]
+1054 -> 1055
+1056 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1054 -> 1056
+1057 [label="stream: 8",color=crimson, style=filled]
+1054 -> 1057
+1058 [label="op3: mux",color=green4, style=filled]
+1053 -> 1058
+1059 [label="stream: 0",color=crimson, style=filled]
+1058 -> 1059
+1060 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1058 -> 1060
+1061 [label="stream: 6",color=crimson, style=filled]
+1058 -> 1061
+1062 [label="op2: *",color=green4, style=filled]
+1020 -> 1062
+1063 [label="op3: mux",color=green4, style=filled]
+1062 -> 1063
+1064 [label="op2: >=",color=green4, style=filled]
+1063 -> 1064
+1065 [label="op2: *",color=green4, style=filled]
+1064 -> 1065
+1066 [label="op2: -",color=green4, style=filled]
+1065 -> 1066
+1067 [label="op3: mux",color=green4, style=filled]
+1066 -> 1067
+1068 [label="stream: 0",color=crimson, style=filled]
+1067 -> 1068
+1069 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1067 -> 1069
+1070 [label="stream: 9",color=crimson, style=filled]
+1067 -> 1070
+1071 [label="op3: mux",color=green4, style=filled]
+1066 -> 1071
+1072 [label="stream: 0",color=crimson, style=filled]
+1071 -> 1072
+1073 [label="ext_intruder_position_z",color=cyan1, style=filled]
+1071 -> 1073
+1074 [label="stream: 10",color=crimson, style=filled]
+1071 -> 1074
+1075 [label="ext_ident_double_8",color=cyan4, style=filled]
+1065 -> 1075
+1087 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+1064 -> 1087
+1088 [label="op2: *",color=green4, style=filled]
+1063 -> 1088
+1089 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+1088 -> 1089
+1090 [label="op1: signum",color=green4, style=filled]
+1088 -> 1090
+1091 [label="op2: -",color=green4, style=filled]
+1090 -> 1091
+1092 [label="op3: mux",color=green4, style=filled]
+1091 -> 1092
+1093 [label="stream: 0",color=crimson, style=filled]
+1092 -> 1093
+1094 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1092 -> 1094
+1095 [label="stream: 9",color=crimson, style=filled]
+1092 -> 1095
+1096 [label="op3: mux",color=green4, style=filled]
+1091 -> 1096
+1097 [label="stream: 0",color=crimson, style=filled]
+1096 -> 1097
+1098 [label="ext_intruder_position_z",color=cyan1, style=filled]
+1096 -> 1098
+1099 [label="stream: 10",color=crimson, style=filled]
+1096 -> 1099
+1100 [label="const: -1.0",color=red1, style=filled]
+1063 -> 1100
+1101 [label="ext_sqrt_9",color=cyan4, style=filled]
+1062 -> 1101
+1265 [label="op2: +",color=green4, style=filled]
+1019 -> 1265
+1266 [label="op2: *",color=green4, style=filled]
+1265 -> 1266
+1267 [label="op2: -",color=green4, style=filled]
+1266 -> 1267
+1268 [label="op3: mux",color=green4, style=filled]
+1267 -> 1268
+1269 [label="stream: 0",color=crimson, style=filled]
+1268 -> 1269
+1270 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1268 -> 1270
+1271 [label="stream: 7",color=crimson, style=filled]
+1268 -> 1271
+1272 [label="op3: mux",color=green4, style=filled]
+1267 -> 1272
+1273 [label="stream: 0",color=crimson, style=filled]
+1272 -> 1273
+1274 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1272 -> 1274
+1275 [label="stream: 3",color=crimson, style=filled]
+1272 -> 1275
+1276 [label="op2: -",color=green4, style=filled]
+1266 -> 1276
+1277 [label="op3: mux",color=green4, style=filled]
+1276 -> 1277
+1278 [label="stream: 0",color=crimson, style=filled]
+1277 -> 1278
+1279 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1277 -> 1279
+1280 [label="stream: 7",color=crimson, style=filled]
+1277 -> 1280
+1281 [label="op3: mux",color=green4, style=filled]
+1276 -> 1281
+1282 [label="stream: 0",color=crimson, style=filled]
+1281 -> 1282
+1283 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1281 -> 1283
+1284 [label="stream: 3",color=crimson, style=filled]
+1281 -> 1284
+1285 [label="op2: *",color=green4, style=filled]
+1265 -> 1285
+1286 [label="op2: -",color=green4, style=filled]
+1285 -> 1286
+1287 [label="op3: mux",color=green4, style=filled]
+1286 -> 1287
+1288 [label="stream: 0",color=crimson, style=filled]
+1287 -> 1288
+1289 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1287 -> 1289
+1290 [label="stream: 8",color=crimson, style=filled]
+1287 -> 1290
+1291 [label="op3: mux",color=green4, style=filled]
+1286 -> 1291
+1292 [label="stream: 0",color=crimson, style=filled]
+1291 -> 1292
+1293 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1291 -> 1293
+1294 [label="stream: 6",color=crimson, style=filled]
+1291 -> 1294
+1295 [label="op2: -",color=green4, style=filled]
+1285 -> 1295
+1296 [label="op3: mux",color=green4, style=filled]
+1295 -> 1296
+1297 [label="stream: 0",color=crimson, style=filled]
+1296 -> 1297
+1298 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1296 -> 1298
+1299 [label="stream: 8",color=crimson, style=filled]
+1296 -> 1299
+1300 [label="op3: mux",color=green4, style=filled]
+1295 -> 1300
+1301 [label="stream: 0",color=crimson, style=filled]
+1300 -> 1301
+1302 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1300 -> 1302
+1303 [label="stream: 6",color=crimson, style=filled]
+1300 -> 1303
+1304 [label="op2: -",color=green4, style=filled]
+1018 -> 1304
+1305 [label="op3: mux",color=green4, style=filled]
+1304 -> 1305
+1306 [label="stream: 0",color=crimson, style=filled]
+1305 -> 1306
+1307 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1305 -> 1307
+1308 [label="stream: 8",color=crimson, style=filled]
+1305 -> 1308
+1309 [label="op3: mux",color=green4, style=filled]
+1304 -> 1309
+1310 [label="stream: 0",color=crimson, style=filled]
+1309 -> 1310
+1311 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1309 -> 1311
+1312 [label="stream: 6",color=crimson, style=filled]
+1309 -> 1312
+1313 [label="const: 0.0",color=red1, style=filled]
+687 -> 1313
+1314 [label="op2: >",color=green4, style=filled]
+686 -> 1314
+1315 [label="op2: +",color=green4, style=filled]
+1314 -> 1315
+1316 [label="op2: *",color=green4, style=filled]
+1315 -> 1316
+1317 [label="op2: -",color=green4, style=filled]
+1316 -> 1317
+1318 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1317 -> 1318
+1319 [label="op3: mux",color=green4, style=filled]
+1317 -> 1319
+1320 [label="stream: 0",color=crimson, style=filled]
+1319 -> 1320
+1321 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1319 -> 1321
+1322 [label="stream: 3",color=crimson, style=filled]
+1319 -> 1322
+1323 [label="op2: +",color=green4, style=filled]
+1316 -> 1323
+1324 [label="op2: -",color=green4, style=filled]
+1323 -> 1324
+1325 [label="op3: mux",color=green4, style=filled]
+1324 -> 1325
+1326 [label="stream: 0",color=crimson, style=filled]
+1325 -> 1326
+1327 [label="ext_ownship_position_x",color=cyan1, style=filled]
+1325 -> 1327
+1328 [label="stream: 1",color=crimson, style=filled]
+1325 -> 1328
+1329 [label="op3: mux",color=green4, style=filled]
+1324 -> 1329
+1330 [label="stream: 0",color=crimson, style=filled]
+1329 -> 1330
+1331 [label="ext_intruder_position_x",color=cyan1, style=filled]
+1329 -> 1331
+1332 [label="stream: 2",color=crimson, style=filled]
+1329 -> 1332
+1333 [label="op2: *",color=green4, style=filled]
+1323 -> 1333
+1334 [label="op2: /",color=green4, style=filled]
+1333 -> 1334
+1335 [label="op2: +",color=green4, style=filled]
+1334 -> 1335
+1336 [label="op2: -",color=green4, style=filled]
+1335 -> 1336
+1337 [label="const: 0.0",color=red1, style=filled]
+1336 -> 1337
+1338 [label="op2: +",color=green4, style=filled]
+1336 -> 1338
+1339 [label="op2: *",color=green4, style=filled]
+1338 -> 1339
+1340 [label="op2: -",color=green4, style=filled]
+1339 -> 1340
+1341 [label="op3: mux",color=green4, style=filled]
+1340 -> 1341
+1342 [label="stream: 0",color=crimson, style=filled]
+1341 -> 1342
+1343 [label="ext_ownship_position_x",color=cyan1, style=filled]
+1341 -> 1343
+1344 [label="stream: 1",color=crimson, style=filled]
+1341 -> 1344
+1345 [label="op3: mux",color=green4, style=filled]
+1340 -> 1345
+1346 [label="stream: 0",color=crimson, style=filled]
+1345 -> 1346
+1347 [label="ext_intruder_position_x",color=cyan1, style=filled]
+1345 -> 1347
+1348 [label="stream: 2",color=crimson, style=filled]
+1345 -> 1348
+1349 [label="op2: -",color=green4, style=filled]
+1339 -> 1349
+1350 [label="op3: mux",color=green4, style=filled]
+1349 -> 1350
+1351 [label="stream: 0",color=crimson, style=filled]
+1350 -> 1351
+1352 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1350 -> 1352
+1353 [label="stream: 7",color=crimson, style=filled]
+1350 -> 1353
+1354 [label="op3: mux",color=green4, style=filled]
+1349 -> 1354
+1355 [label="stream: 0",color=crimson, style=filled]
+1354 -> 1355
+1356 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1354 -> 1356
+1357 [label="stream: 3",color=crimson, style=filled]
+1354 -> 1357
+1358 [label="op2: *",color=green4, style=filled]
+1338 -> 1358
+1359 [label="op2: -",color=green4, style=filled]
+1358 -> 1359
+1360 [label="op3: mux",color=green4, style=filled]
+1359 -> 1360
+1361 [label="stream: 0",color=crimson, style=filled]
+1360 -> 1361
+1362 [label="ext_ownship_position_y",color=cyan1, style=filled]
+1360 -> 1362
+1363 [label="stream: 4",color=crimson, style=filled]
+1360 -> 1363
+1364 [label="op3: mux",color=green4, style=filled]
+1359 -> 1364
+1365 [label="stream: 0",color=crimson, style=filled]
+1364 -> 1365
+1366 [label="ext_intruder_position_y",color=cyan1, style=filled]
+1364 -> 1366
+1367 [label="stream: 5",color=crimson, style=filled]
+1364 -> 1367
+1368 [label="op2: -",color=green4, style=filled]
+1358 -> 1368
+1369 [label="op3: mux",color=green4, style=filled]
+1368 -> 1369
+1370 [label="stream: 0",color=crimson, style=filled]
+1369 -> 1370
+1371 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1369 -> 1371
+1372 [label="stream: 8",color=crimson, style=filled]
+1369 -> 1372
+1373 [label="op3: mux",color=green4, style=filled]
+1368 -> 1373
+1374 [label="stream: 0",color=crimson, style=filled]
+1373 -> 1374
+1375 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1373 -> 1375
+1376 [label="stream: 6",color=crimson, style=filled]
+1373 -> 1376
+1377 [label="op2: *",color=green4, style=filled]
+1335 -> 1377
+1378 [label="op3: mux",color=green4, style=filled]
+1377 -> 1378
+1379 [label="op2: >=",color=green4, style=filled]
+1378 -> 1379
+1380 [label="op2: *",color=green4, style=filled]
+1379 -> 1380
+1381 [label="op2: -",color=green4, style=filled]
+1380 -> 1381
+1382 [label="op3: mux",color=green4, style=filled]
+1381 -> 1382
+1383 [label="stream: 0",color=crimson, style=filled]
+1382 -> 1383
+1384 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1382 -> 1384
+1385 [label="stream: 9",color=crimson, style=filled]
+1382 -> 1385
+1386 [label="op3: mux",color=green4, style=filled]
+1381 -> 1386
+1387 [label="stream: 0",color=crimson, style=filled]
+1386 -> 1387
+1388 [label="ext_intruder_position_z",color=cyan1, style=filled]
+1386 -> 1388
+1389 [label="stream: 10",color=crimson, style=filled]
+1386 -> 1389
+1390 [label="ext_ident_double_10",color=cyan4, style=filled]
+1380 -> 1390
+1402 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+1379 -> 1402
+1403 [label="op2: *",color=green4, style=filled]
+1378 -> 1403
+1404 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+1403 -> 1404
+1405 [label="op1: signum",color=green4, style=filled]
+1403 -> 1405
+1406 [label="op2: -",color=green4, style=filled]
+1405 -> 1406
+1407 [label="op3: mux",color=green4, style=filled]
+1406 -> 1407
+1408 [label="stream: 0",color=crimson, style=filled]
+1407 -> 1408
+1409 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1407 -> 1409
+1410 [label="stream: 9",color=crimson, style=filled]
+1407 -> 1410
+1411 [label="op3: mux",color=green4, style=filled]
+1406 -> 1411
+1412 [label="stream: 0",color=crimson, style=filled]
+1411 -> 1412
+1413 [label="ext_intruder_position_z",color=cyan1, style=filled]
+1411 -> 1413
+1414 [label="stream: 10",color=crimson, style=filled]
+1411 -> 1414
+1415 [label="const: -1.0",color=red1, style=filled]
+1378 -> 1415
+1416 [label="ext_sqrt_11",color=cyan4, style=filled]
+1377 -> 1416
+1580 [label="op2: +",color=green4, style=filled]
+1334 -> 1580
+1581 [label="op2: *",color=green4, style=filled]
+1580 -> 1581
+1582 [label="op2: -",color=green4, style=filled]
+1581 -> 1582
+1583 [label="op3: mux",color=green4, style=filled]
+1582 -> 1583
+1584 [label="stream: 0",color=crimson, style=filled]
+1583 -> 1584
+1585 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1583 -> 1585
+1586 [label="stream: 7",color=crimson, style=filled]
+1583 -> 1586
+1587 [label="op3: mux",color=green4, style=filled]
+1582 -> 1587
+1588 [label="stream: 0",color=crimson, style=filled]
+1587 -> 1588
+1589 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1587 -> 1589
+1590 [label="stream: 3",color=crimson, style=filled]
+1587 -> 1590
+1591 [label="op2: -",color=green4, style=filled]
+1581 -> 1591
+1592 [label="op3: mux",color=green4, style=filled]
+1591 -> 1592
+1593 [label="stream: 0",color=crimson, style=filled]
+1592 -> 1593
+1594 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1592 -> 1594
+1595 [label="stream: 7",color=crimson, style=filled]
+1592 -> 1595
+1596 [label="op3: mux",color=green4, style=filled]
+1591 -> 1596
+1597 [label="stream: 0",color=crimson, style=filled]
+1596 -> 1597
+1598 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1596 -> 1598
+1599 [label="stream: 3",color=crimson, style=filled]
+1596 -> 1599
+1600 [label="op2: *",color=green4, style=filled]
+1580 -> 1600
+1601 [label="op2: -",color=green4, style=filled]
+1600 -> 1601
+1602 [label="op3: mux",color=green4, style=filled]
+1601 -> 1602
+1603 [label="stream: 0",color=crimson, style=filled]
+1602 -> 1603
+1604 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1602 -> 1604
+1605 [label="stream: 8",color=crimson, style=filled]
+1602 -> 1605
+1606 [label="op3: mux",color=green4, style=filled]
+1601 -> 1606
+1607 [label="stream: 0",color=crimson, style=filled]
+1606 -> 1607
+1608 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1606 -> 1608
+1609 [label="stream: 6",color=crimson, style=filled]
+1606 -> 1609
+1610 [label="op2: -",color=green4, style=filled]
+1600 -> 1610
+1611 [label="op3: mux",color=green4, style=filled]
+1610 -> 1611
+1612 [label="stream: 0",color=crimson, style=filled]
+1611 -> 1612
+1613 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1611 -> 1613
+1614 [label="stream: 8",color=crimson, style=filled]
+1611 -> 1614
+1615 [label="op3: mux",color=green4, style=filled]
+1610 -> 1615
+1616 [label="stream: 0",color=crimson, style=filled]
+1615 -> 1616
+1617 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1615 -> 1617
+1618 [label="stream: 6",color=crimson, style=filled]
+1615 -> 1618
+1619 [label="op2: -",color=green4, style=filled]
+1333 -> 1619
+1620 [label="op3: mux",color=green4, style=filled]
+1619 -> 1620
+1621 [label="stream: 0",color=crimson, style=filled]
+1620 -> 1621
+1622 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1620 -> 1622
+1623 [label="stream: 7",color=crimson, style=filled]
+1620 -> 1623
+1624 [label="op3: mux",color=green4, style=filled]
+1619 -> 1624
+1625 [label="stream: 0",color=crimson, style=filled]
+1624 -> 1625
+1626 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1624 -> 1626
+1627 [label="stream: 3",color=crimson, style=filled]
+1624 -> 1627
+1628 [label="op2: *",color=green4, style=filled]
+1315 -> 1628
+1629 [label="op2: -",color=green4, style=filled]
+1628 -> 1629
+1630 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1629 -> 1630
+1631 [label="op3: mux",color=green4, style=filled]
+1629 -> 1631
+1632 [label="stream: 0",color=crimson, style=filled]
+1631 -> 1632
+1633 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1631 -> 1633
+1634 [label="stream: 6",color=crimson, style=filled]
+1631 -> 1634
+1635 [label="op2: +",color=green4, style=filled]
+1628 -> 1635
+1636 [label="op2: -",color=green4, style=filled]
+1635 -> 1636
+1637 [label="op3: mux",color=green4, style=filled]
+1636 -> 1637
+1638 [label="stream: 0",color=crimson, style=filled]
+1637 -> 1638
+1639 [label="ext_ownship_position_y",color=cyan1, style=filled]
+1637 -> 1639
+1640 [label="stream: 4",color=crimson, style=filled]
+1637 -> 1640
+1641 [label="op3: mux",color=green4, style=filled]
+1636 -> 1641
+1642 [label="stream: 0",color=crimson, style=filled]
+1641 -> 1642
+1643 [label="ext_intruder_position_y",color=cyan1, style=filled]
+1641 -> 1643
+1644 [label="stream: 5",color=crimson, style=filled]
+1641 -> 1644
+1645 [label="op2: *",color=green4, style=filled]
+1635 -> 1645
+1646 [label="op2: /",color=green4, style=filled]
+1645 -> 1646
+1647 [label="op2: +",color=green4, style=filled]
+1646 -> 1647
+1648 [label="op2: -",color=green4, style=filled]
+1647 -> 1648
+1649 [label="const: 0.0",color=red1, style=filled]
+1648 -> 1649
+1650 [label="op2: +",color=green4, style=filled]
+1648 -> 1650
+1651 [label="op2: *",color=green4, style=filled]
+1650 -> 1651
+1652 [label="op2: -",color=green4, style=filled]
+1651 -> 1652
+1653 [label="op3: mux",color=green4, style=filled]
+1652 -> 1653
+1654 [label="stream: 0",color=crimson, style=filled]
+1653 -> 1654
+1655 [label="ext_ownship_position_x",color=cyan1, style=filled]
+1653 -> 1655
+1656 [label="stream: 1",color=crimson, style=filled]
+1653 -> 1656
+1657 [label="op3: mux",color=green4, style=filled]
+1652 -> 1657
+1658 [label="stream: 0",color=crimson, style=filled]
+1657 -> 1658
+1659 [label="ext_intruder_position_x",color=cyan1, style=filled]
+1657 -> 1659
+1660 [label="stream: 2",color=crimson, style=filled]
+1657 -> 1660
+1661 [label="op2: -",color=green4, style=filled]
+1651 -> 1661
+1662 [label="op3: mux",color=green4, style=filled]
+1661 -> 1662
+1663 [label="stream: 0",color=crimson, style=filled]
+1662 -> 1663
+1664 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1662 -> 1664
+1665 [label="stream: 7",color=crimson, style=filled]
+1662 -> 1665
+1666 [label="op3: mux",color=green4, style=filled]
+1661 -> 1666
+1667 [label="stream: 0",color=crimson, style=filled]
+1666 -> 1667
+1668 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1666 -> 1668
+1669 [label="stream: 3",color=crimson, style=filled]
+1666 -> 1669
+1670 [label="op2: *",color=green4, style=filled]
+1650 -> 1670
+1671 [label="op2: -",color=green4, style=filled]
+1670 -> 1671
+1672 [label="op3: mux",color=green4, style=filled]
+1671 -> 1672
+1673 [label="stream: 0",color=crimson, style=filled]
+1672 -> 1673
+1674 [label="ext_ownship_position_y",color=cyan1, style=filled]
+1672 -> 1674
+1675 [label="stream: 4",color=crimson, style=filled]
+1672 -> 1675
+1676 [label="op3: mux",color=green4, style=filled]
+1671 -> 1676
+1677 [label="stream: 0",color=crimson, style=filled]
+1676 -> 1677
+1678 [label="ext_intruder_position_y",color=cyan1, style=filled]
+1676 -> 1678
+1679 [label="stream: 5",color=crimson, style=filled]
+1676 -> 1679
+1680 [label="op2: -",color=green4, style=filled]
+1670 -> 1680
+1681 [label="op3: mux",color=green4, style=filled]
+1680 -> 1681
+1682 [label="stream: 0",color=crimson, style=filled]
+1681 -> 1682
+1683 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1681 -> 1683
+1684 [label="stream: 8",color=crimson, style=filled]
+1681 -> 1684
+1685 [label="op3: mux",color=green4, style=filled]
+1680 -> 1685
+1686 [label="stream: 0",color=crimson, style=filled]
+1685 -> 1686
+1687 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1685 -> 1687
+1688 [label="stream: 6",color=crimson, style=filled]
+1685 -> 1688
+1689 [label="op2: *",color=green4, style=filled]
+1647 -> 1689
+1690 [label="op3: mux",color=green4, style=filled]
+1689 -> 1690
+1691 [label="op2: >=",color=green4, style=filled]
+1690 -> 1691
+1692 [label="op2: *",color=green4, style=filled]
+1691 -> 1692
+1693 [label="op2: -",color=green4, style=filled]
+1692 -> 1693
+1694 [label="op3: mux",color=green4, style=filled]
+1693 -> 1694
+1695 [label="stream: 0",color=crimson, style=filled]
+1694 -> 1695
+1696 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1694 -> 1696
+1697 [label="stream: 9",color=crimson, style=filled]
+1694 -> 1697
+1698 [label="op3: mux",color=green4, style=filled]
+1693 -> 1698
+1699 [label="stream: 0",color=crimson, style=filled]
+1698 -> 1699
+1700 [label="ext_intruder_position_z",color=cyan1, style=filled]
+1698 -> 1700
+1701 [label="stream: 10",color=crimson, style=filled]
+1698 -> 1701
+1702 [label="ext_ident_double_12",color=cyan4, style=filled]
+1692 -> 1702
+1714 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+1691 -> 1714
+1715 [label="op2: *",color=green4, style=filled]
+1690 -> 1715
+1716 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+1715 -> 1716
+1717 [label="op1: signum",color=green4, style=filled]
+1715 -> 1717
+1718 [label="op2: -",color=green4, style=filled]
+1717 -> 1718
+1719 [label="op3: mux",color=green4, style=filled]
+1718 -> 1719
+1720 [label="stream: 0",color=crimson, style=filled]
+1719 -> 1720
+1721 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1719 -> 1721
+1722 [label="stream: 9",color=crimson, style=filled]
+1719 -> 1722
+1723 [label="op3: mux",color=green4, style=filled]
+1718 -> 1723
+1724 [label="stream: 0",color=crimson, style=filled]
+1723 -> 1724
+1725 [label="ext_intruder_position_z",color=cyan1, style=filled]
+1723 -> 1725
+1726 [label="stream: 10",color=crimson, style=filled]
+1723 -> 1726
+1727 [label="const: -1.0",color=red1, style=filled]
+1690 -> 1727
+1728 [label="ext_sqrt_13",color=cyan4, style=filled]
+1689 -> 1728
+1892 [label="op2: +",color=green4, style=filled]
+1646 -> 1892
+1893 [label="op2: *",color=green4, style=filled]
+1892 -> 1893
+1894 [label="op2: -",color=green4, style=filled]
+1893 -> 1894
+1895 [label="op3: mux",color=green4, style=filled]
+1894 -> 1895
+1896 [label="stream: 0",color=crimson, style=filled]
+1895 -> 1896
+1897 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1895 -> 1897
+1898 [label="stream: 7",color=crimson, style=filled]
+1895 -> 1898
+1899 [label="op3: mux",color=green4, style=filled]
+1894 -> 1899
+1900 [label="stream: 0",color=crimson, style=filled]
+1899 -> 1900
+1901 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1899 -> 1901
+1902 [label="stream: 3",color=crimson, style=filled]
+1899 -> 1902
+1903 [label="op2: -",color=green4, style=filled]
+1893 -> 1903
+1904 [label="op3: mux",color=green4, style=filled]
+1903 -> 1904
+1905 [label="stream: 0",color=crimson, style=filled]
+1904 -> 1905
+1906 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1904 -> 1906
+1907 [label="stream: 7",color=crimson, style=filled]
+1904 -> 1907
+1908 [label="op3: mux",color=green4, style=filled]
+1903 -> 1908
+1909 [label="stream: 0",color=crimson, style=filled]
+1908 -> 1909
+1910 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1908 -> 1910
+1911 [label="stream: 3",color=crimson, style=filled]
+1908 -> 1911
+1912 [label="op2: *",color=green4, style=filled]
+1892 -> 1912
+1913 [label="op2: -",color=green4, style=filled]
+1912 -> 1913
+1914 [label="op3: mux",color=green4, style=filled]
+1913 -> 1914
+1915 [label="stream: 0",color=crimson, style=filled]
+1914 -> 1915
+1916 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1914 -> 1916
+1917 [label="stream: 8",color=crimson, style=filled]
+1914 -> 1917
+1918 [label="op3: mux",color=green4, style=filled]
+1913 -> 1918
+1919 [label="stream: 0",color=crimson, style=filled]
+1918 -> 1919
+1920 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1918 -> 1920
+1921 [label="stream: 6",color=crimson, style=filled]
+1918 -> 1921
+1922 [label="op2: -",color=green4, style=filled]
+1912 -> 1922
+1923 [label="op3: mux",color=green4, style=filled]
+1922 -> 1923
+1924 [label="stream: 0",color=crimson, style=filled]
+1923 -> 1924
+1925 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1923 -> 1925
+1926 [label="stream: 8",color=crimson, style=filled]
+1923 -> 1926
+1927 [label="op3: mux",color=green4, style=filled]
+1922 -> 1927
+1928 [label="stream: 0",color=crimson, style=filled]
+1927 -> 1928
+1929 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1927 -> 1929
+1930 [label="stream: 6",color=crimson, style=filled]
+1927 -> 1930
+1931 [label="op2: -",color=green4, style=filled]
+1645 -> 1931
+1932 [label="op3: mux",color=green4, style=filled]
+1931 -> 1932
+1933 [label="stream: 0",color=crimson, style=filled]
+1932 -> 1933
+1934 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1932 -> 1934
+1935 [label="stream: 8",color=crimson, style=filled]
+1932 -> 1935
+1936 [label="op3: mux",color=green4, style=filled]
+1931 -> 1936
+1937 [label="stream: 0",color=crimson, style=filled]
+1936 -> 1937
+1938 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1936 -> 1938
+1939 [label="stream: 6",color=crimson, style=filled]
+1936 -> 1939
+1940 [label="const: 0.0",color=red1, style=filled]
+1314 -> 1940
+1941 [label="op2: &&",color=green4, style=filled]
+685 -> 1941
+1942 [label="op2: >=",color=green4, style=filled]
+1941 -> 1942
+1943 [label="op2: /",color=green4, style=filled]
+1942 -> 1943
+1944 [label="op2: -",color=green4, style=filled]
+1943 -> 1944
+1945 [label="op2: *",color=green4, style=filled]
+1944 -> 1945
+1946 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+1945 -> 1946
+1947 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+1945 -> 1947
+1948 [label="op2: +",color=green4, style=filled]
+1944 -> 1948
+1949 [label="op2: *",color=green4, style=filled]
+1948 -> 1949
+1950 [label="op2: -",color=green4, style=filled]
+1949 -> 1950
+1951 [label="op3: mux",color=green4, style=filled]
+1950 -> 1951
+1952 [label="stream: 0",color=crimson, style=filled]
+1951 -> 1952
+1953 [label="ext_ownship_position_x",color=cyan1, style=filled]
+1951 -> 1953
+1954 [label="stream: 1",color=crimson, style=filled]
+1951 -> 1954
+1955 [label="op3: mux",color=green4, style=filled]
+1950 -> 1955
+1956 [label="stream: 0",color=crimson, style=filled]
+1955 -> 1956
+1957 [label="ext_intruder_position_x",color=cyan1, style=filled]
+1955 -> 1957
+1958 [label="stream: 2",color=crimson, style=filled]
+1955 -> 1958
+1959 [label="op2: +",color=green4, style=filled]
+1949 -> 1959
+1960 [label="op2: -",color=green4, style=filled]
+1959 -> 1960
+1961 [label="op3: mux",color=green4, style=filled]
+1960 -> 1961
+1962 [label="stream: 0",color=crimson, style=filled]
+1961 -> 1962
+1963 [label="ext_ownship_position_x",color=cyan1, style=filled]
+1961 -> 1963
+1964 [label="stream: 1",color=crimson, style=filled]
+1961 -> 1964
+1965 [label="op3: mux",color=green4, style=filled]
+1960 -> 1965
+1966 [label="stream: 0",color=crimson, style=filled]
+1965 -> 1966
+1967 [label="ext_intruder_position_x",color=cyan1, style=filled]
+1965 -> 1967
+1968 [label="stream: 2",color=crimson, style=filled]
+1965 -> 1968
+1969 [label="op2: *",color=green4, style=filled]
+1959 -> 1969
+1970 [label="op2: /",color=green4, style=filled]
+1969 -> 1970
+1971 [label="op2: +",color=green4, style=filled]
+1970 -> 1971
+1972 [label="op2: -",color=green4, style=filled]
+1971 -> 1972
+1973 [label="const: 0.0",color=red1, style=filled]
+1972 -> 1973
+1974 [label="op2: +",color=green4, style=filled]
+1972 -> 1974
+1975 [label="op2: *",color=green4, style=filled]
+1974 -> 1975
+1976 [label="op2: -",color=green4, style=filled]
+1975 -> 1976
+1977 [label="op3: mux",color=green4, style=filled]
+1976 -> 1977
+1978 [label="stream: 0",color=crimson, style=filled]
+1977 -> 1978
+1979 [label="ext_ownship_position_x",color=cyan1, style=filled]
+1977 -> 1979
+1980 [label="stream: 1",color=crimson, style=filled]
+1977 -> 1980
+1981 [label="op3: mux",color=green4, style=filled]
+1976 -> 1981
+1982 [label="stream: 0",color=crimson, style=filled]
+1981 -> 1982
+1983 [label="ext_intruder_position_x",color=cyan1, style=filled]
+1981 -> 1983
+1984 [label="stream: 2",color=crimson, style=filled]
+1981 -> 1984
+1985 [label="op2: -",color=green4, style=filled]
+1975 -> 1985
+1986 [label="op3: mux",color=green4, style=filled]
+1985 -> 1986
+1987 [label="stream: 0",color=crimson, style=filled]
+1986 -> 1987
+1988 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1986 -> 1988
+1989 [label="stream: 7",color=crimson, style=filled]
+1986 -> 1989
+1990 [label="op3: mux",color=green4, style=filled]
+1985 -> 1990
+1991 [label="stream: 0",color=crimson, style=filled]
+1990 -> 1991
+1992 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1990 -> 1992
+1993 [label="stream: 3",color=crimson, style=filled]
+1990 -> 1993
+1994 [label="op2: *",color=green4, style=filled]
+1974 -> 1994
+1995 [label="op2: -",color=green4, style=filled]
+1994 -> 1995
+1996 [label="op3: mux",color=green4, style=filled]
+1995 -> 1996
+1997 [label="stream: 0",color=crimson, style=filled]
+1996 -> 1997
+1998 [label="ext_ownship_position_y",color=cyan1, style=filled]
+1996 -> 1998
+1999 [label="stream: 4",color=crimson, style=filled]
+1996 -> 1999
+2000 [label="op3: mux",color=green4, style=filled]
+1995 -> 2000
+2001 [label="stream: 0",color=crimson, style=filled]
+2000 -> 2001
+2002 [label="ext_intruder_position_y",color=cyan1, style=filled]
+2000 -> 2002
+2003 [label="stream: 5",color=crimson, style=filled]
+2000 -> 2003
+2004 [label="op2: -",color=green4, style=filled]
+1994 -> 2004
+2005 [label="op3: mux",color=green4, style=filled]
+2004 -> 2005
+2006 [label="stream: 0",color=crimson, style=filled]
+2005 -> 2006
+2007 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+2005 -> 2007
+2008 [label="stream: 8",color=crimson, style=filled]
+2005 -> 2008
+2009 [label="op3: mux",color=green4, style=filled]
+2004 -> 2009
+2010 [label="stream: 0",color=crimson, style=filled]
+2009 -> 2010
+2011 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2009 -> 2011
+2012 [label="stream: 6",color=crimson, style=filled]
+2009 -> 2012
+2013 [label="op2: *",color=green4, style=filled]
+1971 -> 2013
+2014 [label="op3: mux",color=green4, style=filled]
+2013 -> 2014
+2015 [label="op2: >=",color=green4, style=filled]
+2014 -> 2015
+2016 [label="op2: *",color=green4, style=filled]
+2015 -> 2016
+2017 [label="op2: -",color=green4, style=filled]
+2016 -> 2017
+2018 [label="op3: mux",color=green4, style=filled]
+2017 -> 2018
+2019 [label="stream: 0",color=crimson, style=filled]
+2018 -> 2019
+2020 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2018 -> 2020
+2021 [label="stream: 9",color=crimson, style=filled]
+2018 -> 2021
+2022 [label="op3: mux",color=green4, style=filled]
+2017 -> 2022
+2023 [label="stream: 0",color=crimson, style=filled]
+2022 -> 2023
+2024 [label="ext_intruder_position_z",color=cyan1, style=filled]
+2022 -> 2024
+2025 [label="stream: 10",color=crimson, style=filled]
+2022 -> 2025
+2026 [label="ext_ident_double_14",color=cyan4, style=filled]
+2016 -> 2026
+2038 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+2015 -> 2038
+2039 [label="op2: *",color=green4, style=filled]
+2014 -> 2039
+2040 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+2039 -> 2040
+2041 [label="op1: signum",color=green4, style=filled]
+2039 -> 2041
+2042 [label="op2: -",color=green4, style=filled]
+2041 -> 2042
+2043 [label="op3: mux",color=green4, style=filled]
+2042 -> 2043
+2044 [label="stream: 0",color=crimson, style=filled]
+2043 -> 2044
+2045 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2043 -> 2045
+2046 [label="stream: 9",color=crimson, style=filled]
+2043 -> 2046
+2047 [label="op3: mux",color=green4, style=filled]
+2042 -> 2047
+2048 [label="stream: 0",color=crimson, style=filled]
+2047 -> 2048
+2049 [label="ext_intruder_position_z",color=cyan1, style=filled]
+2047 -> 2049
+2050 [label="stream: 10",color=crimson, style=filled]
+2047 -> 2050
+2051 [label="const: -1.0",color=red1, style=filled]
+2014 -> 2051
+2052 [label="ext_sqrt_15",color=cyan4, style=filled]
+2013 -> 2052
+2216 [label="op2: +",color=green4, style=filled]
+1970 -> 2216
+2217 [label="op2: *",color=green4, style=filled]
+2216 -> 2217
+2218 [label="op2: -",color=green4, style=filled]
+2217 -> 2218
+2219 [label="op3: mux",color=green4, style=filled]
+2218 -> 2219
+2220 [label="stream: 0",color=crimson, style=filled]
+2219 -> 2220
+2221 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+2219 -> 2221
+2222 [label="stream: 7",color=crimson, style=filled]
+2219 -> 2222
+2223 [label="op3: mux",color=green4, style=filled]
+2218 -> 2223
+2224 [label="stream: 0",color=crimson, style=filled]
+2223 -> 2224
+2225 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+2223 -> 2225
+2226 [label="stream: 3",color=crimson, style=filled]
+2223 -> 2226
+2227 [label="op2: -",color=green4, style=filled]
+2217 -> 2227
+2228 [label="op3: mux",color=green4, style=filled]
+2227 -> 2228
+2229 [label="stream: 0",color=crimson, style=filled]
+2228 -> 2229
+2230 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+2228 -> 2230
+2231 [label="stream: 7",color=crimson, style=filled]
+2228 -> 2231
+2232 [label="op3: mux",color=green4, style=filled]
+2227 -> 2232
+2233 [label="stream: 0",color=crimson, style=filled]
+2232 -> 2233
+2234 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+2232 -> 2234
+2235 [label="stream: 3",color=crimson, style=filled]
+2232 -> 2235
+2236 [label="op2: *",color=green4, style=filled]
+2216 -> 2236
+2237 [label="op2: -",color=green4, style=filled]
+2236 -> 2237
+2238 [label="op3: mux",color=green4, style=filled]
+2237 -> 2238
+2239 [label="stream: 0",color=crimson, style=filled]
+2238 -> 2239
+2240 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+2238 -> 2240
+2241 [label="stream: 8",color=crimson, style=filled]
+2238 -> 2241
+2242 [label="op3: mux",color=green4, style=filled]
+2237 -> 2242
+2243 [label="stream: 0",color=crimson, style=filled]
+2242 -> 2243
+2244 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2242 -> 2244
+2245 [label="stream: 6",color=crimson, style=filled]
+2242 -> 2245
+2246 [label="op2: -",color=green4, style=filled]
+2236 -> 2246
+2247 [label="op3: mux",color=green4, style=filled]
+2246 -> 2247
+2248 [label="stream: 0",color=crimson, style=filled]
+2247 -> 2248
+2249 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+2247 -> 2249
+2250 [label="stream: 8",color=crimson, style=filled]
+2247 -> 2250
+2251 [label="op3: mux",color=green4, style=filled]
+2246 -> 2251
+2252 [label="stream: 0",color=crimson, style=filled]
+2251 -> 2252
+2253 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2251 -> 2253
+2254 [label="stream: 6",color=crimson, style=filled]
+2251 -> 2254
+2255 [label="op2: -",color=green4, style=filled]
+1969 -> 2255
+2256 [label="op3: mux",color=green4, style=filled]
+2255 -> 2256
+2257 [label="stream: 0",color=crimson, style=filled]
+2256 -> 2257
+2258 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+2256 -> 2258
+2259 [label="stream: 7",color=crimson, style=filled]
+2256 -> 2259
+2260 [label="op3: mux",color=green4, style=filled]
+2255 -> 2260
+2261 [label="stream: 0",color=crimson, style=filled]
+2260 -> 2261
+2262 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+2260 -> 2262
+2263 [label="stream: 3",color=crimson, style=filled]
+2260 -> 2263
+2264 [label="op2: *",color=green4, style=filled]
+1948 -> 2264
+2265 [label="op2: -",color=green4, style=filled]
+2264 -> 2265
+2266 [label="op3: mux",color=green4, style=filled]
+2265 -> 2266
+2267 [label="stream: 0",color=crimson, style=filled]
+2266 -> 2267
+2268 [label="ext_ownship_position_y",color=cyan1, style=filled]
+2266 -> 2268
+2269 [label="stream: 4",color=crimson, style=filled]
+2266 -> 2269
+2270 [label="op3: mux",color=green4, style=filled]
+2265 -> 2270
+2271 [label="stream: 0",color=crimson, style=filled]
+2270 -> 2271
+2272 [label="ext_intruder_position_y",color=cyan1, style=filled]
+2270 -> 2272
+2273 [label="stream: 5",color=crimson, style=filled]
+2270 -> 2273
+2274 [label="op2: +",color=green4, style=filled]
+2264 -> 2274
+2275 [label="op2: -",color=green4, style=filled]
+2274 -> 2275
+2276 [label="op3: mux",color=green4, style=filled]
+2275 -> 2276
+2277 [label="stream: 0",color=crimson, style=filled]
+2276 -> 2277
+2278 [label="ext_ownship_position_y",color=cyan1, style=filled]
+2276 -> 2278
+2279 [label="stream: 4",color=crimson, style=filled]
+2276 -> 2279
+2280 [label="op3: mux",color=green4, style=filled]
+2275 -> 2280
+2281 [label="stream: 0",color=crimson, style=filled]
+2280 -> 2281
+2282 [label="ext_intruder_position_y",color=cyan1, style=filled]
+2280 -> 2282
+2283 [label="stream: 5",color=crimson, style=filled]
+2280 -> 2283
+2284 [label="op2: *",color=green4, style=filled]
+2274 -> 2284
+2285 [label="op2: /",color=green4, style=filled]
+2284 -> 2285
+2286 [label="op2: +",color=green4, style=filled]
+2285 -> 2286
+2287 [label="op2: -",color=green4, style=filled]
+2286 -> 2287
+2288 [label="const: 0.0",color=red1, style=filled]
+2287 -> 2288
+2289 [label="op2: +",color=green4, style=filled]
+2287 -> 2289
+2290 [label="op2: *",color=green4, style=filled]
+2289 -> 2290
+2291 [label="op2: -",color=green4, style=filled]
+2290 -> 2291
+2292 [label="op3: mux",color=green4, style=filled]
+2291 -> 2292
+2293 [label="stream: 0",color=crimson, style=filled]
+2292 -> 2293
+2294 [label="ext_ownship_position_x",color=cyan1, style=filled]
+2292 -> 2294
+2295 [label="stream: 1",color=crimson, style=filled]
+2292 -> 2295
+2296 [label="op3: mux",color=green4, style=filled]
+2291 -> 2296
+2297 [label="stream: 0",color=crimson, style=filled]
+2296 -> 2297
+2298 [label="ext_intruder_position_x",color=cyan1, style=filled]
+2296 -> 2298
+2299 [label="stream: 2",color=crimson, style=filled]
+2296 -> 2299
+2300 [label="op2: -",color=green4, style=filled]
+2290 -> 2300
+2301 [label="op3: mux",color=green4, style=filled]
+2300 -> 2301
+2302 [label="stream: 0",color=crimson, style=filled]
+2301 -> 2302
+2303 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+2301 -> 2303
+2304 [label="stream: 7",color=crimson, style=filled]
+2301 -> 2304
+2305 [label="op3: mux",color=green4, style=filled]
+2300 -> 2305
+2306 [label="stream: 0",color=crimson, style=filled]
+2305 -> 2306
+2307 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+2305 -> 2307
+2308 [label="stream: 3",color=crimson, style=filled]
+2305 -> 2308
+2309 [label="op2: *",color=green4, style=filled]
+2289 -> 2309
+2310 [label="op2: -",color=green4, style=filled]
+2309 -> 2310
+2311 [label="op3: mux",color=green4, style=filled]
+2310 -> 2311
+2312 [label="stream: 0",color=crimson, style=filled]
+2311 -> 2312
+2313 [label="ext_ownship_position_y",color=cyan1, style=filled]
+2311 -> 2313
+2314 [label="stream: 4",color=crimson, style=filled]
+2311 -> 2314
+2315 [label="op3: mux",color=green4, style=filled]
+2310 -> 2315
+2316 [label="stream: 0",color=crimson, style=filled]
+2315 -> 2316
+2317 [label="ext_intruder_position_y",color=cyan1, style=filled]
+2315 -> 2317
+2318 [label="stream: 5",color=crimson, style=filled]
+2315 -> 2318
+2319 [label="op2: -",color=green4, style=filled]
+2309 -> 2319
+2320 [label="op3: mux",color=green4, style=filled]
+2319 -> 2320
+2321 [label="stream: 0",color=crimson, style=filled]
+2320 -> 2321
+2322 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+2320 -> 2322
+2323 [label="stream: 8",color=crimson, style=filled]
+2320 -> 2323
+2324 [label="op3: mux",color=green4, style=filled]
+2319 -> 2324
+2325 [label="stream: 0",color=crimson, style=filled]
+2324 -> 2325
+2326 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2324 -> 2326
+2327 [label="stream: 6",color=crimson, style=filled]
+2324 -> 2327
+2328 [label="op2: *",color=green4, style=filled]
+2286 -> 2328
+2329 [label="op3: mux",color=green4, style=filled]
+2328 -> 2329
+2330 [label="op2: >=",color=green4, style=filled]
+2329 -> 2330
+2331 [label="op2: *",color=green4, style=filled]
+2330 -> 2331
+2332 [label="op2: -",color=green4, style=filled]
+2331 -> 2332
+2333 [label="op3: mux",color=green4, style=filled]
+2332 -> 2333
+2334 [label="stream: 0",color=crimson, style=filled]
+2333 -> 2334
+2335 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2333 -> 2335
+2336 [label="stream: 9",color=crimson, style=filled]
+2333 -> 2336
+2337 [label="op3: mux",color=green4, style=filled]
+2332 -> 2337
+2338 [label="stream: 0",color=crimson, style=filled]
+2337 -> 2338
+2339 [label="ext_intruder_position_z",color=cyan1, style=filled]
+2337 -> 2339
+2340 [label="stream: 10",color=crimson, style=filled]
+2337 -> 2340
+2341 [label="ext_ident_double_16",color=cyan4, style=filled]
+2331 -> 2341
+2353 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+2330 -> 2353
+2354 [label="op2: *",color=green4, style=filled]
+2329 -> 2354
+2355 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+2354 -> 2355
+2356 [label="op1: signum",color=green4, style=filled]
+2354 -> 2356
+2357 [label="op2: -",color=green4, style=filled]
+2356 -> 2357
+2358 [label="op3: mux",color=green4, style=filled]
+2357 -> 2358
+2359 [label="stream: 0",color=crimson, style=filled]
+2358 -> 2359
+2360 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2358 -> 2360
+2361 [label="stream: 9",color=crimson, style=filled]
+2358 -> 2361
+2362 [label="op3: mux",color=green4, style=filled]
+2357 -> 2362
+2363 [label="stream: 0",color=crimson, style=filled]
+2362 -> 2363
+2364 [label="ext_intruder_position_z",color=cyan1, style=filled]
+2362 -> 2364
+2365 [label="stream: 10",color=crimson, style=filled]
+2362 -> 2365
+2366 [label="const: -1.0",color=red1, style=filled]
+2329 -> 2366
+2367 [label="ext_sqrt_17",color=cyan4, style=filled]
+2328 -> 2367
+2531 [label="op2: +",color=green4, style=filled]
+2285 -> 2531
+2532 [label="op2: *",color=green4, style=filled]
+2531 -> 2532
+2533 [label="op2: -",color=green4, style=filled]
+2532 -> 2533
+2534 [label="op3: mux",color=green4, style=filled]
+2533 -> 2534
+2535 [label="stream: 0",color=crimson, style=filled]
+2534 -> 2535
+2536 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+2534 -> 2536
+2537 [label="stream: 7",color=crimson, style=filled]
+2534 -> 2537
+2538 [label="op3: mux",color=green4, style=filled]
+2533 -> 2538
+2539 [label="stream: 0",color=crimson, style=filled]
+2538 -> 2539
+2540 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+2538 -> 2540
+2541 [label="stream: 3",color=crimson, style=filled]
+2538 -> 2541
+2542 [label="op2: -",color=green4, style=filled]
+2532 -> 2542
+2543 [label="op3: mux",color=green4, style=filled]
+2542 -> 2543
+2544 [label="stream: 0",color=crimson, style=filled]
+2543 -> 2544
+2545 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+2543 -> 2545
+2546 [label="stream: 7",color=crimson, style=filled]
+2543 -> 2546
+2547 [label="op3: mux",color=green4, style=filled]
+2542 -> 2547
+2548 [label="stream: 0",color=crimson, style=filled]
+2547 -> 2548
+2549 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+2547 -> 2549
+2550 [label="stream: 3",color=crimson, style=filled]
+2547 -> 2550
+2551 [label="op2: *",color=green4, style=filled]
+2531 -> 2551
+2552 [label="op2: -",color=green4, style=filled]
+2551 -> 2552
+2553 [label="op3: mux",color=green4, style=filled]
+2552 -> 2553
+2554 [label="stream: 0",color=crimson, style=filled]
+2553 -> 2554
+2555 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+2553 -> 2555
+2556 [label="stream: 8",color=crimson, style=filled]
+2553 -> 2556
+2557 [label="op3: mux",color=green4, style=filled]
+2552 -> 2557
+2558 [label="stream: 0",color=crimson, style=filled]
+2557 -> 2558
+2559 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2557 -> 2559
+2560 [label="stream: 6",color=crimson, style=filled]
+2557 -> 2560
+2561 [label="op2: -",color=green4, style=filled]
+2551 -> 2561
+2562 [label="op3: mux",color=green4, style=filled]
+2561 -> 2562
+2563 [label="stream: 0",color=crimson, style=filled]
+2562 -> 2563
+2564 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+2562 -> 2564
+2565 [label="stream: 8",color=crimson, style=filled]
+2562 -> 2565
+2566 [label="op3: mux",color=green4, style=filled]
+2561 -> 2566
+2567 [label="stream: 0",color=crimson, style=filled]
+2566 -> 2567
+2568 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2566 -> 2568
+2569 [label="stream: 6",color=crimson, style=filled]
+2566 -> 2569
+2570 [label="op2: -",color=green4, style=filled]
+2284 -> 2570
+2571 [label="op3: mux",color=green4, style=filled]
+2570 -> 2571
+2572 [label="stream: 0",color=crimson, style=filled]
+2571 -> 2572
+2573 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+2571 -> 2573
+2574 [label="stream: 8",color=crimson, style=filled]
+2571 -> 2574
+2575 [label="op3: mux",color=green4, style=filled]
+2570 -> 2575
+2576 [label="stream: 0",color=crimson, style=filled]
+2575 -> 2576
+2577 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2575 -> 2577
+2578 [label="stream: 6",color=crimson, style=filled]
+2575 -> 2578
+2579 [label="op2: +",color=green4, style=filled]
+1943 -> 2579
+2580 [label="op2: *",color=green4, style=filled]
+2579 -> 2580
+2581 [label="op2: -",color=green4, style=filled]
+2580 -> 2581
+2582 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+2581 -> 2582
+2583 [label="op3: mux",color=green4, style=filled]
+2581 -> 2583
+2584 [label="stream: 0",color=crimson, style=filled]
+2583 -> 2584
+2585 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+2583 -> 2585
+2586 [label="stream: 3",color=crimson, style=filled]
+2583 -> 2586
+2587 [label="op2: +",color=green4, style=filled]
+2580 -> 2587
+2588 [label="op2: -",color=green4, style=filled]
+2587 -> 2588
+2589 [label="op3: mux",color=green4, style=filled]
+2588 -> 2589
+2590 [label="stream: 0",color=crimson, style=filled]
+2589 -> 2590
+2591 [label="ext_ownship_position_x",color=cyan1, style=filled]
+2589 -> 2591
+2592 [label="stream: 1",color=crimson, style=filled]
+2589 -> 2592
+2593 [label="op3: mux",color=green4, style=filled]
+2588 -> 2593
+2594 [label="stream: 0",color=crimson, style=filled]
+2593 -> 2594
+2595 [label="ext_intruder_position_x",color=cyan1, style=filled]
+2593 -> 2595
+2596 [label="stream: 2",color=crimson, style=filled]
+2593 -> 2596
+2597 [label="op2: *",color=green4, style=filled]
+2587 -> 2597
+2598 [label="op2: /",color=green4, style=filled]
+2597 -> 2598
+2599 [label="op2: +",color=green4, style=filled]
+2598 -> 2599
+2600 [label="op2: -",color=green4, style=filled]
+2599 -> 2600
+2601 [label="const: 0.0",color=red1, style=filled]
+2600 -> 2601
+2602 [label="op2: +",color=green4, style=filled]
+2600 -> 2602
+2603 [label="op2: *",color=green4, style=filled]
+2602 -> 2603
+2604 [label="op2: -",color=green4, style=filled]
+2603 -> 2604
+2605 [label="op3: mux",color=green4, style=filled]
+2604 -> 2605
+2606 [label="stream: 0",color=crimson, style=filled]
+2605 -> 2606
+2607 [label="ext_ownship_position_x",color=cyan1, style=filled]
+2605 -> 2607
+2608 [label="stream: 1",color=crimson, style=filled]
+2605 -> 2608
+2609 [label="op3: mux",color=green4, style=filled]
+2604 -> 2609
+2610 [label="stream: 0",color=crimson, style=filled]
+2609 -> 2610
+2611 [label="ext_intruder_position_x",color=cyan1, style=filled]
+2609 -> 2611
+2612 [label="stream: 2",color=crimson, style=filled]
+2609 -> 2612
+2613 [label="op2: -",color=green4, style=filled]
+2603 -> 2613
+2614 [label="op3: mux",color=green4, style=filled]
+2613 -> 2614
+2615 [label="stream: 0",color=crimson, style=filled]
+2614 -> 2615
+2616 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+2614 -> 2616
+2617 [label="stream: 7",color=crimson, style=filled]
+2614 -> 2617
+2618 [label="op3: mux",color=green4, style=filled]
+2613 -> 2618
+2619 [label="stream: 0",color=crimson, style=filled]
+2618 -> 2619
+2620 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+2618 -> 2620
+2621 [label="stream: 3",color=crimson, style=filled]
+2618 -> 2621
+2622 [label="op2: *",color=green4, style=filled]
+2602 -> 2622
+2623 [label="op2: -",color=green4, style=filled]
+2622 -> 2623
+2624 [label="op3: mux",color=green4, style=filled]
+2623 -> 2624
+2625 [label="stream: 0",color=crimson, style=filled]
+2624 -> 2625
+2626 [label="ext_ownship_position_y",color=cyan1, style=filled]
+2624 -> 2626
+2627 [label="stream: 4",color=crimson, style=filled]
+2624 -> 2627
+2628 [label="op3: mux",color=green4, style=filled]
+2623 -> 2628
+2629 [label="stream: 0",color=crimson, style=filled]
+2628 -> 2629
+2630 [label="ext_intruder_position_y",color=cyan1, style=filled]
+2628 -> 2630
+2631 [label="stream: 5",color=crimson, style=filled]
+2628 -> 2631
+2632 [label="op2: -",color=green4, style=filled]
+2622 -> 2632
+2633 [label="op3: mux",color=green4, style=filled]
+2632 -> 2633
+2634 [label="stream: 0",color=crimson, style=filled]
+2633 -> 2634
+2635 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+2633 -> 2635
+2636 [label="stream: 8",color=crimson, style=filled]
+2633 -> 2636
+2637 [label="op3: mux",color=green4, style=filled]
+2632 -> 2637
+2638 [label="stream: 0",color=crimson, style=filled]
+2637 -> 2638
+2639 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2637 -> 2639
+2640 [label="stream: 6",color=crimson, style=filled]
+2637 -> 2640
+2641 [label="op2: *",color=green4, style=filled]
+2599 -> 2641
+2642 [label="op3: mux",color=green4, style=filled]
+2641 -> 2642
+2643 [label="op2: >=",color=green4, style=filled]
+2642 -> 2643
+2644 [label="op2: *",color=green4, style=filled]
+2643 -> 2644
+2645 [label="op2: -",color=green4, style=filled]
+2644 -> 2645
+2646 [label="op3: mux",color=green4, style=filled]
+2645 -> 2646
+2647 [label="stream: 0",color=crimson, style=filled]
+2646 -> 2647
+2648 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2646 -> 2648
+2649 [label="stream: 9",color=crimson, style=filled]
+2646 -> 2649
+2650 [label="op3: mux",color=green4, style=filled]
+2645 -> 2650
+2651 [label="stream: 0",color=crimson, style=filled]
+2650 -> 2651
+2652 [label="ext_intruder_position_z",color=cyan1, style=filled]
+2650 -> 2652
+2653 [label="stream: 10",color=crimson, style=filled]
+2650 -> 2653
+2654 [label="ext_ident_double_18",color=cyan4, style=filled]
+2644 -> 2654
+2666 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+2643 -> 2666
+2667 [label="op2: *",color=green4, style=filled]
+2642 -> 2667
+2668 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+2667 -> 2668
+2669 [label="op1: signum",color=green4, style=filled]
+2667 -> 2669
+2670 [label="op2: -",color=green4, style=filled]
+2669 -> 2670
+2671 [label="op3: mux",color=green4, style=filled]
+2670 -> 2671
+2672 [label="stream: 0",color=crimson, style=filled]
+2671 -> 2672
+2673 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2671 -> 2673
+2674 [label="stream: 9",color=crimson, style=filled]
+2671 -> 2674
+2675 [label="op3: mux",color=green4, style=filled]
+2670 -> 2675
+2676 [label="stream: 0",color=crimson, style=filled]
+2675 -> 2676
+2677 [label="ext_intruder_position_z",color=cyan1, style=filled]
+2675 -> 2677
+2678 [label="stream: 10",color=crimson, style=filled]
+2675 -> 2678
+2679 [label="const: -1.0",color=red1, style=filled]
+2642 -> 2679
+2680 [label="ext_sqrt_19",color=cyan4, style=filled]
+2641 -> 2680
+2844 [label="op2: +",color=green4, style=filled]
+2598 -> 2844
+2845 [label="op2: *",color=green4, style=filled]
+2844 -> 2845
+2846 [label="op2: -",color=green4, style=filled]
+2845 -> 2846
+2847 [label="op3: mux",color=green4, style=filled]
+2846 -> 2847
+2848 [label="stream: 0",color=crimson, style=filled]
+2847 -> 2848
+2849 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+2847 -> 2849
+2850 [label="stream: 7",color=crimson, style=filled]
+2847 -> 2850
+2851 [label="op3: mux",color=green4, style=filled]
+2846 -> 2851
+2852 [label="stream: 0",color=crimson, style=filled]
+2851 -> 2852
+2853 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+2851 -> 2853
+2854 [label="stream: 3",color=crimson, style=filled]
+2851 -> 2854
+2855 [label="op2: -",color=green4, style=filled]
+2845 -> 2855
+2856 [label="op3: mux",color=green4, style=filled]
+2855 -> 2856
+2857 [label="stream: 0",color=crimson, style=filled]
+2856 -> 2857
+2858 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+2856 -> 2858
+2859 [label="stream: 7",color=crimson, style=filled]
+2856 -> 2859
+2860 [label="op3: mux",color=green4, style=filled]
+2855 -> 2860
+2861 [label="stream: 0",color=crimson, style=filled]
+2860 -> 2861
+2862 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+2860 -> 2862
+2863 [label="stream: 3",color=crimson, style=filled]
+2860 -> 2863
+2864 [label="op2: *",color=green4, style=filled]
+2844 -> 2864
+2865 [label="op2: -",color=green4, style=filled]
+2864 -> 2865
+2866 [label="op3: mux",color=green4, style=filled]
+2865 -> 2866
+2867 [label="stream: 0",color=crimson, style=filled]
+2866 -> 2867
+2868 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+2866 -> 2868
+2869 [label="stream: 8",color=crimson, style=filled]
+2866 -> 2869
+2870 [label="op3: mux",color=green4, style=filled]
+2865 -> 2870
+2871 [label="stream: 0",color=crimson, style=filled]
+2870 -> 2871
+2872 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2870 -> 2872
+2873 [label="stream: 6",color=crimson, style=filled]
+2870 -> 2873
+2874 [label="op2: -",color=green4, style=filled]
+2864 -> 2874
+2875 [label="op3: mux",color=green4, style=filled]
+2874 -> 2875
+2876 [label="stream: 0",color=crimson, style=filled]
+2875 -> 2876
+2877 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+2875 -> 2877
+2878 [label="stream: 8",color=crimson, style=filled]
+2875 -> 2878
+2879 [label="op3: mux",color=green4, style=filled]
+2874 -> 2879
+2880 [label="stream: 0",color=crimson, style=filled]
+2879 -> 2880
+2881 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2879 -> 2881
+2882 [label="stream: 6",color=crimson, style=filled]
+2879 -> 2882
+2883 [label="op2: -",color=green4, style=filled]
+2597 -> 2883
+2884 [label="op3: mux",color=green4, style=filled]
+2883 -> 2884
+2885 [label="stream: 0",color=crimson, style=filled]
+2884 -> 2885
+2886 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+2884 -> 2886
+2887 [label="stream: 7",color=crimson, style=filled]
+2884 -> 2887
+2888 [label="op3: mux",color=green4, style=filled]
+2883 -> 2888
+2889 [label="stream: 0",color=crimson, style=filled]
+2888 -> 2889
+2890 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+2888 -> 2890
+2891 [label="stream: 3",color=crimson, style=filled]
+2888 -> 2891
+2892 [label="op2: *",color=green4, style=filled]
+2579 -> 2892
+2893 [label="op2: -",color=green4, style=filled]
+2892 -> 2893
+2894 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+2893 -> 2894
+2895 [label="op3: mux",color=green4, style=filled]
+2893 -> 2895
+2896 [label="stream: 0",color=crimson, style=filled]
+2895 -> 2896
+2897 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2895 -> 2897
+2898 [label="stream: 6",color=crimson, style=filled]
+2895 -> 2898
+2899 [label="op2: +",color=green4, style=filled]
+2892 -> 2899
+2900 [label="op2: -",color=green4, style=filled]
+2899 -> 2900
+2901 [label="op3: mux",color=green4, style=filled]
+2900 -> 2901
+2902 [label="stream: 0",color=crimson, style=filled]
+2901 -> 2902
+2903 [label="ext_ownship_position_y",color=cyan1, style=filled]
+2901 -> 2903
+2904 [label="stream: 4",color=crimson, style=filled]
+2901 -> 2904
+2905 [label="op3: mux",color=green4, style=filled]
+2900 -> 2905
+2906 [label="stream: 0",color=crimson, style=filled]
+2905 -> 2906
+2907 [label="ext_intruder_position_y",color=cyan1, style=filled]
+2905 -> 2907
+2908 [label="stream: 5",color=crimson, style=filled]
+2905 -> 2908
+2909 [label="op2: *",color=green4, style=filled]
+2899 -> 2909
+2910 [label="op2: /",color=green4, style=filled]
+2909 -> 2910
+2911 [label="op2: +",color=green4, style=filled]
+2910 -> 2911
+2912 [label="op2: -",color=green4, style=filled]
+2911 -> 2912
+2913 [label="const: 0.0",color=red1, style=filled]
+2912 -> 2913
+2914 [label="op2: +",color=green4, style=filled]
+2912 -> 2914
+2915 [label="op2: *",color=green4, style=filled]
+2914 -> 2915
+2916 [label="op2: -",color=green4, style=filled]
+2915 -> 2916
+2917 [label="op3: mux",color=green4, style=filled]
+2916 -> 2917
+2918 [label="stream: 0",color=crimson, style=filled]
+2917 -> 2918
+2919 [label="ext_ownship_position_x",color=cyan1, style=filled]
+2917 -> 2919
+2920 [label="stream: 1",color=crimson, style=filled]
+2917 -> 2920
+2921 [label="op3: mux",color=green4, style=filled]
+2916 -> 2921
+2922 [label="stream: 0",color=crimson, style=filled]
+2921 -> 2922
+2923 [label="ext_intruder_position_x",color=cyan1, style=filled]
+2921 -> 2923
+2924 [label="stream: 2",color=crimson, style=filled]
+2921 -> 2924
+2925 [label="op2: -",color=green4, style=filled]
+2915 -> 2925
+2926 [label="op3: mux",color=green4, style=filled]
+2925 -> 2926
+2927 [label="stream: 0",color=crimson, style=filled]
+2926 -> 2927
+2928 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+2926 -> 2928
+2929 [label="stream: 7",color=crimson, style=filled]
+2926 -> 2929
+2930 [label="op3: mux",color=green4, style=filled]
+2925 -> 2930
+2931 [label="stream: 0",color=crimson, style=filled]
+2930 -> 2931
+2932 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+2930 -> 2932
+2933 [label="stream: 3",color=crimson, style=filled]
+2930 -> 2933
+2934 [label="op2: *",color=green4, style=filled]
+2914 -> 2934
+2935 [label="op2: -",color=green4, style=filled]
+2934 -> 2935
+2936 [label="op3: mux",color=green4, style=filled]
+2935 -> 2936
+2937 [label="stream: 0",color=crimson, style=filled]
+2936 -> 2937
+2938 [label="ext_ownship_position_y",color=cyan1, style=filled]
+2936 -> 2938
+2939 [label="stream: 4",color=crimson, style=filled]
+2936 -> 2939
+2940 [label="op3: mux",color=green4, style=filled]
+2935 -> 2940
+2941 [label="stream: 0",color=crimson, style=filled]
+2940 -> 2941
+2942 [label="ext_intruder_position_y",color=cyan1, style=filled]
+2940 -> 2942
+2943 [label="stream: 5",color=crimson, style=filled]
+2940 -> 2943
+2944 [label="op2: -",color=green4, style=filled]
+2934 -> 2944
+2945 [label="op3: mux",color=green4, style=filled]
+2944 -> 2945
+2946 [label="stream: 0",color=crimson, style=filled]
+2945 -> 2946
+2947 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+2945 -> 2947
+2948 [label="stream: 8",color=crimson, style=filled]
+2945 -> 2948
+2949 [label="op3: mux",color=green4, style=filled]
+2944 -> 2949
+2950 [label="stream: 0",color=crimson, style=filled]
+2949 -> 2950
+2951 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2949 -> 2951
+2952 [label="stream: 6",color=crimson, style=filled]
+2949 -> 2952
+2953 [label="op2: *",color=green4, style=filled]
+2911 -> 2953
+2954 [label="op3: mux",color=green4, style=filled]
+2953 -> 2954
+2955 [label="op2: >=",color=green4, style=filled]
+2954 -> 2955
+2956 [label="op2: *",color=green4, style=filled]
+2955 -> 2956
+2957 [label="op2: -",color=green4, style=filled]
+2956 -> 2957
+2958 [label="op3: mux",color=green4, style=filled]
+2957 -> 2958
+2959 [label="stream: 0",color=crimson, style=filled]
+2958 -> 2959
+2960 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2958 -> 2960
+2961 [label="stream: 9",color=crimson, style=filled]
+2958 -> 2961
+2962 [label="op3: mux",color=green4, style=filled]
+2957 -> 2962
+2963 [label="stream: 0",color=crimson, style=filled]
+2962 -> 2963
+2964 [label="ext_intruder_position_z",color=cyan1, style=filled]
+2962 -> 2964
+2965 [label="stream: 10",color=crimson, style=filled]
+2962 -> 2965
+2966 [label="ext_ident_double_20",color=cyan4, style=filled]
+2956 -> 2966
+2978 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+2955 -> 2978
+2979 [label="op2: *",color=green4, style=filled]
+2954 -> 2979
+2980 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+2979 -> 2980
+2981 [label="op1: signum",color=green4, style=filled]
+2979 -> 2981
+2982 [label="op2: -",color=green4, style=filled]
+2981 -> 2982
+2983 [label="op3: mux",color=green4, style=filled]
+2982 -> 2983
+2984 [label="stream: 0",color=crimson, style=filled]
+2983 -> 2984
+2985 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2983 -> 2985
+2986 [label="stream: 9",color=crimson, style=filled]
+2983 -> 2986
+2987 [label="op3: mux",color=green4, style=filled]
+2982 -> 2987
+2988 [label="stream: 0",color=crimson, style=filled]
+2987 -> 2988
+2989 [label="ext_intruder_position_z",color=cyan1, style=filled]
+2987 -> 2989
+2990 [label="stream: 10",color=crimson, style=filled]
+2987 -> 2990
+2991 [label="const: -1.0",color=red1, style=filled]
+2954 -> 2991
+2992 [label="ext_sqrt_21",color=cyan4, style=filled]
+2953 -> 2992
+3156 [label="op2: +",color=green4, style=filled]
+2910 -> 3156
+3157 [label="op2: *",color=green4, style=filled]
+3156 -> 3157
+3158 [label="op2: -",color=green4, style=filled]
+3157 -> 3158
+3159 [label="op3: mux",color=green4, style=filled]
+3158 -> 3159
+3160 [label="stream: 0",color=crimson, style=filled]
+3159 -> 3160
+3161 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+3159 -> 3161
+3162 [label="stream: 7",color=crimson, style=filled]
+3159 -> 3162
+3163 [label="op3: mux",color=green4, style=filled]
+3158 -> 3163
+3164 [label="stream: 0",color=crimson, style=filled]
+3163 -> 3164
+3165 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+3163 -> 3165
+3166 [label="stream: 3",color=crimson, style=filled]
+3163 -> 3166
+3167 [label="op2: -",color=green4, style=filled]
+3157 -> 3167
+3168 [label="op3: mux",color=green4, style=filled]
+3167 -> 3168
+3169 [label="stream: 0",color=crimson, style=filled]
+3168 -> 3169
+3170 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+3168 -> 3170
+3171 [label="stream: 7",color=crimson, style=filled]
+3168 -> 3171
+3172 [label="op3: mux",color=green4, style=filled]
+3167 -> 3172
+3173 [label="stream: 0",color=crimson, style=filled]
+3172 -> 3173
+3174 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+3172 -> 3174
+3175 [label="stream: 3",color=crimson, style=filled]
+3172 -> 3175
+3176 [label="op2: *",color=green4, style=filled]
+3156 -> 3176
+3177 [label="op2: -",color=green4, style=filled]
+3176 -> 3177
+3178 [label="op3: mux",color=green4, style=filled]
+3177 -> 3178
+3179 [label="stream: 0",color=crimson, style=filled]
+3178 -> 3179
+3180 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+3178 -> 3180
+3181 [label="stream: 8",color=crimson, style=filled]
+3178 -> 3181
+3182 [label="op3: mux",color=green4, style=filled]
+3177 -> 3182
+3183 [label="stream: 0",color=crimson, style=filled]
+3182 -> 3183
+3184 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+3182 -> 3184
+3185 [label="stream: 6",color=crimson, style=filled]
+3182 -> 3185
+3186 [label="op2: -",color=green4, style=filled]
+3176 -> 3186
+3187 [label="op3: mux",color=green4, style=filled]
+3186 -> 3187
+3188 [label="stream: 0",color=crimson, style=filled]
+3187 -> 3188
+3189 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+3187 -> 3189
+3190 [label="stream: 8",color=crimson, style=filled]
+3187 -> 3190
+3191 [label="op3: mux",color=green4, style=filled]
+3186 -> 3191
+3192 [label="stream: 0",color=crimson, style=filled]
+3191 -> 3192
+3193 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+3191 -> 3193
+3194 [label="stream: 6",color=crimson, style=filled]
+3191 -> 3194
+3195 [label="op2: -",color=green4, style=filled]
+2909 -> 3195
+3196 [label="op3: mux",color=green4, style=filled]
+3195 -> 3196
+3197 [label="stream: 0",color=crimson, style=filled]
+3196 -> 3197
+3198 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+3196 -> 3198
+3199 [label="stream: 8",color=crimson, style=filled]
+3196 -> 3199
+3200 [label="op3: mux",color=green4, style=filled]
+3195 -> 3200
+3201 [label="stream: 0",color=crimson, style=filled]
+3200 -> 3201
+3202 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+3200 -> 3202
+3203 [label="stream: 6",color=crimson, style=filled]
+3200 -> 3203
+3204 [label="const: 0.0",color=red1, style=filled]
+1942 -> 3204
+3205 [label="op2: >=",color=green4, style=filled]
+1941 -> 3205
+3206 [label="op2: *",color=green4, style=filled]
+3205 -> 3206
+3207 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+3206 -> 3207
+3208 [label="op2: +",color=green4, style=filled]
+3206 -> 3208
+3209 [label="op2: -",color=green4, style=filled]
+3208 -> 3209
+3210 [label="op3: mux",color=green4, style=filled]
+3209 -> 3210
+3211 [label="stream: 0",color=crimson, style=filled]
+3210 -> 3211
+3212 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3210 -> 3212
+3213 [label="stream: 9",color=crimson, style=filled]
+3210 -> 3213
+3214 [label="op3: mux",color=green4, style=filled]
+3209 -> 3214
+3215 [label="stream: 0",color=crimson, style=filled]
+3214 -> 3215
+3216 [label="ext_intruder_position_z",color=cyan1, style=filled]
+3214 -> 3216
+3217 [label="stream: 10",color=crimson, style=filled]
+3214 -> 3217
+3218 [label="op2: *",color=green4, style=filled]
+3208 -> 3218
+3219 [label="op2: /",color=green4, style=filled]
+3218 -> 3219
+3220 [label="op2: -",color=green4, style=filled]
+3219 -> 3220
+3221 [label="op2: *",color=green4, style=filled]
+3220 -> 3221
+3222 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+3221 -> 3222
+3223 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+3221 -> 3223
+3224 [label="op2: +",color=green4, style=filled]
+3220 -> 3224
+3225 [label="op2: *",color=green4, style=filled]
+3224 -> 3225
+3226 [label="op2: -",color=green4, style=filled]
+3225 -> 3226
+3227 [label="op3: mux",color=green4, style=filled]
+3226 -> 3227
+3228 [label="stream: 0",color=crimson, style=filled]
+3227 -> 3228
+3229 [label="ext_ownship_position_x",color=cyan1, style=filled]
+3227 -> 3229
+3230 [label="stream: 1",color=crimson, style=filled]
+3227 -> 3230
+3231 [label="op3: mux",color=green4, style=filled]
+3226 -> 3231
+3232 [label="stream: 0",color=crimson, style=filled]
+3231 -> 3232
+3233 [label="ext_intruder_position_x",color=cyan1, style=filled]
+3231 -> 3233
+3234 [label="stream: 2",color=crimson, style=filled]
+3231 -> 3234
+3235 [label="op2: +",color=green4, style=filled]
+3225 -> 3235
+3236 [label="op2: -",color=green4, style=filled]
+3235 -> 3236
+3237 [label="op3: mux",color=green4, style=filled]
+3236 -> 3237
+3238 [label="stream: 0",color=crimson, style=filled]
+3237 -> 3238
+3239 [label="ext_ownship_position_x",color=cyan1, style=filled]
+3237 -> 3239
+3240 [label="stream: 1",color=crimson, style=filled]
+3237 -> 3240
+3241 [label="op3: mux",color=green4, style=filled]
+3236 -> 3241
+3242 [label="stream: 0",color=crimson, style=filled]
+3241 -> 3242
+3243 [label="ext_intruder_position_x",color=cyan1, style=filled]
+3241 -> 3243
+3244 [label="stream: 2",color=crimson, style=filled]
+3241 -> 3244
+3245 [label="op2: *",color=green4, style=filled]
+3235 -> 3245
+3246 [label="op2: /",color=green4, style=filled]
+3245 -> 3246
+3247 [label="op2: +",color=green4, style=filled]
+3246 -> 3247
+3248 [label="op2: -",color=green4, style=filled]
+3247 -> 3248
+3249 [label="const: 0.0",color=red1, style=filled]
+3248 -> 3249
+3250 [label="op2: +",color=green4, style=filled]
+3248 -> 3250
+3251 [label="op2: *",color=green4, style=filled]
+3250 -> 3251
+3252 [label="op2: -",color=green4, style=filled]
+3251 -> 3252
+3253 [label="op3: mux",color=green4, style=filled]
+3252 -> 3253
+3254 [label="stream: 0",color=crimson, style=filled]
+3253 -> 3254
+3255 [label="ext_ownship_position_x",color=cyan1, style=filled]
+3253 -> 3255
+3256 [label="stream: 1",color=crimson, style=filled]
+3253 -> 3256
+3257 [label="op3: mux",color=green4, style=filled]
+3252 -> 3257
+3258 [label="stream: 0",color=crimson, style=filled]
+3257 -> 3258
+3259 [label="ext_intruder_position_x",color=cyan1, style=filled]
+3257 -> 3259
+3260 [label="stream: 2",color=crimson, style=filled]
+3257 -> 3260
+3261 [label="op2: -",color=green4, style=filled]
+3251 -> 3261
+3262 [label="op3: mux",color=green4, style=filled]
+3261 -> 3262
+3263 [label="stream: 0",color=crimson, style=filled]
+3262 -> 3263
+3264 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+3262 -> 3264
+3265 [label="stream: 7",color=crimson, style=filled]
+3262 -> 3265
+3266 [label="op3: mux",color=green4, style=filled]
+3261 -> 3266
+3267 [label="stream: 0",color=crimson, style=filled]
+3266 -> 3267
+3268 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+3266 -> 3268
+3269 [label="stream: 3",color=crimson, style=filled]
+3266 -> 3269
+3270 [label="op2: *",color=green4, style=filled]
+3250 -> 3270
+3271 [label="op2: -",color=green4, style=filled]
+3270 -> 3271
+3272 [label="op3: mux",color=green4, style=filled]
+3271 -> 3272
+3273 [label="stream: 0",color=crimson, style=filled]
+3272 -> 3273
+3274 [label="ext_ownship_position_y",color=cyan1, style=filled]
+3272 -> 3274
+3275 [label="stream: 4",color=crimson, style=filled]
+3272 -> 3275
+3276 [label="op3: mux",color=green4, style=filled]
+3271 -> 3276
+3277 [label="stream: 0",color=crimson, style=filled]
+3276 -> 3277
+3278 [label="ext_intruder_position_y",color=cyan1, style=filled]
+3276 -> 3278
+3279 [label="stream: 5",color=crimson, style=filled]
+3276 -> 3279
+3280 [label="op2: -",color=green4, style=filled]
+3270 -> 3280
+3281 [label="op3: mux",color=green4, style=filled]
+3280 -> 3281
+3282 [label="stream: 0",color=crimson, style=filled]
+3281 -> 3282
+3283 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+3281 -> 3283
+3284 [label="stream: 8",color=crimson, style=filled]
+3281 -> 3284
+3285 [label="op3: mux",color=green4, style=filled]
+3280 -> 3285
+3286 [label="stream: 0",color=crimson, style=filled]
+3285 -> 3286
+3287 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+3285 -> 3287
+3288 [label="stream: 6",color=crimson, style=filled]
+3285 -> 3288
+3289 [label="op2: *",color=green4, style=filled]
+3247 -> 3289
+3290 [label="op3: mux",color=green4, style=filled]
+3289 -> 3290
+3291 [label="op2: >=",color=green4, style=filled]
+3290 -> 3291
+3292 [label="op2: *",color=green4, style=filled]
+3291 -> 3292
+3293 [label="op2: -",color=green4, style=filled]
+3292 -> 3293
+3294 [label="op3: mux",color=green4, style=filled]
+3293 -> 3294
+3295 [label="stream: 0",color=crimson, style=filled]
+3294 -> 3295
+3296 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3294 -> 3296
+3297 [label="stream: 9",color=crimson, style=filled]
+3294 -> 3297
+3298 [label="op3: mux",color=green4, style=filled]
+3293 -> 3298
+3299 [label="stream: 0",color=crimson, style=filled]
+3298 -> 3299
+3300 [label="ext_intruder_position_z",color=cyan1, style=filled]
+3298 -> 3300
+3301 [label="stream: 10",color=crimson, style=filled]
+3298 -> 3301
+3302 [label="ext_ident_double_22",color=cyan4, style=filled]
+3292 -> 3302
+3314 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+3291 -> 3314
+3315 [label="op2: *",color=green4, style=filled]
+3290 -> 3315
+3316 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+3315 -> 3316
+3317 [label="op1: signum",color=green4, style=filled]
+3315 -> 3317
+3318 [label="op2: -",color=green4, style=filled]
+3317 -> 3318
+3319 [label="op3: mux",color=green4, style=filled]
+3318 -> 3319
+3320 [label="stream: 0",color=crimson, style=filled]
+3319 -> 3320
+3321 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3319 -> 3321
+3322 [label="stream: 9",color=crimson, style=filled]
+3319 -> 3322
+3323 [label="op3: mux",color=green4, style=filled]
+3318 -> 3323
+3324 [label="stream: 0",color=crimson, style=filled]
+3323 -> 3324
+3325 [label="ext_intruder_position_z",color=cyan1, style=filled]
+3323 -> 3325
+3326 [label="stream: 10",color=crimson, style=filled]
+3323 -> 3326
+3327 [label="const: -1.0",color=red1, style=filled]
+3290 -> 3327
+3328 [label="ext_sqrt_23",color=cyan4, style=filled]
+3289 -> 3328
+3492 [label="op2: +",color=green4, style=filled]
+3246 -> 3492
+3493 [label="op2: *",color=green4, style=filled]
+3492 -> 3493
+3494 [label="op2: -",color=green4, style=filled]
+3493 -> 3494
+3495 [label="op3: mux",color=green4, style=filled]
+3494 -> 3495
+3496 [label="stream: 0",color=crimson, style=filled]
+3495 -> 3496
+3497 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+3495 -> 3497
+3498 [label="stream: 7",color=crimson, style=filled]
+3495 -> 3498
+3499 [label="op3: mux",color=green4, style=filled]
+3494 -> 3499
+3500 [label="stream: 0",color=crimson, style=filled]
+3499 -> 3500
+3501 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+3499 -> 3501
+3502 [label="stream: 3",color=crimson, style=filled]
+3499 -> 3502
+3503 [label="op2: -",color=green4, style=filled]
+3493 -> 3503
+3504 [label="op3: mux",color=green4, style=filled]
+3503 -> 3504
+3505 [label="stream: 0",color=crimson, style=filled]
+3504 -> 3505
+3506 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+3504 -> 3506
+3507 [label="stream: 7",color=crimson, style=filled]
+3504 -> 3507
+3508 [label="op3: mux",color=green4, style=filled]
+3503 -> 3508
+3509 [label="stream: 0",color=crimson, style=filled]
+3508 -> 3509
+3510 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+3508 -> 3510
+3511 [label="stream: 3",color=crimson, style=filled]
+3508 -> 3511
+3512 [label="op2: *",color=green4, style=filled]
+3492 -> 3512
+3513 [label="op2: -",color=green4, style=filled]
+3512 -> 3513
+3514 [label="op3: mux",color=green4, style=filled]
+3513 -> 3514
+3515 [label="stream: 0",color=crimson, style=filled]
+3514 -> 3515
+3516 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+3514 -> 3516
+3517 [label="stream: 8",color=crimson, style=filled]
+3514 -> 3517
+3518 [label="op3: mux",color=green4, style=filled]
+3513 -> 3518
+3519 [label="stream: 0",color=crimson, style=filled]
+3518 -> 3519
+3520 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+3518 -> 3520
+3521 [label="stream: 6",color=crimson, style=filled]
+3518 -> 3521
+3522 [label="op2: -",color=green4, style=filled]
+3512 -> 3522
+3523 [label="op3: mux",color=green4, style=filled]
+3522 -> 3523
+3524 [label="stream: 0",color=crimson, style=filled]
+3523 -> 3524
+3525 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+3523 -> 3525
+3526 [label="stream: 8",color=crimson, style=filled]
+3523 -> 3526
+3527 [label="op3: mux",color=green4, style=filled]
+3522 -> 3527
+3528 [label="stream: 0",color=crimson, style=filled]
+3527 -> 3528
+3529 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+3527 -> 3529
+3530 [label="stream: 6",color=crimson, style=filled]
+3527 -> 3530
+3531 [label="op2: -",color=green4, style=filled]
+3245 -> 3531
+3532 [label="op3: mux",color=green4, style=filled]
+3531 -> 3532
+3533 [label="stream: 0",color=crimson, style=filled]
+3532 -> 3533
+3534 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+3532 -> 3534
+3535 [label="stream: 7",color=crimson, style=filled]
+3532 -> 3535
+3536 [label="op3: mux",color=green4, style=filled]
+3531 -> 3536
+3537 [label="stream: 0",color=crimson, style=filled]
+3536 -> 3537
+3538 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+3536 -> 3538
+3539 [label="stream: 3",color=crimson, style=filled]
+3536 -> 3539
+3540 [label="op2: *",color=green4, style=filled]
+3224 -> 3540
+3541 [label="op2: -",color=green4, style=filled]
+3540 -> 3541
+3542 [label="op3: mux",color=green4, style=filled]
+3541 -> 3542
+3543 [label="stream: 0",color=crimson, style=filled]
+3542 -> 3543
+3544 [label="ext_ownship_position_y",color=cyan1, style=filled]
+3542 -> 3544
+3545 [label="stream: 4",color=crimson, style=filled]
+3542 -> 3545
+3546 [label="op3: mux",color=green4, style=filled]
+3541 -> 3546
+3547 [label="stream: 0",color=crimson, style=filled]
+3546 -> 3547
+3548 [label="ext_intruder_position_y",color=cyan1, style=filled]
+3546 -> 3548
+3549 [label="stream: 5",color=crimson, style=filled]
+3546 -> 3549
+3550 [label="op2: +",color=green4, style=filled]
+3540 -> 3550
+3551 [label="op2: -",color=green4, style=filled]
+3550 -> 3551
+3552 [label="op3: mux",color=green4, style=filled]
+3551 -> 3552
+3553 [label="stream: 0",color=crimson, style=filled]
+3552 -> 3553
+3554 [label="ext_ownship_position_y",color=cyan1, style=filled]
+3552 -> 3554
+3555 [label="stream: 4",color=crimson, style=filled]
+3552 -> 3555
+3556 [label="op3: mux",color=green4, style=filled]
+3551 -> 3556
+3557 [label="stream: 0",color=crimson, style=filled]
+3556 -> 3557
+3558 [label="ext_intruder_position_y",color=cyan1, style=filled]
+3556 -> 3558
+3559 [label="stream: 5",color=crimson, style=filled]
+3556 -> 3559
+3560 [label="op2: *",color=green4, style=filled]
+3550 -> 3560
+3561 [label="op2: /",color=green4, style=filled]
+3560 -> 3561
+3562 [label="op2: +",color=green4, style=filled]
+3561 -> 3562
+3563 [label="op2: -",color=green4, style=filled]
+3562 -> 3563
+3564 [label="const: 0.0",color=red1, style=filled]
+3563 -> 3564
+3565 [label="op2: +",color=green4, style=filled]
+3563 -> 3565
+3566 [label="op2: *",color=green4, style=filled]
+3565 -> 3566
+3567 [label="op2: -",color=green4, style=filled]
+3566 -> 3567
+3568 [label="op3: mux",color=green4, style=filled]
+3567 -> 3568
+3569 [label="stream: 0",color=crimson, style=filled]
+3568 -> 3569
+3570 [label="ext_ownship_position_x",color=cyan1, style=filled]
+3568 -> 3570
+3571 [label="stream: 1",color=crimson, style=filled]
+3568 -> 3571
+3572 [label="op3: mux",color=green4, style=filled]
+3567 -> 3572
+3573 [label="stream: 0",color=crimson, style=filled]
+3572 -> 3573
+3574 [label="ext_intruder_position_x",color=cyan1, style=filled]
+3572 -> 3574
+3575 [label="stream: 2",color=crimson, style=filled]
+3572 -> 3575
+3576 [label="op2: -",color=green4, style=filled]
+3566 -> 3576
+3577 [label="op3: mux",color=green4, style=filled]
+3576 -> 3577
+3578 [label="stream: 0",color=crimson, style=filled]
+3577 -> 3578
+3579 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+3577 -> 3579
+3580 [label="stream: 7",color=crimson, style=filled]
+3577 -> 3580
+3581 [label="op3: mux",color=green4, style=filled]
+3576 -> 3581
+3582 [label="stream: 0",color=crimson, style=filled]
+3581 -> 3582
+3583 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+3581 -> 3583
+3584 [label="stream: 3",color=crimson, style=filled]
+3581 -> 3584
+3585 [label="op2: *",color=green4, style=filled]
+3565 -> 3585
+3586 [label="op2: -",color=green4, style=filled]
+3585 -> 3586
+3587 [label="op3: mux",color=green4, style=filled]
+3586 -> 3587
+3588 [label="stream: 0",color=crimson, style=filled]
+3587 -> 3588
+3589 [label="ext_ownship_position_y",color=cyan1, style=filled]
+3587 -> 3589
+3590 [label="stream: 4",color=crimson, style=filled]
+3587 -> 3590
+3591 [label="op3: mux",color=green4, style=filled]
+3586 -> 3591
+3592 [label="stream: 0",color=crimson, style=filled]
+3591 -> 3592
+3593 [label="ext_intruder_position_y",color=cyan1, style=filled]
+3591 -> 3593
+3594 [label="stream: 5",color=crimson, style=filled]
+3591 -> 3594
+3595 [label="op2: -",color=green4, style=filled]
+3585 -> 3595
+3596 [label="op3: mux",color=green4, style=filled]
+3595 -> 3596
+3597 [label="stream: 0",color=crimson, style=filled]
+3596 -> 3597
+3598 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+3596 -> 3598
+3599 [label="stream: 8",color=crimson, style=filled]
+3596 -> 3599
+3600 [label="op3: mux",color=green4, style=filled]
+3595 -> 3600
+3601 [label="stream: 0",color=crimson, style=filled]
+3600 -> 3601
+3602 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+3600 -> 3602
+3603 [label="stream: 6",color=crimson, style=filled]
+3600 -> 3603
+3604 [label="op2: *",color=green4, style=filled]
+3562 -> 3604
+3605 [label="op3: mux",color=green4, style=filled]
+3604 -> 3605
+3606 [label="op2: >=",color=green4, style=filled]
+3605 -> 3606
+3607 [label="op2: *",color=green4, style=filled]
+3606 -> 3607
+3608 [label="op2: -",color=green4, style=filled]
+3607 -> 3608
+3609 [label="op3: mux",color=green4, style=filled]
+3608 -> 3609
+3610 [label="stream: 0",color=crimson, style=filled]
+3609 -> 3610
+3611 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3609 -> 3611
+3612 [label="stream: 9",color=crimson, style=filled]
+3609 -> 3612
+3613 [label="op3: mux",color=green4, style=filled]
+3608 -> 3613
+3614 [label="stream: 0",color=crimson, style=filled]
+3613 -> 3614
+3615 [label="ext_intruder_position_z",color=cyan1, style=filled]
+3613 -> 3615
+3616 [label="stream: 10",color=crimson, style=filled]
+3613 -> 3616
+3617 [label="ext_ident_double_24",color=cyan4, style=filled]
+3607 -> 3617
+3629 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+3606 -> 3629
+3630 [label="op2: *",color=green4, style=filled]
+3605 -> 3630
+3631 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+3630 -> 3631
+3632 [label="op1: signum",color=green4, style=filled]
+3630 -> 3632
+3633 [label="op2: -",color=green4, style=filled]
+3632 -> 3633
+3634 [label="op3: mux",color=green4, style=filled]
+3633 -> 3634
+3635 [label="stream: 0",color=crimson, style=filled]
+3634 -> 3635
+3636 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3634 -> 3636
+3637 [label="stream: 9",color=crimson, style=filled]
+3634 -> 3637
+3638 [label="op3: mux",color=green4, style=filled]
+3633 -> 3638
+3639 [label="stream: 0",color=crimson, style=filled]
+3638 -> 3639
+3640 [label="ext_intruder_position_z",color=cyan1, style=filled]
+3638 -> 3640
+3641 [label="stream: 10",color=crimson, style=filled]
+3638 -> 3641
+3642 [label="const: -1.0",color=red1, style=filled]
+3605 -> 3642
+3643 [label="ext_sqrt_25",color=cyan4, style=filled]
+3604 -> 3643
+3807 [label="op2: +",color=green4, style=filled]
+3561 -> 3807
+3808 [label="op2: *",color=green4, style=filled]
+3807 -> 3808
+3809 [label="op2: -",color=green4, style=filled]
+3808 -> 3809
+3810 [label="op3: mux",color=green4, style=filled]
+3809 -> 3810
+3811 [label="stream: 0",color=crimson, style=filled]
+3810 -> 3811
+3812 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+3810 -> 3812
+3813 [label="stream: 7",color=crimson, style=filled]
+3810 -> 3813
+3814 [label="op3: mux",color=green4, style=filled]
+3809 -> 3814
+3815 [label="stream: 0",color=crimson, style=filled]
+3814 -> 3815
+3816 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+3814 -> 3816
+3817 [label="stream: 3",color=crimson, style=filled]
+3814 -> 3817
+3818 [label="op2: -",color=green4, style=filled]
+3808 -> 3818
+3819 [label="op3: mux",color=green4, style=filled]
+3818 -> 3819
+3820 [label="stream: 0",color=crimson, style=filled]
+3819 -> 3820
+3821 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+3819 -> 3821
+3822 [label="stream: 7",color=crimson, style=filled]
+3819 -> 3822
+3823 [label="op3: mux",color=green4, style=filled]
+3818 -> 3823
+3824 [label="stream: 0",color=crimson, style=filled]
+3823 -> 3824
+3825 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+3823 -> 3825
+3826 [label="stream: 3",color=crimson, style=filled]
+3823 -> 3826
+3827 [label="op2: *",color=green4, style=filled]
+3807 -> 3827
+3828 [label="op2: -",color=green4, style=filled]
+3827 -> 3828
+3829 [label="op3: mux",color=green4, style=filled]
+3828 -> 3829
+3830 [label="stream: 0",color=crimson, style=filled]
+3829 -> 3830
+3831 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+3829 -> 3831
+3832 [label="stream: 8",color=crimson, style=filled]
+3829 -> 3832
+3833 [label="op3: mux",color=green4, style=filled]
+3828 -> 3833
+3834 [label="stream: 0",color=crimson, style=filled]
+3833 -> 3834
+3835 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+3833 -> 3835
+3836 [label="stream: 6",color=crimson, style=filled]
+3833 -> 3836
+3837 [label="op2: -",color=green4, style=filled]
+3827 -> 3837
+3838 [label="op3: mux",color=green4, style=filled]
+3837 -> 3838
+3839 [label="stream: 0",color=crimson, style=filled]
+3838 -> 3839
+3840 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+3838 -> 3840
+3841 [label="stream: 8",color=crimson, style=filled]
+3838 -> 3841
+3842 [label="op3: mux",color=green4, style=filled]
+3837 -> 3842
+3843 [label="stream: 0",color=crimson, style=filled]
+3842 -> 3843
+3844 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+3842 -> 3844
+3845 [label="stream: 6",color=crimson, style=filled]
+3842 -> 3845
+3846 [label="op2: -",color=green4, style=filled]
+3560 -> 3846
+3847 [label="op3: mux",color=green4, style=filled]
+3846 -> 3847
+3848 [label="stream: 0",color=crimson, style=filled]
+3847 -> 3848
+3849 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+3847 -> 3849
+3850 [label="stream: 8",color=crimson, style=filled]
+3847 -> 3850
+3851 [label="op3: mux",color=green4, style=filled]
+3846 -> 3851
+3852 [label="stream: 0",color=crimson, style=filled]
+3851 -> 3852
+3853 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+3851 -> 3853
+3854 [label="stream: 6",color=crimson, style=filled]
+3851 -> 3854
+3855 [label="op2: +",color=green4, style=filled]
+3219 -> 3855
+3856 [label="op2: *",color=green4, style=filled]
+3855 -> 3856
+3857 [label="op2: -",color=green4, style=filled]
+3856 -> 3857
+3858 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+3857 -> 3858
+3859 [label="op3: mux",color=green4, style=filled]
+3857 -> 3859
+3860 [label="stream: 0",color=crimson, style=filled]
+3859 -> 3860
+3861 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+3859 -> 3861
+3862 [label="stream: 3",color=crimson, style=filled]
+3859 -> 3862
+3863 [label="op2: +",color=green4, style=filled]
+3856 -> 3863
+3864 [label="op2: -",color=green4, style=filled]
+3863 -> 3864
+3865 [label="op3: mux",color=green4, style=filled]
+3864 -> 3865
+3866 [label="stream: 0",color=crimson, style=filled]
+3865 -> 3866
+3867 [label="ext_ownship_position_x",color=cyan1, style=filled]
+3865 -> 3867
+3868 [label="stream: 1",color=crimson, style=filled]
+3865 -> 3868
+3869 [label="op3: mux",color=green4, style=filled]
+3864 -> 3869
+3870 [label="stream: 0",color=crimson, style=filled]
+3869 -> 3870
+3871 [label="ext_intruder_position_x",color=cyan1, style=filled]
+3869 -> 3871
+3872 [label="stream: 2",color=crimson, style=filled]
+3869 -> 3872
+3873 [label="op2: *",color=green4, style=filled]
+3863 -> 3873
+3874 [label="op2: /",color=green4, style=filled]
+3873 -> 3874
+3875 [label="op2: +",color=green4, style=filled]
+3874 -> 3875
+3876 [label="op2: -",color=green4, style=filled]
+3875 -> 3876
+3877 [label="const: 0.0",color=red1, style=filled]
+3876 -> 3877
+3878 [label="op2: +",color=green4, style=filled]
+3876 -> 3878
+3879 [label="op2: *",color=green4, style=filled]
+3878 -> 3879
+3880 [label="op2: -",color=green4, style=filled]
+3879 -> 3880
+3881 [label="op3: mux",color=green4, style=filled]
+3880 -> 3881
+3882 [label="stream: 0",color=crimson, style=filled]
+3881 -> 3882
+3883 [label="ext_ownship_position_x",color=cyan1, style=filled]
+3881 -> 3883
+3884 [label="stream: 1",color=crimson, style=filled]
+3881 -> 3884
+3885 [label="op3: mux",color=green4, style=filled]
+3880 -> 3885
+3886 [label="stream: 0",color=crimson, style=filled]
+3885 -> 3886
+3887 [label="ext_intruder_position_x",color=cyan1, style=filled]
+3885 -> 3887
+3888 [label="stream: 2",color=crimson, style=filled]
+3885 -> 3888
+3889 [label="op2: -",color=green4, style=filled]
+3879 -> 3889
+3890 [label="op3: mux",color=green4, style=filled]
+3889 -> 3890
+3891 [label="stream: 0",color=crimson, style=filled]
+3890 -> 3891
+3892 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+3890 -> 3892
+3893 [label="stream: 7",color=crimson, style=filled]
+3890 -> 3893
+3894 [label="op3: mux",color=green4, style=filled]
+3889 -> 3894
+3895 [label="stream: 0",color=crimson, style=filled]
+3894 -> 3895
+3896 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+3894 -> 3896
+3897 [label="stream: 3",color=crimson, style=filled]
+3894 -> 3897
+3898 [label="op2: *",color=green4, style=filled]
+3878 -> 3898
+3899 [label="op2: -",color=green4, style=filled]
+3898 -> 3899
+3900 [label="op3: mux",color=green4, style=filled]
+3899 -> 3900
+3901 [label="stream: 0",color=crimson, style=filled]
+3900 -> 3901
+3902 [label="ext_ownship_position_y",color=cyan1, style=filled]
+3900 -> 3902
+3903 [label="stream: 4",color=crimson, style=filled]
+3900 -> 3903
+3904 [label="op3: mux",color=green4, style=filled]
+3899 -> 3904
+3905 [label="stream: 0",color=crimson, style=filled]
+3904 -> 3905
+3906 [label="ext_intruder_position_y",color=cyan1, style=filled]
+3904 -> 3906
+3907 [label="stream: 5",color=crimson, style=filled]
+3904 -> 3907
+3908 [label="op2: -",color=green4, style=filled]
+3898 -> 3908
+3909 [label="op3: mux",color=green4, style=filled]
+3908 -> 3909
+3910 [label="stream: 0",color=crimson, style=filled]
+3909 -> 3910
+3911 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+3909 -> 3911
+3912 [label="stream: 8",color=crimson, style=filled]
+3909 -> 3912
+3913 [label="op3: mux",color=green4, style=filled]
+3908 -> 3913
+3914 [label="stream: 0",color=crimson, style=filled]
+3913 -> 3914
+3915 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+3913 -> 3915
+3916 [label="stream: 6",color=crimson, style=filled]
+3913 -> 3916
+3917 [label="op2: *",color=green4, style=filled]
+3875 -> 3917
+3918 [label="op3: mux",color=green4, style=filled]
+3917 -> 3918
+3919 [label="op2: >=",color=green4, style=filled]
+3918 -> 3919
+3920 [label="op2: *",color=green4, style=filled]
+3919 -> 3920
+3921 [label="op2: -",color=green4, style=filled]
+3920 -> 3921
+3922 [label="op3: mux",color=green4, style=filled]
+3921 -> 3922
+3923 [label="stream: 0",color=crimson, style=filled]
+3922 -> 3923
+3924 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3922 -> 3924
+3925 [label="stream: 9",color=crimson, style=filled]
+3922 -> 3925
+3926 [label="op3: mux",color=green4, style=filled]
+3921 -> 3926
+3927 [label="stream: 0",color=crimson, style=filled]
+3926 -> 3927
+3928 [label="ext_intruder_position_z",color=cyan1, style=filled]
+3926 -> 3928
+3929 [label="stream: 10",color=crimson, style=filled]
+3926 -> 3929
+3930 [label="ext_ident_double_26",color=cyan4, style=filled]
+3920 -> 3930
+3942 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+3919 -> 3942
+3943 [label="op2: *",color=green4, style=filled]
+3918 -> 3943
+3944 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+3943 -> 3944
+3945 [label="op1: signum",color=green4, style=filled]
+3943 -> 3945
+3946 [label="op2: -",color=green4, style=filled]
+3945 -> 3946
+3947 [label="op3: mux",color=green4, style=filled]
+3946 -> 3947
+3948 [label="stream: 0",color=crimson, style=filled]
+3947 -> 3948
+3949 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3947 -> 3949
+3950 [label="stream: 9",color=crimson, style=filled]
+3947 -> 3950
+3951 [label="op3: mux",color=green4, style=filled]
+3946 -> 3951
+3952 [label="stream: 0",color=crimson, style=filled]
+3951 -> 3952
+3953 [label="ext_intruder_position_z",color=cyan1, style=filled]
+3951 -> 3953
+3954 [label="stream: 10",color=crimson, style=filled]
+3951 -> 3954
+3955 [label="const: -1.0",color=red1, style=filled]
+3918 -> 3955
+3956 [label="ext_sqrt_27",color=cyan4, style=filled]
+3917 -> 3956
+4120 [label="op2: +",color=green4, style=filled]
+3874 -> 4120
+4121 [label="op2: *",color=green4, style=filled]
+4120 -> 4121
+4122 [label="op2: -",color=green4, style=filled]
+4121 -> 4122
+4123 [label="op3: mux",color=green4, style=filled]
+4122 -> 4123
+4124 [label="stream: 0",color=crimson, style=filled]
+4123 -> 4124
+4125 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+4123 -> 4125
+4126 [label="stream: 7",color=crimson, style=filled]
+4123 -> 4126
+4127 [label="op3: mux",color=green4, style=filled]
+4122 -> 4127
+4128 [label="stream: 0",color=crimson, style=filled]
+4127 -> 4128
+4129 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+4127 -> 4129
+4130 [label="stream: 3",color=crimson, style=filled]
+4127 -> 4130
+4131 [label="op2: -",color=green4, style=filled]
+4121 -> 4131
+4132 [label="op3: mux",color=green4, style=filled]
+4131 -> 4132
+4133 [label="stream: 0",color=crimson, style=filled]
+4132 -> 4133
+4134 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+4132 -> 4134
+4135 [label="stream: 7",color=crimson, style=filled]
+4132 -> 4135
+4136 [label="op3: mux",color=green4, style=filled]
+4131 -> 4136
+4137 [label="stream: 0",color=crimson, style=filled]
+4136 -> 4137
+4138 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+4136 -> 4138
+4139 [label="stream: 3",color=crimson, style=filled]
+4136 -> 4139
+4140 [label="op2: *",color=green4, style=filled]
+4120 -> 4140
+4141 [label="op2: -",color=green4, style=filled]
+4140 -> 4141
+4142 [label="op3: mux",color=green4, style=filled]
+4141 -> 4142
+4143 [label="stream: 0",color=crimson, style=filled]
+4142 -> 4143
+4144 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+4142 -> 4144
+4145 [label="stream: 8",color=crimson, style=filled]
+4142 -> 4145
+4146 [label="op3: mux",color=green4, style=filled]
+4141 -> 4146
+4147 [label="stream: 0",color=crimson, style=filled]
+4146 -> 4147
+4148 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+4146 -> 4148
+4149 [label="stream: 6",color=crimson, style=filled]
+4146 -> 4149
+4150 [label="op2: -",color=green4, style=filled]
+4140 -> 4150
+4151 [label="op3: mux",color=green4, style=filled]
+4150 -> 4151
+4152 [label="stream: 0",color=crimson, style=filled]
+4151 -> 4152
+4153 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+4151 -> 4153
+4154 [label="stream: 8",color=crimson, style=filled]
+4151 -> 4154
+4155 [label="op3: mux",color=green4, style=filled]
+4150 -> 4155
+4156 [label="stream: 0",color=crimson, style=filled]
+4155 -> 4156
+4157 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+4155 -> 4157
+4158 [label="stream: 6",color=crimson, style=filled]
+4155 -> 4158
+4159 [label="op2: -",color=green4, style=filled]
+3873 -> 4159
+4160 [label="op3: mux",color=green4, style=filled]
+4159 -> 4160
+4161 [label="stream: 0",color=crimson, style=filled]
+4160 -> 4161
+4162 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+4160 -> 4162
+4163 [label="stream: 7",color=crimson, style=filled]
+4160 -> 4163
+4164 [label="op3: mux",color=green4, style=filled]
+4159 -> 4164
+4165 [label="stream: 0",color=crimson, style=filled]
+4164 -> 4165
+4166 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+4164 -> 4166
+4167 [label="stream: 3",color=crimson, style=filled]
+4164 -> 4167
+4168 [label="op2: *",color=green4, style=filled]
+3855 -> 4168
+4169 [label="op2: -",color=green4, style=filled]
+4168 -> 4169
+4170 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+4169 -> 4170
+4171 [label="op3: mux",color=green4, style=filled]
+4169 -> 4171
+4172 [label="stream: 0",color=crimson, style=filled]
+4171 -> 4172
+4173 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+4171 -> 4173
+4174 [label="stream: 6",color=crimson, style=filled]
+4171 -> 4174
+4175 [label="op2: +",color=green4, style=filled]
+4168 -> 4175
+4176 [label="op2: -",color=green4, style=filled]
+4175 -> 4176
+4177 [label="op3: mux",color=green4, style=filled]
+4176 -> 4177
+4178 [label="stream: 0",color=crimson, style=filled]
+4177 -> 4178
+4179 [label="ext_ownship_position_y",color=cyan1, style=filled]
+4177 -> 4179
+4180 [label="stream: 4",color=crimson, style=filled]
+4177 -> 4180
+4181 [label="op3: mux",color=green4, style=filled]
+4176 -> 4181
+4182 [label="stream: 0",color=crimson, style=filled]
+4181 -> 4182
+4183 [label="ext_intruder_position_y",color=cyan1, style=filled]
+4181 -> 4183
+4184 [label="stream: 5",color=crimson, style=filled]
+4181 -> 4184
+4185 [label="op2: *",color=green4, style=filled]
+4175 -> 4185
+4186 [label="op2: /",color=green4, style=filled]
+4185 -> 4186
+4187 [label="op2: +",color=green4, style=filled]
+4186 -> 4187
+4188 [label="op2: -",color=green4, style=filled]
+4187 -> 4188
+4189 [label="const: 0.0",color=red1, style=filled]
+4188 -> 4189
+4190 [label="op2: +",color=green4, style=filled]
+4188 -> 4190
+4191 [label="op2: *",color=green4, style=filled]
+4190 -> 4191
+4192 [label="op2: -",color=green4, style=filled]
+4191 -> 4192
+4193 [label="op3: mux",color=green4, style=filled]
+4192 -> 4193
+4194 [label="stream: 0",color=crimson, style=filled]
+4193 -> 4194
+4195 [label="ext_ownship_position_x",color=cyan1, style=filled]
+4193 -> 4195
+4196 [label="stream: 1",color=crimson, style=filled]
+4193 -> 4196
+4197 [label="op3: mux",color=green4, style=filled]
+4192 -> 4197
+4198 [label="stream: 0",color=crimson, style=filled]
+4197 -> 4198
+4199 [label="ext_intruder_position_x",color=cyan1, style=filled]
+4197 -> 4199
+4200 [label="stream: 2",color=crimson, style=filled]
+4197 -> 4200
+4201 [label="op2: -",color=green4, style=filled]
+4191 -> 4201
+4202 [label="op3: mux",color=green4, style=filled]
+4201 -> 4202
+4203 [label="stream: 0",color=crimson, style=filled]
+4202 -> 4203
+4204 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+4202 -> 4204
+4205 [label="stream: 7",color=crimson, style=filled]
+4202 -> 4205
+4206 [label="op3: mux",color=green4, style=filled]
+4201 -> 4206
+4207 [label="stream: 0",color=crimson, style=filled]
+4206 -> 4207
+4208 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+4206 -> 4208
+4209 [label="stream: 3",color=crimson, style=filled]
+4206 -> 4209
+4210 [label="op2: *",color=green4, style=filled]
+4190 -> 4210
+4211 [label="op2: -",color=green4, style=filled]
+4210 -> 4211
+4212 [label="op3: mux",color=green4, style=filled]
+4211 -> 4212
+4213 [label="stream: 0",color=crimson, style=filled]
+4212 -> 4213
+4214 [label="ext_ownship_position_y",color=cyan1, style=filled]
+4212 -> 4214
+4215 [label="stream: 4",color=crimson, style=filled]
+4212 -> 4215
+4216 [label="op3: mux",color=green4, style=filled]
+4211 -> 4216
+4217 [label="stream: 0",color=crimson, style=filled]
+4216 -> 4217
+4218 [label="ext_intruder_position_y",color=cyan1, style=filled]
+4216 -> 4218
+4219 [label="stream: 5",color=crimson, style=filled]
+4216 -> 4219
+4220 [label="op2: -",color=green4, style=filled]
+4210 -> 4220
+4221 [label="op3: mux",color=green4, style=filled]
+4220 -> 4221
+4222 [label="stream: 0",color=crimson, style=filled]
+4221 -> 4222
+4223 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+4221 -> 4223
+4224 [label="stream: 8",color=crimson, style=filled]
+4221 -> 4224
+4225 [label="op3: mux",color=green4, style=filled]
+4220 -> 4225
+4226 [label="stream: 0",color=crimson, style=filled]
+4225 -> 4226
+4227 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+4225 -> 4227
+4228 [label="stream: 6",color=crimson, style=filled]
+4225 -> 4228
+4229 [label="op2: *",color=green4, style=filled]
+4187 -> 4229
+4230 [label="op3: mux",color=green4, style=filled]
+4229 -> 4230
+4231 [label="op2: >=",color=green4, style=filled]
+4230 -> 4231
+4232 [label="op2: *",color=green4, style=filled]
+4231 -> 4232
+4233 [label="op2: -",color=green4, style=filled]
+4232 -> 4233
+4234 [label="op3: mux",color=green4, style=filled]
+4233 -> 4234
+4235 [label="stream: 0",color=crimson, style=filled]
+4234 -> 4235
+4236 [label="ext_ownship_position_z",color=cyan1, style=filled]
+4234 -> 4236
+4237 [label="stream: 9",color=crimson, style=filled]
+4234 -> 4237
+4238 [label="op3: mux",color=green4, style=filled]
+4233 -> 4238
+4239 [label="stream: 0",color=crimson, style=filled]
+4238 -> 4239
+4240 [label="ext_intruder_position_z",color=cyan1, style=filled]
+4238 -> 4240
+4241 [label="stream: 10",color=crimson, style=filled]
+4238 -> 4241
+4242 [label="ext_ident_double_28",color=cyan4, style=filled]
+4232 -> 4242
+4254 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+4231 -> 4254
+4255 [label="op2: *",color=green4, style=filled]
+4230 -> 4255
+4256 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+4255 -> 4256
+4257 [label="op1: signum",color=green4, style=filled]
+4255 -> 4257
+4258 [label="op2: -",color=green4, style=filled]
+4257 -> 4258
+4259 [label="op3: mux",color=green4, style=filled]
+4258 -> 4259
+4260 [label="stream: 0",color=crimson, style=filled]
+4259 -> 4260
+4261 [label="ext_ownship_position_z",color=cyan1, style=filled]
+4259 -> 4261
+4262 [label="stream: 9",color=crimson, style=filled]
+4259 -> 4262
+4263 [label="op3: mux",color=green4, style=filled]
+4258 -> 4263
+4264 [label="stream: 0",color=crimson, style=filled]
+4263 -> 4264
+4265 [label="ext_intruder_position_z",color=cyan1, style=filled]
+4263 -> 4265
+4266 [label="stream: 10",color=crimson, style=filled]
+4263 -> 4266
+4267 [label="const: -1.0",color=red1, style=filled]
+4230 -> 4267
+4268 [label="ext_sqrt_29",color=cyan4, style=filled]
+4229 -> 4268
+4432 [label="op2: +",color=green4, style=filled]
+4186 -> 4432
+4433 [label="op2: *",color=green4, style=filled]
+4432 -> 4433
+4434 [label="op2: -",color=green4, style=filled]
+4433 -> 4434
+4435 [label="op3: mux",color=green4, style=filled]
+4434 -> 4435
+4436 [label="stream: 0",color=crimson, style=filled]
+4435 -> 4436
+4437 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+4435 -> 4437
+4438 [label="stream: 7",color=crimson, style=filled]
+4435 -> 4438
+4439 [label="op3: mux",color=green4, style=filled]
+4434 -> 4439
+4440 [label="stream: 0",color=crimson, style=filled]
+4439 -> 4440
+4441 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+4439 -> 4441
+4442 [label="stream: 3",color=crimson, style=filled]
+4439 -> 4442
+4443 [label="op2: -",color=green4, style=filled]
+4433 -> 4443
+4444 [label="op3: mux",color=green4, style=filled]
+4443 -> 4444
+4445 [label="stream: 0",color=crimson, style=filled]
+4444 -> 4445
+4446 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+4444 -> 4446
+4447 [label="stream: 7",color=crimson, style=filled]
+4444 -> 4447
+4448 [label="op3: mux",color=green4, style=filled]
+4443 -> 4448
+4449 [label="stream: 0",color=crimson, style=filled]
+4448 -> 4449
+4450 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+4448 -> 4450
+4451 [label="stream: 3",color=crimson, style=filled]
+4448 -> 4451
+4452 [label="op2: *",color=green4, style=filled]
+4432 -> 4452
+4453 [label="op2: -",color=green4, style=filled]
+4452 -> 4453
+4454 [label="op3: mux",color=green4, style=filled]
+4453 -> 4454
+4455 [label="stream: 0",color=crimson, style=filled]
+4454 -> 4455
+4456 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+4454 -> 4456
+4457 [label="stream: 8",color=crimson, style=filled]
+4454 -> 4457
+4458 [label="op3: mux",color=green4, style=filled]
+4453 -> 4458
+4459 [label="stream: 0",color=crimson, style=filled]
+4458 -> 4459
+4460 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+4458 -> 4460
+4461 [label="stream: 6",color=crimson, style=filled]
+4458 -> 4461
+4462 [label="op2: -",color=green4, style=filled]
+4452 -> 4462
+4463 [label="op3: mux",color=green4, style=filled]
+4462 -> 4463
+4464 [label="stream: 0",color=crimson, style=filled]
+4463 -> 4464
+4465 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+4463 -> 4465
+4466 [label="stream: 8",color=crimson, style=filled]
+4463 -> 4466
+4467 [label="op3: mux",color=green4, style=filled]
+4462 -> 4467
+4468 [label="stream: 0",color=crimson, style=filled]
+4467 -> 4468
+4469 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+4467 -> 4469
+4470 [label="stream: 6",color=crimson, style=filled]
+4467 -> 4470
+4471 [label="op2: -",color=green4, style=filled]
+4185 -> 4471
+4472 [label="op3: mux",color=green4, style=filled]
+4471 -> 4472
+4473 [label="stream: 0",color=crimson, style=filled]
+4472 -> 4473
+4474 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+4472 -> 4474
+4475 [label="stream: 8",color=crimson, style=filled]
+4472 -> 4475
+4476 [label="op3: mux",color=green4, style=filled]
+4471 -> 4476
+4477 [label="stream: 0",color=crimson, style=filled]
+4476 -> 4477
+4478 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+4476 -> 4478
+4479 [label="stream: 6",color=crimson, style=filled]
+4476 -> 4479
+4480 [label="op2: -",color=green4, style=filled]
+3218 -> 4480
+4481 [label="ext_ownship_velocity_z",color=cyan1, style=filled]
+4480 -> 4481
+4482 [label="op3: mux",color=green4, style=filled]
+4480 -> 4482
+4483 [label="stream: 0",color=crimson, style=filled]
+4482 -> 4483
+4484 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+4482 -> 4484
+4485 [label="stream: 11",color=crimson, style=filled]
+4482 -> 4485
+4486 [label="op2: *",color=green4, style=filled]
+3205 -> 4486
+4487 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+4486 -> 4487
+4488 [label="op2: *",color=green4, style=filled]
+4486 -> 4488
+4489 [label="ext_direction_parameter_vertical",color=cyan1, style=filled]
+4488 -> 4489
+4490 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+4488 -> 4490
+4491 [label="op2: ||",color=green4, style=filled]
+163 -> 4491
+4492 [label="op2: <",color=green4, style=filled]
+4491 -> 4492
+4493 [label="op2: +",color=green4, style=filled]
+4492 -> 4493
+4494 [label="op2: *",color=green4, style=filled]
+4493 -> 4494
+4495 [label="op2: -",color=green4, style=filled]
+4494 -> 4495
+4496 [label="op3: mux",color=green4, style=filled]
+4495 -> 4496
+4497 [label="stream: 0",color=crimson, style=filled]
+4496 -> 4497
+4498 [label="ext_ownship_position_x",color=cyan1, style=filled]
+4496 -> 4498
+4499 [label="stream: 1",color=crimson, style=filled]
+4496 -> 4499
+4500 [label="op3: mux",color=green4, style=filled]
+4495 -> 4500
+4501 [label="stream: 0",color=crimson, style=filled]
+4500 -> 4501
+4502 [label="ext_intruder_position_x",color=cyan1, style=filled]
+4500 -> 4502
+4503 [label="stream: 2",color=crimson, style=filled]
+4500 -> 4503
+4504 [label="op2: -",color=green4, style=filled]
+4494 -> 4504
+4505 [label="op3: mux",color=green4, style=filled]
+4504 -> 4505
+4506 [label="stream: 0",color=crimson, style=filled]
+4505 -> 4506
+4507 [label="ext_ownship_position_x",color=cyan1, style=filled]
+4505 -> 4507
+4508 [label="stream: 1",color=crimson, style=filled]
+4505 -> 4508
+4509 [label="op3: mux",color=green4, style=filled]
+4504 -> 4509
+4510 [label="stream: 0",color=crimson, style=filled]
+4509 -> 4510
+4511 [label="ext_intruder_position_x",color=cyan1, style=filled]
+4509 -> 4511
+4512 [label="stream: 2",color=crimson, style=filled]
+4509 -> 4512
+4513 [label="op2: *",color=green4, style=filled]
+4493 -> 4513
+4514 [label="op2: -",color=green4, style=filled]
+4513 -> 4514
+4515 [label="op3: mux",color=green4, style=filled]
+4514 -> 4515
+4516 [label="stream: 0",color=crimson, style=filled]
+4515 -> 4516
+4517 [label="ext_ownship_position_y",color=cyan1, style=filled]
+4515 -> 4517
+4518 [label="stream: 4",color=crimson, style=filled]
+4515 -> 4518
+4519 [label="op3: mux",color=green4, style=filled]
+4514 -> 4519
+4520 [label="stream: 0",color=crimson, style=filled]
+4519 -> 4520
+4521 [label="ext_intruder_position_y",color=cyan1, style=filled]
+4519 -> 4521
+4522 [label="stream: 5",color=crimson, style=filled]
+4519 -> 4522
+4523 [label="op2: -",color=green4, style=filled]
+4513 -> 4523
+4524 [label="op3: mux",color=green4, style=filled]
+4523 -> 4524
+4525 [label="stream: 0",color=crimson, style=filled]
+4524 -> 4525
+4526 [label="ext_ownship_position_y",color=cyan1, style=filled]
+4524 -> 4526
+4527 [label="stream: 4",color=crimson, style=filled]
+4524 -> 4527
+4528 [label="op3: mux",color=green4, style=filled]
+4523 -> 4528
+4529 [label="stream: 0",color=crimson, style=filled]
+4528 -> 4529
+4530 [label="ext_intruder_position_y",color=cyan1, style=filled]
+4528 -> 4530
+4531 [label="stream: 5",color=crimson, style=filled]
+4528 -> 4531
+4532 [label="op2: *",color=green4, style=filled]
+4492 -> 4532
+4533 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+4532 -> 4533
+4534 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+4532 -> 4534
+4535 [label="op2: >=",color=green4, style=filled]
+4491 -> 4535
+4536 [label="op2: +",color=green4, style=filled]
+4535 -> 4536
+4537 [label="op2: *",color=green4, style=filled]
+4536 -> 4537
+4538 [label="op2: -",color=green4, style=filled]
+4537 -> 4538
+4539 [label="op3: mux",color=green4, style=filled]
+4538 -> 4539
+4540 [label="stream: 0",color=crimson, style=filled]
+4539 -> 4540
+4541 [label="ext_ownship_position_x",color=cyan1, style=filled]
+4539 -> 4541
+4542 [label="stream: 1",color=crimson, style=filled]
+4539 -> 4542
+4543 [label="op3: mux",color=green4, style=filled]
+4538 -> 4543
+4544 [label="stream: 0",color=crimson, style=filled]
+4543 -> 4544
+4545 [label="ext_intruder_position_x",color=cyan1, style=filled]
+4543 -> 4545
+4546 [label="stream: 2",color=crimson, style=filled]
+4543 -> 4546
+4547 [label="op2: -",color=green4, style=filled]
+4537 -> 4547
+4548 [label="op2: -",color=green4, style=filled]
+4547 -> 4548
+4549 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+4548 -> 4549
+4550 [label="op3: mux",color=green4, style=filled]
+4548 -> 4550
+4551 [label="stream: 0",color=crimson, style=filled]
+4550 -> 4551
+4552 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+4550 -> 4552
+4553 [label="stream: 3",color=crimson, style=filled]
+4550 -> 4553
+4554 [label="op2: -",color=green4, style=filled]
+4547 -> 4554
+4555 [label="op3: mux",color=green4, style=filled]
+4554 -> 4555
+4556 [label="stream: 0",color=crimson, style=filled]
+4555 -> 4556
+4557 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+4555 -> 4557
+4558 [label="stream: 7",color=crimson, style=filled]
+4555 -> 4558
+4559 [label="op3: mux",color=green4, style=filled]
+4554 -> 4559
+4560 [label="stream: 0",color=crimson, style=filled]
+4559 -> 4560
+4561 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+4559 -> 4561
+4562 [label="stream: 3",color=crimson, style=filled]
+4559 -> 4562
+4563 [label="op2: *",color=green4, style=filled]
+4536 -> 4563
+4564 [label="op2: -",color=green4, style=filled]
+4563 -> 4564
+4565 [label="op3: mux",color=green4, style=filled]
+4564 -> 4565
+4566 [label="stream: 0",color=crimson, style=filled]
+4565 -> 4566
+4567 [label="ext_ownship_position_y",color=cyan1, style=filled]
+4565 -> 4567
+4568 [label="stream: 4",color=crimson, style=filled]
+4565 -> 4568
+4569 [label="op3: mux",color=green4, style=filled]
+4564 -> 4569
+4570 [label="stream: 0",color=crimson, style=filled]
+4569 -> 4570
+4571 [label="ext_intruder_position_y",color=cyan1, style=filled]
+4569 -> 4571
+4572 [label="stream: 5",color=crimson, style=filled]
+4569 -> 4572
+4573 [label="op2: -",color=green4, style=filled]
+4563 -> 4573
+4574 [label="op2: -",color=green4, style=filled]
+4573 -> 4574
+4575 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+4574 -> 4575
+4576 [label="op3: mux",color=green4, style=filled]
+4574 -> 4576
+4577 [label="stream: 0",color=crimson, style=filled]
+4576 -> 4577
+4578 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+4576 -> 4578
+4579 [label="stream: 6",color=crimson, style=filled]
+4576 -> 4579
+4580 [label="op2: -",color=green4, style=filled]
+4573 -> 4580
+4581 [label="op3: mux",color=green4, style=filled]
+4580 -> 4581
+4582 [label="stream: 0",color=crimson, style=filled]
+4581 -> 4582
+4583 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+4581 -> 4583
+4584 [label="stream: 8",color=crimson, style=filled]
+4581 -> 4584
+4585 [label="op3: mux",color=green4, style=filled]
+4580 -> 4585
+4586 [label="stream: 0",color=crimson, style=filled]
+4585 -> 4586
+4587 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+4585 -> 4587
+4588 [label="stream: 6",color=crimson, style=filled]
+4585 -> 4588
+4589 [label="op2: *",color=green4, style=filled]
+4535 -> 4589
+4590 [label="op2: *",color=green4, style=filled]
+4589 -> 4590
+4591 [label="ext_direction_parameter_horizontal",color=cyan1, style=filled]
+4590 -> 4591
+4592 [label="op2: /",color=green4, style=filled]
+4590 -> 4592
+4593 [label="ext_sqrt_30",color=cyan4, style=filled]
+4592 -> 4593
+4637 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+4592 -> 4637
+4638 [label="op2: -",color=green4, style=filled]
+4589 -> 4638
+4639 [label="op2: *",color=green4, style=filled]
+4638 -> 4639
+4640 [label="op2: -",color=green4, style=filled]
+4639 -> 4640
+4641 [label="op3: mux",color=green4, style=filled]
+4640 -> 4641
+4642 [label="stream: 0",color=crimson, style=filled]
+4641 -> 4642
+4643 [label="ext_ownship_position_x",color=cyan1, style=filled]
+4641 -> 4643
+4644 [label="stream: 1",color=crimson, style=filled]
+4641 -> 4644
+4645 [label="op3: mux",color=green4, style=filled]
+4640 -> 4645
+4646 [label="stream: 0",color=crimson, style=filled]
+4645 -> 4646
+4647 [label="ext_intruder_position_x",color=cyan1, style=filled]
+4645 -> 4647
+4648 [label="stream: 2",color=crimson, style=filled]
+4645 -> 4648
+4649 [label="op2: -",color=green4, style=filled]
+4639 -> 4649
+4650 [label="op2: -",color=green4, style=filled]
+4649 -> 4650
+4651 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+4650 -> 4651
+4652 [label="op3: mux",color=green4, style=filled]
+4650 -> 4652
+4653 [label="stream: 0",color=crimson, style=filled]
+4652 -> 4653
+4654 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+4652 -> 4654
+4655 [label="stream: 6",color=crimson, style=filled]
+4652 -> 4655
+4656 [label="op2: -",color=green4, style=filled]
+4649 -> 4656
+4657 [label="op3: mux",color=green4, style=filled]
+4656 -> 4657
+4658 [label="stream: 0",color=crimson, style=filled]
+4657 -> 4658
+4659 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+4657 -> 4659
+4660 [label="stream: 8",color=crimson, style=filled]
+4657 -> 4660
+4661 [label="op3: mux",color=green4, style=filled]
+4656 -> 4661
+4662 [label="stream: 0",color=crimson, style=filled]
+4661 -> 4662
+4663 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+4661 -> 4663
+4664 [label="stream: 6",color=crimson, style=filled]
+4661 -> 4664
+4665 [label="op2: *",color=green4, style=filled]
+4638 -> 4665
+4666 [label="op2: -",color=green4, style=filled]
+4665 -> 4666
+4667 [label="op2: -",color=green4, style=filled]
+4666 -> 4667
+4668 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+4667 -> 4668
+4669 [label="op3: mux",color=green4, style=filled]
+4667 -> 4669
+4670 [label="stream: 0",color=crimson, style=filled]
+4669 -> 4670
+4671 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+4669 -> 4671
+4672 [label="stream: 3",color=crimson, style=filled]
+4669 -> 4672
+4673 [label="op2: -",color=green4, style=filled]
+4666 -> 4673
+4674 [label="op3: mux",color=green4, style=filled]
+4673 -> 4674
+4675 [label="stream: 0",color=crimson, style=filled]
+4674 -> 4675
+4676 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+4674 -> 4676
+4677 [label="stream: 7",color=crimson, style=filled]
+4674 -> 4677
+4678 [label="op3: mux",color=green4, style=filled]
+4673 -> 4678
+4679 [label="stream: 0",color=crimson, style=filled]
+4678 -> 4679
+4680 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+4678 -> 4680
+4681 [label="stream: 3",color=crimson, style=filled]
+4678 -> 4681
+4682 [label="op2: -",color=green4, style=filled]
+4665 -> 4682
+4683 [label="op3: mux",color=green4, style=filled]
+4682 -> 4683
+4684 [label="stream: 0",color=crimson, style=filled]
+4683 -> 4684
+4685 [label="ext_ownship_position_y",color=cyan1, style=filled]
+4683 -> 4685
+4686 [label="stream: 4",color=crimson, style=filled]
+4683 -> 4686
+4687 [label="op3: mux",color=green4, style=filled]
+4682 -> 4687
+4688 [label="stream: 0",color=crimson, style=filled]
+4687 -> 4688
+4689 [label="ext_intruder_position_y",color=cyan1, style=filled]
+4687 -> 4689
+4690 [label="stream: 5",color=crimson, style=filled]
+4687 -> 4690
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
- ensures \result == (! ((((((((((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))))))) >= (((ext_minimal_horizontal_separation) * (ext_minimal_horizontal_separation))))) && (((((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((ext_ownship_velocity_x) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((ext_ownship_velocity_y) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))) >= (((((ext_direction_parameter_horizontal) * (((ext_sqrt_3) / (ext_minimal_horizontal_separation))))) * (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((ext_ownship_velocity_y) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))) - (((((ext_ownship_velocity_x) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))))))))))))) || (((((((((((((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))))))) <= (0.0))) && (((((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))))))) >= (0.0))))) && (((((((ext_ownship_velocity_z) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_z) : (queue_11[ptr_11]))))) >= (0.0))) && (((((ext_direction_parameter_vertical) * (((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))))) >= (ext_minimal_vertical_separation))))))) || (((((((((((ext_minimal_horizontal_separation) * (ext_minimal_horizontal_separation))) * (((((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) - (((((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))) - (((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))))))) * (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))) - (((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))))))))))) > (0.0))) && (((((((((((0.0) - (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) + (((( (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) * (ext_ident_double_4))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) > 0)? 1 : ((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) < 0 ? -1 : 0)))) : (-1.0))) * (ext_sqrt_5))))) / (((((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) > (0.0))) && (((((((((((((ext_ownship_velocity_x) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) + (((((((((0.0) - (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) + (((( (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) * (ext_ident_double_6))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) > 0)? 1 : ((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) < 0 ? -1 : 0)))) : (-1.0))) * (ext_sqrt_7))))) / (((((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))))))) + (((((ext_ownship_velocity_y) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) + (((((((((0.0) - (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) + (((( (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) * (ext_ident_double_8))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) > 0)? 1 : ((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) < 0 ? -1 : 0)))) : (-1.0))) * (ext_sqrt_9))))) / (((((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))))) < (0.0))) || (((((((((ext_ownship_velocity_x) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) + (((((((((0.0) - (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) + (((( (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) * (ext_ident_double_10))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) > 0)? 1 : ((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) < 0 ? -1 : 0)))) : (-1.0))) * (ext_sqrt_11))))) / (((((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))))))) + (((((ext_ownship_velocity_y) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) + (((((((((0.0) - (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) + (((( (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) * (ext_ident_double_12))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) > 0)? 1 : ((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) < 0 ? -1 : 0)))) : (-1.0))) * (ext_sqrt_13))))) / (((((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))))) > (0.0))))) && (((((((((((ext_minimal_horizontal_separation) * (ext_minimal_horizontal_separation))) - (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) + (((((((((0.0) - (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) + (((( (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) * (ext_ident_double_14))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) > 0)? 1 : ((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) < 0 ? -1 : 0)))) : (-1.0))) * (ext_sqrt_15))))) / (((((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) + (((((((((0.0) - (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) + (((( (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) * (ext_ident_double_16))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) > 0)? 1 : ((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) < 0 ? -1 : 0)))) : (-1.0))) * (ext_sqrt_17))))) / (((((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))))))) / (((((((ext_ownship_velocity_x) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) + (((((((((0.0) - (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) + (((( (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) * (ext_ident_double_18))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) > 0)? 1 : ((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) < 0 ? -1 : 0)))) : (-1.0))) * (ext_sqrt_19))))) / (((((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))))))) + (((((ext_ownship_velocity_y) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) + (((((((((0.0) - (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) + (((( (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) * (ext_ident_double_20))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) > 0)? 1 : ((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) < 0 ? -1 : 0)))) : (-1.0))) * (ext_sqrt_21))))) / (((((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))))))) >= (0.0))) && (((((ext_direction_parameter_vertical) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) + (((((((((ext_minimal_horizontal_separation) * (ext_minimal_horizontal_separation))) - (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) + (((((((((0.0) - (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) + (((( (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) * (ext_ident_double_22))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) > 0)? 1 : ((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) < 0 ? -1 : 0)))) : (-1.0))) * (ext_sqrt_23))))) / (((((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) + (((((((((0.0) - (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) + (((( (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) * (ext_ident_double_24))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) > 0)? 1 : ((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) < 0 ? -1 : 0)))) : (-1.0))) * (ext_sqrt_25))))) / (((((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))))))) / (((((((ext_ownship_velocity_x) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) + (((((((((0.0) - (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) + (((( (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) * (ext_ident_double_26))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) > 0)? 1 : ((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) < 0 ? -1 : 0)))) : (-1.0))) * (ext_sqrt_27))))) / (((((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))))))) + (((((ext_ownship_velocity_y) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) + (((((((((0.0) - (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) + (((( (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) * (ext_ident_double_28))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) > 0)? 1 : ((((( (queue_0[ptr_0]) ? (ext_ownship_position_z) : (queue_9[ptr_9]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_z) : (queue_10[ptr_10]))))) < 0 ? -1 : 0)))) : (-1.0))) * (ext_sqrt_29))))) / (((((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))))))) * (((ext_ownship_velocity_z) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_z) : (queue_11[ptr_11]))))))))))) >= (((ext_direction_parameter_vertical) * (((ext_direction_parameter_vertical) * (ext_minimal_vertical_separation))))))))))))))))) && (((((((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))))))) < (((ext_minimal_horizontal_separation) * (ext_minimal_horizontal_separation))))) || (((((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((((ext_ownship_velocity_x) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) - (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))))) + (((((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5]))))) * (((((ext_ownship_velocity_y) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))) - (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))))) >= (((((ext_direction_parameter_horizontal) * (((ext_sqrt_30) / (ext_minimal_horizontal_separation))))) * (((((((( (queue_0[ptr_0]) ? (ext_ownship_position_x) : (queue_1[ptr_1]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_x) : (queue_2[ptr_2]))))) * (((((ext_ownship_velocity_y) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))) - (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_y) : (queue_8[ptr_8]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_y) : (queue_6[ptr_6]))))))))) - (((((((ext_ownship_velocity_x) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))) - (((( (queue_0[ptr_0]) ? (ext_ownship_velocity_x) : (queue_7[ptr_7]))) - (( (queue_0[ptr_0]) ? (ext_intruder_velocity_x) : (queue_3[ptr_3]))))))) * (((( (queue_0[ptr_0]) ? (ext_ownship_position_y) : (queue_4[ptr_4]))) - (( (queue_0[ptr_0]) ? (ext_intruder_position_y) : (queue_5[ptr_5])))))))))))))))))))));
+ ensures \result == (! ((((((((((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) * (((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))))))) >= (((ext_minimal_horizontal_separation) * (ext_minimal_horizontal_separation))))) && (((((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((ext_ownship_velocity_x) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) * (((ext_ownship_velocity_y) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))) >= (((((ext_direction_parameter_horizontal) * (((ext_sqrt_3) / (ext_minimal_horizontal_separation))))) * (((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((ext_ownship_velocity_y) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))) - (((((ext_ownship_velocity_x) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))) * (((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))))))))))))) || (((((((((((((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) * (((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))))))) <= (0.0))) && (((((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) * (((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))))))) >= (0.0))))) && (((((((ext_ownship_velocity_z) - (( (queue_0[0]) ? (ext_intruder_velocity_z) : (queue_11[0]))))) >= (0.0))) && (((((ext_direction_parameter_vertical) * (((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))))) >= (ext_minimal_vertical_separation))))))) || (((((((((((ext_minimal_horizontal_separation) * (ext_minimal_horizontal_separation))) * (((((((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) - (((((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))) - (((((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))) * (((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))))))) * (((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))) - (((((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))) * (((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))))))))))) > (0.0))) && (((((((((((0.0) - (((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) + (((( (((((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) * (ext_ident_double_4))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) > 0)? 1 : ((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) < 0 ? -1 : (((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))))))) : (-1.0))) * (ext_sqrt_5))))) / (((((((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) > (0.0))) && (((((((((((((ext_ownship_velocity_x) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))) * (((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) + (((((((((0.0) - (((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) + (((( (((((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) * (ext_ident_double_6))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) > 0)? 1 : ((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) < 0 ? -1 : (((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))))))) : (-1.0))) * (ext_sqrt_7))))) / (((((((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))))))) + (((((ext_ownship_velocity_y) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))) * (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) + (((((((((0.0) - (((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) + (((( (((((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) * (ext_ident_double_8))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) > 0)? 1 : ((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) < 0 ? -1 : (((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))))))) : (-1.0))) * (ext_sqrt_9))))) / (((((((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))))) < (0.0))) || (((((((((ext_ownship_velocity_x) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))) * (((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) + (((((((((0.0) - (((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) + (((( (((((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) * (ext_ident_double_10))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) > 0)? 1 : ((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) < 0 ? -1 : (((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))))))) : (-1.0))) * (ext_sqrt_11))))) / (((((((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))))))) + (((((ext_ownship_velocity_y) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))) * (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) + (((((((((0.0) - (((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) + (((( (((((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) * (ext_ident_double_12))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) > 0)? 1 : ((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) < 0 ? -1 : (((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))))))) : (-1.0))) * (ext_sqrt_13))))) / (((((((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))))) > (0.0))))) && (((((((((((ext_minimal_horizontal_separation) * (ext_minimal_horizontal_separation))) - (((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) + (((((((((0.0) - (((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) + (((( (((((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) * (ext_ident_double_14))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) > 0)? 1 : ((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) < 0 ? -1 : (((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))))))) : (-1.0))) * (ext_sqrt_15))))) / (((((((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))))))) + (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) * (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) + (((((((((0.0) - (((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) + (((( (((((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) * (ext_ident_double_16))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) > 0)? 1 : ((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) < 0 ? -1 : (((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))))))) : (-1.0))) * (ext_sqrt_17))))) / (((((((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))))))) / (((((((ext_ownship_velocity_x) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))) * (((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) + (((((((((0.0) - (((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) + (((( (((((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) * (ext_ident_double_18))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) > 0)? 1 : ((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) < 0 ? -1 : (((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))))))) : (-1.0))) * (ext_sqrt_19))))) / (((((((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))))))) + (((((ext_ownship_velocity_y) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))) * (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) + (((((((((0.0) - (((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) + (((( (((((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) * (ext_ident_double_20))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) > 0)? 1 : ((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) < 0 ? -1 : (((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))))))) : (-1.0))) * (ext_sqrt_21))))) / (((((((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))))))) >= (0.0))) && (((((ext_direction_parameter_vertical) * (((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) + (((((((((ext_minimal_horizontal_separation) * (ext_minimal_horizontal_separation))) - (((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) + (((((((((0.0) - (((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) + (((( (((((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) * (ext_ident_double_22))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) > 0)? 1 : ((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) < 0 ? -1 : (((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))))))) : (-1.0))) * (ext_sqrt_23))))) / (((((((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))))))) + (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) * (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) + (((((((((0.0) - (((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) + (((( (((((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) * (ext_ident_double_24))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) > 0)? 1 : ((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) < 0 ? -1 : (((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))))))) : (-1.0))) * (ext_sqrt_25))))) / (((((((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))))))) / (((((((ext_ownship_velocity_x) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))) * (((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) + (((((((((0.0) - (((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) + (((( (((((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) * (ext_ident_double_26))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) > 0)? 1 : ((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) < 0 ? -1 : (((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))))))) : (-1.0))) * (ext_sqrt_27))))) / (((((((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))))))) + (((((ext_ownship_velocity_y) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))) * (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) + (((((((((0.0) - (((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) + (((( (((((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) * (ext_ident_double_28))) >= (ext_minimal_vertical_separation))) ? (((ext_direction_parameter_vertical) * (((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) > 0)? 1 : ((((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))) < 0 ? -1 : (((( (queue_0[0]) ? (ext_ownship_position_z) : (queue_9[0]))) - (( (queue_0[0]) ? (ext_intruder_position_z) : (queue_10[0]))))))))) : (-1.0))) * (ext_sqrt_29))))) / (((((((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) * (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))))))) * (((ext_ownship_velocity_z) - (( (queue_0[0]) ? (ext_intruder_velocity_z) : (queue_11[0]))))))))))) >= (((ext_direction_parameter_vertical) * (((ext_direction_parameter_vertical) * (ext_minimal_vertical_separation))))))))))))))))) && (((((((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))))) + (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) * (((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))))))) < (((ext_minimal_horizontal_separation) * (ext_minimal_horizontal_separation))))) || (((((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((((ext_ownship_velocity_x) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))) - (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))))) + (((((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0]))))) * (((((ext_ownship_velocity_y) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))) - (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))))) >= (((((ext_direction_parameter_horizontal) * (((ext_sqrt_30) / (ext_minimal_horizontal_separation))))) * (((((((( (queue_0[0]) ? (ext_ownship_position_x) : (queue_1[0]))) - (( (queue_0[0]) ? (ext_intruder_position_x) : (queue_2[0]))))) * (((((ext_ownship_velocity_y) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))) - (((( (queue_0[0]) ? (ext_ownship_velocity_y) : (queue_8[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_y) : (queue_6[0]))))))))) - (((((((ext_ownship_velocity_x) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))) - (((( (queue_0[0]) ? (ext_ownship_velocity_x) : (queue_7[0]))) - (( (queue_0[0]) ? (ext_intruder_velocity_x) : (queue_3[0]))))))) * (((( (queue_0[0]) ? (ext_ownship_position_y) : (queue_4[0]))) - (( (queue_0[0]) ? (ext_intruder_position_y) : (queue_5[0])))))))))))))))))))));
 */
 SBool trigger_guard_alert_3D_conflict_resolution_violation(const SBool *queue_0,
                                                            const SWord32 ptr_0,
@@ -81,46 +4773,34 @@ SBool trigger_guard_alert_3D_conflict_resolution_violation(const SBool *queue_0,
                                                            const SDouble ext_sqrt_30)
 {
   const SBool   s0 = queue_0[0];
-  const SWord32 s1 = ptr_0;
   const SDouble s2 = ext_ownship_position_x;
   const SDouble s3 = queue_1[0];
-  const SWord32 s4 = ptr_1;
   const SDouble s5 = ext_intruder_position_x;
   const SDouble s6 = queue_2[0];
-  const SWord32 s7 = ptr_2;
   const SDouble s8 = ext_ownship_position_y;
   const SDouble s9 = queue_4[0];
-  const SWord32 s10 = ptr_4;
   const SDouble s11 = ext_intruder_position_y;
   const SDouble s12 = queue_5[0];
-  const SWord32 s13 = ptr_5;
   const SDouble s14 = ext_minimal_horizontal_separation;
   const SDouble s15 = ext_ownship_velocity_x;
   const SDouble s16 = ext_intruder_velocity_x;
   const SDouble s17 = queue_3[0];
-  const SWord32 s18 = ptr_3;
   const SDouble s19 = ext_ownship_velocity_y;
   const SDouble s20 = ext_intruder_velocity_y;
   const SDouble s21 = queue_6[0];
-  const SWord32 s22 = ptr_6;
   const SDouble s23 = ext_direction_parameter_horizontal;
   const SDouble s24 = ext_sqrt_3;
   const SDouble s25 = ext_ownship_velocity_z;
   const SDouble s26 = ext_intruder_velocity_z;
   const SDouble s27 = queue_11[0];
-  const SWord32 s28 = ptr_11;
   const SDouble s29 = ext_direction_parameter_vertical;
   const SDouble s30 = ext_ownship_position_z;
   const SDouble s31 = queue_9[0];
-  const SWord32 s32 = ptr_9;
   const SDouble s33 = ext_intruder_position_z;
   const SDouble s34 = queue_10[0];
-  const SWord32 s35 = ptr_10;
   const SDouble s36 = ext_minimal_vertical_separation;
   const SDouble s37 = queue_7[0];
-  const SWord32 s38 = ptr_7;
   const SDouble s39 = queue_8[0];
-  const SWord32 s40 = ptr_8;
   const SDouble s41 = ext_ident_double_4;
   const SDouble s42 = ext_sqrt_5;
   const SDouble s43 = ext_ident_double_6;

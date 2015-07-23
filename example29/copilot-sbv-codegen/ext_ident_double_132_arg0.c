@@ -4,12 +4,30 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "dirVert_part2.1" signum (Ext_ownship_position_z - Ext_intruder_position_z)
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: dirVert_part2.1",color=plum, style=filled]
+0 -> 1
+2 [label="op1: signum",color=green4, style=filled]
+1 -> 2
+3 [label="op2: -",color=green4, style=filled]
+2 -> 3
+4 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3 -> 4
+5 [label="ext_intruder_position_z",color=cyan1, style=filled]
+3 -> 5
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
- ensures \result == ((((((ext_ownship_position_z) - (ext_intruder_position_z))) > 0)? 1 : ((((ext_ownship_position_z) - (ext_intruder_position_z))) < 0 ? -1 : 0)));
+ ensures \result == ((((((ext_ownship_position_z) - (ext_intruder_position_z))) > 0)? 1 : ((((ext_ownship_position_z) - (ext_intruder_position_z))) < 0 ? -1 : (((ext_ownship_position_z) - (ext_intruder_position_z))))));
 */
 SDouble ext_ident_double_132_arg0(const SDouble ext_ownship_position_z,
                                   const SDouble ext_intruder_position_z)

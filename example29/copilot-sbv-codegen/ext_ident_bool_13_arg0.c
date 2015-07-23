@@ -4,9 +4,29 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "zCriterion_part1.2" ((Ext_ownship_planned_velocity_z - Ext_intruder_velocity_z) > 0.0)
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: zCriterion_part1.2",color=plum, style=filled]
+0 -> 1
+2 [label="op2: >",color=green4, style=filled]
+1 -> 2
+3 [label="op2: -",color=green4, style=filled]
+2 -> 3
+4 [label="ext_ownship_planned_velocity_z",color=cyan1, style=filled]
+3 -> 4
+5 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+3 -> 5
+6 [label="const: 0.0",color=red1, style=filled]
+2 -> 6
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((((((ext_ownship_planned_velocity_z) - (ext_intruder_velocity_z))) > (0.0))));

@@ -4,9 +4,47 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- (((Ext_ownship_position_x - Ext_intruder_position_x) * (Ext_ownship_position_x - Ext_intruder_position_x)) + ((Ext_ownship_position_y - Ext_intruder_position_y) * (Ext_ownship_position_y - Ext_intruder_position_y)))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="op2: +",color=green4, style=filled]
+0 -> 1
+2 [label="op2: *",color=green4, style=filled]
+1 -> 2
+3 [label="op2: -",color=green4, style=filled]
+2 -> 3
+4 [label="ext_ownship_position_x",color=cyan1, style=filled]
+3 -> 4
+5 [label="ext_intruder_position_x",color=cyan1, style=filled]
+3 -> 5
+6 [label="op2: -",color=green4, style=filled]
+2 -> 6
+7 [label="ext_ownship_position_x",color=cyan1, style=filled]
+6 -> 7
+8 [label="ext_intruder_position_x",color=cyan1, style=filled]
+6 -> 8
+9 [label="op2: *",color=green4, style=filled]
+1 -> 9
+10 [label="op2: -",color=green4, style=filled]
+9 -> 10
+11 [label="ext_ownship_position_y",color=cyan1, style=filled]
+10 -> 11
+12 [label="ext_intruder_position_y",color=cyan1, style=filled]
+10 -> 12
+13 [label="op2: -",color=green4, style=filled]
+9 -> 13
+14 [label="ext_ownship_position_y",color=cyan1, style=filled]
+13 -> 14
+15 [label="ext_intruder_position_y",color=cyan1, style=filled]
+13 -> 15
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == (((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_position_x) - (ext_intruder_position_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_position_y) - (ext_intruder_position_y)))))));

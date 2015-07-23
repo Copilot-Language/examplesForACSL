@@ -4,9 +4,33 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "zCriterion_part2.2" ((Extf_ident_double(label "zCriterion_part2.2.1" signum (Ext_ownship_velocity_z - Ext_intruder_velocity_z)) * (Ext_ownship_planned_velocity_z - Ext_intruder_velocity_z)) >= 0.0)
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: zCriterion_part2.2",color=plum, style=filled]
+0 -> 1
+2 [label="op2: >=",color=green4, style=filled]
+1 -> 2
+3 [label="op2: *",color=green4, style=filled]
+2 -> 3
+4 [label="ext_ident_double_17",color=cyan4, style=filled]
+3 -> 4
+10 [label="op2: -",color=green4, style=filled]
+3 -> 10
+11 [label="ext_ownship_planned_velocity_z",color=cyan1, style=filled]
+10 -> 11
+12 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+10 -> 12
+13 [label="const: 0.0",color=red1, style=filled]
+2 -> 13
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((((((ext_ident_double_17) * (((ext_ownship_planned_velocity_z) - (ext_intruder_velocity_z))))) >= (0.0))));
@@ -17,7 +41,6 @@ SBool ext_ident_bool_18_arg0(const SDouble ext_ident_double_17,
                              const SDouble ext_ownship_planned_velocity_z)
 {
   const SDouble s0 = ext_ident_double_17;
-  const SDouble s1 = ext_ownship_velocity_z;
   const SDouble s2 = ext_intruder_velocity_z;
   const SDouble s3 = ext_ownship_planned_velocity_z;
   const SDouble s4 = s3 - s2;

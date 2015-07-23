@@ -4,9 +4,21 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "exitDotMin_divsor" Ext_maximum_time_for_violation
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: exitDotMin_divsor",color=plum, style=filled]
+0 -> 1
+2 [label="ext_maximum_time_for_violation",color=cyan1, style=filled]
+1 -> 2
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((ext_maximum_time_for_violation));

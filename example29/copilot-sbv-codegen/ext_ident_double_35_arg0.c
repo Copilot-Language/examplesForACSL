@@ -4,9 +4,27 @@
 
 /* User given declarations: */
 /*test 003*/
-/*ACSL to write
- label "break_symetry_part3" (if Extf_ident_bool(label "break_symetry_part3.1" (Extf_ident_bool(label "break_symetry_part3.1.1" ((Ext_ownship_position_x - Ext_intruder_position_x) < 0.0)) || Extf_ident_bool(label "break_symetry_part3.1.2" ((Ext_ownship_position_x - Ext_intruder_position_x) > 0.0)))) then Extf_ident_double(label "break_symetry_part3.2" signum (Ext_ownship_position_x - Ext_intruder_position_x)) else Extf_ident_double(label "break_symetry_part3.3" (if Extf_ident_bool(label "break_symetry_part3.3.1" (Extf_ident_bool(label "break_symetry_part3.3.1.1" ((Ext_ownship_position_y - Ext_intruder_position_y) <= 0.0)) && Extf_ident_bool(label "break_symetry_part3.3.1.2" ((Ext_ownship_position_y - Ext_intruder_position_y) >= 0.0)))) then 1.0 else Extf_ident_double(label "break_symetry_part3.3.2" signum (Ext_ownship_position_y - Ext_intruder_position_y)))))
-*/
+/*DotBegin
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+?????",color=red, style=filled]
+1 [label="label: break_symetry_part3",color=plum, style=filled]
+0 -> 1
+2 [label="op3: mux",color=green4, style=filled]
+1 -> 2
+3 [label="ext_ident_bool_28",color=cyan4, style=filled]
+2 -> 3
+20 [label="ext_ident_double_29",color=cyan4, style=filled]
+2 -> 20
+26 [label="ext_ident_double_34",color=cyan4, style=filled]
+2 -> 26
+
+
+}
+
+DotEnd*/
 /*@
  assigns \nothing;
  ensures \result == ((( (ext_ident_bool_28) ? (ext_ident_double_29) : (ext_ident_double_34))));
@@ -23,18 +41,8 @@ SDouble ext_ident_double_35_arg0(const SBool ext_ident_bool_28,
                                  const SBool ext_ident_bool_31, const SDouble ext_ident_double_33)
 {
   const SBool   s0 = ext_ident_bool_28;
-  const SBool   s1 = ext_ident_bool_26;
-  const SDouble s2 = ext_ownship_position_x;
-  const SDouble s3 = ext_intruder_position_x;
-  const SBool   s4 = ext_ident_bool_27;
   const SDouble s5 = ext_ident_double_29;
   const SDouble s6 = ext_ident_double_34;
-  const SBool   s7 = ext_ident_bool_32;
-  const SBool   s8 = ext_ident_bool_30;
-  const SDouble s9 = ext_ownship_position_y;
-  const SDouble s10 = ext_intruder_position_y;
-  const SBool   s11 = ext_ident_bool_31;
-  const SDouble s12 = ext_ident_double_33;
   const SDouble s13 = s0 ? s5 : s6;
   const SDouble s14 = s13 /* break_symetry_part3 */;
 
