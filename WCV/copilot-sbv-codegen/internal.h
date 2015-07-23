@@ -31,1572 +31,652 @@ typedef int32_t SInt32;
 typedef int64_t SInt64;
 
 /* Entry point prototypes: */
-SDouble observer_tau(const SDouble ext_ownship_longitude,
-                     const SDouble ext_intruder_longitude,
-                     const SDouble ext_ownship_trueairspeed, const SDouble ext_cos_0,
-                     const SDouble ext_ownship_heading,
-                     const SDouble ext_intruder_trueairspeed, const SDouble ext_cos_1,
-                     const SDouble ext_intruder_heading, const SDouble ext_log_3,
-                     const SDouble ext_tan_2, const SDouble ext_ownship_latitude,
-                     const SDouble ext_log_5, const SDouble ext_tan_4,
-                     const SDouble ext_intruder_latitude, const SDouble ext_sin_6,
-                     const SDouble ext_sin_7, const SDouble ext_log_9,
-                     const SDouble ext_tan_8, const SDouble ext_log_11,
-                     const SDouble ext_tan_10, const SDouble ext_log_13,
-                     const SDouble ext_tan_12, const SDouble ext_log_15,
-                     const SDouble ext_tan_14, const SDouble ext_cos_16,
-                     const SDouble ext_cos_17, const SDouble ext_log_19,
-                     const SDouble ext_tan_18, const SDouble ext_log_21,
-                     const SDouble ext_tan_20, const SDouble ext_sin_22,
-                     const SDouble ext_sin_23);
-SDouble observer_vz(const SDouble ext_ownship_vertical_speed,
-                    const SDouble ext_intruder_vertical_speed);
-SDouble observer_vy(const SDouble ext_ownship_trueairspeed,
-                    const SDouble ext_sin_24, const SDouble ext_ownship_heading,
-                    const SDouble ext_intruder_trueairspeed, const SDouble ext_sin_25,
-                    const SDouble ext_intruder_heading);
-SDouble observer_vx(const SDouble ext_ownship_trueairspeed,
-                    const SDouble ext_cos_26, const SDouble ext_ownship_heading,
-                    const SDouble ext_intruder_trueairspeed, const SDouble ext_cos_27,
-                    const SDouble ext_intruder_heading);
-SDouble observer_sz(const SDouble ext_ownship_altitude_ft,
-                    const SDouble ext_intruder_altitude_ft);
-SDouble observer_sy(const SDouble ext_log_29,
-                    const SDouble ext_tan_28, const SDouble ext_ownship_latitude,
-                    const SDouble ext_log_31, const SDouble ext_tan_30,
-                    const SDouble ext_intruder_latitude);
-SDouble observer_sx(const SDouble ext_ownship_longitude,
-                    const SDouble ext_intruder_longitude);
-SBool trigger_guard_alert_WCVtep(const SDouble ext_sqrt_40,
+SBool trigger_guard_alert_WCVtep(const SDouble ext_sqrt_8,
                                  const SDouble ext_ownship_longitude,
-                                 const SDouble ext_intruder_longitude, const SDouble ext_log_33,
-                                 const SDouble ext_tan_32, const SDouble ext_ownship_latitude,
+                                 const SDouble ext_intruder_longitude, const SDouble ext_log_1,
+                                 const SDouble ext_tan_0, const SDouble ext_ownship_latitude,
+                                 const SDouble ext_log_3, const SDouble ext_tan_2,
+                                 const SDouble ext_intruder_latitude, const SDouble ext_log_5,
+                                 const SDouble ext_tan_4, const SDouble ext_log_7,
+                                 const SDouble ext_tan_6, const SDouble ext_sqrt_33,
+                                 const SDouble ext_ownship_vx, const SDouble ext_intruder_vx,
+                                 const SDouble ext_ownship_vy, const SDouble ext_intruder_vy,
+                                 const SDouble ext_log_10, const SDouble ext_tan_9,
+                                 const SDouble ext_log_12, const SDouble ext_tan_11,
+                                 const SDouble ext_log_14, const SDouble ext_tan_13,
+                                 const SDouble ext_log_16, const SDouble ext_tan_15,
+                                 const SDouble ext_log_18, const SDouble ext_tan_17,
+                                 const SDouble ext_log_20, const SDouble ext_tan_19,
+                                 const SDouble ext_log_22, const SDouble ext_tan_21,
+                                 const SDouble ext_log_24, const SDouble ext_tan_23,
+                                 const SDouble ext_log_26, const SDouble ext_tan_25,
+                                 const SDouble ext_log_28, const SDouble ext_tan_27,
+                                 const SDouble ext_log_30, const SDouble ext_tan_29,
+                                 const SDouble ext_log_32, const SDouble ext_tan_31,
                                  const SDouble ext_log_35, const SDouble ext_tan_34,
-                                 const SDouble ext_intruder_latitude, const SDouble ext_log_37,
-                                 const SDouble ext_tan_36, const SDouble ext_log_39,
-                                 const SDouble ext_tan_38, const SDouble ext_sqrt_137,
-                                 const SDouble ext_ownship_trueairspeed, const SDouble ext_cos_41,
-                                 const SDouble ext_ownship_heading,
-                                 const SDouble ext_intruder_trueairspeed, const SDouble ext_cos_42,
-                                 const SDouble ext_intruder_heading, const SDouble ext_sin_43,
-                                 const SDouble ext_sin_44, const SDouble ext_cos_45,
-                                 const SDouble ext_cos_46, const SDouble ext_log_48,
-                                 const SDouble ext_tan_47, const SDouble ext_log_50,
-                                 const SDouble ext_tan_49, const SDouble ext_sin_51,
-                                 const SDouble ext_sin_52, const SDouble ext_cos_53,
-                                 const SDouble ext_cos_54, const SDouble ext_cos_55,
-                                 const SDouble ext_cos_56, const SDouble ext_sin_57,
-                                 const SDouble ext_sin_58, const SDouble ext_sin_59,
-                                 const SDouble ext_sin_60, const SDouble ext_cos_61,
-                                 const SDouble ext_cos_62, const SDouble ext_cos_63,
-                                 const SDouble ext_cos_64, const SDouble ext_sin_65,
-                                 const SDouble ext_sin_66, const SDouble ext_cos_67,
-                                 const SDouble ext_cos_68, const SDouble ext_log_70,
+                                 const SDouble ext_log_37, const SDouble ext_tan_36,
+                                 const SDouble ext_log_39, const SDouble ext_tan_38,
+                                 const SDouble ext_log_41, const SDouble ext_tan_40,
+                                 const SDouble ext_log_43, const SDouble ext_tan_42,
+                                 const SDouble ext_log_45, const SDouble ext_tan_44,
+                                 const SDouble ext_log_47, const SDouble ext_tan_46,
+                                 const SDouble ext_log_49, const SDouble ext_tan_48,
+                                 const SDouble ext_sqrt_58, const SDouble ext_log_51,
+                                 const SDouble ext_tan_50, const SDouble ext_log_53,
+                                 const SDouble ext_tan_52, const SDouble ext_log_55,
+                                 const SDouble ext_tan_54, const SDouble ext_log_57,
+                                 const SDouble ext_tan_56, const SDouble ext_log_60,
+                                 const SDouble ext_tan_59, const SDouble ext_log_62,
+                                 const SDouble ext_tan_61, const SDouble ext_log_64,
+                                 const SDouble ext_tan_63, const SDouble ext_log_66,
+                                 const SDouble ext_tan_65, const SDouble ext_log_68,
+                                 const SDouble ext_tan_67, const SDouble ext_log_70,
                                  const SDouble ext_tan_69, const SDouble ext_log_72,
-                                 const SDouble ext_tan_71, const SDouble ext_sin_73,
-                                 const SDouble ext_sin_74, const SDouble ext_cos_75,
-                                 const SDouble ext_cos_76, const SDouble ext_cos_77,
-                                 const SDouble ext_cos_78, const SDouble ext_sin_79,
-                                 const SDouble ext_sin_80, const SDouble ext_sin_81,
-                                 const SDouble ext_sin_82, const SDouble ext_cos_83,
-                                 const SDouble ext_cos_84, const SDouble ext_log_86,
-                                 const SDouble ext_tan_85, const SDouble ext_log_88,
-                                 const SDouble ext_tan_87, const SDouble ext_cos_89,
-                                 const SDouble ext_cos_90, const SDouble ext_sin_91,
-                                 const SDouble ext_sin_92, const SDouble ext_cos_93,
-                                 const SDouble ext_cos_94, const SDouble ext_log_96,
-                                 const SDouble ext_tan_95, const SDouble ext_log_98,
-                                 const SDouble ext_tan_97, const SDouble ext_sin_99,
-                                 const SDouble ext_sin_100, const SDouble ext_cos_101,
-                                 const SDouble ext_cos_102, const SDouble ext_cos_103,
-                                 const SDouble ext_cos_104, const SDouble ext_sin_105,
-                                 const SDouble ext_sin_106, const SDouble ext_sin_107,
-                                 const SDouble ext_sin_108, const SDouble ext_sin_109,
-                                 const SDouble ext_sin_110, const SDouble ext_log_112,
-                                 const SDouble ext_tan_111, const SDouble ext_log_114,
-                                 const SDouble ext_tan_113, const SDouble ext_cos_115,
-                                 const SDouble ext_cos_116, const SDouble ext_sin_117,
-                                 const SDouble ext_sin_118, const SDouble ext_cos_119,
-                                 const SDouble ext_cos_120, const SDouble ext_log_122,
-                                 const SDouble ext_tan_121, const SDouble ext_log_124,
-                                 const SDouble ext_tan_123, const SDouble ext_sin_125,
-                                 const SDouble ext_sin_126, const SDouble ext_cos_127,
-                                 const SDouble ext_cos_128, const SDouble ext_cos_129,
-                                 const SDouble ext_cos_130, const SDouble ext_sin_131,
-                                 const SDouble ext_sin_132, const SDouble ext_sin_133,
-                                 const SDouble ext_sin_134, const SDouble ext_sin_135,
-                                 const SDouble ext_sin_136, const SDouble ext_cos_138,
-                                 const SDouble ext_cos_139, const SDouble ext_log_141,
-                                 const SDouble ext_tan_140, const SDouble ext_log_143,
-                                 const SDouble ext_tan_142, const SDouble ext_sin_144,
-                                 const SDouble ext_sin_145, const SDouble ext_cos_146,
-                                 const SDouble ext_cos_147, const SDouble ext_cos_148,
-                                 const SDouble ext_cos_149, const SDouble ext_sin_150,
-                                 const SDouble ext_sin_151, const SDouble ext_sin_152,
-                                 const SDouble ext_sin_153, const SDouble ext_sin_154,
-                                 const SDouble ext_sin_155, const SDouble ext_cos_156,
-                                 const SDouble ext_cos_157, const SDouble ext_log_159,
-                                 const SDouble ext_tan_158, const SDouble ext_log_161,
-                                 const SDouble ext_tan_160, const SDouble ext_sin_162,
-                                 const SDouble ext_sin_163, const SDouble ext_cos_164,
-                                 const SDouble ext_cos_165, const SDouble ext_log_167,
-                                 const SDouble ext_tan_166, const SDouble ext_log_169,
-                                 const SDouble ext_tan_168, const SDouble ext_cos_170,
-                                 const SDouble ext_cos_171, const SDouble ext_log_173,
-                                 const SDouble ext_tan_172, const SDouble ext_log_175,
-                                 const SDouble ext_tan_174, const SDouble ext_sin_176,
-                                 const SDouble ext_sin_177, const SDouble ext_sqrt_202,
-                                 const SDouble ext_cos_178, const SDouble ext_cos_179,
-                                 const SDouble ext_cos_180, const SDouble ext_cos_181,
-                                 const SDouble ext_sin_182, const SDouble ext_sin_183,
-                                 const SDouble ext_sin_184, const SDouble ext_sin_185,
-                                 const SDouble ext_sin_186, const SDouble ext_sin_187,
-                                 const SDouble ext_cos_188, const SDouble ext_cos_189,
-                                 const SDouble ext_log_191, const SDouble ext_tan_190,
-                                 const SDouble ext_log_193, const SDouble ext_tan_192,
-                                 const SDouble ext_sin_194, const SDouble ext_sin_195,
-                                 const SDouble ext_cos_196, const SDouble ext_cos_197,
-                                 const SDouble ext_log_199, const SDouble ext_tan_198,
-                                 const SDouble ext_log_201, const SDouble ext_tan_200,
-                                 const SDouble ext_cos_203, const SDouble ext_cos_204,
-                                 const SDouble ext_cos_205, const SDouble ext_cos_206,
-                                 const SDouble ext_sin_207, const SDouble ext_sin_208,
-                                 const SDouble ext_sin_209, const SDouble ext_sin_210,
-                                 const SDouble ext_cos_211, const SDouble ext_cos_212,
-                                 const SDouble ext_log_214, const SDouble ext_tan_213,
-                                 const SDouble ext_log_216, const SDouble ext_tan_215,
-                                 const SDouble ext_sin_217, const SDouble ext_sin_218,
-                                 const SDouble ext_cos_219, const SDouble ext_cos_220,
-                                 const SDouble ext_cos_221, const SDouble ext_cos_222,
-                                 const SDouble ext_sin_223, const SDouble ext_sin_224,
-                                 const SDouble ext_sin_225, const SDouble ext_sin_226,
-                                 const SDouble ext_sin_227, const SDouble ext_sin_228,
-                                 const SDouble ext_cos_229, const SDouble ext_cos_230,
-                                 const SDouble ext_log_232, const SDouble ext_tan_231,
-                                 const SDouble ext_log_234, const SDouble ext_tan_233,
-                                 const SDouble ext_sin_235, const SDouble ext_sin_236,
-                                 const SDouble ext_cos_237, const SDouble ext_cos_238,
-                                 const SDouble ext_log_240, const SDouble ext_tan_239,
-                                 const SDouble ext_log_242, const SDouble ext_tan_241,
-                                 const SDouble ext_cos_243, const SDouble ext_cos_244,
-                                 const SDouble ext_log_246, const SDouble ext_tan_245,
-                                 const SDouble ext_log_248, const SDouble ext_tan_247,
-                                 const SDouble ext_sin_249, const SDouble ext_sin_250,
-                                 const SDouble ext_sqrt_275, const SDouble ext_cos_251,
-                                 const SDouble ext_cos_252, const SDouble ext_cos_253,
-                                 const SDouble ext_cos_254, const SDouble ext_sin_255,
-                                 const SDouble ext_sin_256, const SDouble ext_sin_257,
-                                 const SDouble ext_sin_258, const SDouble ext_sin_259,
-                                 const SDouble ext_sin_260, const SDouble ext_cos_261,
-                                 const SDouble ext_cos_262, const SDouble ext_log_264,
-                                 const SDouble ext_tan_263, const SDouble ext_log_266,
-                                 const SDouble ext_tan_265, const SDouble ext_sin_267,
-                                 const SDouble ext_sin_268, const SDouble ext_cos_269,
-                                 const SDouble ext_cos_270, const SDouble ext_log_272,
-                                 const SDouble ext_tan_271, const SDouble ext_log_274,
-                                 const SDouble ext_tan_273, const SDouble ext_cos_276,
-                                 const SDouble ext_cos_277, const SDouble ext_cos_278,
-                                 const SDouble ext_cos_279, const SDouble ext_sin_280,
-                                 const SDouble ext_sin_281, const SDouble ext_sin_282,
-                                 const SDouble ext_sin_283, const SDouble ext_ownship_altitude_ft,
+                                 const SDouble ext_tan_71, const SDouble ext_log_74,
+                                 const SDouble ext_tan_73, const SDouble ext_sqrt_83,
+                                 const SDouble ext_log_76, const SDouble ext_tan_75,
+                                 const SDouble ext_log_78, const SDouble ext_tan_77,
+                                 const SDouble ext_log_80, const SDouble ext_tan_79,
+                                 const SDouble ext_log_82, const SDouble ext_tan_81,
+                                 const SDouble ext_ownship_altitude_ft,
                                  const SDouble ext_intruder_altitude_ft,
-                                 const SDouble ext_ownship_vertical_speed,
-                                 const SDouble ext_intruder_vertical_speed);
-SBool trigger_guard_alert_WCVtaumod(const SDouble ext_sqrt_292,
+                                 const SDouble ext_ownship_vz, const SDouble ext_intruder_vz);
+SBool trigger_guard_alert_WCVtaumod(const SDouble ext_sqrt_92,
                                     const SDouble ext_ownship_longitude,
-                                    const SDouble ext_intruder_longitude, const SDouble ext_log_285,
-                                    const SDouble ext_tan_284, const SDouble ext_ownship_latitude,
-                                    const SDouble ext_log_287, const SDouble ext_tan_286,
-                                    const SDouble ext_intruder_latitude, const SDouble ext_log_289,
-                                    const SDouble ext_tan_288, const SDouble ext_log_291,
-                                    const SDouble ext_tan_290, const SDouble ext_sqrt_389,
-                                    const SDouble ext_ownship_trueairspeed,
-                                    const SDouble ext_cos_293, const SDouble ext_ownship_heading,
-                                    const SDouble ext_intruder_trueairspeed,
-                                    const SDouble ext_cos_294, const SDouble ext_intruder_heading,
-                                    const SDouble ext_sin_295, const SDouble ext_sin_296,
-                                    const SDouble ext_cos_297, const SDouble ext_cos_298,
-                                    const SDouble ext_log_300, const SDouble ext_tan_299,
-                                    const SDouble ext_log_302, const SDouble ext_tan_301,
-                                    const SDouble ext_sin_303, const SDouble ext_sin_304,
-                                    const SDouble ext_cos_305, const SDouble ext_cos_306,
-                                    const SDouble ext_cos_307, const SDouble ext_cos_308,
-                                    const SDouble ext_sin_309, const SDouble ext_sin_310,
-                                    const SDouble ext_sin_311, const SDouble ext_sin_312,
-                                    const SDouble ext_cos_313, const SDouble ext_cos_314,
-                                    const SDouble ext_cos_315, const SDouble ext_cos_316,
-                                    const SDouble ext_sin_317, const SDouble ext_sin_318,
-                                    const SDouble ext_cos_319, const SDouble ext_cos_320,
-                                    const SDouble ext_log_322, const SDouble ext_tan_321,
-                                    const SDouble ext_log_324, const SDouble ext_tan_323,
-                                    const SDouble ext_sin_325, const SDouble ext_sin_326,
-                                    const SDouble ext_cos_327, const SDouble ext_cos_328,
-                                    const SDouble ext_cos_329, const SDouble ext_cos_330,
-                                    const SDouble ext_sin_331, const SDouble ext_sin_332,
-                                    const SDouble ext_sin_333, const SDouble ext_sin_334,
-                                    const SDouble ext_cos_335, const SDouble ext_cos_336,
-                                    const SDouble ext_log_338, const SDouble ext_tan_337,
-                                    const SDouble ext_log_340, const SDouble ext_tan_339,
-                                    const SDouble ext_cos_341, const SDouble ext_cos_342,
-                                    const SDouble ext_sin_343, const SDouble ext_sin_344,
-                                    const SDouble ext_cos_345, const SDouble ext_cos_346,
-                                    const SDouble ext_log_348, const SDouble ext_tan_347,
-                                    const SDouble ext_log_350, const SDouble ext_tan_349,
-                                    const SDouble ext_sin_351, const SDouble ext_sin_352,
-                                    const SDouble ext_cos_353, const SDouble ext_cos_354,
-                                    const SDouble ext_cos_355, const SDouble ext_cos_356,
-                                    const SDouble ext_sin_357, const SDouble ext_sin_358,
-                                    const SDouble ext_sin_359, const SDouble ext_sin_360,
-                                    const SDouble ext_sin_361, const SDouble ext_sin_362,
-                                    const SDouble ext_log_364, const SDouble ext_tan_363,
-                                    const SDouble ext_log_366, const SDouble ext_tan_365,
-                                    const SDouble ext_cos_367, const SDouble ext_cos_368,
-                                    const SDouble ext_sin_369, const SDouble ext_sin_370,
-                                    const SDouble ext_cos_371, const SDouble ext_cos_372,
-                                    const SDouble ext_log_374, const SDouble ext_tan_373,
-                                    const SDouble ext_log_376, const SDouble ext_tan_375,
-                                    const SDouble ext_sin_377, const SDouble ext_sin_378,
-                                    const SDouble ext_cos_379, const SDouble ext_cos_380,
-                                    const SDouble ext_cos_381, const SDouble ext_cos_382,
-                                    const SDouble ext_sin_383, const SDouble ext_sin_384,
-                                    const SDouble ext_sin_385, const SDouble ext_sin_386,
-                                    const SDouble ext_sin_387, const SDouble ext_sin_388,
-                                    const SDouble ext_cos_390, const SDouble ext_cos_391,
-                                    const SDouble ext_log_393, const SDouble ext_tan_392,
-                                    const SDouble ext_log_395, const SDouble ext_tan_394,
-                                    const SDouble ext_sin_396, const SDouble ext_sin_397,
-                                    const SDouble ext_log_399, const SDouble ext_tan_398,
-                                    const SDouble ext_log_401, const SDouble ext_tan_400,
-                                    const SDouble ext_log_403, const SDouble ext_tan_402,
-                                    const SDouble ext_log_405, const SDouble ext_tan_404,
-                                    const SDouble ext_cos_406, const SDouble ext_cos_407,
-                                    const SDouble ext_log_409, const SDouble ext_tan_408,
-                                    const SDouble ext_log_411, const SDouble ext_tan_410,
-                                    const SDouble ext_sin_412, const SDouble ext_sin_413,
-                                    const SDouble ext_cos_414, const SDouble ext_cos_415,
-                                    const SDouble ext_log_417, const SDouble ext_tan_416,
-                                    const SDouble ext_log_419, const SDouble ext_tan_418,
-                                    const SDouble ext_sin_420, const SDouble ext_sin_421,
-                                    const SDouble ext_log_423, const SDouble ext_tan_422,
-                                    const SDouble ext_log_425, const SDouble ext_tan_424,
-                                    const SDouble ext_log_427, const SDouble ext_tan_426,
-                                    const SDouble ext_log_429, const SDouble ext_tan_428,
-                                    const SDouble ext_cos_430, const SDouble ext_cos_431,
-                                    const SDouble ext_log_433, const SDouble ext_tan_432,
-                                    const SDouble ext_log_435, const SDouble ext_tan_434,
-                                    const SDouble ext_sin_436, const SDouble ext_sin_437,
+                                    const SDouble ext_intruder_longitude, const SDouble ext_log_85,
+                                    const SDouble ext_tan_84, const SDouble ext_ownship_latitude,
+                                    const SDouble ext_log_87, const SDouble ext_tan_86,
+                                    const SDouble ext_intruder_latitude, const SDouble ext_log_89,
+                                    const SDouble ext_tan_88, const SDouble ext_log_91,
+                                    const SDouble ext_tan_90, const SDouble ext_sqrt_117,
+                                    const SDouble ext_ownship_vx, const SDouble ext_intruder_vx,
+                                    const SDouble ext_ownship_vy, const SDouble ext_intruder_vy,
+                                    const SDouble ext_log_94, const SDouble ext_tan_93,
+                                    const SDouble ext_log_96, const SDouble ext_tan_95,
+                                    const SDouble ext_log_98, const SDouble ext_tan_97,
+                                    const SDouble ext_log_100, const SDouble ext_tan_99,
+                                    const SDouble ext_log_102, const SDouble ext_tan_101,
+                                    const SDouble ext_log_104, const SDouble ext_tan_103,
+                                    const SDouble ext_log_106, const SDouble ext_tan_105,
+                                    const SDouble ext_log_108, const SDouble ext_tan_107,
+                                    const SDouble ext_log_110, const SDouble ext_tan_109,
+                                    const SDouble ext_log_112, const SDouble ext_tan_111,
+                                    const SDouble ext_log_114, const SDouble ext_tan_113,
+                                    const SDouble ext_log_116, const SDouble ext_tan_115,
+                                    const SDouble ext_log_119, const SDouble ext_tan_118,
+                                    const SDouble ext_log_121, const SDouble ext_tan_120,
+                                    const SDouble ext_log_123, const SDouble ext_tan_122,
+                                    const SDouble ext_log_125, const SDouble ext_tan_124,
+                                    const SDouble ext_log_127, const SDouble ext_tan_126,
+                                    const SDouble ext_log_129, const SDouble ext_tan_128,
+                                    const SDouble ext_log_131, const SDouble ext_tan_130,
+                                    const SDouble ext_log_133, const SDouble ext_tan_132,
+                                    const SDouble ext_log_135, const SDouble ext_tan_134,
+                                    const SDouble ext_log_137, const SDouble ext_tan_136,
+                                    const SDouble ext_log_139, const SDouble ext_tan_138,
+                                    const SDouble ext_log_141, const SDouble ext_tan_140,
+                                    const SDouble ext_log_143, const SDouble ext_tan_142,
+                                    const SDouble ext_log_145, const SDouble ext_tan_144,
+                                    const SDouble ext_log_147, const SDouble ext_tan_146,
+                                    const SDouble ext_log_149, const SDouble ext_tan_148,
                                     const SDouble ext_ownship_altitude_ft,
                                     const SDouble ext_intruder_altitude_ft,
-                                    const SDouble ext_ownship_vertical_speed,
-                                    const SDouble ext_intruder_vertical_speed);
-SBool trigger_guard_alert_WCVtcpa(const SDouble ext_sqrt_446,
+                                    const SDouble ext_ownship_vz, const SDouble ext_intruder_vz);
+SBool trigger_guard_alert_WCVtcpa(const SDouble ext_sqrt_158,
                                   const SDouble ext_ownship_longitude,
-                                  const SDouble ext_intruder_longitude, const SDouble ext_log_439,
-                                  const SDouble ext_tan_438, const SDouble ext_ownship_latitude,
-                                  const SDouble ext_log_441, const SDouble ext_tan_440,
-                                  const SDouble ext_intruder_latitude, const SDouble ext_log_443,
-                                  const SDouble ext_tan_442, const SDouble ext_log_445,
-                                  const SDouble ext_tan_444, const SDouble ext_sqrt_543,
-                                  const SDouble ext_ownship_trueairspeed, const SDouble ext_cos_447,
-                                  const SDouble ext_ownship_heading,
-                                  const SDouble ext_intruder_trueairspeed,
-                                  const SDouble ext_cos_448, const SDouble ext_intruder_heading,
-                                  const SDouble ext_sin_449, const SDouble ext_sin_450,
-                                  const SDouble ext_cos_451, const SDouble ext_cos_452,
-                                  const SDouble ext_log_454, const SDouble ext_tan_453,
-                                  const SDouble ext_log_456, const SDouble ext_tan_455,
-                                  const SDouble ext_sin_457, const SDouble ext_sin_458,
-                                  const SDouble ext_cos_459, const SDouble ext_cos_460,
-                                  const SDouble ext_cos_461, const SDouble ext_cos_462,
-                                  const SDouble ext_sin_463, const SDouble ext_sin_464,
-                                  const SDouble ext_sin_465, const SDouble ext_sin_466,
-                                  const SDouble ext_cos_467, const SDouble ext_cos_468,
-                                  const SDouble ext_cos_469, const SDouble ext_cos_470,
-                                  const SDouble ext_sin_471, const SDouble ext_sin_472,
-                                  const SDouble ext_cos_473, const SDouble ext_cos_474,
-                                  const SDouble ext_log_476, const SDouble ext_tan_475,
-                                  const SDouble ext_log_478, const SDouble ext_tan_477,
-                                  const SDouble ext_sin_479, const SDouble ext_sin_480,
-                                  const SDouble ext_cos_481, const SDouble ext_cos_482,
-                                  const SDouble ext_cos_483, const SDouble ext_cos_484,
-                                  const SDouble ext_sin_485, const SDouble ext_sin_486,
-                                  const SDouble ext_sin_487, const SDouble ext_sin_488,
-                                  const SDouble ext_cos_489, const SDouble ext_cos_490,
-                                  const SDouble ext_log_492, const SDouble ext_tan_491,
-                                  const SDouble ext_log_494, const SDouble ext_tan_493,
-                                  const SDouble ext_cos_495, const SDouble ext_cos_496,
-                                  const SDouble ext_sin_497, const SDouble ext_sin_498,
-                                  const SDouble ext_cos_499, const SDouble ext_cos_500,
-                                  const SDouble ext_log_502, const SDouble ext_tan_501,
-                                  const SDouble ext_log_504, const SDouble ext_tan_503,
-                                  const SDouble ext_sin_505, const SDouble ext_sin_506,
-                                  const SDouble ext_cos_507, const SDouble ext_cos_508,
-                                  const SDouble ext_cos_509, const SDouble ext_cos_510,
-                                  const SDouble ext_sin_511, const SDouble ext_sin_512,
-                                  const SDouble ext_sin_513, const SDouble ext_sin_514,
-                                  const SDouble ext_sin_515, const SDouble ext_sin_516,
-                                  const SDouble ext_log_518, const SDouble ext_tan_517,
-                                  const SDouble ext_log_520, const SDouble ext_tan_519,
-                                  const SDouble ext_cos_521, const SDouble ext_cos_522,
-                                  const SDouble ext_sin_523, const SDouble ext_sin_524,
-                                  const SDouble ext_cos_525, const SDouble ext_cos_526,
-                                  const SDouble ext_log_528, const SDouble ext_tan_527,
-                                  const SDouble ext_log_530, const SDouble ext_tan_529,
-                                  const SDouble ext_sin_531, const SDouble ext_sin_532,
-                                  const SDouble ext_cos_533, const SDouble ext_cos_534,
-                                  const SDouble ext_cos_535, const SDouble ext_cos_536,
-                                  const SDouble ext_sin_537, const SDouble ext_sin_538,
-                                  const SDouble ext_sin_539, const SDouble ext_sin_540,
-                                  const SDouble ext_sin_541, const SDouble ext_sin_542,
-                                  const SDouble ext_cos_544, const SDouble ext_cos_545,
-                                  const SDouble ext_sin_546, const SDouble ext_sin_547,
-                                  const SDouble ext_cos_548, const SDouble ext_cos_549,
-                                  const SDouble ext_log_551, const SDouble ext_tan_550,
-                                  const SDouble ext_log_553, const SDouble ext_tan_552,
-                                  const SDouble ext_sin_554, const SDouble ext_sin_555,
-                                  const SDouble ext_cos_556, const SDouble ext_cos_557,
-                                  const SDouble ext_cos_558, const SDouble ext_cos_559,
-                                  const SDouble ext_sin_560, const SDouble ext_sin_561,
-                                  const SDouble ext_sin_562, const SDouble ext_sin_563,
-                                  const SDouble ext_cos_564, const SDouble ext_cos_565,
-                                  const SDouble ext_sin_566, const SDouble ext_sin_567,
-                                  const SDouble ext_cos_568, const SDouble ext_cos_569,
-                                  const SDouble ext_log_571, const SDouble ext_tan_570,
-                                  const SDouble ext_log_573, const SDouble ext_tan_572,
-                                  const SDouble ext_sin_574, const SDouble ext_sin_575,
-                                  const SDouble ext_cos_576, const SDouble ext_cos_577,
-                                  const SDouble ext_cos_578, const SDouble ext_cos_579,
-                                  const SDouble ext_sin_580, const SDouble ext_sin_581,
-                                  const SDouble ext_sin_582, const SDouble ext_sin_583,
+                                  const SDouble ext_intruder_longitude, const SDouble ext_log_151,
+                                  const SDouble ext_tan_150, const SDouble ext_ownship_latitude,
+                                  const SDouble ext_log_153, const SDouble ext_tan_152,
+                                  const SDouble ext_intruder_latitude, const SDouble ext_log_155,
+                                  const SDouble ext_tan_154, const SDouble ext_log_157,
+                                  const SDouble ext_tan_156, const SDouble ext_sqrt_183,
+                                  const SDouble ext_ownship_vx, const SDouble ext_intruder_vx,
+                                  const SDouble ext_ownship_vy, const SDouble ext_intruder_vy,
+                                  const SDouble ext_log_160, const SDouble ext_tan_159,
+                                  const SDouble ext_log_162, const SDouble ext_tan_161,
+                                  const SDouble ext_log_164, const SDouble ext_tan_163,
+                                  const SDouble ext_log_166, const SDouble ext_tan_165,
+                                  const SDouble ext_log_168, const SDouble ext_tan_167,
+                                  const SDouble ext_log_170, const SDouble ext_tan_169,
+                                  const SDouble ext_log_172, const SDouble ext_tan_171,
+                                  const SDouble ext_log_174, const SDouble ext_tan_173,
+                                  const SDouble ext_log_176, const SDouble ext_tan_175,
+                                  const SDouble ext_log_178, const SDouble ext_tan_177,
+                                  const SDouble ext_log_180, const SDouble ext_tan_179,
+                                  const SDouble ext_log_182, const SDouble ext_tan_181,
+                                  const SDouble ext_log_185, const SDouble ext_tan_184,
+                                  const SDouble ext_log_187, const SDouble ext_tan_186,
+                                  const SDouble ext_log_189, const SDouble ext_tan_188,
+                                  const SDouble ext_log_191, const SDouble ext_tan_190,
                                   const SDouble ext_ownship_altitude_ft,
                                   const SDouble ext_intruder_altitude_ft,
-                                  const SDouble ext_ownship_vertical_speed,
-                                  const SDouble ext_intruder_vertical_speed);
-SBool trigger_guard_alert_WCVtau(const SDouble ext_sqrt_592,
+                                  const SDouble ext_ownship_vz, const SDouble ext_intruder_vz);
+SBool trigger_guard_alert_WCVtau(const SDouble ext_sqrt_200,
                                  const SDouble ext_ownship_longitude,
-                                 const SDouble ext_intruder_longitude, const SDouble ext_log_585,
-                                 const SDouble ext_tan_584, const SDouble ext_ownship_latitude,
-                                 const SDouble ext_log_587, const SDouble ext_tan_586,
-                                 const SDouble ext_intruder_latitude, const SDouble ext_log_589,
-                                 const SDouble ext_tan_588, const SDouble ext_log_591,
-                                 const SDouble ext_tan_590, const SDouble ext_sqrt_689,
-                                 const SDouble ext_ownship_trueairspeed, const SDouble ext_cos_593,
-                                 const SDouble ext_ownship_heading,
-                                 const SDouble ext_intruder_trueairspeed, const SDouble ext_cos_594,
-                                 const SDouble ext_intruder_heading, const SDouble ext_sin_595,
-                                 const SDouble ext_sin_596, const SDouble ext_cos_597,
-                                 const SDouble ext_cos_598, const SDouble ext_log_600,
-                                 const SDouble ext_tan_599, const SDouble ext_log_602,
-                                 const SDouble ext_tan_601, const SDouble ext_sin_603,
-                                 const SDouble ext_sin_604, const SDouble ext_cos_605,
-                                 const SDouble ext_cos_606, const SDouble ext_cos_607,
-                                 const SDouble ext_cos_608, const SDouble ext_sin_609,
-                                 const SDouble ext_sin_610, const SDouble ext_sin_611,
-                                 const SDouble ext_sin_612, const SDouble ext_cos_613,
-                                 const SDouble ext_cos_614, const SDouble ext_cos_615,
-                                 const SDouble ext_cos_616, const SDouble ext_sin_617,
-                                 const SDouble ext_sin_618, const SDouble ext_cos_619,
-                                 const SDouble ext_cos_620, const SDouble ext_log_622,
-                                 const SDouble ext_tan_621, const SDouble ext_log_624,
-                                 const SDouble ext_tan_623, const SDouble ext_sin_625,
-                                 const SDouble ext_sin_626, const SDouble ext_cos_627,
-                                 const SDouble ext_cos_628, const SDouble ext_cos_629,
-                                 const SDouble ext_cos_630, const SDouble ext_sin_631,
-                                 const SDouble ext_sin_632, const SDouble ext_sin_633,
-                                 const SDouble ext_sin_634, const SDouble ext_cos_635,
-                                 const SDouble ext_cos_636, const SDouble ext_log_638,
-                                 const SDouble ext_tan_637, const SDouble ext_log_640,
-                                 const SDouble ext_tan_639, const SDouble ext_cos_641,
-                                 const SDouble ext_cos_642, const SDouble ext_sin_643,
-                                 const SDouble ext_sin_644, const SDouble ext_cos_645,
-                                 const SDouble ext_cos_646, const SDouble ext_log_648,
-                                 const SDouble ext_tan_647, const SDouble ext_log_650,
-                                 const SDouble ext_tan_649, const SDouble ext_sin_651,
-                                 const SDouble ext_sin_652, const SDouble ext_cos_653,
-                                 const SDouble ext_cos_654, const SDouble ext_cos_655,
-                                 const SDouble ext_cos_656, const SDouble ext_sin_657,
-                                 const SDouble ext_sin_658, const SDouble ext_sin_659,
-                                 const SDouble ext_sin_660, const SDouble ext_sin_661,
-                                 const SDouble ext_sin_662, const SDouble ext_log_664,
-                                 const SDouble ext_tan_663, const SDouble ext_log_666,
-                                 const SDouble ext_tan_665, const SDouble ext_cos_667,
-                                 const SDouble ext_cos_668, const SDouble ext_sin_669,
-                                 const SDouble ext_sin_670, const SDouble ext_cos_671,
-                                 const SDouble ext_cos_672, const SDouble ext_log_674,
-                                 const SDouble ext_tan_673, const SDouble ext_log_676,
-                                 const SDouble ext_tan_675, const SDouble ext_sin_677,
-                                 const SDouble ext_sin_678, const SDouble ext_cos_679,
-                                 const SDouble ext_cos_680, const SDouble ext_cos_681,
-                                 const SDouble ext_cos_682, const SDouble ext_sin_683,
-                                 const SDouble ext_sin_684, const SDouble ext_sin_685,
-                                 const SDouble ext_sin_686, const SDouble ext_sin_687,
-                                 const SDouble ext_sin_688, const SDouble ext_cos_690,
-                                 const SDouble ext_cos_691, const SDouble ext_log_693,
-                                 const SDouble ext_tan_692, const SDouble ext_log_695,
-                                 const SDouble ext_tan_694, const SDouble ext_sin_696,
-                                 const SDouble ext_sin_697, const SDouble ext_log_699,
-                                 const SDouble ext_tan_698, const SDouble ext_log_701,
-                                 const SDouble ext_tan_700, const SDouble ext_log_703,
-                                 const SDouble ext_tan_702, const SDouble ext_log_705,
-                                 const SDouble ext_tan_704, const SDouble ext_cos_706,
-                                 const SDouble ext_cos_707, const SDouble ext_log_709,
-                                 const SDouble ext_tan_708, const SDouble ext_log_711,
-                                 const SDouble ext_tan_710, const SDouble ext_sin_712,
-                                 const SDouble ext_sin_713, const SDouble ext_cos_714,
-                                 const SDouble ext_cos_715, const SDouble ext_log_717,
-                                 const SDouble ext_tan_716, const SDouble ext_log_719,
-                                 const SDouble ext_tan_718, const SDouble ext_sin_720,
-                                 const SDouble ext_sin_721, const SDouble ext_log_723,
-                                 const SDouble ext_tan_722, const SDouble ext_log_725,
-                                 const SDouble ext_tan_724, const SDouble ext_log_727,
-                                 const SDouble ext_tan_726, const SDouble ext_log_729,
-                                 const SDouble ext_tan_728, const SDouble ext_cos_730,
-                                 const SDouble ext_cos_731, const SDouble ext_log_733,
-                                 const SDouble ext_tan_732, const SDouble ext_log_735,
-                                 const SDouble ext_tan_734, const SDouble ext_sin_736,
-                                 const SDouble ext_sin_737, const SDouble ext_ownship_altitude_ft,
+                                 const SDouble ext_intruder_longitude, const SDouble ext_log_193,
+                                 const SDouble ext_tan_192, const SDouble ext_ownship_latitude,
+                                 const SDouble ext_log_195, const SDouble ext_tan_194,
+                                 const SDouble ext_intruder_latitude, const SDouble ext_log_197,
+                                 const SDouble ext_tan_196, const SDouble ext_log_199,
+                                 const SDouble ext_tan_198, const SDouble ext_sqrt_225,
+                                 const SDouble ext_ownship_vx, const SDouble ext_intruder_vx,
+                                 const SDouble ext_ownship_vy, const SDouble ext_intruder_vy,
+                                 const SDouble ext_log_202, const SDouble ext_tan_201,
+                                 const SDouble ext_log_204, const SDouble ext_tan_203,
+                                 const SDouble ext_log_206, const SDouble ext_tan_205,
+                                 const SDouble ext_log_208, const SDouble ext_tan_207,
+                                 const SDouble ext_log_210, const SDouble ext_tan_209,
+                                 const SDouble ext_log_212, const SDouble ext_tan_211,
+                                 const SDouble ext_log_214, const SDouble ext_tan_213,
+                                 const SDouble ext_log_216, const SDouble ext_tan_215,
+                                 const SDouble ext_log_218, const SDouble ext_tan_217,
+                                 const SDouble ext_log_220, const SDouble ext_tan_219,
+                                 const SDouble ext_log_222, const SDouble ext_tan_221,
+                                 const SDouble ext_log_224, const SDouble ext_tan_223,
+                                 const SDouble ext_log_227, const SDouble ext_tan_226,
+                                 const SDouble ext_log_229, const SDouble ext_tan_228,
+                                 const SDouble ext_log_231, const SDouble ext_tan_230,
+                                 const SDouble ext_log_233, const SDouble ext_tan_232,
+                                 const SDouble ext_log_235, const SDouble ext_tan_234,
+                                 const SDouble ext_log_237, const SDouble ext_tan_236,
+                                 const SDouble ext_log_239, const SDouble ext_tan_238,
+                                 const SDouble ext_log_241, const SDouble ext_tan_240,
+                                 const SDouble ext_log_243, const SDouble ext_tan_242,
+                                 const SDouble ext_log_245, const SDouble ext_tan_244,
+                                 const SDouble ext_log_247, const SDouble ext_tan_246,
+                                 const SDouble ext_log_249, const SDouble ext_tan_248,
+                                 const SDouble ext_log_251, const SDouble ext_tan_250,
+                                 const SDouble ext_log_253, const SDouble ext_tan_252,
+                                 const SDouble ext_log_255, const SDouble ext_tan_254,
+                                 const SDouble ext_log_257, const SDouble ext_tan_256,
+                                 const SDouble ext_ownship_altitude_ft,
                                  const SDouble ext_intruder_altitude_ft,
-                                 const SDouble ext_ownship_vertical_speed,
-                                 const SDouble ext_intruder_vertical_speed);
-SDouble ext_cos_0_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_1_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_2_arg0(const SDouble ext_ownship_latitude);
+                                 const SDouble ext_ownship_vz, const SDouble ext_intruder_vz);
+SDouble ext_tan_0_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_1_arg0(const SDouble ext_tan_0,
+                       const SDouble ext_ownship_latitude);
+SDouble ext_tan_2_arg0(const SDouble ext_intruder_latitude);
 SDouble ext_log_3_arg0(const SDouble ext_tan_2,
-                       const SDouble ext_ownship_latitude);
-SDouble ext_tan_4_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_5_arg0(const SDouble ext_tan_4,
                        const SDouble ext_intruder_latitude);
-SDouble ext_sin_6_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_7_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_8_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_9_arg0(const SDouble ext_tan_8,
+SDouble ext_tan_4_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_5_arg0(const SDouble ext_tan_4,
                        const SDouble ext_ownship_latitude);
-SDouble ext_tan_10_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_11_arg0(const SDouble ext_tan_10,
-                        const SDouble ext_intruder_latitude);
-SDouble ext_tan_12_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_13_arg0(const SDouble ext_tan_12,
+SDouble ext_tan_6_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_7_arg0(const SDouble ext_tan_6,
+                       const SDouble ext_intruder_latitude);
+SDouble ext_sqrt_8_arg0(const SDouble ext_ownship_longitude,
+                        const SDouble ext_intruder_longitude, const SDouble ext_log_1,
+                        const SDouble ext_tan_0, const SDouble ext_ownship_latitude,
+                        const SDouble ext_log_3, const SDouble ext_tan_2,
+                        const SDouble ext_intruder_latitude, const SDouble ext_log_5,
+                        const SDouble ext_tan_4, const SDouble ext_log_7,
+                        const SDouble ext_tan_6);
+SDouble ext_tan_9_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_10_arg0(const SDouble ext_tan_9,
                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_14_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_15_arg0(const SDouble ext_tan_14,
+SDouble ext_tan_11_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_12_arg0(const SDouble ext_tan_11,
                         const SDouble ext_intruder_latitude);
-SDouble ext_cos_16_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_17_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_18_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_19_arg0(const SDouble ext_tan_18,
+SDouble ext_tan_13_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_14_arg0(const SDouble ext_tan_13,
                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_20_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_21_arg0(const SDouble ext_tan_20,
+SDouble ext_tan_15_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_16_arg0(const SDouble ext_tan_15,
                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_22_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_23_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_24_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_25_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_26_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_27_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_28_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_29_arg0(const SDouble ext_tan_28,
+SDouble ext_tan_17_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_18_arg0(const SDouble ext_tan_17,
                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_30_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_31_arg0(const SDouble ext_tan_30,
+SDouble ext_tan_19_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_20_arg0(const SDouble ext_tan_19,
                         const SDouble ext_intruder_latitude);
-SDouble ext_tan_32_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_33_arg0(const SDouble ext_tan_32,
+SDouble ext_tan_21_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_22_arg0(const SDouble ext_tan_21,
                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_34_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_tan_23_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_24_arg0(const SDouble ext_tan_23,
+                        const SDouble ext_intruder_latitude);
+SDouble ext_tan_25_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_26_arg0(const SDouble ext_tan_25,
+                        const SDouble ext_ownship_latitude);
+SDouble ext_tan_27_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_28_arg0(const SDouble ext_tan_27,
+                        const SDouble ext_intruder_latitude);
+SDouble ext_tan_29_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_30_arg0(const SDouble ext_tan_29,
+                        const SDouble ext_ownship_latitude);
+SDouble ext_tan_31_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_32_arg0(const SDouble ext_tan_31,
+                        const SDouble ext_intruder_latitude);
+SDouble ext_sqrt_33_arg0(const SDouble ext_ownship_longitude,
+                         const SDouble ext_intruder_longitude, const SDouble ext_ownship_vx,
+                         const SDouble ext_intruder_vx, const SDouble ext_ownship_vy,
+                         const SDouble ext_intruder_vy, const SDouble ext_log_10,
+                         const SDouble ext_tan_9, const SDouble ext_ownship_latitude,
+                         const SDouble ext_log_12, const SDouble ext_tan_11,
+                         const SDouble ext_intruder_latitude, const SDouble ext_log_14,
+                         const SDouble ext_tan_13, const SDouble ext_log_16,
+                         const SDouble ext_tan_15, const SDouble ext_log_18,
+                         const SDouble ext_tan_17, const SDouble ext_log_20,
+                         const SDouble ext_tan_19, const SDouble ext_log_22,
+                         const SDouble ext_tan_21, const SDouble ext_log_24,
+                         const SDouble ext_tan_23, const SDouble ext_log_26,
+                         const SDouble ext_tan_25, const SDouble ext_log_28,
+                         const SDouble ext_tan_27, const SDouble ext_log_30,
+                         const SDouble ext_tan_29, const SDouble ext_log_32,
+                         const SDouble ext_tan_31);
+SDouble ext_tan_34_arg0(const SDouble ext_ownship_latitude);
 SDouble ext_log_35_arg0(const SDouble ext_tan_34,
-                        const SDouble ext_intruder_latitude);
-SDouble ext_tan_36_arg0(const SDouble ext_ownship_latitude);
+                        const SDouble ext_ownship_latitude);
+SDouble ext_tan_36_arg0(const SDouble ext_intruder_latitude);
 SDouble ext_log_37_arg0(const SDouble ext_tan_36,
-                        const SDouble ext_ownship_latitude);
-SDouble ext_tan_38_arg0(const SDouble ext_intruder_latitude);
+                        const SDouble ext_intruder_latitude);
+SDouble ext_tan_38_arg0(const SDouble ext_ownship_latitude);
 SDouble ext_log_39_arg0(const SDouble ext_tan_38,
-                        const SDouble ext_intruder_latitude);
-SDouble ext_sqrt_40_arg0(const SDouble ext_ownship_longitude,
-                         const SDouble ext_intruder_longitude, const SDouble ext_log_33,
-                         const SDouble ext_tan_32, const SDouble ext_ownship_latitude,
-                         const SDouble ext_log_35, const SDouble ext_tan_34,
-                         const SDouble ext_intruder_latitude, const SDouble ext_log_37,
-                         const SDouble ext_tan_36, const SDouble ext_log_39,
-                         const SDouble ext_tan_38);
-SDouble ext_cos_41_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_42_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_43_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_44_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_45_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_46_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_47_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_48_arg0(const SDouble ext_tan_47,
                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_49_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_50_arg0(const SDouble ext_tan_49,
+SDouble ext_tan_40_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_41_arg0(const SDouble ext_tan_40,
                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_51_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_52_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_53_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_54_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_55_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_56_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_57_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_58_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_59_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_60_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_61_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_62_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_63_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_64_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_65_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_66_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_67_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_68_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_69_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_tan_42_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_43_arg0(const SDouble ext_tan_42,
+                        const SDouble ext_ownship_latitude);
+SDouble ext_tan_44_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_45_arg0(const SDouble ext_tan_44,
+                        const SDouble ext_intruder_latitude);
+SDouble ext_tan_46_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_47_arg0(const SDouble ext_tan_46,
+                        const SDouble ext_ownship_latitude);
+SDouble ext_tan_48_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_49_arg0(const SDouble ext_tan_48,
+                        const SDouble ext_intruder_latitude);
+SDouble ext_tan_50_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_51_arg0(const SDouble ext_tan_50,
+                        const SDouble ext_ownship_latitude);
+SDouble ext_tan_52_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_53_arg0(const SDouble ext_tan_52,
+                        const SDouble ext_intruder_latitude);
+SDouble ext_tan_54_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_55_arg0(const SDouble ext_tan_54,
+                        const SDouble ext_ownship_latitude);
+SDouble ext_tan_56_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_57_arg0(const SDouble ext_tan_56,
+                        const SDouble ext_intruder_latitude);
+SDouble ext_sqrt_58_arg0(const SDouble ext_ownship_vx,
+                         const SDouble ext_intruder_vx, const SDouble ext_ownship_vy,
+                         const SDouble ext_intruder_vy, const SDouble ext_ownship_longitude,
+                         const SDouble ext_intruder_longitude, const SDouble ext_log_51,
+                         const SDouble ext_tan_50, const SDouble ext_ownship_latitude,
+                         const SDouble ext_log_53, const SDouble ext_tan_52,
+                         const SDouble ext_intruder_latitude, const SDouble ext_log_55,
+                         const SDouble ext_tan_54, const SDouble ext_log_57,
+                         const SDouble ext_tan_56);
+SDouble ext_tan_59_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_60_arg0(const SDouble ext_tan_59,
+                        const SDouble ext_ownship_latitude);
+SDouble ext_tan_61_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_62_arg0(const SDouble ext_tan_61,
+                        const SDouble ext_intruder_latitude);
+SDouble ext_tan_63_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_64_arg0(const SDouble ext_tan_63,
+                        const SDouble ext_ownship_latitude);
+SDouble ext_tan_65_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_66_arg0(const SDouble ext_tan_65,
+                        const SDouble ext_intruder_latitude);
+SDouble ext_tan_67_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_68_arg0(const SDouble ext_tan_67,
+                        const SDouble ext_ownship_latitude);
+SDouble ext_tan_69_arg0(const SDouble ext_intruder_latitude);
 SDouble ext_log_70_arg0(const SDouble ext_tan_69,
-                        const SDouble ext_ownship_latitude);
-SDouble ext_tan_71_arg0(const SDouble ext_intruder_latitude);
+                        const SDouble ext_intruder_latitude);
+SDouble ext_tan_71_arg0(const SDouble ext_ownship_latitude);
 SDouble ext_log_72_arg0(const SDouble ext_tan_71,
-                        const SDouble ext_intruder_latitude);
-SDouble ext_sin_73_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_74_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_75_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_76_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_77_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_78_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_79_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_80_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_81_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_82_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_83_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_84_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_85_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_86_arg0(const SDouble ext_tan_85,
                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_87_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_88_arg0(const SDouble ext_tan_87,
+SDouble ext_tan_73_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_74_arg0(const SDouble ext_tan_73,
                         const SDouble ext_intruder_latitude);
-SDouble ext_cos_89_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_90_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_91_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_92_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_93_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_94_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_95_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_tan_75_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_76_arg0(const SDouble ext_tan_75,
+                        const SDouble ext_ownship_latitude);
+SDouble ext_tan_77_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_78_arg0(const SDouble ext_tan_77,
+                        const SDouble ext_intruder_latitude);
+SDouble ext_tan_79_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_80_arg0(const SDouble ext_tan_79,
+                        const SDouble ext_ownship_latitude);
+SDouble ext_tan_81_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_82_arg0(const SDouble ext_tan_81,
+                        const SDouble ext_intruder_latitude);
+SDouble ext_sqrt_83_arg0(const SDouble ext_ownship_vx,
+                         const SDouble ext_intruder_vx, const SDouble ext_ownship_vy,
+                         const SDouble ext_intruder_vy, const SDouble ext_ownship_longitude,
+                         const SDouble ext_intruder_longitude, const SDouble ext_log_76,
+                         const SDouble ext_tan_75, const SDouble ext_ownship_latitude,
+                         const SDouble ext_log_78, const SDouble ext_tan_77,
+                         const SDouble ext_intruder_latitude, const SDouble ext_log_80,
+                         const SDouble ext_tan_79, const SDouble ext_log_82,
+                         const SDouble ext_tan_81);
+SDouble ext_tan_84_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_85_arg0(const SDouble ext_tan_84,
+                        const SDouble ext_ownship_latitude);
+SDouble ext_tan_86_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_87_arg0(const SDouble ext_tan_86,
+                        const SDouble ext_intruder_latitude);
+SDouble ext_tan_88_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_89_arg0(const SDouble ext_tan_88,
+                        const SDouble ext_ownship_latitude);
+SDouble ext_tan_90_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_91_arg0(const SDouble ext_tan_90,
+                        const SDouble ext_intruder_latitude);
+SDouble ext_sqrt_92_arg0(const SDouble ext_ownship_longitude,
+                         const SDouble ext_intruder_longitude, const SDouble ext_log_85,
+                         const SDouble ext_tan_84, const SDouble ext_ownship_latitude,
+                         const SDouble ext_log_87, const SDouble ext_tan_86,
+                         const SDouble ext_intruder_latitude, const SDouble ext_log_89,
+                         const SDouble ext_tan_88, const SDouble ext_log_91,
+                         const SDouble ext_tan_90);
+SDouble ext_tan_93_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_94_arg0(const SDouble ext_tan_93,
+                        const SDouble ext_ownship_latitude);
+SDouble ext_tan_95_arg0(const SDouble ext_intruder_latitude);
 SDouble ext_log_96_arg0(const SDouble ext_tan_95,
-                        const SDouble ext_ownship_latitude);
-SDouble ext_tan_97_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_98_arg0(const SDouble ext_tan_97,
                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_99_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_100_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_101_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_102_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_103_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_104_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_105_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_106_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_107_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_108_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_109_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_110_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_111_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_tan_97_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_98_arg0(const SDouble ext_tan_97,
+                        const SDouble ext_ownship_latitude);
+SDouble ext_tan_99_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_100_arg0(const SDouble ext_tan_99,
+                         const SDouble ext_intruder_latitude);
+SDouble ext_tan_101_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_102_arg0(const SDouble ext_tan_101,
+                         const SDouble ext_ownship_latitude);
+SDouble ext_tan_103_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_104_arg0(const SDouble ext_tan_103,
+                         const SDouble ext_intruder_latitude);
+SDouble ext_tan_105_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_106_arg0(const SDouble ext_tan_105,
+                         const SDouble ext_ownship_latitude);
+SDouble ext_tan_107_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_108_arg0(const SDouble ext_tan_107,
+                         const SDouble ext_intruder_latitude);
+SDouble ext_tan_109_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_110_arg0(const SDouble ext_tan_109,
+                         const SDouble ext_ownship_latitude);
+SDouble ext_tan_111_arg0(const SDouble ext_intruder_latitude);
 SDouble ext_log_112_arg0(const SDouble ext_tan_111,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_113_arg0(const SDouble ext_intruder_latitude);
+                         const SDouble ext_intruder_latitude);
+SDouble ext_tan_113_arg0(const SDouble ext_ownship_latitude);
 SDouble ext_log_114_arg0(const SDouble ext_tan_113,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_cos_115_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_116_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_117_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_118_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_119_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_120_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_121_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_122_arg0(const SDouble ext_tan_121,
                          const SDouble ext_ownship_latitude);
-SDouble ext_tan_123_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_124_arg0(const SDouble ext_tan_123,
+SDouble ext_tan_115_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_116_arg0(const SDouble ext_tan_115,
                          const SDouble ext_intruder_latitude);
-SDouble ext_sin_125_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_126_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_127_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_128_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_129_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_130_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_131_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_132_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_133_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_134_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_135_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_136_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sqrt_137_arg0(const SDouble ext_ownship_longitude,
-                          const SDouble ext_intruder_longitude,
-                          const SDouble ext_ownship_trueairspeed, const SDouble ext_cos_41,
-                          const SDouble ext_ownship_heading,
-                          const SDouble ext_intruder_trueairspeed, const SDouble ext_cos_42,
-                          const SDouble ext_intruder_heading, const SDouble ext_sin_43,
-                          const SDouble ext_sin_44, const SDouble ext_cos_45,
-                          const SDouble ext_cos_46, const SDouble ext_log_48,
-                          const SDouble ext_tan_47, const SDouble ext_ownship_latitude,
-                          const SDouble ext_log_50, const SDouble ext_tan_49,
-                          const SDouble ext_intruder_latitude, const SDouble ext_sin_51,
-                          const SDouble ext_sin_52, const SDouble ext_cos_53,
-                          const SDouble ext_cos_54, const SDouble ext_cos_55,
-                          const SDouble ext_cos_56, const SDouble ext_sin_57,
-                          const SDouble ext_sin_58, const SDouble ext_sin_59,
-                          const SDouble ext_sin_60, const SDouble ext_cos_61,
-                          const SDouble ext_cos_62, const SDouble ext_cos_63,
-                          const SDouble ext_cos_64, const SDouble ext_sin_65,
-                          const SDouble ext_sin_66, const SDouble ext_cos_67,
-                          const SDouble ext_cos_68, const SDouble ext_log_70,
-                          const SDouble ext_tan_69, const SDouble ext_log_72,
-                          const SDouble ext_tan_71, const SDouble ext_sin_73,
-                          const SDouble ext_sin_74, const SDouble ext_cos_75,
-                          const SDouble ext_cos_76, const SDouble ext_cos_77,
-                          const SDouble ext_cos_78, const SDouble ext_sin_79,
-                          const SDouble ext_sin_80, const SDouble ext_sin_81,
-                          const SDouble ext_sin_82, const SDouble ext_cos_83,
-                          const SDouble ext_cos_84, const SDouble ext_log_86,
-                          const SDouble ext_tan_85, const SDouble ext_log_88,
-                          const SDouble ext_tan_87, const SDouble ext_cos_89,
-                          const SDouble ext_cos_90, const SDouble ext_sin_91,
-                          const SDouble ext_sin_92, const SDouble ext_cos_93,
-                          const SDouble ext_cos_94, const SDouble ext_log_96,
-                          const SDouble ext_tan_95, const SDouble ext_log_98,
-                          const SDouble ext_tan_97, const SDouble ext_sin_99,
-                          const SDouble ext_sin_100, const SDouble ext_cos_101,
-                          const SDouble ext_cos_102, const SDouble ext_cos_103,
-                          const SDouble ext_cos_104, const SDouble ext_sin_105,
-                          const SDouble ext_sin_106, const SDouble ext_sin_107,
-                          const SDouble ext_sin_108, const SDouble ext_sin_109,
-                          const SDouble ext_sin_110, const SDouble ext_log_112,
+SDouble ext_sqrt_117_arg0(const SDouble ext_ownship_longitude,
+                          const SDouble ext_intruder_longitude, const SDouble ext_ownship_vx,
+                          const SDouble ext_intruder_vx, const SDouble ext_ownship_vy,
+                          const SDouble ext_intruder_vy, const SDouble ext_log_94,
+                          const SDouble ext_tan_93, const SDouble ext_ownship_latitude,
+                          const SDouble ext_log_96, const SDouble ext_tan_95,
+                          const SDouble ext_intruder_latitude, const SDouble ext_log_98,
+                          const SDouble ext_tan_97, const SDouble ext_log_100,
+                          const SDouble ext_tan_99, const SDouble ext_log_102,
+                          const SDouble ext_tan_101, const SDouble ext_log_104,
+                          const SDouble ext_tan_103, const SDouble ext_log_106,
+                          const SDouble ext_tan_105, const SDouble ext_log_108,
+                          const SDouble ext_tan_107, const SDouble ext_log_110,
+                          const SDouble ext_tan_109, const SDouble ext_log_112,
                           const SDouble ext_tan_111, const SDouble ext_log_114,
-                          const SDouble ext_tan_113, const SDouble ext_cos_115,
-                          const SDouble ext_cos_116, const SDouble ext_sin_117,
-                          const SDouble ext_sin_118, const SDouble ext_cos_119,
-                          const SDouble ext_cos_120, const SDouble ext_log_122,
-                          const SDouble ext_tan_121, const SDouble ext_log_124,
-                          const SDouble ext_tan_123, const SDouble ext_sin_125,
-                          const SDouble ext_sin_126, const SDouble ext_cos_127,
-                          const SDouble ext_cos_128, const SDouble ext_cos_129,
-                          const SDouble ext_cos_130, const SDouble ext_sin_131,
-                          const SDouble ext_sin_132, const SDouble ext_sin_133,
-                          const SDouble ext_sin_134, const SDouble ext_sin_135,
-                          const SDouble ext_sin_136);
-SDouble ext_cos_138_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_139_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_140_arg0(const SDouble ext_ownship_latitude);
+                          const SDouble ext_tan_113, const SDouble ext_log_116,
+                          const SDouble ext_tan_115);
+SDouble ext_tan_118_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_119_arg0(const SDouble ext_tan_118,
+                         const SDouble ext_ownship_latitude);
+SDouble ext_tan_120_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_121_arg0(const SDouble ext_tan_120,
+                         const SDouble ext_intruder_latitude);
+SDouble ext_tan_122_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_123_arg0(const SDouble ext_tan_122,
+                         const SDouble ext_ownship_latitude);
+SDouble ext_tan_124_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_125_arg0(const SDouble ext_tan_124,
+                         const SDouble ext_intruder_latitude);
+SDouble ext_tan_126_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_127_arg0(const SDouble ext_tan_126,
+                         const SDouble ext_ownship_latitude);
+SDouble ext_tan_128_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_129_arg0(const SDouble ext_tan_128,
+                         const SDouble ext_intruder_latitude);
+SDouble ext_tan_130_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_131_arg0(const SDouble ext_tan_130,
+                         const SDouble ext_ownship_latitude);
+SDouble ext_tan_132_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_133_arg0(const SDouble ext_tan_132,
+                         const SDouble ext_intruder_latitude);
+SDouble ext_tan_134_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_135_arg0(const SDouble ext_tan_134,
+                         const SDouble ext_ownship_latitude);
+SDouble ext_tan_136_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_137_arg0(const SDouble ext_tan_136,
+                         const SDouble ext_intruder_latitude);
+SDouble ext_tan_138_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_139_arg0(const SDouble ext_tan_138,
+                         const SDouble ext_ownship_latitude);
+SDouble ext_tan_140_arg0(const SDouble ext_intruder_latitude);
 SDouble ext_log_141_arg0(const SDouble ext_tan_140,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_142_arg0(const SDouble ext_intruder_latitude);
+                         const SDouble ext_intruder_latitude);
+SDouble ext_tan_142_arg0(const SDouble ext_ownship_latitude);
 SDouble ext_log_143_arg0(const SDouble ext_tan_142,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_144_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_145_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_146_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_147_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_148_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_149_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_150_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_151_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_152_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_153_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_154_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_155_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_156_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_157_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_158_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_159_arg0(const SDouble ext_tan_158,
                          const SDouble ext_ownship_latitude);
-SDouble ext_tan_160_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_161_arg0(const SDouble ext_tan_160,
+SDouble ext_tan_144_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_145_arg0(const SDouble ext_tan_144,
                          const SDouble ext_intruder_latitude);
-SDouble ext_sin_162_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_163_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_164_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_165_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_166_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_167_arg0(const SDouble ext_tan_166,
+SDouble ext_tan_146_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_147_arg0(const SDouble ext_tan_146,
                          const SDouble ext_ownship_latitude);
-SDouble ext_tan_168_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_169_arg0(const SDouble ext_tan_168,
+SDouble ext_tan_148_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_149_arg0(const SDouble ext_tan_148,
                          const SDouble ext_intruder_latitude);
-SDouble ext_cos_170_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_171_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_172_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_173_arg0(const SDouble ext_tan_172,
+SDouble ext_tan_150_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_151_arg0(const SDouble ext_tan_150,
                          const SDouble ext_ownship_latitude);
-SDouble ext_tan_174_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_175_arg0(const SDouble ext_tan_174,
+SDouble ext_tan_152_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_153_arg0(const SDouble ext_tan_152,
                          const SDouble ext_intruder_latitude);
-SDouble ext_sin_176_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_177_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_178_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_179_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_180_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_181_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_182_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_183_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_184_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_185_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_186_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_187_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_188_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_189_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_190_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_tan_154_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_155_arg0(const SDouble ext_tan_154,
+                         const SDouble ext_ownship_latitude);
+SDouble ext_tan_156_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_157_arg0(const SDouble ext_tan_156,
+                         const SDouble ext_intruder_latitude);
+SDouble ext_sqrt_158_arg0(const SDouble ext_ownship_longitude,
+                          const SDouble ext_intruder_longitude, const SDouble ext_log_151,
+                          const SDouble ext_tan_150, const SDouble ext_ownship_latitude,
+                          const SDouble ext_log_153, const SDouble ext_tan_152,
+                          const SDouble ext_intruder_latitude, const SDouble ext_log_155,
+                          const SDouble ext_tan_154, const SDouble ext_log_157,
+                          const SDouble ext_tan_156);
+SDouble ext_tan_159_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_160_arg0(const SDouble ext_tan_159,
+                         const SDouble ext_ownship_latitude);
+SDouble ext_tan_161_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_162_arg0(const SDouble ext_tan_161,
+                         const SDouble ext_intruder_latitude);
+SDouble ext_tan_163_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_164_arg0(const SDouble ext_tan_163,
+                         const SDouble ext_ownship_latitude);
+SDouble ext_tan_165_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_166_arg0(const SDouble ext_tan_165,
+                         const SDouble ext_intruder_latitude);
+SDouble ext_tan_167_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_168_arg0(const SDouble ext_tan_167,
+                         const SDouble ext_ownship_latitude);
+SDouble ext_tan_169_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_170_arg0(const SDouble ext_tan_169,
+                         const SDouble ext_intruder_latitude);
+SDouble ext_tan_171_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_172_arg0(const SDouble ext_tan_171,
+                         const SDouble ext_ownship_latitude);
+SDouble ext_tan_173_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_174_arg0(const SDouble ext_tan_173,
+                         const SDouble ext_intruder_latitude);
+SDouble ext_tan_175_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_176_arg0(const SDouble ext_tan_175,
+                         const SDouble ext_ownship_latitude);
+SDouble ext_tan_177_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_178_arg0(const SDouble ext_tan_177,
+                         const SDouble ext_intruder_latitude);
+SDouble ext_tan_179_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_180_arg0(const SDouble ext_tan_179,
+                         const SDouble ext_ownship_latitude);
+SDouble ext_tan_181_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_182_arg0(const SDouble ext_tan_181,
+                         const SDouble ext_intruder_latitude);
+SDouble ext_sqrt_183_arg0(const SDouble ext_ownship_longitude,
+                          const SDouble ext_intruder_longitude, const SDouble ext_ownship_vx,
+                          const SDouble ext_intruder_vx, const SDouble ext_ownship_vy,
+                          const SDouble ext_intruder_vy, const SDouble ext_log_160,
+                          const SDouble ext_tan_159, const SDouble ext_ownship_latitude,
+                          const SDouble ext_log_162, const SDouble ext_tan_161,
+                          const SDouble ext_intruder_latitude, const SDouble ext_log_164,
+                          const SDouble ext_tan_163, const SDouble ext_log_166,
+                          const SDouble ext_tan_165, const SDouble ext_log_168,
+                          const SDouble ext_tan_167, const SDouble ext_log_170,
+                          const SDouble ext_tan_169, const SDouble ext_log_172,
+                          const SDouble ext_tan_171, const SDouble ext_log_174,
+                          const SDouble ext_tan_173, const SDouble ext_log_176,
+                          const SDouble ext_tan_175, const SDouble ext_log_178,
+                          const SDouble ext_tan_177, const SDouble ext_log_180,
+                          const SDouble ext_tan_179, const SDouble ext_log_182,
+                          const SDouble ext_tan_181);
+SDouble ext_tan_184_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_185_arg0(const SDouble ext_tan_184,
+                         const SDouble ext_ownship_latitude);
+SDouble ext_tan_186_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_187_arg0(const SDouble ext_tan_186,
+                         const SDouble ext_intruder_latitude);
+SDouble ext_tan_188_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_189_arg0(const SDouble ext_tan_188,
+                         const SDouble ext_ownship_latitude);
+SDouble ext_tan_190_arg0(const SDouble ext_intruder_latitude);
 SDouble ext_log_191_arg0(const SDouble ext_tan_190,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_192_arg0(const SDouble ext_intruder_latitude);
+                         const SDouble ext_intruder_latitude);
+SDouble ext_tan_192_arg0(const SDouble ext_ownship_latitude);
 SDouble ext_log_193_arg0(const SDouble ext_tan_192,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_194_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_195_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_196_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_197_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_198_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_199_arg0(const SDouble ext_tan_198,
                          const SDouble ext_ownship_latitude);
-SDouble ext_tan_200_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_201_arg0(const SDouble ext_tan_200,
+SDouble ext_tan_194_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_195_arg0(const SDouble ext_tan_194,
                          const SDouble ext_intruder_latitude);
-SDouble ext_sqrt_202_arg0(const SDouble ext_ownship_trueairspeed,
-                          const SDouble ext_cos_178, const SDouble ext_ownship_heading,
-                          const SDouble ext_intruder_trueairspeed, const SDouble ext_cos_179,
-                          const SDouble ext_intruder_heading, const SDouble ext_cos_180,
-                          const SDouble ext_cos_181, const SDouble ext_sin_182,
-                          const SDouble ext_sin_183, const SDouble ext_sin_184,
-                          const SDouble ext_sin_185, const SDouble ext_ownship_longitude,
-                          const SDouble ext_intruder_longitude, const SDouble ext_sin_186,
-                          const SDouble ext_sin_187, const SDouble ext_cos_188,
-                          const SDouble ext_cos_189, const SDouble ext_log_191,
-                          const SDouble ext_tan_190, const SDouble ext_ownship_latitude,
-                          const SDouble ext_log_193, const SDouble ext_tan_192,
-                          const SDouble ext_intruder_latitude, const SDouble ext_sin_194,
-                          const SDouble ext_sin_195, const SDouble ext_cos_196,
-                          const SDouble ext_cos_197, const SDouble ext_log_199,
-                          const SDouble ext_tan_198, const SDouble ext_log_201,
-                          const SDouble ext_tan_200);
-SDouble ext_cos_203_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_204_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_205_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_206_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_207_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_208_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_209_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_210_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_211_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_212_arg0(const SDouble ext_intruder_heading);
+SDouble ext_tan_196_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_197_arg0(const SDouble ext_tan_196,
+                         const SDouble ext_ownship_latitude);
+SDouble ext_tan_198_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_199_arg0(const SDouble ext_tan_198,
+                         const SDouble ext_intruder_latitude);
+SDouble ext_sqrt_200_arg0(const SDouble ext_ownship_longitude,
+                          const SDouble ext_intruder_longitude, const SDouble ext_log_193,
+                          const SDouble ext_tan_192, const SDouble ext_ownship_latitude,
+                          const SDouble ext_log_195, const SDouble ext_tan_194,
+                          const SDouble ext_intruder_latitude, const SDouble ext_log_197,
+                          const SDouble ext_tan_196, const SDouble ext_log_199,
+                          const SDouble ext_tan_198);
+SDouble ext_tan_201_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_202_arg0(const SDouble ext_tan_201,
+                         const SDouble ext_ownship_latitude);
+SDouble ext_tan_203_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_204_arg0(const SDouble ext_tan_203,
+                         const SDouble ext_intruder_latitude);
+SDouble ext_tan_205_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_206_arg0(const SDouble ext_tan_205,
+                         const SDouble ext_ownship_latitude);
+SDouble ext_tan_207_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_208_arg0(const SDouble ext_tan_207,
+                         const SDouble ext_intruder_latitude);
+SDouble ext_tan_209_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_210_arg0(const SDouble ext_tan_209,
+                         const SDouble ext_ownship_latitude);
+SDouble ext_tan_211_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_212_arg0(const SDouble ext_tan_211,
+                         const SDouble ext_intruder_latitude);
 SDouble ext_tan_213_arg0(const SDouble ext_ownship_latitude);
 SDouble ext_log_214_arg0(const SDouble ext_tan_213,
                          const SDouble ext_ownship_latitude);
 SDouble ext_tan_215_arg0(const SDouble ext_intruder_latitude);
 SDouble ext_log_216_arg0(const SDouble ext_tan_215,
                          const SDouble ext_intruder_latitude);
-SDouble ext_sin_217_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_218_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_219_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_220_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_221_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_222_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_223_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_224_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_225_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_226_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_227_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_228_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_229_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_230_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_231_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_232_arg0(const SDouble ext_tan_231,
+SDouble ext_tan_217_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_218_arg0(const SDouble ext_tan_217,
                          const SDouble ext_ownship_latitude);
-SDouble ext_tan_233_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_234_arg0(const SDouble ext_tan_233,
+SDouble ext_tan_219_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_220_arg0(const SDouble ext_tan_219,
                          const SDouble ext_intruder_latitude);
-SDouble ext_sin_235_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_236_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_237_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_238_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_239_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_240_arg0(const SDouble ext_tan_239,
+SDouble ext_tan_221_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_222_arg0(const SDouble ext_tan_221,
                          const SDouble ext_ownship_latitude);
-SDouble ext_tan_241_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_242_arg0(const SDouble ext_tan_241,
+SDouble ext_tan_223_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_224_arg0(const SDouble ext_tan_223,
                          const SDouble ext_intruder_latitude);
-SDouble ext_cos_243_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_244_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_245_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_246_arg0(const SDouble ext_tan_245,
+SDouble ext_sqrt_225_arg0(const SDouble ext_ownship_longitude,
+                          const SDouble ext_intruder_longitude, const SDouble ext_ownship_vx,
+                          const SDouble ext_intruder_vx, const SDouble ext_ownship_vy,
+                          const SDouble ext_intruder_vy, const SDouble ext_log_202,
+                          const SDouble ext_tan_201, const SDouble ext_ownship_latitude,
+                          const SDouble ext_log_204, const SDouble ext_tan_203,
+                          const SDouble ext_intruder_latitude, const SDouble ext_log_206,
+                          const SDouble ext_tan_205, const SDouble ext_log_208,
+                          const SDouble ext_tan_207, const SDouble ext_log_210,
+                          const SDouble ext_tan_209, const SDouble ext_log_212,
+                          const SDouble ext_tan_211, const SDouble ext_log_214,
+                          const SDouble ext_tan_213, const SDouble ext_log_216,
+                          const SDouble ext_tan_215, const SDouble ext_log_218,
+                          const SDouble ext_tan_217, const SDouble ext_log_220,
+                          const SDouble ext_tan_219, const SDouble ext_log_222,
+                          const SDouble ext_tan_221, const SDouble ext_log_224,
+                          const SDouble ext_tan_223);
+SDouble ext_tan_226_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_227_arg0(const SDouble ext_tan_226,
                          const SDouble ext_ownship_latitude);
-SDouble ext_tan_247_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_248_arg0(const SDouble ext_tan_247,
+SDouble ext_tan_228_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_229_arg0(const SDouble ext_tan_228,
                          const SDouble ext_intruder_latitude);
-SDouble ext_sin_249_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_250_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_251_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_252_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_253_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_254_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_255_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_256_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_257_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_258_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_259_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_260_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_261_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_262_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_263_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_264_arg0(const SDouble ext_tan_263,
+SDouble ext_tan_230_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_231_arg0(const SDouble ext_tan_230,
                          const SDouble ext_ownship_latitude);
-SDouble ext_tan_265_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_266_arg0(const SDouble ext_tan_265,
+SDouble ext_tan_232_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_233_arg0(const SDouble ext_tan_232,
                          const SDouble ext_intruder_latitude);
-SDouble ext_sin_267_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_268_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_269_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_270_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_271_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_272_arg0(const SDouble ext_tan_271,
+SDouble ext_tan_234_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_235_arg0(const SDouble ext_tan_234,
                          const SDouble ext_ownship_latitude);
-SDouble ext_tan_273_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_274_arg0(const SDouble ext_tan_273,
+SDouble ext_tan_236_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_237_arg0(const SDouble ext_tan_236,
                          const SDouble ext_intruder_latitude);
-SDouble ext_sqrt_275_arg0(const SDouble ext_ownship_trueairspeed,
-                          const SDouble ext_cos_251, const SDouble ext_ownship_heading,
-                          const SDouble ext_intruder_trueairspeed, const SDouble ext_cos_252,
-                          const SDouble ext_intruder_heading, const SDouble ext_cos_253,
-                          const SDouble ext_cos_254, const SDouble ext_sin_255,
-                          const SDouble ext_sin_256, const SDouble ext_sin_257,
-                          const SDouble ext_sin_258, const SDouble ext_ownship_longitude,
-                          const SDouble ext_intruder_longitude, const SDouble ext_sin_259,
-                          const SDouble ext_sin_260, const SDouble ext_cos_261,
-                          const SDouble ext_cos_262, const SDouble ext_log_264,
-                          const SDouble ext_tan_263, const SDouble ext_ownship_latitude,
-                          const SDouble ext_log_266, const SDouble ext_tan_265,
-                          const SDouble ext_intruder_latitude, const SDouble ext_sin_267,
-                          const SDouble ext_sin_268, const SDouble ext_cos_269,
-                          const SDouble ext_cos_270, const SDouble ext_log_272,
-                          const SDouble ext_tan_271, const SDouble ext_log_274,
-                          const SDouble ext_tan_273);
-SDouble ext_cos_276_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_277_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_278_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_279_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_280_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_281_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_282_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_283_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_284_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_285_arg0(const SDouble ext_tan_284,
+SDouble ext_tan_238_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_239_arg0(const SDouble ext_tan_238,
                          const SDouble ext_ownship_latitude);
-SDouble ext_tan_286_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_287_arg0(const SDouble ext_tan_286,
+SDouble ext_tan_240_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_241_arg0(const SDouble ext_tan_240,
                          const SDouble ext_intruder_latitude);
-SDouble ext_tan_288_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_289_arg0(const SDouble ext_tan_288,
+SDouble ext_tan_242_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_243_arg0(const SDouble ext_tan_242,
                          const SDouble ext_ownship_latitude);
-SDouble ext_tan_290_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_291_arg0(const SDouble ext_tan_290,
+SDouble ext_tan_244_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_245_arg0(const SDouble ext_tan_244,
                          const SDouble ext_intruder_latitude);
-SDouble ext_sqrt_292_arg0(const SDouble ext_ownship_longitude,
-                          const SDouble ext_intruder_longitude, const SDouble ext_log_285,
-                          const SDouble ext_tan_284, const SDouble ext_ownship_latitude,
-                          const SDouble ext_log_287, const SDouble ext_tan_286,
-                          const SDouble ext_intruder_latitude, const SDouble ext_log_289,
-                          const SDouble ext_tan_288, const SDouble ext_log_291,
-                          const SDouble ext_tan_290);
-SDouble ext_cos_293_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_294_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_295_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_296_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_297_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_298_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_299_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_300_arg0(const SDouble ext_tan_299,
+SDouble ext_tan_246_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_247_arg0(const SDouble ext_tan_246,
                          const SDouble ext_ownship_latitude);
-SDouble ext_tan_301_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_302_arg0(const SDouble ext_tan_301,
+SDouble ext_tan_248_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_249_arg0(const SDouble ext_tan_248,
                          const SDouble ext_intruder_latitude);
-SDouble ext_sin_303_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_304_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_305_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_306_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_307_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_308_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_309_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_310_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_311_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_312_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_313_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_314_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_315_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_316_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_317_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_318_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_319_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_320_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_321_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_322_arg0(const SDouble ext_tan_321,
+SDouble ext_tan_250_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_251_arg0(const SDouble ext_tan_250,
                          const SDouble ext_ownship_latitude);
-SDouble ext_tan_323_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_324_arg0(const SDouble ext_tan_323,
+SDouble ext_tan_252_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_253_arg0(const SDouble ext_tan_252,
                          const SDouble ext_intruder_latitude);
-SDouble ext_sin_325_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_326_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_327_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_328_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_329_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_330_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_331_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_332_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_333_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_334_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_335_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_336_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_337_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_338_arg0(const SDouble ext_tan_337,
+SDouble ext_tan_254_arg0(const SDouble ext_ownship_latitude);
+SDouble ext_log_255_arg0(const SDouble ext_tan_254,
                          const SDouble ext_ownship_latitude);
-SDouble ext_tan_339_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_340_arg0(const SDouble ext_tan_339,
+SDouble ext_tan_256_arg0(const SDouble ext_intruder_latitude);
+SDouble ext_log_257_arg0(const SDouble ext_tan_256,
                          const SDouble ext_intruder_latitude);
-SDouble ext_cos_341_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_342_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_343_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_344_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_345_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_346_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_347_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_348_arg0(const SDouble ext_tan_347,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_349_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_350_arg0(const SDouble ext_tan_349,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_351_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_352_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_353_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_354_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_355_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_356_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_357_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_358_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_359_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_360_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_361_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_362_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_363_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_364_arg0(const SDouble ext_tan_363,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_365_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_366_arg0(const SDouble ext_tan_365,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_cos_367_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_368_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_369_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_370_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_371_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_372_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_373_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_374_arg0(const SDouble ext_tan_373,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_375_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_376_arg0(const SDouble ext_tan_375,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_377_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_378_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_379_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_380_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_381_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_382_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_383_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_384_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_385_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_386_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_387_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_388_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sqrt_389_arg0(const SDouble ext_ownship_longitude,
-                          const SDouble ext_intruder_longitude,
-                          const SDouble ext_ownship_trueairspeed, const SDouble ext_cos_293,
-                          const SDouble ext_ownship_heading,
-                          const SDouble ext_intruder_trueairspeed, const SDouble ext_cos_294,
-                          const SDouble ext_intruder_heading, const SDouble ext_sin_295,
-                          const SDouble ext_sin_296, const SDouble ext_cos_297,
-                          const SDouble ext_cos_298, const SDouble ext_log_300,
-                          const SDouble ext_tan_299, const SDouble ext_ownship_latitude,
-                          const SDouble ext_log_302, const SDouble ext_tan_301,
-                          const SDouble ext_intruder_latitude, const SDouble ext_sin_303,
-                          const SDouble ext_sin_304, const SDouble ext_cos_305,
-                          const SDouble ext_cos_306, const SDouble ext_cos_307,
-                          const SDouble ext_cos_308, const SDouble ext_sin_309,
-                          const SDouble ext_sin_310, const SDouble ext_sin_311,
-                          const SDouble ext_sin_312, const SDouble ext_cos_313,
-                          const SDouble ext_cos_314, const SDouble ext_cos_315,
-                          const SDouble ext_cos_316, const SDouble ext_sin_317,
-                          const SDouble ext_sin_318, const SDouble ext_cos_319,
-                          const SDouble ext_cos_320, const SDouble ext_log_322,
-                          const SDouble ext_tan_321, const SDouble ext_log_324,
-                          const SDouble ext_tan_323, const SDouble ext_sin_325,
-                          const SDouble ext_sin_326, const SDouble ext_cos_327,
-                          const SDouble ext_cos_328, const SDouble ext_cos_329,
-                          const SDouble ext_cos_330, const SDouble ext_sin_331,
-                          const SDouble ext_sin_332, const SDouble ext_sin_333,
-                          const SDouble ext_sin_334, const SDouble ext_cos_335,
-                          const SDouble ext_cos_336, const SDouble ext_log_338,
-                          const SDouble ext_tan_337, const SDouble ext_log_340,
-                          const SDouble ext_tan_339, const SDouble ext_cos_341,
-                          const SDouble ext_cos_342, const SDouble ext_sin_343,
-                          const SDouble ext_sin_344, const SDouble ext_cos_345,
-                          const SDouble ext_cos_346, const SDouble ext_log_348,
-                          const SDouble ext_tan_347, const SDouble ext_log_350,
-                          const SDouble ext_tan_349, const SDouble ext_sin_351,
-                          const SDouble ext_sin_352, const SDouble ext_cos_353,
-                          const SDouble ext_cos_354, const SDouble ext_cos_355,
-                          const SDouble ext_cos_356, const SDouble ext_sin_357,
-                          const SDouble ext_sin_358, const SDouble ext_sin_359,
-                          const SDouble ext_sin_360, const SDouble ext_sin_361,
-                          const SDouble ext_sin_362, const SDouble ext_log_364,
-                          const SDouble ext_tan_363, const SDouble ext_log_366,
-                          const SDouble ext_tan_365, const SDouble ext_cos_367,
-                          const SDouble ext_cos_368, const SDouble ext_sin_369,
-                          const SDouble ext_sin_370, const SDouble ext_cos_371,
-                          const SDouble ext_cos_372, const SDouble ext_log_374,
-                          const SDouble ext_tan_373, const SDouble ext_log_376,
-                          const SDouble ext_tan_375, const SDouble ext_sin_377,
-                          const SDouble ext_sin_378, const SDouble ext_cos_379,
-                          const SDouble ext_cos_380, const SDouble ext_cos_381,
-                          const SDouble ext_cos_382, const SDouble ext_sin_383,
-                          const SDouble ext_sin_384, const SDouble ext_sin_385,
-                          const SDouble ext_sin_386, const SDouble ext_sin_387,
-                          const SDouble ext_sin_388);
-SDouble ext_cos_390_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_391_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_392_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_393_arg0(const SDouble ext_tan_392,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_394_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_395_arg0(const SDouble ext_tan_394,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_396_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_397_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_398_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_399_arg0(const SDouble ext_tan_398,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_400_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_401_arg0(const SDouble ext_tan_400,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_tan_402_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_403_arg0(const SDouble ext_tan_402,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_404_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_405_arg0(const SDouble ext_tan_404,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_cos_406_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_407_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_408_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_409_arg0(const SDouble ext_tan_408,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_410_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_411_arg0(const SDouble ext_tan_410,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_412_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_413_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_414_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_415_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_416_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_417_arg0(const SDouble ext_tan_416,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_418_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_419_arg0(const SDouble ext_tan_418,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_420_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_421_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_422_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_423_arg0(const SDouble ext_tan_422,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_424_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_425_arg0(const SDouble ext_tan_424,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_tan_426_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_427_arg0(const SDouble ext_tan_426,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_428_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_429_arg0(const SDouble ext_tan_428,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_cos_430_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_431_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_432_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_433_arg0(const SDouble ext_tan_432,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_434_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_435_arg0(const SDouble ext_tan_434,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_436_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_437_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_438_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_439_arg0(const SDouble ext_tan_438,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_440_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_441_arg0(const SDouble ext_tan_440,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_tan_442_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_443_arg0(const SDouble ext_tan_442,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_444_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_445_arg0(const SDouble ext_tan_444,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sqrt_446_arg0(const SDouble ext_ownship_longitude,
-                          const SDouble ext_intruder_longitude, const SDouble ext_log_439,
-                          const SDouble ext_tan_438, const SDouble ext_ownship_latitude,
-                          const SDouble ext_log_441, const SDouble ext_tan_440,
-                          const SDouble ext_intruder_latitude, const SDouble ext_log_443,
-                          const SDouble ext_tan_442, const SDouble ext_log_445,
-                          const SDouble ext_tan_444);
-SDouble ext_cos_447_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_448_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_449_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_450_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_451_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_452_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_453_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_454_arg0(const SDouble ext_tan_453,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_455_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_456_arg0(const SDouble ext_tan_455,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_457_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_458_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_459_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_460_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_461_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_462_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_463_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_464_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_465_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_466_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_467_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_468_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_469_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_470_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_471_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_472_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_473_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_474_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_475_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_476_arg0(const SDouble ext_tan_475,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_477_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_478_arg0(const SDouble ext_tan_477,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_479_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_480_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_481_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_482_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_483_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_484_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_485_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_486_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_487_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_488_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_489_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_490_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_491_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_492_arg0(const SDouble ext_tan_491,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_493_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_494_arg0(const SDouble ext_tan_493,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_cos_495_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_496_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_497_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_498_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_499_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_500_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_501_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_502_arg0(const SDouble ext_tan_501,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_503_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_504_arg0(const SDouble ext_tan_503,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_505_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_506_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_507_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_508_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_509_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_510_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_511_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_512_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_513_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_514_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_515_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_516_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_517_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_518_arg0(const SDouble ext_tan_517,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_519_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_520_arg0(const SDouble ext_tan_519,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_cos_521_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_522_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_523_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_524_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_525_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_526_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_527_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_528_arg0(const SDouble ext_tan_527,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_529_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_530_arg0(const SDouble ext_tan_529,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_531_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_532_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_533_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_534_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_535_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_536_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_537_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_538_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_539_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_540_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_541_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_542_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sqrt_543_arg0(const SDouble ext_ownship_longitude,
-                          const SDouble ext_intruder_longitude,
-                          const SDouble ext_ownship_trueairspeed, const SDouble ext_cos_447,
-                          const SDouble ext_ownship_heading,
-                          const SDouble ext_intruder_trueairspeed, const SDouble ext_cos_448,
-                          const SDouble ext_intruder_heading, const SDouble ext_sin_449,
-                          const SDouble ext_sin_450, const SDouble ext_cos_451,
-                          const SDouble ext_cos_452, const SDouble ext_log_454,
-                          const SDouble ext_tan_453, const SDouble ext_ownship_latitude,
-                          const SDouble ext_log_456, const SDouble ext_tan_455,
-                          const SDouble ext_intruder_latitude, const SDouble ext_sin_457,
-                          const SDouble ext_sin_458, const SDouble ext_cos_459,
-                          const SDouble ext_cos_460, const SDouble ext_cos_461,
-                          const SDouble ext_cos_462, const SDouble ext_sin_463,
-                          const SDouble ext_sin_464, const SDouble ext_sin_465,
-                          const SDouble ext_sin_466, const SDouble ext_cos_467,
-                          const SDouble ext_cos_468, const SDouble ext_cos_469,
-                          const SDouble ext_cos_470, const SDouble ext_sin_471,
-                          const SDouble ext_sin_472, const SDouble ext_cos_473,
-                          const SDouble ext_cos_474, const SDouble ext_log_476,
-                          const SDouble ext_tan_475, const SDouble ext_log_478,
-                          const SDouble ext_tan_477, const SDouble ext_sin_479,
-                          const SDouble ext_sin_480, const SDouble ext_cos_481,
-                          const SDouble ext_cos_482, const SDouble ext_cos_483,
-                          const SDouble ext_cos_484, const SDouble ext_sin_485,
-                          const SDouble ext_sin_486, const SDouble ext_sin_487,
-                          const SDouble ext_sin_488, const SDouble ext_cos_489,
-                          const SDouble ext_cos_490, const SDouble ext_log_492,
-                          const SDouble ext_tan_491, const SDouble ext_log_494,
-                          const SDouble ext_tan_493, const SDouble ext_cos_495,
-                          const SDouble ext_cos_496, const SDouble ext_sin_497,
-                          const SDouble ext_sin_498, const SDouble ext_cos_499,
-                          const SDouble ext_cos_500, const SDouble ext_log_502,
-                          const SDouble ext_tan_501, const SDouble ext_log_504,
-                          const SDouble ext_tan_503, const SDouble ext_sin_505,
-                          const SDouble ext_sin_506, const SDouble ext_cos_507,
-                          const SDouble ext_cos_508, const SDouble ext_cos_509,
-                          const SDouble ext_cos_510, const SDouble ext_sin_511,
-                          const SDouble ext_sin_512, const SDouble ext_sin_513,
-                          const SDouble ext_sin_514, const SDouble ext_sin_515,
-                          const SDouble ext_sin_516, const SDouble ext_log_518,
-                          const SDouble ext_tan_517, const SDouble ext_log_520,
-                          const SDouble ext_tan_519, const SDouble ext_cos_521,
-                          const SDouble ext_cos_522, const SDouble ext_sin_523,
-                          const SDouble ext_sin_524, const SDouble ext_cos_525,
-                          const SDouble ext_cos_526, const SDouble ext_log_528,
-                          const SDouble ext_tan_527, const SDouble ext_log_530,
-                          const SDouble ext_tan_529, const SDouble ext_sin_531,
-                          const SDouble ext_sin_532, const SDouble ext_cos_533,
-                          const SDouble ext_cos_534, const SDouble ext_cos_535,
-                          const SDouble ext_cos_536, const SDouble ext_sin_537,
-                          const SDouble ext_sin_538, const SDouble ext_sin_539,
-                          const SDouble ext_sin_540, const SDouble ext_sin_541,
-                          const SDouble ext_sin_542);
-SDouble ext_cos_544_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_545_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_546_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_547_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_548_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_549_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_550_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_551_arg0(const SDouble ext_tan_550,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_552_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_553_arg0(const SDouble ext_tan_552,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_554_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_555_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_556_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_557_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_558_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_559_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_560_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_561_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_562_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_563_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_564_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_565_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_566_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_567_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_568_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_569_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_570_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_571_arg0(const SDouble ext_tan_570,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_572_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_573_arg0(const SDouble ext_tan_572,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_574_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_575_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_576_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_577_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_578_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_579_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_580_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_581_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_582_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_583_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_584_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_585_arg0(const SDouble ext_tan_584,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_586_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_587_arg0(const SDouble ext_tan_586,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_tan_588_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_589_arg0(const SDouble ext_tan_588,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_590_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_591_arg0(const SDouble ext_tan_590,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sqrt_592_arg0(const SDouble ext_ownship_longitude,
-                          const SDouble ext_intruder_longitude, const SDouble ext_log_585,
-                          const SDouble ext_tan_584, const SDouble ext_ownship_latitude,
-                          const SDouble ext_log_587, const SDouble ext_tan_586,
-                          const SDouble ext_intruder_latitude, const SDouble ext_log_589,
-                          const SDouble ext_tan_588, const SDouble ext_log_591,
-                          const SDouble ext_tan_590);
-SDouble ext_cos_593_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_594_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_595_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_596_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_597_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_598_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_599_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_600_arg0(const SDouble ext_tan_599,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_601_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_602_arg0(const SDouble ext_tan_601,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_603_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_604_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_605_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_606_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_607_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_608_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_609_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_610_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_611_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_612_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_613_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_614_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_615_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_616_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_617_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_618_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_619_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_620_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_621_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_622_arg0(const SDouble ext_tan_621,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_623_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_624_arg0(const SDouble ext_tan_623,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_625_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_626_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_627_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_628_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_629_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_630_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_631_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_632_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_633_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_634_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_635_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_636_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_637_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_638_arg0(const SDouble ext_tan_637,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_639_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_640_arg0(const SDouble ext_tan_639,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_cos_641_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_642_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_643_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_644_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_645_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_646_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_647_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_648_arg0(const SDouble ext_tan_647,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_649_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_650_arg0(const SDouble ext_tan_649,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_651_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_652_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_653_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_654_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_655_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_656_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_657_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_658_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_659_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_660_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_661_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_662_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_663_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_664_arg0(const SDouble ext_tan_663,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_665_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_666_arg0(const SDouble ext_tan_665,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_cos_667_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_668_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_669_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_670_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_671_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_672_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_673_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_674_arg0(const SDouble ext_tan_673,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_675_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_676_arg0(const SDouble ext_tan_675,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_677_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_678_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_679_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_680_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_681_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_682_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_683_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_684_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_685_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_686_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sin_687_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_688_arg0(const SDouble ext_intruder_heading);
-SDouble ext_sqrt_689_arg0(const SDouble ext_ownship_longitude,
-                          const SDouble ext_intruder_longitude,
-                          const SDouble ext_ownship_trueairspeed, const SDouble ext_cos_593,
-                          const SDouble ext_ownship_heading,
-                          const SDouble ext_intruder_trueairspeed, const SDouble ext_cos_594,
-                          const SDouble ext_intruder_heading, const SDouble ext_sin_595,
-                          const SDouble ext_sin_596, const SDouble ext_cos_597,
-                          const SDouble ext_cos_598, const SDouble ext_log_600,
-                          const SDouble ext_tan_599, const SDouble ext_ownship_latitude,
-                          const SDouble ext_log_602, const SDouble ext_tan_601,
-                          const SDouble ext_intruder_latitude, const SDouble ext_sin_603,
-                          const SDouble ext_sin_604, const SDouble ext_cos_605,
-                          const SDouble ext_cos_606, const SDouble ext_cos_607,
-                          const SDouble ext_cos_608, const SDouble ext_sin_609,
-                          const SDouble ext_sin_610, const SDouble ext_sin_611,
-                          const SDouble ext_sin_612, const SDouble ext_cos_613,
-                          const SDouble ext_cos_614, const SDouble ext_cos_615,
-                          const SDouble ext_cos_616, const SDouble ext_sin_617,
-                          const SDouble ext_sin_618, const SDouble ext_cos_619,
-                          const SDouble ext_cos_620, const SDouble ext_log_622,
-                          const SDouble ext_tan_621, const SDouble ext_log_624,
-                          const SDouble ext_tan_623, const SDouble ext_sin_625,
-                          const SDouble ext_sin_626, const SDouble ext_cos_627,
-                          const SDouble ext_cos_628, const SDouble ext_cos_629,
-                          const SDouble ext_cos_630, const SDouble ext_sin_631,
-                          const SDouble ext_sin_632, const SDouble ext_sin_633,
-                          const SDouble ext_sin_634, const SDouble ext_cos_635,
-                          const SDouble ext_cos_636, const SDouble ext_log_638,
-                          const SDouble ext_tan_637, const SDouble ext_log_640,
-                          const SDouble ext_tan_639, const SDouble ext_cos_641,
-                          const SDouble ext_cos_642, const SDouble ext_sin_643,
-                          const SDouble ext_sin_644, const SDouble ext_cos_645,
-                          const SDouble ext_cos_646, const SDouble ext_log_648,
-                          const SDouble ext_tan_647, const SDouble ext_log_650,
-                          const SDouble ext_tan_649, const SDouble ext_sin_651,
-                          const SDouble ext_sin_652, const SDouble ext_cos_653,
-                          const SDouble ext_cos_654, const SDouble ext_cos_655,
-                          const SDouble ext_cos_656, const SDouble ext_sin_657,
-                          const SDouble ext_sin_658, const SDouble ext_sin_659,
-                          const SDouble ext_sin_660, const SDouble ext_sin_661,
-                          const SDouble ext_sin_662, const SDouble ext_log_664,
-                          const SDouble ext_tan_663, const SDouble ext_log_666,
-                          const SDouble ext_tan_665, const SDouble ext_cos_667,
-                          const SDouble ext_cos_668, const SDouble ext_sin_669,
-                          const SDouble ext_sin_670, const SDouble ext_cos_671,
-                          const SDouble ext_cos_672, const SDouble ext_log_674,
-                          const SDouble ext_tan_673, const SDouble ext_log_676,
-                          const SDouble ext_tan_675, const SDouble ext_sin_677,
-                          const SDouble ext_sin_678, const SDouble ext_cos_679,
-                          const SDouble ext_cos_680, const SDouble ext_cos_681,
-                          const SDouble ext_cos_682, const SDouble ext_sin_683,
-                          const SDouble ext_sin_684, const SDouble ext_sin_685,
-                          const SDouble ext_sin_686, const SDouble ext_sin_687,
-                          const SDouble ext_sin_688);
-SDouble ext_cos_690_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_691_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_692_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_693_arg0(const SDouble ext_tan_692,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_694_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_695_arg0(const SDouble ext_tan_694,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_696_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_697_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_698_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_699_arg0(const SDouble ext_tan_698,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_700_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_701_arg0(const SDouble ext_tan_700,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_tan_702_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_703_arg0(const SDouble ext_tan_702,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_704_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_705_arg0(const SDouble ext_tan_704,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_cos_706_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_707_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_708_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_709_arg0(const SDouble ext_tan_708,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_710_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_711_arg0(const SDouble ext_tan_710,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_712_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_713_arg0(const SDouble ext_intruder_heading);
-SDouble ext_cos_714_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_715_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_716_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_717_arg0(const SDouble ext_tan_716,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_718_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_719_arg0(const SDouble ext_tan_718,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_720_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_721_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_722_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_723_arg0(const SDouble ext_tan_722,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_724_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_725_arg0(const SDouble ext_tan_724,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_tan_726_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_727_arg0(const SDouble ext_tan_726,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_728_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_729_arg0(const SDouble ext_tan_728,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_cos_730_arg0(const SDouble ext_ownship_heading);
-SDouble ext_cos_731_arg0(const SDouble ext_intruder_heading);
-SDouble ext_tan_732_arg0(const SDouble ext_ownship_latitude);
-SDouble ext_log_733_arg0(const SDouble ext_tan_732,
-                         const SDouble ext_ownship_latitude);
-SDouble ext_tan_734_arg0(const SDouble ext_intruder_latitude);
-SDouble ext_log_735_arg0(const SDouble ext_tan_734,
-                         const SDouble ext_intruder_latitude);
-SDouble ext_sin_736_arg0(const SDouble ext_ownship_heading);
-SDouble ext_sin_737_arg0(const SDouble ext_intruder_heading);
 
 #endif /* __internal__HEADER_INCLUDED__ */

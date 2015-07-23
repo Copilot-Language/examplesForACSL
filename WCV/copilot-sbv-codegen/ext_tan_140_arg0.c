@@ -22,11 +22,11 @@ node [shape=box]
 2 -> 5
 6 [label="op2: /",color=green4, style=filled]
 1 -> 6
-7 [label="label: ?ownLat",color=plum, style=filled]
+7 [label="label: ?intLat",color=plum, style=filled]
 6 -> 7
 8 [label="op2: *",color=green4, style=filled]
 7 -> 8
-9 [label="ext_ownship_latitude",color=cyan1, style=filled]
+9 [label="ext_intruder_latitude",color=cyan1, style=filled]
 8 -> 9
 10 [label="label: ?deg",color=plum, style=filled]
 8 -> 10
@@ -47,13 +47,13 @@ node [shape=box]
 DotEnd*/
 /*@
  assigns \nothing;
- ensures \result == ((((((3.141592653589793)) / (4.0))) + ((((((ext_ownship_latitude) * (((((3.141592653589793)) / (180.0))))))) / (2.0)))));
+ ensures \result == ((((((3.141592653589793)) / (4.0))) + ((((((ext_intruder_latitude) * (((((3.141592653589793)) / (180.0))))))) / (2.0)))));
 */
-SDouble ext_tan_140_arg0(const SDouble ext_ownship_latitude)
+SDouble ext_tan_140_arg0(const SDouble ext_intruder_latitude)
 {
-  const SDouble s0 = ext_ownship_latitude;
+  const SDouble s0 = ext_intruder_latitude;
   const SDouble s3 = s0 * 1.7453292519943295e-2;
-  const SDouble s4 = s3 /* ?ownLat */;
+  const SDouble s4 = s3 /* ?intLat */;
   const SDouble s6 = s4 / 2.0;
   const SDouble s7 = 0.7853981633974483 + s6;
 

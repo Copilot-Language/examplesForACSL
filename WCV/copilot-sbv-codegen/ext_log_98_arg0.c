@@ -22,7 +22,7 @@ DotEnd*/
  ensures \result == (ext_tan_97);
 */
 SDouble ext_log_98_arg0(const SDouble ext_tan_97,
-                        const SDouble ext_intruder_latitude)
+                        const SDouble ext_ownship_latitude)
 {
   const SDouble s0 = ext_tan_97;
   return s0;

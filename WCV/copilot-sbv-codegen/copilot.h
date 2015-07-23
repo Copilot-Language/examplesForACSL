@@ -5,13 +5,6 @@
 
 /* Observers (defined by Copilot): */
 
-extern double tau;
-extern double vz;
-extern double vy;
-extern double vx;
-extern double sz;
-extern double sy;
-extern double sx;
 
 /* Triggers (must be defined by user): */
 
@@ -29,14 +22,14 @@ extern double ownship_longitude;
 extern double intruder_longitude;
 extern double ownship_latitude;
 extern double intruder_latitude;
-extern double ownship_trueairspeed;
-extern double ownship_heading;
-extern double intruder_trueairspeed;
-extern double intruder_heading;
+extern double ownship_vx;
+extern double intruder_vx;
+extern double ownship_vy;
+extern double intruder_vy;
 extern double ownship_altitude_ft;
 extern double intruder_altitude_ft;
-extern double ownship_vertical_speed;
-extern double intruder_vertical_speed;
+extern double ownship_vz;
+extern double intruder_vz;
 
 /* External arrays (must be defined by user): */
 
@@ -46,8 +39,6 @@ extern double intruder_vertical_speed;
 double sqrt(double);
 double log(double);
 double tan(double);
-double cos(double);
-double sin(double);
 
 /* Step function: */
 

@@ -74,21 +74,24 @@ import qualified Data.List as L
 ownAlt  = label "?ownAlt" $ (externD "ownship_altitude_ft" Nothing)*FT          -- in feet
 ownLat  = label "?ownLat" $ (externD "ownship_latitude" Nothing)*DEG            -- in deg
 ownLong = label "?ownLong" $ (externD "ownship_longitude" Nothing)*DEG          -- in deg
-ownHDG  = label "?ownHDG" $ (externD "ownship_heading" Nothing)*DEG             -- in deg
-ownTAS  = label "?ownTAS" $ (externD "ownship_trueairspeed" Nothing)*KTS        -- in kts
-ownVSPD = label "?ownVSPD" $ (externD "ownship_vertical_speed" Nothing)*FT/MIN  --in FT/MIN
+--ownHDG  = label "?ownHDG" $ (externD "ownship_heading" Nothing)*DEG             -- in deg
+--ownTAS  = label "?ownTAS" $ (externD "ownship_trueairspeed" Nothing)*KTS        -- in kts
+--ownVSPD = label "?ownVSPD" $ (externD "ownship_vertical_speed" Nothing)*FT/MIN  --in FT/MIN
 
 ownScaleFactorX = 1--label "?ownScaleFactorX" $ cos ownLat
 ownScaleFactorY = 1--label "?ownScaleFactorY" $ cos ownLat
 
 ownPositionX = label "?ownPositionX" $ REARTH * ownLong * ownScaleFactorX
-ownPositionY = label "?ownPositionY" $ REARTH * (log $ tan(PI/4 + ownLat/2) ) * ownScaleFactorY
+ownPositionY = label "?ownPositionY" $ REARTH * (log $ tan((PI/4) + (ownLat/2)) ) * ownScaleFactorY
 ownPositionZ = label "?ownPositionZ" $ ownAlt
 
-ownVelocityX = label "?ownVelocityX" $ ownTAS * (cos ownHDG)
-ownVelocityY = label "?ownVelocityY" $ ownTAS * (sin ownHDG)
-ownVelocityZ = label "?ownVelocityZ" $ ownVSPD
+--ownVelocityX = label "?ownVelocityX" $ ownTAS * (cos ownHDG)
+--ownVelocityY = label "?ownVelocityY" $ ownTAS * (sin ownHDG)
+--ownVelocityZ = label "?ownVelocityZ" $ ownVSPD
 
+ownVelocityX = label "?ownVelocityX" $ (externD "ownship_vx" Nothing)   --in m/s
+ownVelocityY = label "?ownVelocityY" $ (externD "ownship_vy" Nothing)   --in m/s
+ownVelocityZ = label "?ownVelocityZ" $ (externD "ownship_vz" Nothing)   --in m/s
 
 ----------------------------------------
 -- INTRUDER DEFINITIONS
@@ -97,9 +100,9 @@ ownVelocityZ = label "?ownVelocityZ" $ ownVSPD
 intAlt  = label "?intAlt" $ (externD "intruder_altitude_ft" Nothing)*FT         -- in ft
 intLat  = label "?intLat" $ (externD "intruder_latitude" Nothing)*DEG           -- in deg
 intLong = label "?intLong" $ (externD "intruder_longitude" Nothing)*DEG         -- in deg
-intHDG  = label "?intHDG" $ (externD "intruder_heading" Nothing)*DEG            -- in deg
-intTAS  = label "?intTAS" $ (externD "intruder_trueairspeed" Nothing)*KTS       -- in kts
-intVSPD = label "?intVSPD" $ (externD "intruder_vertical_speed" Nothing)*FT/MIN --in FT/MIN
+--intHDG  = label "?intHDG" $ (externD "intruder_heading" Nothing)*DEG            -- in deg
+--intTAS  = label "?intTAS" $ (externD "intruder_trueairspeed" Nothing)*KTS       -- in kts
+--intVSPD = label "?intVSPD" $ (externD "intruder_vertical_speed" Nothing)*FT/MIN --in FT/MIN
 
 intScaleFactorX = 1--label "?intScaleFactorX" $ cos intLat
 intScaleFactorY = 1--label "?intScaleFactorY" $ cos intLat
@@ -108,9 +111,13 @@ intPositionX = label "?intPositionX" $ REARTH * intLong * intScaleFactorX
 intPositionY = label "?intPositionY" $ REARTH * (log $ tan(PI/4 + intLat/2) ) * intScaleFactorY
 intPositionZ = label "?intPositionZ" $ intAlt
 
-intVelocityX = label "?intVelocityX" $ intTAS * (cos intHDG)
-intVelocityY = label "?intVelocityY" $ intTAS * (sin intHDG)
-intVelocityZ = label "?intVelocityZ" $ intVSPD
+--intVelocityX = label "?intVelocityX" $ intTAS * (cos intHDG)
+--intVelocityY = label "?intVelocityY" $ intTAS * (sin intHDG)
+--intVelocityZ = label "?intVelocityZ" $ intVSPD
+
+intVelocityX = label "?intVelocityX" $ (externD "intruder_vx" Nothing)
+intVelocityY = label "?intVelocityY" $ (externD "intruder_vy" Nothing)
+intVelocityZ = label "?intVelocityZ" $ (externD "intruder_vz" Nothing)
 
 ----------------------------------------
 -- RELATIVE DEFINITIONS
@@ -235,13 +242,20 @@ spec = do
   --trigger "alert_horizontal_criterion_loss_of_separation_violation" (horizontalCriterionForLossOfSeparationViolation relPositionX relPositionY relVelocityX relVelocityY maxTimeForViolation relPlannedVelocityX relPlannedVelocityY) []
   --trigger "alert_vertical_criterion_conflict_resolution_violation" (verticalCriterionForConflictResolutionViolation relPositionX relPositionY relPositionZ relVelocityX relVelocityY relVelocityZ directionParameterVertical relPlannedVelocityX relPlannedVelocityY relPlannedVelocityZ) []
   --trigger "alert_vertical_criterion_loss_of_separation_violation" (verticalCriterionForLossOfSeparationViolation relPositionX relPositionY relPositionZ relVelocityX relVelocityY relVelocityZ maxTimeForViolation directionParameterVertical relPlannedVelocityX relPlannedVelocityY relPlannedVelocityZ) []
-  observer "sx" relPositionX
-  observer "sy" relPositionY
-  observer "sz" relPositionZ
-  observer "vx" relVelocityX
-  observer "vy" relVelocityY
-  observer "vz" relVelocityZ
-  observer "tau" ((tau relPositionX relPositionY relVelocityX relVelocityY))
+--  observer "deb" (log $ tan((PI/4) + (ownLat/2)))
+--  observer "ox" ownPositionX
+--  observer "oy" ownPositionY
+--  observer "oz" ownPositionZ
+--  observer "ix" intPositionX
+--  observer "iy" intPositionY
+--  observer "iz" intPositionZ
+--  observer "sx" relPositionX
+--  observer "sy" relPositionY
+--  observer "sz" relPositionZ
+--  observer "vx" relVelocityX
+--  observer "vy" relVelocityY
+--  observer "vz" relVelocityZ
+--  observer "tau" ((tau relPositionX relPositionY relVelocityX relVelocityY))
   trigger "alert_WCVtau" (wellClearViolation tau relPositionX relPositionY relPositionZ relVelocityX relVelocityY relVelocityZ) []
   trigger "alert_WCVtcpa" (wellClearViolation tcpa relPositionX relPositionY relPositionZ relVelocityX relVelocityY relVelocityZ) []
   trigger "alert_WCVtaumod" (wellClearViolation taumod relPositionX relPositionY relPositionZ relVelocityX relVelocityY relVelocityZ) []

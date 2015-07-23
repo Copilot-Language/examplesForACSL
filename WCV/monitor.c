@@ -7,13 +7,14 @@
 #define maxPlanes 1000
 
 size_t numberOfPlanes = 0;
-double HDG[maxPlanes];    //0 to 359
-double TAS[maxPlanes];    //kts
+
 double Lat[maxPlanes];    //+-90
 double Long[maxPlanes];   //+-90
 double Alt[maxPlanes];    //ft
-double VSPD[maxPlanes];   //kts
-int ICAO24[maxPlanes];    //24 bits id code, on the 25 lowest bits, the 25th bit is equal to 1 if undefined value, 0 if defined.
+double VX[maxPlanes];     //m/s
+double VY[maxPlanes];     //m/s
+double VZ[maxPlanes];     //m/s
+long long int ICAO24[maxPlanes];    //24 bits id code, on the 25 lowest bits, the 25th bit is equal to 1 if undefined value, 0 if defined.
 
 bool awayPlane[maxPlanes];
 
@@ -32,14 +33,14 @@ double ownship_longitude;
 double ownship_latitude;
 double intruder_longitude;
 double intruder_latitude;
-double ownship_trueairspeed;
-double ownship_heading;
-double intruder_trueairspeed;
-double intruder_heading;
 double ownship_altitude_ft;
 double intruder_altitude_ft;
-double ownship_vertical_speed;
-double intruder_vertical_speed;
+double ownship_vx;
+double ownship_vy;
+double ownship_vz;
+double intruder_vx;
+double intruder_vy;
+double intruder_vz;
 
 
 
@@ -66,9 +67,9 @@ void alert_WCVtau()
 
 /*Compare strictly more than 24 bits, because there is also the value undefined corresponding to -1
 */
-bool cmpicao(const int i, const int j)
+bool cmpicao(const long long int i, const long long int j)
 {
-    return (i&0x1FFFFFF) == (j&0x1FFFFFF);
+    return (i&0x1FFFFFFll) == (j&0x1FFFFFFll);
 }
 
 int main(int argc, char ** argv)
@@ -114,15 +115,15 @@ away:
         //PLANE UPDATING ITS COORDINATES
         if(intention == 2) //TODO insert condition
         {
-            printf("UPDATING Lat Long Tas Hdg Alt VSPD\n");
-            double longmsg, latmsg, tasmsg, hdgmsg, altmsg, vspdmsg;
-            //MSG format : Lat Long Tas Hdg Alt VSPD
+            printf("UPDATING Lat Long Alt vx vy vz\n");
+            double longmsg, latmsg, altmsg, vxmsg, vymsg, vzmsg;
+            //MSG format : Lat Long Alt vx vy vz
             scanf("%lf", &latmsg);
             scanf("%lf", &longmsg);
-            scanf("%lf", &tasmsg);
-            scanf("%lf", &hdgmsg);
             scanf("%lf", &altmsg);
-            scanf("%lf", &vspdmsg);
+            scanf("%lf", &vxmsg);
+            scanf("%lf", &vymsg);
+            scanf("%lf", &vzmsg);
             //CRITICAL SECTION
             size_t i = maxPlanes + 5,j, iplane = maxPlanes + 5;
             for(iplane= 0 ; iplane < numberOfPlanes;iplane++)
@@ -134,19 +135,22 @@ away:
 
             Long[i] = longmsg;
             Lat[i] = latmsg;
-            TAS[i] = tasmsg;
-            HDG[i] = hdgmsg;
             Alt[i] = altmsg;
-            VSPD[i] = vspdmsg;
+            VX[i] = vxmsg;
+            VY[i] = vymsg;
+            VZ[i] = vzmsg;
+
+
 
 
             ownship_latitude = latmsg;
             ownship_longitude = longmsg;
-            ownship_trueairspeed = tasmsg;
-            ownship_heading = hdgmsg;
             ownship_altitude_ft = altmsg;
-            ownship_vertical_speed = vspdmsg;
+            ownship_vx = vxmsg;
+            ownship_vy = vymsg;
+            ownship_vz = vzmsg;
             
+
             for(j = 0 ; j < numberOfPlanes;j++)
             {
                 if(awayPlane[j] || i == j) continue;
@@ -156,19 +160,18 @@ away:
                 WCVtauactivated = false;
                 intruder_latitude = Lat[j];
                 intruder_longitude = Long[j];
-                intruder_trueairspeed = TAS[j];
-                intruder_heading = HDG[j];
                 intruder_altitude_ft = Alt[j];
-                intruder_vertical_speed = VSPD[j];
+                intruder_vx = VX[j];
+                intruder_vy = VY[j];
+                intruder_vz = VZ[j];
 
-                printf("Calling step with \n\t%d : %lf %lf %lf %lf %lf %lf\n\t%d : %lf %lf %lf %lf %lf %lf\n", ICAO24[i], ownship_latitude, ownship_longitude, ownship_trueairspeed, ownship_heading, ownship_altitude_ft, ownship_vertical_speed, ICAO24[j], intruder_latitude, intruder_longitude, intruder_trueairspeed, intruder_heading, intruder_altitude_ft, intruder_vertical_speed); fflush(stdout);
+                printf("Calling step with \n\t%lld : %lf %lf %lf %lf %lf %lf \n\t%lld : %lf %lf %lf %lf %lf %lf\n", ICAO24[i], ownship_latitude, ownship_longitude, ownship_altitude_ft, ownship_vx, ownship_vy, ownship_vz, ICAO24[j], intruder_latitude, intruder_longitude, intruder_altitude_ft, intruder_vx, intruder_vy, intruder_vz); fflush(stdout);
                 step();
-                printf("\trel : %lf %lf %lf %lf %lf %lf %lf", sx ,sy, sz, vx, vy, vz, tau);
 
-                if(WCVtepactivated) WCVtep[i][j] = true; else WCVtep[i][j] = false;
-                if(WCVtcpaactivated) WCVtcpa[i][j] = true; else WCVtcpa[i][j] = false;
-                if(WCVtauactivated) WCVtau[i][j] = true; else WCVtau[i][j] = false;
-                if(WCVtaumodactivated) WCVtaumod[i][j] = true; else WCVtaumod[i][j] = false;
+                if(WCVtepactivated) WCVtep[i][j] = true, WCVtep[j][i] = true; else WCVtep[i][j] = false,WCVtep[j][i] = false;
+                if(WCVtcpaactivated) WCVtcpa[i][j] = true,WCVtcpa[j][i] = true; else WCVtcpa[i][j] = false,WCVtcpa[j][i] = false;
+                if(WCVtauactivated) WCVtau[i][j] = true,WCVtau[j][i] = true; else WCVtau[i][j] = false,WCVtau[j][i] = false;
+                if(WCVtaumodactivated) WCVtaumod[i][j] = true,WCVtaumod[j][i] = true; else WCVtaumod[i][j] = false,WCVtaumod[j][i] = false;
                 
             }
             printf("%d UPDATED\n",icao24msg);
