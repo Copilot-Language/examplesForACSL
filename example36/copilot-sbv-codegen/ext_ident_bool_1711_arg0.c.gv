@@ -1,0 +1,49 @@
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+ext_ident_bool_1711_arg0.c",color=red, style=filled]
+1 [label="label: cd2d_TCAS_after",color=plum, style=filled]
+0 -> 1
+2 [label="op2: ||",color=green4, style=filled]
+1 -> 2
+3 [label="op2: &&",color=green4, style=filled]
+2 -> 3
+4 [label="op2: ==",color=green4, style=filled]
+3 -> 4
+5 [label="ext_ident_double_1642",color=cyan4, style=filled]
+4 -> 5
+24 [label="const: 0.0",color=red1, style=filled]
+4 -> 24
+25 [label="op2: <=",color=green4, style=filled]
+3 -> 25
+26 [label="ext_ident_double_1644",color=cyan4, style=filled]
+25 -> 26
+45 [label="ext_ident_double_1661",color=cyan4, style=filled]
+25 -> 45
+628 [label="op2: &&",color=green4, style=filled]
+2 -> 628
+629 [label="op2: >",color=green4, style=filled]
+628 -> 629
+630 [label="ext_ident_double_1663",color=cyan4, style=filled]
+629 -> 630
+649 [label="const: 0.0",color=red1, style=filled]
+629 -> 649
+650 [label="op2: &&",color=green4, style=filled]
+628 -> 650
+651 [label="op2: >=",color=green4, style=filled]
+650 -> 651
+652 [label="ext_ident_double_1684",color=cyan4, style=filled]
+651 -> 652
+1291 [label="const: 0.0",color=red1, style=filled]
+651 -> 1291
+1292 [label="op2: >=",color=green4, style=filled]
+650 -> 1292
+1293 [label="ext_ident_double_1710",color=cyan4, style=filled]
+1292 -> 1293
+1975 [label="const: 0.0",color=red1, style=filled]
+1292 -> 1975
+
+
+}
+

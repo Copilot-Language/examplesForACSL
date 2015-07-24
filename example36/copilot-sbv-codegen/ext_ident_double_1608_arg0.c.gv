@@ -1,0 +1,71 @@
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+ext_ident_double_1608_arg0.c",color=red, style=filled]
+1 [label="label: tcas_direction",color=plum, style=filled]
+0 -> 1
+2 [label="op3: mux",color=green4, style=filled]
+1 -> 2
+3 [label="op2: &&",color=green4, style=filled]
+2 -> 3
+4 [label="op2: >",color=green4, style=filled]
+3 -> 4
+5 [label="op1: signum",color=green4, style=filled]
+4 -> 5
+6 [label="op2: -",color=green4, style=filled]
+5 -> 6
+7 [label="ext_ownship_position_z",color=cyan1, style=filled]
+6 -> 7
+8 [label="ext_intruder_position_z",color=cyan1, style=filled]
+6 -> 8
+9 [label="const: 0.3",color=red1, style=filled]
+4 -> 9
+10 [label="op2: >=",color=green4, style=filled]
+3 -> 10
+11 [label="ext_ident_double_412",color=cyan4, style=filled]
+10 -> 11
+11131 [label="ext_ident_double_420",color=cyan4, style=filled]
+10 -> 11131
+11421 [label="const: 1.0",color=red1, style=filled]
+2 -> 11421
+11422 [label="op3: mux",color=green4, style=filled]
+2 -> 11422
+11423 [label="op2: &&",color=green4, style=filled]
+11422 -> 11423
+11424 [label="op2: <",color=green4, style=filled]
+11423 -> 11424
+11425 [label="op1: signum",color=green4, style=filled]
+11424 -> 11425
+11426 [label="op2: -",color=green4, style=filled]
+11425 -> 11426
+11427 [label="ext_ownship_position_z",color=cyan1, style=filled]
+11426 -> 11427
+11428 [label="ext_intruder_position_z",color=cyan1, style=filled]
+11426 -> 11428
+11429 [label="const: -0.3",color=red1, style=filled]
+11424 -> 11429
+11430 [label="op2: >=",color=green4, style=filled]
+11423 -> 11430
+11431 [label="ext_ident_double_813",color=cyan4, style=filled]
+11430 -> 11431
+22569 [label="ext_ident_double_821",color=cyan4, style=filled]
+11430 -> 22569
+22859 [label="const: -1.0",color=red1, style=filled]
+11422 -> 22859
+22860 [label="op3: mux",color=green4, style=filled]
+11422 -> 22860
+22861 [label="op2: >=",color=green4, style=filled]
+22860 -> 22861
+22862 [label="ext_ident_double_1214",color=cyan4, style=filled]
+22861 -> 22862
+33982 [label="ext_ident_double_1607",color=cyan4, style=filled]
+22861 -> 33982
+45120 [label="const: 1.0",color=red1, style=filled]
+22860 -> 45120
+45121 [label="const: -1.0",color=red1, style=filled]
+22860 -> 45121
+
+
+}
+

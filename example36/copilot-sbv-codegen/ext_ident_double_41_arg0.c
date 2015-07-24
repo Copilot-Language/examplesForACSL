@@ -73,8 +73,34 @@ SDouble ext_ident_double_41_arg0(const SDouble ext_ident_double_20,
                                  const SDouble ext_ident_double_40)
 {
   const SDouble s0 = ext_ident_double_20;
+  const SDouble s1 = ext_ownship_position_x;
+  const SDouble s2 = ext_intruder_position_x;
+  const SDouble s3 = ext_ownship_velocity_x;
+  const SDouble s4 = ext_intruder_velocity_x;
+  const SDouble s5 = ext_ownship_position_y;
+  const SDouble s6 = ext_intruder_position_y;
+  const SDouble s7 = ext_ownship_velocity_y;
+  const SDouble s8 = ext_intruder_velocity_y;
   const SDouble s9 = ext_ident_double_37;
+  const SDouble s10 = ext_ident_double_28;
+  const SWord64 s11 = ext_ident_word64_21;
+  const SDouble s12 = ext_ownship_position_z;
+  const SWord64 s13 = ext_ident_word64_22;
+  const SWord64 s14 = ext_ident_word64_23;
+  const SWord64 s15 = ext_ident_word64_24;
+  const SWord64 s16 = ext_ident_word64_25;
+  const SWord64 s17 = ext_ident_word64_26;
+  const SWord64 s18 = ext_ident_word64_27;
+  const SDouble s19 = ext_ident_double_36;
+  const SWord64 s20 = ext_ident_word64_29;
+  const SWord64 s21 = ext_ident_word64_30;
+  const SWord64 s22 = ext_ident_word64_31;
+  const SWord64 s23 = ext_ident_word64_32;
+  const SWord64 s24 = ext_ident_word64_33;
+  const SWord64 s25 = ext_ident_word64_34;
+  const SWord64 s26 = ext_ident_word64_35;
   const SDouble s27 = ext_ident_double_39;
+  const SDouble s28 = ext_ident_double_38;
   const SDouble s29 = ext_ident_double_40;
   const SBool   s31 = s0 < 0.0;
   const SDouble s32 = s9 - s27;

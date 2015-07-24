@@ -1,0 +1,17 @@
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+ext_ident_double_1214_arg0.c",color=red, style=filled]
+1 [label="label: up_dist",color=plum, style=filled]
+0 -> 1
+2 [label="op2: -",color=green4, style=filled]
+1 -> 2
+3 [label="ext_ident_double_1190",color=cyan4, style=filled]
+2 -> 3
+10470 [label="ext_ident_double_1213",color=cyan4, style=filled]
+2 -> 10470
+
+
+}
+

@@ -30,6 +30,10 @@ SDouble ext_ident_double_84_arg0(const SDouble ext_ident_double_83,
                                  const SDouble ext_intruder_position_y)
 {
   const SDouble s0 = ext_ident_double_83;
+  const SDouble s1 = ext_ownship_position_x;
+  const SDouble s2 = ext_intruder_position_x;
+  const SDouble s3 = ext_ownship_position_y;
+  const SDouble s4 = ext_intruder_position_y;
   const SDouble s5 = s0 /* normsq2dim */;
 
   return s5;

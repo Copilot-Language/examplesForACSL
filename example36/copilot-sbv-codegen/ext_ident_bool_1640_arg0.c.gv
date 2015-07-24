@@ -1,0 +1,53 @@
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+ext_ident_bool_1640_arg0.c",color=red, style=filled]
+1 [label="label: isCorrective",color=plum, style=filled]
+0 -> 1
+2 [label="op2: ||",color=green4, style=filled]
+1 -> 2
+3 [label="op2: <",color=green4, style=filled]
+2 -> 3
+4 [label="ext_ident_double_1",color=cyan4, style=filled]
+3 -> 4
+23 [label="ext_ident_double_18",color=cyan4, style=filled]
+3 -> 23
+606 [label="op2: &&",color=green4, style=filled]
+2 -> 606
+607 [label="op2: <",color=green4, style=filled]
+606 -> 607
+608 [label="ext_ident_double_19",color=cyan4, style=filled]
+607 -> 608
+625 [label="const: 0.0",color=red1, style=filled]
+607 -> 625
+626 [label="op2: <",color=green4, style=filled]
+606 -> 626
+627 [label="op2: *",color=green4, style=filled]
+626 -> 627
+628 [label="ext_ident_double_1609",color=cyan4, style=filled]
+627 -> 628
+45752 [label="op2: +",color=green4, style=filled]
+627 -> 45752
+45753 [label="op2: -",color=green4, style=filled]
+45752 -> 45753
+45754 [label="ext_ownship_position_z",color=cyan1, style=filled]
+45753 -> 45754
+45755 [label="ext_intruder_position_z",color=cyan1, style=filled]
+45753 -> 45755
+45756 [label="op2: *",color=green4, style=filled]
+45752 -> 45756
+45757 [label="ext_ident_double_1631",color=cyan4, style=filled]
+45756 -> 45757
+46401 [label="op2: -",color=green4, style=filled]
+45756 -> 46401
+46402 [label="ext_ownship_velocity_z",color=cyan1, style=filled]
+46401 -> 46402
+46403 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+46401 -> 46403
+46404 [label="ext_ident_double_1639",color=cyan4, style=filled]
+626 -> 46404
+
+
+}
+

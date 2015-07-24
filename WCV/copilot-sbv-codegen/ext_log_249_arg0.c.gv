@@ -1,0 +1,11 @@
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+ext_log_249_arg0.c",color=red, style=filled]
+1 [label="ext_tan_248",color=cyan4, style=filled]
+0 -> 1
+
+
+}
+

@@ -46,7 +46,22 @@ SDouble ext_ident_double_82_arg0(const SDouble ext_ident_double_73,
                                  const SWord64 ext_ident_word64_80)
 {
   const SDouble s0 = ext_ident_double_73;
+  const SWord64 s1 = ext_ident_word64_66;
+  const SDouble s2 = ext_ownship_position_z;
+  const SWord64 s3 = ext_ident_word64_67;
+  const SWord64 s4 = ext_ident_word64_68;
+  const SWord64 s5 = ext_ident_word64_69;
+  const SWord64 s6 = ext_ident_word64_70;
+  const SWord64 s7 = ext_ident_word64_71;
+  const SWord64 s8 = ext_ident_word64_72;
   const SDouble s9 = ext_ident_double_81;
+  const SWord64 s10 = ext_ident_word64_74;
+  const SWord64 s11 = ext_ident_word64_75;
+  const SWord64 s12 = ext_ident_word64_76;
+  const SWord64 s13 = ext_ident_word64_77;
+  const SWord64 s14 = ext_ident_word64_78;
+  const SWord64 s15 = ext_ident_word64_79;
+  const SWord64 s16 = ext_ident_word64_80;
   const SDouble s17 = s0 * s9;
   const SDouble s18 = s17 /* sq */;
 
