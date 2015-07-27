@@ -1,0 +1,17 @@
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+ext_ident_bool_64_arg0.c",color=red, style=filled]
+1 [label="label: verticalCriterionConflict_part1.1.1",color=plum, style=filled]
+0 -> 1
+2 [label="op2: <=",color=green4, style=filled]
+1 -> 2
+3 [label="ext_ident_double_63",color=cyan4, style=filled]
+2 -> 3
+20 [label="const: 0.0",color=red1, style=filled]
+2 -> 20
+
+
+}
+

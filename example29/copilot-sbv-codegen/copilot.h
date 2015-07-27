@@ -42,6 +42,8 @@ extern double direction_parameter_vertical;
 
 /* External functions (must be defined by user): */
 
+bool ident_bool(bool);
+double ident_double(double);
 double sqrt(double);
 
 /* Step function: */

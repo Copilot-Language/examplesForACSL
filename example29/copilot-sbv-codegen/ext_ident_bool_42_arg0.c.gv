@@ -1,0 +1,27 @@
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+ext_ident_bool_42_arg0.c",color=red, style=filled]
+1 [label="label: zCriterion_part2.0",color=plum, style=filled]
+0 -> 1
+2 [label="op2: ||",color=green4, style=filled]
+1 -> 2
+3 [label="op2: &&",color=green4, style=filled]
+2 -> 3
+4 [label="ext_ident_bool_18",color=cyan4, style=filled]
+3 -> 4
+18 [label="ext_ident_bool_21",color=cyan4, style=filled]
+3 -> 18
+35 [label="op2: &&",color=green4, style=filled]
+2 -> 35
+36 [label="ext_ident_bool_38",color=cyan4, style=filled]
+35 -> 36
+125 [label="op1: not",color=green4, style=filled]
+35 -> 125
+126 [label="ext_ident_bool_41",color=cyan4, style=filled]
+125 -> 126
+
+
+}
+

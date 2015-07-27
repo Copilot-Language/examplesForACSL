@@ -1,0 +1,26 @@
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_30_arg0.c, line 32) in 'ext_ident_bool_30_arg0' --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_30_arg0_post
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_bool_30_arg0.c, line 32) in 'ext_ident_bool_30_arg0'":
+  forall r_1 r : real.
+  ((is_float64 r)) ->
+  ((is_float64 (r +. r_1))) ->
+  ((r <=. 0.0) <-> (0 <> (if (r <=. 0.0) then 1 else 0)))
+
+end
+

@@ -1,0 +1,17 @@
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+ext_ident_bool_62_arg0.c",color=red, style=filled]
+1 [label="label: criterion3D_part1",color=plum, style=filled]
+0 -> 1
+2 [label="op2: &&",color=green4, style=filled]
+1 -> 2
+3 [label="ext_ident_bool_56",color=cyan4, style=filled]
+2 -> 3
+30 [label="ext_ident_bool_61",color=cyan4, style=filled]
+2 -> 30
+
+
+}
+

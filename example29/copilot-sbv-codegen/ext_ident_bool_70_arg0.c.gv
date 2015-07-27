@@ -1,0 +1,21 @@
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+ext_ident_bool_70_arg0.c",color=red, style=filled]
+1 [label="label: verticalCriterionConflict_part1",color=plum, style=filled]
+0 -> 1
+2 [label="op2: &&",color=green4, style=filled]
+1 -> 2
+3 [label="ext_ident_bool_67",color=cyan4, style=filled]
+2 -> 3
+48 [label="op2: &&",color=green4, style=filled]
+2 -> 48
+49 [label="ext_ident_bool_68",color=cyan4, style=filled]
+48 -> 49
+56 [label="ext_ident_bool_69",color=cyan4, style=filled]
+48 -> 56
+
+
+}
+

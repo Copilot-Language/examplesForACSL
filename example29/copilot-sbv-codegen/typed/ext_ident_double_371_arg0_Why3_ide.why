@@ -1,0 +1,113 @@
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_double_371_arg0.c, line 30) in 'ext_ident_double_371_arg0' (1/4) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_double_371_arg0_post_part1
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_double_371_arg0.c, line 30) in 'ext_ident_double_371_arg0' (1/4)":
+  forall r_1 r : real.
+  ((is_float64 r)) ->
+  (0 <> (if (0.0 <. r) then 1 else 0)) ->
+  (0 <> (if (r <. 0.0) then 1 else 0)) ->
+  ((is_float64 (r +. r_1))) ->
+  (1.0e0 = (if (0.0 <. r) then 1.0 else (if (r <. 0.0) then (-.1.0) else r)))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_double_371_arg0.c, line 30) in 'ext_ident_double_371_arg0' (2/4) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_double_371_arg0_post_part2
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_double_371_arg0.c, line 30) in 'ext_ident_double_371_arg0' (2/4)":
+  forall r_1 r : real.
+  ((is_float64 r)) ->
+  (0 = (if (0.0 <. r) then 1 else 0)) ->
+  (0 <> (if (r <. 0.0) then 1 else 0)) ->
+  ((is_float64 (r +. r_1))) ->
+  ((-.1.0e0)
+     = (if (0.0 <. r) then 1.0 else (if (r <. 0.0) then (-.1.0) else r)))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_double_371_arg0.c, line 30) in 'ext_ident_double_371_arg0' (3/4) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_double_371_arg0_post_part3
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_double_371_arg0.c, line 30) in 'ext_ident_double_371_arg0' (3/4)":
+  forall r_1 r : real.
+  ((is_float64 r)) ->
+  (0 = (if (r <. 0.0) then 1 else 0)) ->
+  (0 <> (if (0.0 <. r) then 1 else 0)) ->
+  ((is_float64 (r +. r_1))) ->
+  (1.0e0 = (if (0.0 <. r) then 1.0 else (if (r <. 0.0) then (-.1.0) else r)))
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_double_371_arg0.c, line 30) in 'ext_ident_double_371_arg0' (4/4) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_double_371_arg0_post_part4
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Qed.Qed
+use import int.Abs as IAbs
+use import Cmath.Cmath
+use import Cfloat.Cfloat
+use import real.Abs as RAbs
+
+goal WP "expl:Post-condition (file ext_ident_double_371_arg0.c, line 30) in 'ext_ident_double_371_arg0' (4/4)":
+  forall r_1 r : real.
+  ((is_float64 r)) ->
+  (0 = (if (0.0 <. r) then 1 else 0)) ->
+  (0 = (if (r <. 0.0) then 1 else 0)) ->
+  ((is_float64 (r +. r_1))) ->
+  (r = (if (0.0 <. r) then 1.0 else (if (r <. 0.0) then (-.1.0) else r)))
+
+end
+

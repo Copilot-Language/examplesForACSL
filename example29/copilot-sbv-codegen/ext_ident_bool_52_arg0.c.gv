@@ -1,0 +1,21 @@
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+ext_ident_bool_52_arg0.c",color=red, style=filled]
+1 [label="label: vertical_los_criterion",color=plum, style=filled]
+0 -> 1
+2 [label="op2: &&",color=green4, style=filled]
+1 -> 2
+3 [label="ext_ident_bool_11",color=cyan4, style=filled]
+2 -> 3
+19 [label="op2: &&",color=green4, style=filled]
+2 -> 19
+20 [label="ext_ident_bool_44",color=cyan4, style=filled]
+19 -> 20
+210 [label="ext_ident_bool_51",color=cyan4, style=filled]
+19 -> 210
+
+
+}
+

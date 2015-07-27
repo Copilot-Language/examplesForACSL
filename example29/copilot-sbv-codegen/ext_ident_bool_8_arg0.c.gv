@@ -1,0 +1,17 @@
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+ext_ident_bool_8_arg0.c",color=red, style=filled]
+1 [label="label: horizontal_los_criterion",color=plum, style=filled]
+0 -> 1
+2 [label="op2: &&",color=green4, style=filled]
+1 -> 2
+3 [label="ext_ident_bool_0",color=cyan4, style=filled]
+2 -> 3
+36 [label="ext_ident_bool_7",color=cyan4, style=filled]
+2 -> 36
+
+
+}
+

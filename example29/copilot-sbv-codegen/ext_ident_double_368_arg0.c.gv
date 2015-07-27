@@ -1,0 +1,15 @@
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+ext_ident_double_368_arg0.c",color=red, style=filled]
+1 [label="label: absolute_value_splitting",color=plum, style=filled]
+0 -> 1
+2 [label="op1: signum",color=green4, style=filled]
+1 -> 2
+3 [label="ext_ident_double_367",color=cyan4, style=filled]
+2 -> 3
+
+
+}
+

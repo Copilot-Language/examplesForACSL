@@ -1,0 +1,100 @@
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_42_arg0.c, line 38) in 'ext_ident_bool_42_arg0' (11/27) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_42_arg0_post_part11
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Cint.Cint
+
+goal WP "expl:Post-condition (file ext_ident_bool_42_arg0.c, line 38) in 'ext_ident_bool_42_arg0' (11/27)":
+  forall i_2 i_1 i : int.
+  (0 <> i) ->
+  (0 <> i_1) ->
+  ((is_uint32 i)) ->
+  ((is_uint32 i_1)) ->
+  ((is_uint32 i_2)) ->
+  (0 <> (if (0 = i_2) then 1 else 0)) ->
+  (0 = i_2)
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_42_arg0.c, line 38) in 'ext_ident_bool_42_arg0' (15/27) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_42_arg0_post_part15
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Cint.Cint
+
+goal WP "expl:Post-condition (file ext_ident_bool_42_arg0.c, line 38) in 'ext_ident_bool_42_arg0' (15/27)":
+  forall i_2 i_1 i : int.
+  (0 <> i) ->
+  (0 <> i_1) ->
+  ((is_uint32 i)) ->
+  ((is_uint32 i_1)) ->
+  ((is_uint32 i_2)) ->
+  (0 = (if (0 = i_2) then 1 else 0)) ->
+  (0 <> i_2)
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_42_arg0.c, line 38) in 'ext_ident_bool_42_arg0' (20/27) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_42_arg0_post_part20
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Cint.Cint
+
+goal WP "expl:Post-condition (file ext_ident_bool_42_arg0.c, line 38) in 'ext_ident_bool_42_arg0' (20/27)":
+  forall i_1 i : int.
+  (0 <> i) ->
+  ((is_uint32 i)) ->
+  ((is_uint32 i_1)) ->
+  (0 <> (if (0 = i_1) then 1 else 0)) ->
+  (0 = i_1)
+
+end
+
+(* ---------------------------------------------------------- *)
+(* --- Post-condition (file ext_ident_bool_42_arg0.c, line 38) in 'ext_ident_bool_42_arg0' (24/27) --- *)
+(* ---------------------------------------------------------- *)
+theory VCext_ident_bool_42_arg0_post_part24
+  
+use import bool.Bool
+use import int.Int
+use import int.ComputerDivision
+use import real.RealInfix
+use import Qed.Qed
+use import int.Abs as IAbs
+use import map.Map
+use import Cint.Cint
+
+goal WP "expl:Post-condition (file ext_ident_bool_42_arg0.c, line 38) in 'ext_ident_bool_42_arg0' (24/27)":
+  forall i_1 i : int.
+  (0 <> i) ->
+  ((is_uint32 i)) ->
+  ((is_uint32 i_1)) ->
+  (0 = (if (0 = i_1) then 1 else 0)) ->
+  (0 <> i_1)
+
+end
+
