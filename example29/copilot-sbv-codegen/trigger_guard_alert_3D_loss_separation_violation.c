@@ -14,10 +14,474 @@ node [shape=box]
 0 -> 1
 2 [label="op2: ||",color=green4, style=filled]
 1 -> 2
-3 [label="ext_ident_bool_8",color=cyan4, style=filled]
+3 [label="label: ?horizontal_los_criterion",color=plum, style=filled]
 2 -> 3
-102 [label="ext_ident_bool_52",color=cyan4, style=filled]
-2 -> 102
+4 [label="op2: &&",color=green4, style=filled]
+3 -> 4
+5 [label="label: ?horizontalCriterionLoss_part1",color=plum, style=filled]
+4 -> 5
+6 [label="op2: >=",color=green4, style=filled]
+5 -> 6
+7 [label="op2: +",color=green4, style=filled]
+6 -> 7
+8 [label="op2: *",color=green4, style=filled]
+7 -> 8
+9 [label="op2: -",color=green4, style=filled]
+8 -> 9
+10 [label="ext_ownship_position_x",color=cyan1, style=filled]
+9 -> 10
+11 [label="ext_intruder_position_x",color=cyan1, style=filled]
+9 -> 11
+12 [label="op2: -",color=green4, style=filled]
+8 -> 12
+13 [label="ext_ownship_planned_velocity_x",color=cyan1, style=filled]
+12 -> 13
+14 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+12 -> 14
+15 [label="op2: *",color=green4, style=filled]
+7 -> 15
+16 [label="op2: -",color=green4, style=filled]
+15 -> 16
+17 [label="ext_ownship_position_y",color=cyan1, style=filled]
+16 -> 17
+18 [label="ext_intruder_position_y",color=cyan1, style=filled]
+16 -> 18
+19 [label="op2: -",color=green4, style=filled]
+15 -> 19
+20 [label="ext_ownship_planned_velocity_y",color=cyan1, style=filled]
+19 -> 20
+21 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+19 -> 21
+22 [label="op2: +",color=green4, style=filled]
+6 -> 22
+23 [label="op2: *",color=green4, style=filled]
+22 -> 23
+24 [label="op2: -",color=green4, style=filled]
+23 -> 24
+25 [label="ext_ownship_position_x",color=cyan1, style=filled]
+24 -> 25
+26 [label="ext_intruder_position_x",color=cyan1, style=filled]
+24 -> 26
+27 [label="op2: -",color=green4, style=filled]
+23 -> 27
+28 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+27 -> 28
+29 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+27 -> 29
+30 [label="op2: *",color=green4, style=filled]
+22 -> 30
+31 [label="op2: -",color=green4, style=filled]
+30 -> 31
+32 [label="ext_ownship_position_y",color=cyan1, style=filled]
+31 -> 32
+33 [label="ext_intruder_position_y",color=cyan1, style=filled]
+31 -> 33
+34 [label="op2: -",color=green4, style=filled]
+30 -> 34
+35 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+34 -> 35
+36 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+34 -> 36
+37 [label="label: ?horizontalCriterionLoss_part2",color=plum, style=filled]
+4 -> 37
+38 [label="op2: >",color=green4, style=filled]
+37 -> 38
+39 [label="op2: +",color=green4, style=filled]
+38 -> 39
+40 [label="op2: *",color=green4, style=filled]
+39 -> 40
+41 [label="op2: -",color=green4, style=filled]
+40 -> 41
+42 [label="ext_ownship_position_x",color=cyan1, style=filled]
+41 -> 42
+43 [label="ext_intruder_position_x",color=cyan1, style=filled]
+41 -> 43
+44 [label="op2: -",color=green4, style=filled]
+40 -> 44
+45 [label="ext_ownship_planned_velocity_x",color=cyan1, style=filled]
+44 -> 45
+46 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+44 -> 46
+47 [label="op2: *",color=green4, style=filled]
+39 -> 47
+48 [label="op2: -",color=green4, style=filled]
+47 -> 48
+49 [label="ext_ownship_position_y",color=cyan1, style=filled]
+48 -> 49
+50 [label="ext_intruder_position_y",color=cyan1, style=filled]
+48 -> 50
+51 [label="op2: -",color=green4, style=filled]
+47 -> 51
+52 [label="ext_ownship_planned_velocity_y",color=cyan1, style=filled]
+51 -> 52
+53 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+51 -> 53
+54 [label="op2: *",color=green4, style=filled]
+38 -> 54
+55 [label="op2: /",color=green4, style=filled]
+54 -> 55
+56 [label="label: ?exitDotMin_dividend",color=plum, style=filled]
+55 -> 56
+57 [label="ext_sqrt_0",color=cyan4, style=filled]
+56 -> 57
+74 [label="label: ?exitDotMin_divsor",color=plum, style=filled]
+55 -> 74
+75 [label="ext_maximum_time_for_violation",color=cyan1, style=filled]
+74 -> 75
+76 [label="op2: -",color=green4, style=filled]
+54 -> 76
+77 [label="ext_minimal_horizontal_separation",color=cyan1, style=filled]
+76 -> 77
+78 [label="ext_sqrt_1",color=cyan4, style=filled]
+76 -> 78
+95 [label="label: ?vertical_los_criterion",color=plum, style=filled]
+2 -> 95
+96 [label="op2: &&",color=green4, style=filled]
+95 -> 96
+97 [label="label: ?verticalCriterionLoss_part1",color=plum, style=filled]
+96 -> 97
+98 [label="op2: <",color=green4, style=filled]
+97 -> 98
+99 [label="label: ?verticalCriterionLoss_part1.1",color=plum, style=filled]
+98 -> 99
+100 [label="op1: abs",color=green4, style=filled]
+99 -> 100
+101 [label="op2: -",color=green4, style=filled]
+100 -> 101
+102 [label="ext_ownship_position_z",color=cyan1, style=filled]
+101 -> 102
+103 [label="ext_intruder_position_z",color=cyan1, style=filled]
+101 -> 103
+104 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+98 -> 104
+105 [label="op2: &&",color=green4, style=filled]
+96 -> 105
+106 [label="label: ?verticalCriterionLoss_part2",color=plum, style=filled]
+105 -> 106
+107 [label="op2: &&",color=green4, style=filled]
+106 -> 107
+108 [label="label: ?zCriterion_part1",color=plum, style=filled]
+107 -> 108
+109 [label="op2: ||",color=green4, style=filled]
+108 -> 109
+110 [label="label: ?zCriterion_part1.1",color=plum, style=filled]
+109 -> 110
+111 [label="op2: <",color=green4, style=filled]
+110 -> 111
+112 [label="op2: -",color=green4, style=filled]
+111 -> 112
+113 [label="ext_ownship_planned_velocity_z",color=cyan1, style=filled]
+112 -> 113
+114 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+112 -> 114
+115 [label="const: 0.0",color=red1, style=filled]
+111 -> 115
+116 [label="label: ?zCriterion_part1.2",color=plum, style=filled]
+109 -> 116
+117 [label="op2: >",color=green4, style=filled]
+116 -> 117
+118 [label="op2: -",color=green4, style=filled]
+117 -> 118
+119 [label="ext_ownship_planned_velocity_z",color=cyan1, style=filled]
+118 -> 119
+120 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+118 -> 120
+121 [label="const: 0.0",color=red1, style=filled]
+117 -> 121
+122 [label="op2: &&",color=green4, style=filled]
+107 -> 122
+123 [label="label: ?z_prop(sz,v'z)",color=plum, style=filled]
+122 -> 123
+124 [label="op2: >=",color=green4, style=filled]
+123 -> 124
+125 [label="op2: *",color=green4, style=filled]
+124 -> 125
+126 [label="op2: -",color=green4, style=filled]
+125 -> 126
+127 [label="ext_ownship_position_z",color=cyan1, style=filled]
+126 -> 127
+128 [label="ext_intruder_position_z",color=cyan1, style=filled]
+126 -> 128
+129 [label="op2: -",color=green4, style=filled]
+125 -> 129
+130 [label="ext_ownship_planned_velocity_z",color=cyan1, style=filled]
+129 -> 130
+131 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+129 -> 131
+132 [label="const: 0.0",color=red1, style=filled]
+124 -> 132
+133 [label="label: ?zCriterion_part2",color=plum, style=filled]
+122 -> 133
+134 [label="op2: ||",color=green4, style=filled]
+133 -> 134
+135 [label="op1: not",color=green4, style=filled]
+134 -> 135
+136 [label="label: ?z_prop(sz,v'z)",color=plum, style=filled]
+135 -> 136
+137 [label="op2: >=",color=green4, style=filled]
+136 -> 137
+138 [label="op2: *",color=green4, style=filled]
+137 -> 138
+139 [label="op2: -",color=green4, style=filled]
+138 -> 139
+140 [label="ext_ownship_position_z",color=cyan1, style=filled]
+139 -> 140
+141 [label="ext_intruder_position_z",color=cyan1, style=filled]
+139 -> 141
+142 [label="op2: -",color=green4, style=filled]
+138 -> 142
+143 [label="ext_ownship_planned_velocity_z",color=cyan1, style=filled]
+142 -> 143
+144 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+142 -> 144
+145 [label="const: 0.0",color=red1, style=filled]
+137 -> 145
+146 [label="label: ?zCriterion_part2.0",color=plum, style=filled]
+134 -> 146
+147 [label="op3: mux",color=green4, style=filled]
+146 -> 147
+148 [label="label: ?zCriterion_part2.1",color=plum, style=filled]
+147 -> 148
+149 [label="op2: ||",color=green4, style=filled]
+148 -> 149
+150 [label="label: ?zCriterion_part2.1",color=plum, style=filled]
+149 -> 150
+151 [label="op2: <",color=green4, style=filled]
+150 -> 151
+152 [label="op2: -",color=green4, style=filled]
+151 -> 152
+153 [label="ext_ownship_velocity_z",color=cyan1, style=filled]
+152 -> 153
+154 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+152 -> 154
+155 [label="const: 0.0",color=red1, style=filled]
+151 -> 155
+156 [label="label: ?zCriterion_part2.2",color=plum, style=filled]
+149 -> 156
+157 [label="op2: >",color=green4, style=filled]
+156 -> 157
+158 [label="op2: -",color=green4, style=filled]
+157 -> 158
+159 [label="ext_ownship_velocity_z",color=cyan1, style=filled]
+158 -> 159
+160 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+158 -> 160
+161 [label="const: 0.0",color=red1, style=filled]
+157 -> 161
+162 [label="label: ?zCriterion_part2.2",color=plum, style=filled]
+147 -> 162
+163 [label="op2: >=",color=green4, style=filled]
+162 -> 163
+164 [label="op2: *",color=green4, style=filled]
+163 -> 164
+165 [label="label: ?zCriterion_part2.2.1",color=plum, style=filled]
+164 -> 165
+166 [label="op1: signum",color=green4, style=filled]
+165 -> 166
+167 [label="op2: -",color=green4, style=filled]
+166 -> 167
+168 [label="ext_ownship_velocity_z",color=cyan1, style=filled]
+167 -> 168
+169 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+167 -> 169
+170 [label="op2: -",color=green4, style=filled]
+164 -> 170
+171 [label="ext_ownship_planned_velocity_z",color=cyan1, style=filled]
+170 -> 171
+172 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+170 -> 172
+173 [label="const: 0.0",color=red1, style=filled]
+163 -> 173
+174 [label="label: ?zCriterion_part2.3",color=plum, style=filled]
+147 -> 174
+175 [label="op2: >",color=green4, style=filled]
+174 -> 175
+176 [label="op2: *",color=green4, style=filled]
+175 -> 176
+177 [label="label: ?zCriterion_part2.3.1",color=plum, style=filled]
+176 -> 177
+178 [label="label: ?break_symetry",color=plum, style=filled]
+177 -> 178
+179 [label="op3: mux",color=green4, style=filled]
+178 -> 179
+180 [label="label: ?break_symetry_part1",color=plum, style=filled]
+179 -> 180
+181 [label="op2: ||",color=green4, style=filled]
+180 -> 181
+182 [label="label: ?break_symetry_part1.1",color=plum, style=filled]
+181 -> 182
+183 [label="op2: <",color=green4, style=filled]
+182 -> 183
+184 [label="op2: -",color=green4, style=filled]
+183 -> 184
+185 [label="ext_ownship_position_z",color=cyan1, style=filled]
+184 -> 185
+186 [label="ext_intruder_position_z",color=cyan1, style=filled]
+184 -> 186
+187 [label="const: 0.0",color=red1, style=filled]
+183 -> 187
+188 [label="label: ?break_symetry_part1.2",color=plum, style=filled]
+181 -> 188
+189 [label="op2: >",color=green4, style=filled]
+188 -> 189
+190 [label="op2: -",color=green4, style=filled]
+189 -> 190
+191 [label="ext_ownship_position_z",color=cyan1, style=filled]
+190 -> 191
+192 [label="ext_intruder_position_z",color=cyan1, style=filled]
+190 -> 192
+193 [label="const: 0.0",color=red1, style=filled]
+189 -> 193
+194 [label="label: ?break_symetry_part2",color=plum, style=filled]
+179 -> 194
+195 [label="op1: signum",color=green4, style=filled]
+194 -> 195
+196 [label="op2: -",color=green4, style=filled]
+195 -> 196
+197 [label="ext_ownship_position_z",color=cyan1, style=filled]
+196 -> 197
+198 [label="ext_intruder_position_z",color=cyan1, style=filled]
+196 -> 198
+199 [label="label: ?break_symetry_part3",color=plum, style=filled]
+179 -> 199
+200 [label="op3: mux",color=green4, style=filled]
+199 -> 200
+201 [label="label: ?break_symetry_part3.1",color=plum, style=filled]
+200 -> 201
+202 [label="op2: ||",color=green4, style=filled]
+201 -> 202
+203 [label="label: ?break_symetry_part3.1.1",color=plum, style=filled]
+202 -> 203
+204 [label="op2: <",color=green4, style=filled]
+203 -> 204
+205 [label="op2: -",color=green4, style=filled]
+204 -> 205
+206 [label="ext_ownship_position_x",color=cyan1, style=filled]
+205 -> 206
+207 [label="ext_intruder_position_x",color=cyan1, style=filled]
+205 -> 207
+208 [label="const: 0.0",color=red1, style=filled]
+204 -> 208
+209 [label="label: ?break_symetry_part3.1.2",color=plum, style=filled]
+202 -> 209
+210 [label="op2: >",color=green4, style=filled]
+209 -> 210
+211 [label="op2: -",color=green4, style=filled]
+210 -> 211
+212 [label="ext_ownship_position_x",color=cyan1, style=filled]
+211 -> 212
+213 [label="ext_intruder_position_x",color=cyan1, style=filled]
+211 -> 213
+214 [label="const: 0.0",color=red1, style=filled]
+210 -> 214
+215 [label="label: ?break_symetry_part3.2",color=plum, style=filled]
+200 -> 215
+216 [label="op1: signum",color=green4, style=filled]
+215 -> 216
+217 [label="op2: -",color=green4, style=filled]
+216 -> 217
+218 [label="ext_ownship_position_x",color=cyan1, style=filled]
+217 -> 218
+219 [label="ext_intruder_position_x",color=cyan1, style=filled]
+217 -> 219
+220 [label="label: ?break_symetry_part3.3",color=plum, style=filled]
+200 -> 220
+221 [label="op3: mux",color=green4, style=filled]
+220 -> 221
+222 [label="label: ?break_symetry_part3.3.1",color=plum, style=filled]
+221 -> 222
+223 [label="op2: &&",color=green4, style=filled]
+222 -> 223
+224 [label="label: ?break_symetry_part3.3.1.1",color=plum, style=filled]
+223 -> 224
+225 [label="op2: <=",color=green4, style=filled]
+224 -> 225
+226 [label="op2: -",color=green4, style=filled]
+225 -> 226
+227 [label="ext_ownship_position_y",color=cyan1, style=filled]
+226 -> 227
+228 [label="ext_intruder_position_y",color=cyan1, style=filled]
+226 -> 228
+229 [label="const: 0.0",color=red1, style=filled]
+225 -> 229
+230 [label="label: ?break_symetry_part3.3.1.2",color=plum, style=filled]
+223 -> 230
+231 [label="op2: >=",color=green4, style=filled]
+230 -> 231
+232 [label="op2: -",color=green4, style=filled]
+231 -> 232
+233 [label="ext_ownship_position_y",color=cyan1, style=filled]
+232 -> 233
+234 [label="ext_intruder_position_y",color=cyan1, style=filled]
+232 -> 234
+235 [label="const: 0.0",color=red1, style=filled]
+231 -> 235
+236 [label="const: 1.0",color=red1, style=filled]
+221 -> 236
+237 [label="label: ?break_symetry_part3.3.2",color=plum, style=filled]
+221 -> 237
+238 [label="op1: signum",color=green4, style=filled]
+237 -> 238
+239 [label="op2: -",color=green4, style=filled]
+238 -> 239
+240 [label="ext_ownship_position_y",color=cyan1, style=filled]
+239 -> 240
+241 [label="ext_intruder_position_y",color=cyan1, style=filled]
+239 -> 241
+242 [label="op2: -",color=green4, style=filled]
+176 -> 242
+243 [label="ext_ownship_planned_velocity_z",color=cyan1, style=filled]
+242 -> 243
+244 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+242 -> 244
+245 [label="const: 0.0",color=red1, style=filled]
+175 -> 245
+246 [label="label: ?verticalCriterionLoss_part3",color=plum, style=filled]
+105 -> 246
+247 [label="op2: >=",color=green4, style=filled]
+246 -> 247
+248 [label="ext_maximum_time_for_violation",color=cyan1, style=filled]
+247 -> 248
+249 [label="label: ?verticalCriterionLoss_part3.1",color=plum, style=filled]
+247 -> 249
+250 [label="label: ?ttez",color=plum, style=filled]
+249 -> 250
+251 [label="op2: /",color=green4, style=filled]
+250 -> 251
+252 [label="label: ?ttez_dividend",color=plum, style=filled]
+251 -> 252
+253 [label="op2: -",color=green4, style=filled]
+252 -> 253
+254 [label="op2: *",color=green4, style=filled]
+253 -> 254
+255 [label="ext_minimal_vertical_separation",color=cyan1, style=filled]
+254 -> 255
+256 [label="label: ?ttez_part01",color=plum, style=filled]
+254 -> 256
+257 [label="op1: signum",color=green4, style=filled]
+256 -> 257
+258 [label="op2: -",color=green4, style=filled]
+257 -> 258
+259 [label="ext_ownship_velocity_z",color=cyan1, style=filled]
+258 -> 259
+260 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+258 -> 260
+261 [label="label: ?ttez_part02",color=plum, style=filled]
+253 -> 261
+262 [label="op2: -",color=green4, style=filled]
+261 -> 262
+263 [label="ext_ownship_position_z",color=cyan1, style=filled]
+262 -> 263
+264 [label="ext_intruder_position_z",color=cyan1, style=filled]
+262 -> 264
+265 [label="label: ?ttez_divisor",color=plum, style=filled]
+251 -> 265
+266 [label="op2: -",color=green4, style=filled]
+265 -> 266
+267 [label="ext_ownship_velocity_z",color=cyan1, style=filled]
+266 -> 267
+268 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+266 -> 268
 
 
 }
@@ -25,11 +489,9 @@ node [shape=box]
 DotEnd*/
 /*@
  assigns \nothing;
- ensures \result == (! ((((ext_ident_bool_8) || (ext_ident_bool_52)))));
+ ensures \result == (! ((((((((((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_planned_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_planned_velocity_y) - (ext_intruder_velocity_y))))))) >= (((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y)))))))))) && ((((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_planned_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_planned_velocity_y) - (ext_intruder_velocity_y))))))) > ((((((ext_sqrt_0)) / ((ext_maximum_time_for_violation)))) * (((ext_minimal_horizontal_separation) - (ext_sqrt_1))))))))))) || ((((((((((((ext_ownship_position_z) - (ext_intruder_position_z))) > 0)? (((ext_ownship_position_z) - (ext_intruder_position_z))) : -(((ext_ownship_position_z) - (ext_intruder_position_z))))) < (ext_minimal_vertical_separation)))) && ((((((((((((((ext_ownship_planned_velocity_z) - (ext_intruder_velocity_z))) < (0.0)))) || ((((((ext_ownship_planned_velocity_z) - (ext_intruder_velocity_z))) > (0.0))))))) && ((((((((((ext_ownship_position_z) - (ext_intruder_position_z))) * (((ext_ownship_planned_velocity_z) - (ext_intruder_velocity_z))))) >= (0.0)))) && ((((! (((((((((ext_ownship_position_z) - (ext_intruder_position_z))) * (((ext_ownship_planned_velocity_z) - (ext_intruder_velocity_z))))) >= (0.0)))))) || ((( (((((((((ext_ownship_velocity_z) - (ext_intruder_velocity_z))) < (0.0)))) || ((((((ext_ownship_velocity_z) - (ext_intruder_velocity_z))) > (0.0))))))) ? (((((((((((ext_ownship_velocity_z) - (ext_intruder_velocity_z))) > 0)? 1 : ((((ext_ownship_velocity_z) - (ext_intruder_velocity_z))) < 0 ? -1 : (((ext_ownship_velocity_z) - (ext_intruder_velocity_z)))))) * (((ext_ownship_planned_velocity_z) - (ext_intruder_velocity_z))))) >= (0.0)))) : ((((((((( (((((((((ext_ownship_position_z) - (ext_intruder_position_z))) < (0.0)))) || ((((((ext_ownship_position_z) - (ext_intruder_position_z))) > (0.0))))))) ? ((((((ext_ownship_position_z) - (ext_intruder_position_z))) > 0)? 1 : ((((ext_ownship_position_z) - (ext_intruder_position_z))) < 0 ? -1 : (((ext_ownship_position_z) - (ext_intruder_position_z)))))) : ((( (((((((((ext_ownship_position_x) - (ext_intruder_position_x))) < (0.0)))) || ((((((ext_ownship_position_x) - (ext_intruder_position_x))) > (0.0))))))) ? ((((((ext_ownship_position_x) - (ext_intruder_position_x))) > 0)? 1 : ((((ext_ownship_position_x) - (ext_intruder_position_x))) < 0 ? -1 : (((ext_ownship_position_x) - (ext_intruder_position_x)))))) : ((( (((((((((ext_ownship_position_y) - (ext_intruder_position_y))) <= (0.0)))) && ((((((ext_ownship_position_y) - (ext_intruder_position_y))) >= (0.0))))))) ? (1.0) : ((((((ext_ownship_position_y) - (ext_intruder_position_y))) > 0)? 1 : ((((ext_ownship_position_y) - (ext_intruder_position_y))) < 0 ? -1 : (((ext_ownship_position_y) - (ext_intruder_position_y)))))))))))))))) * (((ext_ownship_planned_velocity_z) - (ext_intruder_velocity_z))))) > (0.0))))))))))))))) && ((((ext_maximum_time_for_violation) >= ((((((((((ext_minimal_vertical_separation) * ((((((ext_ownship_velocity_z) - (ext_intruder_velocity_z))) > 0)? 1 : ((((ext_ownship_velocity_z) - (ext_intruder_velocity_z))) < 0 ? -1 : (((ext_ownship_velocity_z) - (ext_intruder_velocity_z)))))))) - ((((ext_ownship_position_z) - (ext_intruder_position_z))))))) / ((((ext_ownship_velocity_z) - (ext_intruder_velocity_z))))))))))))))))))));
 */
-SBool trigger_guard_alert_3D_loss_separation_violation(const SBool ext_ident_bool_8,
-                                                       const SBool ext_ident_bool_0,
-                                                       const SDouble ext_ownship_position_x,
+SBool trigger_guard_alert_3D_loss_separation_violation(const SDouble ext_ownship_position_x,
                                                        const SDouble ext_intruder_position_x,
                                                        const SDouble ext_ownship_planned_velocity_x,
                                                        const SDouble ext_intruder_velocity_x,
@@ -39,70 +501,151 @@ SBool trigger_guard_alert_3D_loss_separation_violation(const SBool ext_ident_boo
                                                        const SDouble ext_intruder_velocity_y,
                                                        const SDouble ext_ownship_velocity_x,
                                                        const SDouble ext_ownship_velocity_y,
-                                                       const SBool ext_ident_bool_7,
-                                                       const SDouble ext_ident_double_3,
-                                                       const SDouble ext_sqrt_2,
-                                                       const SDouble ext_ident_double_1,
-                                                       const SDouble ext_ident_double_4,
+                                                       const SDouble ext_sqrt_0,
                                                        const SDouble ext_maximum_time_for_violation,
                                                        const SDouble ext_minimal_horizontal_separation,
-                                                       const SDouble ext_sqrt_6,
-                                                       const SDouble ext_ident_double_5,
-                                                       const SBool ext_ident_bool_52,
-                                                       const SBool ext_ident_bool_11,
-                                                       const SDouble ext_ident_double_10,
+                                                       const SDouble ext_sqrt_1,
                                                        const SDouble ext_ownship_position_z,
                                                        const SDouble ext_intruder_position_z,
-                                                       const SDouble ext_ident_double_9,
                                                        const SDouble ext_minimal_vertical_separation,
-                                                       const SBool ext_ident_bool_44,
-                                                       const SBool ext_ident_bool_14,
-                                                       const SBool ext_ident_bool_12,
                                                        const SDouble ext_ownship_planned_velocity_z,
                                                        const SDouble ext_intruder_velocity_z,
-                                                       const SBool ext_ident_bool_13,
-                                                       const SBool ext_ident_bool_15,
-                                                       const SBool ext_ident_bool_43,
-                                                       const SBool ext_ident_bool_16,
-                                                       const SBool ext_ident_bool_42,
-                                                       const SBool ext_ident_bool_18,
-                                                       const SDouble ext_ident_double_17,
-                                                       const SDouble ext_ownship_velocity_z,
-                                                       const SBool ext_ident_bool_21,
-                                                       const SBool ext_ident_bool_19,
-                                                       const SBool ext_ident_bool_20,
-                                                       const SBool ext_ident_bool_38,
-                                                       const SDouble ext_ident_double_37,
-                                                       const SDouble ext_ident_double_36,
-                                                       const SBool ext_ident_bool_24,
-                                                       const SBool ext_ident_bool_22,
-                                                       const SBool ext_ident_bool_23,
-                                                       const SDouble ext_ident_double_25,
-                                                       const SDouble ext_ident_double_35,
-                                                       const SBool ext_ident_bool_28,
-                                                       const SBool ext_ident_bool_26,
-                                                       const SBool ext_ident_bool_27,
-                                                       const SDouble ext_ident_double_29,
-                                                       const SDouble ext_ident_double_34,
-                                                       const SBool ext_ident_bool_32,
-                                                       const SBool ext_ident_bool_30,
-                                                       const SBool ext_ident_bool_31,
-                                                       const SDouble ext_ident_double_33,
-                                                       const SBool ext_ident_bool_41,
-                                                       const SBool ext_ident_bool_39,
-                                                       const SBool ext_ident_bool_40,
-                                                       const SBool ext_ident_bool_51,
-                                                       const SDouble ext_ident_double_50,
-                                                       const SDouble ext_ident_double_49,
-                                                       const SDouble ext_ident_double_47,
-                                                       const SDouble ext_ident_double_45,
-                                                       const SDouble ext_ident_double_46,
-                                                       const SDouble ext_ident_double_48)
+                                                       const SDouble ext_ownship_velocity_z)
 {
-  const SBool   s0 = ext_ident_bool_8;
-  const SBool   s21 = ext_ident_bool_52;
-  const SBool   s71 = s0 || s21;
-  const SBool   s72 = !s71;
+  const SDouble s0 = ext_ownship_position_x;
+  const SDouble s1 = ext_intruder_position_x;
+  const SDouble s2 = ext_ownship_planned_velocity_x;
+  const SDouble s3 = ext_intruder_velocity_x;
+  const SDouble s4 = ext_ownship_position_y;
+  const SDouble s5 = ext_intruder_position_y;
+  const SDouble s6 = ext_ownship_planned_velocity_y;
+  const SDouble s7 = ext_intruder_velocity_y;
+  const SDouble s8 = ext_ownship_velocity_x;
+  const SDouble s9 = ext_ownship_velocity_y;
+  const SDouble s10 = ext_sqrt_0;
+  const SDouble s11 = ext_maximum_time_for_violation;
+  const SDouble s12 = ext_minimal_horizontal_separation;
+  const SDouble s13 = ext_sqrt_1;
+  const SDouble s14 = ext_ownship_position_z;
+  const SDouble s15 = ext_intruder_position_z;
+  const SDouble s16 = ext_minimal_vertical_separation;
+  const SDouble s17 = ext_ownship_planned_velocity_z;
+  const SDouble s18 = ext_intruder_velocity_z;
+  const SDouble s19 = ext_ownship_velocity_z;
+  const SDouble s20 = s0 - s1;
+  const SDouble s21 = s2 - s3;
+  const SDouble s22 = s20 * s21;
+  const SDouble s23 = s4 - s5;
+  const SDouble s24 = s6 - s7;
+  const SDouble s25 = s23 * s24;
+  const SDouble s26 = s22 + s25;
+  const SDouble s27 = s8 - s3;
+  const SDouble s28 = s20 * s27;
+  const SDouble s29 = s9 - s7;
+  const SDouble s30 = s23 * s29;
+  const SDouble s31 = s28 + s30;
+  const SBool   s32 = s26 >= s31;
+  const SBool   s33 = s32 /* ?horizontalCriterionLoss_part1 */;
+  const SDouble s34 = s10 /* ?exitDotMin_dividend */;
+  const SDouble s35 = s11 /* ?exitDotMin_divsor */;
+  const SDouble s36 = s34 / s35;
+  const SDouble s37 = s12 - s13;
+  const SDouble s38 = s36 * s37;
+  const SBool   s39 = s26 > s38;
+  const SBool   s40 = s39 /* ?horizontalCriterionLoss_part2 */;
+  const SBool   s41 = s33 && s40;
+  const SBool   s42 = s41 /* ?horizontal_los_criterion */;
+  const SDouble s43 = s14 - s15;
+  const SDouble s44 = fabs(s43);
+  const SDouble s45 = s44 /* ?verticalCriterionLoss_part1.1 */;
+  const SBool   s46 = s45 < s16;
+  const SBool   s47 = s46 /* ?verticalCriterionLoss_part1 */;
+  const SDouble s48 = s17 - s18;
+  const SBool   s50 = s48 < 0.0;
+  const SBool   s51 = s50 /* ?zCriterion_part1.1 */;
+  const SBool   s52 = s48 > 0.0;
+  const SBool   s53 = s52 /* ?zCriterion_part1.2 */;
+  const SBool   s54 = s51 || s53;
+  const SBool   s55 = s54 /* ?zCriterion_part1 */;
+  const SDouble s56 = s43 * s48;
+  const SBool   s57 = s56 >= 0.0;
+  const SBool   s58 = s57 /* ?z_prop(sz,v'z) */;
+  const SBool   s59 = !s58;
+  const SDouble s60 = s19 - s18;
+  const SBool   s61 = s60 < 0.0;
+  const SBool   s62 = s61 /* ?zCriterion_part2.1 */;
+  const SBool   s63 = s60 > 0.0;
+  const SBool   s64 = s63 /* ?zCriterion_part2.2 */;
+  const SBool   s65 = s62 || s64;
+  const SBool   s66 = s65 /* ?zCriterion_part2.1 */;
+  const SDouble s69 = s61 ? -1.0 : s60;
+  const SDouble s70 = s63 ? 1.0 : s69;
+  const SDouble s71 = s70 /* ?zCriterion_part2.2.1 */;
+  const SDouble s72 = s48 * s71;
+  const SBool   s73 = s72 >= 0.0;
+  const SBool   s74 = s73 /* ?zCriterion_part2.2 */;
+  const SBool   s75 = s43 < 0.0;
+  const SBool   s76 = s75 /* ?break_symetry_part1.1 */;
+  const SBool   s77 = s43 > 0.0;
+  const SBool   s78 = s77 /* ?break_symetry_part1.2 */;
+  const SBool   s79 = s76 || s78;
+  const SBool   s80 = s79 /* ?break_symetry_part1 */;
+  const SDouble s81 = s75 ? -1.0 : s43;
+  const SDouble s82 = s77 ? 1.0 : s81;
+  const SDouble s83 = s82 /* ?break_symetry_part2 */;
+  const SBool   s84 = s20 < 0.0;
+  const SBool   s85 = s84 /* ?break_symetry_part3.1.1 */;
+  const SBool   s86 = s20 > 0.0;
+  const SBool   s87 = s86 /* ?break_symetry_part3.1.2 */;
+  const SBool   s88 = s85 || s87;
+  const SBool   s89 = s88 /* ?break_symetry_part3.1 */;
+  const SDouble s90 = s84 ? -1.0 : s20;
+  const SDouble s91 = s86 ? 1.0 : s90;
+  const SDouble s92 = s91 /* ?break_symetry_part3.2 */;
+  const SBool   s93 = s23 <= 0.0;
+  const SBool   s94 = s93 /* ?break_symetry_part3.3.1.1 */;
+  const SBool   s95 = s23 >= 0.0;
+  const SBool   s96 = s95 /* ?break_symetry_part3.3.1.2 */;
+  const SBool   s97 = s94 && s96;
+  const SBool   s98 = s97 /* ?break_symetry_part3.3.1 */;
+  const SBool   s99 = s23 > 0.0;
+  const SBool   s100 = s23 < 0.0;
+  const SDouble s101 = s100 ? -1.0 : s23;
+  const SDouble s102 = s99 ? 1.0 : s101;
+  const SDouble s103 = s102 /* ?break_symetry_part3.3.2 */;
+  const SDouble s104 = s98 ? 1.0 : s103;
+  const SDouble s105 = s104 /* ?break_symetry_part3.3 */;
+  const SDouble s106 = s89 ? s92 : s105;
+  const SDouble s107 = s106 /* ?break_symetry_part3 */;
+  const SDouble s108 = s80 ? s83 : s107;
+  const SDouble s109 = s108 /* ?break_symetry */;
+  const SDouble s110 = s109 /* ?zCriterion_part2.3.1 */;
+  const SDouble s111 = s48 * s110;
+  const SBool   s112 = s111 > 0.0;
+  const SBool   s113 = s112 /* ?zCriterion_part2.3 */;
+  const SBool   s114 = s66 ? s74 : s113;
+  const SBool   s115 = s114 /* ?zCriterion_part2.0 */;
+  const SBool   s116 = s59 || s115;
+  const SBool   s117 = s116 /* ?zCriterion_part2 */;
+  const SBool   s118 = s58 && s117;
+  const SBool   s119 = s55 && s118;
+  const SBool   s120 = s119 /* ?verticalCriterionLoss_part2 */;
+  const SDouble s121 = s70 /* ?ttez_part01 */;
+  const SDouble s122 = s16 * s121;
+  const SDouble s123 = s43 /* ?ttez_part02 */;
+  const SDouble s124 = s122 - s123;
+  const SDouble s125 = s124 /* ?ttez_dividend */;
+  const SDouble s126 = s60 /* ?ttez_divisor */;
+  const SDouble s127 = s125 / s126;
+  const SDouble s128 = s127 /* ?ttez */;
+  const SDouble s129 = s128 /* ?verticalCriterionLoss_part3.1 */;
+  const SBool   s130 = s11 >= s129;
+  const SBool   s131 = s130 /* ?verticalCriterionLoss_part3 */;
+  const SBool   s132 = s120 && s131;
+  const SBool   s133 = s47 && s132;
+  const SBool   s134 = s133 /* ?vertical_los_criterion */;
+  const SBool   s135 = s42 || s134;
+  const SBool   s136 = !s135;
 
-  return s72;
+  return s136;
 }
