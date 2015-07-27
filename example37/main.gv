@@ -1,0 +1,11 @@
+digraph G {
+node [shape=box]
+
+0 [label="observer: 
+trigger1",color=mediumblue, style=filled]
+1 [label="field: example",color=dodgerblue3, style=filled]
+0 -> 1
+
+
+}
+
