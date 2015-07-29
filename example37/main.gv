@@ -5,6 +5,10 @@ node [shape=box]
 trigger1",color=mediumblue, style=filled]
 1 [label="field: example",color=dodgerblue3, style=filled]
 0 -> 1
+2 [label="externS: simple",color=dodgerblue2, style=filled]
+1 -> 2
+3 [label="externV: ee",color=cyan1, style=filled]
+2 -> 3
 
 
 }

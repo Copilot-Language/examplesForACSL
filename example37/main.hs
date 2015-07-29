@@ -10,7 +10,7 @@ simple :: Stream Bool -- STRUCTS MUST BE OF TYPE Stream Bool
 simple = externStruct "simple" [ ("example", arg example) ]
   where
     example :: Stream Bool
-    example = true
+    example = extern "example" Nothing
 --simple = externStruct "simple" [ structarg "running" (arg running), structarg "temp" (arg temp) ]
 
 run :: Stream Bool

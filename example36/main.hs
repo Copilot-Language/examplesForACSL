@@ -437,7 +437,7 @@ spec = do
 --  trigger "alert_WCVtaumod" (wellClearViolation taumod relPositionX relPositionY relPositionZ relVelocityX relVelocityY relVelocityZ) []
 --  trigger "alert_WCVtep" (wellClearViolation tep relPositionX relPositionY relPositionZ relVelocityX relVelocityY relVelocityZ) []
   trigger "alert_TCASII_RA" (tcasII_RA relPositionX relPositionY relPositionZ relVelocityX relVelocityY relVelocityZ (tauRA $ sensitivityLevel ownPositionZ) (0) (dmodRA $ sensitivityLevel ownPositionZ) (zthrRA $ sensitivityLevel ownPositionZ) (hmdRA $ sensitivityLevel ownPositionZ) (true)) []
-  trigger "isCorrective" (isCorrective relPositionX relPositionY ownPositionZ intPositionZ relVelocityX relVelocityY ownVelocityZ intVelocityZ VsAccel MaxVs (tauRA $ sensitivityLevel ownPositionZ) (dmodRA $ sensitivityLevel ownPositionZ)) []
+--  trigger "isCorrective" (isCorrective relPositionX relPositionY ownPositionZ intPositionZ relVelocityX relVelocityY ownVelocityZ intVelocityZ VsAccel MaxVs (tauRA $ sensitivityLevel ownPositionZ) (dmodRA $ sensitivityLevel ownPositionZ)) []
 
 
 main = do

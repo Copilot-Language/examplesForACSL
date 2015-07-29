@@ -10,7 +10,7 @@ node [shape=box]
 
 0 [label="file: 
 ?????",color=red, style=filled]
-1 [label="ext_ident_bool_1790",color=cyan4, style=filled]
+1 [label="ext_ident_bool_149",color=cyan4, style=filled]
 0 -> 1
 
 
@@ -19,332 +19,167 @@ node [shape=box]
 DotEnd*/
 /*@
  assigns \nothing;
- ensures \result == (ext_ident_bool_1790);
+ ensures \result == (ext_ident_bool_149);
 */
-SBool trigger_guard_alert_TCASII_RA(const SBool ext_ident_bool_1790,
-                                    const SBool ext_ident_bool_1711,
-                                    const SDouble ext_ident_double_1642,
-                                    const SDouble ext_ident_double_1641,
+SBool trigger_guard_alert_TCASII_RA(const SBool ext_ident_bool_149,
+                                    const SBool ext_ident_bool_70, const SDouble ext_ident_double_1,
+                                    const SDouble ext_ident_double_0,
                                     const SDouble ext_ownship_velocity_x,
                                     const SDouble ext_intruder_velocity_x,
                                     const SDouble ext_ownship_velocity_y,
                                     const SDouble ext_intruder_velocity_y,
-                                    const SDouble ext_ident_double_1644,
-                                    const SDouble ext_ident_double_1643,
+                                    const SDouble ext_ident_double_3,
+                                    const SDouble ext_ident_double_2,
                                     const SDouble ext_ownship_position_x,
                                     const SDouble ext_intruder_position_x,
                                     const SDouble ext_ownship_position_y,
                                     const SDouble ext_intruder_position_y,
-                                    const SDouble ext_ident_double_1661,
-                                    const SDouble ext_ident_double_1652,
-                                    const SWord64 ext_ident_word64_1645,
+                                    const SDouble ext_ident_double_20,
+                                    const SDouble ext_ident_double_11,
+                                    const SWord64 ext_ident_word64_4,
                                     const SDouble ext_ownship_position_z,
-                                    const SWord64 ext_ident_word64_1646,
-                                    const SWord64 ext_ident_word64_1647,
-                                    const SWord64 ext_ident_word64_1648,
-                                    const SWord64 ext_ident_word64_1649,
-                                    const SWord64 ext_ident_word64_1650,
-                                    const SWord64 ext_ident_word64_1651,
-                                    const SDouble ext_ident_double_1660,
-                                    const SWord64 ext_ident_word64_1653,
-                                    const SWord64 ext_ident_word64_1654,
-                                    const SWord64 ext_ident_word64_1655,
-                                    const SWord64 ext_ident_word64_1656,
-                                    const SWord64 ext_ident_word64_1657,
-                                    const SWord64 ext_ident_word64_1658,
-                                    const SWord64 ext_ident_word64_1659,
-                                    const SDouble ext_ident_double_1663,
-                                    const SDouble ext_ident_double_1662,
-                                    const SDouble ext_ident_double_1684,
-                                    const SDouble ext_ident_double_1671,
-                                    const SWord64 ext_ident_word64_1664,
-                                    const SWord64 ext_ident_word64_1665,
-                                    const SWord64 ext_ident_word64_1666,
-                                    const SWord64 ext_ident_word64_1667,
-                                    const SWord64 ext_ident_word64_1668,
-                                    const SWord64 ext_ident_word64_1669,
-                                    const SWord64 ext_ident_word64_1670,
-                                    const SDouble ext_ident_double_1679,
-                                    const SWord64 ext_ident_word64_1672,
-                                    const SWord64 ext_ident_word64_1673,
-                                    const SWord64 ext_ident_word64_1674,
-                                    const SWord64 ext_ident_word64_1675,
-                                    const SWord64 ext_ident_word64_1676,
-                                    const SWord64 ext_ident_word64_1677,
-                                    const SWord64 ext_ident_word64_1678,
-                                    const SDouble ext_ident_double_1681,
-                                    const SDouble ext_ident_double_1680,
-                                    const SDouble ext_ident_double_1682,
-                                    const SDouble ext_ident_double_1683,
-                                    const SDouble ext_ident_double_1710,
-                                    const SDouble ext_ident_double_1685,
-                                    const SDouble ext_sqrt_1707,
-                                    const SDouble ext_ident_double_1706,
-                                    const SDouble ext_ident_double_1693,
-                                    const SWord64 ext_ident_word64_1686,
-                                    const SWord64 ext_ident_word64_1687,
-                                    const SWord64 ext_ident_word64_1688,
-                                    const SWord64 ext_ident_word64_1689,
-                                    const SWord64 ext_ident_word64_1690,
-                                    const SWord64 ext_ident_word64_1691,
-                                    const SWord64 ext_ident_word64_1692,
-                                    const SDouble ext_ident_double_1701,
-                                    const SWord64 ext_ident_word64_1694,
-                                    const SWord64 ext_ident_word64_1695,
-                                    const SWord64 ext_ident_word64_1696,
-                                    const SWord64 ext_ident_word64_1697,
-                                    const SWord64 ext_ident_word64_1698,
-                                    const SWord64 ext_ident_word64_1699,
-                                    const SWord64 ext_ident_word64_1700,
-                                    const SDouble ext_ident_double_1703,
-                                    const SDouble ext_ident_double_1702,
-                                    const SDouble ext_ident_double_1704,
-                                    const SDouble ext_ident_double_1705,
-                                    const SDouble ext_ident_double_1709,
-                                    const SDouble ext_ident_double_1708,
-                                    const SBool ext_ident_bool_1768,
-                                    const SDouble ext_ident_double_1715,
-                                    const SDouble ext_sqrt_1714,
-                                    const SDouble ext_ident_double_1713,
-                                    const SDouble ext_ident_double_1712,
-                                    const SDouble ext_ident_double_1723,
-                                    const SWord64 ext_ident_word64_1716,
-                                    const SWord64 ext_ident_word64_1717,
-                                    const SWord64 ext_ident_word64_1718,
-                                    const SWord64 ext_ident_word64_1719,
-                                    const SWord64 ext_ident_word64_1720,
-                                    const SWord64 ext_ident_word64_1721,
-                                    const SWord64 ext_ident_word64_1722,
-                                    const SDouble ext_ident_double_1724,
-                                    const SDouble ext_ident_double_1728,
-                                    const SDouble ext_sqrt_1727,
-                                    const SDouble ext_ident_double_1726,
-                                    const SDouble ext_ident_double_1725,
-                                    const SDouble ext_ident_double_1736,
-                                    const SWord64 ext_ident_word64_1729,
-                                    const SWord64 ext_ident_word64_1730,
-                                    const SWord64 ext_ident_word64_1731,
-                                    const SWord64 ext_ident_word64_1732,
-                                    const SWord64 ext_ident_word64_1733,
-                                    const SWord64 ext_ident_word64_1734,
-                                    const SWord64 ext_ident_word64_1735,
-                                    const SDouble ext_ident_double_1758,
-                                    const SDouble ext_ident_double_1737,
-                                    const SDouble ext_ident_double_1754,
-                                    const SDouble ext_ident_double_1745,
-                                    const SWord64 ext_ident_word64_1738,
-                                    const SWord64 ext_ident_word64_1739,
-                                    const SWord64 ext_ident_word64_1740,
-                                    const SWord64 ext_ident_word64_1741,
-                                    const SWord64 ext_ident_word64_1742,
-                                    const SWord64 ext_ident_word64_1743,
-                                    const SWord64 ext_ident_word64_1744,
-                                    const SDouble ext_ident_double_1753,
-                                    const SWord64 ext_ident_word64_1746,
-                                    const SWord64 ext_ident_word64_1747,
-                                    const SWord64 ext_ident_word64_1748,
-                                    const SWord64 ext_ident_word64_1749,
-                                    const SWord64 ext_ident_word64_1750,
-                                    const SWord64 ext_ident_word64_1751,
-                                    const SWord64 ext_ident_word64_1752,
-                                    const SDouble ext_ident_double_1756,
-                                    const SDouble ext_ident_double_1755,
-                                    const SDouble ext_ident_double_1757,
-                                    const SDouble ext_ident_double_1766,
-                                    const SWord64 ext_ident_word64_1759,
-                                    const SWord64 ext_ident_word64_1760,
-                                    const SWord64 ext_ident_word64_1761,
-                                    const SWord64 ext_ident_word64_1762,
-                                    const SWord64 ext_ident_word64_1763,
-                                    const SWord64 ext_ident_word64_1764,
-                                    const SWord64 ext_ident_word64_1765,
-                                    const SDouble ext_ident_double_1767,
-                                    const SBool ext_ident_bool_1789,
-                                    const SDouble ext_ident_double_1778,
+                                    const SWord64 ext_ident_word64_5,
+                                    const SWord64 ext_ident_word64_6,
+                                    const SWord64 ext_ident_word64_7,
+                                    const SWord64 ext_ident_word64_8,
+                                    const SWord64 ext_ident_word64_9,
+                                    const SWord64 ext_ident_word64_10,
+                                    const SDouble ext_ident_double_19,
+                                    const SWord64 ext_ident_word64_12,
+                                    const SWord64 ext_ident_word64_13,
+                                    const SWord64 ext_ident_word64_14,
+                                    const SWord64 ext_ident_word64_15,
+                                    const SWord64 ext_ident_word64_16,
+                                    const SWord64 ext_ident_word64_17,
+                                    const SWord64 ext_ident_word64_18,
+                                    const SDouble ext_ident_double_22,
+                                    const SDouble ext_ident_double_21,
+                                    const SDouble ext_ident_double_43,
+                                    const SDouble ext_ident_double_30,
+                                    const SWord64 ext_ident_word64_23,
+                                    const SWord64 ext_ident_word64_24,
+                                    const SWord64 ext_ident_word64_25,
+                                    const SWord64 ext_ident_word64_26,
+                                    const SWord64 ext_ident_word64_27,
+                                    const SWord64 ext_ident_word64_28,
+                                    const SWord64 ext_ident_word64_29,
+                                    const SDouble ext_ident_double_38,
+                                    const SWord64 ext_ident_word64_31,
+                                    const SWord64 ext_ident_word64_32,
+                                    const SWord64 ext_ident_word64_33,
+                                    const SWord64 ext_ident_word64_34,
+                                    const SWord64 ext_ident_word64_35,
+                                    const SWord64 ext_ident_word64_36,
+                                    const SWord64 ext_ident_word64_37,
+                                    const SDouble ext_ident_double_40,
+                                    const SDouble ext_ident_double_39,
+                                    const SDouble ext_ident_double_41,
+                                    const SDouble ext_ident_double_42,
+                                    const SDouble ext_ident_double_69,
+                                    const SDouble ext_ident_double_44, const SDouble ext_sqrt_66,
+                                    const SDouble ext_ident_double_65,
+                                    const SDouble ext_ident_double_52,
+                                    const SWord64 ext_ident_word64_45,
+                                    const SWord64 ext_ident_word64_46,
+                                    const SWord64 ext_ident_word64_47,
+                                    const SWord64 ext_ident_word64_48,
+                                    const SWord64 ext_ident_word64_49,
+                                    const SWord64 ext_ident_word64_50,
+                                    const SWord64 ext_ident_word64_51,
+                                    const SDouble ext_ident_double_60,
+                                    const SWord64 ext_ident_word64_53,
+                                    const SWord64 ext_ident_word64_54,
+                                    const SWord64 ext_ident_word64_55,
+                                    const SWord64 ext_ident_word64_56,
+                                    const SWord64 ext_ident_word64_57,
+                                    const SWord64 ext_ident_word64_58,
+                                    const SWord64 ext_ident_word64_59,
+                                    const SDouble ext_ident_double_62,
+                                    const SDouble ext_ident_double_61,
+                                    const SDouble ext_ident_double_63,
+                                    const SDouble ext_ident_double_64,
+                                    const SDouble ext_ident_double_68,
+                                    const SDouble ext_ident_double_67,
+                                    const SBool ext_ident_bool_127,
+                                    const SDouble ext_ident_double_74, const SDouble ext_sqrt_73,
+                                    const SDouble ext_ident_double_72,
+                                    const SDouble ext_ident_double_71,
+                                    const SDouble ext_ident_double_82,
+                                    const SWord64 ext_ident_word64_75,
+                                    const SWord64 ext_ident_word64_76,
+                                    const SWord64 ext_ident_word64_77,
+                                    const SWord64 ext_ident_word64_78,
+                                    const SWord64 ext_ident_word64_79,
+                                    const SWord64 ext_ident_word64_80,
+                                    const SWord64 ext_ident_word64_81,
+                                    const SDouble ext_ident_double_83,
+                                    const SDouble ext_ident_double_87, const SDouble ext_sqrt_86,
+                                    const SDouble ext_ident_double_85,
+                                    const SDouble ext_ident_double_84,
+                                    const SDouble ext_ident_double_95,
+                                    const SWord64 ext_ident_word64_88,
+                                    const SWord64 ext_ident_word64_89,
+                                    const SWord64 ext_ident_word64_90,
+                                    const SWord64 ext_ident_word64_91,
+                                    const SWord64 ext_ident_word64_92,
+                                    const SWord64 ext_ident_word64_93,
+                                    const SWord64 ext_ident_word64_94,
+                                    const SDouble ext_ident_double_117,
+                                    const SDouble ext_ident_double_96,
+                                    const SDouble ext_ident_double_113,
+                                    const SDouble ext_ident_double_104,
+                                    const SWord64 ext_ident_word64_97,
+                                    const SWord64 ext_ident_word64_98,
+                                    const SWord64 ext_ident_word64_99,
+                                    const SWord64 ext_ident_word64_100,
+                                    const SWord64 ext_ident_word64_101,
+                                    const SWord64 ext_ident_word64_102,
+                                    const SWord64 ext_ident_word64_103,
+                                    const SDouble ext_ident_double_112,
+                                    const SWord64 ext_ident_word64_105,
+                                    const SWord64 ext_ident_word64_106,
+                                    const SWord64 ext_ident_word64_107,
+                                    const SWord64 ext_ident_word64_108,
+                                    const SWord64 ext_ident_word64_109,
+                                    const SWord64 ext_ident_word64_110,
+                                    const SWord64 ext_ident_word64_111,
+                                    const SDouble ext_ident_double_115,
+                                    const SDouble ext_ident_double_114,
+                                    const SDouble ext_ident_double_116,
+                                    const SDouble ext_ident_double_125,
+                                    const SWord64 ext_ident_word64_118,
+                                    const SWord64 ext_ident_word64_119,
+                                    const SWord64 ext_ident_word64_120,
+                                    const SWord64 ext_ident_word64_121,
+                                    const SWord64 ext_ident_word64_122,
+                                    const SWord64 ext_ident_word64_123,
+                                    const SWord64 ext_ident_word64_124,
+                                    const SDouble ext_ident_double_126,
+                                    const SBool ext_ident_bool_148,
+                                    const SDouble ext_ident_double_137,
                                     const SDouble ext_intruder_position_z,
-                                    const SDouble ext_ident_double_1769,
-                                    const SDouble ext_ident_double_1777,
-                                    const SWord64 ext_ident_word64_1770,
-                                    const SWord64 ext_ident_word64_1771,
-                                    const SWord64 ext_ident_word64_1772,
-                                    const SWord64 ext_ident_word64_1773,
-                                    const SWord64 ext_ident_word64_1774,
-                                    const SWord64 ext_ident_word64_1775,
-                                    const SWord64 ext_ident_word64_1776,
+                                    const SDouble ext_ident_double_128,
+                                    const SDouble ext_ident_double_136,
+                                    const SWord64 ext_ident_word64_129,
+                                    const SWord64 ext_ident_word64_130,
+                                    const SWord64 ext_ident_word64_131,
+                                    const SWord64 ext_ident_word64_132,
+                                    const SWord64 ext_ident_word64_133,
+                                    const SWord64 ext_ident_word64_134,
+                                    const SWord64 ext_ident_word64_135,
                                     const SDouble ext_ownship_velocity_z,
                                     const SDouble ext_intruder_velocity_z,
-                                    const SDouble ext_ident_double_1788,
-                                    const SDouble ext_ident_double_1779,
-                                    const SDouble ext_ident_double_1787,
-                                    const SWord64 ext_ident_word64_1780,
-                                    const SWord64 ext_ident_word64_1781,
-                                    const SWord64 ext_ident_word64_1782,
-                                    const SWord64 ext_ident_word64_1783,
-                                    const SWord64 ext_ident_word64_1784,
-                                    const SWord64 ext_ident_word64_1785,
-                                    const SWord64 ext_ident_word64_1786)
+                                    const SDouble ext_ident_double_147,
+                                    const SDouble ext_ident_double_138,
+                                    const SDouble ext_ident_double_146,
+                                    const SWord64 ext_ident_word64_139,
+                                    const SWord64 ext_ident_word64_140,
+                                    const SWord64 ext_ident_word64_141,
+                                    const SWord64 ext_ident_word64_142,
+                                    const SWord64 ext_ident_word64_143,
+                                    const SWord64 ext_ident_word64_144,
+                                    const SWord64 ext_ident_word64_145)
 {
-  const SBool   s0 = ext_ident_bool_1790;
-  const SBool   s1 = ext_ident_bool_1711;
-  const SDouble s2 = ext_ident_double_1642;
-  const SDouble s3 = ext_ident_double_1641;
-  const SDouble s4 = ext_ownship_velocity_x;
-  const SDouble s5 = ext_intruder_velocity_x;
-  const SDouble s6 = ext_ownship_velocity_y;
-  const SDouble s7 = ext_intruder_velocity_y;
-  const SDouble s8 = ext_ident_double_1644;
-  const SDouble s9 = ext_ident_double_1643;
-  const SDouble s10 = ext_ownship_position_x;
-  const SDouble s11 = ext_intruder_position_x;
-  const SDouble s12 = ext_ownship_position_y;
-  const SDouble s13 = ext_intruder_position_y;
-  const SDouble s14 = ext_ident_double_1661;
-  const SDouble s15 = ext_ident_double_1652;
-  const SWord64 s16 = ext_ident_word64_1645;
-  const SDouble s17 = ext_ownship_position_z;
-  const SWord64 s18 = ext_ident_word64_1646;
-  const SWord64 s19 = ext_ident_word64_1647;
-  const SWord64 s20 = ext_ident_word64_1648;
-  const SWord64 s21 = ext_ident_word64_1649;
-  const SWord64 s22 = ext_ident_word64_1650;
-  const SWord64 s23 = ext_ident_word64_1651;
-  const SDouble s24 = ext_ident_double_1660;
-  const SWord64 s25 = ext_ident_word64_1653;
-  const SWord64 s26 = ext_ident_word64_1654;
-  const SWord64 s27 = ext_ident_word64_1655;
-  const SWord64 s28 = ext_ident_word64_1656;
-  const SWord64 s29 = ext_ident_word64_1657;
-  const SWord64 s30 = ext_ident_word64_1658;
-  const SWord64 s31 = ext_ident_word64_1659;
-  const SDouble s32 = ext_ident_double_1663;
-  const SDouble s33 = ext_ident_double_1662;
-  const SDouble s34 = ext_ident_double_1684;
-  const SDouble s35 = ext_ident_double_1671;
-  const SWord64 s36 = ext_ident_word64_1664;
-  const SWord64 s37 = ext_ident_word64_1665;
-  const SWord64 s38 = ext_ident_word64_1666;
-  const SWord64 s39 = ext_ident_word64_1667;
-  const SWord64 s40 = ext_ident_word64_1668;
-  const SWord64 s41 = ext_ident_word64_1669;
-  const SWord64 s42 = ext_ident_word64_1670;
-  const SDouble s43 = ext_ident_double_1679;
-  const SWord64 s44 = ext_ident_word64_1672;
-  const SWord64 s45 = ext_ident_word64_1673;
-  const SWord64 s46 = ext_ident_word64_1674;
-  const SWord64 s47 = ext_ident_word64_1675;
-  const SWord64 s48 = ext_ident_word64_1676;
-  const SWord64 s49 = ext_ident_word64_1677;
-  const SWord64 s50 = ext_ident_word64_1678;
-  const SDouble s51 = ext_ident_double_1681;
-  const SDouble s52 = ext_ident_double_1680;
-  const SDouble s53 = ext_ident_double_1682;
-  const SDouble s54 = ext_ident_double_1683;
-  const SDouble s55 = ext_ident_double_1710;
-  const SDouble s56 = ext_ident_double_1685;
-  const SDouble s57 = ext_sqrt_1707;
-  const SDouble s58 = ext_ident_double_1706;
-  const SDouble s59 = ext_ident_double_1693;
-  const SWord64 s60 = ext_ident_word64_1686;
-  const SWord64 s61 = ext_ident_word64_1687;
-  const SWord64 s62 = ext_ident_word64_1688;
-  const SWord64 s63 = ext_ident_word64_1689;
-  const SWord64 s64 = ext_ident_word64_1690;
-  const SWord64 s65 = ext_ident_word64_1691;
-  const SWord64 s66 = ext_ident_word64_1692;
-  const SDouble s67 = ext_ident_double_1701;
-  const SWord64 s68 = ext_ident_word64_1694;
-  const SWord64 s69 = ext_ident_word64_1695;
-  const SWord64 s70 = ext_ident_word64_1696;
-  const SWord64 s71 = ext_ident_word64_1697;
-  const SWord64 s72 = ext_ident_word64_1698;
-  const SWord64 s73 = ext_ident_word64_1699;
-  const SWord64 s74 = ext_ident_word64_1700;
-  const SDouble s75 = ext_ident_double_1703;
-  const SDouble s76 = ext_ident_double_1702;
-  const SDouble s77 = ext_ident_double_1704;
-  const SDouble s78 = ext_ident_double_1705;
-  const SDouble s79 = ext_ident_double_1709;
-  const SDouble s80 = ext_ident_double_1708;
-  const SBool   s81 = ext_ident_bool_1768;
-  const SDouble s82 = ext_ident_double_1715;
-  const SDouble s83 = ext_sqrt_1714;
-  const SDouble s84 = ext_ident_double_1713;
-  const SDouble s85 = ext_ident_double_1712;
-  const SDouble s86 = ext_ident_double_1723;
-  const SWord64 s87 = ext_ident_word64_1716;
-  const SWord64 s88 = ext_ident_word64_1717;
-  const SWord64 s89 = ext_ident_word64_1718;
-  const SWord64 s90 = ext_ident_word64_1719;
-  const SWord64 s91 = ext_ident_word64_1720;
-  const SWord64 s92 = ext_ident_word64_1721;
-  const SWord64 s93 = ext_ident_word64_1722;
-  const SDouble s94 = ext_ident_double_1724;
-  const SDouble s95 = ext_ident_double_1728;
-  const SDouble s96 = ext_sqrt_1727;
-  const SDouble s97 = ext_ident_double_1726;
-  const SDouble s98 = ext_ident_double_1725;
-  const SDouble s99 = ext_ident_double_1736;
-  const SWord64 s100 = ext_ident_word64_1729;
-  const SWord64 s101 = ext_ident_word64_1730;
-  const SWord64 s102 = ext_ident_word64_1731;
-  const SWord64 s103 = ext_ident_word64_1732;
-  const SWord64 s104 = ext_ident_word64_1733;
-  const SWord64 s105 = ext_ident_word64_1734;
-  const SWord64 s106 = ext_ident_word64_1735;
-  const SDouble s107 = ext_ident_double_1758;
-  const SDouble s108 = ext_ident_double_1737;
-  const SDouble s109 = ext_ident_double_1754;
-  const SDouble s110 = ext_ident_double_1745;
-  const SWord64 s111 = ext_ident_word64_1738;
-  const SWord64 s112 = ext_ident_word64_1739;
-  const SWord64 s113 = ext_ident_word64_1740;
-  const SWord64 s114 = ext_ident_word64_1741;
-  const SWord64 s115 = ext_ident_word64_1742;
-  const SWord64 s116 = ext_ident_word64_1743;
-  const SWord64 s117 = ext_ident_word64_1744;
-  const SDouble s118 = ext_ident_double_1753;
-  const SWord64 s119 = ext_ident_word64_1746;
-  const SWord64 s120 = ext_ident_word64_1747;
-  const SWord64 s121 = ext_ident_word64_1748;
-  const SWord64 s122 = ext_ident_word64_1749;
-  const SWord64 s123 = ext_ident_word64_1750;
-  const SWord64 s124 = ext_ident_word64_1751;
-  const SWord64 s125 = ext_ident_word64_1752;
-  const SDouble s126 = ext_ident_double_1756;
-  const SDouble s127 = ext_ident_double_1755;
-  const SDouble s128 = ext_ident_double_1757;
-  const SDouble s129 = ext_ident_double_1766;
-  const SWord64 s130 = ext_ident_word64_1759;
-  const SWord64 s131 = ext_ident_word64_1760;
-  const SWord64 s132 = ext_ident_word64_1761;
-  const SWord64 s133 = ext_ident_word64_1762;
-  const SWord64 s134 = ext_ident_word64_1763;
-  const SWord64 s135 = ext_ident_word64_1764;
-  const SWord64 s136 = ext_ident_word64_1765;
-  const SDouble s137 = ext_ident_double_1767;
-  const SBool   s138 = ext_ident_bool_1789;
-  const SDouble s139 = ext_ident_double_1778;
-  const SDouble s140 = ext_intruder_position_z;
-  const SDouble s141 = ext_ident_double_1769;
-  const SDouble s142 = ext_ident_double_1777;
-  const SWord64 s143 = ext_ident_word64_1770;
-  const SWord64 s144 = ext_ident_word64_1771;
-  const SWord64 s145 = ext_ident_word64_1772;
-  const SWord64 s146 = ext_ident_word64_1773;
-  const SWord64 s147 = ext_ident_word64_1774;
-  const SWord64 s148 = ext_ident_word64_1775;
-  const SWord64 s149 = ext_ident_word64_1776;
-  const SDouble s150 = ext_ownship_velocity_z;
-  const SDouble s151 = ext_intruder_velocity_z;
-  const SDouble s152 = ext_ident_double_1788;
-  const SDouble s153 = ext_ident_double_1779;
-  const SDouble s154 = ext_ident_double_1787;
-  const SWord64 s155 = ext_ident_word64_1780;
-  const SWord64 s156 = ext_ident_word64_1781;
-  const SWord64 s157 = ext_ident_word64_1782;
-  const SWord64 s158 = ext_ident_word64_1783;
-  const SWord64 s159 = ext_ident_word64_1784;
-  const SWord64 s160 = ext_ident_word64_1785;
-  const SWord64 s161 = ext_ident_word64_1786;
+  const SBool   s0 = ext_ident_bool_149;
   return s0;
 }

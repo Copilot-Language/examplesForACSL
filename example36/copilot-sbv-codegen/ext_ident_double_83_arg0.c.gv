@@ -17,9 +17,9 @@ ext_ident_double_83_arg0.c",color=red, style=filled]
 4 -> 6
 7 [label="op2: -",color=green4, style=filled]
 3 -> 7
-8 [label="ext_ownship_position_x",color=cyan1, style=filled]
+8 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
 7 -> 8
-9 [label="ext_intruder_position_x",color=cyan1, style=filled]
+9 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
 7 -> 9
 10 [label="op2: *",color=green4, style=filled]
 2 -> 10
@@ -31,9 +31,9 @@ ext_ident_double_83_arg0.c",color=red, style=filled]
 11 -> 13
 14 [label="op2: -",color=green4, style=filled]
 10 -> 14
-15 [label="ext_ownship_position_y",color=cyan1, style=filled]
+15 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
 14 -> 15
-16 [label="ext_intruder_position_y",color=cyan1, style=filled]
+16 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
 14 -> 16
 
 

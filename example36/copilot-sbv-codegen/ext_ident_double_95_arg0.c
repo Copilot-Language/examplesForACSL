@@ -103,7 +103,6 @@ SDouble ext_ident_double_95_arg0(const SWord64 ext_ident_word64_88,
                                  const SWord64 ext_ident_word64_94)
 {
   const SWord64 s0 = ext_ident_word64_88;
-  const SDouble s1 = ext_ownship_position_z;
   const SWord64 s2 = ext_ident_word64_89;
   const SWord64 s3 = ext_ident_word64_90;
   const SWord64 s4 = ext_ident_word64_91;

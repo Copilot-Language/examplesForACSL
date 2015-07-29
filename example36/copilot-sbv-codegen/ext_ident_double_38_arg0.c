@@ -10,38 +10,80 @@ node [shape=box]
 
 0 [label="file: 
 ?????",color=red, style=filled]
-1 [label="label: scalar2dim",color=plum, style=filled]
+1 [label="label: hmdRA",color=plum, style=filled]
 0 -> 1
-2 [label="op2: +",color=green4, style=filled]
+2 [label="op3: mux",color=green4, style=filled]
 1 -> 2
-3 [label="op2: *",color=green4, style=filled]
+3 [label="op2: ==",color=green4, style=filled]
 2 -> 3
-4 [label="op2: -",color=green4, style=filled]
+4 [label="ext_ident_word64_31",color=cyan4, style=filled]
 3 -> 4
-5 [label="ext_ownship_position_x",color=cyan1, style=filled]
-4 -> 5
-6 [label="ext_intruder_position_x",color=cyan1, style=filled]
-4 -> 6
-7 [label="op2: -",color=green4, style=filled]
-3 -> 7
-8 [label="ext_ownship_position_x",color=cyan1, style=filled]
-7 -> 8
-9 [label="ext_intruder_position_x",color=cyan1, style=filled]
-7 -> 9
-10 [label="op2: *",color=green4, style=filled]
-2 -> 10
-11 [label="op2: -",color=green4, style=filled]
-10 -> 11
-12 [label="ext_ownship_position_y",color=cyan1, style=filled]
-11 -> 12
-13 [label="ext_intruder_position_y",color=cyan1, style=filled]
-11 -> 13
-14 [label="op2: -",color=green4, style=filled]
-10 -> 14
-15 [label="ext_ownship_position_y",color=cyan1, style=filled]
-14 -> 15
-16 [label="ext_intruder_position_y",color=cyan1, style=filled]
-14 -> 16
+41 [label="const: 2",color=red1, style=filled]
+3 -> 41
+42 [label="const: 0.0",color=red1, style=filled]
+2 -> 42
+43 [label="op3: mux",color=green4, style=filled]
+2 -> 43
+44 [label="op2: ==",color=green4, style=filled]
+43 -> 44
+45 [label="ext_ident_word64_32",color=cyan4, style=filled]
+44 -> 45
+82 [label="const: 3",color=red1, style=filled]
+44 -> 82
+83 [label="const: 370.332",color=red1, style=filled]
+43 -> 83
+84 [label="op3: mux",color=green4, style=filled]
+43 -> 84
+85 [label="op2: ==",color=green4, style=filled]
+84 -> 85
+86 [label="ext_ident_word64_33",color=cyan4, style=filled]
+85 -> 86
+123 [label="const: 4",color=red1, style=filled]
+85 -> 123
+124 [label="const: 648.0048",color=red1, style=filled]
+84 -> 124
+125 [label="op3: mux",color=green4, style=filled]
+84 -> 125
+126 [label="op2: ==",color=green4, style=filled]
+125 -> 126
+127 [label="ext_ident_word64_34",color=cyan4, style=filled]
+126 -> 127
+164 [label="const: 5",color=red1, style=filled]
+126 -> 164
+165 [label="const: 1018.6416",color=red1, style=filled]
+125 -> 165
+166 [label="op3: mux",color=green4, style=filled]
+125 -> 166
+167 [label="op2: ==",color=green4, style=filled]
+166 -> 167
+168 [label="ext_ident_word64_35",color=cyan4, style=filled]
+167 -> 168
+205 [label="const: 6",color=red1, style=filled]
+167 -> 205
+206 [label="const: 1481.6328",color=red1, style=filled]
+166 -> 206
+207 [label="op3: mux",color=green4, style=filled]
+166 -> 207
+208 [label="op2: ==",color=green4, style=filled]
+207 -> 208
+209 [label="ext_ident_word64_36",color=cyan4, style=filled]
+208 -> 209
+246 [label="const: 7",color=red1, style=filled]
+208 -> 246
+247 [label="const: 2036.9784000000002",color=red1, style=filled]
+207 -> 247
+248 [label="op3: mux",color=green4, style=filled]
+207 -> 248
+249 [label="op2: ==",color=green4, style=filled]
+248 -> 249
+250 [label="ext_ident_word64_37",color=cyan4, style=filled]
+249 -> 250
+287 [label="const: 8",color=red1, style=filled]
+249 -> 287
+288 [label="const: 2036.9784000000002",color=red1, style=filled]
+248 -> 288
+289 [label="const: 0.0",color=red1, style=filled]
+248 -> 289
 
 
 }
@@ -49,23 +91,39 @@ node [shape=box]
 DotEnd*/
 /*@
  assigns \nothing;
- ensures \result == ((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_position_x) - (ext_intruder_position_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_position_y) - (ext_intruder_position_y))))))));
+ ensures \result == ((( (((ext_ident_word64_31) == (2))) ? (0.0) : (( (((ext_ident_word64_32) == (3))) ? (370.332) : (( (((ext_ident_word64_33) == (4))) ? (648.0048) : (( (((ext_ident_word64_34) == (5))) ? (1018.6416) : (( (((ext_ident_word64_35) == (6))) ? (1481.6328) : (( (((ext_ident_word64_36) == (7))) ? (2036.9784000000002) : (( (((ext_ident_word64_37) == (8))) ? (2036.9784000000002) : (0.0))))))))))))))));
 */
-SDouble ext_ident_double_38_arg0(const SDouble ext_ownship_position_x,
-                                 const SDouble ext_intruder_position_x,
-                                 const SDouble ext_ownship_position_y,
-                                 const SDouble ext_intruder_position_y)
+SDouble ext_ident_double_38_arg0(const SWord64 ext_ident_word64_31,
+                                 const SDouble ext_ownship_position_z,
+                                 const SWord64 ext_ident_word64_32,
+                                 const SWord64 ext_ident_word64_33,
+                                 const SWord64 ext_ident_word64_34,
+                                 const SWord64 ext_ident_word64_35,
+                                 const SWord64 ext_ident_word64_36,
+                                 const SWord64 ext_ident_word64_37)
 {
-  const SDouble s0 = ext_ownship_position_x;
-  const SDouble s1 = ext_intruder_position_x;
-  const SDouble s2 = ext_ownship_position_y;
-  const SDouble s3 = ext_intruder_position_y;
-  const SDouble s4 = s0 - s1;
-  const SDouble s5 = s4 * s4;
-  const SDouble s6 = s2 - s3;
-  const SDouble s7 = s6 * s6;
-  const SDouble s8 = s5 + s7;
-  const SDouble s9 = s8 /* scalar2dim */;
+  const SWord64 s0 = ext_ident_word64_31;
+  const SWord64 s2 = ext_ident_word64_32;
+  const SWord64 s3 = ext_ident_word64_33;
+  const SWord64 s4 = ext_ident_word64_34;
+  const SWord64 s5 = ext_ident_word64_35;
+  const SWord64 s6 = ext_ident_word64_36;
+  const SWord64 s7 = ext_ident_word64_37;
+  const SBool   s9 = s0 == 0x0000000000000002ULL;
+  const SBool   s12 = s2 == 0x0000000000000003ULL;
+  const SBool   s15 = s3 == 0x0000000000000004ULL;
+  const SBool   s18 = s4 == 0x0000000000000005ULL;
+  const SBool   s21 = s5 == 0x0000000000000006ULL;
+  const SBool   s24 = s6 == 0x0000000000000007ULL;
+  const SBool   s27 = s7 == 0x0000000000000008ULL;
+  const SDouble s28 = s27 ? 2036.9784000000002 : 0.0;
+  const SDouble s29 = s24 ? 2036.9784000000002 : s28;
+  const SDouble s30 = s21 ? 1481.6328 : s29;
+  const SDouble s31 = s18 ? 1018.6416 : s30;
+  const SDouble s32 = s15 ? 648.0048 : s31;
+  const SDouble s33 = s12 ? 370.332 : s32;
+  const SDouble s34 = s9 ? 0.0 : s33;
+  const SDouble s35 = s34 /* hmdRA */;
 
-  return s9;
+  return s35;
 }
