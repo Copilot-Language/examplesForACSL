@@ -10,8 +10,6816 @@ node [shape=box]
 
 0 [label="file: 
 ?????",color=red, style=filled]
-1 [label="ext_ident_bool_1790",color=cyan4, style=filled]
+1 [label="label: ?tcasII_RA",color=plum, style=filled]
 0 -> 1
+2 [label="op2: &&",color=green4, style=filled]
+1 -> 2
+3 [label="label: ?cd2d_TCAS_after",color=plum, style=filled]
+2 -> 3
+4 [label="op2: ||",color=green4, style=filled]
+3 -> 4
+5 [label="op2: &&",color=green4, style=filled]
+4 -> 5
+6 [label="op2: ==",color=green4, style=filled]
+5 -> 6
+7 [label="label: ?normsq2dim",color=plum, style=filled]
+6 -> 7
+8 [label="label: ?scalar2dim",color=plum, style=filled]
+7 -> 8
+9 [label="op2: +",color=green4, style=filled]
+8 -> 9
+10 [label="op2: *",color=green4, style=filled]
+9 -> 10
+11 [label="op2: -",color=green4, style=filled]
+10 -> 11
+12 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+11 -> 12
+13 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+11 -> 13
+14 [label="op2: -",color=green4, style=filled]
+10 -> 14
+15 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+14 -> 15
+16 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+14 -> 16
+17 [label="op2: *",color=green4, style=filled]
+9 -> 17
+18 [label="op2: -",color=green4, style=filled]
+17 -> 18
+19 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+18 -> 19
+20 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+18 -> 20
+21 [label="op2: -",color=green4, style=filled]
+17 -> 21
+22 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+21 -> 22
+23 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+21 -> 23
+24 [label="const: 0.0",color=red1, style=filled]
+6 -> 24
+25 [label="op2: <=",color=green4, style=filled]
+5 -> 25
+26 [label="label: ?normsq2dim",color=plum, style=filled]
+25 -> 26
+27 [label="label: ?scalar2dim",color=plum, style=filled]
+26 -> 27
+28 [label="op2: +",color=green4, style=filled]
+27 -> 28
+29 [label="op2: *",color=green4, style=filled]
+28 -> 29
+30 [label="op2: -",color=green4, style=filled]
+29 -> 30
+31 [label="ext_ownship_position_x",color=cyan1, style=filled]
+30 -> 31
+32 [label="ext_intruder_position_x",color=cyan1, style=filled]
+30 -> 32
+33 [label="op2: -",color=green4, style=filled]
+29 -> 33
+34 [label="ext_ownship_position_x",color=cyan1, style=filled]
+33 -> 34
+35 [label="ext_intruder_position_x",color=cyan1, style=filled]
+33 -> 35
+36 [label="op2: *",color=green4, style=filled]
+28 -> 36
+37 [label="op2: -",color=green4, style=filled]
+36 -> 37
+38 [label="ext_ownship_position_y",color=cyan1, style=filled]
+37 -> 38
+39 [label="ext_intruder_position_y",color=cyan1, style=filled]
+37 -> 39
+40 [label="op2: -",color=green4, style=filled]
+36 -> 40
+41 [label="ext_ownship_position_y",color=cyan1, style=filled]
+40 -> 41
+42 [label="ext_intruder_position_y",color=cyan1, style=filled]
+40 -> 42
+43 [label="label: ?sq",color=plum, style=filled]
+25 -> 43
+44 [label="op2: *",color=green4, style=filled]
+43 -> 44
+45 [label="label: ?hmdRA",color=plum, style=filled]
+44 -> 45
+46 [label="op3: mux",color=green4, style=filled]
+45 -> 46
+47 [label="op2: ==",color=green4, style=filled]
+46 -> 47
+48 [label="label: ?sensitivityLevel",color=plum, style=filled]
+47 -> 48
+49 [label="op3: mux",color=green4, style=filled]
+48 -> 49
+50 [label="op2: &&",color=green4, style=filled]
+49 -> 50
+51 [label="op2: <=",color=green4, style=filled]
+50 -> 51
+52 [label="const: 0.0",color=red1, style=filled]
+51 -> 52
+53 [label="ext_ownship_position_z",color=cyan1, style=filled]
+51 -> 53
+54 [label="op2: <",color=green4, style=filled]
+50 -> 54
+55 [label="ext_ownship_position_z",color=cyan1, style=filled]
+54 -> 55
+56 [label="const: 1000.0",color=red1, style=filled]
+54 -> 56
+57 [label="const: 2",color=red1, style=filled]
+49 -> 57
+58 [label="op3: mux",color=green4, style=filled]
+49 -> 58
+59 [label="op2: <",color=green4, style=filled]
+58 -> 59
+60 [label="ext_ownship_position_z",color=cyan1, style=filled]
+59 -> 60
+61 [label="const: 2350.0",color=red1, style=filled]
+59 -> 61
+62 [label="const: 3",color=red1, style=filled]
+58 -> 62
+63 [label="op3: mux",color=green4, style=filled]
+58 -> 63
+64 [label="op2: <",color=green4, style=filled]
+63 -> 64
+65 [label="ext_ownship_position_z",color=cyan1, style=filled]
+64 -> 65
+66 [label="const: 5000.0",color=red1, style=filled]
+64 -> 66
+67 [label="const: 4",color=red1, style=filled]
+63 -> 67
+68 [label="op3: mux",color=green4, style=filled]
+63 -> 68
+69 [label="op2: <",color=green4, style=filled]
+68 -> 69
+70 [label="ext_ownship_position_z",color=cyan1, style=filled]
+69 -> 70
+71 [label="const: 10000.0",color=red1, style=filled]
+69 -> 71
+72 [label="const: 5",color=red1, style=filled]
+68 -> 72
+73 [label="op3: mux",color=green4, style=filled]
+68 -> 73
+74 [label="op2: <",color=green4, style=filled]
+73 -> 74
+75 [label="ext_ownship_position_z",color=cyan1, style=filled]
+74 -> 75
+76 [label="const: 20000.0",color=red1, style=filled]
+74 -> 76
+77 [label="const: 6",color=red1, style=filled]
+73 -> 77
+78 [label="op3: mux",color=green4, style=filled]
+73 -> 78
+79 [label="op2: <",color=green4, style=filled]
+78 -> 79
+80 [label="ext_ownship_position_z",color=cyan1, style=filled]
+79 -> 80
+81 [label="const: 42000.0",color=red1, style=filled]
+79 -> 81
+82 [label="const: 7",color=red1, style=filled]
+78 -> 82
+83 [label="const: 8",color=red1, style=filled]
+78 -> 83
+84 [label="const: 2",color=red1, style=filled]
+47 -> 84
+85 [label="const: 0.0",color=red1, style=filled]
+46 -> 85
+86 [label="op3: mux",color=green4, style=filled]
+46 -> 86
+87 [label="op2: ==",color=green4, style=filled]
+86 -> 87
+88 [label="label: ?sensitivityLevel",color=plum, style=filled]
+87 -> 88
+89 [label="op3: mux",color=green4, style=filled]
+88 -> 89
+90 [label="op2: &&",color=green4, style=filled]
+89 -> 90
+91 [label="op2: <=",color=green4, style=filled]
+90 -> 91
+92 [label="const: 0.0",color=red1, style=filled]
+91 -> 92
+93 [label="ext_ownship_position_z",color=cyan1, style=filled]
+91 -> 93
+94 [label="op2: <",color=green4, style=filled]
+90 -> 94
+95 [label="ext_ownship_position_z",color=cyan1, style=filled]
+94 -> 95
+96 [label="const: 1000.0",color=red1, style=filled]
+94 -> 96
+97 [label="const: 2",color=red1, style=filled]
+89 -> 97
+98 [label="op3: mux",color=green4, style=filled]
+89 -> 98
+99 [label="op2: <",color=green4, style=filled]
+98 -> 99
+100 [label="ext_ownship_position_z",color=cyan1, style=filled]
+99 -> 100
+101 [label="const: 2350.0",color=red1, style=filled]
+99 -> 101
+102 [label="const: 3",color=red1, style=filled]
+98 -> 102
+103 [label="op3: mux",color=green4, style=filled]
+98 -> 103
+104 [label="op2: <",color=green4, style=filled]
+103 -> 104
+105 [label="ext_ownship_position_z",color=cyan1, style=filled]
+104 -> 105
+106 [label="const: 5000.0",color=red1, style=filled]
+104 -> 106
+107 [label="const: 4",color=red1, style=filled]
+103 -> 107
+108 [label="op3: mux",color=green4, style=filled]
+103 -> 108
+109 [label="op2: <",color=green4, style=filled]
+108 -> 109
+110 [label="ext_ownship_position_z",color=cyan1, style=filled]
+109 -> 110
+111 [label="const: 10000.0",color=red1, style=filled]
+109 -> 111
+112 [label="const: 5",color=red1, style=filled]
+108 -> 112
+113 [label="op3: mux",color=green4, style=filled]
+108 -> 113
+114 [label="op2: <",color=green4, style=filled]
+113 -> 114
+115 [label="ext_ownship_position_z",color=cyan1, style=filled]
+114 -> 115
+116 [label="const: 20000.0",color=red1, style=filled]
+114 -> 116
+117 [label="const: 6",color=red1, style=filled]
+113 -> 117
+118 [label="op3: mux",color=green4, style=filled]
+113 -> 118
+119 [label="op2: <",color=green4, style=filled]
+118 -> 119
+120 [label="ext_ownship_position_z",color=cyan1, style=filled]
+119 -> 120
+121 [label="const: 42000.0",color=red1, style=filled]
+119 -> 121
+122 [label="const: 7",color=red1, style=filled]
+118 -> 122
+123 [label="const: 8",color=red1, style=filled]
+118 -> 123
+124 [label="const: 3",color=red1, style=filled]
+87 -> 124
+125 [label="const: 370.332",color=red1, style=filled]
+86 -> 125
+126 [label="op3: mux",color=green4, style=filled]
+86 -> 126
+127 [label="op2: ==",color=green4, style=filled]
+126 -> 127
+128 [label="label: ?sensitivityLevel",color=plum, style=filled]
+127 -> 128
+129 [label="op3: mux",color=green4, style=filled]
+128 -> 129
+130 [label="op2: &&",color=green4, style=filled]
+129 -> 130
+131 [label="op2: <=",color=green4, style=filled]
+130 -> 131
+132 [label="const: 0.0",color=red1, style=filled]
+131 -> 132
+133 [label="ext_ownship_position_z",color=cyan1, style=filled]
+131 -> 133
+134 [label="op2: <",color=green4, style=filled]
+130 -> 134
+135 [label="ext_ownship_position_z",color=cyan1, style=filled]
+134 -> 135
+136 [label="const: 1000.0",color=red1, style=filled]
+134 -> 136
+137 [label="const: 2",color=red1, style=filled]
+129 -> 137
+138 [label="op3: mux",color=green4, style=filled]
+129 -> 138
+139 [label="op2: <",color=green4, style=filled]
+138 -> 139
+140 [label="ext_ownship_position_z",color=cyan1, style=filled]
+139 -> 140
+141 [label="const: 2350.0",color=red1, style=filled]
+139 -> 141
+142 [label="const: 3",color=red1, style=filled]
+138 -> 142
+143 [label="op3: mux",color=green4, style=filled]
+138 -> 143
+144 [label="op2: <",color=green4, style=filled]
+143 -> 144
+145 [label="ext_ownship_position_z",color=cyan1, style=filled]
+144 -> 145
+146 [label="const: 5000.0",color=red1, style=filled]
+144 -> 146
+147 [label="const: 4",color=red1, style=filled]
+143 -> 147
+148 [label="op3: mux",color=green4, style=filled]
+143 -> 148
+149 [label="op2: <",color=green4, style=filled]
+148 -> 149
+150 [label="ext_ownship_position_z",color=cyan1, style=filled]
+149 -> 150
+151 [label="const: 10000.0",color=red1, style=filled]
+149 -> 151
+152 [label="const: 5",color=red1, style=filled]
+148 -> 152
+153 [label="op3: mux",color=green4, style=filled]
+148 -> 153
+154 [label="op2: <",color=green4, style=filled]
+153 -> 154
+155 [label="ext_ownship_position_z",color=cyan1, style=filled]
+154 -> 155
+156 [label="const: 20000.0",color=red1, style=filled]
+154 -> 156
+157 [label="const: 6",color=red1, style=filled]
+153 -> 157
+158 [label="op3: mux",color=green4, style=filled]
+153 -> 158
+159 [label="op2: <",color=green4, style=filled]
+158 -> 159
+160 [label="ext_ownship_position_z",color=cyan1, style=filled]
+159 -> 160
+161 [label="const: 42000.0",color=red1, style=filled]
+159 -> 161
+162 [label="const: 7",color=red1, style=filled]
+158 -> 162
+163 [label="const: 8",color=red1, style=filled]
+158 -> 163
+164 [label="const: 4",color=red1, style=filled]
+127 -> 164
+165 [label="const: 648.0048",color=red1, style=filled]
+126 -> 165
+166 [label="op3: mux",color=green4, style=filled]
+126 -> 166
+167 [label="op2: ==",color=green4, style=filled]
+166 -> 167
+168 [label="label: ?sensitivityLevel",color=plum, style=filled]
+167 -> 168
+169 [label="op3: mux",color=green4, style=filled]
+168 -> 169
+170 [label="op2: &&",color=green4, style=filled]
+169 -> 170
+171 [label="op2: <=",color=green4, style=filled]
+170 -> 171
+172 [label="const: 0.0",color=red1, style=filled]
+171 -> 172
+173 [label="ext_ownship_position_z",color=cyan1, style=filled]
+171 -> 173
+174 [label="op2: <",color=green4, style=filled]
+170 -> 174
+175 [label="ext_ownship_position_z",color=cyan1, style=filled]
+174 -> 175
+176 [label="const: 1000.0",color=red1, style=filled]
+174 -> 176
+177 [label="const: 2",color=red1, style=filled]
+169 -> 177
+178 [label="op3: mux",color=green4, style=filled]
+169 -> 178
+179 [label="op2: <",color=green4, style=filled]
+178 -> 179
+180 [label="ext_ownship_position_z",color=cyan1, style=filled]
+179 -> 180
+181 [label="const: 2350.0",color=red1, style=filled]
+179 -> 181
+182 [label="const: 3",color=red1, style=filled]
+178 -> 182
+183 [label="op3: mux",color=green4, style=filled]
+178 -> 183
+184 [label="op2: <",color=green4, style=filled]
+183 -> 184
+185 [label="ext_ownship_position_z",color=cyan1, style=filled]
+184 -> 185
+186 [label="const: 5000.0",color=red1, style=filled]
+184 -> 186
+187 [label="const: 4",color=red1, style=filled]
+183 -> 187
+188 [label="op3: mux",color=green4, style=filled]
+183 -> 188
+189 [label="op2: <",color=green4, style=filled]
+188 -> 189
+190 [label="ext_ownship_position_z",color=cyan1, style=filled]
+189 -> 190
+191 [label="const: 10000.0",color=red1, style=filled]
+189 -> 191
+192 [label="const: 5",color=red1, style=filled]
+188 -> 192
+193 [label="op3: mux",color=green4, style=filled]
+188 -> 193
+194 [label="op2: <",color=green4, style=filled]
+193 -> 194
+195 [label="ext_ownship_position_z",color=cyan1, style=filled]
+194 -> 195
+196 [label="const: 20000.0",color=red1, style=filled]
+194 -> 196
+197 [label="const: 6",color=red1, style=filled]
+193 -> 197
+198 [label="op3: mux",color=green4, style=filled]
+193 -> 198
+199 [label="op2: <",color=green4, style=filled]
+198 -> 199
+200 [label="ext_ownship_position_z",color=cyan1, style=filled]
+199 -> 200
+201 [label="const: 42000.0",color=red1, style=filled]
+199 -> 201
+202 [label="const: 7",color=red1, style=filled]
+198 -> 202
+203 [label="const: 8",color=red1, style=filled]
+198 -> 203
+204 [label="const: 5",color=red1, style=filled]
+167 -> 204
+205 [label="const: 1018.6416",color=red1, style=filled]
+166 -> 205
+206 [label="op3: mux",color=green4, style=filled]
+166 -> 206
+207 [label="op2: ==",color=green4, style=filled]
+206 -> 207
+208 [label="label: ?sensitivityLevel",color=plum, style=filled]
+207 -> 208
+209 [label="op3: mux",color=green4, style=filled]
+208 -> 209
+210 [label="op2: &&",color=green4, style=filled]
+209 -> 210
+211 [label="op2: <=",color=green4, style=filled]
+210 -> 211
+212 [label="const: 0.0",color=red1, style=filled]
+211 -> 212
+213 [label="ext_ownship_position_z",color=cyan1, style=filled]
+211 -> 213
+214 [label="op2: <",color=green4, style=filled]
+210 -> 214
+215 [label="ext_ownship_position_z",color=cyan1, style=filled]
+214 -> 215
+216 [label="const: 1000.0",color=red1, style=filled]
+214 -> 216
+217 [label="const: 2",color=red1, style=filled]
+209 -> 217
+218 [label="op3: mux",color=green4, style=filled]
+209 -> 218
+219 [label="op2: <",color=green4, style=filled]
+218 -> 219
+220 [label="ext_ownship_position_z",color=cyan1, style=filled]
+219 -> 220
+221 [label="const: 2350.0",color=red1, style=filled]
+219 -> 221
+222 [label="const: 3",color=red1, style=filled]
+218 -> 222
+223 [label="op3: mux",color=green4, style=filled]
+218 -> 223
+224 [label="op2: <",color=green4, style=filled]
+223 -> 224
+225 [label="ext_ownship_position_z",color=cyan1, style=filled]
+224 -> 225
+226 [label="const: 5000.0",color=red1, style=filled]
+224 -> 226
+227 [label="const: 4",color=red1, style=filled]
+223 -> 227
+228 [label="op3: mux",color=green4, style=filled]
+223 -> 228
+229 [label="op2: <",color=green4, style=filled]
+228 -> 229
+230 [label="ext_ownship_position_z",color=cyan1, style=filled]
+229 -> 230
+231 [label="const: 10000.0",color=red1, style=filled]
+229 -> 231
+232 [label="const: 5",color=red1, style=filled]
+228 -> 232
+233 [label="op3: mux",color=green4, style=filled]
+228 -> 233
+234 [label="op2: <",color=green4, style=filled]
+233 -> 234
+235 [label="ext_ownship_position_z",color=cyan1, style=filled]
+234 -> 235
+236 [label="const: 20000.0",color=red1, style=filled]
+234 -> 236
+237 [label="const: 6",color=red1, style=filled]
+233 -> 237
+238 [label="op3: mux",color=green4, style=filled]
+233 -> 238
+239 [label="op2: <",color=green4, style=filled]
+238 -> 239
+240 [label="ext_ownship_position_z",color=cyan1, style=filled]
+239 -> 240
+241 [label="const: 42000.0",color=red1, style=filled]
+239 -> 241
+242 [label="const: 7",color=red1, style=filled]
+238 -> 242
+243 [label="const: 8",color=red1, style=filled]
+238 -> 243
+244 [label="const: 6",color=red1, style=filled]
+207 -> 244
+245 [label="const: 1481.6328",color=red1, style=filled]
+206 -> 245
+246 [label="op3: mux",color=green4, style=filled]
+206 -> 246
+247 [label="op2: ==",color=green4, style=filled]
+246 -> 247
+248 [label="label: ?sensitivityLevel",color=plum, style=filled]
+247 -> 248
+249 [label="op3: mux",color=green4, style=filled]
+248 -> 249
+250 [label="op2: &&",color=green4, style=filled]
+249 -> 250
+251 [label="op2: <=",color=green4, style=filled]
+250 -> 251
+252 [label="const: 0.0",color=red1, style=filled]
+251 -> 252
+253 [label="ext_ownship_position_z",color=cyan1, style=filled]
+251 -> 253
+254 [label="op2: <",color=green4, style=filled]
+250 -> 254
+255 [label="ext_ownship_position_z",color=cyan1, style=filled]
+254 -> 255
+256 [label="const: 1000.0",color=red1, style=filled]
+254 -> 256
+257 [label="const: 2",color=red1, style=filled]
+249 -> 257
+258 [label="op3: mux",color=green4, style=filled]
+249 -> 258
+259 [label="op2: <",color=green4, style=filled]
+258 -> 259
+260 [label="ext_ownship_position_z",color=cyan1, style=filled]
+259 -> 260
+261 [label="const: 2350.0",color=red1, style=filled]
+259 -> 261
+262 [label="const: 3",color=red1, style=filled]
+258 -> 262
+263 [label="op3: mux",color=green4, style=filled]
+258 -> 263
+264 [label="op2: <",color=green4, style=filled]
+263 -> 264
+265 [label="ext_ownship_position_z",color=cyan1, style=filled]
+264 -> 265
+266 [label="const: 5000.0",color=red1, style=filled]
+264 -> 266
+267 [label="const: 4",color=red1, style=filled]
+263 -> 267
+268 [label="op3: mux",color=green4, style=filled]
+263 -> 268
+269 [label="op2: <",color=green4, style=filled]
+268 -> 269
+270 [label="ext_ownship_position_z",color=cyan1, style=filled]
+269 -> 270
+271 [label="const: 10000.0",color=red1, style=filled]
+269 -> 271
+272 [label="const: 5",color=red1, style=filled]
+268 -> 272
+273 [label="op3: mux",color=green4, style=filled]
+268 -> 273
+274 [label="op2: <",color=green4, style=filled]
+273 -> 274
+275 [label="ext_ownship_position_z",color=cyan1, style=filled]
+274 -> 275
+276 [label="const: 20000.0",color=red1, style=filled]
+274 -> 276
+277 [label="const: 6",color=red1, style=filled]
+273 -> 277
+278 [label="op3: mux",color=green4, style=filled]
+273 -> 278
+279 [label="op2: <",color=green4, style=filled]
+278 -> 279
+280 [label="ext_ownship_position_z",color=cyan1, style=filled]
+279 -> 280
+281 [label="const: 42000.0",color=red1, style=filled]
+279 -> 281
+282 [label="const: 7",color=red1, style=filled]
+278 -> 282
+283 [label="const: 8",color=red1, style=filled]
+278 -> 283
+284 [label="const: 7",color=red1, style=filled]
+247 -> 284
+285 [label="const: 2036.9784000000002",color=red1, style=filled]
+246 -> 285
+286 [label="op3: mux",color=green4, style=filled]
+246 -> 286
+287 [label="op2: ==",color=green4, style=filled]
+286 -> 287
+288 [label="label: ?sensitivityLevel",color=plum, style=filled]
+287 -> 288
+289 [label="op3: mux",color=green4, style=filled]
+288 -> 289
+290 [label="op2: &&",color=green4, style=filled]
+289 -> 290
+291 [label="op2: <=",color=green4, style=filled]
+290 -> 291
+292 [label="const: 0.0",color=red1, style=filled]
+291 -> 292
+293 [label="ext_ownship_position_z",color=cyan1, style=filled]
+291 -> 293
+294 [label="op2: <",color=green4, style=filled]
+290 -> 294
+295 [label="ext_ownship_position_z",color=cyan1, style=filled]
+294 -> 295
+296 [label="const: 1000.0",color=red1, style=filled]
+294 -> 296
+297 [label="const: 2",color=red1, style=filled]
+289 -> 297
+298 [label="op3: mux",color=green4, style=filled]
+289 -> 298
+299 [label="op2: <",color=green4, style=filled]
+298 -> 299
+300 [label="ext_ownship_position_z",color=cyan1, style=filled]
+299 -> 300
+301 [label="const: 2350.0",color=red1, style=filled]
+299 -> 301
+302 [label="const: 3",color=red1, style=filled]
+298 -> 302
+303 [label="op3: mux",color=green4, style=filled]
+298 -> 303
+304 [label="op2: <",color=green4, style=filled]
+303 -> 304
+305 [label="ext_ownship_position_z",color=cyan1, style=filled]
+304 -> 305
+306 [label="const: 5000.0",color=red1, style=filled]
+304 -> 306
+307 [label="const: 4",color=red1, style=filled]
+303 -> 307
+308 [label="op3: mux",color=green4, style=filled]
+303 -> 308
+309 [label="op2: <",color=green4, style=filled]
+308 -> 309
+310 [label="ext_ownship_position_z",color=cyan1, style=filled]
+309 -> 310
+311 [label="const: 10000.0",color=red1, style=filled]
+309 -> 311
+312 [label="const: 5",color=red1, style=filled]
+308 -> 312
+313 [label="op3: mux",color=green4, style=filled]
+308 -> 313
+314 [label="op2: <",color=green4, style=filled]
+313 -> 314
+315 [label="ext_ownship_position_z",color=cyan1, style=filled]
+314 -> 315
+316 [label="const: 20000.0",color=red1, style=filled]
+314 -> 316
+317 [label="const: 6",color=red1, style=filled]
+313 -> 317
+318 [label="op3: mux",color=green4, style=filled]
+313 -> 318
+319 [label="op2: <",color=green4, style=filled]
+318 -> 319
+320 [label="ext_ownship_position_z",color=cyan1, style=filled]
+319 -> 320
+321 [label="const: 42000.0",color=red1, style=filled]
+319 -> 321
+322 [label="const: 7",color=red1, style=filled]
+318 -> 322
+323 [label="const: 8",color=red1, style=filled]
+318 -> 323
+324 [label="const: 8",color=red1, style=filled]
+287 -> 324
+325 [label="const: 2036.9784000000002",color=red1, style=filled]
+286 -> 325
+326 [label="const: 0.0",color=red1, style=filled]
+286 -> 326
+327 [label="label: ?hmdRA",color=plum, style=filled]
+44 -> 327
+328 [label="op3: mux",color=green4, style=filled]
+327 -> 328
+329 [label="op2: ==",color=green4, style=filled]
+328 -> 329
+330 [label="label: ?sensitivityLevel",color=plum, style=filled]
+329 -> 330
+331 [label="op3: mux",color=green4, style=filled]
+330 -> 331
+332 [label="op2: &&",color=green4, style=filled]
+331 -> 332
+333 [label="op2: <=",color=green4, style=filled]
+332 -> 333
+334 [label="const: 0.0",color=red1, style=filled]
+333 -> 334
+335 [label="ext_ownship_position_z",color=cyan1, style=filled]
+333 -> 335
+336 [label="op2: <",color=green4, style=filled]
+332 -> 336
+337 [label="ext_ownship_position_z",color=cyan1, style=filled]
+336 -> 337
+338 [label="const: 1000.0",color=red1, style=filled]
+336 -> 338
+339 [label="const: 2",color=red1, style=filled]
+331 -> 339
+340 [label="op3: mux",color=green4, style=filled]
+331 -> 340
+341 [label="op2: <",color=green4, style=filled]
+340 -> 341
+342 [label="ext_ownship_position_z",color=cyan1, style=filled]
+341 -> 342
+343 [label="const: 2350.0",color=red1, style=filled]
+341 -> 343
+344 [label="const: 3",color=red1, style=filled]
+340 -> 344
+345 [label="op3: mux",color=green4, style=filled]
+340 -> 345
+346 [label="op2: <",color=green4, style=filled]
+345 -> 346
+347 [label="ext_ownship_position_z",color=cyan1, style=filled]
+346 -> 347
+348 [label="const: 5000.0",color=red1, style=filled]
+346 -> 348
+349 [label="const: 4",color=red1, style=filled]
+345 -> 349
+350 [label="op3: mux",color=green4, style=filled]
+345 -> 350
+351 [label="op2: <",color=green4, style=filled]
+350 -> 351
+352 [label="ext_ownship_position_z",color=cyan1, style=filled]
+351 -> 352
+353 [label="const: 10000.0",color=red1, style=filled]
+351 -> 353
+354 [label="const: 5",color=red1, style=filled]
+350 -> 354
+355 [label="op3: mux",color=green4, style=filled]
+350 -> 355
+356 [label="op2: <",color=green4, style=filled]
+355 -> 356
+357 [label="ext_ownship_position_z",color=cyan1, style=filled]
+356 -> 357
+358 [label="const: 20000.0",color=red1, style=filled]
+356 -> 358
+359 [label="const: 6",color=red1, style=filled]
+355 -> 359
+360 [label="op3: mux",color=green4, style=filled]
+355 -> 360
+361 [label="op2: <",color=green4, style=filled]
+360 -> 361
+362 [label="ext_ownship_position_z",color=cyan1, style=filled]
+361 -> 362
+363 [label="const: 42000.0",color=red1, style=filled]
+361 -> 363
+364 [label="const: 7",color=red1, style=filled]
+360 -> 364
+365 [label="const: 8",color=red1, style=filled]
+360 -> 365
+366 [label="const: 2",color=red1, style=filled]
+329 -> 366
+367 [label="const: 0.0",color=red1, style=filled]
+328 -> 367
+368 [label="op3: mux",color=green4, style=filled]
+328 -> 368
+369 [label="op2: ==",color=green4, style=filled]
+368 -> 369
+370 [label="label: ?sensitivityLevel",color=plum, style=filled]
+369 -> 370
+371 [label="op3: mux",color=green4, style=filled]
+370 -> 371
+372 [label="op2: &&",color=green4, style=filled]
+371 -> 372
+373 [label="op2: <=",color=green4, style=filled]
+372 -> 373
+374 [label="const: 0.0",color=red1, style=filled]
+373 -> 374
+375 [label="ext_ownship_position_z",color=cyan1, style=filled]
+373 -> 375
+376 [label="op2: <",color=green4, style=filled]
+372 -> 376
+377 [label="ext_ownship_position_z",color=cyan1, style=filled]
+376 -> 377
+378 [label="const: 1000.0",color=red1, style=filled]
+376 -> 378
+379 [label="const: 2",color=red1, style=filled]
+371 -> 379
+380 [label="op3: mux",color=green4, style=filled]
+371 -> 380
+381 [label="op2: <",color=green4, style=filled]
+380 -> 381
+382 [label="ext_ownship_position_z",color=cyan1, style=filled]
+381 -> 382
+383 [label="const: 2350.0",color=red1, style=filled]
+381 -> 383
+384 [label="const: 3",color=red1, style=filled]
+380 -> 384
+385 [label="op3: mux",color=green4, style=filled]
+380 -> 385
+386 [label="op2: <",color=green4, style=filled]
+385 -> 386
+387 [label="ext_ownship_position_z",color=cyan1, style=filled]
+386 -> 387
+388 [label="const: 5000.0",color=red1, style=filled]
+386 -> 388
+389 [label="const: 4",color=red1, style=filled]
+385 -> 389
+390 [label="op3: mux",color=green4, style=filled]
+385 -> 390
+391 [label="op2: <",color=green4, style=filled]
+390 -> 391
+392 [label="ext_ownship_position_z",color=cyan1, style=filled]
+391 -> 392
+393 [label="const: 10000.0",color=red1, style=filled]
+391 -> 393
+394 [label="const: 5",color=red1, style=filled]
+390 -> 394
+395 [label="op3: mux",color=green4, style=filled]
+390 -> 395
+396 [label="op2: <",color=green4, style=filled]
+395 -> 396
+397 [label="ext_ownship_position_z",color=cyan1, style=filled]
+396 -> 397
+398 [label="const: 20000.0",color=red1, style=filled]
+396 -> 398
+399 [label="const: 6",color=red1, style=filled]
+395 -> 399
+400 [label="op3: mux",color=green4, style=filled]
+395 -> 400
+401 [label="op2: <",color=green4, style=filled]
+400 -> 401
+402 [label="ext_ownship_position_z",color=cyan1, style=filled]
+401 -> 402
+403 [label="const: 42000.0",color=red1, style=filled]
+401 -> 403
+404 [label="const: 7",color=red1, style=filled]
+400 -> 404
+405 [label="const: 8",color=red1, style=filled]
+400 -> 405
+406 [label="const: 3",color=red1, style=filled]
+369 -> 406
+407 [label="const: 370.332",color=red1, style=filled]
+368 -> 407
+408 [label="op3: mux",color=green4, style=filled]
+368 -> 408
+409 [label="op2: ==",color=green4, style=filled]
+408 -> 409
+410 [label="label: ?sensitivityLevel",color=plum, style=filled]
+409 -> 410
+411 [label="op3: mux",color=green4, style=filled]
+410 -> 411
+412 [label="op2: &&",color=green4, style=filled]
+411 -> 412
+413 [label="op2: <=",color=green4, style=filled]
+412 -> 413
+414 [label="const: 0.0",color=red1, style=filled]
+413 -> 414
+415 [label="ext_ownship_position_z",color=cyan1, style=filled]
+413 -> 415
+416 [label="op2: <",color=green4, style=filled]
+412 -> 416
+417 [label="ext_ownship_position_z",color=cyan1, style=filled]
+416 -> 417
+418 [label="const: 1000.0",color=red1, style=filled]
+416 -> 418
+419 [label="const: 2",color=red1, style=filled]
+411 -> 419
+420 [label="op3: mux",color=green4, style=filled]
+411 -> 420
+421 [label="op2: <",color=green4, style=filled]
+420 -> 421
+422 [label="ext_ownship_position_z",color=cyan1, style=filled]
+421 -> 422
+423 [label="const: 2350.0",color=red1, style=filled]
+421 -> 423
+424 [label="const: 3",color=red1, style=filled]
+420 -> 424
+425 [label="op3: mux",color=green4, style=filled]
+420 -> 425
+426 [label="op2: <",color=green4, style=filled]
+425 -> 426
+427 [label="ext_ownship_position_z",color=cyan1, style=filled]
+426 -> 427
+428 [label="const: 5000.0",color=red1, style=filled]
+426 -> 428
+429 [label="const: 4",color=red1, style=filled]
+425 -> 429
+430 [label="op3: mux",color=green4, style=filled]
+425 -> 430
+431 [label="op2: <",color=green4, style=filled]
+430 -> 431
+432 [label="ext_ownship_position_z",color=cyan1, style=filled]
+431 -> 432
+433 [label="const: 10000.0",color=red1, style=filled]
+431 -> 433
+434 [label="const: 5",color=red1, style=filled]
+430 -> 434
+435 [label="op3: mux",color=green4, style=filled]
+430 -> 435
+436 [label="op2: <",color=green4, style=filled]
+435 -> 436
+437 [label="ext_ownship_position_z",color=cyan1, style=filled]
+436 -> 437
+438 [label="const: 20000.0",color=red1, style=filled]
+436 -> 438
+439 [label="const: 6",color=red1, style=filled]
+435 -> 439
+440 [label="op3: mux",color=green4, style=filled]
+435 -> 440
+441 [label="op2: <",color=green4, style=filled]
+440 -> 441
+442 [label="ext_ownship_position_z",color=cyan1, style=filled]
+441 -> 442
+443 [label="const: 42000.0",color=red1, style=filled]
+441 -> 443
+444 [label="const: 7",color=red1, style=filled]
+440 -> 444
+445 [label="const: 8",color=red1, style=filled]
+440 -> 445
+446 [label="const: 4",color=red1, style=filled]
+409 -> 446
+447 [label="const: 648.0048",color=red1, style=filled]
+408 -> 447
+448 [label="op3: mux",color=green4, style=filled]
+408 -> 448
+449 [label="op2: ==",color=green4, style=filled]
+448 -> 449
+450 [label="label: ?sensitivityLevel",color=plum, style=filled]
+449 -> 450
+451 [label="op3: mux",color=green4, style=filled]
+450 -> 451
+452 [label="op2: &&",color=green4, style=filled]
+451 -> 452
+453 [label="op2: <=",color=green4, style=filled]
+452 -> 453
+454 [label="const: 0.0",color=red1, style=filled]
+453 -> 454
+455 [label="ext_ownship_position_z",color=cyan1, style=filled]
+453 -> 455
+456 [label="op2: <",color=green4, style=filled]
+452 -> 456
+457 [label="ext_ownship_position_z",color=cyan1, style=filled]
+456 -> 457
+458 [label="const: 1000.0",color=red1, style=filled]
+456 -> 458
+459 [label="const: 2",color=red1, style=filled]
+451 -> 459
+460 [label="op3: mux",color=green4, style=filled]
+451 -> 460
+461 [label="op2: <",color=green4, style=filled]
+460 -> 461
+462 [label="ext_ownship_position_z",color=cyan1, style=filled]
+461 -> 462
+463 [label="const: 2350.0",color=red1, style=filled]
+461 -> 463
+464 [label="const: 3",color=red1, style=filled]
+460 -> 464
+465 [label="op3: mux",color=green4, style=filled]
+460 -> 465
+466 [label="op2: <",color=green4, style=filled]
+465 -> 466
+467 [label="ext_ownship_position_z",color=cyan1, style=filled]
+466 -> 467
+468 [label="const: 5000.0",color=red1, style=filled]
+466 -> 468
+469 [label="const: 4",color=red1, style=filled]
+465 -> 469
+470 [label="op3: mux",color=green4, style=filled]
+465 -> 470
+471 [label="op2: <",color=green4, style=filled]
+470 -> 471
+472 [label="ext_ownship_position_z",color=cyan1, style=filled]
+471 -> 472
+473 [label="const: 10000.0",color=red1, style=filled]
+471 -> 473
+474 [label="const: 5",color=red1, style=filled]
+470 -> 474
+475 [label="op3: mux",color=green4, style=filled]
+470 -> 475
+476 [label="op2: <",color=green4, style=filled]
+475 -> 476
+477 [label="ext_ownship_position_z",color=cyan1, style=filled]
+476 -> 477
+478 [label="const: 20000.0",color=red1, style=filled]
+476 -> 478
+479 [label="const: 6",color=red1, style=filled]
+475 -> 479
+480 [label="op3: mux",color=green4, style=filled]
+475 -> 480
+481 [label="op2: <",color=green4, style=filled]
+480 -> 481
+482 [label="ext_ownship_position_z",color=cyan1, style=filled]
+481 -> 482
+483 [label="const: 42000.0",color=red1, style=filled]
+481 -> 483
+484 [label="const: 7",color=red1, style=filled]
+480 -> 484
+485 [label="const: 8",color=red1, style=filled]
+480 -> 485
+486 [label="const: 5",color=red1, style=filled]
+449 -> 486
+487 [label="const: 1018.6416",color=red1, style=filled]
+448 -> 487
+488 [label="op3: mux",color=green4, style=filled]
+448 -> 488
+489 [label="op2: ==",color=green4, style=filled]
+488 -> 489
+490 [label="label: ?sensitivityLevel",color=plum, style=filled]
+489 -> 490
+491 [label="op3: mux",color=green4, style=filled]
+490 -> 491
+492 [label="op2: &&",color=green4, style=filled]
+491 -> 492
+493 [label="op2: <=",color=green4, style=filled]
+492 -> 493
+494 [label="const: 0.0",color=red1, style=filled]
+493 -> 494
+495 [label="ext_ownship_position_z",color=cyan1, style=filled]
+493 -> 495
+496 [label="op2: <",color=green4, style=filled]
+492 -> 496
+497 [label="ext_ownship_position_z",color=cyan1, style=filled]
+496 -> 497
+498 [label="const: 1000.0",color=red1, style=filled]
+496 -> 498
+499 [label="const: 2",color=red1, style=filled]
+491 -> 499
+500 [label="op3: mux",color=green4, style=filled]
+491 -> 500
+501 [label="op2: <",color=green4, style=filled]
+500 -> 501
+502 [label="ext_ownship_position_z",color=cyan1, style=filled]
+501 -> 502
+503 [label="const: 2350.0",color=red1, style=filled]
+501 -> 503
+504 [label="const: 3",color=red1, style=filled]
+500 -> 504
+505 [label="op3: mux",color=green4, style=filled]
+500 -> 505
+506 [label="op2: <",color=green4, style=filled]
+505 -> 506
+507 [label="ext_ownship_position_z",color=cyan1, style=filled]
+506 -> 507
+508 [label="const: 5000.0",color=red1, style=filled]
+506 -> 508
+509 [label="const: 4",color=red1, style=filled]
+505 -> 509
+510 [label="op3: mux",color=green4, style=filled]
+505 -> 510
+511 [label="op2: <",color=green4, style=filled]
+510 -> 511
+512 [label="ext_ownship_position_z",color=cyan1, style=filled]
+511 -> 512
+513 [label="const: 10000.0",color=red1, style=filled]
+511 -> 513
+514 [label="const: 5",color=red1, style=filled]
+510 -> 514
+515 [label="op3: mux",color=green4, style=filled]
+510 -> 515
+516 [label="op2: <",color=green4, style=filled]
+515 -> 516
+517 [label="ext_ownship_position_z",color=cyan1, style=filled]
+516 -> 517
+518 [label="const: 20000.0",color=red1, style=filled]
+516 -> 518
+519 [label="const: 6",color=red1, style=filled]
+515 -> 519
+520 [label="op3: mux",color=green4, style=filled]
+515 -> 520
+521 [label="op2: <",color=green4, style=filled]
+520 -> 521
+522 [label="ext_ownship_position_z",color=cyan1, style=filled]
+521 -> 522
+523 [label="const: 42000.0",color=red1, style=filled]
+521 -> 523
+524 [label="const: 7",color=red1, style=filled]
+520 -> 524
+525 [label="const: 8",color=red1, style=filled]
+520 -> 525
+526 [label="const: 6",color=red1, style=filled]
+489 -> 526
+527 [label="const: 1481.6328",color=red1, style=filled]
+488 -> 527
+528 [label="op3: mux",color=green4, style=filled]
+488 -> 528
+529 [label="op2: ==",color=green4, style=filled]
+528 -> 529
+530 [label="label: ?sensitivityLevel",color=plum, style=filled]
+529 -> 530
+531 [label="op3: mux",color=green4, style=filled]
+530 -> 531
+532 [label="op2: &&",color=green4, style=filled]
+531 -> 532
+533 [label="op2: <=",color=green4, style=filled]
+532 -> 533
+534 [label="const: 0.0",color=red1, style=filled]
+533 -> 534
+535 [label="ext_ownship_position_z",color=cyan1, style=filled]
+533 -> 535
+536 [label="op2: <",color=green4, style=filled]
+532 -> 536
+537 [label="ext_ownship_position_z",color=cyan1, style=filled]
+536 -> 537
+538 [label="const: 1000.0",color=red1, style=filled]
+536 -> 538
+539 [label="const: 2",color=red1, style=filled]
+531 -> 539
+540 [label="op3: mux",color=green4, style=filled]
+531 -> 540
+541 [label="op2: <",color=green4, style=filled]
+540 -> 541
+542 [label="ext_ownship_position_z",color=cyan1, style=filled]
+541 -> 542
+543 [label="const: 2350.0",color=red1, style=filled]
+541 -> 543
+544 [label="const: 3",color=red1, style=filled]
+540 -> 544
+545 [label="op3: mux",color=green4, style=filled]
+540 -> 545
+546 [label="op2: <",color=green4, style=filled]
+545 -> 546
+547 [label="ext_ownship_position_z",color=cyan1, style=filled]
+546 -> 547
+548 [label="const: 5000.0",color=red1, style=filled]
+546 -> 548
+549 [label="const: 4",color=red1, style=filled]
+545 -> 549
+550 [label="op3: mux",color=green4, style=filled]
+545 -> 550
+551 [label="op2: <",color=green4, style=filled]
+550 -> 551
+552 [label="ext_ownship_position_z",color=cyan1, style=filled]
+551 -> 552
+553 [label="const: 10000.0",color=red1, style=filled]
+551 -> 553
+554 [label="const: 5",color=red1, style=filled]
+550 -> 554
+555 [label="op3: mux",color=green4, style=filled]
+550 -> 555
+556 [label="op2: <",color=green4, style=filled]
+555 -> 556
+557 [label="ext_ownship_position_z",color=cyan1, style=filled]
+556 -> 557
+558 [label="const: 20000.0",color=red1, style=filled]
+556 -> 558
+559 [label="const: 6",color=red1, style=filled]
+555 -> 559
+560 [label="op3: mux",color=green4, style=filled]
+555 -> 560
+561 [label="op2: <",color=green4, style=filled]
+560 -> 561
+562 [label="ext_ownship_position_z",color=cyan1, style=filled]
+561 -> 562
+563 [label="const: 42000.0",color=red1, style=filled]
+561 -> 563
+564 [label="const: 7",color=red1, style=filled]
+560 -> 564
+565 [label="const: 8",color=red1, style=filled]
+560 -> 565
+566 [label="const: 7",color=red1, style=filled]
+529 -> 566
+567 [label="const: 2036.9784000000002",color=red1, style=filled]
+528 -> 567
+568 [label="op3: mux",color=green4, style=filled]
+528 -> 568
+569 [label="op2: ==",color=green4, style=filled]
+568 -> 569
+570 [label="label: ?sensitivityLevel",color=plum, style=filled]
+569 -> 570
+571 [label="op3: mux",color=green4, style=filled]
+570 -> 571
+572 [label="op2: &&",color=green4, style=filled]
+571 -> 572
+573 [label="op2: <=",color=green4, style=filled]
+572 -> 573
+574 [label="const: 0.0",color=red1, style=filled]
+573 -> 574
+575 [label="ext_ownship_position_z",color=cyan1, style=filled]
+573 -> 575
+576 [label="op2: <",color=green4, style=filled]
+572 -> 576
+577 [label="ext_ownship_position_z",color=cyan1, style=filled]
+576 -> 577
+578 [label="const: 1000.0",color=red1, style=filled]
+576 -> 578
+579 [label="const: 2",color=red1, style=filled]
+571 -> 579
+580 [label="op3: mux",color=green4, style=filled]
+571 -> 580
+581 [label="op2: <",color=green4, style=filled]
+580 -> 581
+582 [label="ext_ownship_position_z",color=cyan1, style=filled]
+581 -> 582
+583 [label="const: 2350.0",color=red1, style=filled]
+581 -> 583
+584 [label="const: 3",color=red1, style=filled]
+580 -> 584
+585 [label="op3: mux",color=green4, style=filled]
+580 -> 585
+586 [label="op2: <",color=green4, style=filled]
+585 -> 586
+587 [label="ext_ownship_position_z",color=cyan1, style=filled]
+586 -> 587
+588 [label="const: 5000.0",color=red1, style=filled]
+586 -> 588
+589 [label="const: 4",color=red1, style=filled]
+585 -> 589
+590 [label="op3: mux",color=green4, style=filled]
+585 -> 590
+591 [label="op2: <",color=green4, style=filled]
+590 -> 591
+592 [label="ext_ownship_position_z",color=cyan1, style=filled]
+591 -> 592
+593 [label="const: 10000.0",color=red1, style=filled]
+591 -> 593
+594 [label="const: 5",color=red1, style=filled]
+590 -> 594
+595 [label="op3: mux",color=green4, style=filled]
+590 -> 595
+596 [label="op2: <",color=green4, style=filled]
+595 -> 596
+597 [label="ext_ownship_position_z",color=cyan1, style=filled]
+596 -> 597
+598 [label="const: 20000.0",color=red1, style=filled]
+596 -> 598
+599 [label="const: 6",color=red1, style=filled]
+595 -> 599
+600 [label="op3: mux",color=green4, style=filled]
+595 -> 600
+601 [label="op2: <",color=green4, style=filled]
+600 -> 601
+602 [label="ext_ownship_position_z",color=cyan1, style=filled]
+601 -> 602
+603 [label="const: 42000.0",color=red1, style=filled]
+601 -> 603
+604 [label="const: 7",color=red1, style=filled]
+600 -> 604
+605 [label="const: 8",color=red1, style=filled]
+600 -> 605
+606 [label="const: 8",color=red1, style=filled]
+569 -> 606
+607 [label="const: 2036.9784000000002",color=red1, style=filled]
+568 -> 607
+608 [label="const: 0.0",color=red1, style=filled]
+568 -> 608
+609 [label="op2: &&",color=green4, style=filled]
+4 -> 609
+610 [label="op2: >",color=green4, style=filled]
+609 -> 610
+611 [label="label: ?normsq2dim",color=plum, style=filled]
+610 -> 611
+612 [label="label: ?scalar2dim",color=plum, style=filled]
+611 -> 612
+613 [label="op2: +",color=green4, style=filled]
+612 -> 613
+614 [label="op2: *",color=green4, style=filled]
+613 -> 614
+615 [label="op2: -",color=green4, style=filled]
+614 -> 615
+616 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+615 -> 616
+617 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+615 -> 617
+618 [label="op2: -",color=green4, style=filled]
+614 -> 618
+619 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+618 -> 619
+620 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+618 -> 620
+621 [label="op2: *",color=green4, style=filled]
+613 -> 621
+622 [label="op2: -",color=green4, style=filled]
+621 -> 622
+623 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+622 -> 623
+624 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+622 -> 624
+625 [label="op2: -",color=green4, style=filled]
+621 -> 625
+626 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+625 -> 626
+627 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+625 -> 627
+628 [label="const: 0.0",color=red1, style=filled]
+610 -> 628
+629 [label="op2: &&",color=green4, style=filled]
+609 -> 629
+630 [label="op2: >=",color=green4, style=filled]
+629 -> 630
+631 [label="label: ?delta",color=plum, style=filled]
+630 -> 631
+632 [label="op2: -",color=green4, style=filled]
+631 -> 632
+633 [label="op2: *",color=green4, style=filled]
+632 -> 633
+634 [label="op2: *",color=green4, style=filled]
+633 -> 634
+635 [label="label: ?hmdRA",color=plum, style=filled]
+634 -> 635
+636 [label="op3: mux",color=green4, style=filled]
+635 -> 636
+637 [label="op2: ==",color=green4, style=filled]
+636 -> 637
+638 [label="label: ?sensitivityLevel",color=plum, style=filled]
+637 -> 638
+639 [label="op3: mux",color=green4, style=filled]
+638 -> 639
+640 [label="op2: &&",color=green4, style=filled]
+639 -> 640
+641 [label="op2: <=",color=green4, style=filled]
+640 -> 641
+642 [label="const: 0.0",color=red1, style=filled]
+641 -> 642
+643 [label="ext_ownship_position_z",color=cyan1, style=filled]
+641 -> 643
+644 [label="op2: <",color=green4, style=filled]
+640 -> 644
+645 [label="ext_ownship_position_z",color=cyan1, style=filled]
+644 -> 645
+646 [label="const: 1000.0",color=red1, style=filled]
+644 -> 646
+647 [label="const: 2",color=red1, style=filled]
+639 -> 647
+648 [label="op3: mux",color=green4, style=filled]
+639 -> 648
+649 [label="op2: <",color=green4, style=filled]
+648 -> 649
+650 [label="ext_ownship_position_z",color=cyan1, style=filled]
+649 -> 650
+651 [label="const: 2350.0",color=red1, style=filled]
+649 -> 651
+652 [label="const: 3",color=red1, style=filled]
+648 -> 652
+653 [label="op3: mux",color=green4, style=filled]
+648 -> 653
+654 [label="op2: <",color=green4, style=filled]
+653 -> 654
+655 [label="ext_ownship_position_z",color=cyan1, style=filled]
+654 -> 655
+656 [label="const: 5000.0",color=red1, style=filled]
+654 -> 656
+657 [label="const: 4",color=red1, style=filled]
+653 -> 657
+658 [label="op3: mux",color=green4, style=filled]
+653 -> 658
+659 [label="op2: <",color=green4, style=filled]
+658 -> 659
+660 [label="ext_ownship_position_z",color=cyan1, style=filled]
+659 -> 660
+661 [label="const: 10000.0",color=red1, style=filled]
+659 -> 661
+662 [label="const: 5",color=red1, style=filled]
+658 -> 662
+663 [label="op3: mux",color=green4, style=filled]
+658 -> 663
+664 [label="op2: <",color=green4, style=filled]
+663 -> 664
+665 [label="ext_ownship_position_z",color=cyan1, style=filled]
+664 -> 665
+666 [label="const: 20000.0",color=red1, style=filled]
+664 -> 666
+667 [label="const: 6",color=red1, style=filled]
+663 -> 667
+668 [label="op3: mux",color=green4, style=filled]
+663 -> 668
+669 [label="op2: <",color=green4, style=filled]
+668 -> 669
+670 [label="ext_ownship_position_z",color=cyan1, style=filled]
+669 -> 670
+671 [label="const: 42000.0",color=red1, style=filled]
+669 -> 671
+672 [label="const: 7",color=red1, style=filled]
+668 -> 672
+673 [label="const: 8",color=red1, style=filled]
+668 -> 673
+674 [label="const: 2",color=red1, style=filled]
+637 -> 674
+675 [label="const: 0.0",color=red1, style=filled]
+636 -> 675
+676 [label="op3: mux",color=green4, style=filled]
+636 -> 676
+677 [label="op2: ==",color=green4, style=filled]
+676 -> 677
+678 [label="label: ?sensitivityLevel",color=plum, style=filled]
+677 -> 678
+679 [label="op3: mux",color=green4, style=filled]
+678 -> 679
+680 [label="op2: &&",color=green4, style=filled]
+679 -> 680
+681 [label="op2: <=",color=green4, style=filled]
+680 -> 681
+682 [label="const: 0.0",color=red1, style=filled]
+681 -> 682
+683 [label="ext_ownship_position_z",color=cyan1, style=filled]
+681 -> 683
+684 [label="op2: <",color=green4, style=filled]
+680 -> 684
+685 [label="ext_ownship_position_z",color=cyan1, style=filled]
+684 -> 685
+686 [label="const: 1000.0",color=red1, style=filled]
+684 -> 686
+687 [label="const: 2",color=red1, style=filled]
+679 -> 687
+688 [label="op3: mux",color=green4, style=filled]
+679 -> 688
+689 [label="op2: <",color=green4, style=filled]
+688 -> 689
+690 [label="ext_ownship_position_z",color=cyan1, style=filled]
+689 -> 690
+691 [label="const: 2350.0",color=red1, style=filled]
+689 -> 691
+692 [label="const: 3",color=red1, style=filled]
+688 -> 692
+693 [label="op3: mux",color=green4, style=filled]
+688 -> 693
+694 [label="op2: <",color=green4, style=filled]
+693 -> 694
+695 [label="ext_ownship_position_z",color=cyan1, style=filled]
+694 -> 695
+696 [label="const: 5000.0",color=red1, style=filled]
+694 -> 696
+697 [label="const: 4",color=red1, style=filled]
+693 -> 697
+698 [label="op3: mux",color=green4, style=filled]
+693 -> 698
+699 [label="op2: <",color=green4, style=filled]
+698 -> 699
+700 [label="ext_ownship_position_z",color=cyan1, style=filled]
+699 -> 700
+701 [label="const: 10000.0",color=red1, style=filled]
+699 -> 701
+702 [label="const: 5",color=red1, style=filled]
+698 -> 702
+703 [label="op3: mux",color=green4, style=filled]
+698 -> 703
+704 [label="op2: <",color=green4, style=filled]
+703 -> 704
+705 [label="ext_ownship_position_z",color=cyan1, style=filled]
+704 -> 705
+706 [label="const: 20000.0",color=red1, style=filled]
+704 -> 706
+707 [label="const: 6",color=red1, style=filled]
+703 -> 707
+708 [label="op3: mux",color=green4, style=filled]
+703 -> 708
+709 [label="op2: <",color=green4, style=filled]
+708 -> 709
+710 [label="ext_ownship_position_z",color=cyan1, style=filled]
+709 -> 710
+711 [label="const: 42000.0",color=red1, style=filled]
+709 -> 711
+712 [label="const: 7",color=red1, style=filled]
+708 -> 712
+713 [label="const: 8",color=red1, style=filled]
+708 -> 713
+714 [label="const: 3",color=red1, style=filled]
+677 -> 714
+715 [label="const: 370.332",color=red1, style=filled]
+676 -> 715
+716 [label="op3: mux",color=green4, style=filled]
+676 -> 716
+717 [label="op2: ==",color=green4, style=filled]
+716 -> 717
+718 [label="label: ?sensitivityLevel",color=plum, style=filled]
+717 -> 718
+719 [label="op3: mux",color=green4, style=filled]
+718 -> 719
+720 [label="op2: &&",color=green4, style=filled]
+719 -> 720
+721 [label="op2: <=",color=green4, style=filled]
+720 -> 721
+722 [label="const: 0.0",color=red1, style=filled]
+721 -> 722
+723 [label="ext_ownship_position_z",color=cyan1, style=filled]
+721 -> 723
+724 [label="op2: <",color=green4, style=filled]
+720 -> 724
+725 [label="ext_ownship_position_z",color=cyan1, style=filled]
+724 -> 725
+726 [label="const: 1000.0",color=red1, style=filled]
+724 -> 726
+727 [label="const: 2",color=red1, style=filled]
+719 -> 727
+728 [label="op3: mux",color=green4, style=filled]
+719 -> 728
+729 [label="op2: <",color=green4, style=filled]
+728 -> 729
+730 [label="ext_ownship_position_z",color=cyan1, style=filled]
+729 -> 730
+731 [label="const: 2350.0",color=red1, style=filled]
+729 -> 731
+732 [label="const: 3",color=red1, style=filled]
+728 -> 732
+733 [label="op3: mux",color=green4, style=filled]
+728 -> 733
+734 [label="op2: <",color=green4, style=filled]
+733 -> 734
+735 [label="ext_ownship_position_z",color=cyan1, style=filled]
+734 -> 735
+736 [label="const: 5000.0",color=red1, style=filled]
+734 -> 736
+737 [label="const: 4",color=red1, style=filled]
+733 -> 737
+738 [label="op3: mux",color=green4, style=filled]
+733 -> 738
+739 [label="op2: <",color=green4, style=filled]
+738 -> 739
+740 [label="ext_ownship_position_z",color=cyan1, style=filled]
+739 -> 740
+741 [label="const: 10000.0",color=red1, style=filled]
+739 -> 741
+742 [label="const: 5",color=red1, style=filled]
+738 -> 742
+743 [label="op3: mux",color=green4, style=filled]
+738 -> 743
+744 [label="op2: <",color=green4, style=filled]
+743 -> 744
+745 [label="ext_ownship_position_z",color=cyan1, style=filled]
+744 -> 745
+746 [label="const: 20000.0",color=red1, style=filled]
+744 -> 746
+747 [label="const: 6",color=red1, style=filled]
+743 -> 747
+748 [label="op3: mux",color=green4, style=filled]
+743 -> 748
+749 [label="op2: <",color=green4, style=filled]
+748 -> 749
+750 [label="ext_ownship_position_z",color=cyan1, style=filled]
+749 -> 750
+751 [label="const: 42000.0",color=red1, style=filled]
+749 -> 751
+752 [label="const: 7",color=red1, style=filled]
+748 -> 752
+753 [label="const: 8",color=red1, style=filled]
+748 -> 753
+754 [label="const: 4",color=red1, style=filled]
+717 -> 754
+755 [label="const: 648.0048",color=red1, style=filled]
+716 -> 755
+756 [label="op3: mux",color=green4, style=filled]
+716 -> 756
+757 [label="op2: ==",color=green4, style=filled]
+756 -> 757
+758 [label="label: ?sensitivityLevel",color=plum, style=filled]
+757 -> 758
+759 [label="op3: mux",color=green4, style=filled]
+758 -> 759
+760 [label="op2: &&",color=green4, style=filled]
+759 -> 760
+761 [label="op2: <=",color=green4, style=filled]
+760 -> 761
+762 [label="const: 0.0",color=red1, style=filled]
+761 -> 762
+763 [label="ext_ownship_position_z",color=cyan1, style=filled]
+761 -> 763
+764 [label="op2: <",color=green4, style=filled]
+760 -> 764
+765 [label="ext_ownship_position_z",color=cyan1, style=filled]
+764 -> 765
+766 [label="const: 1000.0",color=red1, style=filled]
+764 -> 766
+767 [label="const: 2",color=red1, style=filled]
+759 -> 767
+768 [label="op3: mux",color=green4, style=filled]
+759 -> 768
+769 [label="op2: <",color=green4, style=filled]
+768 -> 769
+770 [label="ext_ownship_position_z",color=cyan1, style=filled]
+769 -> 770
+771 [label="const: 2350.0",color=red1, style=filled]
+769 -> 771
+772 [label="const: 3",color=red1, style=filled]
+768 -> 772
+773 [label="op3: mux",color=green4, style=filled]
+768 -> 773
+774 [label="op2: <",color=green4, style=filled]
+773 -> 774
+775 [label="ext_ownship_position_z",color=cyan1, style=filled]
+774 -> 775
+776 [label="const: 5000.0",color=red1, style=filled]
+774 -> 776
+777 [label="const: 4",color=red1, style=filled]
+773 -> 777
+778 [label="op3: mux",color=green4, style=filled]
+773 -> 778
+779 [label="op2: <",color=green4, style=filled]
+778 -> 779
+780 [label="ext_ownship_position_z",color=cyan1, style=filled]
+779 -> 780
+781 [label="const: 10000.0",color=red1, style=filled]
+779 -> 781
+782 [label="const: 5",color=red1, style=filled]
+778 -> 782
+783 [label="op3: mux",color=green4, style=filled]
+778 -> 783
+784 [label="op2: <",color=green4, style=filled]
+783 -> 784
+785 [label="ext_ownship_position_z",color=cyan1, style=filled]
+784 -> 785
+786 [label="const: 20000.0",color=red1, style=filled]
+784 -> 786
+787 [label="const: 6",color=red1, style=filled]
+783 -> 787
+788 [label="op3: mux",color=green4, style=filled]
+783 -> 788
+789 [label="op2: <",color=green4, style=filled]
+788 -> 789
+790 [label="ext_ownship_position_z",color=cyan1, style=filled]
+789 -> 790
+791 [label="const: 42000.0",color=red1, style=filled]
+789 -> 791
+792 [label="const: 7",color=red1, style=filled]
+788 -> 792
+793 [label="const: 8",color=red1, style=filled]
+788 -> 793
+794 [label="const: 5",color=red1, style=filled]
+757 -> 794
+795 [label="const: 1018.6416",color=red1, style=filled]
+756 -> 795
+796 [label="op3: mux",color=green4, style=filled]
+756 -> 796
+797 [label="op2: ==",color=green4, style=filled]
+796 -> 797
+798 [label="label: ?sensitivityLevel",color=plum, style=filled]
+797 -> 798
+799 [label="op3: mux",color=green4, style=filled]
+798 -> 799
+800 [label="op2: &&",color=green4, style=filled]
+799 -> 800
+801 [label="op2: <=",color=green4, style=filled]
+800 -> 801
+802 [label="const: 0.0",color=red1, style=filled]
+801 -> 802
+803 [label="ext_ownship_position_z",color=cyan1, style=filled]
+801 -> 803
+804 [label="op2: <",color=green4, style=filled]
+800 -> 804
+805 [label="ext_ownship_position_z",color=cyan1, style=filled]
+804 -> 805
+806 [label="const: 1000.0",color=red1, style=filled]
+804 -> 806
+807 [label="const: 2",color=red1, style=filled]
+799 -> 807
+808 [label="op3: mux",color=green4, style=filled]
+799 -> 808
+809 [label="op2: <",color=green4, style=filled]
+808 -> 809
+810 [label="ext_ownship_position_z",color=cyan1, style=filled]
+809 -> 810
+811 [label="const: 2350.0",color=red1, style=filled]
+809 -> 811
+812 [label="const: 3",color=red1, style=filled]
+808 -> 812
+813 [label="op3: mux",color=green4, style=filled]
+808 -> 813
+814 [label="op2: <",color=green4, style=filled]
+813 -> 814
+815 [label="ext_ownship_position_z",color=cyan1, style=filled]
+814 -> 815
+816 [label="const: 5000.0",color=red1, style=filled]
+814 -> 816
+817 [label="const: 4",color=red1, style=filled]
+813 -> 817
+818 [label="op3: mux",color=green4, style=filled]
+813 -> 818
+819 [label="op2: <",color=green4, style=filled]
+818 -> 819
+820 [label="ext_ownship_position_z",color=cyan1, style=filled]
+819 -> 820
+821 [label="const: 10000.0",color=red1, style=filled]
+819 -> 821
+822 [label="const: 5",color=red1, style=filled]
+818 -> 822
+823 [label="op3: mux",color=green4, style=filled]
+818 -> 823
+824 [label="op2: <",color=green4, style=filled]
+823 -> 824
+825 [label="ext_ownship_position_z",color=cyan1, style=filled]
+824 -> 825
+826 [label="const: 20000.0",color=red1, style=filled]
+824 -> 826
+827 [label="const: 6",color=red1, style=filled]
+823 -> 827
+828 [label="op3: mux",color=green4, style=filled]
+823 -> 828
+829 [label="op2: <",color=green4, style=filled]
+828 -> 829
+830 [label="ext_ownship_position_z",color=cyan1, style=filled]
+829 -> 830
+831 [label="const: 42000.0",color=red1, style=filled]
+829 -> 831
+832 [label="const: 7",color=red1, style=filled]
+828 -> 832
+833 [label="const: 8",color=red1, style=filled]
+828 -> 833
+834 [label="const: 6",color=red1, style=filled]
+797 -> 834
+835 [label="const: 1481.6328",color=red1, style=filled]
+796 -> 835
+836 [label="op3: mux",color=green4, style=filled]
+796 -> 836
+837 [label="op2: ==",color=green4, style=filled]
+836 -> 837
+838 [label="label: ?sensitivityLevel",color=plum, style=filled]
+837 -> 838
+839 [label="op3: mux",color=green4, style=filled]
+838 -> 839
+840 [label="op2: &&",color=green4, style=filled]
+839 -> 840
+841 [label="op2: <=",color=green4, style=filled]
+840 -> 841
+842 [label="const: 0.0",color=red1, style=filled]
+841 -> 842
+843 [label="ext_ownship_position_z",color=cyan1, style=filled]
+841 -> 843
+844 [label="op2: <",color=green4, style=filled]
+840 -> 844
+845 [label="ext_ownship_position_z",color=cyan1, style=filled]
+844 -> 845
+846 [label="const: 1000.0",color=red1, style=filled]
+844 -> 846
+847 [label="const: 2",color=red1, style=filled]
+839 -> 847
+848 [label="op3: mux",color=green4, style=filled]
+839 -> 848
+849 [label="op2: <",color=green4, style=filled]
+848 -> 849
+850 [label="ext_ownship_position_z",color=cyan1, style=filled]
+849 -> 850
+851 [label="const: 2350.0",color=red1, style=filled]
+849 -> 851
+852 [label="const: 3",color=red1, style=filled]
+848 -> 852
+853 [label="op3: mux",color=green4, style=filled]
+848 -> 853
+854 [label="op2: <",color=green4, style=filled]
+853 -> 854
+855 [label="ext_ownship_position_z",color=cyan1, style=filled]
+854 -> 855
+856 [label="const: 5000.0",color=red1, style=filled]
+854 -> 856
+857 [label="const: 4",color=red1, style=filled]
+853 -> 857
+858 [label="op3: mux",color=green4, style=filled]
+853 -> 858
+859 [label="op2: <",color=green4, style=filled]
+858 -> 859
+860 [label="ext_ownship_position_z",color=cyan1, style=filled]
+859 -> 860
+861 [label="const: 10000.0",color=red1, style=filled]
+859 -> 861
+862 [label="const: 5",color=red1, style=filled]
+858 -> 862
+863 [label="op3: mux",color=green4, style=filled]
+858 -> 863
+864 [label="op2: <",color=green4, style=filled]
+863 -> 864
+865 [label="ext_ownship_position_z",color=cyan1, style=filled]
+864 -> 865
+866 [label="const: 20000.0",color=red1, style=filled]
+864 -> 866
+867 [label="const: 6",color=red1, style=filled]
+863 -> 867
+868 [label="op3: mux",color=green4, style=filled]
+863 -> 868
+869 [label="op2: <",color=green4, style=filled]
+868 -> 869
+870 [label="ext_ownship_position_z",color=cyan1, style=filled]
+869 -> 870
+871 [label="const: 42000.0",color=red1, style=filled]
+869 -> 871
+872 [label="const: 7",color=red1, style=filled]
+868 -> 872
+873 [label="const: 8",color=red1, style=filled]
+868 -> 873
+874 [label="const: 7",color=red1, style=filled]
+837 -> 874
+875 [label="const: 2036.9784000000002",color=red1, style=filled]
+836 -> 875
+876 [label="op3: mux",color=green4, style=filled]
+836 -> 876
+877 [label="op2: ==",color=green4, style=filled]
+876 -> 877
+878 [label="label: ?sensitivityLevel",color=plum, style=filled]
+877 -> 878
+879 [label="op3: mux",color=green4, style=filled]
+878 -> 879
+880 [label="op2: &&",color=green4, style=filled]
+879 -> 880
+881 [label="op2: <=",color=green4, style=filled]
+880 -> 881
+882 [label="const: 0.0",color=red1, style=filled]
+881 -> 882
+883 [label="ext_ownship_position_z",color=cyan1, style=filled]
+881 -> 883
+884 [label="op2: <",color=green4, style=filled]
+880 -> 884
+885 [label="ext_ownship_position_z",color=cyan1, style=filled]
+884 -> 885
+886 [label="const: 1000.0",color=red1, style=filled]
+884 -> 886
+887 [label="const: 2",color=red1, style=filled]
+879 -> 887
+888 [label="op3: mux",color=green4, style=filled]
+879 -> 888
+889 [label="op2: <",color=green4, style=filled]
+888 -> 889
+890 [label="ext_ownship_position_z",color=cyan1, style=filled]
+889 -> 890
+891 [label="const: 2350.0",color=red1, style=filled]
+889 -> 891
+892 [label="const: 3",color=red1, style=filled]
+888 -> 892
+893 [label="op3: mux",color=green4, style=filled]
+888 -> 893
+894 [label="op2: <",color=green4, style=filled]
+893 -> 894
+895 [label="ext_ownship_position_z",color=cyan1, style=filled]
+894 -> 895
+896 [label="const: 5000.0",color=red1, style=filled]
+894 -> 896
+897 [label="const: 4",color=red1, style=filled]
+893 -> 897
+898 [label="op3: mux",color=green4, style=filled]
+893 -> 898
+899 [label="op2: <",color=green4, style=filled]
+898 -> 899
+900 [label="ext_ownship_position_z",color=cyan1, style=filled]
+899 -> 900
+901 [label="const: 10000.0",color=red1, style=filled]
+899 -> 901
+902 [label="const: 5",color=red1, style=filled]
+898 -> 902
+903 [label="op3: mux",color=green4, style=filled]
+898 -> 903
+904 [label="op2: <",color=green4, style=filled]
+903 -> 904
+905 [label="ext_ownship_position_z",color=cyan1, style=filled]
+904 -> 905
+906 [label="const: 20000.0",color=red1, style=filled]
+904 -> 906
+907 [label="const: 6",color=red1, style=filled]
+903 -> 907
+908 [label="op3: mux",color=green4, style=filled]
+903 -> 908
+909 [label="op2: <",color=green4, style=filled]
+908 -> 909
+910 [label="ext_ownship_position_z",color=cyan1, style=filled]
+909 -> 910
+911 [label="const: 42000.0",color=red1, style=filled]
+909 -> 911
+912 [label="const: 7",color=red1, style=filled]
+908 -> 912
+913 [label="const: 8",color=red1, style=filled]
+908 -> 913
+914 [label="const: 8",color=red1, style=filled]
+877 -> 914
+915 [label="const: 2036.9784000000002",color=red1, style=filled]
+876 -> 915
+916 [label="const: 0.0",color=red1, style=filled]
+876 -> 916
+917 [label="label: ?hmdRA",color=plum, style=filled]
+634 -> 917
+918 [label="op3: mux",color=green4, style=filled]
+917 -> 918
+919 [label="op2: ==",color=green4, style=filled]
+918 -> 919
+920 [label="label: ?sensitivityLevel",color=plum, style=filled]
+919 -> 920
+921 [label="op3: mux",color=green4, style=filled]
+920 -> 921
+922 [label="op2: &&",color=green4, style=filled]
+921 -> 922
+923 [label="op2: <=",color=green4, style=filled]
+922 -> 923
+924 [label="const: 0.0",color=red1, style=filled]
+923 -> 924
+925 [label="ext_ownship_position_z",color=cyan1, style=filled]
+923 -> 925
+926 [label="op2: <",color=green4, style=filled]
+922 -> 926
+927 [label="ext_ownship_position_z",color=cyan1, style=filled]
+926 -> 927
+928 [label="const: 1000.0",color=red1, style=filled]
+926 -> 928
+929 [label="const: 2",color=red1, style=filled]
+921 -> 929
+930 [label="op3: mux",color=green4, style=filled]
+921 -> 930
+931 [label="op2: <",color=green4, style=filled]
+930 -> 931
+932 [label="ext_ownship_position_z",color=cyan1, style=filled]
+931 -> 932
+933 [label="const: 2350.0",color=red1, style=filled]
+931 -> 933
+934 [label="const: 3",color=red1, style=filled]
+930 -> 934
+935 [label="op3: mux",color=green4, style=filled]
+930 -> 935
+936 [label="op2: <",color=green4, style=filled]
+935 -> 936
+937 [label="ext_ownship_position_z",color=cyan1, style=filled]
+936 -> 937
+938 [label="const: 5000.0",color=red1, style=filled]
+936 -> 938
+939 [label="const: 4",color=red1, style=filled]
+935 -> 939
+940 [label="op3: mux",color=green4, style=filled]
+935 -> 940
+941 [label="op2: <",color=green4, style=filled]
+940 -> 941
+942 [label="ext_ownship_position_z",color=cyan1, style=filled]
+941 -> 942
+943 [label="const: 10000.0",color=red1, style=filled]
+941 -> 943
+944 [label="const: 5",color=red1, style=filled]
+940 -> 944
+945 [label="op3: mux",color=green4, style=filled]
+940 -> 945
+946 [label="op2: <",color=green4, style=filled]
+945 -> 946
+947 [label="ext_ownship_position_z",color=cyan1, style=filled]
+946 -> 947
+948 [label="const: 20000.0",color=red1, style=filled]
+946 -> 948
+949 [label="const: 6",color=red1, style=filled]
+945 -> 949
+950 [label="op3: mux",color=green4, style=filled]
+945 -> 950
+951 [label="op2: <",color=green4, style=filled]
+950 -> 951
+952 [label="ext_ownship_position_z",color=cyan1, style=filled]
+951 -> 952
+953 [label="const: 42000.0",color=red1, style=filled]
+951 -> 953
+954 [label="const: 7",color=red1, style=filled]
+950 -> 954
+955 [label="const: 8",color=red1, style=filled]
+950 -> 955
+956 [label="const: 2",color=red1, style=filled]
+919 -> 956
+957 [label="const: 0.0",color=red1, style=filled]
+918 -> 957
+958 [label="op3: mux",color=green4, style=filled]
+918 -> 958
+959 [label="op2: ==",color=green4, style=filled]
+958 -> 959
+960 [label="label: ?sensitivityLevel",color=plum, style=filled]
+959 -> 960
+961 [label="op3: mux",color=green4, style=filled]
+960 -> 961
+962 [label="op2: &&",color=green4, style=filled]
+961 -> 962
+963 [label="op2: <=",color=green4, style=filled]
+962 -> 963
+964 [label="const: 0.0",color=red1, style=filled]
+963 -> 964
+965 [label="ext_ownship_position_z",color=cyan1, style=filled]
+963 -> 965
+966 [label="op2: <",color=green4, style=filled]
+962 -> 966
+967 [label="ext_ownship_position_z",color=cyan1, style=filled]
+966 -> 967
+968 [label="const: 1000.0",color=red1, style=filled]
+966 -> 968
+969 [label="const: 2",color=red1, style=filled]
+961 -> 969
+970 [label="op3: mux",color=green4, style=filled]
+961 -> 970
+971 [label="op2: <",color=green4, style=filled]
+970 -> 971
+972 [label="ext_ownship_position_z",color=cyan1, style=filled]
+971 -> 972
+973 [label="const: 2350.0",color=red1, style=filled]
+971 -> 973
+974 [label="const: 3",color=red1, style=filled]
+970 -> 974
+975 [label="op3: mux",color=green4, style=filled]
+970 -> 975
+976 [label="op2: <",color=green4, style=filled]
+975 -> 976
+977 [label="ext_ownship_position_z",color=cyan1, style=filled]
+976 -> 977
+978 [label="const: 5000.0",color=red1, style=filled]
+976 -> 978
+979 [label="const: 4",color=red1, style=filled]
+975 -> 979
+980 [label="op3: mux",color=green4, style=filled]
+975 -> 980
+981 [label="op2: <",color=green4, style=filled]
+980 -> 981
+982 [label="ext_ownship_position_z",color=cyan1, style=filled]
+981 -> 982
+983 [label="const: 10000.0",color=red1, style=filled]
+981 -> 983
+984 [label="const: 5",color=red1, style=filled]
+980 -> 984
+985 [label="op3: mux",color=green4, style=filled]
+980 -> 985
+986 [label="op2: <",color=green4, style=filled]
+985 -> 986
+987 [label="ext_ownship_position_z",color=cyan1, style=filled]
+986 -> 987
+988 [label="const: 20000.0",color=red1, style=filled]
+986 -> 988
+989 [label="const: 6",color=red1, style=filled]
+985 -> 989
+990 [label="op3: mux",color=green4, style=filled]
+985 -> 990
+991 [label="op2: <",color=green4, style=filled]
+990 -> 991
+992 [label="ext_ownship_position_z",color=cyan1, style=filled]
+991 -> 992
+993 [label="const: 42000.0",color=red1, style=filled]
+991 -> 993
+994 [label="const: 7",color=red1, style=filled]
+990 -> 994
+995 [label="const: 8",color=red1, style=filled]
+990 -> 995
+996 [label="const: 3",color=red1, style=filled]
+959 -> 996
+997 [label="const: 370.332",color=red1, style=filled]
+958 -> 997
+998 [label="op3: mux",color=green4, style=filled]
+958 -> 998
+999 [label="op2: ==",color=green4, style=filled]
+998 -> 999
+1000 [label="label: ?sensitivityLevel",color=plum, style=filled]
+999 -> 1000
+1001 [label="op3: mux",color=green4, style=filled]
+1000 -> 1001
+1002 [label="op2: &&",color=green4, style=filled]
+1001 -> 1002
+1003 [label="op2: <=",color=green4, style=filled]
+1002 -> 1003
+1004 [label="const: 0.0",color=red1, style=filled]
+1003 -> 1004
+1005 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1003 -> 1005
+1006 [label="op2: <",color=green4, style=filled]
+1002 -> 1006
+1007 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1006 -> 1007
+1008 [label="const: 1000.0",color=red1, style=filled]
+1006 -> 1008
+1009 [label="const: 2",color=red1, style=filled]
+1001 -> 1009
+1010 [label="op3: mux",color=green4, style=filled]
+1001 -> 1010
+1011 [label="op2: <",color=green4, style=filled]
+1010 -> 1011
+1012 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1011 -> 1012
+1013 [label="const: 2350.0",color=red1, style=filled]
+1011 -> 1013
+1014 [label="const: 3",color=red1, style=filled]
+1010 -> 1014
+1015 [label="op3: mux",color=green4, style=filled]
+1010 -> 1015
+1016 [label="op2: <",color=green4, style=filled]
+1015 -> 1016
+1017 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1016 -> 1017
+1018 [label="const: 5000.0",color=red1, style=filled]
+1016 -> 1018
+1019 [label="const: 4",color=red1, style=filled]
+1015 -> 1019
+1020 [label="op3: mux",color=green4, style=filled]
+1015 -> 1020
+1021 [label="op2: <",color=green4, style=filled]
+1020 -> 1021
+1022 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1021 -> 1022
+1023 [label="const: 10000.0",color=red1, style=filled]
+1021 -> 1023
+1024 [label="const: 5",color=red1, style=filled]
+1020 -> 1024
+1025 [label="op3: mux",color=green4, style=filled]
+1020 -> 1025
+1026 [label="op2: <",color=green4, style=filled]
+1025 -> 1026
+1027 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1026 -> 1027
+1028 [label="const: 20000.0",color=red1, style=filled]
+1026 -> 1028
+1029 [label="const: 6",color=red1, style=filled]
+1025 -> 1029
+1030 [label="op3: mux",color=green4, style=filled]
+1025 -> 1030
+1031 [label="op2: <",color=green4, style=filled]
+1030 -> 1031
+1032 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1031 -> 1032
+1033 [label="const: 42000.0",color=red1, style=filled]
+1031 -> 1033
+1034 [label="const: 7",color=red1, style=filled]
+1030 -> 1034
+1035 [label="const: 8",color=red1, style=filled]
+1030 -> 1035
+1036 [label="const: 4",color=red1, style=filled]
+999 -> 1036
+1037 [label="const: 648.0048",color=red1, style=filled]
+998 -> 1037
+1038 [label="op3: mux",color=green4, style=filled]
+998 -> 1038
+1039 [label="op2: ==",color=green4, style=filled]
+1038 -> 1039
+1040 [label="label: ?sensitivityLevel",color=plum, style=filled]
+1039 -> 1040
+1041 [label="op3: mux",color=green4, style=filled]
+1040 -> 1041
+1042 [label="op2: &&",color=green4, style=filled]
+1041 -> 1042
+1043 [label="op2: <=",color=green4, style=filled]
+1042 -> 1043
+1044 [label="const: 0.0",color=red1, style=filled]
+1043 -> 1044
+1045 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1043 -> 1045
+1046 [label="op2: <",color=green4, style=filled]
+1042 -> 1046
+1047 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1046 -> 1047
+1048 [label="const: 1000.0",color=red1, style=filled]
+1046 -> 1048
+1049 [label="const: 2",color=red1, style=filled]
+1041 -> 1049
+1050 [label="op3: mux",color=green4, style=filled]
+1041 -> 1050
+1051 [label="op2: <",color=green4, style=filled]
+1050 -> 1051
+1052 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1051 -> 1052
+1053 [label="const: 2350.0",color=red1, style=filled]
+1051 -> 1053
+1054 [label="const: 3",color=red1, style=filled]
+1050 -> 1054
+1055 [label="op3: mux",color=green4, style=filled]
+1050 -> 1055
+1056 [label="op2: <",color=green4, style=filled]
+1055 -> 1056
+1057 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1056 -> 1057
+1058 [label="const: 5000.0",color=red1, style=filled]
+1056 -> 1058
+1059 [label="const: 4",color=red1, style=filled]
+1055 -> 1059
+1060 [label="op3: mux",color=green4, style=filled]
+1055 -> 1060
+1061 [label="op2: <",color=green4, style=filled]
+1060 -> 1061
+1062 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1061 -> 1062
+1063 [label="const: 10000.0",color=red1, style=filled]
+1061 -> 1063
+1064 [label="const: 5",color=red1, style=filled]
+1060 -> 1064
+1065 [label="op3: mux",color=green4, style=filled]
+1060 -> 1065
+1066 [label="op2: <",color=green4, style=filled]
+1065 -> 1066
+1067 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1066 -> 1067
+1068 [label="const: 20000.0",color=red1, style=filled]
+1066 -> 1068
+1069 [label="const: 6",color=red1, style=filled]
+1065 -> 1069
+1070 [label="op3: mux",color=green4, style=filled]
+1065 -> 1070
+1071 [label="op2: <",color=green4, style=filled]
+1070 -> 1071
+1072 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1071 -> 1072
+1073 [label="const: 42000.0",color=red1, style=filled]
+1071 -> 1073
+1074 [label="const: 7",color=red1, style=filled]
+1070 -> 1074
+1075 [label="const: 8",color=red1, style=filled]
+1070 -> 1075
+1076 [label="const: 5",color=red1, style=filled]
+1039 -> 1076
+1077 [label="const: 1018.6416",color=red1, style=filled]
+1038 -> 1077
+1078 [label="op3: mux",color=green4, style=filled]
+1038 -> 1078
+1079 [label="op2: ==",color=green4, style=filled]
+1078 -> 1079
+1080 [label="label: ?sensitivityLevel",color=plum, style=filled]
+1079 -> 1080
+1081 [label="op3: mux",color=green4, style=filled]
+1080 -> 1081
+1082 [label="op2: &&",color=green4, style=filled]
+1081 -> 1082
+1083 [label="op2: <=",color=green4, style=filled]
+1082 -> 1083
+1084 [label="const: 0.0",color=red1, style=filled]
+1083 -> 1084
+1085 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1083 -> 1085
+1086 [label="op2: <",color=green4, style=filled]
+1082 -> 1086
+1087 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1086 -> 1087
+1088 [label="const: 1000.0",color=red1, style=filled]
+1086 -> 1088
+1089 [label="const: 2",color=red1, style=filled]
+1081 -> 1089
+1090 [label="op3: mux",color=green4, style=filled]
+1081 -> 1090
+1091 [label="op2: <",color=green4, style=filled]
+1090 -> 1091
+1092 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1091 -> 1092
+1093 [label="const: 2350.0",color=red1, style=filled]
+1091 -> 1093
+1094 [label="const: 3",color=red1, style=filled]
+1090 -> 1094
+1095 [label="op3: mux",color=green4, style=filled]
+1090 -> 1095
+1096 [label="op2: <",color=green4, style=filled]
+1095 -> 1096
+1097 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1096 -> 1097
+1098 [label="const: 5000.0",color=red1, style=filled]
+1096 -> 1098
+1099 [label="const: 4",color=red1, style=filled]
+1095 -> 1099
+1100 [label="op3: mux",color=green4, style=filled]
+1095 -> 1100
+1101 [label="op2: <",color=green4, style=filled]
+1100 -> 1101
+1102 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1101 -> 1102
+1103 [label="const: 10000.0",color=red1, style=filled]
+1101 -> 1103
+1104 [label="const: 5",color=red1, style=filled]
+1100 -> 1104
+1105 [label="op3: mux",color=green4, style=filled]
+1100 -> 1105
+1106 [label="op2: <",color=green4, style=filled]
+1105 -> 1106
+1107 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1106 -> 1107
+1108 [label="const: 20000.0",color=red1, style=filled]
+1106 -> 1108
+1109 [label="const: 6",color=red1, style=filled]
+1105 -> 1109
+1110 [label="op3: mux",color=green4, style=filled]
+1105 -> 1110
+1111 [label="op2: <",color=green4, style=filled]
+1110 -> 1111
+1112 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1111 -> 1112
+1113 [label="const: 42000.0",color=red1, style=filled]
+1111 -> 1113
+1114 [label="const: 7",color=red1, style=filled]
+1110 -> 1114
+1115 [label="const: 8",color=red1, style=filled]
+1110 -> 1115
+1116 [label="const: 6",color=red1, style=filled]
+1079 -> 1116
+1117 [label="const: 1481.6328",color=red1, style=filled]
+1078 -> 1117
+1118 [label="op3: mux",color=green4, style=filled]
+1078 -> 1118
+1119 [label="op2: ==",color=green4, style=filled]
+1118 -> 1119
+1120 [label="label: ?sensitivityLevel",color=plum, style=filled]
+1119 -> 1120
+1121 [label="op3: mux",color=green4, style=filled]
+1120 -> 1121
+1122 [label="op2: &&",color=green4, style=filled]
+1121 -> 1122
+1123 [label="op2: <=",color=green4, style=filled]
+1122 -> 1123
+1124 [label="const: 0.0",color=red1, style=filled]
+1123 -> 1124
+1125 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1123 -> 1125
+1126 [label="op2: <",color=green4, style=filled]
+1122 -> 1126
+1127 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1126 -> 1127
+1128 [label="const: 1000.0",color=red1, style=filled]
+1126 -> 1128
+1129 [label="const: 2",color=red1, style=filled]
+1121 -> 1129
+1130 [label="op3: mux",color=green4, style=filled]
+1121 -> 1130
+1131 [label="op2: <",color=green4, style=filled]
+1130 -> 1131
+1132 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1131 -> 1132
+1133 [label="const: 2350.0",color=red1, style=filled]
+1131 -> 1133
+1134 [label="const: 3",color=red1, style=filled]
+1130 -> 1134
+1135 [label="op3: mux",color=green4, style=filled]
+1130 -> 1135
+1136 [label="op2: <",color=green4, style=filled]
+1135 -> 1136
+1137 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1136 -> 1137
+1138 [label="const: 5000.0",color=red1, style=filled]
+1136 -> 1138
+1139 [label="const: 4",color=red1, style=filled]
+1135 -> 1139
+1140 [label="op3: mux",color=green4, style=filled]
+1135 -> 1140
+1141 [label="op2: <",color=green4, style=filled]
+1140 -> 1141
+1142 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1141 -> 1142
+1143 [label="const: 10000.0",color=red1, style=filled]
+1141 -> 1143
+1144 [label="const: 5",color=red1, style=filled]
+1140 -> 1144
+1145 [label="op3: mux",color=green4, style=filled]
+1140 -> 1145
+1146 [label="op2: <",color=green4, style=filled]
+1145 -> 1146
+1147 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1146 -> 1147
+1148 [label="const: 20000.0",color=red1, style=filled]
+1146 -> 1148
+1149 [label="const: 6",color=red1, style=filled]
+1145 -> 1149
+1150 [label="op3: mux",color=green4, style=filled]
+1145 -> 1150
+1151 [label="op2: <",color=green4, style=filled]
+1150 -> 1151
+1152 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1151 -> 1152
+1153 [label="const: 42000.0",color=red1, style=filled]
+1151 -> 1153
+1154 [label="const: 7",color=red1, style=filled]
+1150 -> 1154
+1155 [label="const: 8",color=red1, style=filled]
+1150 -> 1155
+1156 [label="const: 7",color=red1, style=filled]
+1119 -> 1156
+1157 [label="const: 2036.9784000000002",color=red1, style=filled]
+1118 -> 1157
+1158 [label="op3: mux",color=green4, style=filled]
+1118 -> 1158
+1159 [label="op2: ==",color=green4, style=filled]
+1158 -> 1159
+1160 [label="label: ?sensitivityLevel",color=plum, style=filled]
+1159 -> 1160
+1161 [label="op3: mux",color=green4, style=filled]
+1160 -> 1161
+1162 [label="op2: &&",color=green4, style=filled]
+1161 -> 1162
+1163 [label="op2: <=",color=green4, style=filled]
+1162 -> 1163
+1164 [label="const: 0.0",color=red1, style=filled]
+1163 -> 1164
+1165 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1163 -> 1165
+1166 [label="op2: <",color=green4, style=filled]
+1162 -> 1166
+1167 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1166 -> 1167
+1168 [label="const: 1000.0",color=red1, style=filled]
+1166 -> 1168
+1169 [label="const: 2",color=red1, style=filled]
+1161 -> 1169
+1170 [label="op3: mux",color=green4, style=filled]
+1161 -> 1170
+1171 [label="op2: <",color=green4, style=filled]
+1170 -> 1171
+1172 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1171 -> 1172
+1173 [label="const: 2350.0",color=red1, style=filled]
+1171 -> 1173
+1174 [label="const: 3",color=red1, style=filled]
+1170 -> 1174
+1175 [label="op3: mux",color=green4, style=filled]
+1170 -> 1175
+1176 [label="op2: <",color=green4, style=filled]
+1175 -> 1176
+1177 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1176 -> 1177
+1178 [label="const: 5000.0",color=red1, style=filled]
+1176 -> 1178
+1179 [label="const: 4",color=red1, style=filled]
+1175 -> 1179
+1180 [label="op3: mux",color=green4, style=filled]
+1175 -> 1180
+1181 [label="op2: <",color=green4, style=filled]
+1180 -> 1181
+1182 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1181 -> 1182
+1183 [label="const: 10000.0",color=red1, style=filled]
+1181 -> 1183
+1184 [label="const: 5",color=red1, style=filled]
+1180 -> 1184
+1185 [label="op3: mux",color=green4, style=filled]
+1180 -> 1185
+1186 [label="op2: <",color=green4, style=filled]
+1185 -> 1186
+1187 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1186 -> 1187
+1188 [label="const: 20000.0",color=red1, style=filled]
+1186 -> 1188
+1189 [label="const: 6",color=red1, style=filled]
+1185 -> 1189
+1190 [label="op3: mux",color=green4, style=filled]
+1185 -> 1190
+1191 [label="op2: <",color=green4, style=filled]
+1190 -> 1191
+1192 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1191 -> 1192
+1193 [label="const: 42000.0",color=red1, style=filled]
+1191 -> 1193
+1194 [label="const: 7",color=red1, style=filled]
+1190 -> 1194
+1195 [label="const: 8",color=red1, style=filled]
+1190 -> 1195
+1196 [label="const: 8",color=red1, style=filled]
+1159 -> 1196
+1197 [label="const: 2036.9784000000002",color=red1, style=filled]
+1158 -> 1197
+1198 [label="const: 0.0",color=red1, style=filled]
+1158 -> 1198
+1199 [label="label: ?normsq2dim",color=plum, style=filled]
+633 -> 1199
+1200 [label="label: ?scalar2dim",color=plum, style=filled]
+1199 -> 1200
+1201 [label="op2: +",color=green4, style=filled]
+1200 -> 1201
+1202 [label="op2: *",color=green4, style=filled]
+1201 -> 1202
+1203 [label="op2: -",color=green4, style=filled]
+1202 -> 1203
+1204 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1203 -> 1204
+1205 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1203 -> 1205
+1206 [label="op2: -",color=green4, style=filled]
+1202 -> 1206
+1207 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1206 -> 1207
+1208 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1206 -> 1208
+1209 [label="op2: *",color=green4, style=filled]
+1201 -> 1209
+1210 [label="op2: -",color=green4, style=filled]
+1209 -> 1210
+1211 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1210 -> 1211
+1212 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1210 -> 1212
+1213 [label="op2: -",color=green4, style=filled]
+1209 -> 1213
+1214 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1213 -> 1214
+1215 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1213 -> 1215
+1216 [label="op2: *",color=green4, style=filled]
+632 -> 1216
+1217 [label="label: ?det2dim",color=plum, style=filled]
+1216 -> 1217
+1218 [label="op2: -",color=green4, style=filled]
+1217 -> 1218
+1219 [label="op2: *",color=green4, style=filled]
+1218 -> 1219
+1220 [label="op2: -",color=green4, style=filled]
+1219 -> 1220
+1221 [label="ext_ownship_position_x",color=cyan1, style=filled]
+1220 -> 1221
+1222 [label="ext_intruder_position_x",color=cyan1, style=filled]
+1220 -> 1222
+1223 [label="op2: -",color=green4, style=filled]
+1219 -> 1223
+1224 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1223 -> 1224
+1225 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1223 -> 1225
+1226 [label="op2: *",color=green4, style=filled]
+1218 -> 1226
+1227 [label="op2: -",color=green4, style=filled]
+1226 -> 1227
+1228 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1227 -> 1228
+1229 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1227 -> 1229
+1230 [label="op2: -",color=green4, style=filled]
+1226 -> 1230
+1231 [label="ext_ownship_position_y",color=cyan1, style=filled]
+1230 -> 1231
+1232 [label="ext_intruder_position_y",color=cyan1, style=filled]
+1230 -> 1232
+1233 [label="label: ?det2dim",color=plum, style=filled]
+1216 -> 1233
+1234 [label="op2: -",color=green4, style=filled]
+1233 -> 1234
+1235 [label="op2: *",color=green4, style=filled]
+1234 -> 1235
+1236 [label="op2: -",color=green4, style=filled]
+1235 -> 1236
+1237 [label="ext_ownship_position_x",color=cyan1, style=filled]
+1236 -> 1237
+1238 [label="ext_intruder_position_x",color=cyan1, style=filled]
+1236 -> 1238
+1239 [label="op2: -",color=green4, style=filled]
+1235 -> 1239
+1240 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1239 -> 1240
+1241 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1239 -> 1241
+1242 [label="op2: *",color=green4, style=filled]
+1234 -> 1242
+1243 [label="op2: -",color=green4, style=filled]
+1242 -> 1243
+1244 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1243 -> 1244
+1245 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1243 -> 1245
+1246 [label="op2: -",color=green4, style=filled]
+1242 -> 1246
+1247 [label="ext_ownship_position_y",color=cyan1, style=filled]
+1246 -> 1247
+1248 [label="ext_intruder_position_y",color=cyan1, style=filled]
+1246 -> 1248
+1249 [label="const: 0.0",color=red1, style=filled]
+630 -> 1249
+1250 [label="op2: >=",color=green4, style=filled]
+629 -> 1250
+1251 [label="label: ?theta",color=plum, style=filled]
+1250 -> 1251
+1252 [label="op2: /",color=green4, style=filled]
+1251 -> 1252
+1253 [label="op2: +",color=green4, style=filled]
+1252 -> 1253
+1254 [label="op2: -",color=green4, style=filled]
+1253 -> 1254
+1255 [label="const: 0.0",color=red1, style=filled]
+1254 -> 1255
+1256 [label="label: ?scalar2dim",color=plum, style=filled]
+1254 -> 1256
+1257 [label="op2: +",color=green4, style=filled]
+1256 -> 1257
+1258 [label="op2: *",color=green4, style=filled]
+1257 -> 1258
+1259 [label="op2: -",color=green4, style=filled]
+1258 -> 1259
+1260 [label="ext_ownship_position_x",color=cyan1, style=filled]
+1259 -> 1260
+1261 [label="ext_intruder_position_x",color=cyan1, style=filled]
+1259 -> 1261
+1262 [label="op2: -",color=green4, style=filled]
+1258 -> 1262
+1263 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1262 -> 1263
+1264 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1262 -> 1264
+1265 [label="op2: *",color=green4, style=filled]
+1257 -> 1265
+1266 [label="op2: -",color=green4, style=filled]
+1265 -> 1266
+1267 [label="ext_ownship_position_y",color=cyan1, style=filled]
+1266 -> 1267
+1268 [label="ext_intruder_position_y",color=cyan1, style=filled]
+1266 -> 1268
+1269 [label="op2: -",color=green4, style=filled]
+1265 -> 1269
+1270 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1269 -> 1270
+1271 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1269 -> 1271
+1272 [label="ext_sqrt_0",color=cyan4, style=filled]
+1253 -> 1272
+1891 [label="label: ?normsq2dim",color=plum, style=filled]
+1252 -> 1891
+1892 [label="label: ?scalar2dim",color=plum, style=filled]
+1891 -> 1892
+1893 [label="op2: +",color=green4, style=filled]
+1892 -> 1893
+1894 [label="op2: *",color=green4, style=filled]
+1893 -> 1894
+1895 [label="op2: -",color=green4, style=filled]
+1894 -> 1895
+1896 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1895 -> 1896
+1897 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1895 -> 1897
+1898 [label="op2: -",color=green4, style=filled]
+1894 -> 1898
+1899 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1898 -> 1899
+1900 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1898 -> 1900
+1901 [label="op2: *",color=green4, style=filled]
+1893 -> 1901
+1902 [label="op2: -",color=green4, style=filled]
+1901 -> 1902
+1903 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1902 -> 1903
+1904 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1902 -> 1904
+1905 [label="op2: -",color=green4, style=filled]
+1901 -> 1905
+1906 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1905 -> 1906
+1907 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1905 -> 1907
+1908 [label="const: 0.0",color=red1, style=filled]
+1250 -> 1908
+1909 [label="op2: &&",color=green4, style=filled]
+2 -> 1909
+1910 [label="label: ?horizontal_RA",color=plum, style=filled]
+1909 -> 1910
+1911 [label="op3: mux",color=green4, style=filled]
+1910 -> 1911
+1912 [label="op2: >=",color=green4, style=filled]
+1911 -> 1912
+1913 [label="label: ?scalar2dim",color=plum, style=filled]
+1912 -> 1913
+1914 [label="op2: +",color=green4, style=filled]
+1913 -> 1914
+1915 [label="op2: *",color=green4, style=filled]
+1914 -> 1915
+1916 [label="op2: -",color=green4, style=filled]
+1915 -> 1916
+1917 [label="ext_ownship_position_x",color=cyan1, style=filled]
+1916 -> 1917
+1918 [label="ext_intruder_position_x",color=cyan1, style=filled]
+1916 -> 1918
+1919 [label="op2: -",color=green4, style=filled]
+1915 -> 1919
+1920 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+1919 -> 1920
+1921 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+1919 -> 1921
+1922 [label="op2: *",color=green4, style=filled]
+1914 -> 1922
+1923 [label="op2: -",color=green4, style=filled]
+1922 -> 1923
+1924 [label="ext_ownship_position_y",color=cyan1, style=filled]
+1923 -> 1924
+1925 [label="ext_intruder_position_y",color=cyan1, style=filled]
+1923 -> 1925
+1926 [label="op2: -",color=green4, style=filled]
+1922 -> 1926
+1927 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+1926 -> 1927
+1928 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+1926 -> 1928
+1929 [label="const: 0.0",color=red1, style=filled]
+1912 -> 1929
+1930 [label="op2: <=",color=green4, style=filled]
+1911 -> 1930
+1931 [label="label: ?norm2dim",color=plum, style=filled]
+1930 -> 1931
+1932 [label="ext_sqrt_1",color=cyan4, style=filled]
+1931 -> 1932
+1950 [label="label: ?dmodRA",color=plum, style=filled]
+1930 -> 1950
+1951 [label="op3: mux",color=green4, style=filled]
+1950 -> 1951
+1952 [label="op2: ==",color=green4, style=filled]
+1951 -> 1952
+1953 [label="label: ?sensitivityLevel",color=plum, style=filled]
+1952 -> 1953
+1954 [label="op3: mux",color=green4, style=filled]
+1953 -> 1954
+1955 [label="op2: &&",color=green4, style=filled]
+1954 -> 1955
+1956 [label="op2: <=",color=green4, style=filled]
+1955 -> 1956
+1957 [label="const: 0.0",color=red1, style=filled]
+1956 -> 1957
+1958 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1956 -> 1958
+1959 [label="op2: <",color=green4, style=filled]
+1955 -> 1959
+1960 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1959 -> 1960
+1961 [label="const: 1000.0",color=red1, style=filled]
+1959 -> 1961
+1962 [label="const: 2",color=red1, style=filled]
+1954 -> 1962
+1963 [label="op3: mux",color=green4, style=filled]
+1954 -> 1963
+1964 [label="op2: <",color=green4, style=filled]
+1963 -> 1964
+1965 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1964 -> 1965
+1966 [label="const: 2350.0",color=red1, style=filled]
+1964 -> 1966
+1967 [label="const: 3",color=red1, style=filled]
+1963 -> 1967
+1968 [label="op3: mux",color=green4, style=filled]
+1963 -> 1968
+1969 [label="op2: <",color=green4, style=filled]
+1968 -> 1969
+1970 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1969 -> 1970
+1971 [label="const: 5000.0",color=red1, style=filled]
+1969 -> 1971
+1972 [label="const: 4",color=red1, style=filled]
+1968 -> 1972
+1973 [label="op3: mux",color=green4, style=filled]
+1968 -> 1973
+1974 [label="op2: <",color=green4, style=filled]
+1973 -> 1974
+1975 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1974 -> 1975
+1976 [label="const: 10000.0",color=red1, style=filled]
+1974 -> 1976
+1977 [label="const: 5",color=red1, style=filled]
+1973 -> 1977
+1978 [label="op3: mux",color=green4, style=filled]
+1973 -> 1978
+1979 [label="op2: <",color=green4, style=filled]
+1978 -> 1979
+1980 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1979 -> 1980
+1981 [label="const: 20000.0",color=red1, style=filled]
+1979 -> 1981
+1982 [label="const: 6",color=red1, style=filled]
+1978 -> 1982
+1983 [label="op3: mux",color=green4, style=filled]
+1978 -> 1983
+1984 [label="op2: <",color=green4, style=filled]
+1983 -> 1984
+1985 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1984 -> 1985
+1986 [label="const: 42000.0",color=red1, style=filled]
+1984 -> 1986
+1987 [label="const: 7",color=red1, style=filled]
+1983 -> 1987
+1988 [label="const: 8",color=red1, style=filled]
+1983 -> 1988
+1989 [label="const: 2",color=red1, style=filled]
+1952 -> 1989
+1990 [label="const: 0.0",color=red1, style=filled]
+1951 -> 1990
+1991 [label="op3: mux",color=green4, style=filled]
+1951 -> 1991
+1992 [label="op2: ==",color=green4, style=filled]
+1991 -> 1992
+1993 [label="label: ?sensitivityLevel",color=plum, style=filled]
+1992 -> 1993
+1994 [label="op3: mux",color=green4, style=filled]
+1993 -> 1994
+1995 [label="op2: &&",color=green4, style=filled]
+1994 -> 1995
+1996 [label="op2: <=",color=green4, style=filled]
+1995 -> 1996
+1997 [label="const: 0.0",color=red1, style=filled]
+1996 -> 1997
+1998 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1996 -> 1998
+1999 [label="op2: <",color=green4, style=filled]
+1995 -> 1999
+2000 [label="ext_ownship_position_z",color=cyan1, style=filled]
+1999 -> 2000
+2001 [label="const: 1000.0",color=red1, style=filled]
+1999 -> 2001
+2002 [label="const: 2",color=red1, style=filled]
+1994 -> 2002
+2003 [label="op3: mux",color=green4, style=filled]
+1994 -> 2003
+2004 [label="op2: <",color=green4, style=filled]
+2003 -> 2004
+2005 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2004 -> 2005
+2006 [label="const: 2350.0",color=red1, style=filled]
+2004 -> 2006
+2007 [label="const: 3",color=red1, style=filled]
+2003 -> 2007
+2008 [label="op3: mux",color=green4, style=filled]
+2003 -> 2008
+2009 [label="op2: <",color=green4, style=filled]
+2008 -> 2009
+2010 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2009 -> 2010
+2011 [label="const: 5000.0",color=red1, style=filled]
+2009 -> 2011
+2012 [label="const: 4",color=red1, style=filled]
+2008 -> 2012
+2013 [label="op3: mux",color=green4, style=filled]
+2008 -> 2013
+2014 [label="op2: <",color=green4, style=filled]
+2013 -> 2014
+2015 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2014 -> 2015
+2016 [label="const: 10000.0",color=red1, style=filled]
+2014 -> 2016
+2017 [label="const: 5",color=red1, style=filled]
+2013 -> 2017
+2018 [label="op3: mux",color=green4, style=filled]
+2013 -> 2018
+2019 [label="op2: <",color=green4, style=filled]
+2018 -> 2019
+2020 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2019 -> 2020
+2021 [label="const: 20000.0",color=red1, style=filled]
+2019 -> 2021
+2022 [label="const: 6",color=red1, style=filled]
+2018 -> 2022
+2023 [label="op3: mux",color=green4, style=filled]
+2018 -> 2023
+2024 [label="op2: <",color=green4, style=filled]
+2023 -> 2024
+2025 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2024 -> 2025
+2026 [label="const: 42000.0",color=red1, style=filled]
+2024 -> 2026
+2027 [label="const: 7",color=red1, style=filled]
+2023 -> 2027
+2028 [label="const: 8",color=red1, style=filled]
+2023 -> 2028
+2029 [label="const: 3",color=red1, style=filled]
+1992 -> 2029
+2030 [label="const: 370.40000000000003",color=red1, style=filled]
+1991 -> 2030
+2031 [label="op3: mux",color=green4, style=filled]
+1991 -> 2031
+2032 [label="op2: ==",color=green4, style=filled]
+2031 -> 2032
+2033 [label="label: ?sensitivityLevel",color=plum, style=filled]
+2032 -> 2033
+2034 [label="op3: mux",color=green4, style=filled]
+2033 -> 2034
+2035 [label="op2: &&",color=green4, style=filled]
+2034 -> 2035
+2036 [label="op2: <=",color=green4, style=filled]
+2035 -> 2036
+2037 [label="const: 0.0",color=red1, style=filled]
+2036 -> 2037
+2038 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2036 -> 2038
+2039 [label="op2: <",color=green4, style=filled]
+2035 -> 2039
+2040 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2039 -> 2040
+2041 [label="const: 1000.0",color=red1, style=filled]
+2039 -> 2041
+2042 [label="const: 2",color=red1, style=filled]
+2034 -> 2042
+2043 [label="op3: mux",color=green4, style=filled]
+2034 -> 2043
+2044 [label="op2: <",color=green4, style=filled]
+2043 -> 2044
+2045 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2044 -> 2045
+2046 [label="const: 2350.0",color=red1, style=filled]
+2044 -> 2046
+2047 [label="const: 3",color=red1, style=filled]
+2043 -> 2047
+2048 [label="op3: mux",color=green4, style=filled]
+2043 -> 2048
+2049 [label="op2: <",color=green4, style=filled]
+2048 -> 2049
+2050 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2049 -> 2050
+2051 [label="const: 5000.0",color=red1, style=filled]
+2049 -> 2051
+2052 [label="const: 4",color=red1, style=filled]
+2048 -> 2052
+2053 [label="op3: mux",color=green4, style=filled]
+2048 -> 2053
+2054 [label="op2: <",color=green4, style=filled]
+2053 -> 2054
+2055 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2054 -> 2055
+2056 [label="const: 10000.0",color=red1, style=filled]
+2054 -> 2056
+2057 [label="const: 5",color=red1, style=filled]
+2053 -> 2057
+2058 [label="op3: mux",color=green4, style=filled]
+2053 -> 2058
+2059 [label="op2: <",color=green4, style=filled]
+2058 -> 2059
+2060 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2059 -> 2060
+2061 [label="const: 20000.0",color=red1, style=filled]
+2059 -> 2061
+2062 [label="const: 6",color=red1, style=filled]
+2058 -> 2062
+2063 [label="op3: mux",color=green4, style=filled]
+2058 -> 2063
+2064 [label="op2: <",color=green4, style=filled]
+2063 -> 2064
+2065 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2064 -> 2065
+2066 [label="const: 42000.0",color=red1, style=filled]
+2064 -> 2066
+2067 [label="const: 7",color=red1, style=filled]
+2063 -> 2067
+2068 [label="const: 8",color=red1, style=filled]
+2063 -> 2068
+2069 [label="const: 4",color=red1, style=filled]
+2032 -> 2069
+2070 [label="const: 648.1999999999999",color=red1, style=filled]
+2031 -> 2070
+2071 [label="op3: mux",color=green4, style=filled]
+2031 -> 2071
+2072 [label="op2: ==",color=green4, style=filled]
+2071 -> 2072
+2073 [label="label: ?sensitivityLevel",color=plum, style=filled]
+2072 -> 2073
+2074 [label="op3: mux",color=green4, style=filled]
+2073 -> 2074
+2075 [label="op2: &&",color=green4, style=filled]
+2074 -> 2075
+2076 [label="op2: <=",color=green4, style=filled]
+2075 -> 2076
+2077 [label="const: 0.0",color=red1, style=filled]
+2076 -> 2077
+2078 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2076 -> 2078
+2079 [label="op2: <",color=green4, style=filled]
+2075 -> 2079
+2080 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2079 -> 2080
+2081 [label="const: 1000.0",color=red1, style=filled]
+2079 -> 2081
+2082 [label="const: 2",color=red1, style=filled]
+2074 -> 2082
+2083 [label="op3: mux",color=green4, style=filled]
+2074 -> 2083
+2084 [label="op2: <",color=green4, style=filled]
+2083 -> 2084
+2085 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2084 -> 2085
+2086 [label="const: 2350.0",color=red1, style=filled]
+2084 -> 2086
+2087 [label="const: 3",color=red1, style=filled]
+2083 -> 2087
+2088 [label="op3: mux",color=green4, style=filled]
+2083 -> 2088
+2089 [label="op2: <",color=green4, style=filled]
+2088 -> 2089
+2090 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2089 -> 2090
+2091 [label="const: 5000.0",color=red1, style=filled]
+2089 -> 2091
+2092 [label="const: 4",color=red1, style=filled]
+2088 -> 2092
+2093 [label="op3: mux",color=green4, style=filled]
+2088 -> 2093
+2094 [label="op2: <",color=green4, style=filled]
+2093 -> 2094
+2095 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2094 -> 2095
+2096 [label="const: 10000.0",color=red1, style=filled]
+2094 -> 2096
+2097 [label="const: 5",color=red1, style=filled]
+2093 -> 2097
+2098 [label="op3: mux",color=green4, style=filled]
+2093 -> 2098
+2099 [label="op2: <",color=green4, style=filled]
+2098 -> 2099
+2100 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2099 -> 2100
+2101 [label="const: 20000.0",color=red1, style=filled]
+2099 -> 2101
+2102 [label="const: 6",color=red1, style=filled]
+2098 -> 2102
+2103 [label="op3: mux",color=green4, style=filled]
+2098 -> 2103
+2104 [label="op2: <",color=green4, style=filled]
+2103 -> 2104
+2105 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2104 -> 2105
+2106 [label="const: 42000.0",color=red1, style=filled]
+2104 -> 2106
+2107 [label="const: 7",color=red1, style=filled]
+2103 -> 2107
+2108 [label="const: 8",color=red1, style=filled]
+2103 -> 2108
+2109 [label="const: 5",color=red1, style=filled]
+2072 -> 2109
+2110 [label="const: 1018.6000000000001",color=red1, style=filled]
+2071 -> 2110
+2111 [label="op3: mux",color=green4, style=filled]
+2071 -> 2111
+2112 [label="op2: ==",color=green4, style=filled]
+2111 -> 2112
+2113 [label="label: ?sensitivityLevel",color=plum, style=filled]
+2112 -> 2113
+2114 [label="op3: mux",color=green4, style=filled]
+2113 -> 2114
+2115 [label="op2: &&",color=green4, style=filled]
+2114 -> 2115
+2116 [label="op2: <=",color=green4, style=filled]
+2115 -> 2116
+2117 [label="const: 0.0",color=red1, style=filled]
+2116 -> 2117
+2118 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2116 -> 2118
+2119 [label="op2: <",color=green4, style=filled]
+2115 -> 2119
+2120 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2119 -> 2120
+2121 [label="const: 1000.0",color=red1, style=filled]
+2119 -> 2121
+2122 [label="const: 2",color=red1, style=filled]
+2114 -> 2122
+2123 [label="op3: mux",color=green4, style=filled]
+2114 -> 2123
+2124 [label="op2: <",color=green4, style=filled]
+2123 -> 2124
+2125 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2124 -> 2125
+2126 [label="const: 2350.0",color=red1, style=filled]
+2124 -> 2126
+2127 [label="const: 3",color=red1, style=filled]
+2123 -> 2127
+2128 [label="op3: mux",color=green4, style=filled]
+2123 -> 2128
+2129 [label="op2: <",color=green4, style=filled]
+2128 -> 2129
+2130 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2129 -> 2130
+2131 [label="const: 5000.0",color=red1, style=filled]
+2129 -> 2131
+2132 [label="const: 4",color=red1, style=filled]
+2128 -> 2132
+2133 [label="op3: mux",color=green4, style=filled]
+2128 -> 2133
+2134 [label="op2: <",color=green4, style=filled]
+2133 -> 2134
+2135 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2134 -> 2135
+2136 [label="const: 10000.0",color=red1, style=filled]
+2134 -> 2136
+2137 [label="const: 5",color=red1, style=filled]
+2133 -> 2137
+2138 [label="op3: mux",color=green4, style=filled]
+2133 -> 2138
+2139 [label="op2: <",color=green4, style=filled]
+2138 -> 2139
+2140 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2139 -> 2140
+2141 [label="const: 20000.0",color=red1, style=filled]
+2139 -> 2141
+2142 [label="const: 6",color=red1, style=filled]
+2138 -> 2142
+2143 [label="op3: mux",color=green4, style=filled]
+2138 -> 2143
+2144 [label="op2: <",color=green4, style=filled]
+2143 -> 2144
+2145 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2144 -> 2145
+2146 [label="const: 42000.0",color=red1, style=filled]
+2144 -> 2146
+2147 [label="const: 7",color=red1, style=filled]
+2143 -> 2147
+2148 [label="const: 8",color=red1, style=filled]
+2143 -> 2148
+2149 [label="const: 6",color=red1, style=filled]
+2112 -> 2149
+2150 [label="const: 1481.6000000000001",color=red1, style=filled]
+2111 -> 2150
+2151 [label="op3: mux",color=green4, style=filled]
+2111 -> 2151
+2152 [label="op2: ==",color=green4, style=filled]
+2151 -> 2152
+2153 [label="label: ?sensitivityLevel",color=plum, style=filled]
+2152 -> 2153
+2154 [label="op3: mux",color=green4, style=filled]
+2153 -> 2154
+2155 [label="op2: &&",color=green4, style=filled]
+2154 -> 2155
+2156 [label="op2: <=",color=green4, style=filled]
+2155 -> 2156
+2157 [label="const: 0.0",color=red1, style=filled]
+2156 -> 2157
+2158 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2156 -> 2158
+2159 [label="op2: <",color=green4, style=filled]
+2155 -> 2159
+2160 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2159 -> 2160
+2161 [label="const: 1000.0",color=red1, style=filled]
+2159 -> 2161
+2162 [label="const: 2",color=red1, style=filled]
+2154 -> 2162
+2163 [label="op3: mux",color=green4, style=filled]
+2154 -> 2163
+2164 [label="op2: <",color=green4, style=filled]
+2163 -> 2164
+2165 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2164 -> 2165
+2166 [label="const: 2350.0",color=red1, style=filled]
+2164 -> 2166
+2167 [label="const: 3",color=red1, style=filled]
+2163 -> 2167
+2168 [label="op3: mux",color=green4, style=filled]
+2163 -> 2168
+2169 [label="op2: <",color=green4, style=filled]
+2168 -> 2169
+2170 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2169 -> 2170
+2171 [label="const: 5000.0",color=red1, style=filled]
+2169 -> 2171
+2172 [label="const: 4",color=red1, style=filled]
+2168 -> 2172
+2173 [label="op3: mux",color=green4, style=filled]
+2168 -> 2173
+2174 [label="op2: <",color=green4, style=filled]
+2173 -> 2174
+2175 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2174 -> 2175
+2176 [label="const: 10000.0",color=red1, style=filled]
+2174 -> 2176
+2177 [label="const: 5",color=red1, style=filled]
+2173 -> 2177
+2178 [label="op3: mux",color=green4, style=filled]
+2173 -> 2178
+2179 [label="op2: <",color=green4, style=filled]
+2178 -> 2179
+2180 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2179 -> 2180
+2181 [label="const: 20000.0",color=red1, style=filled]
+2179 -> 2181
+2182 [label="const: 6",color=red1, style=filled]
+2178 -> 2182
+2183 [label="op3: mux",color=green4, style=filled]
+2178 -> 2183
+2184 [label="op2: <",color=green4, style=filled]
+2183 -> 2184
+2185 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2184 -> 2185
+2186 [label="const: 42000.0",color=red1, style=filled]
+2184 -> 2186
+2187 [label="const: 7",color=red1, style=filled]
+2183 -> 2187
+2188 [label="const: 8",color=red1, style=filled]
+2183 -> 2188
+2189 [label="const: 7",color=red1, style=filled]
+2152 -> 2189
+2190 [label="const: 2037.2000000000003",color=red1, style=filled]
+2151 -> 2190
+2191 [label="op3: mux",color=green4, style=filled]
+2151 -> 2191
+2192 [label="op2: ==",color=green4, style=filled]
+2191 -> 2192
+2193 [label="label: ?sensitivityLevel",color=plum, style=filled]
+2192 -> 2193
+2194 [label="op3: mux",color=green4, style=filled]
+2193 -> 2194
+2195 [label="op2: &&",color=green4, style=filled]
+2194 -> 2195
+2196 [label="op2: <=",color=green4, style=filled]
+2195 -> 2196
+2197 [label="const: 0.0",color=red1, style=filled]
+2196 -> 2197
+2198 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2196 -> 2198
+2199 [label="op2: <",color=green4, style=filled]
+2195 -> 2199
+2200 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2199 -> 2200
+2201 [label="const: 1000.0",color=red1, style=filled]
+2199 -> 2201
+2202 [label="const: 2",color=red1, style=filled]
+2194 -> 2202
+2203 [label="op3: mux",color=green4, style=filled]
+2194 -> 2203
+2204 [label="op2: <",color=green4, style=filled]
+2203 -> 2204
+2205 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2204 -> 2205
+2206 [label="const: 2350.0",color=red1, style=filled]
+2204 -> 2206
+2207 [label="const: 3",color=red1, style=filled]
+2203 -> 2207
+2208 [label="op3: mux",color=green4, style=filled]
+2203 -> 2208
+2209 [label="op2: <",color=green4, style=filled]
+2208 -> 2209
+2210 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2209 -> 2210
+2211 [label="const: 5000.0",color=red1, style=filled]
+2209 -> 2211
+2212 [label="const: 4",color=red1, style=filled]
+2208 -> 2212
+2213 [label="op3: mux",color=green4, style=filled]
+2208 -> 2213
+2214 [label="op2: <",color=green4, style=filled]
+2213 -> 2214
+2215 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2214 -> 2215
+2216 [label="const: 10000.0",color=red1, style=filled]
+2214 -> 2216
+2217 [label="const: 5",color=red1, style=filled]
+2213 -> 2217
+2218 [label="op3: mux",color=green4, style=filled]
+2213 -> 2218
+2219 [label="op2: <",color=green4, style=filled]
+2218 -> 2219
+2220 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2219 -> 2220
+2221 [label="const: 20000.0",color=red1, style=filled]
+2219 -> 2221
+2222 [label="const: 6",color=red1, style=filled]
+2218 -> 2222
+2223 [label="op3: mux",color=green4, style=filled]
+2218 -> 2223
+2224 [label="op2: <",color=green4, style=filled]
+2223 -> 2224
+2225 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2224 -> 2225
+2226 [label="const: 42000.0",color=red1, style=filled]
+2224 -> 2226
+2227 [label="const: 7",color=red1, style=filled]
+2223 -> 2227
+2228 [label="const: 8",color=red1, style=filled]
+2223 -> 2228
+2229 [label="const: 8",color=red1, style=filled]
+2192 -> 2229
+2230 [label="const: 2037.2000000000003",color=red1, style=filled]
+2191 -> 2230
+2231 [label="const: 0.0",color=red1, style=filled]
+2191 -> 2231
+2232 [label="op2: ||",color=green4, style=filled]
+1911 -> 2232
+2233 [label="op2: <=",color=green4, style=filled]
+2232 -> 2233
+2234 [label="label: ?norm2dim",color=plum, style=filled]
+2233 -> 2234
+2235 [label="ext_sqrt_2",color=cyan4, style=filled]
+2234 -> 2235
+2253 [label="label: ?dmodRA",color=plum, style=filled]
+2233 -> 2253
+2254 [label="op3: mux",color=green4, style=filled]
+2253 -> 2254
+2255 [label="op2: ==",color=green4, style=filled]
+2254 -> 2255
+2256 [label="label: ?sensitivityLevel",color=plum, style=filled]
+2255 -> 2256
+2257 [label="op3: mux",color=green4, style=filled]
+2256 -> 2257
+2258 [label="op2: &&",color=green4, style=filled]
+2257 -> 2258
+2259 [label="op2: <=",color=green4, style=filled]
+2258 -> 2259
+2260 [label="const: 0.0",color=red1, style=filled]
+2259 -> 2260
+2261 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2259 -> 2261
+2262 [label="op2: <",color=green4, style=filled]
+2258 -> 2262
+2263 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2262 -> 2263
+2264 [label="const: 1000.0",color=red1, style=filled]
+2262 -> 2264
+2265 [label="const: 2",color=red1, style=filled]
+2257 -> 2265
+2266 [label="op3: mux",color=green4, style=filled]
+2257 -> 2266
+2267 [label="op2: <",color=green4, style=filled]
+2266 -> 2267
+2268 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2267 -> 2268
+2269 [label="const: 2350.0",color=red1, style=filled]
+2267 -> 2269
+2270 [label="const: 3",color=red1, style=filled]
+2266 -> 2270
+2271 [label="op3: mux",color=green4, style=filled]
+2266 -> 2271
+2272 [label="op2: <",color=green4, style=filled]
+2271 -> 2272
+2273 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2272 -> 2273
+2274 [label="const: 5000.0",color=red1, style=filled]
+2272 -> 2274
+2275 [label="const: 4",color=red1, style=filled]
+2271 -> 2275
+2276 [label="op3: mux",color=green4, style=filled]
+2271 -> 2276
+2277 [label="op2: <",color=green4, style=filled]
+2276 -> 2277
+2278 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2277 -> 2278
+2279 [label="const: 10000.0",color=red1, style=filled]
+2277 -> 2279
+2280 [label="const: 5",color=red1, style=filled]
+2276 -> 2280
+2281 [label="op3: mux",color=green4, style=filled]
+2276 -> 2281
+2282 [label="op2: <",color=green4, style=filled]
+2281 -> 2282
+2283 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2282 -> 2283
+2284 [label="const: 20000.0",color=red1, style=filled]
+2282 -> 2284
+2285 [label="const: 6",color=red1, style=filled]
+2281 -> 2285
+2286 [label="op3: mux",color=green4, style=filled]
+2281 -> 2286
+2287 [label="op2: <",color=green4, style=filled]
+2286 -> 2287
+2288 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2287 -> 2288
+2289 [label="const: 42000.0",color=red1, style=filled]
+2287 -> 2289
+2290 [label="const: 7",color=red1, style=filled]
+2286 -> 2290
+2291 [label="const: 8",color=red1, style=filled]
+2286 -> 2291
+2292 [label="const: 2",color=red1, style=filled]
+2255 -> 2292
+2293 [label="const: 0.0",color=red1, style=filled]
+2254 -> 2293
+2294 [label="op3: mux",color=green4, style=filled]
+2254 -> 2294
+2295 [label="op2: ==",color=green4, style=filled]
+2294 -> 2295
+2296 [label="label: ?sensitivityLevel",color=plum, style=filled]
+2295 -> 2296
+2297 [label="op3: mux",color=green4, style=filled]
+2296 -> 2297
+2298 [label="op2: &&",color=green4, style=filled]
+2297 -> 2298
+2299 [label="op2: <=",color=green4, style=filled]
+2298 -> 2299
+2300 [label="const: 0.0",color=red1, style=filled]
+2299 -> 2300
+2301 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2299 -> 2301
+2302 [label="op2: <",color=green4, style=filled]
+2298 -> 2302
+2303 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2302 -> 2303
+2304 [label="const: 1000.0",color=red1, style=filled]
+2302 -> 2304
+2305 [label="const: 2",color=red1, style=filled]
+2297 -> 2305
+2306 [label="op3: mux",color=green4, style=filled]
+2297 -> 2306
+2307 [label="op2: <",color=green4, style=filled]
+2306 -> 2307
+2308 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2307 -> 2308
+2309 [label="const: 2350.0",color=red1, style=filled]
+2307 -> 2309
+2310 [label="const: 3",color=red1, style=filled]
+2306 -> 2310
+2311 [label="op3: mux",color=green4, style=filled]
+2306 -> 2311
+2312 [label="op2: <",color=green4, style=filled]
+2311 -> 2312
+2313 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2312 -> 2313
+2314 [label="const: 5000.0",color=red1, style=filled]
+2312 -> 2314
+2315 [label="const: 4",color=red1, style=filled]
+2311 -> 2315
+2316 [label="op3: mux",color=green4, style=filled]
+2311 -> 2316
+2317 [label="op2: <",color=green4, style=filled]
+2316 -> 2317
+2318 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2317 -> 2318
+2319 [label="const: 10000.0",color=red1, style=filled]
+2317 -> 2319
+2320 [label="const: 5",color=red1, style=filled]
+2316 -> 2320
+2321 [label="op3: mux",color=green4, style=filled]
+2316 -> 2321
+2322 [label="op2: <",color=green4, style=filled]
+2321 -> 2322
+2323 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2322 -> 2323
+2324 [label="const: 20000.0",color=red1, style=filled]
+2322 -> 2324
+2325 [label="const: 6",color=red1, style=filled]
+2321 -> 2325
+2326 [label="op3: mux",color=green4, style=filled]
+2321 -> 2326
+2327 [label="op2: <",color=green4, style=filled]
+2326 -> 2327
+2328 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2327 -> 2328
+2329 [label="const: 42000.0",color=red1, style=filled]
+2327 -> 2329
+2330 [label="const: 7",color=red1, style=filled]
+2326 -> 2330
+2331 [label="const: 8",color=red1, style=filled]
+2326 -> 2331
+2332 [label="const: 3",color=red1, style=filled]
+2295 -> 2332
+2333 [label="const: 370.40000000000003",color=red1, style=filled]
+2294 -> 2333
+2334 [label="op3: mux",color=green4, style=filled]
+2294 -> 2334
+2335 [label="op2: ==",color=green4, style=filled]
+2334 -> 2335
+2336 [label="label: ?sensitivityLevel",color=plum, style=filled]
+2335 -> 2336
+2337 [label="op3: mux",color=green4, style=filled]
+2336 -> 2337
+2338 [label="op2: &&",color=green4, style=filled]
+2337 -> 2338
+2339 [label="op2: <=",color=green4, style=filled]
+2338 -> 2339
+2340 [label="const: 0.0",color=red1, style=filled]
+2339 -> 2340
+2341 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2339 -> 2341
+2342 [label="op2: <",color=green4, style=filled]
+2338 -> 2342
+2343 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2342 -> 2343
+2344 [label="const: 1000.0",color=red1, style=filled]
+2342 -> 2344
+2345 [label="const: 2",color=red1, style=filled]
+2337 -> 2345
+2346 [label="op3: mux",color=green4, style=filled]
+2337 -> 2346
+2347 [label="op2: <",color=green4, style=filled]
+2346 -> 2347
+2348 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2347 -> 2348
+2349 [label="const: 2350.0",color=red1, style=filled]
+2347 -> 2349
+2350 [label="const: 3",color=red1, style=filled]
+2346 -> 2350
+2351 [label="op3: mux",color=green4, style=filled]
+2346 -> 2351
+2352 [label="op2: <",color=green4, style=filled]
+2351 -> 2352
+2353 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2352 -> 2353
+2354 [label="const: 5000.0",color=red1, style=filled]
+2352 -> 2354
+2355 [label="const: 4",color=red1, style=filled]
+2351 -> 2355
+2356 [label="op3: mux",color=green4, style=filled]
+2351 -> 2356
+2357 [label="op2: <",color=green4, style=filled]
+2356 -> 2357
+2358 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2357 -> 2358
+2359 [label="const: 10000.0",color=red1, style=filled]
+2357 -> 2359
+2360 [label="const: 5",color=red1, style=filled]
+2356 -> 2360
+2361 [label="op3: mux",color=green4, style=filled]
+2356 -> 2361
+2362 [label="op2: <",color=green4, style=filled]
+2361 -> 2362
+2363 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2362 -> 2363
+2364 [label="const: 20000.0",color=red1, style=filled]
+2362 -> 2364
+2365 [label="const: 6",color=red1, style=filled]
+2361 -> 2365
+2366 [label="op3: mux",color=green4, style=filled]
+2361 -> 2366
+2367 [label="op2: <",color=green4, style=filled]
+2366 -> 2367
+2368 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2367 -> 2368
+2369 [label="const: 42000.0",color=red1, style=filled]
+2367 -> 2369
+2370 [label="const: 7",color=red1, style=filled]
+2366 -> 2370
+2371 [label="const: 8",color=red1, style=filled]
+2366 -> 2371
+2372 [label="const: 4",color=red1, style=filled]
+2335 -> 2372
+2373 [label="const: 648.1999999999999",color=red1, style=filled]
+2334 -> 2373
+2374 [label="op3: mux",color=green4, style=filled]
+2334 -> 2374
+2375 [label="op2: ==",color=green4, style=filled]
+2374 -> 2375
+2376 [label="label: ?sensitivityLevel",color=plum, style=filled]
+2375 -> 2376
+2377 [label="op3: mux",color=green4, style=filled]
+2376 -> 2377
+2378 [label="op2: &&",color=green4, style=filled]
+2377 -> 2378
+2379 [label="op2: <=",color=green4, style=filled]
+2378 -> 2379
+2380 [label="const: 0.0",color=red1, style=filled]
+2379 -> 2380
+2381 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2379 -> 2381
+2382 [label="op2: <",color=green4, style=filled]
+2378 -> 2382
+2383 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2382 -> 2383
+2384 [label="const: 1000.0",color=red1, style=filled]
+2382 -> 2384
+2385 [label="const: 2",color=red1, style=filled]
+2377 -> 2385
+2386 [label="op3: mux",color=green4, style=filled]
+2377 -> 2386
+2387 [label="op2: <",color=green4, style=filled]
+2386 -> 2387
+2388 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2387 -> 2388
+2389 [label="const: 2350.0",color=red1, style=filled]
+2387 -> 2389
+2390 [label="const: 3",color=red1, style=filled]
+2386 -> 2390
+2391 [label="op3: mux",color=green4, style=filled]
+2386 -> 2391
+2392 [label="op2: <",color=green4, style=filled]
+2391 -> 2392
+2393 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2392 -> 2393
+2394 [label="const: 5000.0",color=red1, style=filled]
+2392 -> 2394
+2395 [label="const: 4",color=red1, style=filled]
+2391 -> 2395
+2396 [label="op3: mux",color=green4, style=filled]
+2391 -> 2396
+2397 [label="op2: <",color=green4, style=filled]
+2396 -> 2397
+2398 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2397 -> 2398
+2399 [label="const: 10000.0",color=red1, style=filled]
+2397 -> 2399
+2400 [label="const: 5",color=red1, style=filled]
+2396 -> 2400
+2401 [label="op3: mux",color=green4, style=filled]
+2396 -> 2401
+2402 [label="op2: <",color=green4, style=filled]
+2401 -> 2402
+2403 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2402 -> 2403
+2404 [label="const: 20000.0",color=red1, style=filled]
+2402 -> 2404
+2405 [label="const: 6",color=red1, style=filled]
+2401 -> 2405
+2406 [label="op3: mux",color=green4, style=filled]
+2401 -> 2406
+2407 [label="op2: <",color=green4, style=filled]
+2406 -> 2407
+2408 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2407 -> 2408
+2409 [label="const: 42000.0",color=red1, style=filled]
+2407 -> 2409
+2410 [label="const: 7",color=red1, style=filled]
+2406 -> 2410
+2411 [label="const: 8",color=red1, style=filled]
+2406 -> 2411
+2412 [label="const: 5",color=red1, style=filled]
+2375 -> 2412
+2413 [label="const: 1018.6000000000001",color=red1, style=filled]
+2374 -> 2413
+2414 [label="op3: mux",color=green4, style=filled]
+2374 -> 2414
+2415 [label="op2: ==",color=green4, style=filled]
+2414 -> 2415
+2416 [label="label: ?sensitivityLevel",color=plum, style=filled]
+2415 -> 2416
+2417 [label="op3: mux",color=green4, style=filled]
+2416 -> 2417
+2418 [label="op2: &&",color=green4, style=filled]
+2417 -> 2418
+2419 [label="op2: <=",color=green4, style=filled]
+2418 -> 2419
+2420 [label="const: 0.0",color=red1, style=filled]
+2419 -> 2420
+2421 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2419 -> 2421
+2422 [label="op2: <",color=green4, style=filled]
+2418 -> 2422
+2423 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2422 -> 2423
+2424 [label="const: 1000.0",color=red1, style=filled]
+2422 -> 2424
+2425 [label="const: 2",color=red1, style=filled]
+2417 -> 2425
+2426 [label="op3: mux",color=green4, style=filled]
+2417 -> 2426
+2427 [label="op2: <",color=green4, style=filled]
+2426 -> 2427
+2428 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2427 -> 2428
+2429 [label="const: 2350.0",color=red1, style=filled]
+2427 -> 2429
+2430 [label="const: 3",color=red1, style=filled]
+2426 -> 2430
+2431 [label="op3: mux",color=green4, style=filled]
+2426 -> 2431
+2432 [label="op2: <",color=green4, style=filled]
+2431 -> 2432
+2433 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2432 -> 2433
+2434 [label="const: 5000.0",color=red1, style=filled]
+2432 -> 2434
+2435 [label="const: 4",color=red1, style=filled]
+2431 -> 2435
+2436 [label="op3: mux",color=green4, style=filled]
+2431 -> 2436
+2437 [label="op2: <",color=green4, style=filled]
+2436 -> 2437
+2438 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2437 -> 2438
+2439 [label="const: 10000.0",color=red1, style=filled]
+2437 -> 2439
+2440 [label="const: 5",color=red1, style=filled]
+2436 -> 2440
+2441 [label="op3: mux",color=green4, style=filled]
+2436 -> 2441
+2442 [label="op2: <",color=green4, style=filled]
+2441 -> 2442
+2443 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2442 -> 2443
+2444 [label="const: 20000.0",color=red1, style=filled]
+2442 -> 2444
+2445 [label="const: 6",color=red1, style=filled]
+2441 -> 2445
+2446 [label="op3: mux",color=green4, style=filled]
+2441 -> 2446
+2447 [label="op2: <",color=green4, style=filled]
+2446 -> 2447
+2448 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2447 -> 2448
+2449 [label="const: 42000.0",color=red1, style=filled]
+2447 -> 2449
+2450 [label="const: 7",color=red1, style=filled]
+2446 -> 2450
+2451 [label="const: 8",color=red1, style=filled]
+2446 -> 2451
+2452 [label="const: 6",color=red1, style=filled]
+2415 -> 2452
+2453 [label="const: 1481.6000000000001",color=red1, style=filled]
+2414 -> 2453
+2454 [label="op3: mux",color=green4, style=filled]
+2414 -> 2454
+2455 [label="op2: ==",color=green4, style=filled]
+2454 -> 2455
+2456 [label="label: ?sensitivityLevel",color=plum, style=filled]
+2455 -> 2456
+2457 [label="op3: mux",color=green4, style=filled]
+2456 -> 2457
+2458 [label="op2: &&",color=green4, style=filled]
+2457 -> 2458
+2459 [label="op2: <=",color=green4, style=filled]
+2458 -> 2459
+2460 [label="const: 0.0",color=red1, style=filled]
+2459 -> 2460
+2461 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2459 -> 2461
+2462 [label="op2: <",color=green4, style=filled]
+2458 -> 2462
+2463 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2462 -> 2463
+2464 [label="const: 1000.0",color=red1, style=filled]
+2462 -> 2464
+2465 [label="const: 2",color=red1, style=filled]
+2457 -> 2465
+2466 [label="op3: mux",color=green4, style=filled]
+2457 -> 2466
+2467 [label="op2: <",color=green4, style=filled]
+2466 -> 2467
+2468 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2467 -> 2468
+2469 [label="const: 2350.0",color=red1, style=filled]
+2467 -> 2469
+2470 [label="const: 3",color=red1, style=filled]
+2466 -> 2470
+2471 [label="op3: mux",color=green4, style=filled]
+2466 -> 2471
+2472 [label="op2: <",color=green4, style=filled]
+2471 -> 2472
+2473 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2472 -> 2473
+2474 [label="const: 5000.0",color=red1, style=filled]
+2472 -> 2474
+2475 [label="const: 4",color=red1, style=filled]
+2471 -> 2475
+2476 [label="op3: mux",color=green4, style=filled]
+2471 -> 2476
+2477 [label="op2: <",color=green4, style=filled]
+2476 -> 2477
+2478 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2477 -> 2478
+2479 [label="const: 10000.0",color=red1, style=filled]
+2477 -> 2479
+2480 [label="const: 5",color=red1, style=filled]
+2476 -> 2480
+2481 [label="op3: mux",color=green4, style=filled]
+2476 -> 2481
+2482 [label="op2: <",color=green4, style=filled]
+2481 -> 2482
+2483 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2482 -> 2483
+2484 [label="const: 20000.0",color=red1, style=filled]
+2482 -> 2484
+2485 [label="const: 6",color=red1, style=filled]
+2481 -> 2485
+2486 [label="op3: mux",color=green4, style=filled]
+2481 -> 2486
+2487 [label="op2: <",color=green4, style=filled]
+2486 -> 2487
+2488 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2487 -> 2488
+2489 [label="const: 42000.0",color=red1, style=filled]
+2487 -> 2489
+2490 [label="const: 7",color=red1, style=filled]
+2486 -> 2490
+2491 [label="const: 8",color=red1, style=filled]
+2486 -> 2491
+2492 [label="const: 7",color=red1, style=filled]
+2455 -> 2492
+2493 [label="const: 2037.2000000000003",color=red1, style=filled]
+2454 -> 2493
+2494 [label="op3: mux",color=green4, style=filled]
+2454 -> 2494
+2495 [label="op2: ==",color=green4, style=filled]
+2494 -> 2495
+2496 [label="label: ?sensitivityLevel",color=plum, style=filled]
+2495 -> 2496
+2497 [label="op3: mux",color=green4, style=filled]
+2496 -> 2497
+2498 [label="op2: &&",color=green4, style=filled]
+2497 -> 2498
+2499 [label="op2: <=",color=green4, style=filled]
+2498 -> 2499
+2500 [label="const: 0.0",color=red1, style=filled]
+2499 -> 2500
+2501 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2499 -> 2501
+2502 [label="op2: <",color=green4, style=filled]
+2498 -> 2502
+2503 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2502 -> 2503
+2504 [label="const: 1000.0",color=red1, style=filled]
+2502 -> 2504
+2505 [label="const: 2",color=red1, style=filled]
+2497 -> 2505
+2506 [label="op3: mux",color=green4, style=filled]
+2497 -> 2506
+2507 [label="op2: <",color=green4, style=filled]
+2506 -> 2507
+2508 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2507 -> 2508
+2509 [label="const: 2350.0",color=red1, style=filled]
+2507 -> 2509
+2510 [label="const: 3",color=red1, style=filled]
+2506 -> 2510
+2511 [label="op3: mux",color=green4, style=filled]
+2506 -> 2511
+2512 [label="op2: <",color=green4, style=filled]
+2511 -> 2512
+2513 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2512 -> 2513
+2514 [label="const: 5000.0",color=red1, style=filled]
+2512 -> 2514
+2515 [label="const: 4",color=red1, style=filled]
+2511 -> 2515
+2516 [label="op3: mux",color=green4, style=filled]
+2511 -> 2516
+2517 [label="op2: <",color=green4, style=filled]
+2516 -> 2517
+2518 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2517 -> 2518
+2519 [label="const: 10000.0",color=red1, style=filled]
+2517 -> 2519
+2520 [label="const: 5",color=red1, style=filled]
+2516 -> 2520
+2521 [label="op3: mux",color=green4, style=filled]
+2516 -> 2521
+2522 [label="op2: <",color=green4, style=filled]
+2521 -> 2522
+2523 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2522 -> 2523
+2524 [label="const: 20000.0",color=red1, style=filled]
+2522 -> 2524
+2525 [label="const: 6",color=red1, style=filled]
+2521 -> 2525
+2526 [label="op3: mux",color=green4, style=filled]
+2521 -> 2526
+2527 [label="op2: <",color=green4, style=filled]
+2526 -> 2527
+2528 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2527 -> 2528
+2529 [label="const: 42000.0",color=red1, style=filled]
+2527 -> 2529
+2530 [label="const: 7",color=red1, style=filled]
+2526 -> 2530
+2531 [label="const: 8",color=red1, style=filled]
+2526 -> 2531
+2532 [label="const: 8",color=red1, style=filled]
+2495 -> 2532
+2533 [label="const: 2037.2000000000003",color=red1, style=filled]
+2494 -> 2533
+2534 [label="const: 0.0",color=red1, style=filled]
+2494 -> 2534
+2535 [label="op2: <=",color=green4, style=filled]
+2232 -> 2535
+2536 [label="label: ?taumod",color=plum, style=filled]
+2535 -> 2536
+2537 [label="op3: mux",color=green4, style=filled]
+2536 -> 2537
+2538 [label="op2: <",color=green4, style=filled]
+2537 -> 2538
+2539 [label="label: ?scalar2dim",color=plum, style=filled]
+2538 -> 2539
+2540 [label="op2: +",color=green4, style=filled]
+2539 -> 2540
+2541 [label="op2: *",color=green4, style=filled]
+2540 -> 2541
+2542 [label="op2: -",color=green4, style=filled]
+2541 -> 2542
+2543 [label="ext_ownship_position_x",color=cyan1, style=filled]
+2542 -> 2543
+2544 [label="ext_intruder_position_x",color=cyan1, style=filled]
+2542 -> 2544
+2545 [label="op2: -",color=green4, style=filled]
+2541 -> 2545
+2546 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+2545 -> 2546
+2547 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+2545 -> 2547
+2548 [label="op2: *",color=green4, style=filled]
+2540 -> 2548
+2549 [label="op2: -",color=green4, style=filled]
+2548 -> 2549
+2550 [label="ext_ownship_position_y",color=cyan1, style=filled]
+2549 -> 2550
+2551 [label="ext_intruder_position_y",color=cyan1, style=filled]
+2549 -> 2551
+2552 [label="op2: -",color=green4, style=filled]
+2548 -> 2552
+2553 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+2552 -> 2553
+2554 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+2552 -> 2554
+2555 [label="const: 0.0",color=red1, style=filled]
+2538 -> 2555
+2556 [label="op2: /",color=green4, style=filled]
+2537 -> 2556
+2557 [label="op2: -",color=green4, style=filled]
+2556 -> 2557
+2558 [label="label: ?sq",color=plum, style=filled]
+2557 -> 2558
+2559 [label="op2: *",color=green4, style=filled]
+2558 -> 2559
+2560 [label="label: ?dmodRA",color=plum, style=filled]
+2559 -> 2560
+2561 [label="op3: mux",color=green4, style=filled]
+2560 -> 2561
+2562 [label="op2: ==",color=green4, style=filled]
+2561 -> 2562
+2563 [label="label: ?sensitivityLevel",color=plum, style=filled]
+2562 -> 2563
+2564 [label="op3: mux",color=green4, style=filled]
+2563 -> 2564
+2565 [label="op2: &&",color=green4, style=filled]
+2564 -> 2565
+2566 [label="op2: <=",color=green4, style=filled]
+2565 -> 2566
+2567 [label="const: 0.0",color=red1, style=filled]
+2566 -> 2567
+2568 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2566 -> 2568
+2569 [label="op2: <",color=green4, style=filled]
+2565 -> 2569
+2570 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2569 -> 2570
+2571 [label="const: 1000.0",color=red1, style=filled]
+2569 -> 2571
+2572 [label="const: 2",color=red1, style=filled]
+2564 -> 2572
+2573 [label="op3: mux",color=green4, style=filled]
+2564 -> 2573
+2574 [label="op2: <",color=green4, style=filled]
+2573 -> 2574
+2575 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2574 -> 2575
+2576 [label="const: 2350.0",color=red1, style=filled]
+2574 -> 2576
+2577 [label="const: 3",color=red1, style=filled]
+2573 -> 2577
+2578 [label="op3: mux",color=green4, style=filled]
+2573 -> 2578
+2579 [label="op2: <",color=green4, style=filled]
+2578 -> 2579
+2580 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2579 -> 2580
+2581 [label="const: 5000.0",color=red1, style=filled]
+2579 -> 2581
+2582 [label="const: 4",color=red1, style=filled]
+2578 -> 2582
+2583 [label="op3: mux",color=green4, style=filled]
+2578 -> 2583
+2584 [label="op2: <",color=green4, style=filled]
+2583 -> 2584
+2585 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2584 -> 2585
+2586 [label="const: 10000.0",color=red1, style=filled]
+2584 -> 2586
+2587 [label="const: 5",color=red1, style=filled]
+2583 -> 2587
+2588 [label="op3: mux",color=green4, style=filled]
+2583 -> 2588
+2589 [label="op2: <",color=green4, style=filled]
+2588 -> 2589
+2590 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2589 -> 2590
+2591 [label="const: 20000.0",color=red1, style=filled]
+2589 -> 2591
+2592 [label="const: 6",color=red1, style=filled]
+2588 -> 2592
+2593 [label="op3: mux",color=green4, style=filled]
+2588 -> 2593
+2594 [label="op2: <",color=green4, style=filled]
+2593 -> 2594
+2595 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2594 -> 2595
+2596 [label="const: 42000.0",color=red1, style=filled]
+2594 -> 2596
+2597 [label="const: 7",color=red1, style=filled]
+2593 -> 2597
+2598 [label="const: 8",color=red1, style=filled]
+2593 -> 2598
+2599 [label="const: 2",color=red1, style=filled]
+2562 -> 2599
+2600 [label="const: 0.0",color=red1, style=filled]
+2561 -> 2600
+2601 [label="op3: mux",color=green4, style=filled]
+2561 -> 2601
+2602 [label="op2: ==",color=green4, style=filled]
+2601 -> 2602
+2603 [label="label: ?sensitivityLevel",color=plum, style=filled]
+2602 -> 2603
+2604 [label="op3: mux",color=green4, style=filled]
+2603 -> 2604
+2605 [label="op2: &&",color=green4, style=filled]
+2604 -> 2605
+2606 [label="op2: <=",color=green4, style=filled]
+2605 -> 2606
+2607 [label="const: 0.0",color=red1, style=filled]
+2606 -> 2607
+2608 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2606 -> 2608
+2609 [label="op2: <",color=green4, style=filled]
+2605 -> 2609
+2610 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2609 -> 2610
+2611 [label="const: 1000.0",color=red1, style=filled]
+2609 -> 2611
+2612 [label="const: 2",color=red1, style=filled]
+2604 -> 2612
+2613 [label="op3: mux",color=green4, style=filled]
+2604 -> 2613
+2614 [label="op2: <",color=green4, style=filled]
+2613 -> 2614
+2615 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2614 -> 2615
+2616 [label="const: 2350.0",color=red1, style=filled]
+2614 -> 2616
+2617 [label="const: 3",color=red1, style=filled]
+2613 -> 2617
+2618 [label="op3: mux",color=green4, style=filled]
+2613 -> 2618
+2619 [label="op2: <",color=green4, style=filled]
+2618 -> 2619
+2620 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2619 -> 2620
+2621 [label="const: 5000.0",color=red1, style=filled]
+2619 -> 2621
+2622 [label="const: 4",color=red1, style=filled]
+2618 -> 2622
+2623 [label="op3: mux",color=green4, style=filled]
+2618 -> 2623
+2624 [label="op2: <",color=green4, style=filled]
+2623 -> 2624
+2625 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2624 -> 2625
+2626 [label="const: 10000.0",color=red1, style=filled]
+2624 -> 2626
+2627 [label="const: 5",color=red1, style=filled]
+2623 -> 2627
+2628 [label="op3: mux",color=green4, style=filled]
+2623 -> 2628
+2629 [label="op2: <",color=green4, style=filled]
+2628 -> 2629
+2630 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2629 -> 2630
+2631 [label="const: 20000.0",color=red1, style=filled]
+2629 -> 2631
+2632 [label="const: 6",color=red1, style=filled]
+2628 -> 2632
+2633 [label="op3: mux",color=green4, style=filled]
+2628 -> 2633
+2634 [label="op2: <",color=green4, style=filled]
+2633 -> 2634
+2635 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2634 -> 2635
+2636 [label="const: 42000.0",color=red1, style=filled]
+2634 -> 2636
+2637 [label="const: 7",color=red1, style=filled]
+2633 -> 2637
+2638 [label="const: 8",color=red1, style=filled]
+2633 -> 2638
+2639 [label="const: 3",color=red1, style=filled]
+2602 -> 2639
+2640 [label="const: 370.40000000000003",color=red1, style=filled]
+2601 -> 2640
+2641 [label="op3: mux",color=green4, style=filled]
+2601 -> 2641
+2642 [label="op2: ==",color=green4, style=filled]
+2641 -> 2642
+2643 [label="label: ?sensitivityLevel",color=plum, style=filled]
+2642 -> 2643
+2644 [label="op3: mux",color=green4, style=filled]
+2643 -> 2644
+2645 [label="op2: &&",color=green4, style=filled]
+2644 -> 2645
+2646 [label="op2: <=",color=green4, style=filled]
+2645 -> 2646
+2647 [label="const: 0.0",color=red1, style=filled]
+2646 -> 2647
+2648 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2646 -> 2648
+2649 [label="op2: <",color=green4, style=filled]
+2645 -> 2649
+2650 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2649 -> 2650
+2651 [label="const: 1000.0",color=red1, style=filled]
+2649 -> 2651
+2652 [label="const: 2",color=red1, style=filled]
+2644 -> 2652
+2653 [label="op3: mux",color=green4, style=filled]
+2644 -> 2653
+2654 [label="op2: <",color=green4, style=filled]
+2653 -> 2654
+2655 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2654 -> 2655
+2656 [label="const: 2350.0",color=red1, style=filled]
+2654 -> 2656
+2657 [label="const: 3",color=red1, style=filled]
+2653 -> 2657
+2658 [label="op3: mux",color=green4, style=filled]
+2653 -> 2658
+2659 [label="op2: <",color=green4, style=filled]
+2658 -> 2659
+2660 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2659 -> 2660
+2661 [label="const: 5000.0",color=red1, style=filled]
+2659 -> 2661
+2662 [label="const: 4",color=red1, style=filled]
+2658 -> 2662
+2663 [label="op3: mux",color=green4, style=filled]
+2658 -> 2663
+2664 [label="op2: <",color=green4, style=filled]
+2663 -> 2664
+2665 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2664 -> 2665
+2666 [label="const: 10000.0",color=red1, style=filled]
+2664 -> 2666
+2667 [label="const: 5",color=red1, style=filled]
+2663 -> 2667
+2668 [label="op3: mux",color=green4, style=filled]
+2663 -> 2668
+2669 [label="op2: <",color=green4, style=filled]
+2668 -> 2669
+2670 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2669 -> 2670
+2671 [label="const: 20000.0",color=red1, style=filled]
+2669 -> 2671
+2672 [label="const: 6",color=red1, style=filled]
+2668 -> 2672
+2673 [label="op3: mux",color=green4, style=filled]
+2668 -> 2673
+2674 [label="op2: <",color=green4, style=filled]
+2673 -> 2674
+2675 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2674 -> 2675
+2676 [label="const: 42000.0",color=red1, style=filled]
+2674 -> 2676
+2677 [label="const: 7",color=red1, style=filled]
+2673 -> 2677
+2678 [label="const: 8",color=red1, style=filled]
+2673 -> 2678
+2679 [label="const: 4",color=red1, style=filled]
+2642 -> 2679
+2680 [label="const: 648.1999999999999",color=red1, style=filled]
+2641 -> 2680
+2681 [label="op3: mux",color=green4, style=filled]
+2641 -> 2681
+2682 [label="op2: ==",color=green4, style=filled]
+2681 -> 2682
+2683 [label="label: ?sensitivityLevel",color=plum, style=filled]
+2682 -> 2683
+2684 [label="op3: mux",color=green4, style=filled]
+2683 -> 2684
+2685 [label="op2: &&",color=green4, style=filled]
+2684 -> 2685
+2686 [label="op2: <=",color=green4, style=filled]
+2685 -> 2686
+2687 [label="const: 0.0",color=red1, style=filled]
+2686 -> 2687
+2688 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2686 -> 2688
+2689 [label="op2: <",color=green4, style=filled]
+2685 -> 2689
+2690 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2689 -> 2690
+2691 [label="const: 1000.0",color=red1, style=filled]
+2689 -> 2691
+2692 [label="const: 2",color=red1, style=filled]
+2684 -> 2692
+2693 [label="op3: mux",color=green4, style=filled]
+2684 -> 2693
+2694 [label="op2: <",color=green4, style=filled]
+2693 -> 2694
+2695 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2694 -> 2695
+2696 [label="const: 2350.0",color=red1, style=filled]
+2694 -> 2696
+2697 [label="const: 3",color=red1, style=filled]
+2693 -> 2697
+2698 [label="op3: mux",color=green4, style=filled]
+2693 -> 2698
+2699 [label="op2: <",color=green4, style=filled]
+2698 -> 2699
+2700 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2699 -> 2700
+2701 [label="const: 5000.0",color=red1, style=filled]
+2699 -> 2701
+2702 [label="const: 4",color=red1, style=filled]
+2698 -> 2702
+2703 [label="op3: mux",color=green4, style=filled]
+2698 -> 2703
+2704 [label="op2: <",color=green4, style=filled]
+2703 -> 2704
+2705 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2704 -> 2705
+2706 [label="const: 10000.0",color=red1, style=filled]
+2704 -> 2706
+2707 [label="const: 5",color=red1, style=filled]
+2703 -> 2707
+2708 [label="op3: mux",color=green4, style=filled]
+2703 -> 2708
+2709 [label="op2: <",color=green4, style=filled]
+2708 -> 2709
+2710 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2709 -> 2710
+2711 [label="const: 20000.0",color=red1, style=filled]
+2709 -> 2711
+2712 [label="const: 6",color=red1, style=filled]
+2708 -> 2712
+2713 [label="op3: mux",color=green4, style=filled]
+2708 -> 2713
+2714 [label="op2: <",color=green4, style=filled]
+2713 -> 2714
+2715 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2714 -> 2715
+2716 [label="const: 42000.0",color=red1, style=filled]
+2714 -> 2716
+2717 [label="const: 7",color=red1, style=filled]
+2713 -> 2717
+2718 [label="const: 8",color=red1, style=filled]
+2713 -> 2718
+2719 [label="const: 5",color=red1, style=filled]
+2682 -> 2719
+2720 [label="const: 1018.6000000000001",color=red1, style=filled]
+2681 -> 2720
+2721 [label="op3: mux",color=green4, style=filled]
+2681 -> 2721
+2722 [label="op2: ==",color=green4, style=filled]
+2721 -> 2722
+2723 [label="label: ?sensitivityLevel",color=plum, style=filled]
+2722 -> 2723
+2724 [label="op3: mux",color=green4, style=filled]
+2723 -> 2724
+2725 [label="op2: &&",color=green4, style=filled]
+2724 -> 2725
+2726 [label="op2: <=",color=green4, style=filled]
+2725 -> 2726
+2727 [label="const: 0.0",color=red1, style=filled]
+2726 -> 2727
+2728 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2726 -> 2728
+2729 [label="op2: <",color=green4, style=filled]
+2725 -> 2729
+2730 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2729 -> 2730
+2731 [label="const: 1000.0",color=red1, style=filled]
+2729 -> 2731
+2732 [label="const: 2",color=red1, style=filled]
+2724 -> 2732
+2733 [label="op3: mux",color=green4, style=filled]
+2724 -> 2733
+2734 [label="op2: <",color=green4, style=filled]
+2733 -> 2734
+2735 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2734 -> 2735
+2736 [label="const: 2350.0",color=red1, style=filled]
+2734 -> 2736
+2737 [label="const: 3",color=red1, style=filled]
+2733 -> 2737
+2738 [label="op3: mux",color=green4, style=filled]
+2733 -> 2738
+2739 [label="op2: <",color=green4, style=filled]
+2738 -> 2739
+2740 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2739 -> 2740
+2741 [label="const: 5000.0",color=red1, style=filled]
+2739 -> 2741
+2742 [label="const: 4",color=red1, style=filled]
+2738 -> 2742
+2743 [label="op3: mux",color=green4, style=filled]
+2738 -> 2743
+2744 [label="op2: <",color=green4, style=filled]
+2743 -> 2744
+2745 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2744 -> 2745
+2746 [label="const: 10000.0",color=red1, style=filled]
+2744 -> 2746
+2747 [label="const: 5",color=red1, style=filled]
+2743 -> 2747
+2748 [label="op3: mux",color=green4, style=filled]
+2743 -> 2748
+2749 [label="op2: <",color=green4, style=filled]
+2748 -> 2749
+2750 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2749 -> 2750
+2751 [label="const: 20000.0",color=red1, style=filled]
+2749 -> 2751
+2752 [label="const: 6",color=red1, style=filled]
+2748 -> 2752
+2753 [label="op3: mux",color=green4, style=filled]
+2748 -> 2753
+2754 [label="op2: <",color=green4, style=filled]
+2753 -> 2754
+2755 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2754 -> 2755
+2756 [label="const: 42000.0",color=red1, style=filled]
+2754 -> 2756
+2757 [label="const: 7",color=red1, style=filled]
+2753 -> 2757
+2758 [label="const: 8",color=red1, style=filled]
+2753 -> 2758
+2759 [label="const: 6",color=red1, style=filled]
+2722 -> 2759
+2760 [label="const: 1481.6000000000001",color=red1, style=filled]
+2721 -> 2760
+2761 [label="op3: mux",color=green4, style=filled]
+2721 -> 2761
+2762 [label="op2: ==",color=green4, style=filled]
+2761 -> 2762
+2763 [label="label: ?sensitivityLevel",color=plum, style=filled]
+2762 -> 2763
+2764 [label="op3: mux",color=green4, style=filled]
+2763 -> 2764
+2765 [label="op2: &&",color=green4, style=filled]
+2764 -> 2765
+2766 [label="op2: <=",color=green4, style=filled]
+2765 -> 2766
+2767 [label="const: 0.0",color=red1, style=filled]
+2766 -> 2767
+2768 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2766 -> 2768
+2769 [label="op2: <",color=green4, style=filled]
+2765 -> 2769
+2770 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2769 -> 2770
+2771 [label="const: 1000.0",color=red1, style=filled]
+2769 -> 2771
+2772 [label="const: 2",color=red1, style=filled]
+2764 -> 2772
+2773 [label="op3: mux",color=green4, style=filled]
+2764 -> 2773
+2774 [label="op2: <",color=green4, style=filled]
+2773 -> 2774
+2775 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2774 -> 2775
+2776 [label="const: 2350.0",color=red1, style=filled]
+2774 -> 2776
+2777 [label="const: 3",color=red1, style=filled]
+2773 -> 2777
+2778 [label="op3: mux",color=green4, style=filled]
+2773 -> 2778
+2779 [label="op2: <",color=green4, style=filled]
+2778 -> 2779
+2780 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2779 -> 2780
+2781 [label="const: 5000.0",color=red1, style=filled]
+2779 -> 2781
+2782 [label="const: 4",color=red1, style=filled]
+2778 -> 2782
+2783 [label="op3: mux",color=green4, style=filled]
+2778 -> 2783
+2784 [label="op2: <",color=green4, style=filled]
+2783 -> 2784
+2785 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2784 -> 2785
+2786 [label="const: 10000.0",color=red1, style=filled]
+2784 -> 2786
+2787 [label="const: 5",color=red1, style=filled]
+2783 -> 2787
+2788 [label="op3: mux",color=green4, style=filled]
+2783 -> 2788
+2789 [label="op2: <",color=green4, style=filled]
+2788 -> 2789
+2790 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2789 -> 2790
+2791 [label="const: 20000.0",color=red1, style=filled]
+2789 -> 2791
+2792 [label="const: 6",color=red1, style=filled]
+2788 -> 2792
+2793 [label="op3: mux",color=green4, style=filled]
+2788 -> 2793
+2794 [label="op2: <",color=green4, style=filled]
+2793 -> 2794
+2795 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2794 -> 2795
+2796 [label="const: 42000.0",color=red1, style=filled]
+2794 -> 2796
+2797 [label="const: 7",color=red1, style=filled]
+2793 -> 2797
+2798 [label="const: 8",color=red1, style=filled]
+2793 -> 2798
+2799 [label="const: 7",color=red1, style=filled]
+2762 -> 2799
+2800 [label="const: 2037.2000000000003",color=red1, style=filled]
+2761 -> 2800
+2801 [label="op3: mux",color=green4, style=filled]
+2761 -> 2801
+2802 [label="op2: ==",color=green4, style=filled]
+2801 -> 2802
+2803 [label="label: ?sensitivityLevel",color=plum, style=filled]
+2802 -> 2803
+2804 [label="op3: mux",color=green4, style=filled]
+2803 -> 2804
+2805 [label="op2: &&",color=green4, style=filled]
+2804 -> 2805
+2806 [label="op2: <=",color=green4, style=filled]
+2805 -> 2806
+2807 [label="const: 0.0",color=red1, style=filled]
+2806 -> 2807
+2808 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2806 -> 2808
+2809 [label="op2: <",color=green4, style=filled]
+2805 -> 2809
+2810 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2809 -> 2810
+2811 [label="const: 1000.0",color=red1, style=filled]
+2809 -> 2811
+2812 [label="const: 2",color=red1, style=filled]
+2804 -> 2812
+2813 [label="op3: mux",color=green4, style=filled]
+2804 -> 2813
+2814 [label="op2: <",color=green4, style=filled]
+2813 -> 2814
+2815 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2814 -> 2815
+2816 [label="const: 2350.0",color=red1, style=filled]
+2814 -> 2816
+2817 [label="const: 3",color=red1, style=filled]
+2813 -> 2817
+2818 [label="op3: mux",color=green4, style=filled]
+2813 -> 2818
+2819 [label="op2: <",color=green4, style=filled]
+2818 -> 2819
+2820 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2819 -> 2820
+2821 [label="const: 5000.0",color=red1, style=filled]
+2819 -> 2821
+2822 [label="const: 4",color=red1, style=filled]
+2818 -> 2822
+2823 [label="op3: mux",color=green4, style=filled]
+2818 -> 2823
+2824 [label="op2: <",color=green4, style=filled]
+2823 -> 2824
+2825 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2824 -> 2825
+2826 [label="const: 10000.0",color=red1, style=filled]
+2824 -> 2826
+2827 [label="const: 5",color=red1, style=filled]
+2823 -> 2827
+2828 [label="op3: mux",color=green4, style=filled]
+2823 -> 2828
+2829 [label="op2: <",color=green4, style=filled]
+2828 -> 2829
+2830 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2829 -> 2830
+2831 [label="const: 20000.0",color=red1, style=filled]
+2829 -> 2831
+2832 [label="const: 6",color=red1, style=filled]
+2828 -> 2832
+2833 [label="op3: mux",color=green4, style=filled]
+2828 -> 2833
+2834 [label="op2: <",color=green4, style=filled]
+2833 -> 2834
+2835 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2834 -> 2835
+2836 [label="const: 42000.0",color=red1, style=filled]
+2834 -> 2836
+2837 [label="const: 7",color=red1, style=filled]
+2833 -> 2837
+2838 [label="const: 8",color=red1, style=filled]
+2833 -> 2838
+2839 [label="const: 8",color=red1, style=filled]
+2802 -> 2839
+2840 [label="const: 2037.2000000000003",color=red1, style=filled]
+2801 -> 2840
+2841 [label="const: 0.0",color=red1, style=filled]
+2801 -> 2841
+2842 [label="label: ?dmodRA",color=plum, style=filled]
+2559 -> 2842
+2843 [label="op3: mux",color=green4, style=filled]
+2842 -> 2843
+2844 [label="op2: ==",color=green4, style=filled]
+2843 -> 2844
+2845 [label="label: ?sensitivityLevel",color=plum, style=filled]
+2844 -> 2845
+2846 [label="op3: mux",color=green4, style=filled]
+2845 -> 2846
+2847 [label="op2: &&",color=green4, style=filled]
+2846 -> 2847
+2848 [label="op2: <=",color=green4, style=filled]
+2847 -> 2848
+2849 [label="const: 0.0",color=red1, style=filled]
+2848 -> 2849
+2850 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2848 -> 2850
+2851 [label="op2: <",color=green4, style=filled]
+2847 -> 2851
+2852 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2851 -> 2852
+2853 [label="const: 1000.0",color=red1, style=filled]
+2851 -> 2853
+2854 [label="const: 2",color=red1, style=filled]
+2846 -> 2854
+2855 [label="op3: mux",color=green4, style=filled]
+2846 -> 2855
+2856 [label="op2: <",color=green4, style=filled]
+2855 -> 2856
+2857 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2856 -> 2857
+2858 [label="const: 2350.0",color=red1, style=filled]
+2856 -> 2858
+2859 [label="const: 3",color=red1, style=filled]
+2855 -> 2859
+2860 [label="op3: mux",color=green4, style=filled]
+2855 -> 2860
+2861 [label="op2: <",color=green4, style=filled]
+2860 -> 2861
+2862 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2861 -> 2862
+2863 [label="const: 5000.0",color=red1, style=filled]
+2861 -> 2863
+2864 [label="const: 4",color=red1, style=filled]
+2860 -> 2864
+2865 [label="op3: mux",color=green4, style=filled]
+2860 -> 2865
+2866 [label="op2: <",color=green4, style=filled]
+2865 -> 2866
+2867 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2866 -> 2867
+2868 [label="const: 10000.0",color=red1, style=filled]
+2866 -> 2868
+2869 [label="const: 5",color=red1, style=filled]
+2865 -> 2869
+2870 [label="op3: mux",color=green4, style=filled]
+2865 -> 2870
+2871 [label="op2: <",color=green4, style=filled]
+2870 -> 2871
+2872 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2871 -> 2872
+2873 [label="const: 20000.0",color=red1, style=filled]
+2871 -> 2873
+2874 [label="const: 6",color=red1, style=filled]
+2870 -> 2874
+2875 [label="op3: mux",color=green4, style=filled]
+2870 -> 2875
+2876 [label="op2: <",color=green4, style=filled]
+2875 -> 2876
+2877 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2876 -> 2877
+2878 [label="const: 42000.0",color=red1, style=filled]
+2876 -> 2878
+2879 [label="const: 7",color=red1, style=filled]
+2875 -> 2879
+2880 [label="const: 8",color=red1, style=filled]
+2875 -> 2880
+2881 [label="const: 2",color=red1, style=filled]
+2844 -> 2881
+2882 [label="const: 0.0",color=red1, style=filled]
+2843 -> 2882
+2883 [label="op3: mux",color=green4, style=filled]
+2843 -> 2883
+2884 [label="op2: ==",color=green4, style=filled]
+2883 -> 2884
+2885 [label="label: ?sensitivityLevel",color=plum, style=filled]
+2884 -> 2885
+2886 [label="op3: mux",color=green4, style=filled]
+2885 -> 2886
+2887 [label="op2: &&",color=green4, style=filled]
+2886 -> 2887
+2888 [label="op2: <=",color=green4, style=filled]
+2887 -> 2888
+2889 [label="const: 0.0",color=red1, style=filled]
+2888 -> 2889
+2890 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2888 -> 2890
+2891 [label="op2: <",color=green4, style=filled]
+2887 -> 2891
+2892 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2891 -> 2892
+2893 [label="const: 1000.0",color=red1, style=filled]
+2891 -> 2893
+2894 [label="const: 2",color=red1, style=filled]
+2886 -> 2894
+2895 [label="op3: mux",color=green4, style=filled]
+2886 -> 2895
+2896 [label="op2: <",color=green4, style=filled]
+2895 -> 2896
+2897 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2896 -> 2897
+2898 [label="const: 2350.0",color=red1, style=filled]
+2896 -> 2898
+2899 [label="const: 3",color=red1, style=filled]
+2895 -> 2899
+2900 [label="op3: mux",color=green4, style=filled]
+2895 -> 2900
+2901 [label="op2: <",color=green4, style=filled]
+2900 -> 2901
+2902 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2901 -> 2902
+2903 [label="const: 5000.0",color=red1, style=filled]
+2901 -> 2903
+2904 [label="const: 4",color=red1, style=filled]
+2900 -> 2904
+2905 [label="op3: mux",color=green4, style=filled]
+2900 -> 2905
+2906 [label="op2: <",color=green4, style=filled]
+2905 -> 2906
+2907 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2906 -> 2907
+2908 [label="const: 10000.0",color=red1, style=filled]
+2906 -> 2908
+2909 [label="const: 5",color=red1, style=filled]
+2905 -> 2909
+2910 [label="op3: mux",color=green4, style=filled]
+2905 -> 2910
+2911 [label="op2: <",color=green4, style=filled]
+2910 -> 2911
+2912 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2911 -> 2912
+2913 [label="const: 20000.0",color=red1, style=filled]
+2911 -> 2913
+2914 [label="const: 6",color=red1, style=filled]
+2910 -> 2914
+2915 [label="op3: mux",color=green4, style=filled]
+2910 -> 2915
+2916 [label="op2: <",color=green4, style=filled]
+2915 -> 2916
+2917 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2916 -> 2917
+2918 [label="const: 42000.0",color=red1, style=filled]
+2916 -> 2918
+2919 [label="const: 7",color=red1, style=filled]
+2915 -> 2919
+2920 [label="const: 8",color=red1, style=filled]
+2915 -> 2920
+2921 [label="const: 3",color=red1, style=filled]
+2884 -> 2921
+2922 [label="const: 370.40000000000003",color=red1, style=filled]
+2883 -> 2922
+2923 [label="op3: mux",color=green4, style=filled]
+2883 -> 2923
+2924 [label="op2: ==",color=green4, style=filled]
+2923 -> 2924
+2925 [label="label: ?sensitivityLevel",color=plum, style=filled]
+2924 -> 2925
+2926 [label="op3: mux",color=green4, style=filled]
+2925 -> 2926
+2927 [label="op2: &&",color=green4, style=filled]
+2926 -> 2927
+2928 [label="op2: <=",color=green4, style=filled]
+2927 -> 2928
+2929 [label="const: 0.0",color=red1, style=filled]
+2928 -> 2929
+2930 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2928 -> 2930
+2931 [label="op2: <",color=green4, style=filled]
+2927 -> 2931
+2932 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2931 -> 2932
+2933 [label="const: 1000.0",color=red1, style=filled]
+2931 -> 2933
+2934 [label="const: 2",color=red1, style=filled]
+2926 -> 2934
+2935 [label="op3: mux",color=green4, style=filled]
+2926 -> 2935
+2936 [label="op2: <",color=green4, style=filled]
+2935 -> 2936
+2937 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2936 -> 2937
+2938 [label="const: 2350.0",color=red1, style=filled]
+2936 -> 2938
+2939 [label="const: 3",color=red1, style=filled]
+2935 -> 2939
+2940 [label="op3: mux",color=green4, style=filled]
+2935 -> 2940
+2941 [label="op2: <",color=green4, style=filled]
+2940 -> 2941
+2942 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2941 -> 2942
+2943 [label="const: 5000.0",color=red1, style=filled]
+2941 -> 2943
+2944 [label="const: 4",color=red1, style=filled]
+2940 -> 2944
+2945 [label="op3: mux",color=green4, style=filled]
+2940 -> 2945
+2946 [label="op2: <",color=green4, style=filled]
+2945 -> 2946
+2947 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2946 -> 2947
+2948 [label="const: 10000.0",color=red1, style=filled]
+2946 -> 2948
+2949 [label="const: 5",color=red1, style=filled]
+2945 -> 2949
+2950 [label="op3: mux",color=green4, style=filled]
+2945 -> 2950
+2951 [label="op2: <",color=green4, style=filled]
+2950 -> 2951
+2952 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2951 -> 2952
+2953 [label="const: 20000.0",color=red1, style=filled]
+2951 -> 2953
+2954 [label="const: 6",color=red1, style=filled]
+2950 -> 2954
+2955 [label="op3: mux",color=green4, style=filled]
+2950 -> 2955
+2956 [label="op2: <",color=green4, style=filled]
+2955 -> 2956
+2957 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2956 -> 2957
+2958 [label="const: 42000.0",color=red1, style=filled]
+2956 -> 2958
+2959 [label="const: 7",color=red1, style=filled]
+2955 -> 2959
+2960 [label="const: 8",color=red1, style=filled]
+2955 -> 2960
+2961 [label="const: 4",color=red1, style=filled]
+2924 -> 2961
+2962 [label="const: 648.1999999999999",color=red1, style=filled]
+2923 -> 2962
+2963 [label="op3: mux",color=green4, style=filled]
+2923 -> 2963
+2964 [label="op2: ==",color=green4, style=filled]
+2963 -> 2964
+2965 [label="label: ?sensitivityLevel",color=plum, style=filled]
+2964 -> 2965
+2966 [label="op3: mux",color=green4, style=filled]
+2965 -> 2966
+2967 [label="op2: &&",color=green4, style=filled]
+2966 -> 2967
+2968 [label="op2: <=",color=green4, style=filled]
+2967 -> 2968
+2969 [label="const: 0.0",color=red1, style=filled]
+2968 -> 2969
+2970 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2968 -> 2970
+2971 [label="op2: <",color=green4, style=filled]
+2967 -> 2971
+2972 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2971 -> 2972
+2973 [label="const: 1000.0",color=red1, style=filled]
+2971 -> 2973
+2974 [label="const: 2",color=red1, style=filled]
+2966 -> 2974
+2975 [label="op3: mux",color=green4, style=filled]
+2966 -> 2975
+2976 [label="op2: <",color=green4, style=filled]
+2975 -> 2976
+2977 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2976 -> 2977
+2978 [label="const: 2350.0",color=red1, style=filled]
+2976 -> 2978
+2979 [label="const: 3",color=red1, style=filled]
+2975 -> 2979
+2980 [label="op3: mux",color=green4, style=filled]
+2975 -> 2980
+2981 [label="op2: <",color=green4, style=filled]
+2980 -> 2981
+2982 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2981 -> 2982
+2983 [label="const: 5000.0",color=red1, style=filled]
+2981 -> 2983
+2984 [label="const: 4",color=red1, style=filled]
+2980 -> 2984
+2985 [label="op3: mux",color=green4, style=filled]
+2980 -> 2985
+2986 [label="op2: <",color=green4, style=filled]
+2985 -> 2986
+2987 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2986 -> 2987
+2988 [label="const: 10000.0",color=red1, style=filled]
+2986 -> 2988
+2989 [label="const: 5",color=red1, style=filled]
+2985 -> 2989
+2990 [label="op3: mux",color=green4, style=filled]
+2985 -> 2990
+2991 [label="op2: <",color=green4, style=filled]
+2990 -> 2991
+2992 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2991 -> 2992
+2993 [label="const: 20000.0",color=red1, style=filled]
+2991 -> 2993
+2994 [label="const: 6",color=red1, style=filled]
+2990 -> 2994
+2995 [label="op3: mux",color=green4, style=filled]
+2990 -> 2995
+2996 [label="op2: <",color=green4, style=filled]
+2995 -> 2996
+2997 [label="ext_ownship_position_z",color=cyan1, style=filled]
+2996 -> 2997
+2998 [label="const: 42000.0",color=red1, style=filled]
+2996 -> 2998
+2999 [label="const: 7",color=red1, style=filled]
+2995 -> 2999
+3000 [label="const: 8",color=red1, style=filled]
+2995 -> 3000
+3001 [label="const: 5",color=red1, style=filled]
+2964 -> 3001
+3002 [label="const: 1018.6000000000001",color=red1, style=filled]
+2963 -> 3002
+3003 [label="op3: mux",color=green4, style=filled]
+2963 -> 3003
+3004 [label="op2: ==",color=green4, style=filled]
+3003 -> 3004
+3005 [label="label: ?sensitivityLevel",color=plum, style=filled]
+3004 -> 3005
+3006 [label="op3: mux",color=green4, style=filled]
+3005 -> 3006
+3007 [label="op2: &&",color=green4, style=filled]
+3006 -> 3007
+3008 [label="op2: <=",color=green4, style=filled]
+3007 -> 3008
+3009 [label="const: 0.0",color=red1, style=filled]
+3008 -> 3009
+3010 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3008 -> 3010
+3011 [label="op2: <",color=green4, style=filled]
+3007 -> 3011
+3012 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3011 -> 3012
+3013 [label="const: 1000.0",color=red1, style=filled]
+3011 -> 3013
+3014 [label="const: 2",color=red1, style=filled]
+3006 -> 3014
+3015 [label="op3: mux",color=green4, style=filled]
+3006 -> 3015
+3016 [label="op2: <",color=green4, style=filled]
+3015 -> 3016
+3017 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3016 -> 3017
+3018 [label="const: 2350.0",color=red1, style=filled]
+3016 -> 3018
+3019 [label="const: 3",color=red1, style=filled]
+3015 -> 3019
+3020 [label="op3: mux",color=green4, style=filled]
+3015 -> 3020
+3021 [label="op2: <",color=green4, style=filled]
+3020 -> 3021
+3022 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3021 -> 3022
+3023 [label="const: 5000.0",color=red1, style=filled]
+3021 -> 3023
+3024 [label="const: 4",color=red1, style=filled]
+3020 -> 3024
+3025 [label="op3: mux",color=green4, style=filled]
+3020 -> 3025
+3026 [label="op2: <",color=green4, style=filled]
+3025 -> 3026
+3027 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3026 -> 3027
+3028 [label="const: 10000.0",color=red1, style=filled]
+3026 -> 3028
+3029 [label="const: 5",color=red1, style=filled]
+3025 -> 3029
+3030 [label="op3: mux",color=green4, style=filled]
+3025 -> 3030
+3031 [label="op2: <",color=green4, style=filled]
+3030 -> 3031
+3032 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3031 -> 3032
+3033 [label="const: 20000.0",color=red1, style=filled]
+3031 -> 3033
+3034 [label="const: 6",color=red1, style=filled]
+3030 -> 3034
+3035 [label="op3: mux",color=green4, style=filled]
+3030 -> 3035
+3036 [label="op2: <",color=green4, style=filled]
+3035 -> 3036
+3037 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3036 -> 3037
+3038 [label="const: 42000.0",color=red1, style=filled]
+3036 -> 3038
+3039 [label="const: 7",color=red1, style=filled]
+3035 -> 3039
+3040 [label="const: 8",color=red1, style=filled]
+3035 -> 3040
+3041 [label="const: 6",color=red1, style=filled]
+3004 -> 3041
+3042 [label="const: 1481.6000000000001",color=red1, style=filled]
+3003 -> 3042
+3043 [label="op3: mux",color=green4, style=filled]
+3003 -> 3043
+3044 [label="op2: ==",color=green4, style=filled]
+3043 -> 3044
+3045 [label="label: ?sensitivityLevel",color=plum, style=filled]
+3044 -> 3045
+3046 [label="op3: mux",color=green4, style=filled]
+3045 -> 3046
+3047 [label="op2: &&",color=green4, style=filled]
+3046 -> 3047
+3048 [label="op2: <=",color=green4, style=filled]
+3047 -> 3048
+3049 [label="const: 0.0",color=red1, style=filled]
+3048 -> 3049
+3050 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3048 -> 3050
+3051 [label="op2: <",color=green4, style=filled]
+3047 -> 3051
+3052 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3051 -> 3052
+3053 [label="const: 1000.0",color=red1, style=filled]
+3051 -> 3053
+3054 [label="const: 2",color=red1, style=filled]
+3046 -> 3054
+3055 [label="op3: mux",color=green4, style=filled]
+3046 -> 3055
+3056 [label="op2: <",color=green4, style=filled]
+3055 -> 3056
+3057 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3056 -> 3057
+3058 [label="const: 2350.0",color=red1, style=filled]
+3056 -> 3058
+3059 [label="const: 3",color=red1, style=filled]
+3055 -> 3059
+3060 [label="op3: mux",color=green4, style=filled]
+3055 -> 3060
+3061 [label="op2: <",color=green4, style=filled]
+3060 -> 3061
+3062 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3061 -> 3062
+3063 [label="const: 5000.0",color=red1, style=filled]
+3061 -> 3063
+3064 [label="const: 4",color=red1, style=filled]
+3060 -> 3064
+3065 [label="op3: mux",color=green4, style=filled]
+3060 -> 3065
+3066 [label="op2: <",color=green4, style=filled]
+3065 -> 3066
+3067 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3066 -> 3067
+3068 [label="const: 10000.0",color=red1, style=filled]
+3066 -> 3068
+3069 [label="const: 5",color=red1, style=filled]
+3065 -> 3069
+3070 [label="op3: mux",color=green4, style=filled]
+3065 -> 3070
+3071 [label="op2: <",color=green4, style=filled]
+3070 -> 3071
+3072 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3071 -> 3072
+3073 [label="const: 20000.0",color=red1, style=filled]
+3071 -> 3073
+3074 [label="const: 6",color=red1, style=filled]
+3070 -> 3074
+3075 [label="op3: mux",color=green4, style=filled]
+3070 -> 3075
+3076 [label="op2: <",color=green4, style=filled]
+3075 -> 3076
+3077 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3076 -> 3077
+3078 [label="const: 42000.0",color=red1, style=filled]
+3076 -> 3078
+3079 [label="const: 7",color=red1, style=filled]
+3075 -> 3079
+3080 [label="const: 8",color=red1, style=filled]
+3075 -> 3080
+3081 [label="const: 7",color=red1, style=filled]
+3044 -> 3081
+3082 [label="const: 2037.2000000000003",color=red1, style=filled]
+3043 -> 3082
+3083 [label="op3: mux",color=green4, style=filled]
+3043 -> 3083
+3084 [label="op2: ==",color=green4, style=filled]
+3083 -> 3084
+3085 [label="label: ?sensitivityLevel",color=plum, style=filled]
+3084 -> 3085
+3086 [label="op3: mux",color=green4, style=filled]
+3085 -> 3086
+3087 [label="op2: &&",color=green4, style=filled]
+3086 -> 3087
+3088 [label="op2: <=",color=green4, style=filled]
+3087 -> 3088
+3089 [label="const: 0.0",color=red1, style=filled]
+3088 -> 3089
+3090 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3088 -> 3090
+3091 [label="op2: <",color=green4, style=filled]
+3087 -> 3091
+3092 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3091 -> 3092
+3093 [label="const: 1000.0",color=red1, style=filled]
+3091 -> 3093
+3094 [label="const: 2",color=red1, style=filled]
+3086 -> 3094
+3095 [label="op3: mux",color=green4, style=filled]
+3086 -> 3095
+3096 [label="op2: <",color=green4, style=filled]
+3095 -> 3096
+3097 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3096 -> 3097
+3098 [label="const: 2350.0",color=red1, style=filled]
+3096 -> 3098
+3099 [label="const: 3",color=red1, style=filled]
+3095 -> 3099
+3100 [label="op3: mux",color=green4, style=filled]
+3095 -> 3100
+3101 [label="op2: <",color=green4, style=filled]
+3100 -> 3101
+3102 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3101 -> 3102
+3103 [label="const: 5000.0",color=red1, style=filled]
+3101 -> 3103
+3104 [label="const: 4",color=red1, style=filled]
+3100 -> 3104
+3105 [label="op3: mux",color=green4, style=filled]
+3100 -> 3105
+3106 [label="op2: <",color=green4, style=filled]
+3105 -> 3106
+3107 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3106 -> 3107
+3108 [label="const: 10000.0",color=red1, style=filled]
+3106 -> 3108
+3109 [label="const: 5",color=red1, style=filled]
+3105 -> 3109
+3110 [label="op3: mux",color=green4, style=filled]
+3105 -> 3110
+3111 [label="op2: <",color=green4, style=filled]
+3110 -> 3111
+3112 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3111 -> 3112
+3113 [label="const: 20000.0",color=red1, style=filled]
+3111 -> 3113
+3114 [label="const: 6",color=red1, style=filled]
+3110 -> 3114
+3115 [label="op3: mux",color=green4, style=filled]
+3110 -> 3115
+3116 [label="op2: <",color=green4, style=filled]
+3115 -> 3116
+3117 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3116 -> 3117
+3118 [label="const: 42000.0",color=red1, style=filled]
+3116 -> 3118
+3119 [label="const: 7",color=red1, style=filled]
+3115 -> 3119
+3120 [label="const: 8",color=red1, style=filled]
+3115 -> 3120
+3121 [label="const: 8",color=red1, style=filled]
+3084 -> 3121
+3122 [label="const: 2037.2000000000003",color=red1, style=filled]
+3083 -> 3122
+3123 [label="const: 0.0",color=red1, style=filled]
+3083 -> 3123
+3124 [label="label: ?normsq2dim",color=plum, style=filled]
+2557 -> 3124
+3125 [label="label: ?scalar2dim",color=plum, style=filled]
+3124 -> 3125
+3126 [label="op2: +",color=green4, style=filled]
+3125 -> 3126
+3127 [label="op2: *",color=green4, style=filled]
+3126 -> 3127
+3128 [label="op2: -",color=green4, style=filled]
+3127 -> 3128
+3129 [label="ext_ownship_position_x",color=cyan1, style=filled]
+3128 -> 3129
+3130 [label="ext_intruder_position_x",color=cyan1, style=filled]
+3128 -> 3130
+3131 [label="op2: -",color=green4, style=filled]
+3127 -> 3131
+3132 [label="ext_ownship_position_x",color=cyan1, style=filled]
+3131 -> 3132
+3133 [label="ext_intruder_position_x",color=cyan1, style=filled]
+3131 -> 3133
+3134 [label="op2: *",color=green4, style=filled]
+3126 -> 3134
+3135 [label="op2: -",color=green4, style=filled]
+3134 -> 3135
+3136 [label="ext_ownship_position_y",color=cyan1, style=filled]
+3135 -> 3136
+3137 [label="ext_intruder_position_y",color=cyan1, style=filled]
+3135 -> 3137
+3138 [label="op2: -",color=green4, style=filled]
+3134 -> 3138
+3139 [label="ext_ownship_position_y",color=cyan1, style=filled]
+3138 -> 3139
+3140 [label="ext_intruder_position_y",color=cyan1, style=filled]
+3138 -> 3140
+3141 [label="label: ?scalar2dim",color=plum, style=filled]
+2556 -> 3141
+3142 [label="op2: +",color=green4, style=filled]
+3141 -> 3142
+3143 [label="op2: *",color=green4, style=filled]
+3142 -> 3143
+3144 [label="op2: -",color=green4, style=filled]
+3143 -> 3144
+3145 [label="ext_ownship_position_x",color=cyan1, style=filled]
+3144 -> 3145
+3146 [label="ext_intruder_position_x",color=cyan1, style=filled]
+3144 -> 3146
+3147 [label="op2: -",color=green4, style=filled]
+3143 -> 3147
+3148 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+3147 -> 3148
+3149 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+3147 -> 3149
+3150 [label="op2: *",color=green4, style=filled]
+3142 -> 3150
+3151 [label="op2: -",color=green4, style=filled]
+3150 -> 3151
+3152 [label="ext_ownship_position_y",color=cyan1, style=filled]
+3151 -> 3152
+3153 [label="ext_intruder_position_y",color=cyan1, style=filled]
+3151 -> 3153
+3154 [label="op2: -",color=green4, style=filled]
+3150 -> 3154
+3155 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+3154 -> 3155
+3156 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+3154 -> 3156
+3157 [label="const: -1.0",color=red1, style=filled]
+2537 -> 3157
+3158 [label="label: ?tauRA",color=plum, style=filled]
+2535 -> 3158
+3159 [label="op3: mux",color=green4, style=filled]
+3158 -> 3159
+3160 [label="op2: ==",color=green4, style=filled]
+3159 -> 3160
+3161 [label="label: ?sensitivityLevel",color=plum, style=filled]
+3160 -> 3161
+3162 [label="op3: mux",color=green4, style=filled]
+3161 -> 3162
+3163 [label="op2: &&",color=green4, style=filled]
+3162 -> 3163
+3164 [label="op2: <=",color=green4, style=filled]
+3163 -> 3164
+3165 [label="const: 0.0",color=red1, style=filled]
+3164 -> 3165
+3166 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3164 -> 3166
+3167 [label="op2: <",color=green4, style=filled]
+3163 -> 3167
+3168 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3167 -> 3168
+3169 [label="const: 1000.0",color=red1, style=filled]
+3167 -> 3169
+3170 [label="const: 2",color=red1, style=filled]
+3162 -> 3170
+3171 [label="op3: mux",color=green4, style=filled]
+3162 -> 3171
+3172 [label="op2: <",color=green4, style=filled]
+3171 -> 3172
+3173 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3172 -> 3173
+3174 [label="const: 2350.0",color=red1, style=filled]
+3172 -> 3174
+3175 [label="const: 3",color=red1, style=filled]
+3171 -> 3175
+3176 [label="op3: mux",color=green4, style=filled]
+3171 -> 3176
+3177 [label="op2: <",color=green4, style=filled]
+3176 -> 3177
+3178 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3177 -> 3178
+3179 [label="const: 5000.0",color=red1, style=filled]
+3177 -> 3179
+3180 [label="const: 4",color=red1, style=filled]
+3176 -> 3180
+3181 [label="op3: mux",color=green4, style=filled]
+3176 -> 3181
+3182 [label="op2: <",color=green4, style=filled]
+3181 -> 3182
+3183 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3182 -> 3183
+3184 [label="const: 10000.0",color=red1, style=filled]
+3182 -> 3184
+3185 [label="const: 5",color=red1, style=filled]
+3181 -> 3185
+3186 [label="op3: mux",color=green4, style=filled]
+3181 -> 3186
+3187 [label="op2: <",color=green4, style=filled]
+3186 -> 3187
+3188 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3187 -> 3188
+3189 [label="const: 20000.0",color=red1, style=filled]
+3187 -> 3189
+3190 [label="const: 6",color=red1, style=filled]
+3186 -> 3190
+3191 [label="op3: mux",color=green4, style=filled]
+3186 -> 3191
+3192 [label="op2: <",color=green4, style=filled]
+3191 -> 3192
+3193 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3192 -> 3193
+3194 [label="const: 42000.0",color=red1, style=filled]
+3192 -> 3194
+3195 [label="const: 7",color=red1, style=filled]
+3191 -> 3195
+3196 [label="const: 8",color=red1, style=filled]
+3191 -> 3196
+3197 [label="const: 2",color=red1, style=filled]
+3160 -> 3197
+3198 [label="const: 0.0",color=red1, style=filled]
+3159 -> 3198
+3199 [label="op3: mux",color=green4, style=filled]
+3159 -> 3199
+3200 [label="op2: ==",color=green4, style=filled]
+3199 -> 3200
+3201 [label="label: ?sensitivityLevel",color=plum, style=filled]
+3200 -> 3201
+3202 [label="op3: mux",color=green4, style=filled]
+3201 -> 3202
+3203 [label="op2: &&",color=green4, style=filled]
+3202 -> 3203
+3204 [label="op2: <=",color=green4, style=filled]
+3203 -> 3204
+3205 [label="const: 0.0",color=red1, style=filled]
+3204 -> 3205
+3206 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3204 -> 3206
+3207 [label="op2: <",color=green4, style=filled]
+3203 -> 3207
+3208 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3207 -> 3208
+3209 [label="const: 1000.0",color=red1, style=filled]
+3207 -> 3209
+3210 [label="const: 2",color=red1, style=filled]
+3202 -> 3210
+3211 [label="op3: mux",color=green4, style=filled]
+3202 -> 3211
+3212 [label="op2: <",color=green4, style=filled]
+3211 -> 3212
+3213 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3212 -> 3213
+3214 [label="const: 2350.0",color=red1, style=filled]
+3212 -> 3214
+3215 [label="const: 3",color=red1, style=filled]
+3211 -> 3215
+3216 [label="op3: mux",color=green4, style=filled]
+3211 -> 3216
+3217 [label="op2: <",color=green4, style=filled]
+3216 -> 3217
+3218 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3217 -> 3218
+3219 [label="const: 5000.0",color=red1, style=filled]
+3217 -> 3219
+3220 [label="const: 4",color=red1, style=filled]
+3216 -> 3220
+3221 [label="op3: mux",color=green4, style=filled]
+3216 -> 3221
+3222 [label="op2: <",color=green4, style=filled]
+3221 -> 3222
+3223 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3222 -> 3223
+3224 [label="const: 10000.0",color=red1, style=filled]
+3222 -> 3224
+3225 [label="const: 5",color=red1, style=filled]
+3221 -> 3225
+3226 [label="op3: mux",color=green4, style=filled]
+3221 -> 3226
+3227 [label="op2: <",color=green4, style=filled]
+3226 -> 3227
+3228 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3227 -> 3228
+3229 [label="const: 20000.0",color=red1, style=filled]
+3227 -> 3229
+3230 [label="const: 6",color=red1, style=filled]
+3226 -> 3230
+3231 [label="op3: mux",color=green4, style=filled]
+3226 -> 3231
+3232 [label="op2: <",color=green4, style=filled]
+3231 -> 3232
+3233 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3232 -> 3233
+3234 [label="const: 42000.0",color=red1, style=filled]
+3232 -> 3234
+3235 [label="const: 7",color=red1, style=filled]
+3231 -> 3235
+3236 [label="const: 8",color=red1, style=filled]
+3231 -> 3236
+3237 [label="const: 3",color=red1, style=filled]
+3200 -> 3237
+3238 [label="const: 15.0",color=red1, style=filled]
+3199 -> 3238
+3239 [label="op3: mux",color=green4, style=filled]
+3199 -> 3239
+3240 [label="op2: ==",color=green4, style=filled]
+3239 -> 3240
+3241 [label="label: ?sensitivityLevel",color=plum, style=filled]
+3240 -> 3241
+3242 [label="op3: mux",color=green4, style=filled]
+3241 -> 3242
+3243 [label="op2: &&",color=green4, style=filled]
+3242 -> 3243
+3244 [label="op2: <=",color=green4, style=filled]
+3243 -> 3244
+3245 [label="const: 0.0",color=red1, style=filled]
+3244 -> 3245
+3246 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3244 -> 3246
+3247 [label="op2: <",color=green4, style=filled]
+3243 -> 3247
+3248 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3247 -> 3248
+3249 [label="const: 1000.0",color=red1, style=filled]
+3247 -> 3249
+3250 [label="const: 2",color=red1, style=filled]
+3242 -> 3250
+3251 [label="op3: mux",color=green4, style=filled]
+3242 -> 3251
+3252 [label="op2: <",color=green4, style=filled]
+3251 -> 3252
+3253 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3252 -> 3253
+3254 [label="const: 2350.0",color=red1, style=filled]
+3252 -> 3254
+3255 [label="const: 3",color=red1, style=filled]
+3251 -> 3255
+3256 [label="op3: mux",color=green4, style=filled]
+3251 -> 3256
+3257 [label="op2: <",color=green4, style=filled]
+3256 -> 3257
+3258 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3257 -> 3258
+3259 [label="const: 5000.0",color=red1, style=filled]
+3257 -> 3259
+3260 [label="const: 4",color=red1, style=filled]
+3256 -> 3260
+3261 [label="op3: mux",color=green4, style=filled]
+3256 -> 3261
+3262 [label="op2: <",color=green4, style=filled]
+3261 -> 3262
+3263 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3262 -> 3263
+3264 [label="const: 10000.0",color=red1, style=filled]
+3262 -> 3264
+3265 [label="const: 5",color=red1, style=filled]
+3261 -> 3265
+3266 [label="op3: mux",color=green4, style=filled]
+3261 -> 3266
+3267 [label="op2: <",color=green4, style=filled]
+3266 -> 3267
+3268 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3267 -> 3268
+3269 [label="const: 20000.0",color=red1, style=filled]
+3267 -> 3269
+3270 [label="const: 6",color=red1, style=filled]
+3266 -> 3270
+3271 [label="op3: mux",color=green4, style=filled]
+3266 -> 3271
+3272 [label="op2: <",color=green4, style=filled]
+3271 -> 3272
+3273 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3272 -> 3273
+3274 [label="const: 42000.0",color=red1, style=filled]
+3272 -> 3274
+3275 [label="const: 7",color=red1, style=filled]
+3271 -> 3275
+3276 [label="const: 8",color=red1, style=filled]
+3271 -> 3276
+3277 [label="const: 4",color=red1, style=filled]
+3240 -> 3277
+3278 [label="const: 20.0",color=red1, style=filled]
+3239 -> 3278
+3279 [label="op3: mux",color=green4, style=filled]
+3239 -> 3279
+3280 [label="op2: ==",color=green4, style=filled]
+3279 -> 3280
+3281 [label="label: ?sensitivityLevel",color=plum, style=filled]
+3280 -> 3281
+3282 [label="op3: mux",color=green4, style=filled]
+3281 -> 3282
+3283 [label="op2: &&",color=green4, style=filled]
+3282 -> 3283
+3284 [label="op2: <=",color=green4, style=filled]
+3283 -> 3284
+3285 [label="const: 0.0",color=red1, style=filled]
+3284 -> 3285
+3286 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3284 -> 3286
+3287 [label="op2: <",color=green4, style=filled]
+3283 -> 3287
+3288 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3287 -> 3288
+3289 [label="const: 1000.0",color=red1, style=filled]
+3287 -> 3289
+3290 [label="const: 2",color=red1, style=filled]
+3282 -> 3290
+3291 [label="op3: mux",color=green4, style=filled]
+3282 -> 3291
+3292 [label="op2: <",color=green4, style=filled]
+3291 -> 3292
+3293 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3292 -> 3293
+3294 [label="const: 2350.0",color=red1, style=filled]
+3292 -> 3294
+3295 [label="const: 3",color=red1, style=filled]
+3291 -> 3295
+3296 [label="op3: mux",color=green4, style=filled]
+3291 -> 3296
+3297 [label="op2: <",color=green4, style=filled]
+3296 -> 3297
+3298 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3297 -> 3298
+3299 [label="const: 5000.0",color=red1, style=filled]
+3297 -> 3299
+3300 [label="const: 4",color=red1, style=filled]
+3296 -> 3300
+3301 [label="op3: mux",color=green4, style=filled]
+3296 -> 3301
+3302 [label="op2: <",color=green4, style=filled]
+3301 -> 3302
+3303 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3302 -> 3303
+3304 [label="const: 10000.0",color=red1, style=filled]
+3302 -> 3304
+3305 [label="const: 5",color=red1, style=filled]
+3301 -> 3305
+3306 [label="op3: mux",color=green4, style=filled]
+3301 -> 3306
+3307 [label="op2: <",color=green4, style=filled]
+3306 -> 3307
+3308 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3307 -> 3308
+3309 [label="const: 20000.0",color=red1, style=filled]
+3307 -> 3309
+3310 [label="const: 6",color=red1, style=filled]
+3306 -> 3310
+3311 [label="op3: mux",color=green4, style=filled]
+3306 -> 3311
+3312 [label="op2: <",color=green4, style=filled]
+3311 -> 3312
+3313 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3312 -> 3313
+3314 [label="const: 42000.0",color=red1, style=filled]
+3312 -> 3314
+3315 [label="const: 7",color=red1, style=filled]
+3311 -> 3315
+3316 [label="const: 8",color=red1, style=filled]
+3311 -> 3316
+3317 [label="const: 5",color=red1, style=filled]
+3280 -> 3317
+3318 [label="const: 25.0",color=red1, style=filled]
+3279 -> 3318
+3319 [label="op3: mux",color=green4, style=filled]
+3279 -> 3319
+3320 [label="op2: ==",color=green4, style=filled]
+3319 -> 3320
+3321 [label="label: ?sensitivityLevel",color=plum, style=filled]
+3320 -> 3321
+3322 [label="op3: mux",color=green4, style=filled]
+3321 -> 3322
+3323 [label="op2: &&",color=green4, style=filled]
+3322 -> 3323
+3324 [label="op2: <=",color=green4, style=filled]
+3323 -> 3324
+3325 [label="const: 0.0",color=red1, style=filled]
+3324 -> 3325
+3326 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3324 -> 3326
+3327 [label="op2: <",color=green4, style=filled]
+3323 -> 3327
+3328 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3327 -> 3328
+3329 [label="const: 1000.0",color=red1, style=filled]
+3327 -> 3329
+3330 [label="const: 2",color=red1, style=filled]
+3322 -> 3330
+3331 [label="op3: mux",color=green4, style=filled]
+3322 -> 3331
+3332 [label="op2: <",color=green4, style=filled]
+3331 -> 3332
+3333 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3332 -> 3333
+3334 [label="const: 2350.0",color=red1, style=filled]
+3332 -> 3334
+3335 [label="const: 3",color=red1, style=filled]
+3331 -> 3335
+3336 [label="op3: mux",color=green4, style=filled]
+3331 -> 3336
+3337 [label="op2: <",color=green4, style=filled]
+3336 -> 3337
+3338 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3337 -> 3338
+3339 [label="const: 5000.0",color=red1, style=filled]
+3337 -> 3339
+3340 [label="const: 4",color=red1, style=filled]
+3336 -> 3340
+3341 [label="op3: mux",color=green4, style=filled]
+3336 -> 3341
+3342 [label="op2: <",color=green4, style=filled]
+3341 -> 3342
+3343 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3342 -> 3343
+3344 [label="const: 10000.0",color=red1, style=filled]
+3342 -> 3344
+3345 [label="const: 5",color=red1, style=filled]
+3341 -> 3345
+3346 [label="op3: mux",color=green4, style=filled]
+3341 -> 3346
+3347 [label="op2: <",color=green4, style=filled]
+3346 -> 3347
+3348 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3347 -> 3348
+3349 [label="const: 20000.0",color=red1, style=filled]
+3347 -> 3349
+3350 [label="const: 6",color=red1, style=filled]
+3346 -> 3350
+3351 [label="op3: mux",color=green4, style=filled]
+3346 -> 3351
+3352 [label="op2: <",color=green4, style=filled]
+3351 -> 3352
+3353 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3352 -> 3353
+3354 [label="const: 42000.0",color=red1, style=filled]
+3352 -> 3354
+3355 [label="const: 7",color=red1, style=filled]
+3351 -> 3355
+3356 [label="const: 8",color=red1, style=filled]
+3351 -> 3356
+3357 [label="const: 6",color=red1, style=filled]
+3320 -> 3357
+3358 [label="const: 30.0",color=red1, style=filled]
+3319 -> 3358
+3359 [label="op3: mux",color=green4, style=filled]
+3319 -> 3359
+3360 [label="op2: ==",color=green4, style=filled]
+3359 -> 3360
+3361 [label="label: ?sensitivityLevel",color=plum, style=filled]
+3360 -> 3361
+3362 [label="op3: mux",color=green4, style=filled]
+3361 -> 3362
+3363 [label="op2: &&",color=green4, style=filled]
+3362 -> 3363
+3364 [label="op2: <=",color=green4, style=filled]
+3363 -> 3364
+3365 [label="const: 0.0",color=red1, style=filled]
+3364 -> 3365
+3366 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3364 -> 3366
+3367 [label="op2: <",color=green4, style=filled]
+3363 -> 3367
+3368 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3367 -> 3368
+3369 [label="const: 1000.0",color=red1, style=filled]
+3367 -> 3369
+3370 [label="const: 2",color=red1, style=filled]
+3362 -> 3370
+3371 [label="op3: mux",color=green4, style=filled]
+3362 -> 3371
+3372 [label="op2: <",color=green4, style=filled]
+3371 -> 3372
+3373 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3372 -> 3373
+3374 [label="const: 2350.0",color=red1, style=filled]
+3372 -> 3374
+3375 [label="const: 3",color=red1, style=filled]
+3371 -> 3375
+3376 [label="op3: mux",color=green4, style=filled]
+3371 -> 3376
+3377 [label="op2: <",color=green4, style=filled]
+3376 -> 3377
+3378 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3377 -> 3378
+3379 [label="const: 5000.0",color=red1, style=filled]
+3377 -> 3379
+3380 [label="const: 4",color=red1, style=filled]
+3376 -> 3380
+3381 [label="op3: mux",color=green4, style=filled]
+3376 -> 3381
+3382 [label="op2: <",color=green4, style=filled]
+3381 -> 3382
+3383 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3382 -> 3383
+3384 [label="const: 10000.0",color=red1, style=filled]
+3382 -> 3384
+3385 [label="const: 5",color=red1, style=filled]
+3381 -> 3385
+3386 [label="op3: mux",color=green4, style=filled]
+3381 -> 3386
+3387 [label="op2: <",color=green4, style=filled]
+3386 -> 3387
+3388 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3387 -> 3388
+3389 [label="const: 20000.0",color=red1, style=filled]
+3387 -> 3389
+3390 [label="const: 6",color=red1, style=filled]
+3386 -> 3390
+3391 [label="op3: mux",color=green4, style=filled]
+3386 -> 3391
+3392 [label="op2: <",color=green4, style=filled]
+3391 -> 3392
+3393 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3392 -> 3393
+3394 [label="const: 42000.0",color=red1, style=filled]
+3392 -> 3394
+3395 [label="const: 7",color=red1, style=filled]
+3391 -> 3395
+3396 [label="const: 8",color=red1, style=filled]
+3391 -> 3396
+3397 [label="const: 7",color=red1, style=filled]
+3360 -> 3397
+3398 [label="const: 35.0",color=red1, style=filled]
+3359 -> 3398
+3399 [label="op3: mux",color=green4, style=filled]
+3359 -> 3399
+3400 [label="op2: ==",color=green4, style=filled]
+3399 -> 3400
+3401 [label="label: ?sensitivityLevel",color=plum, style=filled]
+3400 -> 3401
+3402 [label="op3: mux",color=green4, style=filled]
+3401 -> 3402
+3403 [label="op2: &&",color=green4, style=filled]
+3402 -> 3403
+3404 [label="op2: <=",color=green4, style=filled]
+3403 -> 3404
+3405 [label="const: 0.0",color=red1, style=filled]
+3404 -> 3405
+3406 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3404 -> 3406
+3407 [label="op2: <",color=green4, style=filled]
+3403 -> 3407
+3408 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3407 -> 3408
+3409 [label="const: 1000.0",color=red1, style=filled]
+3407 -> 3409
+3410 [label="const: 2",color=red1, style=filled]
+3402 -> 3410
+3411 [label="op3: mux",color=green4, style=filled]
+3402 -> 3411
+3412 [label="op2: <",color=green4, style=filled]
+3411 -> 3412
+3413 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3412 -> 3413
+3414 [label="const: 2350.0",color=red1, style=filled]
+3412 -> 3414
+3415 [label="const: 3",color=red1, style=filled]
+3411 -> 3415
+3416 [label="op3: mux",color=green4, style=filled]
+3411 -> 3416
+3417 [label="op2: <",color=green4, style=filled]
+3416 -> 3417
+3418 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3417 -> 3418
+3419 [label="const: 5000.0",color=red1, style=filled]
+3417 -> 3419
+3420 [label="const: 4",color=red1, style=filled]
+3416 -> 3420
+3421 [label="op3: mux",color=green4, style=filled]
+3416 -> 3421
+3422 [label="op2: <",color=green4, style=filled]
+3421 -> 3422
+3423 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3422 -> 3423
+3424 [label="const: 10000.0",color=red1, style=filled]
+3422 -> 3424
+3425 [label="const: 5",color=red1, style=filled]
+3421 -> 3425
+3426 [label="op3: mux",color=green4, style=filled]
+3421 -> 3426
+3427 [label="op2: <",color=green4, style=filled]
+3426 -> 3427
+3428 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3427 -> 3428
+3429 [label="const: 20000.0",color=red1, style=filled]
+3427 -> 3429
+3430 [label="const: 6",color=red1, style=filled]
+3426 -> 3430
+3431 [label="op3: mux",color=green4, style=filled]
+3426 -> 3431
+3432 [label="op2: <",color=green4, style=filled]
+3431 -> 3432
+3433 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3432 -> 3433
+3434 [label="const: 42000.0",color=red1, style=filled]
+3432 -> 3434
+3435 [label="const: 7",color=red1, style=filled]
+3431 -> 3435
+3436 [label="const: 8",color=red1, style=filled]
+3431 -> 3436
+3437 [label="const: 8",color=red1, style=filled]
+3400 -> 3437
+3438 [label="const: 35.0",color=red1, style=filled]
+3399 -> 3438
+3439 [label="const: 0.0",color=red1, style=filled]
+3399 -> 3439
+3440 [label="label: ?vertical_RA",color=plum, style=filled]
+1909 -> 3440
+3441 [label="op2: &&",color=green4, style=filled]
+3440 -> 3441
+3442 [label="op2: <=",color=green4, style=filled]
+3441 -> 3442
+3443 [label="const: 0.0",color=red1, style=filled]
+3442 -> 3443
+3444 [label="label: ?time_coalt",color=plum, style=filled]
+3442 -> 3444
+3445 [label="op3: mux",color=green4, style=filled]
+3444 -> 3445
+3446 [label="op2: <=",color=green4, style=filled]
+3445 -> 3446
+3447 [label="op1: abs",color=green4, style=filled]
+3446 -> 3447
+3448 [label="op2: -",color=green4, style=filled]
+3447 -> 3448
+3449 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3448 -> 3449
+3450 [label="ext_intruder_position_z",color=cyan1, style=filled]
+3448 -> 3450
+3451 [label="label: ?zthrRA",color=plum, style=filled]
+3446 -> 3451
+3452 [label="op3: mux",color=green4, style=filled]
+3451 -> 3452
+3453 [label="op2: ==",color=green4, style=filled]
+3452 -> 3453
+3454 [label="label: ?sensitivityLevel",color=plum, style=filled]
+3453 -> 3454
+3455 [label="op3: mux",color=green4, style=filled]
+3454 -> 3455
+3456 [label="op2: &&",color=green4, style=filled]
+3455 -> 3456
+3457 [label="op2: <=",color=green4, style=filled]
+3456 -> 3457
+3458 [label="const: 0.0",color=red1, style=filled]
+3457 -> 3458
+3459 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3457 -> 3459
+3460 [label="op2: <",color=green4, style=filled]
+3456 -> 3460
+3461 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3460 -> 3461
+3462 [label="const: 1000.0",color=red1, style=filled]
+3460 -> 3462
+3463 [label="const: 2",color=red1, style=filled]
+3455 -> 3463
+3464 [label="op3: mux",color=green4, style=filled]
+3455 -> 3464
+3465 [label="op2: <",color=green4, style=filled]
+3464 -> 3465
+3466 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3465 -> 3466
+3467 [label="const: 2350.0",color=red1, style=filled]
+3465 -> 3467
+3468 [label="const: 3",color=red1, style=filled]
+3464 -> 3468
+3469 [label="op3: mux",color=green4, style=filled]
+3464 -> 3469
+3470 [label="op2: <",color=green4, style=filled]
+3469 -> 3470
+3471 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3470 -> 3471
+3472 [label="const: 5000.0",color=red1, style=filled]
+3470 -> 3472
+3473 [label="const: 4",color=red1, style=filled]
+3469 -> 3473
+3474 [label="op3: mux",color=green4, style=filled]
+3469 -> 3474
+3475 [label="op2: <",color=green4, style=filled]
+3474 -> 3475
+3476 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3475 -> 3476
+3477 [label="const: 10000.0",color=red1, style=filled]
+3475 -> 3477
+3478 [label="const: 5",color=red1, style=filled]
+3474 -> 3478
+3479 [label="op3: mux",color=green4, style=filled]
+3474 -> 3479
+3480 [label="op2: <",color=green4, style=filled]
+3479 -> 3480
+3481 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3480 -> 3481
+3482 [label="const: 20000.0",color=red1, style=filled]
+3480 -> 3482
+3483 [label="const: 6",color=red1, style=filled]
+3479 -> 3483
+3484 [label="op3: mux",color=green4, style=filled]
+3479 -> 3484
+3485 [label="op2: <",color=green4, style=filled]
+3484 -> 3485
+3486 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3485 -> 3486
+3487 [label="const: 42000.0",color=red1, style=filled]
+3485 -> 3487
+3488 [label="const: 7",color=red1, style=filled]
+3484 -> 3488
+3489 [label="const: 8",color=red1, style=filled]
+3484 -> 3489
+3490 [label="const: 2",color=red1, style=filled]
+3453 -> 3490
+3491 [label="const: 0.0",color=red1, style=filled]
+3452 -> 3491
+3492 [label="op3: mux",color=green4, style=filled]
+3452 -> 3492
+3493 [label="op2: ==",color=green4, style=filled]
+3492 -> 3493
+3494 [label="label: ?sensitivityLevel",color=plum, style=filled]
+3493 -> 3494
+3495 [label="op3: mux",color=green4, style=filled]
+3494 -> 3495
+3496 [label="op2: &&",color=green4, style=filled]
+3495 -> 3496
+3497 [label="op2: <=",color=green4, style=filled]
+3496 -> 3497
+3498 [label="const: 0.0",color=red1, style=filled]
+3497 -> 3498
+3499 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3497 -> 3499
+3500 [label="op2: <",color=green4, style=filled]
+3496 -> 3500
+3501 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3500 -> 3501
+3502 [label="const: 1000.0",color=red1, style=filled]
+3500 -> 3502
+3503 [label="const: 2",color=red1, style=filled]
+3495 -> 3503
+3504 [label="op3: mux",color=green4, style=filled]
+3495 -> 3504
+3505 [label="op2: <",color=green4, style=filled]
+3504 -> 3505
+3506 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3505 -> 3506
+3507 [label="const: 2350.0",color=red1, style=filled]
+3505 -> 3507
+3508 [label="const: 3",color=red1, style=filled]
+3504 -> 3508
+3509 [label="op3: mux",color=green4, style=filled]
+3504 -> 3509
+3510 [label="op2: <",color=green4, style=filled]
+3509 -> 3510
+3511 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3510 -> 3511
+3512 [label="const: 5000.0",color=red1, style=filled]
+3510 -> 3512
+3513 [label="const: 4",color=red1, style=filled]
+3509 -> 3513
+3514 [label="op3: mux",color=green4, style=filled]
+3509 -> 3514
+3515 [label="op2: <",color=green4, style=filled]
+3514 -> 3515
+3516 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3515 -> 3516
+3517 [label="const: 10000.0",color=red1, style=filled]
+3515 -> 3517
+3518 [label="const: 5",color=red1, style=filled]
+3514 -> 3518
+3519 [label="op3: mux",color=green4, style=filled]
+3514 -> 3519
+3520 [label="op2: <",color=green4, style=filled]
+3519 -> 3520
+3521 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3520 -> 3521
+3522 [label="const: 20000.0",color=red1, style=filled]
+3520 -> 3522
+3523 [label="const: 6",color=red1, style=filled]
+3519 -> 3523
+3524 [label="op3: mux",color=green4, style=filled]
+3519 -> 3524
+3525 [label="op2: <",color=green4, style=filled]
+3524 -> 3525
+3526 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3525 -> 3526
+3527 [label="const: 42000.0",color=red1, style=filled]
+3525 -> 3527
+3528 [label="const: 7",color=red1, style=filled]
+3524 -> 3528
+3529 [label="const: 8",color=red1, style=filled]
+3524 -> 3529
+3530 [label="const: 3",color=red1, style=filled]
+3493 -> 3530
+3531 [label="const: 182.88",color=red1, style=filled]
+3492 -> 3531
+3532 [label="op3: mux",color=green4, style=filled]
+3492 -> 3532
+3533 [label="op2: ==",color=green4, style=filled]
+3532 -> 3533
+3534 [label="label: ?sensitivityLevel",color=plum, style=filled]
+3533 -> 3534
+3535 [label="op3: mux",color=green4, style=filled]
+3534 -> 3535
+3536 [label="op2: &&",color=green4, style=filled]
+3535 -> 3536
+3537 [label="op2: <=",color=green4, style=filled]
+3536 -> 3537
+3538 [label="const: 0.0",color=red1, style=filled]
+3537 -> 3538
+3539 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3537 -> 3539
+3540 [label="op2: <",color=green4, style=filled]
+3536 -> 3540
+3541 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3540 -> 3541
+3542 [label="const: 1000.0",color=red1, style=filled]
+3540 -> 3542
+3543 [label="const: 2",color=red1, style=filled]
+3535 -> 3543
+3544 [label="op3: mux",color=green4, style=filled]
+3535 -> 3544
+3545 [label="op2: <",color=green4, style=filled]
+3544 -> 3545
+3546 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3545 -> 3546
+3547 [label="const: 2350.0",color=red1, style=filled]
+3545 -> 3547
+3548 [label="const: 3",color=red1, style=filled]
+3544 -> 3548
+3549 [label="op3: mux",color=green4, style=filled]
+3544 -> 3549
+3550 [label="op2: <",color=green4, style=filled]
+3549 -> 3550
+3551 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3550 -> 3551
+3552 [label="const: 5000.0",color=red1, style=filled]
+3550 -> 3552
+3553 [label="const: 4",color=red1, style=filled]
+3549 -> 3553
+3554 [label="op3: mux",color=green4, style=filled]
+3549 -> 3554
+3555 [label="op2: <",color=green4, style=filled]
+3554 -> 3555
+3556 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3555 -> 3556
+3557 [label="const: 10000.0",color=red1, style=filled]
+3555 -> 3557
+3558 [label="const: 5",color=red1, style=filled]
+3554 -> 3558
+3559 [label="op3: mux",color=green4, style=filled]
+3554 -> 3559
+3560 [label="op2: <",color=green4, style=filled]
+3559 -> 3560
+3561 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3560 -> 3561
+3562 [label="const: 20000.0",color=red1, style=filled]
+3560 -> 3562
+3563 [label="const: 6",color=red1, style=filled]
+3559 -> 3563
+3564 [label="op3: mux",color=green4, style=filled]
+3559 -> 3564
+3565 [label="op2: <",color=green4, style=filled]
+3564 -> 3565
+3566 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3565 -> 3566
+3567 [label="const: 42000.0",color=red1, style=filled]
+3565 -> 3567
+3568 [label="const: 7",color=red1, style=filled]
+3564 -> 3568
+3569 [label="const: 8",color=red1, style=filled]
+3564 -> 3569
+3570 [label="const: 4",color=red1, style=filled]
+3533 -> 3570
+3571 [label="const: 182.88",color=red1, style=filled]
+3532 -> 3571
+3572 [label="op3: mux",color=green4, style=filled]
+3532 -> 3572
+3573 [label="op2: ==",color=green4, style=filled]
+3572 -> 3573
+3574 [label="label: ?sensitivityLevel",color=plum, style=filled]
+3573 -> 3574
+3575 [label="op3: mux",color=green4, style=filled]
+3574 -> 3575
+3576 [label="op2: &&",color=green4, style=filled]
+3575 -> 3576
+3577 [label="op2: <=",color=green4, style=filled]
+3576 -> 3577
+3578 [label="const: 0.0",color=red1, style=filled]
+3577 -> 3578
+3579 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3577 -> 3579
+3580 [label="op2: <",color=green4, style=filled]
+3576 -> 3580
+3581 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3580 -> 3581
+3582 [label="const: 1000.0",color=red1, style=filled]
+3580 -> 3582
+3583 [label="const: 2",color=red1, style=filled]
+3575 -> 3583
+3584 [label="op3: mux",color=green4, style=filled]
+3575 -> 3584
+3585 [label="op2: <",color=green4, style=filled]
+3584 -> 3585
+3586 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3585 -> 3586
+3587 [label="const: 2350.0",color=red1, style=filled]
+3585 -> 3587
+3588 [label="const: 3",color=red1, style=filled]
+3584 -> 3588
+3589 [label="op3: mux",color=green4, style=filled]
+3584 -> 3589
+3590 [label="op2: <",color=green4, style=filled]
+3589 -> 3590
+3591 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3590 -> 3591
+3592 [label="const: 5000.0",color=red1, style=filled]
+3590 -> 3592
+3593 [label="const: 4",color=red1, style=filled]
+3589 -> 3593
+3594 [label="op3: mux",color=green4, style=filled]
+3589 -> 3594
+3595 [label="op2: <",color=green4, style=filled]
+3594 -> 3595
+3596 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3595 -> 3596
+3597 [label="const: 10000.0",color=red1, style=filled]
+3595 -> 3597
+3598 [label="const: 5",color=red1, style=filled]
+3594 -> 3598
+3599 [label="op3: mux",color=green4, style=filled]
+3594 -> 3599
+3600 [label="op2: <",color=green4, style=filled]
+3599 -> 3600
+3601 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3600 -> 3601
+3602 [label="const: 20000.0",color=red1, style=filled]
+3600 -> 3602
+3603 [label="const: 6",color=red1, style=filled]
+3599 -> 3603
+3604 [label="op3: mux",color=green4, style=filled]
+3599 -> 3604
+3605 [label="op2: <",color=green4, style=filled]
+3604 -> 3605
+3606 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3605 -> 3606
+3607 [label="const: 42000.0",color=red1, style=filled]
+3605 -> 3607
+3608 [label="const: 7",color=red1, style=filled]
+3604 -> 3608
+3609 [label="const: 8",color=red1, style=filled]
+3604 -> 3609
+3610 [label="const: 5",color=red1, style=filled]
+3573 -> 3610
+3611 [label="const: 182.88",color=red1, style=filled]
+3572 -> 3611
+3612 [label="op3: mux",color=green4, style=filled]
+3572 -> 3612
+3613 [label="op2: ==",color=green4, style=filled]
+3612 -> 3613
+3614 [label="label: ?sensitivityLevel",color=plum, style=filled]
+3613 -> 3614
+3615 [label="op3: mux",color=green4, style=filled]
+3614 -> 3615
+3616 [label="op2: &&",color=green4, style=filled]
+3615 -> 3616
+3617 [label="op2: <=",color=green4, style=filled]
+3616 -> 3617
+3618 [label="const: 0.0",color=red1, style=filled]
+3617 -> 3618
+3619 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3617 -> 3619
+3620 [label="op2: <",color=green4, style=filled]
+3616 -> 3620
+3621 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3620 -> 3621
+3622 [label="const: 1000.0",color=red1, style=filled]
+3620 -> 3622
+3623 [label="const: 2",color=red1, style=filled]
+3615 -> 3623
+3624 [label="op3: mux",color=green4, style=filled]
+3615 -> 3624
+3625 [label="op2: <",color=green4, style=filled]
+3624 -> 3625
+3626 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3625 -> 3626
+3627 [label="const: 2350.0",color=red1, style=filled]
+3625 -> 3627
+3628 [label="const: 3",color=red1, style=filled]
+3624 -> 3628
+3629 [label="op3: mux",color=green4, style=filled]
+3624 -> 3629
+3630 [label="op2: <",color=green4, style=filled]
+3629 -> 3630
+3631 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3630 -> 3631
+3632 [label="const: 5000.0",color=red1, style=filled]
+3630 -> 3632
+3633 [label="const: 4",color=red1, style=filled]
+3629 -> 3633
+3634 [label="op3: mux",color=green4, style=filled]
+3629 -> 3634
+3635 [label="op2: <",color=green4, style=filled]
+3634 -> 3635
+3636 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3635 -> 3636
+3637 [label="const: 10000.0",color=red1, style=filled]
+3635 -> 3637
+3638 [label="const: 5",color=red1, style=filled]
+3634 -> 3638
+3639 [label="op3: mux",color=green4, style=filled]
+3634 -> 3639
+3640 [label="op2: <",color=green4, style=filled]
+3639 -> 3640
+3641 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3640 -> 3641
+3642 [label="const: 20000.0",color=red1, style=filled]
+3640 -> 3642
+3643 [label="const: 6",color=red1, style=filled]
+3639 -> 3643
+3644 [label="op3: mux",color=green4, style=filled]
+3639 -> 3644
+3645 [label="op2: <",color=green4, style=filled]
+3644 -> 3645
+3646 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3645 -> 3646
+3647 [label="const: 42000.0",color=red1, style=filled]
+3645 -> 3647
+3648 [label="const: 7",color=red1, style=filled]
+3644 -> 3648
+3649 [label="const: 8",color=red1, style=filled]
+3644 -> 3649
+3650 [label="const: 6",color=red1, style=filled]
+3613 -> 3650
+3651 [label="const: 182.88",color=red1, style=filled]
+3612 -> 3651
+3652 [label="op3: mux",color=green4, style=filled]
+3612 -> 3652
+3653 [label="op2: ==",color=green4, style=filled]
+3652 -> 3653
+3654 [label="label: ?sensitivityLevel",color=plum, style=filled]
+3653 -> 3654
+3655 [label="op3: mux",color=green4, style=filled]
+3654 -> 3655
+3656 [label="op2: &&",color=green4, style=filled]
+3655 -> 3656
+3657 [label="op2: <=",color=green4, style=filled]
+3656 -> 3657
+3658 [label="const: 0.0",color=red1, style=filled]
+3657 -> 3658
+3659 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3657 -> 3659
+3660 [label="op2: <",color=green4, style=filled]
+3656 -> 3660
+3661 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3660 -> 3661
+3662 [label="const: 1000.0",color=red1, style=filled]
+3660 -> 3662
+3663 [label="const: 2",color=red1, style=filled]
+3655 -> 3663
+3664 [label="op3: mux",color=green4, style=filled]
+3655 -> 3664
+3665 [label="op2: <",color=green4, style=filled]
+3664 -> 3665
+3666 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3665 -> 3666
+3667 [label="const: 2350.0",color=red1, style=filled]
+3665 -> 3667
+3668 [label="const: 3",color=red1, style=filled]
+3664 -> 3668
+3669 [label="op3: mux",color=green4, style=filled]
+3664 -> 3669
+3670 [label="op2: <",color=green4, style=filled]
+3669 -> 3670
+3671 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3670 -> 3671
+3672 [label="const: 5000.0",color=red1, style=filled]
+3670 -> 3672
+3673 [label="const: 4",color=red1, style=filled]
+3669 -> 3673
+3674 [label="op3: mux",color=green4, style=filled]
+3669 -> 3674
+3675 [label="op2: <",color=green4, style=filled]
+3674 -> 3675
+3676 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3675 -> 3676
+3677 [label="const: 10000.0",color=red1, style=filled]
+3675 -> 3677
+3678 [label="const: 5",color=red1, style=filled]
+3674 -> 3678
+3679 [label="op3: mux",color=green4, style=filled]
+3674 -> 3679
+3680 [label="op2: <",color=green4, style=filled]
+3679 -> 3680
+3681 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3680 -> 3681
+3682 [label="const: 20000.0",color=red1, style=filled]
+3680 -> 3682
+3683 [label="const: 6",color=red1, style=filled]
+3679 -> 3683
+3684 [label="op3: mux",color=green4, style=filled]
+3679 -> 3684
+3685 [label="op2: <",color=green4, style=filled]
+3684 -> 3685
+3686 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3685 -> 3686
+3687 [label="const: 42000.0",color=red1, style=filled]
+3685 -> 3687
+3688 [label="const: 7",color=red1, style=filled]
+3684 -> 3688
+3689 [label="const: 8",color=red1, style=filled]
+3684 -> 3689
+3690 [label="const: 7",color=red1, style=filled]
+3653 -> 3690
+3691 [label="const: 213.36",color=red1, style=filled]
+3652 -> 3691
+3692 [label="op3: mux",color=green4, style=filled]
+3652 -> 3692
+3693 [label="op2: ==",color=green4, style=filled]
+3692 -> 3693
+3694 [label="label: ?sensitivityLevel",color=plum, style=filled]
+3693 -> 3694
+3695 [label="op3: mux",color=green4, style=filled]
+3694 -> 3695
+3696 [label="op2: &&",color=green4, style=filled]
+3695 -> 3696
+3697 [label="op2: <=",color=green4, style=filled]
+3696 -> 3697
+3698 [label="const: 0.0",color=red1, style=filled]
+3697 -> 3698
+3699 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3697 -> 3699
+3700 [label="op2: <",color=green4, style=filled]
+3696 -> 3700
+3701 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3700 -> 3701
+3702 [label="const: 1000.0",color=red1, style=filled]
+3700 -> 3702
+3703 [label="const: 2",color=red1, style=filled]
+3695 -> 3703
+3704 [label="op3: mux",color=green4, style=filled]
+3695 -> 3704
+3705 [label="op2: <",color=green4, style=filled]
+3704 -> 3705
+3706 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3705 -> 3706
+3707 [label="const: 2350.0",color=red1, style=filled]
+3705 -> 3707
+3708 [label="const: 3",color=red1, style=filled]
+3704 -> 3708
+3709 [label="op3: mux",color=green4, style=filled]
+3704 -> 3709
+3710 [label="op2: <",color=green4, style=filled]
+3709 -> 3710
+3711 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3710 -> 3711
+3712 [label="const: 5000.0",color=red1, style=filled]
+3710 -> 3712
+3713 [label="const: 4",color=red1, style=filled]
+3709 -> 3713
+3714 [label="op3: mux",color=green4, style=filled]
+3709 -> 3714
+3715 [label="op2: <",color=green4, style=filled]
+3714 -> 3715
+3716 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3715 -> 3716
+3717 [label="const: 10000.0",color=red1, style=filled]
+3715 -> 3717
+3718 [label="const: 5",color=red1, style=filled]
+3714 -> 3718
+3719 [label="op3: mux",color=green4, style=filled]
+3714 -> 3719
+3720 [label="op2: <",color=green4, style=filled]
+3719 -> 3720
+3721 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3720 -> 3721
+3722 [label="const: 20000.0",color=red1, style=filled]
+3720 -> 3722
+3723 [label="const: 6",color=red1, style=filled]
+3719 -> 3723
+3724 [label="op3: mux",color=green4, style=filled]
+3719 -> 3724
+3725 [label="op2: <",color=green4, style=filled]
+3724 -> 3725
+3726 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3725 -> 3726
+3727 [label="const: 42000.0",color=red1, style=filled]
+3725 -> 3727
+3728 [label="const: 7",color=red1, style=filled]
+3724 -> 3728
+3729 [label="const: 8",color=red1, style=filled]
+3724 -> 3729
+3730 [label="const: 8",color=red1, style=filled]
+3693 -> 3730
+3731 [label="const: 243.84",color=red1, style=filled]
+3692 -> 3731
+3732 [label="const: 0.0",color=red1, style=filled]
+3692 -> 3732
+3733 [label="const: 0.0",color=red1, style=filled]
+3445 -> 3733
+3734 [label="op3: mux",color=green4, style=filled]
+3445 -> 3734
+3735 [label="op2: ==",color=green4, style=filled]
+3734 -> 3735
+3736 [label="op2: -",color=green4, style=filled]
+3735 -> 3736
+3737 [label="ext_ownship_velocity_z",color=cyan1, style=filled]
+3736 -> 3737
+3738 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+3736 -> 3738
+3739 [label="const: 0.0",color=red1, style=filled]
+3735 -> 3739
+3740 [label="const: -1.0",color=red1, style=filled]
+3734 -> 3740
+3741 [label="op2: /",color=green4, style=filled]
+3734 -> 3741
+3742 [label="op2: -",color=green4, style=filled]
+3741 -> 3742
+3743 [label="const: 0.0",color=red1, style=filled]
+3742 -> 3743
+3744 [label="op2: -",color=green4, style=filled]
+3742 -> 3744
+3745 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3744 -> 3745
+3746 [label="ext_intruder_position_z",color=cyan1, style=filled]
+3744 -> 3746
+3747 [label="op2: -",color=green4, style=filled]
+3741 -> 3747
+3748 [label="ext_ownship_velocity_z",color=cyan1, style=filled]
+3747 -> 3748
+3749 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+3747 -> 3749
+3750 [label="op2: <=",color=green4, style=filled]
+3441 -> 3750
+3751 [label="label: ?time_coalt",color=plum, style=filled]
+3750 -> 3751
+3752 [label="op3: mux",color=green4, style=filled]
+3751 -> 3752
+3753 [label="op2: <=",color=green4, style=filled]
+3752 -> 3753
+3754 [label="op1: abs",color=green4, style=filled]
+3753 -> 3754
+3755 [label="op2: -",color=green4, style=filled]
+3754 -> 3755
+3756 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3755 -> 3756
+3757 [label="ext_intruder_position_z",color=cyan1, style=filled]
+3755 -> 3757
+3758 [label="label: ?zthrRA",color=plum, style=filled]
+3753 -> 3758
+3759 [label="op3: mux",color=green4, style=filled]
+3758 -> 3759
+3760 [label="op2: ==",color=green4, style=filled]
+3759 -> 3760
+3761 [label="label: ?sensitivityLevel",color=plum, style=filled]
+3760 -> 3761
+3762 [label="op3: mux",color=green4, style=filled]
+3761 -> 3762
+3763 [label="op2: &&",color=green4, style=filled]
+3762 -> 3763
+3764 [label="op2: <=",color=green4, style=filled]
+3763 -> 3764
+3765 [label="const: 0.0",color=red1, style=filled]
+3764 -> 3765
+3766 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3764 -> 3766
+3767 [label="op2: <",color=green4, style=filled]
+3763 -> 3767
+3768 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3767 -> 3768
+3769 [label="const: 1000.0",color=red1, style=filled]
+3767 -> 3769
+3770 [label="const: 2",color=red1, style=filled]
+3762 -> 3770
+3771 [label="op3: mux",color=green4, style=filled]
+3762 -> 3771
+3772 [label="op2: <",color=green4, style=filled]
+3771 -> 3772
+3773 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3772 -> 3773
+3774 [label="const: 2350.0",color=red1, style=filled]
+3772 -> 3774
+3775 [label="const: 3",color=red1, style=filled]
+3771 -> 3775
+3776 [label="op3: mux",color=green4, style=filled]
+3771 -> 3776
+3777 [label="op2: <",color=green4, style=filled]
+3776 -> 3777
+3778 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3777 -> 3778
+3779 [label="const: 5000.0",color=red1, style=filled]
+3777 -> 3779
+3780 [label="const: 4",color=red1, style=filled]
+3776 -> 3780
+3781 [label="op3: mux",color=green4, style=filled]
+3776 -> 3781
+3782 [label="op2: <",color=green4, style=filled]
+3781 -> 3782
+3783 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3782 -> 3783
+3784 [label="const: 10000.0",color=red1, style=filled]
+3782 -> 3784
+3785 [label="const: 5",color=red1, style=filled]
+3781 -> 3785
+3786 [label="op3: mux",color=green4, style=filled]
+3781 -> 3786
+3787 [label="op2: <",color=green4, style=filled]
+3786 -> 3787
+3788 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3787 -> 3788
+3789 [label="const: 20000.0",color=red1, style=filled]
+3787 -> 3789
+3790 [label="const: 6",color=red1, style=filled]
+3786 -> 3790
+3791 [label="op3: mux",color=green4, style=filled]
+3786 -> 3791
+3792 [label="op2: <",color=green4, style=filled]
+3791 -> 3792
+3793 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3792 -> 3793
+3794 [label="const: 42000.0",color=red1, style=filled]
+3792 -> 3794
+3795 [label="const: 7",color=red1, style=filled]
+3791 -> 3795
+3796 [label="const: 8",color=red1, style=filled]
+3791 -> 3796
+3797 [label="const: 2",color=red1, style=filled]
+3760 -> 3797
+3798 [label="const: 0.0",color=red1, style=filled]
+3759 -> 3798
+3799 [label="op3: mux",color=green4, style=filled]
+3759 -> 3799
+3800 [label="op2: ==",color=green4, style=filled]
+3799 -> 3800
+3801 [label="label: ?sensitivityLevel",color=plum, style=filled]
+3800 -> 3801
+3802 [label="op3: mux",color=green4, style=filled]
+3801 -> 3802
+3803 [label="op2: &&",color=green4, style=filled]
+3802 -> 3803
+3804 [label="op2: <=",color=green4, style=filled]
+3803 -> 3804
+3805 [label="const: 0.0",color=red1, style=filled]
+3804 -> 3805
+3806 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3804 -> 3806
+3807 [label="op2: <",color=green4, style=filled]
+3803 -> 3807
+3808 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3807 -> 3808
+3809 [label="const: 1000.0",color=red1, style=filled]
+3807 -> 3809
+3810 [label="const: 2",color=red1, style=filled]
+3802 -> 3810
+3811 [label="op3: mux",color=green4, style=filled]
+3802 -> 3811
+3812 [label="op2: <",color=green4, style=filled]
+3811 -> 3812
+3813 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3812 -> 3813
+3814 [label="const: 2350.0",color=red1, style=filled]
+3812 -> 3814
+3815 [label="const: 3",color=red1, style=filled]
+3811 -> 3815
+3816 [label="op3: mux",color=green4, style=filled]
+3811 -> 3816
+3817 [label="op2: <",color=green4, style=filled]
+3816 -> 3817
+3818 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3817 -> 3818
+3819 [label="const: 5000.0",color=red1, style=filled]
+3817 -> 3819
+3820 [label="const: 4",color=red1, style=filled]
+3816 -> 3820
+3821 [label="op3: mux",color=green4, style=filled]
+3816 -> 3821
+3822 [label="op2: <",color=green4, style=filled]
+3821 -> 3822
+3823 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3822 -> 3823
+3824 [label="const: 10000.0",color=red1, style=filled]
+3822 -> 3824
+3825 [label="const: 5",color=red1, style=filled]
+3821 -> 3825
+3826 [label="op3: mux",color=green4, style=filled]
+3821 -> 3826
+3827 [label="op2: <",color=green4, style=filled]
+3826 -> 3827
+3828 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3827 -> 3828
+3829 [label="const: 20000.0",color=red1, style=filled]
+3827 -> 3829
+3830 [label="const: 6",color=red1, style=filled]
+3826 -> 3830
+3831 [label="op3: mux",color=green4, style=filled]
+3826 -> 3831
+3832 [label="op2: <",color=green4, style=filled]
+3831 -> 3832
+3833 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3832 -> 3833
+3834 [label="const: 42000.0",color=red1, style=filled]
+3832 -> 3834
+3835 [label="const: 7",color=red1, style=filled]
+3831 -> 3835
+3836 [label="const: 8",color=red1, style=filled]
+3831 -> 3836
+3837 [label="const: 3",color=red1, style=filled]
+3800 -> 3837
+3838 [label="const: 182.88",color=red1, style=filled]
+3799 -> 3838
+3839 [label="op3: mux",color=green4, style=filled]
+3799 -> 3839
+3840 [label="op2: ==",color=green4, style=filled]
+3839 -> 3840
+3841 [label="label: ?sensitivityLevel",color=plum, style=filled]
+3840 -> 3841
+3842 [label="op3: mux",color=green4, style=filled]
+3841 -> 3842
+3843 [label="op2: &&",color=green4, style=filled]
+3842 -> 3843
+3844 [label="op2: <=",color=green4, style=filled]
+3843 -> 3844
+3845 [label="const: 0.0",color=red1, style=filled]
+3844 -> 3845
+3846 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3844 -> 3846
+3847 [label="op2: <",color=green4, style=filled]
+3843 -> 3847
+3848 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3847 -> 3848
+3849 [label="const: 1000.0",color=red1, style=filled]
+3847 -> 3849
+3850 [label="const: 2",color=red1, style=filled]
+3842 -> 3850
+3851 [label="op3: mux",color=green4, style=filled]
+3842 -> 3851
+3852 [label="op2: <",color=green4, style=filled]
+3851 -> 3852
+3853 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3852 -> 3853
+3854 [label="const: 2350.0",color=red1, style=filled]
+3852 -> 3854
+3855 [label="const: 3",color=red1, style=filled]
+3851 -> 3855
+3856 [label="op3: mux",color=green4, style=filled]
+3851 -> 3856
+3857 [label="op2: <",color=green4, style=filled]
+3856 -> 3857
+3858 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3857 -> 3858
+3859 [label="const: 5000.0",color=red1, style=filled]
+3857 -> 3859
+3860 [label="const: 4",color=red1, style=filled]
+3856 -> 3860
+3861 [label="op3: mux",color=green4, style=filled]
+3856 -> 3861
+3862 [label="op2: <",color=green4, style=filled]
+3861 -> 3862
+3863 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3862 -> 3863
+3864 [label="const: 10000.0",color=red1, style=filled]
+3862 -> 3864
+3865 [label="const: 5",color=red1, style=filled]
+3861 -> 3865
+3866 [label="op3: mux",color=green4, style=filled]
+3861 -> 3866
+3867 [label="op2: <",color=green4, style=filled]
+3866 -> 3867
+3868 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3867 -> 3868
+3869 [label="const: 20000.0",color=red1, style=filled]
+3867 -> 3869
+3870 [label="const: 6",color=red1, style=filled]
+3866 -> 3870
+3871 [label="op3: mux",color=green4, style=filled]
+3866 -> 3871
+3872 [label="op2: <",color=green4, style=filled]
+3871 -> 3872
+3873 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3872 -> 3873
+3874 [label="const: 42000.0",color=red1, style=filled]
+3872 -> 3874
+3875 [label="const: 7",color=red1, style=filled]
+3871 -> 3875
+3876 [label="const: 8",color=red1, style=filled]
+3871 -> 3876
+3877 [label="const: 4",color=red1, style=filled]
+3840 -> 3877
+3878 [label="const: 182.88",color=red1, style=filled]
+3839 -> 3878
+3879 [label="op3: mux",color=green4, style=filled]
+3839 -> 3879
+3880 [label="op2: ==",color=green4, style=filled]
+3879 -> 3880
+3881 [label="label: ?sensitivityLevel",color=plum, style=filled]
+3880 -> 3881
+3882 [label="op3: mux",color=green4, style=filled]
+3881 -> 3882
+3883 [label="op2: &&",color=green4, style=filled]
+3882 -> 3883
+3884 [label="op2: <=",color=green4, style=filled]
+3883 -> 3884
+3885 [label="const: 0.0",color=red1, style=filled]
+3884 -> 3885
+3886 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3884 -> 3886
+3887 [label="op2: <",color=green4, style=filled]
+3883 -> 3887
+3888 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3887 -> 3888
+3889 [label="const: 1000.0",color=red1, style=filled]
+3887 -> 3889
+3890 [label="const: 2",color=red1, style=filled]
+3882 -> 3890
+3891 [label="op3: mux",color=green4, style=filled]
+3882 -> 3891
+3892 [label="op2: <",color=green4, style=filled]
+3891 -> 3892
+3893 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3892 -> 3893
+3894 [label="const: 2350.0",color=red1, style=filled]
+3892 -> 3894
+3895 [label="const: 3",color=red1, style=filled]
+3891 -> 3895
+3896 [label="op3: mux",color=green4, style=filled]
+3891 -> 3896
+3897 [label="op2: <",color=green4, style=filled]
+3896 -> 3897
+3898 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3897 -> 3898
+3899 [label="const: 5000.0",color=red1, style=filled]
+3897 -> 3899
+3900 [label="const: 4",color=red1, style=filled]
+3896 -> 3900
+3901 [label="op3: mux",color=green4, style=filled]
+3896 -> 3901
+3902 [label="op2: <",color=green4, style=filled]
+3901 -> 3902
+3903 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3902 -> 3903
+3904 [label="const: 10000.0",color=red1, style=filled]
+3902 -> 3904
+3905 [label="const: 5",color=red1, style=filled]
+3901 -> 3905
+3906 [label="op3: mux",color=green4, style=filled]
+3901 -> 3906
+3907 [label="op2: <",color=green4, style=filled]
+3906 -> 3907
+3908 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3907 -> 3908
+3909 [label="const: 20000.0",color=red1, style=filled]
+3907 -> 3909
+3910 [label="const: 6",color=red1, style=filled]
+3906 -> 3910
+3911 [label="op3: mux",color=green4, style=filled]
+3906 -> 3911
+3912 [label="op2: <",color=green4, style=filled]
+3911 -> 3912
+3913 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3912 -> 3913
+3914 [label="const: 42000.0",color=red1, style=filled]
+3912 -> 3914
+3915 [label="const: 7",color=red1, style=filled]
+3911 -> 3915
+3916 [label="const: 8",color=red1, style=filled]
+3911 -> 3916
+3917 [label="const: 5",color=red1, style=filled]
+3880 -> 3917
+3918 [label="const: 182.88",color=red1, style=filled]
+3879 -> 3918
+3919 [label="op3: mux",color=green4, style=filled]
+3879 -> 3919
+3920 [label="op2: ==",color=green4, style=filled]
+3919 -> 3920
+3921 [label="label: ?sensitivityLevel",color=plum, style=filled]
+3920 -> 3921
+3922 [label="op3: mux",color=green4, style=filled]
+3921 -> 3922
+3923 [label="op2: &&",color=green4, style=filled]
+3922 -> 3923
+3924 [label="op2: <=",color=green4, style=filled]
+3923 -> 3924
+3925 [label="const: 0.0",color=red1, style=filled]
+3924 -> 3925
+3926 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3924 -> 3926
+3927 [label="op2: <",color=green4, style=filled]
+3923 -> 3927
+3928 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3927 -> 3928
+3929 [label="const: 1000.0",color=red1, style=filled]
+3927 -> 3929
+3930 [label="const: 2",color=red1, style=filled]
+3922 -> 3930
+3931 [label="op3: mux",color=green4, style=filled]
+3922 -> 3931
+3932 [label="op2: <",color=green4, style=filled]
+3931 -> 3932
+3933 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3932 -> 3933
+3934 [label="const: 2350.0",color=red1, style=filled]
+3932 -> 3934
+3935 [label="const: 3",color=red1, style=filled]
+3931 -> 3935
+3936 [label="op3: mux",color=green4, style=filled]
+3931 -> 3936
+3937 [label="op2: <",color=green4, style=filled]
+3936 -> 3937
+3938 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3937 -> 3938
+3939 [label="const: 5000.0",color=red1, style=filled]
+3937 -> 3939
+3940 [label="const: 4",color=red1, style=filled]
+3936 -> 3940
+3941 [label="op3: mux",color=green4, style=filled]
+3936 -> 3941
+3942 [label="op2: <",color=green4, style=filled]
+3941 -> 3942
+3943 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3942 -> 3943
+3944 [label="const: 10000.0",color=red1, style=filled]
+3942 -> 3944
+3945 [label="const: 5",color=red1, style=filled]
+3941 -> 3945
+3946 [label="op3: mux",color=green4, style=filled]
+3941 -> 3946
+3947 [label="op2: <",color=green4, style=filled]
+3946 -> 3947
+3948 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3947 -> 3948
+3949 [label="const: 20000.0",color=red1, style=filled]
+3947 -> 3949
+3950 [label="const: 6",color=red1, style=filled]
+3946 -> 3950
+3951 [label="op3: mux",color=green4, style=filled]
+3946 -> 3951
+3952 [label="op2: <",color=green4, style=filled]
+3951 -> 3952
+3953 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3952 -> 3953
+3954 [label="const: 42000.0",color=red1, style=filled]
+3952 -> 3954
+3955 [label="const: 7",color=red1, style=filled]
+3951 -> 3955
+3956 [label="const: 8",color=red1, style=filled]
+3951 -> 3956
+3957 [label="const: 6",color=red1, style=filled]
+3920 -> 3957
+3958 [label="const: 182.88",color=red1, style=filled]
+3919 -> 3958
+3959 [label="op3: mux",color=green4, style=filled]
+3919 -> 3959
+3960 [label="op2: ==",color=green4, style=filled]
+3959 -> 3960
+3961 [label="label: ?sensitivityLevel",color=plum, style=filled]
+3960 -> 3961
+3962 [label="op3: mux",color=green4, style=filled]
+3961 -> 3962
+3963 [label="op2: &&",color=green4, style=filled]
+3962 -> 3963
+3964 [label="op2: <=",color=green4, style=filled]
+3963 -> 3964
+3965 [label="const: 0.0",color=red1, style=filled]
+3964 -> 3965
+3966 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3964 -> 3966
+3967 [label="op2: <",color=green4, style=filled]
+3963 -> 3967
+3968 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3967 -> 3968
+3969 [label="const: 1000.0",color=red1, style=filled]
+3967 -> 3969
+3970 [label="const: 2",color=red1, style=filled]
+3962 -> 3970
+3971 [label="op3: mux",color=green4, style=filled]
+3962 -> 3971
+3972 [label="op2: <",color=green4, style=filled]
+3971 -> 3972
+3973 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3972 -> 3973
+3974 [label="const: 2350.0",color=red1, style=filled]
+3972 -> 3974
+3975 [label="const: 3",color=red1, style=filled]
+3971 -> 3975
+3976 [label="op3: mux",color=green4, style=filled]
+3971 -> 3976
+3977 [label="op2: <",color=green4, style=filled]
+3976 -> 3977
+3978 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3977 -> 3978
+3979 [label="const: 5000.0",color=red1, style=filled]
+3977 -> 3979
+3980 [label="const: 4",color=red1, style=filled]
+3976 -> 3980
+3981 [label="op3: mux",color=green4, style=filled]
+3976 -> 3981
+3982 [label="op2: <",color=green4, style=filled]
+3981 -> 3982
+3983 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3982 -> 3983
+3984 [label="const: 10000.0",color=red1, style=filled]
+3982 -> 3984
+3985 [label="const: 5",color=red1, style=filled]
+3981 -> 3985
+3986 [label="op3: mux",color=green4, style=filled]
+3981 -> 3986
+3987 [label="op2: <",color=green4, style=filled]
+3986 -> 3987
+3988 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3987 -> 3988
+3989 [label="const: 20000.0",color=red1, style=filled]
+3987 -> 3989
+3990 [label="const: 6",color=red1, style=filled]
+3986 -> 3990
+3991 [label="op3: mux",color=green4, style=filled]
+3986 -> 3991
+3992 [label="op2: <",color=green4, style=filled]
+3991 -> 3992
+3993 [label="ext_ownship_position_z",color=cyan1, style=filled]
+3992 -> 3993
+3994 [label="const: 42000.0",color=red1, style=filled]
+3992 -> 3994
+3995 [label="const: 7",color=red1, style=filled]
+3991 -> 3995
+3996 [label="const: 8",color=red1, style=filled]
+3991 -> 3996
+3997 [label="const: 7",color=red1, style=filled]
+3960 -> 3997
+3998 [label="const: 213.36",color=red1, style=filled]
+3959 -> 3998
+3999 [label="op3: mux",color=green4, style=filled]
+3959 -> 3999
+4000 [label="op2: ==",color=green4, style=filled]
+3999 -> 4000
+4001 [label="label: ?sensitivityLevel",color=plum, style=filled]
+4000 -> 4001
+4002 [label="op3: mux",color=green4, style=filled]
+4001 -> 4002
+4003 [label="op2: &&",color=green4, style=filled]
+4002 -> 4003
+4004 [label="op2: <=",color=green4, style=filled]
+4003 -> 4004
+4005 [label="const: 0.0",color=red1, style=filled]
+4004 -> 4005
+4006 [label="ext_ownship_position_z",color=cyan1, style=filled]
+4004 -> 4006
+4007 [label="op2: <",color=green4, style=filled]
+4003 -> 4007
+4008 [label="ext_ownship_position_z",color=cyan1, style=filled]
+4007 -> 4008
+4009 [label="const: 1000.0",color=red1, style=filled]
+4007 -> 4009
+4010 [label="const: 2",color=red1, style=filled]
+4002 -> 4010
+4011 [label="op3: mux",color=green4, style=filled]
+4002 -> 4011
+4012 [label="op2: <",color=green4, style=filled]
+4011 -> 4012
+4013 [label="ext_ownship_position_z",color=cyan1, style=filled]
+4012 -> 4013
+4014 [label="const: 2350.0",color=red1, style=filled]
+4012 -> 4014
+4015 [label="const: 3",color=red1, style=filled]
+4011 -> 4015
+4016 [label="op3: mux",color=green4, style=filled]
+4011 -> 4016
+4017 [label="op2: <",color=green4, style=filled]
+4016 -> 4017
+4018 [label="ext_ownship_position_z",color=cyan1, style=filled]
+4017 -> 4018
+4019 [label="const: 5000.0",color=red1, style=filled]
+4017 -> 4019
+4020 [label="const: 4",color=red1, style=filled]
+4016 -> 4020
+4021 [label="op3: mux",color=green4, style=filled]
+4016 -> 4021
+4022 [label="op2: <",color=green4, style=filled]
+4021 -> 4022
+4023 [label="ext_ownship_position_z",color=cyan1, style=filled]
+4022 -> 4023
+4024 [label="const: 10000.0",color=red1, style=filled]
+4022 -> 4024
+4025 [label="const: 5",color=red1, style=filled]
+4021 -> 4025
+4026 [label="op3: mux",color=green4, style=filled]
+4021 -> 4026
+4027 [label="op2: <",color=green4, style=filled]
+4026 -> 4027
+4028 [label="ext_ownship_position_z",color=cyan1, style=filled]
+4027 -> 4028
+4029 [label="const: 20000.0",color=red1, style=filled]
+4027 -> 4029
+4030 [label="const: 6",color=red1, style=filled]
+4026 -> 4030
+4031 [label="op3: mux",color=green4, style=filled]
+4026 -> 4031
+4032 [label="op2: <",color=green4, style=filled]
+4031 -> 4032
+4033 [label="ext_ownship_position_z",color=cyan1, style=filled]
+4032 -> 4033
+4034 [label="const: 42000.0",color=red1, style=filled]
+4032 -> 4034
+4035 [label="const: 7",color=red1, style=filled]
+4031 -> 4035
+4036 [label="const: 8",color=red1, style=filled]
+4031 -> 4036
+4037 [label="const: 8",color=red1, style=filled]
+4000 -> 4037
+4038 [label="const: 243.84",color=red1, style=filled]
+3999 -> 4038
+4039 [label="const: 0.0",color=red1, style=filled]
+3999 -> 4039
+4040 [label="const: 0.0",color=red1, style=filled]
+3752 -> 4040
+4041 [label="op3: mux",color=green4, style=filled]
+3752 -> 4041
+4042 [label="op2: ==",color=green4, style=filled]
+4041 -> 4042
+4043 [label="op2: -",color=green4, style=filled]
+4042 -> 4043
+4044 [label="ext_ownship_velocity_z",color=cyan1, style=filled]
+4043 -> 4044
+4045 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+4043 -> 4045
+4046 [label="const: 0.0",color=red1, style=filled]
+4042 -> 4046
+4047 [label="const: -1.0",color=red1, style=filled]
+4041 -> 4047
+4048 [label="op2: /",color=green4, style=filled]
+4041 -> 4048
+4049 [label="op2: -",color=green4, style=filled]
+4048 -> 4049
+4050 [label="const: 0.0",color=red1, style=filled]
+4049 -> 4050
+4051 [label="op2: -",color=green4, style=filled]
+4049 -> 4051
+4052 [label="ext_ownship_position_z",color=cyan1, style=filled]
+4051 -> 4052
+4053 [label="ext_intruder_position_z",color=cyan1, style=filled]
+4051 -> 4053
+4054 [label="op2: -",color=green4, style=filled]
+4048 -> 4054
+4055 [label="ext_ownship_velocity_z",color=cyan1, style=filled]
+4054 -> 4055
+4056 [label="ext_intruder_velocity_z",color=cyan1, style=filled]
+4054 -> 4056
+4057 [label="const: 0.0",color=red1, style=filled]
+3750 -> 4057
 
 
 }
@@ -19,171 +6827,166 @@ node [shape=box]
 DotEnd*/
 /*@
  assigns \nothing;
- ensures \result == (ext_ident_bool_1790);
+ ensures \result == (((((((((((((((((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_velocity_y) - (ext_intruder_velocity_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))) == (0.0))) && (((((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_position_x) - (ext_intruder_position_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_position_y) - (ext_intruder_position_y))))))))) <= (((((( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (2))) ? (0.0) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (3))) ? (370.332) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (4))) ? (648.0048) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (5))) ? (1018.6416) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (6))) ? (1481.6328) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (7))) ? (2036.9784000000002) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (8))) ? (2036.9784000000002) : (0.0)))))))))))))))) * ((( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (2))) ? (0.0) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (3))) ? (370.332) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (4))) ? (648.0048) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (5))) ? (1018.6416) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (6))) ? (1481.6328) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (7))) ? (2036.9784000000002) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (8))) ? (2036.9784000000002) : (0.0))))))))))))))))))))))) || (((((((((((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_velocity_y) - (ext_intruder_velocity_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))) > (0.0))) && (((((((((((((( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (2))) ? (0.0) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (3))) ? (370.332) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (4))) ? (648.0048) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (5))) ? (1018.6416) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (6))) ? (1481.6328) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (7))) ? (2036.9784000000002) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (8))) ? (2036.9784000000002) : (0.0)))))))))))))))) * ((( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (2))) ? (0.0) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (3))) ? (370.332) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (4))) ? (648.0048) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (5))) ? (1018.6416) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (6))) ? (1481.6328) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (7))) ? (2036.9784000000002) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (8))) ? (2036.9784000000002) : (0.0)))))))))))))))))) * (((((((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_velocity_y) - (ext_intruder_velocity_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))))))) - ((((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))) - (((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_position_y) - (ext_intruder_position_y)))))))) * ((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))) - (((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_position_y) - (ext_intruder_position_y))))))))))))) >= (0.0))) && ((((((((((0.0) - ((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y)))))))))) + (ext_sqrt_0))) / (((((((((ext_ownship_velocity_x) - (ext_intruder_velocity_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_velocity_y) - (ext_intruder_velocity_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y)))))))))))) >= (0.0)))))))))) && ((((( ((((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y)))))))) >= (0.0))) ? ((((ext_sqrt_1)) <= ((( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (2))) ? (0.0) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (3))) ? (370.40000000000003) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (4))) ? (648.1999999999999) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (5))) ? (1018.6000000000001) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (6))) ? (1481.6000000000001) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (7))) ? (2037.2000000000003) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (8))) ? (2037.2000000000003) : (0.0)))))))))))))))))) : ((((((ext_sqrt_2)) <= ((( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (2))) ? (0.0) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (3))) ? (370.40000000000003) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (4))) ? (648.1999999999999) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (5))) ? (1018.6000000000001) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (6))) ? (1481.6000000000001) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (7))) ? (2037.2000000000003) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (8))) ? (2037.2000000000003) : (0.0)))))))))))))))))) || ((((( ((((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y)))))))) < (0.0))) ? (((((((((( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (2))) ? (0.0) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (3))) ? (370.40000000000003) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (4))) ? (648.1999999999999) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (5))) ? (1018.6000000000001) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (6))) ? (1481.6000000000001) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (7))) ? (2037.2000000000003) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (8))) ? (2037.2000000000003) : (0.0)))))))))))))))) * ((( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (2))) ? (0.0) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (3))) ? (370.40000000000003) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (4))) ? (648.1999999999999) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (5))) ? (1018.6000000000001) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (6))) ? (1481.6000000000001) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (7))) ? (2037.2000000000003) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (8))) ? (2037.2000000000003) : (0.0))))))))))))))))))) - (((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_position_x) - (ext_intruder_position_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_position_y) - (ext_intruder_position_y))))))))))) / ((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y)))))))))) : (-1.0)))) <= ((( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (2))) ? (0.0) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (3))) ? (15.0) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (4))) ? (20.0) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (5))) ? (25.0) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (6))) ? (30.0) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (7))) ? (35.0) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (8))) ? (35.0) : (0.0))))))))))))))))))))))) && ((((((0.0) <= ((( (((((((ext_ownship_position_z) - (ext_intruder_position_z))) > 0)? (((ext_ownship_position_z) - (ext_intruder_position_z))) : -(((ext_ownship_position_z) - (ext_intruder_position_z)))) <= ((( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (2))) ? (0.0) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (3))) ? (182.88) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (4))) ? (182.88) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (5))) ? (182.88) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (6))) ? (182.88) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (7))) ? (213.36) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (8))) ? (243.84) : (0.0)))))))))))))))))) ? (0.0) : (( (((((ext_ownship_velocity_z) - (ext_intruder_velocity_z))) == (0.0))) ? (-1.0) : (((((0.0) - (((ext_ownship_position_z) - (ext_intruder_position_z))))) / (((ext_ownship_velocity_z) - (ext_intruder_velocity_z)))))))))))) && ((((( (((((((ext_ownship_position_z) - (ext_intruder_position_z))) > 0)? (((ext_ownship_position_z) - (ext_intruder_position_z))) : -(((ext_ownship_position_z) - (ext_intruder_position_z)))) <= ((( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (2))) ? (0.0) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (3))) ? (182.88) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (4))) ? (182.88) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (5))) ? (182.88) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (6))) ? (182.88) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (7))) ? (213.36) : (( ((((( (((((0.0) <= (ext_ownship_position_z))) && (((ext_ownship_position_z) < (1000.0))))) ? (2) : (( (((ext_ownship_position_z) < (2350.0))) ? (3) : (( (((ext_ownship_position_z) < (5000.0))) ? (4) : (( (((ext_ownship_position_z) < (10000.0))) ? (5) : (( (((ext_ownship_position_z) < (20000.0))) ? (6) : (( (((ext_ownship_position_z) < (42000.0))) ? (7) : (8)))))))))))))) == (8))) ? (243.84) : (0.0)))))))))))))))))) ? (0.0) : (( (((((ext_ownship_velocity_z) - (ext_intruder_velocity_z))) == (0.0))) ? (-1.0) : (((((0.0) - (((ext_ownship_position_z) - (ext_intruder_position_z))))) / (((ext_ownship_velocity_z) - (ext_intruder_velocity_z)))))))))) <= (0.0)))))))))));
 */
-SBool trigger_guard_alert_TCASII_RA(const SBool ext_ident_bool_1790,
-                                    const SBool ext_ident_bool_1711,
-                                    const SDouble ext_ident_double_1642,
-                                    const SDouble ext_ident_double_1641,
-                                    const SDouble ext_ownship_velocity_x,
+SBool trigger_guard_alert_TCASII_RA(const SDouble ext_ownship_velocity_x,
                                     const SDouble ext_intruder_velocity_x,
                                     const SDouble ext_ownship_velocity_y,
                                     const SDouble ext_intruder_velocity_y,
-                                    const SDouble ext_ident_double_1644,
-                                    const SDouble ext_ident_double_1643,
                                     const SDouble ext_ownship_position_x,
                                     const SDouble ext_intruder_position_x,
                                     const SDouble ext_ownship_position_y,
                                     const SDouble ext_intruder_position_y,
-                                    const SDouble ext_ident_double_1661,
-                                    const SDouble ext_ident_double_1652,
-                                    const SWord64 ext_ident_word64_1645,
-                                    const SDouble ext_ownship_position_z,
-                                    const SWord64 ext_ident_word64_1646,
-                                    const SWord64 ext_ident_word64_1647,
-                                    const SWord64 ext_ident_word64_1648,
-                                    const SWord64 ext_ident_word64_1649,
-                                    const SWord64 ext_ident_word64_1650,
-                                    const SWord64 ext_ident_word64_1651,
-                                    const SDouble ext_ident_double_1660,
-                                    const SWord64 ext_ident_word64_1653,
-                                    const SWord64 ext_ident_word64_1654,
-                                    const SWord64 ext_ident_word64_1655,
-                                    const SWord64 ext_ident_word64_1656,
-                                    const SWord64 ext_ident_word64_1657,
-                                    const SWord64 ext_ident_word64_1658,
-                                    const SWord64 ext_ident_word64_1659,
-                                    const SDouble ext_ident_double_1663,
-                                    const SDouble ext_ident_double_1662,
-                                    const SDouble ext_ident_double_1684,
-                                    const SDouble ext_ident_double_1671,
-                                    const SWord64 ext_ident_word64_1664,
-                                    const SWord64 ext_ident_word64_1665,
-                                    const SWord64 ext_ident_word64_1666,
-                                    const SWord64 ext_ident_word64_1667,
-                                    const SWord64 ext_ident_word64_1668,
-                                    const SWord64 ext_ident_word64_1669,
-                                    const SWord64 ext_ident_word64_1670,
-                                    const SDouble ext_ident_double_1679,
-                                    const SWord64 ext_ident_word64_1672,
-                                    const SWord64 ext_ident_word64_1673,
-                                    const SWord64 ext_ident_word64_1674,
-                                    const SWord64 ext_ident_word64_1675,
-                                    const SWord64 ext_ident_word64_1676,
-                                    const SWord64 ext_ident_word64_1677,
-                                    const SWord64 ext_ident_word64_1678,
-                                    const SDouble ext_ident_double_1681,
-                                    const SDouble ext_ident_double_1680,
-                                    const SDouble ext_ident_double_1682,
-                                    const SDouble ext_ident_double_1683,
-                                    const SDouble ext_ident_double_1710,
-                                    const SDouble ext_ident_double_1685,
-                                    const SDouble ext_sqrt_1707,
-                                    const SDouble ext_ident_double_1706,
-                                    const SDouble ext_ident_double_1693,
-                                    const SWord64 ext_ident_word64_1686,
-                                    const SWord64 ext_ident_word64_1687,
-                                    const SWord64 ext_ident_word64_1688,
-                                    const SWord64 ext_ident_word64_1689,
-                                    const SWord64 ext_ident_word64_1690,
-                                    const SWord64 ext_ident_word64_1691,
-                                    const SWord64 ext_ident_word64_1692,
-                                    const SDouble ext_ident_double_1701,
-                                    const SWord64 ext_ident_word64_1694,
-                                    const SWord64 ext_ident_word64_1695,
-                                    const SWord64 ext_ident_word64_1696,
-                                    const SWord64 ext_ident_word64_1697,
-                                    const SWord64 ext_ident_word64_1698,
-                                    const SWord64 ext_ident_word64_1699,
-                                    const SWord64 ext_ident_word64_1700,
-                                    const SDouble ext_ident_double_1703,
-                                    const SDouble ext_ident_double_1702,
-                                    const SDouble ext_ident_double_1704,
-                                    const SDouble ext_ident_double_1705,
-                                    const SDouble ext_ident_double_1709,
-                                    const SDouble ext_ident_double_1708,
-                                    const SBool ext_ident_bool_1768,
-                                    const SDouble ext_ident_double_1715,
-                                    const SDouble ext_sqrt_1714,
-                                    const SDouble ext_ident_double_1713,
-                                    const SDouble ext_ident_double_1712,
-                                    const SDouble ext_ident_double_1723,
-                                    const SWord64 ext_ident_word64_1716,
-                                    const SWord64 ext_ident_word64_1717,
-                                    const SWord64 ext_ident_word64_1718,
-                                    const SWord64 ext_ident_word64_1719,
-                                    const SWord64 ext_ident_word64_1720,
-                                    const SWord64 ext_ident_word64_1721,
-                                    const SWord64 ext_ident_word64_1722,
-                                    const SDouble ext_ident_double_1724,
-                                    const SDouble ext_ident_double_1728,
-                                    const SDouble ext_sqrt_1727,
-                                    const SDouble ext_ident_double_1726,
-                                    const SDouble ext_ident_double_1725,
-                                    const SDouble ext_ident_double_1736,
-                                    const SWord64 ext_ident_word64_1729,
-                                    const SWord64 ext_ident_word64_1730,
-                                    const SWord64 ext_ident_word64_1731,
-                                    const SWord64 ext_ident_word64_1732,
-                                    const SWord64 ext_ident_word64_1733,
-                                    const SWord64 ext_ident_word64_1734,
-                                    const SWord64 ext_ident_word64_1735,
-                                    const SDouble ext_ident_double_1758,
-                                    const SDouble ext_ident_double_1737,
-                                    const SDouble ext_ident_double_1754,
-                                    const SDouble ext_ident_double_1745,
-                                    const SWord64 ext_ident_word64_1738,
-                                    const SWord64 ext_ident_word64_1739,
-                                    const SWord64 ext_ident_word64_1740,
-                                    const SWord64 ext_ident_word64_1741,
-                                    const SWord64 ext_ident_word64_1742,
-                                    const SWord64 ext_ident_word64_1743,
-                                    const SWord64 ext_ident_word64_1744,
-                                    const SDouble ext_ident_double_1753,
-                                    const SWord64 ext_ident_word64_1746,
-                                    const SWord64 ext_ident_word64_1747,
-                                    const SWord64 ext_ident_word64_1748,
-                                    const SWord64 ext_ident_word64_1749,
-                                    const SWord64 ext_ident_word64_1750,
-                                    const SWord64 ext_ident_word64_1751,
-                                    const SWord64 ext_ident_word64_1752,
-                                    const SDouble ext_ident_double_1756,
-                                    const SDouble ext_ident_double_1755,
-                                    const SDouble ext_ident_double_1757,
-                                    const SDouble ext_ident_double_1766,
-                                    const SWord64 ext_ident_word64_1759,
-                                    const SWord64 ext_ident_word64_1760,
-                                    const SWord64 ext_ident_word64_1761,
-                                    const SWord64 ext_ident_word64_1762,
-                                    const SWord64 ext_ident_word64_1763,
-                                    const SWord64 ext_ident_word64_1764,
-                                    const SWord64 ext_ident_word64_1765,
-                                    const SDouble ext_ident_double_1767,
-                                    const SBool ext_ident_bool_1789,
-                                    const SDouble ext_ident_double_1778,
+                                    const SDouble ext_ownship_position_z, const SDouble ext_sqrt_0,
+                                    const SDouble ext_sqrt_1, const SDouble ext_sqrt_2,
                                     const SDouble ext_intruder_position_z,
-                                    const SDouble ext_ident_double_1769,
-                                    const SDouble ext_ident_double_1777,
-                                    const SWord64 ext_ident_word64_1770,
-                                    const SWord64 ext_ident_word64_1771,
-                                    const SWord64 ext_ident_word64_1772,
-                                    const SWord64 ext_ident_word64_1773,
-                                    const SWord64 ext_ident_word64_1774,
-                                    const SWord64 ext_ident_word64_1775,
-                                    const SWord64 ext_ident_word64_1776,
                                     const SDouble ext_ownship_velocity_z,
-                                    const SDouble ext_intruder_velocity_z,
-                                    const SDouble ext_ident_double_1788,
-                                    const SDouble ext_ident_double_1779,
-                                    const SDouble ext_ident_double_1787,
-                                    const SWord64 ext_ident_word64_1780,
-                                    const SWord64 ext_ident_word64_1781,
-                                    const SWord64 ext_ident_word64_1782,
-                                    const SWord64 ext_ident_word64_1783,
-                                    const SWord64 ext_ident_word64_1784,
-                                    const SWord64 ext_ident_word64_1785,
-                                    const SWord64 ext_ident_word64_1786)
+                                    const SDouble ext_intruder_velocity_z)
 {
-  const SBool   s0 = ext_ident_bool_1790;
-  return s0;
+  const SDouble s0 = ext_ownship_velocity_x;
+  const SDouble s1 = ext_intruder_velocity_x;
+  const SDouble s2 = ext_ownship_velocity_y;
+  const SDouble s3 = ext_intruder_velocity_y;
+  const SDouble s4 = ext_ownship_position_x;
+  const SDouble s5 = ext_intruder_position_x;
+  const SDouble s6 = ext_ownship_position_y;
+  const SDouble s7 = ext_intruder_position_y;
+  const SDouble s8 = ext_ownship_position_z;
+  const SDouble s9 = ext_sqrt_0;
+  const SDouble s10 = ext_sqrt_1;
+  const SDouble s11 = ext_sqrt_2;
+  const SDouble s12 = ext_intruder_position_z;
+  const SDouble s13 = ext_ownship_velocity_z;
+  const SDouble s14 = ext_intruder_velocity_z;
+  const SDouble s15 = s0 - s1;
+  const SDouble s16 = s15 * s15;
+  const SDouble s17 = s2 - s3;
+  const SDouble s18 = s17 * s17;
+  const SDouble s19 = s16 + s18;
+  const SDouble s20 = s19 /* ?scalar2dim */;
+  const SDouble s21 = s20 /* ?normsq2dim */;
+  const SBool   s23 = s21 == 0.0;
+  const SDouble s24 = s4 - s5;
+  const SDouble s25 = s24 * s24;
+  const SDouble s26 = s6 - s7;
+  const SDouble s27 = s26 * s26;
+  const SDouble s28 = s25 + s27;
+  const SDouble s29 = s28 /* ?scalar2dim */;
+  const SDouble s30 = s29 /* ?normsq2dim */;
+  const SBool   s31 = 0.0 <= s8;
+  const SBool   s33 = s8 < 1000.0;
+  const SBool   s34 = s31 && s33;
+  const SBool   s37 = s8 < 2350.0;
+  const SBool   s40 = s8 < 5000.0;
+  const SBool   s43 = s8 < 10000.0;
+  const SBool   s46 = s8 < 20000.0;
+  const SBool   s49 = s8 < 42000.0;
+  const SWord64 s52 = s49 ? 0x0000000000000007ULL : 0x0000000000000008ULL;
+  const SWord64 s53 = s46 ? 0x0000000000000006ULL : s52;
+  const SWord64 s54 = s43 ? 0x0000000000000005ULL : s53;
+  const SWord64 s55 = s40 ? 0x0000000000000004ULL : s54;
+  const SWord64 s56 = s37 ? 0x0000000000000003ULL : s55;
+  const SWord64 s57 = s34 ? 0x0000000000000002ULL : s56;
+  const SWord64 s58 = s57 /* ?sensitivityLevel */;
+  const SBool   s59 = 0x0000000000000002ULL == s58;
+  const SBool   s60 = 0x0000000000000003ULL == s58;
+  const SBool   s62 = 0x0000000000000004ULL == s58;
+  const SBool   s64 = 0x0000000000000005ULL == s58;
+  const SBool   s66 = 0x0000000000000006ULL == s58;
+  const SBool   s68 = 0x0000000000000007ULL == s58;
+  const SBool   s70 = 0x0000000000000008ULL == s58;
+  const SDouble s71 = s70 ? 2036.9784000000002 : 0.0;
+  const SDouble s72 = s68 ? 2036.9784000000002 : s71;
+  const SDouble s73 = s66 ? 1481.6328 : s72;
+  const SDouble s74 = s64 ? 1018.6416 : s73;
+  const SDouble s75 = s62 ? 648.0048 : s74;
+  const SDouble s76 = s60 ? 370.332 : s75;
+  const SDouble s77 = s59 ? 0.0 : s76;
+  const SDouble s78 = s77 /* ?hmdRA */;
+  const SDouble s79 = s78 * s78;
+  const SDouble s80 = s79 /* ?sq */;
+  const SBool   s81 = s30 <= s80;
+  const SBool   s82 = s23 && s81;
+  const SBool   s83 = s21 > 0.0;
+  const SDouble s84 = s21 * s79;
+  const SDouble s85 = s17 * s24;
+  const SDouble s86 = s15 * s26;
+  const SDouble s87 = s85 - s86;
+  const SDouble s88 = s87 /* ?det2dim */;
+  const SDouble s89 = s88 * s88;
+  const SDouble s90 = s84 - s89;
+  const SDouble s91 = s90 /* ?delta */;
+  const SBool   s92 = s91 >= 0.0;
+  const SDouble s93 = s15 * s24;
+  const SDouble s94 = s17 * s26;
+  const SDouble s95 = s93 + s94;
+  const SDouble s96 = s95 /* ?scalar2dim */;
+  const SDouble s97 = 0.0 - s96;
+  const SDouble s98 = s9 + s97;
+  const SDouble s99 = s98 / s21;
+  const SDouble s100 = s99 /* ?theta */;
+  const SBool   s101 = s100 >= 0.0;
+  const SBool   s102 = s92 && s101;
+  const SBool   s103 = s83 && s102;
+  const SBool   s104 = s82 || s103;
+  const SBool   s105 = s104 /* ?cd2d_TCAS_after */;
+  const SBool   s106 = s96 >= 0.0;
+  const SDouble s107 = s10 /* ?norm2dim */;
+  const SDouble s113 = s70 ? 2037.2000000000003 : 0.0;
+  const SDouble s114 = s68 ? 2037.2000000000003 : s113;
+  const SDouble s115 = s66 ? 1481.6000000000001 : s114;
+  const SDouble s116 = s64 ? 1018.6000000000001 : s115;
+  const SDouble s117 = s62 ? 648.1999999999999 : s116;
+  const SDouble s118 = s60 ? 370.40000000000003 : s117;
+  const SDouble s119 = s59 ? 0.0 : s118;
+  const SDouble s120 = s119 /* ?dmodRA */;
+  const SBool   s121 = s107 <= s120;
+  const SDouble s122 = s11 /* ?norm2dim */;
+  const SBool   s123 = s122 <= s120;
+  const SBool   s124 = s96 < 0.0;
+  const SDouble s125 = s120 * s120;
+  const SDouble s126 = s125 /* ?sq */;
+  const SDouble s127 = s126 - s30;
+  const SDouble s128 = s127 / s96;
+  const SDouble s130 = s124 ? s128 : -1.0;
+  const SDouble s131 = s130 /* ?taumod */;
+  const SDouble s137 = s70 ? 35.0 : 0.0;
+  const SDouble s138 = s68 ? 35.0 : s137;
+  const SDouble s139 = s66 ? 30.0 : s138;
+  const SDouble s140 = s64 ? 25.0 : s139;
+  const SDouble s141 = s62 ? 20.0 : s140;
+  const SDouble s142 = s60 ? 15.0 : s141;
+  const SDouble s143 = s59 ? 0.0 : s142;
+  const SDouble s144 = s143 /* ?tauRA */;
+  const SBool   s145 = s131 <= s144;
+  const SBool   s146 = s123 || s145;
+  const SBool   s147 = s106 ? s121 : s146;
+  const SBool   s148 = s147 /* ?horizontal_RA */;
+  const SDouble s149 = s8 - s12;
+  const SDouble s150 = fabs(s149);
+  const SDouble s154 = s70 ? 243.84 : 0.0;
+  const SDouble s155 = s68 ? 213.36 : s154;
+  const SDouble s156 = s66 ? 182.88 : s155;
+  const SDouble s157 = s64 ? 182.88 : s156;
+  const SDouble s158 = s62 ? 182.88 : s157;
+  const SDouble s159 = s60 ? 182.88 : s158;
+  const SDouble s160 = s59 ? 0.0 : s159;
+  const SDouble s161 = s160 /* ?zthrRA */;
+  const SBool   s162 = s150 <= s161;
+  const SDouble s163 = s13 - s14;
+  const SBool   s164 = 0.0 == s163;
+  const SDouble s165 = 0.0 - s149;
+  const SDouble s166 = s165 / s163;
+  const SDouble s167 = s164 ? -1.0 : s166;
+  const SDouble s168 = s162 ? 0.0 : s167;
+  const SDouble s169 = s168 /* ?time_coalt */;
+  const SBool   s170 = 0.0 <= s169;
+  const SBool   s171 = s169 <= 0.0;
+  const SBool   s172 = s170 && s171;
+  const SBool   s173 = s172 /* ?vertical_RA */;
+  const SBool   s174 = s148 && s173;
+  const SBool   s175 = s105 && s174;
+  const SBool   s176 = s175 /* ?tcasII_RA */;
+
+  return s176;
 }

@@ -34,9 +34,6 @@ extern double intruder_velocity_z;
 
 /* External functions (must be defined by user): */
 
-bool ident_bool(bool);
-double ident_double(double);
-uint64_t ident_word64(uint64_t);
 double sqrt(double);
 
 /* Step function: */

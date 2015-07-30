@@ -407,7 +407,7 @@ spec = do
 
 
 main = do
-   reify spec >>= S.proofACSL S.defaultParams
+   reify spec >>= S.compile S.defaultParams
 
 
 --------------------------------------------------------------------------------
