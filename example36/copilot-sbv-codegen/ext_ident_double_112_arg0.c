@@ -10,80 +10,38 @@ node [shape=box]
 
 0 [label="file: 
 ?????",color=red, style=filled]
-1 [label="label: dmodRA",color=plum, style=filled]
+1 [label="label: scalar2dim",color=plum, style=filled]
 0 -> 1
-2 [label="op3: mux",color=green4, style=filled]
+2 [label="op2: +",color=green4, style=filled]
 1 -> 2
-3 [label="op2: ==",color=green4, style=filled]
+3 [label="op2: *",color=green4, style=filled]
 2 -> 3
-4 [label="ext_ident_word64_105",color=cyan4, style=filled]
+4 [label="op2: -",color=green4, style=filled]
 3 -> 4
-41 [label="const: 2",color=red1, style=filled]
-3 -> 41
-42 [label="const: 0.0",color=red1, style=filled]
-2 -> 42
-43 [label="op3: mux",color=green4, style=filled]
-2 -> 43
-44 [label="op2: ==",color=green4, style=filled]
-43 -> 44
-45 [label="ext_ident_word64_106",color=cyan4, style=filled]
-44 -> 45
-82 [label="const: 3",color=red1, style=filled]
-44 -> 82
-83 [label="const: 370.40000000000003",color=red1, style=filled]
-43 -> 83
-84 [label="op3: mux",color=green4, style=filled]
-43 -> 84
-85 [label="op2: ==",color=green4, style=filled]
-84 -> 85
-86 [label="ext_ident_word64_107",color=cyan4, style=filled]
-85 -> 86
-123 [label="const: 4",color=red1, style=filled]
-85 -> 123
-124 [label="const: 648.1999999999999",color=red1, style=filled]
-84 -> 124
-125 [label="op3: mux",color=green4, style=filled]
-84 -> 125
-126 [label="op2: ==",color=green4, style=filled]
-125 -> 126
-127 [label="ext_ident_word64_108",color=cyan4, style=filled]
-126 -> 127
-164 [label="const: 5",color=red1, style=filled]
-126 -> 164
-165 [label="const: 1018.6000000000001",color=red1, style=filled]
-125 -> 165
-166 [label="op3: mux",color=green4, style=filled]
-125 -> 166
-167 [label="op2: ==",color=green4, style=filled]
-166 -> 167
-168 [label="ext_ident_word64_109",color=cyan4, style=filled]
-167 -> 168
-205 [label="const: 6",color=red1, style=filled]
-167 -> 205
-206 [label="const: 1481.6000000000001",color=red1, style=filled]
-166 -> 206
-207 [label="op3: mux",color=green4, style=filled]
-166 -> 207
-208 [label="op2: ==",color=green4, style=filled]
-207 -> 208
-209 [label="ext_ident_word64_110",color=cyan4, style=filled]
-208 -> 209
-246 [label="const: 7",color=red1, style=filled]
-208 -> 246
-247 [label="const: 2037.2000000000003",color=red1, style=filled]
-207 -> 247
-248 [label="op3: mux",color=green4, style=filled]
-207 -> 248
-249 [label="op2: ==",color=green4, style=filled]
-248 -> 249
-250 [label="ext_ident_word64_111",color=cyan4, style=filled]
-249 -> 250
-287 [label="const: 8",color=red1, style=filled]
-249 -> 287
-288 [label="const: 2037.2000000000003",color=red1, style=filled]
-248 -> 288
-289 [label="const: 0.0",color=red1, style=filled]
-248 -> 289
+5 [label="ext_ownship_position_x",color=cyan1, style=filled]
+4 -> 5
+6 [label="ext_intruder_position_x",color=cyan1, style=filled]
+4 -> 6
+7 [label="op2: -",color=green4, style=filled]
+3 -> 7
+8 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+7 -> 8
+9 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+7 -> 9
+10 [label="op2: *",color=green4, style=filled]
+2 -> 10
+11 [label="op2: -",color=green4, style=filled]
+10 -> 11
+12 [label="ext_ownship_position_y",color=cyan1, style=filled]
+11 -> 12
+13 [label="ext_intruder_position_y",color=cyan1, style=filled]
+11 -> 13
+14 [label="op2: -",color=green4, style=filled]
+10 -> 14
+15 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+14 -> 15
+16 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+14 -> 16
 
 
 }
@@ -91,39 +49,33 @@ node [shape=box]
 DotEnd*/
 /*@
  assigns \nothing;
- ensures \result == ((( (((ext_ident_word64_105) == (2))) ? (0.0) : (( (((ext_ident_word64_106) == (3))) ? (370.40000000000003) : (( (((ext_ident_word64_107) == (4))) ? (648.1999999999999) : (( (((ext_ident_word64_108) == (5))) ? (1018.6000000000001) : (( (((ext_ident_word64_109) == (6))) ? (1481.6000000000001) : (( (((ext_ident_word64_110) == (7))) ? (2037.2000000000003) : (( (((ext_ident_word64_111) == (8))) ? (2037.2000000000003) : (0.0))))))))))))))));
+ ensures \result == ((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))));
 */
-SDouble ext_ident_double_112_arg0(const SWord64 ext_ident_word64_105,
-                                  const SDouble ext_ownship_position_z,
-                                  const SWord64 ext_ident_word64_106,
-                                  const SWord64 ext_ident_word64_107,
-                                  const SWord64 ext_ident_word64_108,
-                                  const SWord64 ext_ident_word64_109,
-                                  const SWord64 ext_ident_word64_110,
-                                  const SWord64 ext_ident_word64_111)
+SDouble ext_ident_double_112_arg0(const SDouble ext_ownship_position_x,
+                                  const SDouble ext_intruder_position_x,
+                                  const SDouble ext_ownship_velocity_x,
+                                  const SDouble ext_intruder_velocity_x,
+                                  const SDouble ext_ownship_position_y,
+                                  const SDouble ext_intruder_position_y,
+                                  const SDouble ext_ownship_velocity_y,
+                                  const SDouble ext_intruder_velocity_y)
 {
-  const SWord64 s0 = ext_ident_word64_105;
-  const SWord64 s2 = ext_ident_word64_106;
-  const SWord64 s3 = ext_ident_word64_107;
-  const SWord64 s4 = ext_ident_word64_108;
-  const SWord64 s5 = ext_ident_word64_109;
-  const SWord64 s6 = ext_ident_word64_110;
-  const SWord64 s7 = ext_ident_word64_111;
-  const SBool   s9 = s0 == 0x0000000000000002ULL;
-  const SBool   s12 = s2 == 0x0000000000000003ULL;
-  const SBool   s15 = s3 == 0x0000000000000004ULL;
-  const SBool   s18 = s4 == 0x0000000000000005ULL;
-  const SBool   s21 = s5 == 0x0000000000000006ULL;
-  const SBool   s24 = s6 == 0x0000000000000007ULL;
-  const SBool   s27 = s7 == 0x0000000000000008ULL;
-  const SDouble s28 = s27 ? 2037.2000000000003 : 0.0;
-  const SDouble s29 = s24 ? 2037.2000000000003 : s28;
-  const SDouble s30 = s21 ? 1481.6000000000001 : s29;
-  const SDouble s31 = s18 ? 1018.6000000000001 : s30;
-  const SDouble s32 = s15 ? 648.1999999999999 : s31;
-  const SDouble s33 = s12 ? 370.40000000000003 : s32;
-  const SDouble s34 = s9 ? 0.0 : s33;
-  const SDouble s35 = s34 /* dmodRA */;
+  const SDouble s0 = ext_ownship_position_x;
+  const SDouble s1 = ext_intruder_position_x;
+  const SDouble s2 = ext_ownship_velocity_x;
+  const SDouble s3 = ext_intruder_velocity_x;
+  const SDouble s4 = ext_ownship_position_y;
+  const SDouble s5 = ext_intruder_position_y;
+  const SDouble s6 = ext_ownship_velocity_y;
+  const SDouble s7 = ext_intruder_velocity_y;
+  const SDouble s8 = s0 - s1;
+  const SDouble s9 = s2 - s3;
+  const SDouble s10 = s8 * s9;
+  const SDouble s11 = s4 - s5;
+  const SDouble s12 = s6 - s7;
+  const SDouble s13 = s11 * s12;
+  const SDouble s14 = s10 + s13;
+  const SDouble s15 = s14 /* scalar2dim */;
 
-  return s35;
+  return s15;
 }

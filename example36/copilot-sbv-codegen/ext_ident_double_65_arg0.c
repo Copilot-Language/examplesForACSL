@@ -10,26 +10,38 @@ node [shape=box]
 
 0 [label="file: 
 ?????",color=red, style=filled]
-1 [label="label: delta",color=plum, style=filled]
+1 [label="label: scalar2dim",color=plum, style=filled]
 0 -> 1
-2 [label="op2: -",color=green4, style=filled]
+2 [label="op2: +",color=green4, style=filled]
 1 -> 2
 3 [label="op2: *",color=green4, style=filled]
 2 -> 3
-4 [label="op2: *",color=green4, style=filled]
+4 [label="op2: -",color=green4, style=filled]
 3 -> 4
-5 [label="ext_ident_double_52",color=cyan4, style=filled]
+5 [label="ext_ownship_position_x",color=cyan1, style=filled]
 4 -> 5
-295 [label="ext_ident_double_60",color=cyan4, style=filled]
-4 -> 295
-585 [label="ext_ident_double_62",color=cyan4, style=filled]
-3 -> 585
-604 [label="op2: *",color=green4, style=filled]
-2 -> 604
-605 [label="ext_ident_double_63",color=cyan4, style=filled]
-604 -> 605
-622 [label="ext_ident_double_64",color=cyan4, style=filled]
-604 -> 622
+6 [label="ext_intruder_position_x",color=cyan1, style=filled]
+4 -> 6
+7 [label="op2: -",color=green4, style=filled]
+3 -> 7
+8 [label="ext_ownship_velocity_x",color=cyan1, style=filled]
+7 -> 8
+9 [label="ext_intruder_velocity_x",color=cyan1, style=filled]
+7 -> 9
+10 [label="op2: *",color=green4, style=filled]
+2 -> 10
+11 [label="op2: -",color=green4, style=filled]
+10 -> 11
+12 [label="ext_ownship_position_y",color=cyan1, style=filled]
+11 -> 12
+13 [label="ext_intruder_position_y",color=cyan1, style=filled]
+11 -> 13
+14 [label="op2: -",color=green4, style=filled]
+10 -> 14
+15 [label="ext_ownship_velocity_y",color=cyan1, style=filled]
+14 -> 15
+16 [label="ext_intruder_velocity_y",color=cyan1, style=filled]
+14 -> 16
 
 
 }
@@ -37,48 +49,33 @@ node [shape=box]
 DotEnd*/
 /*@
  assigns \nothing;
- ensures \result == ((((((((ext_ident_double_52) * (ext_ident_double_60))) * (ext_ident_double_62))) - (((ext_ident_double_63) * (ext_ident_double_64))))));
+ ensures \result == ((((((((ext_ownship_position_x) - (ext_intruder_position_x))) * (((ext_ownship_velocity_x) - (ext_intruder_velocity_x))))) + (((((ext_ownship_position_y) - (ext_intruder_position_y))) * (((ext_ownship_velocity_y) - (ext_intruder_velocity_y))))))));
 */
-SDouble ext_ident_double_65_arg0(const SDouble ext_ident_double_52,
-                                 const SWord64 ext_ident_word64_45,
-                                 const SDouble ext_ownship_position_z,
-                                 const SWord64 ext_ident_word64_46,
-                                 const SWord64 ext_ident_word64_47,
-                                 const SWord64 ext_ident_word64_48,
-                                 const SWord64 ext_ident_word64_49,
-                                 const SWord64 ext_ident_word64_50,
-                                 const SWord64 ext_ident_word64_51,
-                                 const SDouble ext_ident_double_60,
-                                 const SWord64 ext_ident_word64_53,
-                                 const SWord64 ext_ident_word64_54,
-                                 const SWord64 ext_ident_word64_55,
-                                 const SWord64 ext_ident_word64_56,
-                                 const SWord64 ext_ident_word64_57,
-                                 const SWord64 ext_ident_word64_58,
-                                 const SWord64 ext_ident_word64_59,
-                                 const SDouble ext_ident_double_62,
-                                 const SDouble ext_ident_double_61,
+SDouble ext_ident_double_65_arg0(const SDouble ext_ownship_position_x,
+                                 const SDouble ext_intruder_position_x,
                                  const SDouble ext_ownship_velocity_x,
                                  const SDouble ext_intruder_velocity_x,
-                                 const SDouble ext_ownship_velocity_y,
-                                 const SDouble ext_intruder_velocity_y,
-                                 const SDouble ext_ident_double_63,
-                                 const SDouble ext_ownship_position_x,
-                                 const SDouble ext_intruder_position_x,
                                  const SDouble ext_ownship_position_y,
                                  const SDouble ext_intruder_position_y,
-                                 const SDouble ext_ident_double_64)
+                                 const SDouble ext_ownship_velocity_y,
+                                 const SDouble ext_intruder_velocity_y)
 {
-  const SDouble s0 = ext_ident_double_52;
-  const SDouble s9 = ext_ident_double_60;
-  const SDouble s17 = ext_ident_double_62;
-  const SDouble s23 = ext_ident_double_63;
-  const SDouble s28 = ext_ident_double_64;
-  const SDouble s29 = s0 * s9;
-  const SDouble s30 = s17 * s29;
-  const SDouble s31 = s23 * s28;
-  const SDouble s32 = s30 - s31;
-  const SDouble s33 = s32 /* delta */;
+  const SDouble s0 = ext_ownship_position_x;
+  const SDouble s1 = ext_intruder_position_x;
+  const SDouble s2 = ext_ownship_velocity_x;
+  const SDouble s3 = ext_intruder_velocity_x;
+  const SDouble s4 = ext_ownship_position_y;
+  const SDouble s5 = ext_intruder_position_y;
+  const SDouble s6 = ext_ownship_velocity_y;
+  const SDouble s7 = ext_intruder_velocity_y;
+  const SDouble s8 = s0 - s1;
+  const SDouble s9 = s2 - s3;
+  const SDouble s10 = s8 * s9;
+  const SDouble s11 = s4 - s5;
+  const SDouble s12 = s6 - s7;
+  const SDouble s13 = s11 * s12;
+  const SDouble s14 = s10 + s13;
+  const SDouble s15 = s14 /* scalar2dim */;
 
-  return s33;
+  return s15;
 }

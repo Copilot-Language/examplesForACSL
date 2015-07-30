@@ -8,6 +8,7 @@
 
 /* Triggers (must be defined by user): */
 
+void isCorrective();
 void alert_TCASII_RA();
 
 /* External structs (must be defined by user): */
@@ -15,15 +16,15 @@ void alert_TCASII_RA();
 
 /* External variables (must be defined by user): */
 
-extern double ownship_velocity_x;
-extern double intruder_velocity_x;
-extern double ownship_velocity_y;
-extern double intruder_velocity_y;
 extern double ownship_position_x;
 extern double intruder_position_x;
 extern double ownship_position_y;
 extern double intruder_position_y;
 extern double ownship_position_z;
+extern double ownship_velocity_x;
+extern double intruder_velocity_x;
+extern double ownship_velocity_y;
+extern double intruder_velocity_y;
 extern double intruder_position_z;
 extern double ownship_velocity_z;
 extern double intruder_velocity_z;
