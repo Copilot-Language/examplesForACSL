@@ -10,620 +10,8 @@ node [shape=box]
 
 0 [label="file: 
 ?????",color=red, style=filled]
-1 [label="label: ?wellClearViolation",color=plum, style=filled]
+1 [label="ext_ident_bool_1627",color=cyan4, style=filled]
 0 -> 1
-2 [label="op2: &&",color=green4, style=filled]
-1 -> 2
-3 [label="label: ?horizontalWCV",color=plum, style=filled]
-2 -> 3
-4 [label="op2: ||",color=green4, style=filled]
-3 -> 4
-5 [label="op2: <=",color=green4, style=filled]
-4 -> 5
-6 [label="label: ?norm2dim",color=plum, style=filled]
-5 -> 6
-7 [label="ext_sqrt_158",color=cyan4, style=filled]
-6 -> 7
-141 [label="label: ?nm",color=plum, style=filled]
-5 -> 141
-142 [label="const: 1852.0",color=red1, style=filled]
-141 -> 142
-143 [label="op2: &&",color=green4, style=filled]
-4 -> 143
-144 [label="op2: <=",color=green4, style=filled]
-143 -> 144
-145 [label="label: ?norm2dim",color=plum, style=filled]
-144 -> 145
-146 [label="ext_sqrt_183",color=cyan4, style=filled]
-145 -> 146
-804 [label="label: ?nm",color=plum, style=filled]
-144 -> 804
-805 [label="const: 1852.0",color=red1, style=filled]
-804 -> 805
-806 [label="op2: &&",color=green4, style=filled]
-143 -> 806
-807 [label="op2: <=",color=green4, style=filled]
-806 -> 807
-808 [label="const: 0.0",color=red1, style=filled]
-807 -> 808
-809 [label="label: ?tcpa",color=plum, style=filled]
-807 -> 809
-810 [label="op3: mux",color=green4, style=filled]
-809 -> 810
-811 [label="op2: &&",color=green4, style=filled]
-810 -> 811
-812 [label="op2: ==",color=green4, style=filled]
-811 -> 812
-813 [label="op2: -",color=green4, style=filled]
-812 -> 813
-814 [label="label: ?ownVelocityX",color=plum, style=filled]
-813 -> 814
-815 [label="ext_ownship_vx",color=cyan1, style=filled]
-814 -> 815
-816 [label="label: ?intVelocityX",color=plum, style=filled]
-813 -> 816
-817 [label="ext_intruder_vx",color=cyan1, style=filled]
-816 -> 817
-818 [label="const: 0.0",color=red1, style=filled]
-812 -> 818
-819 [label="op2: ==",color=green4, style=filled]
-811 -> 819
-820 [label="op2: -",color=green4, style=filled]
-819 -> 820
-821 [label="label: ?ownVelocityY",color=plum, style=filled]
-820 -> 821
-822 [label="ext_ownship_vy",color=cyan1, style=filled]
-821 -> 822
-823 [label="label: ?intVelocityY",color=plum, style=filled]
-820 -> 823
-824 [label="ext_intruder_vy",color=cyan1, style=filled]
-823 -> 824
-825 [label="const: 0.0",color=red1, style=filled]
-819 -> 825
-826 [label="const: 0.0",color=red1, style=filled]
-810 -> 826
-827 [label="op2: /",color=green4, style=filled]
-810 -> 827
-828 [label="op2: -",color=green4, style=filled]
-827 -> 828
-829 [label="const: 0.0",color=red1, style=filled]
-828 -> 829
-830 [label="label: ?scalar2dim",color=plum, style=filled]
-828 -> 830
-831 [label="op2: +",color=green4, style=filled]
-830 -> 831
-832 [label="op2: *",color=green4, style=filled]
-831 -> 832
-833 [label="op2: -",color=green4, style=filled]
-832 -> 833
-834 [label="label: ?ownPositionX",color=plum, style=filled]
-833 -> 834
-835 [label="op2: *",color=green4, style=filled]
-834 -> 835
-836 [label="const: 6371000.0",color=red1, style=filled]
-835 -> 836
-837 [label="label: ?ownLong",color=plum, style=filled]
-835 -> 837
-838 [label="op2: *",color=green4, style=filled]
-837 -> 838
-839 [label="ext_ownship_longitude",color=cyan1, style=filled]
-838 -> 839
-840 [label="label: ?deg",color=plum, style=filled]
-838 -> 840
-841 [label="op2: /",color=green4, style=filled]
-840 -> 841
-842 [label="label: ?pi",color=plum, style=filled]
-841 -> 842
-843 [label="const: 3.141592653589793",color=red1, style=filled]
-842 -> 843
-844 [label="const: 180.0",color=red1, style=filled]
-841 -> 844
-845 [label="label: ?intPositionX",color=plum, style=filled]
-833 -> 845
-846 [label="op2: *",color=green4, style=filled]
-845 -> 846
-847 [label="const: 6371000.0",color=red1, style=filled]
-846 -> 847
-848 [label="label: ?intLong",color=plum, style=filled]
-846 -> 848
-849 [label="op2: *",color=green4, style=filled]
-848 -> 849
-850 [label="ext_intruder_longitude",color=cyan1, style=filled]
-849 -> 850
-851 [label="label: ?deg",color=plum, style=filled]
-849 -> 851
-852 [label="op2: /",color=green4, style=filled]
-851 -> 852
-853 [label="label: ?pi",color=plum, style=filled]
-852 -> 853
-854 [label="const: 3.141592653589793",color=red1, style=filled]
-853 -> 854
-855 [label="const: 180.0",color=red1, style=filled]
-852 -> 855
-856 [label="op2: -",color=green4, style=filled]
-832 -> 856
-857 [label="label: ?ownVelocityX",color=plum, style=filled]
-856 -> 857
-858 [label="ext_ownship_vx",color=cyan1, style=filled]
-857 -> 858
-859 [label="label: ?intVelocityX",color=plum, style=filled]
-856 -> 859
-860 [label="ext_intruder_vx",color=cyan1, style=filled]
-859 -> 860
-861 [label="op2: *",color=green4, style=filled]
-831 -> 861
-862 [label="op2: -",color=green4, style=filled]
-861 -> 862
-863 [label="label: ?ownPositionY",color=plum, style=filled]
-862 -> 863
-864 [label="op2: *",color=green4, style=filled]
-863 -> 864
-865 [label="const: 6371000.0",color=red1, style=filled]
-864 -> 865
-866 [label="ext_log_185",color=cyan4, style=filled]
-864 -> 866
-883 [label="label: ?intPositionY",color=plum, style=filled]
-862 -> 883
-884 [label="op2: *",color=green4, style=filled]
-883 -> 884
-885 [label="const: 6371000.0",color=red1, style=filled]
-884 -> 885
-886 [label="ext_log_187",color=cyan4, style=filled]
-884 -> 886
-903 [label="op2: -",color=green4, style=filled]
-861 -> 903
-904 [label="label: ?ownVelocityY",color=plum, style=filled]
-903 -> 904
-905 [label="ext_ownship_vy",color=cyan1, style=filled]
-904 -> 905
-906 [label="label: ?intVelocityY",color=plum, style=filled]
-903 -> 906
-907 [label="ext_intruder_vy",color=cyan1, style=filled]
-906 -> 907
-908 [label="label: ?normsq2dim",color=plum, style=filled]
-827 -> 908
-909 [label="label: ?scalar2dim",color=plum, style=filled]
-908 -> 909
-910 [label="op2: +",color=green4, style=filled]
-909 -> 910
-911 [label="op2: *",color=green4, style=filled]
-910 -> 911
-912 [label="op2: -",color=green4, style=filled]
-911 -> 912
-913 [label="label: ?ownVelocityX",color=plum, style=filled]
-912 -> 913
-914 [label="ext_ownship_vx",color=cyan1, style=filled]
-913 -> 914
-915 [label="label: ?intVelocityX",color=plum, style=filled]
-912 -> 915
-916 [label="ext_intruder_vx",color=cyan1, style=filled]
-915 -> 916
-917 [label="op2: -",color=green4, style=filled]
-911 -> 917
-918 [label="label: ?ownVelocityX",color=plum, style=filled]
-917 -> 918
-919 [label="ext_ownship_vx",color=cyan1, style=filled]
-918 -> 919
-920 [label="label: ?intVelocityX",color=plum, style=filled]
-917 -> 920
-921 [label="ext_intruder_vx",color=cyan1, style=filled]
-920 -> 921
-922 [label="op2: *",color=green4, style=filled]
-910 -> 922
-923 [label="op2: -",color=green4, style=filled]
-922 -> 923
-924 [label="label: ?ownVelocityY",color=plum, style=filled]
-923 -> 924
-925 [label="ext_ownship_vy",color=cyan1, style=filled]
-924 -> 925
-926 [label="label: ?intVelocityY",color=plum, style=filled]
-923 -> 926
-927 [label="ext_intruder_vy",color=cyan1, style=filled]
-926 -> 927
-928 [label="op2: -",color=green4, style=filled]
-922 -> 928
-929 [label="label: ?ownVelocityY",color=plum, style=filled]
-928 -> 929
-930 [label="ext_ownship_vy",color=cyan1, style=filled]
-929 -> 930
-931 [label="label: ?intVelocityY",color=plum, style=filled]
-928 -> 931
-932 [label="ext_intruder_vy",color=cyan1, style=filled]
-931 -> 932
-933 [label="op2: <=",color=green4, style=filled]
-806 -> 933
-934 [label="label: ?tcpa",color=plum, style=filled]
-933 -> 934
-935 [label="op3: mux",color=green4, style=filled]
-934 -> 935
-936 [label="op2: &&",color=green4, style=filled]
-935 -> 936
-937 [label="op2: ==",color=green4, style=filled]
-936 -> 937
-938 [label="op2: -",color=green4, style=filled]
-937 -> 938
-939 [label="label: ?ownVelocityX",color=plum, style=filled]
-938 -> 939
-940 [label="ext_ownship_vx",color=cyan1, style=filled]
-939 -> 940
-941 [label="label: ?intVelocityX",color=plum, style=filled]
-938 -> 941
-942 [label="ext_intruder_vx",color=cyan1, style=filled]
-941 -> 942
-943 [label="const: 0.0",color=red1, style=filled]
-937 -> 943
-944 [label="op2: ==",color=green4, style=filled]
-936 -> 944
-945 [label="op2: -",color=green4, style=filled]
-944 -> 945
-946 [label="label: ?ownVelocityY",color=plum, style=filled]
-945 -> 946
-947 [label="ext_ownship_vy",color=cyan1, style=filled]
-946 -> 947
-948 [label="label: ?intVelocityY",color=plum, style=filled]
-945 -> 948
-949 [label="ext_intruder_vy",color=cyan1, style=filled]
-948 -> 949
-950 [label="const: 0.0",color=red1, style=filled]
-944 -> 950
-951 [label="const: 0.0",color=red1, style=filled]
-935 -> 951
-952 [label="op2: /",color=green4, style=filled]
-935 -> 952
-953 [label="op2: -",color=green4, style=filled]
-952 -> 953
-954 [label="const: 0.0",color=red1, style=filled]
-953 -> 954
-955 [label="label: ?scalar2dim",color=plum, style=filled]
-953 -> 955
-956 [label="op2: +",color=green4, style=filled]
-955 -> 956
-957 [label="op2: *",color=green4, style=filled]
-956 -> 957
-958 [label="op2: -",color=green4, style=filled]
-957 -> 958
-959 [label="label: ?ownPositionX",color=plum, style=filled]
-958 -> 959
-960 [label="op2: *",color=green4, style=filled]
-959 -> 960
-961 [label="const: 6371000.0",color=red1, style=filled]
-960 -> 961
-962 [label="label: ?ownLong",color=plum, style=filled]
-960 -> 962
-963 [label="op2: *",color=green4, style=filled]
-962 -> 963
-964 [label="ext_ownship_longitude",color=cyan1, style=filled]
-963 -> 964
-965 [label="label: ?deg",color=plum, style=filled]
-963 -> 965
-966 [label="op2: /",color=green4, style=filled]
-965 -> 966
-967 [label="label: ?pi",color=plum, style=filled]
-966 -> 967
-968 [label="const: 3.141592653589793",color=red1, style=filled]
-967 -> 968
-969 [label="const: 180.0",color=red1, style=filled]
-966 -> 969
-970 [label="label: ?intPositionX",color=plum, style=filled]
-958 -> 970
-971 [label="op2: *",color=green4, style=filled]
-970 -> 971
-972 [label="const: 6371000.0",color=red1, style=filled]
-971 -> 972
-973 [label="label: ?intLong",color=plum, style=filled]
-971 -> 973
-974 [label="op2: *",color=green4, style=filled]
-973 -> 974
-975 [label="ext_intruder_longitude",color=cyan1, style=filled]
-974 -> 975
-976 [label="label: ?deg",color=plum, style=filled]
-974 -> 976
-977 [label="op2: /",color=green4, style=filled]
-976 -> 977
-978 [label="label: ?pi",color=plum, style=filled]
-977 -> 978
-979 [label="const: 3.141592653589793",color=red1, style=filled]
-978 -> 979
-980 [label="const: 180.0",color=red1, style=filled]
-977 -> 980
-981 [label="op2: -",color=green4, style=filled]
-957 -> 981
-982 [label="label: ?ownVelocityX",color=plum, style=filled]
-981 -> 982
-983 [label="ext_ownship_vx",color=cyan1, style=filled]
-982 -> 983
-984 [label="label: ?intVelocityX",color=plum, style=filled]
-981 -> 984
-985 [label="ext_intruder_vx",color=cyan1, style=filled]
-984 -> 985
-986 [label="op2: *",color=green4, style=filled]
-956 -> 986
-987 [label="op2: -",color=green4, style=filled]
-986 -> 987
-988 [label="label: ?ownPositionY",color=plum, style=filled]
-987 -> 988
-989 [label="op2: *",color=green4, style=filled]
-988 -> 989
-990 [label="const: 6371000.0",color=red1, style=filled]
-989 -> 990
-991 [label="ext_log_189",color=cyan4, style=filled]
-989 -> 991
-1008 [label="label: ?intPositionY",color=plum, style=filled]
-987 -> 1008
-1009 [label="op2: *",color=green4, style=filled]
-1008 -> 1009
-1010 [label="const: 6371000.0",color=red1, style=filled]
-1009 -> 1010
-1011 [label="ext_log_191",color=cyan4, style=filled]
-1009 -> 1011
-1028 [label="op2: -",color=green4, style=filled]
-986 -> 1028
-1029 [label="label: ?ownVelocityY",color=plum, style=filled]
-1028 -> 1029
-1030 [label="ext_ownship_vy",color=cyan1, style=filled]
-1029 -> 1030
-1031 [label="label: ?intVelocityY",color=plum, style=filled]
-1028 -> 1031
-1032 [label="ext_intruder_vy",color=cyan1, style=filled]
-1031 -> 1032
-1033 [label="label: ?normsq2dim",color=plum, style=filled]
-952 -> 1033
-1034 [label="label: ?scalar2dim",color=plum, style=filled]
-1033 -> 1034
-1035 [label="op2: +",color=green4, style=filled]
-1034 -> 1035
-1036 [label="op2: *",color=green4, style=filled]
-1035 -> 1036
-1037 [label="op2: -",color=green4, style=filled]
-1036 -> 1037
-1038 [label="label: ?ownVelocityX",color=plum, style=filled]
-1037 -> 1038
-1039 [label="ext_ownship_vx",color=cyan1, style=filled]
-1038 -> 1039
-1040 [label="label: ?intVelocityX",color=plum, style=filled]
-1037 -> 1040
-1041 [label="ext_intruder_vx",color=cyan1, style=filled]
-1040 -> 1041
-1042 [label="op2: -",color=green4, style=filled]
-1036 -> 1042
-1043 [label="label: ?ownVelocityX",color=plum, style=filled]
-1042 -> 1043
-1044 [label="ext_ownship_vx",color=cyan1, style=filled]
-1043 -> 1044
-1045 [label="label: ?intVelocityX",color=plum, style=filled]
-1042 -> 1045
-1046 [label="ext_intruder_vx",color=cyan1, style=filled]
-1045 -> 1046
-1047 [label="op2: *",color=green4, style=filled]
-1035 -> 1047
-1048 [label="op2: -",color=green4, style=filled]
-1047 -> 1048
-1049 [label="label: ?ownVelocityY",color=plum, style=filled]
-1048 -> 1049
-1050 [label="ext_ownship_vy",color=cyan1, style=filled]
-1049 -> 1050
-1051 [label="label: ?intVelocityY",color=plum, style=filled]
-1048 -> 1051
-1052 [label="ext_intruder_vy",color=cyan1, style=filled]
-1051 -> 1052
-1053 [label="op2: -",color=green4, style=filled]
-1047 -> 1053
-1054 [label="label: ?ownVelocityY",color=plum, style=filled]
-1053 -> 1054
-1055 [label="ext_ownship_vy",color=cyan1, style=filled]
-1054 -> 1055
-1056 [label="label: ?intVelocityY",color=plum, style=filled]
-1053 -> 1056
-1057 [label="ext_intruder_vy",color=cyan1, style=filled]
-1056 -> 1057
-1058 [label="const: 30.0",color=red1, style=filled]
-933 -> 1058
-1059 [label="label: ?verticalWCV",color=plum, style=filled]
-2 -> 1059
-1060 [label="op2: ||",color=green4, style=filled]
-1059 -> 1060
-1061 [label="op2: <=",color=green4, style=filled]
-1060 -> 1061
-1062 [label="op1: abs",color=green4, style=filled]
-1061 -> 1062
-1063 [label="op2: -",color=green4, style=filled]
-1062 -> 1063
-1064 [label="label: ?ownPositionZ",color=plum, style=filled]
-1063 -> 1064
-1065 [label="label: ?ownAlt",color=plum, style=filled]
-1064 -> 1065
-1066 [label="op2: *",color=green4, style=filled]
-1065 -> 1066
-1067 [label="ext_ownship_altitude_ft",color=cyan1, style=filled]
-1066 -> 1067
-1068 [label="const: 0.3048",color=red1, style=filled]
-1066 -> 1068
-1069 [label="label: ?intPositionZ",color=plum, style=filled]
-1063 -> 1069
-1070 [label="label: ?intAlt",color=plum, style=filled]
-1069 -> 1070
-1071 [label="op2: *",color=green4, style=filled]
-1070 -> 1071
-1072 [label="ext_intruder_altitude_ft",color=cyan1, style=filled]
-1071 -> 1072
-1073 [label="const: 0.3048",color=red1, style=filled]
-1071 -> 1073
-1074 [label="const: 144.78",color=red1, style=filled]
-1061 -> 1074
-1075 [label="op2: &&",color=green4, style=filled]
-1060 -> 1075
-1076 [label="op2: <=",color=green4, style=filled]
-1075 -> 1076
-1077 [label="const: 0.0",color=red1, style=filled]
-1076 -> 1077
-1078 [label="label: ?tcoa",color=plum, style=filled]
-1076 -> 1078
-1079 [label="op3: mux",color=green4, style=filled]
-1078 -> 1079
-1080 [label="op2: <",color=green4, style=filled]
-1079 -> 1080
-1081 [label="op2: *",color=green4, style=filled]
-1080 -> 1081
-1082 [label="op2: -",color=green4, style=filled]
-1081 -> 1082
-1083 [label="label: ?ownPositionZ",color=plum, style=filled]
-1082 -> 1083
-1084 [label="label: ?ownAlt",color=plum, style=filled]
-1083 -> 1084
-1085 [label="op2: *",color=green4, style=filled]
-1084 -> 1085
-1086 [label="ext_ownship_altitude_ft",color=cyan1, style=filled]
-1085 -> 1086
-1087 [label="const: 0.3048",color=red1, style=filled]
-1085 -> 1087
-1088 [label="label: ?intPositionZ",color=plum, style=filled]
-1082 -> 1088
-1089 [label="label: ?intAlt",color=plum, style=filled]
-1088 -> 1089
-1090 [label="op2: *",color=green4, style=filled]
-1089 -> 1090
-1091 [label="ext_intruder_altitude_ft",color=cyan1, style=filled]
-1090 -> 1091
-1092 [label="const: 0.3048",color=red1, style=filled]
-1090 -> 1092
-1093 [label="op2: -",color=green4, style=filled]
-1081 -> 1093
-1094 [label="label: ?ownVelocityZ",color=plum, style=filled]
-1093 -> 1094
-1095 [label="ext_ownship_vz",color=cyan1, style=filled]
-1094 -> 1095
-1096 [label="label: ?intVelocityZ",color=plum, style=filled]
-1093 -> 1096
-1097 [label="ext_intruder_vz",color=cyan1, style=filled]
-1096 -> 1097
-1098 [label="const: 0.0",color=red1, style=filled]
-1080 -> 1098
-1099 [label="op2: /",color=green4, style=filled]
-1079 -> 1099
-1100 [label="op2: -",color=green4, style=filled]
-1099 -> 1100
-1101 [label="const: 0.0",color=red1, style=filled]
-1100 -> 1101
-1102 [label="op2: -",color=green4, style=filled]
-1100 -> 1102
-1103 [label="label: ?ownPositionZ",color=plum, style=filled]
-1102 -> 1103
-1104 [label="label: ?ownAlt",color=plum, style=filled]
-1103 -> 1104
-1105 [label="op2: *",color=green4, style=filled]
-1104 -> 1105
-1106 [label="ext_ownship_altitude_ft",color=cyan1, style=filled]
-1105 -> 1106
-1107 [label="const: 0.3048",color=red1, style=filled]
-1105 -> 1107
-1108 [label="label: ?intPositionZ",color=plum, style=filled]
-1102 -> 1108
-1109 [label="label: ?intAlt",color=plum, style=filled]
-1108 -> 1109
-1110 [label="op2: *",color=green4, style=filled]
-1109 -> 1110
-1111 [label="ext_intruder_altitude_ft",color=cyan1, style=filled]
-1110 -> 1111
-1112 [label="const: 0.3048",color=red1, style=filled]
-1110 -> 1112
-1113 [label="op2: -",color=green4, style=filled]
-1099 -> 1113
-1114 [label="label: ?ownVelocityZ",color=plum, style=filled]
-1113 -> 1114
-1115 [label="ext_ownship_vz",color=cyan1, style=filled]
-1114 -> 1115
-1116 [label="label: ?intVelocityZ",color=plum, style=filled]
-1113 -> 1116
-1117 [label="ext_intruder_vz",color=cyan1, style=filled]
-1116 -> 1117
-1118 [label="const: -1.0",color=red1, style=filled]
-1079 -> 1118
-1119 [label="op2: <=",color=green4, style=filled]
-1075 -> 1119
-1120 [label="label: ?tcoa",color=plum, style=filled]
-1119 -> 1120
-1121 [label="op3: mux",color=green4, style=filled]
-1120 -> 1121
-1122 [label="op2: <",color=green4, style=filled]
-1121 -> 1122
-1123 [label="op2: *",color=green4, style=filled]
-1122 -> 1123
-1124 [label="op2: -",color=green4, style=filled]
-1123 -> 1124
-1125 [label="label: ?ownPositionZ",color=plum, style=filled]
-1124 -> 1125
-1126 [label="label: ?ownAlt",color=plum, style=filled]
-1125 -> 1126
-1127 [label="op2: *",color=green4, style=filled]
-1126 -> 1127
-1128 [label="ext_ownship_altitude_ft",color=cyan1, style=filled]
-1127 -> 1128
-1129 [label="const: 0.3048",color=red1, style=filled]
-1127 -> 1129
-1130 [label="label: ?intPositionZ",color=plum, style=filled]
-1124 -> 1130
-1131 [label="label: ?intAlt",color=plum, style=filled]
-1130 -> 1131
-1132 [label="op2: *",color=green4, style=filled]
-1131 -> 1132
-1133 [label="ext_intruder_altitude_ft",color=cyan1, style=filled]
-1132 -> 1133
-1134 [label="const: 0.3048",color=red1, style=filled]
-1132 -> 1134
-1135 [label="op2: -",color=green4, style=filled]
-1123 -> 1135
-1136 [label="label: ?ownVelocityZ",color=plum, style=filled]
-1135 -> 1136
-1137 [label="ext_ownship_vz",color=cyan1, style=filled]
-1136 -> 1137
-1138 [label="label: ?intVelocityZ",color=plum, style=filled]
-1135 -> 1138
-1139 [label="ext_intruder_vz",color=cyan1, style=filled]
-1138 -> 1139
-1140 [label="const: 0.0",color=red1, style=filled]
-1122 -> 1140
-1141 [label="op2: /",color=green4, style=filled]
-1121 -> 1141
-1142 [label="op2: -",color=green4, style=filled]
-1141 -> 1142
-1143 [label="const: 0.0",color=red1, style=filled]
-1142 -> 1143
-1144 [label="op2: -",color=green4, style=filled]
-1142 -> 1144
-1145 [label="label: ?ownPositionZ",color=plum, style=filled]
-1144 -> 1145
-1146 [label="label: ?ownAlt",color=plum, style=filled]
-1145 -> 1146
-1147 [label="op2: *",color=green4, style=filled]
-1146 -> 1147
-1148 [label="ext_ownship_altitude_ft",color=cyan1, style=filled]
-1147 -> 1148
-1149 [label="const: 0.3048",color=red1, style=filled]
-1147 -> 1149
-1150 [label="label: ?intPositionZ",color=plum, style=filled]
-1144 -> 1150
-1151 [label="label: ?intAlt",color=plum, style=filled]
-1150 -> 1151
-1152 [label="op2: *",color=green4, style=filled]
-1151 -> 1152
-1153 [label="ext_intruder_altitude_ft",color=cyan1, style=filled]
-1152 -> 1153
-1154 [label="const: 0.3048",color=red1, style=filled]
-1152 -> 1154
-1155 [label="op2: -",color=green4, style=filled]
-1141 -> 1155
-1156 [label="label: ?ownVelocityZ",color=plum, style=filled]
-1155 -> 1156
-1157 [label="ext_ownship_vz",color=cyan1, style=filled]
-1156 -> 1157
-1158 [label="label: ?intVelocityZ",color=plum, style=filled]
-1155 -> 1158
-1159 [label="ext_intruder_vz",color=cyan1, style=filled]
-1158 -> 1159
-1160 [label="const: -1.0",color=red1, style=filled]
-1121 -> 1160
-1161 [label="const: 30.0",color=red1, style=filled]
-1119 -> 1161
 
 
 }
@@ -631,137 +19,372 @@ node [shape=box]
 DotEnd*/
 /*@
  assigns \nothing;
- ensures \result == ((((((((((ext_sqrt_158)) <= ((1852.0)))) || ((((((ext_sqrt_183)) <= ((1852.0)))) && (((((0.0) <= ((( ((((((((ext_ownship_vx)) - ((ext_intruder_vx)))) == (0.0))) && ((((((ext_ownship_vy)) - ((ext_intruder_vy)))) == (0.0))))) ? (0.0) : (((((0.0) - (((((((((((6371000.0) * ((((ext_ownship_longitude) * (((((3.141592653589793)) / (180.0)))))))))) - ((((6371000.0) * ((((ext_intruder_longitude) * (((((3.141592653589793)) / (180.0)))))))))))) * ((((ext_ownship_vx)) - ((ext_intruder_vx)))))) + ((((((((6371000.0) * (ext_log_185)))) - ((((6371000.0) * (ext_log_187)))))) * ((((ext_ownship_vy)) - ((ext_intruder_vy))))))))))) / ((((((((((ext_ownship_vx)) - ((ext_intruder_vx)))) * ((((ext_ownship_vx)) - ((ext_intruder_vx)))))) + ((((((ext_ownship_vy)) - ((ext_intruder_vy)))) * ((((ext_ownship_vy)) - ((ext_intruder_vy))))))))))))))))) && ((((( ((((((((ext_ownship_vx)) - ((ext_intruder_vx)))) == (0.0))) && ((((((ext_ownship_vy)) - ((ext_intruder_vy)))) == (0.0))))) ? (0.0) : (((((0.0) - (((((((((((6371000.0) * ((((ext_ownship_longitude) * (((((3.141592653589793)) / (180.0)))))))))) - ((((6371000.0) * ((((ext_intruder_longitude) * (((((3.141592653589793)) / (180.0)))))))))))) * ((((ext_ownship_vx)) - ((ext_intruder_vx)))))) + ((((((((6371000.0) * (ext_log_189)))) - ((((6371000.0) * (ext_log_191)))))) * ((((ext_ownship_vy)) - ((ext_intruder_vy))))))))))) / ((((((((((ext_ownship_vx)) - ((ext_intruder_vx)))) * ((((ext_ownship_vx)) - ((ext_intruder_vx)))))) + ((((((ext_ownship_vy)) - ((ext_intruder_vy)))) * ((((ext_ownship_vy)) - ((ext_intruder_vy))))))))))))))) <= (30.0)))))))))) && ((((((((((((((ext_ownship_altitude_ft) * (0.3048))))) - (((((ext_intruder_altitude_ft) * (0.3048))))))) > 0)? (((((((ext_ownship_altitude_ft) * (0.3048))))) - (((((ext_intruder_altitude_ft) * (0.3048))))))) : -(((((((ext_ownship_altitude_ft) * (0.3048))))) - (((((ext_intruder_altitude_ft) * (0.3048)))))))) <= (144.78))) || (((((0.0) <= ((( (((((((((((ext_ownship_altitude_ft) * (0.3048))))) - (((((ext_intruder_altitude_ft) * (0.3048))))))) * ((((ext_ownship_vz)) - ((ext_intruder_vz)))))) < (0.0))) ? (((((0.0) - (((((((ext_ownship_altitude_ft) * (0.3048))))) - (((((ext_intruder_altitude_ft) * (0.3048))))))))) / ((((ext_ownship_vz)) - ((ext_intruder_vz)))))) : (-1.0)))))) && ((((( (((((((((((ext_ownship_altitude_ft) * (0.3048))))) - (((((ext_intruder_altitude_ft) * (0.3048))))))) * ((((ext_ownship_vz)) - ((ext_intruder_vz)))))) < (0.0))) ? (((((0.0) - (((((((ext_ownship_altitude_ft) * (0.3048))))) - (((((ext_intruder_altitude_ft) * (0.3048))))))))) / ((((ext_ownship_vz)) - ((ext_intruder_vz)))))) : (-1.0)))) <= (30.0)))))))))));
+ ensures \result == (ext_ident_bool_1627);
 */
-SBool trigger_guard_alert_WCVtcpa(const SDouble ext_sqrt_158,
+SBool trigger_guard_alert_WCVtcpa(const SBool ext_ident_bool_1627,
+                                  const SBool ext_ident_bool_1590,
+                                  const SDouble ext_ident_double_1279, const SDouble ext_sqrt_1278,
+                                  const SDouble ext_ident_double_1277,
+                                  const SDouble ext_ident_double_1276,
+                                  const SDouble ext_ident_double_1235,
+                                  const SDouble ext_ident_double_1234,
                                   const SDouble ext_ownship_longitude,
-                                  const SDouble ext_intruder_longitude, const SDouble ext_log_151,
-                                  const SDouble ext_tan_150, const SDouble ext_ownship_latitude,
-                                  const SDouble ext_log_153, const SDouble ext_tan_152,
-                                  const SDouble ext_intruder_latitude, const SDouble ext_log_155,
-                                  const SDouble ext_tan_154, const SDouble ext_log_157,
-                                  const SDouble ext_tan_156, const SDouble ext_sqrt_183,
-                                  const SDouble ext_ownship_vx, const SDouble ext_intruder_vx,
-                                  const SDouble ext_ownship_vy, const SDouble ext_intruder_vy,
-                                  const SDouble ext_log_160, const SDouble ext_tan_159,
-                                  const SDouble ext_log_162, const SDouble ext_tan_161,
-                                  const SDouble ext_log_164, const SDouble ext_tan_163,
-                                  const SDouble ext_log_166, const SDouble ext_tan_165,
-                                  const SDouble ext_log_168, const SDouble ext_tan_167,
-                                  const SDouble ext_log_170, const SDouble ext_tan_169,
-                                  const SDouble ext_log_172, const SDouble ext_tan_171,
-                                  const SDouble ext_log_174, const SDouble ext_tan_173,
-                                  const SDouble ext_log_176, const SDouble ext_tan_175,
-                                  const SDouble ext_log_178, const SDouble ext_tan_177,
-                                  const SDouble ext_log_180, const SDouble ext_tan_179,
-                                  const SDouble ext_log_182, const SDouble ext_tan_181,
-                                  const SDouble ext_log_185, const SDouble ext_tan_184,
-                                  const SDouble ext_log_187, const SDouble ext_tan_186,
-                                  const SDouble ext_log_189, const SDouble ext_tan_188,
-                                  const SDouble ext_log_191, const SDouble ext_tan_190,
+                                  const SDouble ext_ident_double_1233,
+                                  const SDouble ext_ident_double_1232,
+                                  const SDouble ext_ident_double_1239,
+                                  const SDouble ext_ident_double_1238,
+                                  const SDouble ext_intruder_longitude,
+                                  const SDouble ext_ident_double_1237,
+                                  const SDouble ext_ident_double_1236,
+                                  const SDouble ext_ident_double_1243,
+                                  const SDouble ext_ident_double_1242,
+                                  const SDouble ext_ident_double_1241,
+                                  const SDouble ext_ident_double_1240,
+                                  const SDouble ext_ident_double_1247,
+                                  const SDouble ext_ident_double_1246,
+                                  const SDouble ext_ident_double_1245,
+                                  const SDouble ext_ident_double_1244,
+                                  const SDouble ext_ident_double_1254, const SDouble ext_log_1253,
+                                  const SDouble ext_tan_1252, const SDouble ext_ident_double_1248,
+                                  const SDouble ext_ident_double_1251,
+                                  const SDouble ext_ownship_latitude,
+                                  const SDouble ext_ident_double_1250,
+                                  const SDouble ext_ident_double_1249,
+                                  const SDouble ext_ident_double_1261, const SDouble ext_log_1260,
+                                  const SDouble ext_tan_1259, const SDouble ext_ident_double_1255,
+                                  const SDouble ext_ident_double_1258,
+                                  const SDouble ext_intruder_latitude,
+                                  const SDouble ext_ident_double_1257,
+                                  const SDouble ext_ident_double_1256,
+                                  const SDouble ext_ident_double_1268, const SDouble ext_log_1267,
+                                  const SDouble ext_tan_1266, const SDouble ext_ident_double_1262,
+                                  const SDouble ext_ident_double_1265,
+                                  const SDouble ext_ident_double_1264,
+                                  const SDouble ext_ident_double_1263,
+                                  const SDouble ext_ident_double_1275, const SDouble ext_log_1274,
+                                  const SDouble ext_tan_1273, const SDouble ext_ident_double_1269,
+                                  const SDouble ext_ident_double_1272,
+                                  const SDouble ext_ident_double_1271,
+                                  const SDouble ext_ident_double_1270,
+                                  const SDouble ext_ident_double_1280,
+                                  const SDouble ext_ident_double_1504, const SDouble ext_sqrt_1503,
+                                  const SDouble ext_ident_double_1502,
+                                  const SDouble ext_ident_double_1501,
+                                  const SDouble ext_ident_double_1284,
+                                  const SDouble ext_ident_double_1283,
+                                  const SDouble ext_ident_double_1282,
+                                  const SDouble ext_ident_double_1281,
+                                  const SDouble ext_ident_double_1288,
+                                  const SDouble ext_ident_double_1287,
+                                  const SDouble ext_ident_double_1286,
+                                  const SDouble ext_ident_double_1285,
+                                  const SDouble ext_ident_double_1330,
+                                  const SDouble ext_ident_double_1289, const SDouble ext_ownship_vx,
+                                  const SDouble ext_ident_double_1290,
+                                  const SDouble ext_intruder_vx,
+                                  const SDouble ext_ident_double_1291, const SDouble ext_ownship_vy,
+                                  const SDouble ext_ident_double_1292,
+                                  const SDouble ext_intruder_vy,
+                                  const SDouble ext_ident_double_1319,
+                                  const SDouble ext_ident_double_1296,
+                                  const SDouble ext_ident_double_1295,
+                                  const SDouble ext_ident_double_1294,
+                                  const SDouble ext_ident_double_1293,
+                                  const SDouble ext_ident_double_1300,
+                                  const SDouble ext_ident_double_1299,
+                                  const SDouble ext_ident_double_1298,
+                                  const SDouble ext_ident_double_1297,
+                                  const SDouble ext_ident_double_1301,
+                                  const SDouble ext_ident_double_1302,
+                                  const SDouble ext_ident_double_1309, const SDouble ext_log_1308,
+                                  const SDouble ext_tan_1307, const SDouble ext_ident_double_1303,
+                                  const SDouble ext_ident_double_1306,
+                                  const SDouble ext_ident_double_1305,
+                                  const SDouble ext_ident_double_1304,
+                                  const SDouble ext_ident_double_1316, const SDouble ext_log_1315,
+                                  const SDouble ext_tan_1314, const SDouble ext_ident_double_1310,
+                                  const SDouble ext_ident_double_1313,
+                                  const SDouble ext_ident_double_1312,
+                                  const SDouble ext_ident_double_1311,
+                                  const SDouble ext_ident_double_1317,
+                                  const SDouble ext_ident_double_1318,
+                                  const SDouble ext_ident_double_1329,
+                                  const SDouble ext_ident_double_1328,
+                                  const SDouble ext_ident_double_1320,
+                                  const SDouble ext_ident_double_1321,
+                                  const SDouble ext_ident_double_1322,
+                                  const SDouble ext_ident_double_1323,
+                                  const SDouble ext_ident_double_1324,
+                                  const SDouble ext_ident_double_1325,
+                                  const SDouble ext_ident_double_1326,
+                                  const SDouble ext_ident_double_1327,
+                                  const SDouble ext_ident_double_1331,
+                                  const SDouble ext_ident_double_1332,
+                                  const SDouble ext_ident_double_1336,
+                                  const SDouble ext_ident_double_1335,
+                                  const SDouble ext_ident_double_1334,
+                                  const SDouble ext_ident_double_1333,
+                                  const SDouble ext_ident_double_1340,
+                                  const SDouble ext_ident_double_1339,
+                                  const SDouble ext_ident_double_1338,
+                                  const SDouble ext_ident_double_1337,
+                                  const SDouble ext_ident_double_1382,
+                                  const SDouble ext_ident_double_1341,
+                                  const SDouble ext_ident_double_1342,
+                                  const SDouble ext_ident_double_1343,
+                                  const SDouble ext_ident_double_1344,
+                                  const SDouble ext_ident_double_1371,
+                                  const SDouble ext_ident_double_1348,
+                                  const SDouble ext_ident_double_1347,
+                                  const SDouble ext_ident_double_1346,
+                                  const SDouble ext_ident_double_1345,
+                                  const SDouble ext_ident_double_1352,
+                                  const SDouble ext_ident_double_1351,
+                                  const SDouble ext_ident_double_1350,
+                                  const SDouble ext_ident_double_1349,
+                                  const SDouble ext_ident_double_1353,
+                                  const SDouble ext_ident_double_1354,
+                                  const SDouble ext_ident_double_1361, const SDouble ext_log_1360,
+                                  const SDouble ext_tan_1359, const SDouble ext_ident_double_1355,
+                                  const SDouble ext_ident_double_1358,
+                                  const SDouble ext_ident_double_1357,
+                                  const SDouble ext_ident_double_1356,
+                                  const SDouble ext_ident_double_1368, const SDouble ext_log_1367,
+                                  const SDouble ext_tan_1366, const SDouble ext_ident_double_1362,
+                                  const SDouble ext_ident_double_1365,
+                                  const SDouble ext_ident_double_1364,
+                                  const SDouble ext_ident_double_1363,
+                                  const SDouble ext_ident_double_1369,
+                                  const SDouble ext_ident_double_1370,
+                                  const SDouble ext_ident_double_1381,
+                                  const SDouble ext_ident_double_1380,
+                                  const SDouble ext_ident_double_1372,
+                                  const SDouble ext_ident_double_1373,
+                                  const SDouble ext_ident_double_1374,
+                                  const SDouble ext_ident_double_1375,
+                                  const SDouble ext_ident_double_1376,
+                                  const SDouble ext_ident_double_1377,
+                                  const SDouble ext_ident_double_1378,
+                                  const SDouble ext_ident_double_1379,
+                                  const SDouble ext_ident_double_1383,
+                                  const SDouble ext_ident_double_1384,
+                                  const SDouble ext_ident_double_1391, const SDouble ext_log_1390,
+                                  const SDouble ext_tan_1389, const SDouble ext_ident_double_1385,
+                                  const SDouble ext_ident_double_1388,
+                                  const SDouble ext_ident_double_1387,
+                                  const SDouble ext_ident_double_1386,
+                                  const SDouble ext_ident_double_1398, const SDouble ext_log_1397,
+                                  const SDouble ext_tan_1396, const SDouble ext_ident_double_1392,
+                                  const SDouble ext_ident_double_1395,
+                                  const SDouble ext_ident_double_1394,
+                                  const SDouble ext_ident_double_1393,
+                                  const SDouble ext_ident_double_1440,
+                                  const SDouble ext_ident_double_1399,
+                                  const SDouble ext_ident_double_1400,
+                                  const SDouble ext_ident_double_1401,
+                                  const SDouble ext_ident_double_1402,
+                                  const SDouble ext_ident_double_1429,
+                                  const SDouble ext_ident_double_1406,
+                                  const SDouble ext_ident_double_1405,
+                                  const SDouble ext_ident_double_1404,
+                                  const SDouble ext_ident_double_1403,
+                                  const SDouble ext_ident_double_1410,
+                                  const SDouble ext_ident_double_1409,
+                                  const SDouble ext_ident_double_1408,
+                                  const SDouble ext_ident_double_1407,
+                                  const SDouble ext_ident_double_1411,
+                                  const SDouble ext_ident_double_1412,
+                                  const SDouble ext_ident_double_1419, const SDouble ext_log_1418,
+                                  const SDouble ext_tan_1417, const SDouble ext_ident_double_1413,
+                                  const SDouble ext_ident_double_1416,
+                                  const SDouble ext_ident_double_1415,
+                                  const SDouble ext_ident_double_1414,
+                                  const SDouble ext_ident_double_1426, const SDouble ext_log_1425,
+                                  const SDouble ext_tan_1424, const SDouble ext_ident_double_1420,
+                                  const SDouble ext_ident_double_1423,
+                                  const SDouble ext_ident_double_1422,
+                                  const SDouble ext_ident_double_1421,
+                                  const SDouble ext_ident_double_1427,
+                                  const SDouble ext_ident_double_1428,
+                                  const SDouble ext_ident_double_1439,
+                                  const SDouble ext_ident_double_1438,
+                                  const SDouble ext_ident_double_1430,
+                                  const SDouble ext_ident_double_1431,
+                                  const SDouble ext_ident_double_1432,
+                                  const SDouble ext_ident_double_1433,
+                                  const SDouble ext_ident_double_1434,
+                                  const SDouble ext_ident_double_1435,
+                                  const SDouble ext_ident_double_1436,
+                                  const SDouble ext_ident_double_1437,
+                                  const SDouble ext_ident_double_1441,
+                                  const SDouble ext_ident_double_1442,
+                                  const SDouble ext_ident_double_1449, const SDouble ext_log_1448,
+                                  const SDouble ext_tan_1447, const SDouble ext_ident_double_1443,
+                                  const SDouble ext_ident_double_1446,
+                                  const SDouble ext_ident_double_1445,
+                                  const SDouble ext_ident_double_1444,
+                                  const SDouble ext_ident_double_1456, const SDouble ext_log_1455,
+                                  const SDouble ext_tan_1454, const SDouble ext_ident_double_1450,
+                                  const SDouble ext_ident_double_1453,
+                                  const SDouble ext_ident_double_1452,
+                                  const SDouble ext_ident_double_1451,
+                                  const SDouble ext_ident_double_1498,
+                                  const SDouble ext_ident_double_1457,
+                                  const SDouble ext_ident_double_1458,
+                                  const SDouble ext_ident_double_1459,
+                                  const SDouble ext_ident_double_1460,
+                                  const SDouble ext_ident_double_1487,
+                                  const SDouble ext_ident_double_1464,
+                                  const SDouble ext_ident_double_1463,
+                                  const SDouble ext_ident_double_1462,
+                                  const SDouble ext_ident_double_1461,
+                                  const SDouble ext_ident_double_1468,
+                                  const SDouble ext_ident_double_1467,
+                                  const SDouble ext_ident_double_1466,
+                                  const SDouble ext_ident_double_1465,
+                                  const SDouble ext_ident_double_1469,
+                                  const SDouble ext_ident_double_1470,
+                                  const SDouble ext_ident_double_1477, const SDouble ext_log_1476,
+                                  const SDouble ext_tan_1475, const SDouble ext_ident_double_1471,
+                                  const SDouble ext_ident_double_1474,
+                                  const SDouble ext_ident_double_1473,
+                                  const SDouble ext_ident_double_1472,
+                                  const SDouble ext_ident_double_1484, const SDouble ext_log_1483,
+                                  const SDouble ext_tan_1482, const SDouble ext_ident_double_1478,
+                                  const SDouble ext_ident_double_1481,
+                                  const SDouble ext_ident_double_1480,
+                                  const SDouble ext_ident_double_1479,
+                                  const SDouble ext_ident_double_1485,
+                                  const SDouble ext_ident_double_1486,
+                                  const SDouble ext_ident_double_1497,
+                                  const SDouble ext_ident_double_1496,
+                                  const SDouble ext_ident_double_1488,
+                                  const SDouble ext_ident_double_1489,
+                                  const SDouble ext_ident_double_1490,
+                                  const SDouble ext_ident_double_1491,
+                                  const SDouble ext_ident_double_1492,
+                                  const SDouble ext_ident_double_1493,
+                                  const SDouble ext_ident_double_1494,
+                                  const SDouble ext_ident_double_1495,
+                                  const SDouble ext_ident_double_1499,
+                                  const SDouble ext_ident_double_1500,
+                                  const SDouble ext_ident_double_1505,
+                                  const SDouble ext_ident_double_1547,
+                                  const SDouble ext_ident_double_1506,
+                                  const SDouble ext_ident_double_1507,
+                                  const SDouble ext_ident_double_1508,
+                                  const SDouble ext_ident_double_1509,
+                                  const SDouble ext_ident_double_1536,
+                                  const SDouble ext_ident_double_1513,
+                                  const SDouble ext_ident_double_1512,
+                                  const SDouble ext_ident_double_1511,
+                                  const SDouble ext_ident_double_1510,
+                                  const SDouble ext_ident_double_1517,
+                                  const SDouble ext_ident_double_1516,
+                                  const SDouble ext_ident_double_1515,
+                                  const SDouble ext_ident_double_1514,
+                                  const SDouble ext_ident_double_1518,
+                                  const SDouble ext_ident_double_1519,
+                                  const SDouble ext_ident_double_1526, const SDouble ext_log_1525,
+                                  const SDouble ext_tan_1524, const SDouble ext_ident_double_1520,
+                                  const SDouble ext_ident_double_1523,
+                                  const SDouble ext_ident_double_1522,
+                                  const SDouble ext_ident_double_1521,
+                                  const SDouble ext_ident_double_1533, const SDouble ext_log_1532,
+                                  const SDouble ext_tan_1531, const SDouble ext_ident_double_1527,
+                                  const SDouble ext_ident_double_1530,
+                                  const SDouble ext_ident_double_1529,
+                                  const SDouble ext_ident_double_1528,
+                                  const SDouble ext_ident_double_1534,
+                                  const SDouble ext_ident_double_1535,
+                                  const SDouble ext_ident_double_1546,
+                                  const SDouble ext_ident_double_1545,
+                                  const SDouble ext_ident_double_1537,
+                                  const SDouble ext_ident_double_1538,
+                                  const SDouble ext_ident_double_1539,
+                                  const SDouble ext_ident_double_1540,
+                                  const SDouble ext_ident_double_1541,
+                                  const SDouble ext_ident_double_1542,
+                                  const SDouble ext_ident_double_1543,
+                                  const SDouble ext_ident_double_1544,
+                                  const SDouble ext_ident_double_1589,
+                                  const SDouble ext_ident_double_1548,
+                                  const SDouble ext_ident_double_1549,
+                                  const SDouble ext_ident_double_1550,
+                                  const SDouble ext_ident_double_1551,
+                                  const SDouble ext_ident_double_1578,
+                                  const SDouble ext_ident_double_1555,
+                                  const SDouble ext_ident_double_1554,
+                                  const SDouble ext_ident_double_1553,
+                                  const SDouble ext_ident_double_1552,
+                                  const SDouble ext_ident_double_1559,
+                                  const SDouble ext_ident_double_1558,
+                                  const SDouble ext_ident_double_1557,
+                                  const SDouble ext_ident_double_1556,
+                                  const SDouble ext_ident_double_1560,
+                                  const SDouble ext_ident_double_1561,
+                                  const SDouble ext_ident_double_1568, const SDouble ext_log_1567,
+                                  const SDouble ext_tan_1566, const SDouble ext_ident_double_1562,
+                                  const SDouble ext_ident_double_1565,
+                                  const SDouble ext_ident_double_1564,
+                                  const SDouble ext_ident_double_1563,
+                                  const SDouble ext_ident_double_1575, const SDouble ext_log_1574,
+                                  const SDouble ext_tan_1573, const SDouble ext_ident_double_1569,
+                                  const SDouble ext_ident_double_1572,
+                                  const SDouble ext_ident_double_1571,
+                                  const SDouble ext_ident_double_1570,
+                                  const SDouble ext_ident_double_1576,
+                                  const SDouble ext_ident_double_1577,
+                                  const SDouble ext_ident_double_1588,
+                                  const SDouble ext_ident_double_1587,
+                                  const SDouble ext_ident_double_1579,
+                                  const SDouble ext_ident_double_1580,
+                                  const SDouble ext_ident_double_1581,
+                                  const SDouble ext_ident_double_1582,
+                                  const SDouble ext_ident_double_1583,
+                                  const SDouble ext_ident_double_1584,
+                                  const SDouble ext_ident_double_1585,
+                                  const SDouble ext_ident_double_1586,
+                                  const SBool ext_ident_bool_1626,
+                                  const SDouble ext_ident_double_1592,
+                                  const SDouble ext_ident_double_1591,
                                   const SDouble ext_ownship_altitude_ft,
+                                  const SDouble ext_ident_double_1594,
+                                  const SDouble ext_ident_double_1593,
                                   const SDouble ext_intruder_altitude_ft,
-                                  const SDouble ext_ownship_vz, const SDouble ext_intruder_vz)
+                                  const SDouble ext_ident_double_1599,
+                                  const SDouble ext_ident_double_1596,
+                                  const SDouble ext_ident_double_1595,
+                                  const SDouble ext_ident_double_1598,
+                                  const SDouble ext_ident_double_1597,
+                                  const SDouble ext_ident_double_1612,
+                                  const SDouble ext_ident_double_1601,
+                                  const SDouble ext_ident_double_1600,
+                                  const SDouble ext_ident_double_1603,
+                                  const SDouble ext_ident_double_1602,
+                                  const SDouble ext_ident_double_1604, const SDouble ext_ownship_vz,
+                                  const SDouble ext_ident_double_1605,
+                                  const SDouble ext_intruder_vz,
+                                  const SDouble ext_ident_double_1607,
+                                  const SDouble ext_ident_double_1606,
+                                  const SDouble ext_ident_double_1609,
+                                  const SDouble ext_ident_double_1608,
+                                  const SDouble ext_ident_double_1610,
+                                  const SDouble ext_ident_double_1611,
+                                  const SDouble ext_ident_double_1625,
+                                  const SDouble ext_ident_double_1614,
+                                  const SDouble ext_ident_double_1613,
+                                  const SDouble ext_ident_double_1616,
+                                  const SDouble ext_ident_double_1615,
+                                  const SDouble ext_ident_double_1617,
+                                  const SDouble ext_ident_double_1618,
+                                  const SDouble ext_ident_double_1620,
+                                  const SDouble ext_ident_double_1619,
+                                  const SDouble ext_ident_double_1622,
+                                  const SDouble ext_ident_double_1621,
+                                  const SDouble ext_ident_double_1623,
+                                  const SDouble ext_ident_double_1624)
 {
-  const SDouble s0 = ext_sqrt_158;
-  const SDouble s1 = ext_ownship_longitude;
-  const SDouble s2 = ext_intruder_longitude;
-  const SDouble s13 = ext_sqrt_183;
-  const SDouble s14 = ext_ownship_vx;
-  const SDouble s15 = ext_intruder_vx;
-  const SDouble s16 = ext_ownship_vy;
-  const SDouble s17 = ext_intruder_vy;
-  const SDouble s42 = ext_log_185;
-  const SDouble s44 = ext_log_187;
-  const SDouble s46 = ext_log_189;
-  const SDouble s48 = ext_log_191;
-  const SDouble s50 = ext_ownship_altitude_ft;
-  const SDouble s51 = ext_intruder_altitude_ft;
-  const SDouble s52 = ext_ownship_vz;
-  const SDouble s53 = ext_intruder_vz;
-  const SDouble s54 = s0 /* ?norm2dim */;
-  const SBool   s56 = s54 <= 1852.0;
-  const SDouble s57 = s13 /* ?norm2dim */;
-  const SBool   s58 = s57 <= 1852.0;
-  const SDouble s60 = s14 /* ?ownVelocityX */;
-  const SDouble s61 = s15 /* ?intVelocityX */;
-  const SDouble s62 = s60 - s61;
-  const SBool   s63 = 0.0 == s62;
-  const SDouble s64 = s16 /* ?ownVelocityY */;
-  const SDouble s65 = s17 /* ?intVelocityY */;
-  const SDouble s66 = s64 - s65;
-  const SBool   s67 = 0.0 == s66;
-  const SBool   s68 = s63 && s67;
-  const SDouble s71 = s1 * 1.7453292519943295e-2;
-  const SDouble s72 = s71 /* ?ownLong */;
-  const SDouble s73 = 6371000.0 * s72;
-  const SDouble s74 = s73 /* ?ownPositionX */;
-  const SDouble s75 = s2 * 1.7453292519943295e-2;
-  const SDouble s76 = s75 /* ?intLong */;
-  const SDouble s77 = 6371000.0 * s76;
-  const SDouble s78 = s77 /* ?intPositionX */;
-  const SDouble s79 = s74 - s78;
-  const SDouble s80 = s62 * s79;
-  const SDouble s81 = s42 * 6371000.0;
-  const SDouble s82 = s81 /* ?ownPositionY */;
-  const SDouble s83 = s44 * 6371000.0;
-  const SDouble s84 = s83 /* ?intPositionY */;
-  const SDouble s85 = s82 - s84;
-  const SDouble s86 = s66 * s85;
-  const SDouble s87 = s80 + s86;
-  const SDouble s88 = s87 /* ?scalar2dim */;
-  const SDouble s89 = 0.0 - s88;
-  const SDouble s90 = s62 * s62;
-  const SDouble s91 = s66 * s66;
-  const SDouble s92 = s90 + s91;
-  const SDouble s93 = s92 /* ?scalar2dim */;
-  const SDouble s94 = s93 /* ?normsq2dim */;
-  const SDouble s95 = s89 / s94;
-  const SDouble s96 = s68 ? 0.0 : s95;
-  const SDouble s97 = s96 /* ?tcpa */;
-  const SBool   s98 = 0.0 <= s97;
-  const SDouble s99 = s46 * 6371000.0;
-  const SDouble s100 = s99 /* ?ownPositionY */;
-  const SDouble s101 = s48 * 6371000.0;
-  const SDouble s102 = s101 /* ?intPositionY */;
-  const SDouble s103 = s100 - s102;
-  const SDouble s104 = s66 * s103;
-  const SDouble s105 = s80 + s104;
-  const SDouble s106 = s105 /* ?scalar2dim */;
-  const SDouble s107 = 0.0 - s106;
-  const SDouble s108 = s107 / s94;
-  const SDouble s109 = s68 ? 0.0 : s108;
-  const SDouble s110 = s109 /* ?tcpa */;
-  const SBool   s112 = s110 <= 30.0;
-  const SBool   s113 = s98 && s112;
-  const SBool   s114 = s58 && s113;
-  const SBool   s115 = s56 || s114;
-  const SBool   s116 = s115 /* ?horizontalWCV */;
-  const SDouble s118 = s50 * 0.3048;
-  const SDouble s119 = s118 /* ?ownAlt */;
-  const SDouble s120 = s119 /* ?ownPositionZ */;
-  const SDouble s121 = s51 * 0.3048;
-  const SDouble s122 = s121 /* ?intAlt */;
-  const SDouble s123 = s122 /* ?intPositionZ */;
-  const SDouble s124 = s120 - s123;
-  const SDouble s125 = fabs(s124);
-  const SBool   s127 = s125 <= 144.78;
-  const SDouble s128 = s52 /* ?ownVelocityZ */;
-  const SDouble s129 = s53 /* ?intVelocityZ */;
-  const SDouble s130 = s128 - s129;
-  const SDouble s131 = s124 * s130;
-  const SBool   s132 = s131 < 0.0;
-  const SDouble s133 = 0.0 - s124;
-  const SDouble s134 = s133 / s130;
-  const SDouble s136 = s132 ? s134 : -1.0;
-  const SDouble s137 = s136 /* ?tcoa */;
-  const SBool   s138 = 0.0 <= s137;
-  const SBool   s139 = s137 <= 30.0;
-  const SBool   s140 = s138 && s139;
-  const SBool   s141 = s127 || s140;
-  const SBool   s142 = s141 /* ?verticalWCV */;
-  const SBool   s143 = s116 && s142;
-  const SBool   s144 = s143 /* ?wellClearViolation */;
-
-  return s144;
+  const SBool   s0 = ext_ident_bool_1627;
+  return s0;
 }

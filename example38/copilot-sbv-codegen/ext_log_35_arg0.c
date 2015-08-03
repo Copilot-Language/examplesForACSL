@@ -22,7 +22,11 @@ DotEnd*/
  ensures \result == (ext_tan_34);
 */
 SDouble ext_log_35_arg0(const SDouble ext_tan_34,
-                        const SDouble ext_ownship_latitude)
+                        const SDouble ext_ident_double_30,
+                        const SDouble ext_ident_double_33,
+                        const SDouble ext_ownship_latitude,
+                        const SDouble ext_ident_double_32,
+                        const SDouble ext_ident_double_31)
 {
   const SDouble s0 = ext_tan_34;
   return s0;
