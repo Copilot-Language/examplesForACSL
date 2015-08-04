@@ -17,18 +17,38 @@
 
 /* public variables ==================================================== */
 
-double ownship_latitude;
-double ownship_longitude;
-double ownship_altitude_ft;
+double ownship_x;
+double ownship_y;
+double ownship_z;
 double ownship_vx;
 double ownship_vy;
 double ownship_vz;
 
-double intruder_latitude;
-double intruder_longitude;
-double intruder_altitude_ft;
+double intruder_x;
+double intruder_y;
+double intruder_z;
 double intruder_vx;
 double intruder_vy;
+double intruder_vz;
+
+
+bool WCVtauactivated;
+bool WCVtcpaactivated;
+bool WCVtaumodactivated;
+bool WCVtepactivated;
+
+
+double ownship_x_position_ft;
+double intruder_x_position_ft;
+double ownship_y_position_ft;
+double intruder_y_position_ft;
+double ownship_vx;
+double intruder_vx;
+double ownship_vy;
+double intruder_vy;
+double ownship_z_position_ft;
+double intruder_z_position_ft;
+double ownship_vz;
 double intruder_vz;
 
 
@@ -60,22 +80,22 @@ struct test
    int tst;
    struct
    {
-      double latitude;  //in deg
-      double longitude; //in deg
-      double altitude;  //in ft
-      double vx;        //in m/s east
-      double vy;        //in m/s north
-      double vz;        //in m/s up
+      double x;         //in ft
+      double y;         //in ft
+      double z;         //in ft
+      double vx;        //in ft/s
+      double vy;        //in ft/s
+      double vz;        //in ft/s
    }
    ownship;
    struct
    {
-      double latitude;  //in deg
-      double longitude; //in deg
-      double altitude;  //in ft
-      double vx;        //in m/s east
-      double vy;        //in m/s north
-      double vz;        //in m/s up
+      double x;         //in ft
+      double y;         //in ft
+      double z;         //in ft
+      double vx;        //in ft/s
+      double vy;        //in ft/s
+      double vz;        //in ft/s
    }
    intruder;
    struct
@@ -91,12 +111,6 @@ struct test
 
 
 /* private variables =================================================== */
-
-bool WCVtauactivated;
-bool WCVtcpaactivated;
-bool WCVtaumodactivated;
-bool WCVtepactivated;
-
 /* private functions =================================================== */
 
 static int tu_step (void)
@@ -105,9 +119,6 @@ static int tu_step (void)
 
    static struct test const a[] = {
     /* *INDENT-OFF* */
-    {10, {0.0   , 0.0   , 0.0   , 0.0   , 0.0   , 0.0   }, 
-         {0.0   , 0.0   , 0.0   , 0.0   , 0.0   , 0.0   }, 
-         {true , true , true , true }}
 
     /* *INDENT-ON* */
    };
@@ -118,19 +129,19 @@ static int tu_step (void)
 
       {
          /* INPUT */
-         ownship_latitude     = p->ownship.latitude;
-         ownship_longitude    = p->ownship.longitude;
-         ownship_altitude_ft  = p->ownship.altitude;
-         ownship_vx           = p->ownship.vx;
-         ownship_vy           = p->ownship.vy;
-         ownship_vz           = p->ownship.vz;
+         ownship_x_position_ft  = p->ownship.x;
+         ownship_y_position_ft  = p->ownship.y;
+         ownship_z_position_ft  = p->ownship.z;
+         ownship_vx             = p->ownship.vx;
+         ownship_vy             = p->ownship.vy;
+         ownship_vz             = p->ownship.vz;
          
-         intruder_latitude    = p->intruder.latitude;
-         intruder_longitude   = p->intruder.longitude;
-         intruder_altitude_ft = p->intruder.altitude;
-         intruder_vx          = p->intruder.vx;
-         intruder_vy          = p->intruder.vy;
-         intruder_vz          = p->intruder.vz;
+         intruder_x_position_ft = p->intruder.x;
+         intruder_y_position_ft = p->intruder.y;
+         intruder_z_position_ft = p->intruder.z;
+         intruder_vx            = p->intruder.vx;
+         intruder_vy            = p->intruder.vy;
+         intruder_vz            = p->intruder.vz;
 
          WCVtauactivated      = false;
          WCVtcpaactivated     = false;
@@ -194,6 +205,10 @@ int main (void)
    if (!err)
    {
       puts ("ALL  PASSED");
+   }
+   else
+   {
+      puts ("SOME FAILED");
    }
    return 0;
 }

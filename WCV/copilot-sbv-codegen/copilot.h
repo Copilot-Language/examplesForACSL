@@ -2,6 +2,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include <math.h>
 
 /* Observers (defined by Copilot): */
 
@@ -20,6 +21,7 @@ void alert_WCVtau();
 
 extern double ownship_x_position_ft;
 extern double intruder_x_position_ft;
+extern double ownship_y_position_ft;
 extern double intruder_y_position_ft;
 extern double ownship_vx;
 extern double intruder_vx;
@@ -35,8 +37,6 @@ extern double intruder_vz;
 
 /* External functions (must be defined by user): */
 
-bool ident_bool(bool);
-double ident_double(double);
 double sqrt(double);
 
 /* Step function: */

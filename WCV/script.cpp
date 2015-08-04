@@ -14,12 +14,12 @@ char s2[taille+1];
 
 int main(int argc, char ** argv)
 {
-    if (argc <= 1) {printf("error not enough arguments\n"); return 0;}
-    if (argc == 2) 
+    if (argc <= 1) printf("error not enough arguments\n"); 
+    else if (argc == 2) 
     {
         //printf("opening %s\n", argv[1]);
         FILE* f = fopen(argv[1],"r+");
-        if (f == NULL) {printf ("Error opening file"); return 0;}
+        if (f == NULL) {printf ("Error opening file"); exit(-1);}
         while(fgets(s,taille, f) != NULL)
         {
             regex_t regex;
@@ -72,8 +72,7 @@ here:
         }
         fclose(f);
         f = NULL;
-        return 0;
     }
-    if (argc > 2) {printf("error too many arguments\n"); return 0;}
+    else if (argc > 2) printf("error too many arguments\n");
     return 0;
 }

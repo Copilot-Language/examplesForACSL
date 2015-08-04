@@ -91,7 +91,7 @@ ownScaleFactorY = 1--label "?ownScaleFactorY" $ cos ownLat
 --ownPositionZ = label "?ownPositionZ" $ ownAlt
 
 ownPositionX = label "?ownPositionX" $ (externD "ownship_x_position_ft" Nothing)*FT --in feet
-ownPositionY = label "?ownPositionY" $ (externD "ownship_x_position_ft" Nothing)*FT --in feet
+ownPositionY = label "?ownPositionY" $ (externD "ownship_y_position_ft" Nothing)*FT --in feet
 ownPositionZ = label "?ownPositionZ" $ (externD "ownship_z_position_ft" Nothing)*FT --in feet
 
 --ownVelocityX = label "?ownVelocityX" $ ownTAS * (cos ownHDG)

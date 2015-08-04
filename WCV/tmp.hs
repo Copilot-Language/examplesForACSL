@@ -56,7 +56,7 @@ ownScaleFactorY = 1--label "?ownScaleFactorY" $ cos ownLat
 --ownPositionZ = label "?ownPositionZ" $ ownAlt
 
 ownPositionX = label "?ownPositionX" $ (externD "ownship_x_position_ft" Nothing)*0.3048 --in feet
-ownPositionY = label "?ownPositionY" $ (externD "ownship_x_position_ft" Nothing)*0.3048 --in feet
+ownPositionY = label "?ownPositionY" $ (externD "ownship_y_position_ft" Nothing)*0.3048 --in feet
 ownPositionZ = label "?ownPositionZ" $ (externD "ownship_z_position_ft" Nothing)*0.3048 --in feet
 
 --ownVelocityX = label "?ownVelocityX" $ ownTAS * (cos ownHDG)
@@ -241,7 +241,7 @@ spec = do
   trigger "alert_WCVtep" (wellClearViolation tep relPositionX relPositionY relPositionZ relVelocityX relVelocityY relVelocityZ) []
 
 main = do
-   reify spec >>= S.proofACSL S.defaultParams
+   reify spec >>= S.compile S.defaultParams
 
 
 --------------------------------------------------------------------------------
