@@ -4,6 +4,7 @@ default:
 	./main
 
 sandbox:
+	m4 main.hs > tmp.hs
 	cabal exec -- ghc tmp.hs -o main
 	./main
 
@@ -29,7 +30,7 @@ dead:
 dot:
 	gcc scriptdot.cpp -o a
 	for i in copilot-sbv-codegen/*; do if [ "$${i}" != "$${i%.c}" ];then ./a $$i > $$i.gv; dot -Tps $$i.gv -o $$i.ps; fi; done
-	
+
 acsl:
 	m4 main.hs > tmp.hs
 	make sandbox

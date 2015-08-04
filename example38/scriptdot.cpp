@@ -36,7 +36,7 @@ int main(int argc, char ** argv)
             if(strstr(s, "/*DotBegin") != NULL) state = 1;
         }
         fclose(f);
-        
+        f = NULL;
         return 0;
     }
     if (argc > 2) {printf("error too many arguments\n"); return 0;}

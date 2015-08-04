@@ -18,16 +18,15 @@ void alert_WCVtau();
 
 /* External variables (must be defined by user): */
 
-extern double ownship_longitude;
-extern double intruder_longitude;
-extern double ownship_latitude;
-extern double intruder_latitude;
+extern double ownship_x_position_ft;
+extern double intruder_x_position_ft;
+extern double intruder_y_position_ft;
 extern double ownship_vx;
 extern double intruder_vx;
 extern double ownship_vy;
 extern double intruder_vy;
-extern double ownship_altitude_ft;
-extern double intruder_altitude_ft;
+extern double ownship_z_position_ft;
+extern double intruder_z_position_ft;
 extern double ownship_vz;
 extern double intruder_vz;
 
@@ -39,8 +38,6 @@ extern double intruder_vz;
 bool ident_bool(bool);
 double ident_double(double);
 double sqrt(double);
-double log(double);
-double tan(double);
 
 /* Step function: */
 
