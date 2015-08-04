@@ -13,19 +13,24 @@ import Control.Monad (foldM_)
 -- Implementation of http://shemesh.larc.nasa.gov/people/cam/publications/NASA-TM-2014-218280.pdf
 --------------------------------------------------------------------------------
 
-
 --------------------------------------------------------------------------------
 -- SOME CONVENTIONS :
--- Altitudes are in FT
--- Position in GPS coordinates
--- Speed are given by the couple HDG, TAS (if you want to change it, you have to change this comment)
--- Vertical speeds are given in FT/MIN
--- X is E (east on mercator) : multiplied by a compensation factor due to the widening of the map.
--- Y is N (north on mercator)
+-- send X Y Z in FT
+-- VX VY VZ in FT/s
+--------------------------------------------------------------------------------
 
-
--- BE VERY CAREFUL ! THIS FAILS WHEN YOU GO TO CLOSE TO THE POLES ! 
--- Because of floating point overflow (tan pi/2- -> + inf)
+--------------------------------------------------------------------------------
+--OLD SOME CONVENTIONS :
+--OLD Altitudes are in FT
+--OLD Position in GPS coordinates
+--OLD Speed are given by the couple HDG, TAS (if you want to change it, you have to change this comment)
+--OLD Vertical speeds are given in FT/MIN
+--OLD X is E (east on mercator) : multiplied by a compensation factor due to the widening of the map.
+--OLD Y is N (north on mercator)
+--OLD
+--OLD
+--OLD BE VERY CAREFUL ! THIS FAILS WHEN YOU GO TO CLOSE TO THE POLES ! 
+--OLD Because of floating point overflow (tan pi/2- -> + inf)
 --------------------------------------------------------------------------------
 
 
@@ -36,9 +41,9 @@ import qualified Data.List as L
 -- OWNSHIP DEFINITIONS 
 ----------------------------------------
 
-ownAlt  = label "?ownAlt" $ (externD "ownship_altitude_ft" Nothing)*0.3048          -- in feet
-ownLat  = label "?ownLat" $ (externD "ownship_latitude" Nothing)*(label "?deg" $ (label "?pi" $ 3.14159265358979323846264338327950)/180)            -- in deg
-ownLong = label "?ownLong" $ (externD "ownship_longitude" Nothing)*(label "?deg" $ (label "?pi" $ 3.14159265358979323846264338327950)/180)          -- in deg
+ownAlt  = label "?ownAlt" $ (externD "ownship_altitude_ft" Nothing)*0.3048            -- in feet
+ownLat  = label "?ownLat" $ (externD "ownship_latitude" Nothing)*(label "?deg" $ (label "?pi" $ 3.14159265358979323846264338327950)/180)              -- in deg
+ownLong = label "?ownLong" $ (externD "ownship_longitude" Nothing)*(label "?deg" $ (label "?pi" $ 3.14159265358979323846264338327950)/180)            -- in deg
 --ownHDG  = label "?ownHDG" $ (externD "ownship_heading" Nothing)*DEG             -- in deg
 --ownTAS  = label "?ownTAS" $ (externD "ownship_trueairspeed" Nothing)*KTS        -- in kts
 --ownVSPD = label "?ownVSPD" $ (externD "ownship_vertical_speed" Nothing)*FT/MIN  --in FT/MIN
@@ -46,43 +51,52 @@ ownLong = label "?ownLong" $ (externD "ownship_longitude" Nothing)*(label "?deg"
 ownScaleFactorX = 1--label "?ownScaleFactorX" $ cos ownLat
 ownScaleFactorY = 1--label "?ownScaleFactorY" $ cos ownLat
 
-ownPositionX = label "?ownPositionX" $ 6371000 * ownLong * ownScaleFactorX
-ownPositionY = label "?ownPositionY" $ 6371000 * (log $ tan(((label "?pi" $ 3.14159265358979323846264338327950)/4) + (ownLat/2)) ) * ownScaleFactorY
-ownPositionZ = label "?ownPositionZ" $ ownAlt
+--ownPositionX = label "?ownPositionX" $ REARTH * ownLong * ownScaleFactorX
+--ownPositionY = label "?ownPositionY" $ REARTH * (log $ tan((PI/4) + (ownLat/2)) ) * ownScaleFactorY
+--ownPositionZ = label "?ownPositionZ" $ ownAlt
+
+ownPositionX = label "?ownPositionX" $ (externD "ownship_x_position_ft" Nothing)*0.3048 --in feet
+ownPositionY = label "?ownPositionY" $ (externD "ownship_x_position_ft" Nothing)*0.3048 --in feet
+ownPositionZ = label "?ownPositionZ" $ (externD "ownship_z_position_ft" Nothing)*0.3048 --in feet
 
 --ownVelocityX = label "?ownVelocityX" $ ownTAS * (cos ownHDG)
 --ownVelocityY = label "?ownVelocityY" $ ownTAS * (sin ownHDG)
 --ownVelocityZ = label "?ownVelocityZ" $ ownVSPD
 
-ownVelocityX = label "?ownVelocityX" $ (externD "ownship_vx" Nothing)   --in m/s
-ownVelocityY = label "?ownVelocityY" $ (externD "ownship_vy" Nothing)   --in m/s
-ownVelocityZ = label "?ownVelocityZ" $ (externD "ownship_vz" Nothing)   --in m/s
+ownVelocityX = label "?ownVelocityX" $ (externD "ownship_vx" Nothing)*0.3048/1   --in ft/sec
+ownVelocityY = label "?ownVelocityY" $ (externD "ownship_vy" Nothing)*0.3048/1   --in ft/sec
+ownVelocityZ = label "?ownVelocityZ" $ (externD "ownship_vz" Nothing)*0.3048/1   --in ft/sec
 
 ----------------------------------------
 -- INTRUDER DEFINITIONS
 ----------------------------------------
 
-intAlt  = label "?intAlt" $ (externD "intruder_altitude_ft" Nothing)*0.3048         -- in ft
-intLat  = label "?intLat" $ (externD "intruder_latitude" Nothing)*(label "?deg" $ (label "?pi" $ 3.14159265358979323846264338327950)/180)           -- in deg
-intLong = label "?intLong" $ (externD "intruder_longitude" Nothing)*(label "?deg" $ (label "?pi" $ 3.14159265358979323846264338327950)/180)         -- in deg
+intAlt  = label "?intAlt" $ (externD "intruder_altitude_ft" Nothing)*0.3048           -- in ft
+intLat  = label "?intLat" $ (externD "intruder_latitude" Nothing)*(label "?deg" $ (label "?pi" $ 3.14159265358979323846264338327950)/180)             -- in deg
+intLong = label "?intLong" $ (externD "intruder_longitude" Nothing)*(label "?deg" $ (label "?pi" $ 3.14159265358979323846264338327950)/180)           -- in deg
 --intHDG  = label "?intHDG" $ (externD "intruder_heading" Nothing)*DEG            -- in deg
 --intTAS  = label "?intTAS" $ (externD "intruder_trueairspeed" Nothing)*KTS       -- in kts
---intVSPD = label "?intVSPD" $ (externD "intruder_vertical_speed" Nothing)*FT/MIN --in FT/MIN
+--intVSPD = label "?intVSPD" $ (externD "intruder_vertical_speed" Nothing)*FT/MIN -- in FT/MIN
 
 intScaleFactorX = 1--label "?intScaleFactorX" $ cos intLat
 intScaleFactorY = 1--label "?intScaleFactorY" $ cos intLat
 
-intPositionX = label "?intPositionX" $ 6371000 * intLong * intScaleFactorX
-intPositionY = label "?intPositionY" $ 6371000 * (log $ tan((label "?pi" $ 3.14159265358979323846264338327950)/4 + intLat/2) ) * intScaleFactorY
-intPositionZ = label "?intPositionZ" $ intAlt
+--intPositionX = label "?intPositionX" $ REARTH * intLong * intScaleFactorX
+--intPositionY = label "?intPositionY" $ REARTH * (log $ tan(PI/4 + intLat/2) ) * intScaleFactorY
+--intPositionZ = label "?intPositionZ" $ intAlt
+
+
+intPositionX = label "?intPositionX" $ (externD "intruder_x_position_ft" Nothing)*0.3048   -- in feet
+intPositionY = label "?intPositionY" $ (externD "intruder_y_position_ft" Nothing)*0.3048   -- in feet
+intPositionZ = label "?intPositionZ" $ (externD "intruder_z_position_ft" Nothing)*0.3048   -- in feet
 
 --intVelocityX = label "?intVelocityX" $ intTAS * (cos intHDG)
 --intVelocityY = label "?intVelocityY" $ intTAS * (sin intHDG)
 --intVelocityZ = label "?intVelocityZ" $ intVSPD
 
-intVelocityX = label "?intVelocityX" $ (externD "intruder_vx" Nothing)
-intVelocityY = label "?intVelocityY" $ (externD "intruder_vy" Nothing)
-intVelocityZ = label "?intVelocityZ" $ (externD "intruder_vz" Nothing)
+intVelocityX = label "?intVelocityX" $ (externD "intruder_vx" Nothing)*0.3048/1           -- in ft/sec
+intVelocityY = label "?intVelocityY" $ (externD "intruder_vy" Nothing)*0.3048/1           -- in ft/sec
+intVelocityZ = label "?intVelocityZ" $ (externD "intruder_vz" Nothing)*0.3048/1           -- in ft/secc
 
 ----------------------------------------
 -- RELATIVE DEFINITIONS
@@ -227,7 +241,7 @@ spec = do
   trigger "alert_WCVtep" (wellClearViolation tep relPositionX relPositionY relPositionZ relVelocityX relVelocityY relVelocityZ) []
 
 main = do
-   reify spec >>= S.compile S.defaultParams
+   reify spec >>= S.proofACSL S.defaultParams
 
 
 --------------------------------------------------------------------------------
