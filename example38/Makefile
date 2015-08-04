@@ -33,14 +33,16 @@ dot:
 
 acsl:
 	m4 main.hs > tmp.hs
-	make sandbox
+	cabal exec -- ghc tmp.hs -o main
+	./main
 	make dead
 	make dot
 	make fwp -C copilot-sbv-codegen
 
 compile:
 	m4 -DproofACSL=compile main.hs > tmp.hs
-	make sandbox
+	cabal exec -- ghc tmp.hs -o main
+	./main
 	make dead
 	make all -C copilot-sbv-codegen
 
