@@ -56,6 +56,7 @@ here:
                     }
                 }
                 fclose(f2);
+                f2 = NULL;
                 if(cnt >= 2)
                     printf("%s", s);
             }
@@ -70,7 +71,7 @@ here:
             regfree(&regex);
         }
         fclose(f);
-        
+        f = NULL;
         return 0;
     }
     if (argc > 2) {printf("error too many arguments\n"); return 0;}
