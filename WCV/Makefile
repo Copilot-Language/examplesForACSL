@@ -20,7 +20,7 @@ clean:
 	rm main
 
 dot:
-	gcc scriptdot.cpp -o a
+	g++ scriptdot.cpp -o a
 	for i in copilot-sbv-codegen/*; do if [ "$${i}" != "$${i%.c}" ];then ./a $$i > $$i.gv; dot -Tps $$i.gv -o $$i.ps; fi; done
 
 acsl:
