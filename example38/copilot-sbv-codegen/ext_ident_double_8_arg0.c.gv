@@ -1,0 +1,41 @@
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+ext_ident_double_8_arg0.c",color=red, style=filled]
+1 [label="label: scalar2dim",color=plum, style=filled]
+0 -> 1
+2 [label="op2: +",color=green4, style=filled]
+1 -> 2
+3 [label="op2: *",color=green4, style=filled]
+2 -> 3
+4 [label="op2: -",color=green4, style=filled]
+3 -> 4
+5 [label="ext_ident_double_0",color=cyan4, style=filled]
+4 -> 5
+10 [label="ext_ident_double_1",color=cyan4, style=filled]
+4 -> 10
+15 [label="op2: -",color=green4, style=filled]
+3 -> 15
+16 [label="ext_ident_double_2",color=cyan4, style=filled]
+15 -> 16
+21 [label="ext_ident_double_3",color=cyan4, style=filled]
+15 -> 21
+26 [label="op2: *",color=green4, style=filled]
+2 -> 26
+27 [label="op2: -",color=green4, style=filled]
+26 -> 27
+28 [label="ext_ident_double_4",color=cyan4, style=filled]
+27 -> 28
+33 [label="ext_ident_double_5",color=cyan4, style=filled]
+27 -> 33
+38 [label="op2: -",color=green4, style=filled]
+26 -> 38
+39 [label="ext_ident_double_6",color=cyan4, style=filled]
+38 -> 39
+44 [label="ext_ident_double_7",color=cyan4, style=filled]
+38 -> 44
+
+
+}
+

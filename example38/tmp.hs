@@ -241,7 +241,7 @@ spec = do
   trigger "alert_WCVtep" (wellClearViolation tep relPositionX relPositionY relPositionZ relVelocityX relVelocityY relVelocityZ) []
 
 main = do
-   reify spec >>= S.compile S.defaultParams
+   reify spec >>= S.proofACSL S.defaultParams
 
 
 --------------------------------------------------------------------------------

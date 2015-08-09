@@ -1,0 +1,31 @@
+digraph G {
+node [shape=box]
+
+0 [label="file: 
+ext_ident_double_222_arg0.c",color=red, style=filled]
+1 [label="label: tep",color=plum, style=filled]
+0 -> 1
+2 [label="op3: mux",color=green4, style=filled]
+1 -> 2
+3 [label="op2: &&",color=green4, style=filled]
+2 -> 3
+4 [label="op2: <",color=green4, style=filled]
+3 -> 4
+5 [label="ext_ident_double_138",color=cyan4, style=filled]
+4 -> 5
+62 [label="const: 0.0",color=red1, style=filled]
+4 -> 62
+63 [label="op2: >=",color=green4, style=filled]
+3 -> 63
+64 [label="ext_ident_double_169",color=cyan4, style=filled]
+63 -> 64
+257 [label="const: 0.0",color=red1, style=filled]
+63 -> 257
+258 [label="ext_ident_double_221",color=cyan4, style=filled]
+2 -> 258
+584 [label="const: -1.0",color=red1, style=filled]
+2 -> 584
+
+
+}
+
