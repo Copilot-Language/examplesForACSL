@@ -10,7 +10,7 @@ Make sure that it is effectively updated : check your path, everything ...
         ./configure
         sudo make install
 
-- Install frama-c (Sodium), CompCert and its Standard C library (RTFM for that).
+- Install frama-c (Sodium or Magnesium), CompCert and its Standard C library (RTFM for that).
 - Install splint (if you're still alive)
 
 
