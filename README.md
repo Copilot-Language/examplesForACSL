@@ -82,44 +82,44 @@ ACSL frama-c wp plugin :
 
 List of examples :
 
-1 Basic test, m4 support, and up to date Makefile.
-2 Basic test, no feature.
-3 Basic test, no feature.
-4 Basic test, no feature.
-5 Basic test, no feature.
-6 Basic test, no feature.
-7 Basic test, no feature.
-8 Basic test, no feature.
-9 Basic test, no feature.
-10 Basic test, no feature.
-11 Basic test, no feature.
-12 Basic test, no feature.
-13 Basic test, no feature.
-14 Basic test, no feature.
-15 Basic test, no feature.
-16 Basic test, no feature.
-17 Basic test, no feature.
-18 Basic test, no feature.
-19 Basic test, no feature.
-20 Basic test, no feature.
-21 Basic test, no feature.
-22 Basic test, no feature.
-23 Basic test, no feature.
-24 Basic test, no feature.
-25 Basic test, no feature.
-26 Basic test, no feature.
-27 Basic test, no feature.
-28 Uncomplete test, unfinished.
-29 Cesar's self separation criterion implementation. With labels, with up to date Makefile.
-30 The same, without labels. Outdated.
-31 The same criterions, but with 1 sampling memory for calculating the planned speed (t := t + 1), no labels
-32 The same as 31 with labels
-33 Basic test, m4 implemented. Used as a proof of concept for the 31.
-34 Well clear implementation, without labels
-35 Well clear implementation, with labels
-36 TCAS II, with labels
-37 Struct example, DOES NOT WORK
-38 WCV, used for proofs only.
-WCV The real example. (the one of the paper, that works)
-manuel example 1 Basic test, no feature.
-manuel example 2 Basic test, no feature.
+- 1 Basic test, m4 support, and up to date Makefile.
+- 2 Basic test, no feature.
+- 3 Basic test, no feature.
+- 4 Basic test, no feature.
+- 5 Basic test, no feature.
+- 6 Basic test, no feature.
+- 7 Basic test, no feature.
+- 8 Basic test, no feature.
+- 9 Basic test, no feature.
+- 10 Basic test, no feature.
+- 11 Basic test, no feature.
+- 12 Basic test, no feature.
+- 13 Basic test, no feature.
+- 14 Basic test, no feature.
+- 15 Basic test, no feature.
+- 16 Basic test, no feature.
+- 17 Basic test, no feature.
+- 18 Basic test, no feature.
+- 19 Basic test, no feature.
+- 20 Basic test, no feature.
+- 21 Basic test, no feature.
+- 22 Basic test, no feature.
+- 23 Basic test, no feature.
+- 24 Basic test, no feature.
+- 25 Basic test, no feature.
+- 26 Basic test, no feature.
+- 27 Basic test, no feature.
+- 28 Uncomplete test, unfinished.
+- 29 Cesar's self separation criterion implementation. With labels, with up to date Makefile.
+- 30 The same, without labels. Outdated.
+- 31 The same criterions, but with 1 sampling memory for calculating the planned speed (t := t + 1), no labels
+- 32 The same as 31 with labels
+- 33 Basic test, m4 implemented. Used as a proof of concept for the 31.
+- 34 Well clear implementation, without labels
+- 35 Well clear implementation, with labels
+- 36 TCAS II, with labels
+- 37 Struct example, DOES NOT WORK
+- 38 WCV, used for proofs only.
+- WCV The real example. (the one of the paper, that works)
+- manuel example 1 Basic test, no feature.
+- manuel example 2 Basic test, no feature.
